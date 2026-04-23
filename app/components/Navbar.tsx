@@ -16,9 +16,9 @@ interface NavbarProps {
 }
 
 const CONTENT_TYPES: { id: ContentType; label: string; icon: string }[] = [
-  { id: "guias",       label: "Guías",       icon: "📖" },
-  { id: "preguntas",   label: "Preguntas",   icon: "❓" },
-  { id: "enciclopedia",label: "Enciclopedia",icon: "📚" },
+  { id: "guias",       label: "Guías",       icon: "" },
+  { id: "preguntas",   label: "Preguntas",   icon: "" },
+  { id: "enciclopedia",label: "Enciclopedia",icon: "" },
 ];
 
 export default function Navbar({
@@ -91,7 +91,9 @@ export default function Navbar({
             padding: "0 1.25rem 0 0", flexShrink: 0,
           }}
         >
-          <PawIcon size={18} color="#d4853a" />
+
+          {/* Logo */}
+          <PawIcon size={18} color="#d4853a" /> 
           <span style={{
             fontFamily: "'Playfair Display', serif",
             fontSize: "1.15rem", fontWeight: 700, color: "#2c2416", letterSpacing: "-0.02em",
@@ -124,7 +126,7 @@ export default function Navbar({
                   flexShrink: 0,
                 }}
               >
-                <span style={{ fontSize: "0.9rem" }}>{cat.emoji}</span>
+                 {/* <span style={{ fontSize: "0.9rem" }}>{cat.emoji}</span> */}
                 {cat.label}
                 <span style={{
                   fontSize: "0.55rem", color: isOpen ? cat.color : "#c9b49a", marginLeft: 1,
