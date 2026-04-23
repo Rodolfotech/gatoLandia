@@ -34,7 +34,7 @@ export const categories: Category[] = [
   {
     slug: "salud",
     label: "Salud",
-    emoji: "🏥",
+    emoji: "",
     color: "#7a9e7e",
     bg: "#eef4ef",
     description: "Prevención, enfermedades y cuidados médicos",
@@ -176,7 +176,7 @@ export const categories: Category[] = [
   {
     slug: "comportamiento",
     label: "Comportamiento",
-    emoji: "🧠",
+    emoji: "",
     color: "#b85c38",
     bg: "#faefeb",
     description: "Lenguaje, conducta y psicología felina",
@@ -318,7 +318,7 @@ export const categories: Category[] = [
   {
     slug: "alimentacion",
     label: "Alimentación",
-    emoji: "🍽️",
+    emoji: "",
     color: "#d4853a",
     bg: "#fff3e6",
     description: "Nutrición, dietas y lo que no pueden comer",
@@ -397,7 +397,7 @@ export const categories: Category[] = [
   {
     slug: "juego",
     label: "Juego",
-    emoji: "🎯",
+    emoji: "",
     color: "#9b6bb5",
     bg: "#f3eef8",
     description: "Estimulación, juguetes y enriquecimiento",
@@ -476,7 +476,7 @@ export const categories: Category[] = [
   {
     slug: "etapas",
     label: "Etapas de vida",
-    emoji: "🌱",
+    emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
     description: "Cachorro, adulto, senior y sus necesidades",

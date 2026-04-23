@@ -2,7 +2,7 @@ export const topics = [
   {
     name: "Salud",
     slug: "salud",
-    emoji: "🏥",
+    emoji: "",
     color: "#e63946",
     subtopics: [
       { title: "Vacunas", slug: "vacunas" },
@@ -13,7 +13,7 @@ export const topics = [
   {
     name: "Comportamiento",
     slug: "comportamiento",
-    emoji: "🐈‍⬛",
+    emoji: "",
     color: "#457b9d",
     subtopics: [
       { title: "Lenguaje corporal", slug: "lenguaje" },
