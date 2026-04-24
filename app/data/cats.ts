@@ -289,14 +289,101 @@ export const categories: Category[] = [
 },
 ],
   },
+
+
   {
     slug: "comportamiento",
     label: "Comportamiento",
     emoji: "",
     color: "#b85c38",
     bg: "#faefeb",
-    description: "Lenguaje, conducta y psicología felina",
+    description: "Comportamiento",
     subcategories: [
+      {
+  slug: "interio-exterior",
+  label: "Gato ¿Interio o Exterior?",
+  topics: [
+    {
+      slug: "guia para entender y cuidar",
+      title: "Comportamiento Felino: Cómo entender y cuidar mejor a tu gato",
+      intro: "Los gatos son hoy una de las mascotas más populares del mundo. Aunque históricamente no se les veía como compañeros de vida tal como los conocemos ahora, la realidad es que, al igual que los perros, necesitan interacción, atención y cariño. La diferencia radica en cómo expresan esas necesidades. Para convivir en armonía con tu felino, es fundamental entender su naturaleza y adaptar su entorno a sus instintos.",
+      sections: [
+        {
+          heading: "1. ¿Interior o Exterior? Tomando la decisión correcta",
+          body: "Una de las primeras decisiones al adoptar es si el gato vivirá solo dentro de casa o tendrá acceso al exterior. Ambas opciones tienen implicaciones importantes: Gatos de exterior: Tienen más libertad y estimulación natural, pero corren mayores riesgos: atropellos, peleas con otros animales, enfermedades infecciosas y parásitos (pulgas, gusanos). Su esperanza de vida suele ser menor. Gatos de interior: Están mucho más protegidos y viven más años, pero dependen totalmente de nosotros para su estimulación. El aburrimiento es su mayor enemigo. Si eliges esta opción, debes comprometerte a enriquecer su entorno con juegos, rascadores y tiempo de calidad. Consejo: Sea cual sea tu elección, la clave está en la seguridad y la estimulación mental.",
+        },
+        {
+          heading: "2. El Instinto de Rascar: No es vandalismo, es comunicación",
+          body: "Arañar es un comportamiento natural e imprescindible que comienza alrededor de las 5 semanas de vida. Para un gato, rascar no es solo afilar uñas; es una forma de comunicación visual y olfativa (marcan territorio con las glándulas de sus patas) y una manera de estirar su musculatura. El conflicto surge cuando eligen nuestros muebles. La solución no es castigar, sino ofrecer una alternativa mejor. ¿Cómo elegir el rascador perfecto? Estabilidad: Debe ser firme y no tambalearse. Si se mueve, el gato no lo usará por inseguridad. Altura: Debe ser lo suficientemente alto para que el gato pueda estirarse completamente de pie. Material: El sisal, la madera natural o la cuerda suelen ser los más atractivos. Ubicación: Colócalo en zonas visibles y de paso (no escondido en un sótano). A los gatos les gusta marcar donde ocurre la 'vida' de la casa. Paciencia: Una vez que elija un rascador, no lo cambies de sitio. Además, cuanto más usado esté, más le gustará, porque estará impregnado de su olor.",
+        },
+        {
+          heading: "3. El Juego: Ejercicio físico y mental",
+          body: "Jugar no es solo entretenimiento; es la forma en que el gato ejercita su instinto de caza. Un gato que no juega puede desarrollar problemas de comportamiento por acumulación de energía o estrés. Claves para un juego exitoso: Imita a una presa: Usa juguetes que se muevan, se escondan, salten o vibren. Las cañas con plumas o cuerdas son ideales porque te permiten interactuar a distancia. Seguridad ante todo: Evita hilos largos sin supervisión o piezas pequeñas que pueda tragar. Rutina diaria: Dedica al menos 15 minutos al día a jugar activamente con él. Esto fortalece vuestro vínculo y mantiene su mente ágil. Variedad: Rotar los juguetes evita que se aburra de los mismos objetos.",
+        },
+        {
+          heading: "4. Higiene y Areneros: La regla de oro",
+          body: "Los gatos son extremadamente limpios y exigentes con su baño. Un arenero sucio o mal ubicado es la causa número uno de problemas de eliminación inadecuada. Recomendaciones básicas: La regla del 'N+1': Debes tener una caja de arena por cada gato, más una extra. (Ejemplo: 1 gato = 2 cajas; 2 gatos = 3 cajas). Algunos gatos prefieren incluso usar una caja solo para orinar y otra para defecar. Tipo de arena: La mayoría prefiere arenas sin perfume y de textura fina y suave. Ubicación: Lugares tranquilos, privados y lejos de ruidos fuertes (lavadoras, secadoras) o de su zona de comida. Limpieza: Retira los desechos a diario y lava las cajas regularmente con agua y jabón neutro (evita lejías o amoniaco, cuyos olores pueden atraerles a orinar fuera). Alerta: Si tu gato empieza a orinar o defecar fuera de la caja, acude al veterinario. A menudo es el primer síntoma de dolor o enfermedad urinaria, no un acto de venganza.",
+        },
+        {
+          heading: "5. El Marcaje con Orina: Entendiendo el mensaje",
+          body: "El marcaje vertical con orina (rociar paredes o muebles) es diferente a vaciar la vejiga en el suelo. Es un comportamiento comunicativo, no necesariamente higiénico. ¿Quiénes lo hacen? Puede ocurrir en gatos esterilizados, aunque es más común en no esterilizados (aprox. 10% de machos y 5% de hembras castradas pueden hacerlo ocasionalmente). ¿Por qué lo hacen? Generalmente responde a estrés o inseguridad: llegada de nuevas mascotas, cambios en la rutina, conflictos con otros gatos (incluso viendo gatos callejeros por la ventana) o cambios en el hogar. Solución: El castigo empeora el problema. Lo ideal es identificar la fuente de estrés, limpiar la zona con enzimas específicas (para eliminar el olor por completo) y consultar con un veterinario o etólogo para evaluar si necesita ayuda conductual o médica.",
+        },
+        {
+          heading: "Conclusión: Convivencia basada en el respeto",
+          body: "El comportamiento felino no es caprichoso; tiene una lógica biológica profunda. Necesitan seguridad (rutinas, lugares altos). Necesitan estimulación (juego, caza simulada). Necesitan limpieza (areneros impecables). Necesitan comunicación (rascar, marcar, maullar). Cuando respetas estas necesidades básicas, dejas de ver 'problemas' y empiezas a ver a un compañero equilibrado, cariñoso y feliz. Entender a tu gato es la mejor herramienta para amarlo mejor.",
+        }
+      ],
+    },
+  ],
+},
+
+
+ {
+  slug: "comportamiento-felino",
+  label: "presentacion entre gatos",
+  topics: [
+    {
+      slug: "presentacion entre gatos",
+      title: "Cómo lograr que dos gatos se acepten y convivan tranquilos",
+      intro: "Introducir un nuevo gato en casa es emocionante, pero puede ser estresante para tu gato residente. Los gatos son territoriales por naturaleza, así que la clave del éxito no es la rapidez, sino la paciencia. Si lo haces bien desde el principio, evitarás conflictos futuros y fomentarás una amistad (o al menos, una tolerancia respetuosa) duradera. Olvida la idea de 'presentarlos de golpe'. Sigue este proceso gradual.",
+      sections: [
+        {
+          heading: "Paso 1: La Cuarentena Inicial (Días 1-4)",
+          body: "El nuevo gato necesita sentirse seguro antes de conocer a nadie. Habitación propia: Prepara una habitación tranquila (que no sea la zona principal de tu gato actual) con su cama, comida, agua, juguetes y arenero. Refugio seguro: Deja su transportín abierto con una manta dentro para que tenga un escondite donde sentirse protegido. Cero contacto visual: Durante estos primeros días, no deben verse. Sin embargo, está bien que se huelan bajo la puerta. Esto les permite investigarse sin la presión del cara a cara.",
+        },
+        {
+          heading: "Paso 2: Intercambio de Olores (El 'Dating' Olfativo)",
+          body: "Los gatos se conocen por el olfato, no por la vista. Intercambia objetos: Frota suavemente una toalla o calcetín en las mejillas de un gato (donde tienen glándulas de olor) y dáselo al otro, y viceversa. También puedes intercambiar sus mantas. Asociación positiva: Mientras huelen el objeto del otro, dales premios ricos o juega con ellos. Queremos que asocien el olor del 'otro' con cosas buenas (comida/juego). Atención equilibrada: Pasa tiempo de calidad con cada gato por separado, acariciándolos y jugando cerca de la puerta que los separa. Esto reduce la ansiedad y los celos.",
+        },
+        {
+          heading: "Paso 3: Contacto Visual Controlado",
+          body: "Cuando ambos gatos estén relajados oliéndose bajo la puerta y no haya silbidos graves ni gruñidos constantes: La rendija: Abre la puerta solo una pulgada (unos 2-3 cm) o usa una barrera de rejilla para bebés. Deben poder verse, pero no tocarse. Observa: Si hay silbidos leves, es normal. Si hay agresión intensa (silbidos fuertes, boca abierta, orejas muy bajas), cierra la puerta y vuelve al Paso 2 durante unos días más. Premia la calma: Si se miran sin atacarse, dales premios inmediatamente.",
+        },
+        {
+          heading: "Paso 4: Las Primeras Interacciones Supervisadas",
+          body: "Si el contacto visual va bien, es hora de dejarles compartir espacio, pero con reglas estrictas. Salida voluntaria: Abre la puerta y deja que el nuevo gato salga si quiere. Nunca lo forces. Si se queda escondido, respétalo. Sesiones cortas: Permíteles estar juntos 15-30 minutos máximo. Luego, sepáralos de nuevo en sus habitaciones. Repite esto varias veces al día. Distracción positiva: Juega con ellos usando juguetes de caña o lanza premios, pero mantén una distancia segura (al menos 1 metro entre ellos) para evitar que compitan por el juguete. El objetivo: Que aprendan que la presencia del otro no es una amenaza, sino algo neutro o incluso divertido.",
+        },
+        {
+          heading: "Paso 5: Aumento Gradual del Tiempo",
+          body: "Poco a poco, ve aumentando el tiempo que pasan juntos si las interacciones son tranquilas. Separa siempre al final: Termina la sesión antes de que haya algún conflicto. Es mejor dejarlos con ganas de más que con una pelea. Tiempo a solas: Después de cada sesión, déjales tiempo a solas en sus respectivas zonas para procesar la experiencia y recuperar su confianza territorial.",
+        },
+        {
+          heading: "Señales de Alerta y Estrés",
+          body: "Detén el proceso y vuelve atrás si ves: Silbidos intensos y repetidos, gruñidos profundos, pelo erizado y posturas rígidas. En el gato residente: Deja de comer, usa mal el arenero o se esconde todo el día. En el nuevo gato: Se lame compulsivamente, no come o parece aterrorizado. Consejo: Si el estrés es alto, consulta a tu veterinario o a un etólogo. A veces, usar feromonas sintéticas (difusores) puede ayudar a calmar el ambiente.",
+        },
+        {
+          heading: "Lo que NUNCA debes hacer",
+          body: "Nunca castigues: Gritar o castigar a un gato por silbar o mostrar agresividad solo aumenta su estrés y asocia al otro gato con algo negativo (el castigo). Reacción correcta: Si hay tensión, separa a los gatos con calma, sin drama. Usa una voz suave o simplemente interpon una barrera física. No los dejes solos: Hasta que no estés 100% seguro de que se toleran (pueden tardar semanas o meses), nunca los dejes sin supervisión.",
+        },
+        {
+          heading: "Casos Especiales: El Gato Tímido",
+          body: "Si tu nuevo gato es muy miedoso, el proceso será más lento. No tengas prisa. Un gato tímido necesita más tiempo para confiar en su entorno antes de confiar en otro gato. Refuerza tu vínculo individual con él. Las sesiones de contacto pueden ser más cortas (10 minutos) pero más frecuentes. Conclusión: Paciencia es Amor. Cada pareja de gatos es única. Algunos se aceptan en una semana; otros tardan meses. No compares. Tu objetivo es una convivencia pacífica a largo plazo, no una amistad inmediata de película. Ir despacio es la forma más rápida de lograr el éxito. ¡Tu paciencia valdrá la pena!",
+        }
+      ],
+    },
+  ],
+},
+
       {
         slug: "lenguaje",
         label: "Lenguaje felino",
@@ -939,6 +1026,684 @@ export const categories: Category[] = [
 
       ]
     },
+    {
+    slug: "adopción",
+    label: "Adopción",
+    emoji: "",
+    color: "#5b8db8",
+    bg: "#eef3f8",
+    description: "Como adoptar a un gato",
+    subcategories: [
+     {
+  slug: "bienvenida",
+  label: "Bienvenida",
+  topics: [
+    {
+      slug: "guia-bienvenida-cuidados",
+      title: "Bienvenido a casa: cómo cuidar a tu nuevo gato desde el primer día",
+      intro: "¡Felicidades por la adopción! Acoger a un gato es una experiencia maravillosa, pero también implica responsabilidad. Los primeros días son cruciales para su adaptación. Aquí tienes todo lo que necesitas saber para asegurar su salud, bienestar y una convivencia feliz.",
+      sections: [
+        {
+          heading: "1. Los Primeros Días: Vigilancia y Adaptación",
+          body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
+        },
+        {
+          heading: "2. Salud Preventiva: Vacunas, Parásitos y Esterilización",
+          body: "Vacunación: Las vacunas protegen contra enfermedades graves (como la panleucopenia, el complejo respiratorio felino o la leucemia). Sigue el calendario que te indique tu veterinario. La vacuna de la rabia, aunque no siempre es obligatoria legalmente para gatos (depende de la región), está muy recomendada.  Desparasitación: Es fundamental para la salud del gato y de tu familia (zoonosis). Interna: se recomienda cada 3 meses. Externa: vital si el gato sale o tiene acceso a balcones/terrazas. Esterilización: Es la decisión más responsable y saludable. Beneficios: evita camadas no deseadas, reduce el marcaje, disminuye peleas y previene enfermedades graves (tumores de mama, piometras). Mitos: No cambia su personalidad ni los vuelve 'vagos'. Esteriliza a tu gato, sea macho o hembra, interior o exterior.",
+        },
+        {
+          heading: "3. Alimentación e Hidratación",
+          body: "Alimento adecuado: Usa pienso seco de calidad adaptado a su edad y condición física. Evita darle comida casera o sobras humanas. Premios: Úsalos con moderación para no causar obesidad. Agua fresca: Fundamental, coloca varios bebederos por casa, lejos de la comida y del arenero. Algunos gatos prefieren fuentes en movimiento. Incorporar comida húmeda ayuda a la hidratación. Prohibido: La leche de vaca (la mayoría de los gatos adultos son intolerantes a la lactosa). El yogur natural o queso sin sal pueden darse como premio puntual, pero no son necesarios.",
+        },
+        {
+          heading: "4. Higiene y Cuidado Físico",
+          body: "Los gatos necesitan tu ayuda en ciertos aspectos. Cepillado: Pelo corto una vez por semana (diario en muda); pelo largo diario para evitar nudos y bolas de pelo. Si expulsa bolas de pelo con dificultad, consulta sobre pastas de malta. Uñas: Corta solo la punta transparente, evitando la parte rosada (vascularizada). Baños: Generalmente no son necesarios, solo si está muy sucio o por indicación médica.",
+        },
+        {
+          heading: "5. El Arenero: Reglas de Oro",
+          body: "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina.",
+        },
+        {
+          heading: "6. Comportamiento y Enriquecimiento Ambiental",
+          body: "Lenguaje: Cola erguida es saludo amistoso; cola moviéndose rápido es irritación; orejas hacia atrás indican miedo. Ronroneo puede ser bienestar, dolor o estrés. Juego: Dedica 15-20 minutos diarios a caza simulada (cañas, pelotas). Evita usar tus manos o pies. Rascadores: Proporciona rascadores estables, altos y de materiales atractivos (sisal, madera). Nunca castigues por rascar muebles; redirige y premia. Verticalidad: Necesitan lugares altos para observar y refugios seguros para esconderse. Respeta su soledad.",
+        },
+        {
+          heading: "7. Consejos Específicos según la Edad",
+          body: "CACHORRO: Socialización (2-8 semanas) es la etapa clave para aceptar el contacto humano y visitas al veterinario. Enséñale qué se puede morder. Acostúmbralo al transportín dejándolo abierto en casa. Protege cables y ventanas. ADULTO: Paciencia, la adaptación puede tardar semanas. Usa una habitación de aclimatación al llegar con todos sus recursos. Haz presentaciones con otros animales muy gradualmente. Mantén horarios fijos de comida y juego.",
+        },
+        {
+          heading: "8. Aspectos Legales y Seguridad",
+          body: "Microchip: Es obligatorio y debe tener los datos actualizados (RIAC en Madrid). Prevención de Accidentes: El Síndrome del Gato Paracaidista. Instala redes mosquiteras resistentes en ventanas y balcones. Una caída desde altura puede ser mortal; no confíes en su 'habilidad' para caer de pie. Cada gato es un mundo. Observa, respeta sus tiempos y consulta siempre a tu veterinario ante cambios bruscos.",
+        }
+      ],
+    },
+  ],
+}
+
+
+      ]
+    },
+    {
+    slug: "razas",
+    label: "Razas",
+    emoji: "",
+    color: "#5b8db8",
+    bg: "#eef3f8",
+    description: "Razas de gatos",
+    subcategories: [
+    {
+  slug: "razas-felinas",
+  label: "Razas de Gatos",
+  topics: [
+    {
+      slug: "guia-completa-razas",
+      title: "Guía Completa de Razas de Gatos",
+      intro: "El mundo felino es vasto y fascinante. Aunque todos los gatos comparten instintos básicos, cada raza tiene una personalidad, necesidades de cuidado y características físicas únicas. Esta guía integra el registro histórico con las clasificaciones modernas de asociaciones como TICA, CFA y FIFe, organizadas para ayudarte a entender qué tipo de gato encaja mejor en tu hogar. Nota: Más allá de la raza, la personalidad individual y la socialización temprana juegan un papel fundamental.",
+      sections: [
+        {
+          heading: "1. Los Clásicos Históricos",
+          body: "Razas antiguas con personalidades definidas: Abisinio (Etiopía/Egipto): Activo, curioso, 'perro-gato', necesita mucho juego mental. Siamés (Tailandia): Extremadamente vocal, inteligente, demanda atención constante. Persa (Irán): Tranquilo, dulce, silencioso; requiere cepillado y limpieza facial diaria. Maine Coon (EE.UU.): El 'gigante amable', sociable, ideal para familias con niños; requiere espacio. Bengala (EE.UU.): Energía alta, atlético, parece un leopardo en miniatura; necesita estimulación diaria intensa.",
+        },
+        {
+          heading: "2. Gigantes Gentiles y Adaptables al Frío",
+          body: "Gatos robustos con pelajes densos. Maine Coon: Uno de los más grandes, destaca por sus 'lynx tips' y maullidos suaves. Bosque de Noruega (Skogkatt): Escalador nato con pelaje impermeable, independiente pero cariñoso. Siberiano: Famoso por ser hipoalergénico (produce menos Fel d 1), ágil y afectuoso. Ragdoll: Grande y musculoso, de temperamento dócil; se 'desploma' como un muñeco de trapo al cargarlo.",
+        },
+        {
+          heading: "3. Elegancia de Pelo Corto y Cuerpo Atlético",
+          body: "Poco mantenimiento de pelaje con mucha interacción. British Shorthair: Cara redonda, compacto y tranquilo; no le gusta que lo carguen mucho. Ruso Azul: Pelaje plateado y ojos verdes, tímido con extraños pero leal. Burmés: Musculoso y pesado, muy orientado a las personas. Bombay: Parece una pantera negra en miniatura, le encanta el calor y los regazos. Chartreux: Raza francesa antigua, silencioso y cazador experto con pelaje repelente al agua.",
+        },
+        {
+          heading: "4. Mutaciones Únicas: Orejas, Colas y Texturas",
+          body: "Características genéticas exóticas. Scottish Fold: Orejas dobladas hacia adelante, posición de 'Buda'; requiere revisión articular. Munchkin: Patas cortas, extrovertido y curioso. Sphynx: Sin pelo, sociable y busca calor; requiere baños semanales. Devon Rex & Cornish Rex: Pelaje rizado u ondulado, traviesos y apegados. American Curl: Orejas hacia atrás. Manx & Japanese Bobtail: El primero sin cola y robusto; el segundo con cola de pompón, símbolo de buena suerte.",
+        },
+        {
+          heading: "5. Exóticos y Pocas Unidades",
+          body: "Razas menos comunes. Ocicat: Parece un ocelote salvaje, entrenable y sociable. Toyger: Imitación de un tigre, inteligente. Lykoi: El 'gato lobo', apariencia de hombre lobo, curioso y juguetón. Singapura: Una de las razas más pequeñas, travieso y amante de las alturas. Korat: Tailandés gris plateado con corazón en la frente, sensible al ruido y amuleto de buena suerte.",
+        },
+        {
+          heading: "📝 Consejos para Elegir tu Raza",
+          body: "Nivel de Actividad: ¿Compañero de sofá (Persa) o atleta (Bengala)? Tiempo de Aseo: ¿Cepillado diario (Maine Coon) o bajo mantenimiento (Ruso Azul)? Vocalización: Si prefieres el silencio, evita Siameses y opta por Ragdolls. Niños y mascotas: Maine Coon y Birmanos son más tolerantes. Alergias: Ninguno es 100% hipoalergénico, pero el Siberiano y el Ruso Azul suelen ser mejor tolerados.",
+        }
+      ],
+    },
+  ],
+}
+
+      ]
+    },
+    {
+    slug: "adquisicion responsable",
+    label: "Adquisicion responsabe",
+    emoji: "",
+    color: "#5b8db8",
+    bg: "#eef3f8",
+    description: "Razas de gatos",
+    subcategories: [
+{
+  slug: "adquisición chile",
+  label: "🇨🇱 Chile",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-chile",
+      title: "Adquisición Responsable en Chile: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Chile, la compra de animales está regulada por la Ley 21.020 (Ley Cholito), que protege el bienestar animal y exige tenencia responsable. Comprar un gato no es como comprar un objeto; es adquirir un ser vivo con necesidades complejas.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar que estén inscritos en RENAGACH (Registro Nacional de Gatos de Chile), representante de federaciones como WCF y TICA. Ventajas de comprar con pedigree: Certificación Genética (garantiza la raza), Salud (tests genéticos para descartar enfermedades como PKD en Persas o HCM en Maine Coons) y Socialización (crecen en ambiente familiar, no en jaulas).",
+        },
+        {
+          heading: "Directorio de Referencia (Criaderos Éticos en Chile)",
+          body: "Listado orientativo (siempre verifica registros): Maine Coon: Colitas Arriba, Nahuelhuén (Santiago/La Reina). Persa / Himalayo: GatyKey Cattery, Viestmaden Cattery (La Florida). Ragdoll: Reflejo de Luna (temperamento dócil). Somalí: Per-Bast Cattery (único especializado). Sphynx: Ti Voglio Bene, The Kittens House. British Shorthair: Von & Von Cattery (estructura robusta).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes (Ley 21.020)",
+          body: "Para que la transacción sea legal, el criadero debe cumplir con: Microchip Obligatorio (implantado y registrado) y Contrato de Compraventa. El contrato debe detallar garantías de salud (exámenes negativos a FeLV/FIV), compromiso de esterilización y cláusula de devolución. Tu Responsabilidad: Una vez realizada la compra, tú debes inscribir al animal en el Registro Nacional de Mascotas si los datos no fueron actualizados inmediatamente.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas? Deben estar limpios y en contacto humano. ¿Edad de entrega? NUNCA aceptes un gatito de menos de 12 semanas (3 meses). ¿Documentación completa? Debes recibir Certificado de nacimiento/Pedigree preliminar, carnet de vacunas al día (firmado por veterinario colegiado) y certificado de desparasitación. ¿Transparencia sanitaria? Un buen criador preguntará por tu situación para asegurar un buen hogar.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "Si buscas razas como Lykoi, Toyger o Bengala de líneas específicas, el proceso es estricto: cumplir requisitos del SAG (Servicio Agrícola y Ganadero), certificados sanitarios del país de origen y posibles cuarentenas. Se recomienda asesorarse con una agencia de transporte de mascotas especializada para evitar retenciones en aduana.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos'!",
+          body: "Evita comprar en ferias libres, mercados informales o anuncios en redes sociales sin dirección física visible. Desconfía de lugares con múltiples razas disponibles inmediatamente. Estos lugares priorizan el lucro sobre el bienestar, resultando en animales con problemas de salud crónicos y vidas cortas. Tu elección consciente ayuda a erradicar este maltrato.",
+        }
+      ],
+    },
+  ],
+},
+
+{
+  slug: "adquisición argentina",
+  label: "🇦🇷 Argentina",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-argentina",
+      title: "Adquisición Responsable en Argentina: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Argentina, la tenencia de animales está protegida por la Ley Nacional 27.592 (Ley Alica) y diversas ordenanzas (como la Ley 4040 en CABA), que reconocen a los animales como seres sintientes. Comprar un gato no es una transacción comercial cualquiera; es incorporar un miembro a la familia.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Argentina preservan la raza, cuidan la salud genética y socializan a los gatitos. Las principales entidades son FAAC (Federación Argentina de Aficionados al Gato), afiliada a la WCF, y clubes locales de TICA o FIFe. Ventajas de comprar con pedigree: Certificación Genética (garantiza ancestros registrados), Salud Preventiva (tests genéticos para PKD o HCM) y Socialización Temprana (estímulos humanos que evitan problemas de conducta).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para que la transacción sea legal en Argentina, el criadero debe cumplir con: Identificación (Microchip), obligatorio en CABA, Córdoba y Santa Fe entre otros. Contrato de Compraventa con datos del animal, garantías de salud, cláusula de devolución y compromiso de esterilización. Carnet de Vacunación: Debe estar firmado por un Médico Veterinario matriculado, con las vacunas triples felinas (y quíntuple si corresponde) al día según la edad.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Argentina?",
+          body: "Antes de pagar, verifica:  ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en shoppings. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ¿Documentación completa? Debes recibir Certificado de Nacimiento/Pedigree, carnet de vacunas y factura o recibo. ¿Entrevista al comprador? Un buen criador te preguntará sobre redes en ventanas y tu experiencia previa.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "Si buscas razas no criadas habitualmente (Lykoi, Toyger), el proceso es regulado por el SENASA (Servicio Nacional de Sanidad y Calidad Agroalimentaria). Requisitos: Certificado zoosanitario de origen, vacunación antirrábica y posibles cuarentenas. Se recomienda contratar una agencia de transporte de mascotas especializada; traer un gato por cuenta propia puede resultar en retenciones o multas severas.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; usa videollamadas en tiempo real). Venden en ferias o plazas: animales sin control sanitario suelen morir pronto ('gato de la semana'). Tienen 'stock' infinito de múltiples razas disponibles inmediatamente. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y alimentación premium que un precio bajo no cubre.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Argentina es una responsabilidad legal y moral. Al elegir un criadero registrado en FAAC o federaciones internacionales, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas.",
+        }
+      ],
+    },
+  ],
+},
+
+{
+  slug: "adquisición uruguay",
+  label: "🇺🇾  Uruguay",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-uruguay",
+      title: "Adquisición Responsable en Uruguay: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Uruguay, la tenencia de animales está protegida por la Ley Nacional 18.471 (Protección de los Animales) y regulada localmente por decretos como el 319/011 en Montevideo. Comprar un gato no es una transacción comercial cualquiera; es incorporar un miembro sensible a la familia.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Uruguay preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a la AFU (Asociación Felina Uruguaya), representante de la WCF y, en ocasiones, TICA o FIFe. Ventajas: Certificación Genética (ancestros registrados), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de problemas de conducta).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para una transacción segura en Uruguay, el criadero debe cumplir con: Identificación (Microchip) según ordenanzas municipales (especialmente en Montevideo y Canelones) e inscripción en registros correspondientes. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (prohibido el abandono) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario matriculado en el MVZ, con la triple felina al día.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Uruguay?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en shoppings. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ¿Documentación completa? Debes recibir Certificado de Nacimiento/Pedigree de la AFU, carnet de vacunas y factura o recibo. ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado por el MGAP-DIGEGA (Dirección General de Servicios Agrícolas). Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites aduaneros y evitar la retención del animal en frontera.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (panleucopenia). Tienen 'stock' infinito: indica una fábrica donde las hembras son usadas indiscriminadamente. Precios sospechosamente bajos: la crianza ética tiene costos altos en salud y registros que un precio bajo no puede cubrir.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Uruguay es una responsabilidad legal y moral. Al elegir un criadero registrado en la AFU, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas.",
+        }
+      ],
+    },
+  ],
+},
+
+{
+  slug: "adquisición peru",
+  label: "🇵🇪 Perú",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-peru",
+      title: "Adquisición Responsable en Perú: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Perú, la tenencia de animales está protegida por la Ley N° 30407 (Ley de Protección y Bienestar Animal) y regulada técnicamente por el SENASA bajo el MIDAGRI. Esta ley reconoce a los animales como seres sintientes y prohíbe su maltrato, abandono y comercio ilegal.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Perú preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a la FEPERU (Federación Peruana de Felinos), representante de WCF y, en algunos casos, TICA o FIFe. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de problemas de conducta como miedos o agresividad).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para que la transacción sea legal en Perú, el criadero debe cumplir con: Identificación (Microchip) exigido por muchas municipalidades (como Lima Metropolitana, Miraflores, San Isidro) para el registro municipal. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (prohibido el abandono) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario colegiado, con la triple felina (y quíntuple si corresponde) al día.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Perú?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en malls o parques. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ✅ ¿Documentación completa? Debes recibir Certificado de Nacimiento/Pedigree de la FEPERU, carnet de vacunas y factura o recibo. ✅ ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en edificios altos de Lima.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por el SENASA. Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites ante el SENASA y evitar retenciones en el aeropuerto Jorge Chávez o multas severas.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (moquillo/panleucopenia). Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y alimentación premium que un precio bajo no cubre.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Perú es una responsabilidad legal y moral. Al elegir un criadero registrado en la FEPERU, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas. Recuerda: Antes de comprar, considera también la adopción.",
+        }
+      ],
+    },
+  ],
+},
+
+{
+  slug: "adquisición bolivia",
+  label: "🇧🇴 Bolivia",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-bolivia",
+      title: "Adquisición Responsable en Bolivia: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Bolivia, la tenencia de animales y su bienestar son fundamentales, y el comercio de razas debe realizarse bajo estándares éticos y legales que reconozcan a los animales como seres sintientes, prohibiendo su maltrato y comercio ilegal.",
+      sections: [
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Bolivia?",
+          body: "Antes de realizar cualquier transferencia o pago, verifica estos puntos. Si la respuesta es 'no' a alguna, desconfía. ¿Permiten visitas presenciales? Un criador ético te invitará a conocer su domicilio o cattery. Debes poder ver a la madre y el entorno limpio y seguro. Desconfía de quienes solo hacen entregas en puntos medios, malls o parques. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). Es crucial para el destete emocional e inmunológico. ¿Documentación completa? Debes recibir Certificado de Nacimiento / Pedigree (o pre-pedigree emitido por la asociación felina correspondiente), Carnet de vacunas y desparasitaciones al día, y Factura o recibo de compra. ¿Entrevista al comprador? Un buen criador te hará preguntas sobre tu hogar, si tienes protecciones en ventanas/balcones (vital en edificios altos de La Paz o Santa Cruz) y tu experiencia.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "Si buscas razas que no se crían habitualmente en Bolivia (como Lykoi, Toyger o líneas específicas de Bengalás), el proceso es regulado estrictamente por el SENASAG (Servicio Nacional de Sanidad Agropecuaria e Inocuidad Alimentaria). Requisitos: Certificado zoosanitario internacional del país de origen, vacunación antirrábica vigente, y cumplimiento de los protocolos de ingreso. Cuarentena: Dependiendo del país de origen y el estado sanitario, puede requerirse cuarentena o inspecciones adicionales. Recomendación: Contrata siempre una agencia de transporte de mascotas especializada ('Pet Relocation') que gestione los trámites ante el SENASAG para evitar retenciones en aeropuertos internacionales (El Alto, Viru Viru, etc.) o multas severas.",
+        },
+        {
+          heading: " ¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "En Bolivia, el comercio ilegal es frecuente en plataformas online y ferias informales. 🚩 NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: los gatitos expuestos sin higiene suelen estar enfermos (panleucopenia, leucemia) y tienen alta mortalidad. Tienen 'stock' infinito: probable fábrica de explotación donde las hembras son usadas indiscriminadamente. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y registros que un precio bajo no puede cubrir.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Bolivia es una responsabilidad legal y moral. Al elegir un criadero registrado en la AFUBO o asociaciones reconocidas, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas. Recuerda: Antes de comprar, considera también la adopción. Muchas organizaciones rescatan gatos de raza o mestizos hermosos que buscan un hogar lleno de amor en todo el país.",
+        }
+      ],
+    },
+  ],
+},
+{
+  slug: "adquisición colombia",
+  label: "🇨🇴  Colombia",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-colombia",
+      title: "Adquisición Responsable en Colombia: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Colombia, la tenencia de animales está protegida por la Ley 1774 de 2016, que reconoce a los animales como seres sintientes no susceptibles de ser cosas, y prohíbe su maltrato y abandono. Además, existen normativas locales en ciudades como Bogotá, Medellín y Cali.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Colombia preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a ASOFELGA (Asociación Colombiana de Criadores de Gatos), representante de la WCF y, en algunos casos, TICA o FIFe. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de miedos y agresividad).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes (Ley Alica)",
+          body: "Para una transacción segura en Colombia, el criadero debe cumplir con: Identificación (Microchip) exigido por alcaldías (como Bogotá con el Decreto 319 de 2019) para el registro municipal. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (prohibido el abandono) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario Zootecnista con tarjeta profesional vigente.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Colombia?",
+          body: "Antes de pagar, verifica: ✅ ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en centros comerciales o parques. ✅ ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). Es crucial para el destete emocional e inmunológico. ✅ ¿Documentación completa? Debes recibir Certificado de Nacimiento / Pedigree de ASOFELGA, carnet de vacunas y factura o recibo. ✅ ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en edificios altos de Bogotá o Medellín.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por el ICA (Instituto Colombiano Agropecuario). Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y cumplimiento de protocolos de ingreso (Resolución ICA). Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites ante el ICA y evitar retenciones en aeropuertos (El Dorado, José María Córdova, etc.) o multas severas.",
+        },
+        {
+          heading: "⚠️ ¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "🚩 NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (moquillo/panleucopenia). Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y registros que un precio bajo no puede cubrir.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Colombia es una responsabilidad legal y moral. Al elegir un criadero registrado en ASOFELGA, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas.",
+        }
+      ],
+    },
+  ],
+},
+{
+  slug: "adquisición ecuador",
+  label: "🇪🇨 Ecuador",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-ecuador",
+      title: "Adquisición Responsable en Ecuador: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Ecuador, la tenencia de animales está protegida por el Código Orgánico de Bienestar Animal (COBA), promulgado en 2022. Esta ley reconoce a los animales como seres sintientes, prohíbe su maltrato, abandono y regula estrictamente la crianza y comercialización.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Ecuador preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a asociaciones felinas reconocidas (WCF, TICA) y que cuenten con los permisos municipales correspondientes. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de miedos y agresividad).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes (COBA)",
+          body: "Para que la transacción sea legal en Ecuador, el criadero debe cumplir con: Identificación (Microchip) exigido por el COBA y ordenanzas municipales (Quito, Guayaquil, Cuenca) para el registro municipal. Permiso de Funcionamiento emitido por el GAD Municipal de su cantón. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (prohibido el abandono) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario Zootecnista registrado.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Ecuador?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en centros comerciales o parques. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). Es crucial para el destete emocional e inmunológico. ¿Documentación completa? Debes recibir Certificado de Nacimiento / Pedigree oficial, carnet de vacunas al día y factura o recibo (cumplimiento tributario). ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en edificios altos de Quito o Guayaquil.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por AGROCALIDAD (Agencia de Regulación y Control Fito y Zoosanitario). Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites y evitar retenciones en aeropuertos (Mariscal Sucre, José Joaquín de Olmedo, etc.) o multas severas.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (panleucopenia, leucemia). Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y registros que un precio bajo no puede cubrir.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Ecuador es una responsabilidad legal y moral bajo el COBA. Al elegir un criadero registrado y con permisos municipales, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas. Recuerda: Antes de comprar, considera también la adopción.",
+        }
+      ],
+    },
+  ],
+},
+
+{
+  slug: "adquisición venezuela",
+  label: "🇻🇪 Venezuela",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-venezuela",
+      title: "Adquisición Responsable en Venezuela: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Venezuela, la tenencia de animales está protegida por la Ley de Protección a la Fauna Doméstica Libre y en Cautiverio y diversas ordenanzas municipales que promueven la tenencia responsable, prohíben el maltrato y el abandono.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Venezuela preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a la Federación Canina de Venezuela (FCV) en su división felina, o a asociaciones como ASOVEFEL (Asociación Venezolana de Felinos), vinculadas a la WCF o TICA. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de miedos y agresividad).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para que la transacción sea legal en Venezuela, el criadero debe cumplir con: Identificación (Microchip) exigido o recomendado en alcaldías como Chacao, Baruta, El Hatillo (Caracas), Valencia y Maracaibo para el registro municipal. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario colegiado (CVZ), con las vacunas triples felinas al día según la edad.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Venezuela?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en metros o centros comerciales. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). Es crucial para el destete emocional e inmunológico. ¿Documentación completa? Debes recibir Certificado de Nacimiento / Pedigree oficial, carnet de vacunas al día y factura o recibo. ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en edificios altos de Caracas o Valencia.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por el INSAI (Instituto Nacional de Salud Agrícola Integral). Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites ante el INSAI y evitar retenciones en el Aeropuerto Internacional Simón Bolívar o multas severas.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; no transfieras divisas ni bolívares sin videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (panleucopenia, leucemia). Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en alimentación importada/premium que un precio bajo no cubre.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Venezuela es una responsabilidad legal y moral. Al elegir un criadero registrado en ASOVEFEL o afiliado a federaciones internacionales, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas. Recuerda: Antes de comprar, considera también la adopción.",
+        }
+      ],
+    },
+  ],
+},
+{
+  slug: "adquisición paraguay",
+  label: "🇵🇾  Paraguay",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-paraguay",
+      title: "Adquisición Responsable en Paraguay: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Paraguay, la tenencia de animales está protegida por la Ley N° 483/95 de Protección a los Animales y por la Ley N° 6541/20 de Bienestar Animal, que reconoce a los animales como seres sintientes, prohíbe su maltrato y abandono, y regula la tenencia responsable.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Paraguay preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a FELPAR (Federación Felina del Paraguay), representante de la WCF o TICA. Ventajas: Certificación Genética (ancestros registrados oficialmente), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de problemas de conducta como miedos o agresividad).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para una transacción segura en Paraguay, el criadero debe cumplir con: Identificación (Microchip) implementada en municipalidades como Asunción, Luque, San Lorenzo, Lambaré, etc. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (prohibido abandonar) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario registrado en el CONAMEVET (Consejo Nacional de Medicina Veterinaria), con las vacunas triples felinas al día.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Paraguay?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en shoppings o parques. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). Es crucial para el destete emocional e inmunológico. ¿Documentación completa? Debes recibir Certificado de Nacimiento / Pedigree de FELPAR, carnet de vacunas y factura o recibo. ✅ ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en edificios altos de Asunción.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por el SENACSA (Servicio Nacional de Calidad y Salud Animal). Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites ante el SENACSA y evitar retenciones en el Aeropuerto Silvio Pettirossi o multas severas.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; no transfieras dinero ni giros sin videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (panleucopenia, leucemia). Tienen 'stock' infinito: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y alimentación premium que un precio bajo no cubre.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Paraguay es una responsabilidad legal y moral bajo la Ley de Bienestar Animal. Al elegir un criadero registrado en FELPAR, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas. Recuerda: Antes de comprar, considera también la adopción.",
+        }
+      ],
+    },
+  ],
+},
+
+{
+  slug: "adquisición brasil",
+  label: "🇧🇷  Brasil",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-brasil",
+      title: "Adquisición Responsable en Brasil: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Brasil, la tenencia de animales está protegida por la Lei Federal nº 14.064/2020 (Lei Sansão) y por la Lei Arouca (Lei nº 11.794/2008). Comprar un gato no es una transacción comercial cualquiera; es incorporar un miembro sensible a la familia.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en Brasil preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a GATOS do BRASIL (representante oficial de la WCF), o a clubes de TICA o FIFe. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana ('home raised') para prevenir problemas de conducta.",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para que la transacción sea legal en Brasil, el criadero debe cumplir con: Identificación (Microchip) exigido en ciudades como São Paulo, Río de Janeiro y Curitiba para el registro municipal (RAA). Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (abandono é crime) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario registrado en el CRMV, con las vacunas V3/V4/V5 al día según la edad.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en Brasil?",
+          body: "Antes de realizar cualquier transferencia (PIX), verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en parques o shoppings. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ¿Documentación completa? Debes recibir Certificado de Nacimiento / Pedigree de GATOS do BRASIL/WCF, carnet de vacunas y Nota Fiscal o recibo. ¿Entrevista al comprador? Un buen criador querrá saber sobre tus 'telas de proteção' (esenciales en edificios altos de Brasil).",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por el MAPA (Ministério da Agricultura, Pecuária e Abastecimento) a través del sistema Vigiagro. Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para evitar la retención del animal en aeropuertos como Guarulhos o Galeão.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden PIX por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene. Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y registros que un precio bajo no puede cubrir.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en Brasil es una responsabilidad legal y moral bajo la Lei Sansão y la Lei Arouca. Al elegir un criadero registrado en GATOS do BRASIL, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas. Recuerda: Antes de comprar, considera también la adopción.",
+        }
+      ],
+    },
+  ],
+},
+{
+  slug: "adquisición españa",
+  label: "🇪🇸 España",
+  topics: [
+    {
+      slug: "guia-adquisicion-responsable-espana",
+      title: "Adquisición Responsable en España: Guía Legal y Ética",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En España, la normativa ha cambiado drásticamente con la entrada en vigor de la nueva Ley de Bienestar Animal (Ley 7/2023). Esta ley prohíbe la venta de perros, gatos y hurones en establecimientos comerciales y exige que toda adquisición se realice a través de criadores registrados o entidades de protección animal.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criador Registrado (Aficionado)?",
+          body: "En España, los criadores éticos deben estar inscritos como 'Núcleo Zoológico' o 'Criador Aficionado' en su Comunidad Autónoma. La forma más segura de identificarlos es verificar que estén afiliados a la AFEC (Asociación Felina Española), representante de la WCF en el país, o a otras federaciones reconocidas como FIFe. Ventajas: Legalidad Garantizada (solo criadores registrados pueden vender bajo la nueva ley), Salud Genética (tests de PKD o HCM) y Socialización (garantiza un temperamento equilibrado).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes (Ley 7/2023)",
+          body: "Para que la transacción sea legal en España, el criador debe cumplir con: Microchip Obligatorio (registrado en el RIAC de su Comunidad Autónoma antes de la entrega). Documentación Sanitaria: Pasaporte europeo o cartilla con vacunas (Trivalente) y desparasitaciones al día. Contrato de Compraventa obligatorio con número de núcleo zoológico, garantías de salud y cláusula de devolución. Prohibición de Venta en Tiendas: La venta en tiendas de mascotas es ilegal; solo puede hacerse directamente por el criador o mediante adopción.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criador Ético en España?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas? Debes conocer su domicilio o cattery y ver a la madre; desconfía de entregas en parkings. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ¿Documentación completa? Pedigree oficial de AFEC/WCF o similar, microchip ya registrado y cartilla firmada por veterinario colegiado. ¿Transparencia? Un buen criador preguntará por tu vivienda (redes en ventanas en pisos altos) y no tendrá prisa por vender rápido.",
+        },
+        {
+          heading: "4. Importación Legal desde la UE y Terceros Países",
+          body: "Desde la UE: Pasaporte Europeo, microchip ISO y vacuna antirrábica (mínimo 21 días de antigüedad). Desde fuera de la UE (Reino Unido, EE.UU.): Certificado Zoosanitario oficial, titulación de anticuerpos (si aplica) y cumplimiento de requisitos del Ministerio de Agricultura, Pesca y Alimentación (MAPA). Se recomienda usar agencias de transporte especializadas para evitar cuarentenas o devoluciones al origen.",
+        },
+        {
+          heading: "¡Cuidado con las Estafas y el Tráfico Ilegal!",
+          body: "NO COMPRES SI: Te piden dinero por adelantado sin ver al gato (exige videollamada en tiempo real). No tienen número de Núcleo Zoológico visible: es obligatorio exhibirlo en todo anuncio. Entregan cachorros menores de 3 meses: es ilegal y cruel. Precios sospechosamente bajos: suelen indicar 'granjas de cachorros' importadas ilegalmente de Europa del Este sin garantías de salud ni ética.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en España es un acto regulado y protegido. Al elegir un criador afiliado a la AFEC y con Núcleo Zoológico, estás cumpliendo la Ley de Bienestar Animal, financiando la preservación de la raza y evitando el sufrimiento animal. Recuerda: Antes de comprar, considera la adopción en protectoras específicas como Rescate Persa o Maine Coon Rescue.",
+        }
+      ],
+    },
+  ],
+},
+{
+  slug: "adquisición mexico",
+  label: "🇲🇽 México",
+  topics: [
+    {
+      slug: "guia-tenencia-responsable-mexico",
+      title: "Tenencia Responsable en México: Guía Legal y Ética para Adquirir un Gato",
+      intro: "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En México, la protección animal se rige por la Ley Federal de Protección Animal y por leyes estatales y locales (como la de CDMX o Jalisco), que reconocen a los animales como seres sintientes, prohíben el maltrato y regulan la tenencia responsable.",
+      sections: [
+        {
+          heading: "1. ¿Por qué elegir un Criadero Registrado?",
+          body: "Los criaderos éticos en México preservan la raza, cuidan la salud genética y socializan a los gatitos en entorno familiar. La forma más segura de identificarlos es verificar su afiliación a la AMFE (Asociación Mexicana Felina), representante de la WCF y TICA. Ventajas: Certificación Genética (ancestros registrados), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de miedos y agresividad).",
+        },
+        {
+          heading: "2. Marco Legal: Tus Derechos y Deberes",
+          body: "Para que la transacción sea legal en México, el criadero debe cumplir con: Identificación (Microchip) obligatorio en entidades como CDMX (registro RECAN), Edomex, Jalisco y Nuevo León. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (el abandono es delito) y compromiso de esterilización. Cartilla de Vacunación: Firmada por un Médico Veterinario Zootecnista con cédula profesional vigente, con las triples felinas al día.",
+        },
+        {
+          heading: "3. Checklist: ¿Cómo detectar un Criadero Ético en México?",
+          body: "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en plazas comerciales o metros. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ¿Documentación completa? Certificado de Nacimiento / Pedigree (AMFE/WCF o TICA), cartilla de vacunas y factura o recibo. ✅ ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en departamentos de CDMX, Monterrey o Guadalajara.",
+        },
+        {
+          heading: "4. Importación Legal de Razas Exóticas",
+          body: "El proceso es regulado estrictamente por el SENASICA (Servicio Nacional de Sanidad, Inocuidad y Calidad Agroalimentaria) bajo la SADER. Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para evitar retenciones en aeropuertos como el de la CDMX o Cancún.",
+        },
+        {
+          heading: "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+          body: "NO COMPRES SI: Te piden depósitos por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en tianguis o calles: alta mortalidad por falta de higiene (moquillo/panleucopenia). Tienen 'stock' infinito: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y registros que un precio bajo no puede cubrir.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Adquirir un gato de raza en México es una responsabilidad legal y moral. Al elegir un criadero registrado en la AMFE, estás financiando la preservación de la raza y el bienestar animal, y diciendo 'no' al maltrato de las fábricas clandestinas.",
+        }
+      ],
+      
+    },
+  ],
+},
+
+  ]
+    },
+     {
+    slug: "historia",
+    label: "historia, Origen y expansión",
+    emoji: "",
+    color: "#9b6bb5",
+    bg: "#f3eef8",
+    description: "Estimulación, juguetes y enriquecimiento",
+    subcategories: [
+      {
+  slug: "historia-felina",
+  label: "El Corazón del Origen",
+  topics: [
+    {
+      slug: "origen-encuentro-nilo",
+      title: "Egipto, en el Nilo",
+      intro: "La historia del gato doméstico comenzó hace unos 9.000 años en el valle del Nilo, Egipto. Aunque existen muchas especies de felinos, todos nuestros gatos actuales (incluso los exóticos) provienen de una única subespecie: el gato silvestre norteafricano o Felis lybica. El 'flechazo' con los humanos no fue planeado, sino una asociación de conveniencia:",
+      sections: [
+        {
+          heading: "El problema, la solución y el pacto",
+          body: "El problema: Los egipcios dependían de la agricultura y guardaban el grano en grandes silos. Estos almacenes atraían plagas de ratas y ratones. La solución: Los gatos se acercaron a las aldeas atraídos por la abundancia de roedores. El pacto: Los humanos aceptaron encantados este servicio de 'control de plagas' y así comenzó una relación simbiótica de beneficio mutuo.",
+        },
+        {
+          heading: "De Cazadores a Dioses",
+          body: "Con el tiempo, el gato pasó de ser un simple guardián del granero a un miembro sagrado de la familia. Los egipcios llegaron a deificarlos, relacionándolos con la diosa Bastet (que representaba la dulzura y la protección) y con el dios sol, Ra. Era tal su importancia que se han hallado millones de momias de gatos y tumbas de lujo, como la de Osiris Tamat, el gato favorito de un príncipe egipcio.",
+        },
+        {
+          heading: "La Conquista del Mundo: Roma y los Vikingos",
+          body: "Aunque el documento se centra en el origen nilótico, la historia continuó cuando el gato salió de Egipto para conquistar nuevos continentes: El Gato en Roma: Los romanos, al ver la eficacia de los gatos egipcios, los adoptaron rápidamente. Para ellos, el gato era un símbolo de libertad e independencia. Lo llevaron consigo por todo el Imperio Romano (Europa, el norte de África y Gran Bretaña), utilizándolos principalmente para proteger sus campamentos militares y hogares de los roedores. Los Gatos Viajeros de los Vikingos: Durante la Edad Media, los vikingos jugaron un papel crucial en la expansión del gato hacia el norte. Eran excelentes navegantes y siempre llevaban gatos en sus barcos (especialmente el 'Gato del Bosque de Noruega') para proteger las provisiones de comida durante las largas travesías. Gracias a los vikingos, los gatos llegaron a lugares tan remotos como Escandinavia y, eventualmente, a las Américas.",
+        },
+        {
+          heading: "El Gato Moderno",
+          body: "Tras sobrevivir a épocas oscuras en el Medievo europeo —donde fueron injustamente perseguidos—, el gato recuperó su estatus gracias a su papel vital deteniendo plagas que transmitían enfermedades como la Peste Negra. Hoy en día, el gato moderno mantiene ese instinto de cazador independiente y autosuficiencia que lo hace único. Aunque ahora existen cientos de razas con diferentes colores y pelajes, en su ADN sigue latiendo el corazón de aquel pequeño felino del desierto que decidió, hace milenios, que vivir con nosotros era una buena idea.",
+        }
+      ],
+ 
+    
+
+    },
+
+
+    {
+      slug: "corazon-origen-egipto",
+      title: "Expansión por el Mundo",
+      intro: "el gato doméstico no apareció por casualidad en el Nilo. La clave fue la agricultura sedentaria. Egipto era el 'granero del mundo', y los silos de cereales eran imanes para los roedores.",
+      sections: [
+        {
+          heading: "La Transformación Religiosa",
+          body: "El gato pasó de ser un aliado útil a un ser divino. La diosa Bastet se representaba con cabeza de gata y simbolizaba el hogar, la fertilidad y la protección. Matar a un gato en el antiguo Egipto era un crimen castigado con la muerte.",
+        },
+        {
+          heading: "Lujo y Respeto",
+          body: "El documento destaca el caso del gato Osiris Tamat, mascota del príncipe Tutmosis. Fue enterrado con honores en un sarcófago de piedra caliza, envuelto en lino fino y con joyas, demostrando que para la realeza egipcia, los gatos eran verdaderos compañeros de vida y del 'más allá'.",
+        },
+        {
+          heading: "Prohibición de Exportación",
+          body: "Los egipcios valoraban tanto a sus gatos que prohibieron estrictamente sacarlos del país. Sin embargo, esto no impidió que el 'secreto' de estos felinos se extendiera.",
+        },
+        {
+          heading: "La Gran Expansión: ¿Cómo llegaron a otros continentes?",
+          body: "El camino del gato hacia el resto del mundo se dio principalmente a través de las rutas comerciales marítimas: 1. Los Fenicios: Los primeros 'contrabandistas'. Fueron los grandes navegantes del Mediterráneo. Se dice que sacaron gatos de Egipto de contrabando para venderlos en sus rutas comerciales. Gracias a ellos, el gato llegó a las islas griegas, a la península itálica y al sur de España mucho antes de lo previsto. 2. Roma: Los gatos en las legiones. Cuando los romanos conquistaron Egipto, quedaron fascinados por el gato (lo preferían al hurón, que era el animal que usaban antes para los ratones). Al expandir su Imperio, los legionarios llevaban gatos en sus caravanas y barcos para proteger los suministros. Así, el gato se introdujo en Europa Central y Gran Bretaña. 3. Asia y la Ruta de la Seda. A través de las rutas terrestres comerciales, los gatos llegaron a Asia Central. En países como China y Japón, fueron recibidos con honores similares a los de Egipto. En Japón, por ejemplo, los monjes budistas los usaban para proteger los valiosos manuscritos de papel de los ratones en los templos. 4. La Conquista de América. Los gatos no llegaron a América hasta la época de los exploradores europeos (siglos XV y XVI). En barcos como los de Cristóbal Colón o más tarde el Mayflower, los gatos eran tripulantes esenciales. Su misión era evitar que las ratas se comieran las raciones de comida de los marineros y que propagaran enfermedades en el espacio confinado del barco.",
+        },
+        {
+          heading: "Resumen de la Evolución",
+          body: "África: Origen biológico (Felis lybica). Europa: Introducidos por fenicios y romanos; luego expandidos por vikingos hacia el norte. Asia: Llegaron a través de la Ruta de la Seda y el comercio marítimo hacia India y Japón. América y Oceanía: Llegaron siglos después en los barcos de los colonizadores europeos.",
+        },
+        {
+          heading: "Conclusión",
+          body: "Hoy, ese pequeño gato que vigilaba el trigo en el Nilo está presente en todos los continentes (excepto la Antártida), demostrando ser uno de los viajeros más exitosos de la historia de la humanidad.",
+        }
+      ],
+    },
+
+    
+    
+  ],
+  
+},
+
+
+    ],
+  },
+
+       {
+    slug: "a",
+    label: "n",
+    emoji: "",
+    color: "#9b6bb5",
+    bg: "#f3eef8",
+    description: "Estimulación, juguetes y enriquecimiento",
+    subcategories: [
+      {
+        slug: "importancia",
+        label: "Por qué es vital",
+        topics: [
+          {
+            slug: "juego-cachorros",
+            title: "El juego en cachorros: la base de todo",
+            intro: "Los primeros seis meses de vida de un gato son un período crítico de desarrollo. Lo que aprenda durante el juego en esta etapa determinará en gran medida cómo se relacionará con humanos y otros animales el resto de su vida.",
+            sections: [
+              {
+                heading: "La ventana de socialización",
+                body: "Entre las 2 y 9 semanas de vida, el gato aprende qué es normal en su mundo. Un cachorro que interactúa con personas, otros gatos, ruidos domésticos y experiencias variadas durante este período será un adulto más seguro y adaptable.",
+              },
+              {
+                heading: "El error más común: las manos como juguete",
+                body: "Usar las manos o los pies para jugar con un cachorro parece inofensivo, pero enseña que la piel humana es una presa válida. Cuando ese gatito pese 5 kg, los mordiscos y arañazos serán dolorosos y el comportamiento difícil de corregir. Usa siempre juguetes con distancia.",
+              },
+              {
+                heading: "Juego como prevención de problemas",
+                body: "Un gato que no juega suficiente canaliza su energía de caza en conductas problemáticas: atacar tobillos, destruir objetos, agresión redirigida. 2 sesiones de juego de 15 minutos al día, especialmente antes de dormir, son el mejor antídoto.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+
+    
+  },
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
