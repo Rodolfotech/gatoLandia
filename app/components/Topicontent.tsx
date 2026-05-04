@@ -2,6 +2,17 @@
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 
+// Basic markdown: converts **text** to <strong>text</strong>
+function renderMarkdown(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 
 interface TopicContentProps {
   category: Category;
@@ -61,7 +72,7 @@ export default function TopicContent({
           letterSpacing: "-0.02em",
         }}
       >
-        {topic.title}
+        {renderMarkdown(topic.title)}
       </h1>
 
       {/* Intro */}
@@ -75,7 +86,7 @@ export default function TopicContent({
           borderBottom: `2px solid ${category.color}20`,
         }}
       >
-        {topic.intro}
+        {renderMarkdown(topic.intro)}
       </p>
 
       {/* Sections */}
@@ -119,7 +130,7 @@ export default function TopicContent({
                   lineHeight: 1.3,
                 }}
               >
-                {section.heading}
+                {renderMarkdown(section.heading)}
               </h2>
             </div>
             <p
@@ -131,7 +142,7 @@ export default function TopicContent({
                 margin: 0,
               }}
             >
-              {section.body}
+               {renderMarkdown(section.body)}
             </p>
           </section>
         ))}
