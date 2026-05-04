@@ -1,6 +1,7 @@
 "use client";
 
 import { Category } from "../data/cats";
+import { useI18n } from "../i18n/I18nContext";
 
 interface CategoryOverviewProps {
   category: Category;
@@ -11,6 +12,7 @@ export default function CategoryOverview({
   category,
   onTopicSelect,
 }: CategoryOverviewProps) {
+  const { t } = useI18n();
   return (
     <div
       style={{
@@ -147,7 +149,7 @@ export default function CategoryOverview({
                     gap: "0.25rem",
                   }}
                 >
-                  Leer tema →
+                  {t('read_topic')} →
                 </span>
               </button>
             ))}

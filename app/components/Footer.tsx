@@ -1,6 +1,9 @@
+"use client";
 import PawIcon from "./PawIcon";
+import { useI18n } from "../i18n/I18nContext";
  
 export default function Footer() {
+  const { t } = useI18n();
   return (
     <footer style={{ background: "#1e180e", padding: "2rem", textAlign: "center" }}>
       <div
@@ -21,13 +24,12 @@ export default function Footer() {
             fontWeight: 700,
           }}
         >
-          Gatitos
+          {t('nav_logo')}
         </span>
       </div>
       <p style={{ color: "#6b5c44", fontSize: "0.8rem", margin: 0 }}>
-        Enciclopedia Felina · Hecho con amor por los gatos 🐾
+        {t('footer_tagline')}
       </p>
     </footer>
   );
 }
- 

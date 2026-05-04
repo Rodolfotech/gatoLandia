@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import PawIcon from "./PawIcon";
 import { categories as defaultCategories, Category } from "../data/cats";
+import { useI18n } from "../i18n/I18nContext";
+import LanguageSelector from "./LanguageSelector";
 
 export type ContentType = "guias" | "preguntas" | "enciclopedia";
 
@@ -15,20 +17,25 @@ interface NavbarProps {
   onLogoClick?: () => void;
 }
 
-const CONTENT_TYPES: { id: ContentType; label: string; icon: string }[] = [
-  { id: "guias",       label: "Guías",       icon: "" },
-  { id: "preguntas",   label: "Preguntas",   icon: "" },
-  { id: "enciclopedia",label: "Enciclopedia",icon: "" },
-];
+function useContentTypes() {
+  const { t } = useI18n();
+  return [
+    { id: "guias" as ContentType,        label: t('content_guides'),       icon: "" },
+    { id: "preguntas" as ContentType,    label: t('content_questions'),   icon: "" },
+    { id: "enciclopedia" as ContentType, label: t('content_encyclopedia'), icon: "" },
+  ];
+}
 
 export default function Navbar({
-  categories = defaultCategories,
+  categories: propCategories,
   activeCategorySlug = null,
   activeContentType = "enciclopedia",
   onCategoryClick = () => {},
   onContentTypeChange = () => {},
   onLogoClick = () => {},
 }: NavbarProps) {
+  const { t, categories } = useI18n();
+  const cats = propCategories || categories;
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [hoveredSub, setHoveredSub] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
@@ -47,7 +54,7 @@ export default function Navbar({
 
   function openCat(id: string) {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    const cat = categories.find((c) => c.slug === id)!;
+    const cat = cats.find((c) => c.slug === id)!;
     setOpenMenu(id);
     setHoveredSub(cat.subcategories[0]?.slug ?? null);
   }
@@ -63,7 +70,7 @@ export default function Navbar({
     if (closeTimer.current) clearTimeout(closeTimer.current);
   }
 
-  const activeCat = categories.find((c) => c.slug === openMenu);
+  const activeCat = cats.find((c) => c.slug === openMenu);
   const activeSub = activeCat?.subcategories.find((s) => s.slug === hoveredSub);
 
   return (
@@ -98,13 +105,13 @@ export default function Navbar({
             fontFamily: "'Playfair Display', serif",
             fontSize: "1.15rem", fontWeight: 700, color: "#2c2416", letterSpacing: "-0.02em",
           }}>
-            Gatitos
+            {t('nav_logo')}
           </span>
         </button>
 
         {/* Category tabs */}
         <div style={{ display: "flex", alignItems: "stretch", flex: 1, overflow: "hidden" }}>
-          {categories.map((cat) => {
+          {cats.map((cat) => {
             const isOpen   = openMenu === cat.slug;
             const isActive = activeCategorySlug === cat.slug;
             return (
@@ -137,12 +144,19 @@ export default function Navbar({
           })}
         </div>
 
+        <div style={{
+          display: "flex", alignItems: "center", gap: "0.5rem",
+          paddingLeft: "1rem", borderLeft: "1px solid rgba(201,180,154,0.3)", flexShrink: 0,
+        }}>
+          <LanguageSelector />
+        </div>
+
         {/* Content type pills */}
         <div style={{
           display: "flex", alignItems: "center", gap: "0.25rem",
           paddingLeft: "1rem", borderLeft: "1px solid rgba(201,180,154,0.3)", flexShrink: 0,
         }}>
-          {CONTENT_TYPES.map((ct) => (
+          {useContentTypes().map((ct) => (
             <button
               key={ct.id}
               onClick={() => onContentTypeChange(ct.id)}

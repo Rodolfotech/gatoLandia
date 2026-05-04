@@ -1,4 +1,5 @@
 "use client";
+import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 
 
@@ -19,6 +20,7 @@ export default function TopicContent({
   prevTopic,
   onNavigate,
 }: TopicContentProps) {
+  const { t } = useI18n();
   return (
     <article
       style={{
@@ -169,7 +171,7 @@ export default function TopicContent({
             }}
           >
             <p style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#c9b49a", margin: "0 0 0.3rem" }}>
-              ← Anterior
+              {t('topic_prev')}
             </p>
             <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#2c2416", margin: 0 }}>
               {prevTopic.title}
@@ -200,7 +202,7 @@ export default function TopicContent({
             }}
           >
             <p style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#c9b49a", margin: "0 0 0.3rem" }}>
-              Siguiente →
+              {t('topic_next')}
             </p>
             <p style={{ fontSize: "0.85rem", fontWeight: 600, color: category.color, margin: 0 }}>
               {nextTopic.title}

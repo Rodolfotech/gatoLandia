@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Category } from "../data/cats";
+import { useI18n } from "../i18n/I18nContext";
 
 interface Selection {
   categorySlug: string;
@@ -20,6 +21,7 @@ export default function CategorySidebar({
   selection,
   onSelect,
 }: CategorySidebarProps) {
+  const { t } = useI18n();
   const [openCat, setOpenCat] = useState<string | null>(
     selection?.categorySlug ?? null
   );
@@ -65,7 +67,7 @@ export default function CategorySidebar({
             fontFamily: "'DM Sans', sans-serif",
           }}
         >
-          Explorar contenido
+          {t('sidebar_explore')}
         </p>
       </div>
 
