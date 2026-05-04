@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`,
-        'HTTP-Referer': 'http://localhost:3000',
+        'HTTP-Referer': process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
         'X-Title': 'GatoLandia',
       },
       body: JSON.stringify({
