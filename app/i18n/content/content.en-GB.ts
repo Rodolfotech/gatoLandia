@@ -19,7 +19,7 @@ export const categories: Category[] = [
             "intro": "Vaccination is the most effective tool to protect your cat from serious illnesses. Knowing the schedule and compulsory vaccinations makes all the difference between a long and complication-free life.",
             "sections": [
               {
-                "heading": "Compulsory vaccinations",
+                "heading": "**Compulsory vaccinations",
                 "body": "The triple feline vaccine (Rhinotracheitis, Calicivirus and Panleucopenia) is the base of any protocol. It is administered at 8, 12 and 16 weeks of age, with annual boosters or every three years depending on the product."
               },
               {
@@ -184,27 +184,27 @@ export const categories: Category[] = [
             "intro": "Diabetes in cats is a complex condition, but with the right management, your cat can lead a long and happy life. Unlike dogs, cats have unique characteristics that we must know to avoid common mistakes.",
             "sections": [
               {
-                "heading": "Step 1: Causes and Risk Factors",
+                "heading": "**Step 1: Causes and Risk Factors**",
                 "body": "Feline diabetes is usually a combination of factors: obesity and age (common in cats over 9 years old), sex and breed (more common in males 4:1 and in Siamese breed). Amyloid deposits that damage the pancreas and the use of drugs such as progestagens or corticosteroids also influence it. It is essential to highlight that pancreatitis is usually closely associated with this disease and, in many cases, can be the triggering cause of diabetes."
               },
               {
-                "heading": "Step 2: Identification of symptoms",
+                "heading": "**Step 2: Identification of symptoms**",
                 "body": "Pay attention to an increase in thirst and urination (drinking a lot of water or urinating outside the litter tray) and changes in appetite or weight. A distinctive sign is diabetic neuropathy: the cat walks with the whole heel on the floor. Also, observe neglected coat (dry or with dandruff). Unlike dogs, cataracts are very rare in cats."
               },
               {
-                "heading": "Step 3: The Correct Diagnosis",
+                "heading": "**Step 3: The Correct Diagnosis**",
                 "body": "Stress in the clinic generates the 'White Coat' effect, temporarily raising blood sugar. For a certain diagnosis, the veterinarian must confirm glucose in both blood and urine. Complete analyses are required to rule out other conditions such as urinary tract infections, liver problems or pancreatitis, which often accompany diabetes."
               },
               {
-                "heading": "Step 4: Treatment and Regulation",
+                "heading": "**Step 4: Treatment and Regulation**",
                 "body": "It is based on three pillars: 1. Insulin: Intermediate or long-acting (NPH or PZI) is used, usually twice a day with meals. 2. Diet: Strictly carnivorous, high in protein and low in carbohydrates with fixed hours. 3. Monitoring: It is ideal to measure blood glucose (pinpricks in the ear) at 'peak' moments to adjust the dose with precision."
               },
               {
-                "heading": "Step 5: Emergency of Ketoacidosis",
+                "heading": "**Step 5: Emergency of Ketoacidosis**",
                 "body": "If left untreated, it can lead to ketoacidosis, a life-threatening emergency with symptoms such as vomiting, extreme lethargy, dehydration and breath with a fruity or acetone smell. It requires immediate hospitalisation for intravenous fluids, rapid-acting insulin and correction of electrolytes (potassium, phosphate)."
               },
               {
-                "heading": "Step 6: Complications and Expectations",
+                "heading": "**Step 6: Complications and Expectations**",
                 "body": "Remission is possible (stopping the need for insulin) if weight is controlled and diagnosed early. The greatest risk is hypoglycaemia: if the cat trembles or convulses, apply honey or sugar to its gums and rush to the vet. Also, regularly check for urinary tract infections (blood or straining to urinate)."
               },
               {
@@ -225,27 +225,27 @@ export const categories: Category[] = [
             "intro": "Obesity is not just an aesthetic problem; it is a disease that reduces the life expectancy of your cat and increases the risk of suffering from diabetes, joint problems and surgical complications. With patience and strategy, you can help it regain its ideal weight.",
             "sections": [
               {
-                "heading": "Step 1: Identifying Overweight",
+                "heading": "**Step 1: Identifying Overweight**",
                 "body": "Don't just rely on the scales. In the 'Rib Test', you should be able to feel them easily without pressing hard; if not, there is excess fat. When looking at it from above, there should be a waistline behind the ribs; if it is rectangular or barrel-shaped, there is overweight. From the side, its abdomen should not sag or touch the floor. It is considered overweight if it is more than 10-19% over its ideal weight, and obese if it is more than 20%."
               },
               {
-                "heading": "Step 2: Causes and Factors",
+                "heading": "**Step 2: Causes and Factors**",
                 "body": "It is a combination of factors: after sterilisation the metabolism slows down and the appetite increases; from the age of 6-8 years cats burn fewer calories; sedentary cats indoors without stimulation; and inadequate diets (food always available, excessive rewards or many carbohydrates). Breeds such as the Siamese or Burmese may have a greater genetic predisposition."
               },
               {
-                "heading": "Paso 3: El Plan de Acción Seguro",
+                "heading": "**Paso 3: El Plan de Acción Seguro**",
                 "body": "La pérdida de peso debe ser lenta. Regla de oro: un gato no debe perder más del 1% o 2% de su peso por semana (ejemplo: un gato de 8 kg no debe bajar más de 160 gramos semanales). Bajar de peso muy rápido es peligroso ya que puede causar lipidosis hepática, una enfermedad del hígado potencialmente mortal."
               },
               {
-                "heading": "Paso 4: Manejo Dietético Estratégico",
+                "heading": "**Paso 4: Manejo Dietético Estratégico**",
                 "body": "Pide al veterinario calcular las calorías para el peso ideal, no el actual. Generalmente se ofrece entre el 60% y 75% de las calorías de mantenimiento actuales. Busca dietas altas en proteína (para mantener músculo y dar saciedad) y bajas en carbohidratos. Fracciona la ración en 3 o 4 tomas para mantener el metabolismo activo y usa parte de su ración como premio en lugar de snacks calóricos."
               },
               {
-                "heading": "Paso 5: Actividad Física y Enriquecimiento",
+                "heading": "**Paso 5: Actividad Física y Enriquecimiento**",
                 "body": "El ejercicio debe ser gradual. Dedica 10 minutos al día a juegos interactivos (cañas, láser, pelotas). Usa el enriquecimiento ambiental: esconde la comida en diferentes lugares, usa comederos interactivos o puzzles, e instala repisas o árboles para gatos que le obliguen a saltar y trepar para obtener su alimento."
               },
               {
-                "heading": "Paso 6: Compromiso y Monitoreo",
+                "heading": "**Paso 6: Compromiso y Monitoreo**",
                 "body": "El éxito depende de que toda la familia siga las reglas sin dar comida a escondidas. Pesa al gato cada 2 semanas: si no baja, ajusta la ración; si baja muy rápido, aumenta un poco. El factor humano es esencial; aceptar que el gato necesita adelgazar no es 'cruel', sino un acto de amor para cuidar su salud a largo plazo."
               },
               {
@@ -276,23 +276,23 @@ export const categories: Category[] = [
             "intro": "Cats are now one of the most popular pets in the world. Although historically they were not seen as companions of life as we know them now, the reality is that, like dogs, they need interaction, attention and affection. The difference lies in how they express those needs. To live in harmony with your feline, it is essential to understand its nature and adapt its environment to its instincts.",
             "sections": [
               {
-                "heading": "**1. **Interior or Exterior? Taking the Right Decision",
+                "heading": "**1. Interior or Exterior? Taking the Right Decision********",
                 "body": "2. The Instinct to Scratch: It's Not Vandalism, It's Communication"
               },
               {
-                "heading": "**3. **The Game: Physical and Mental Exercise",
+                "heading": "**3. The Game: Physical and Mental Exercise**",
                 "body": "Arañar es un comportamiento natural e imprescindible que comienza alrededor de las 5 semanas de vida. Para un gato, rascar no es solo afilar uñas; es una forma de comunicación visual y olfativa (marcan territorio con las glándulas de sus patas) y una manera de estirar su musculatura. El conflicto surge cuando eligen nuestros muebles. La solución no es castigar, sino ofrecer una alternativa mejor. ¿Cómo elegir el rascador perfecto? Estabilidad: Debe ser firme y no tambalearse. Si se mueve, el gato no lo usará por inseguridad. Altura: Debe ser lo suficientemente alto para que el gato pueda estirarse completamente de pie. Material: El sisal, la madera natural o la cuerda suelen ser los más atractivos. Ubicación: Colócalo en zonas visibles y de paso (no escondido en un sótano). A los gatos les gusta marcar donde ocurre la 'vida' de la casa. Paciencia: Una vez que elija un rascador, no lo cambies de sitio. Además, cuanto más usado esté, más le gustará, porque estará impregnado de su olor."
               },
               {
-                "heading": "**3. **El Juego: Ejercicio físico y mental",
+                "heading": "**3. El Juego: Ejercicio físico y mental**",
                 "body": "Jugar no es solo entretenimiento; es la forma en que el gato ejercita su instinto de caza. Un gato que no juega puede desarrollar problemas de comportamiento por acumulación de energía o estrés. Claves para un juego exitoso: Imita a una presa: Usa juguetes que se muevan, se escondan, salten o vibren. Las cañas con plumas o cuerdas son ideales porque te permiten interactuar a distancia. Seguridad ante todo: Evita hilos largos sin supervisión o piezas pequeñas que pueda tragar. Rutina diaria: Dedica al menos 15 minutos al día a jugar activamente con él. Esto fortalece vuestro vínculo y mantiene su mente ágil. Variedad: Rotar los juguetes evita que se aburra de los mismos objetos."
               },
               {
-                "heading": "Higiene y Areneros: La regla de oro",
+                "heading": "**Higiene y Areneros: La regla de oro",
                 "body": "Los gatos son extremadamente limpios y exigentes con su baño. Un arenero sucio o mal ubicado es la causa número uno de problemas de eliminación inadecuada. Recomendaciones básicas: La regla del 'N+1': Debes tener una caja de arena por cada gato, más una extra. (Ejemplo: 1 gato = 2 cajas; 2 gatos = 3 cajas). Algunos gatos prefieren incluso usar una caja solo para orinar y otra para defecar. Tipo de arena: La mayoría prefiere arenas sin perfume y de textura fina y suave. Ubicación: Lugares tranquilos, privados y lejos de ruidos fuertes (lavadoras, secadoras) o de su zona de comida. Limpieza: Retira los desechos a diario y lava las cajas regularmente con agua y jabón neutro (evita lejías o amoniaco, cuyos olores pueden atraerles a orinar fuera). Alerta: Si tu gato empieza a orinar o defecar fuera de la caja, acude al veterinario. A menudo es el primer síntoma de dolor o enfermedad urinaria, no un acto de venganza."
               },
               {
-                "heading": "El Marcaje con Orina: Entendiendo el mensaje",
+                "heading": "**El Marcaje con Orina: Entendiendo el mensaje**",
                 "body": "El marcaje vertical con orina (rociar paredes o muebles) es diferente a vaciar la vejiga en el suelo. Es un comportamiento comunicativo, no necesariamente higiénico. ¿Quiénes lo hacen? Puede ocurrir en gatos esterilizados, aunque es más común en no esterilizados (aprox. 10% de machos y 5% de hembras castradas pueden hacerlo ocasionalmente). ¿Por qué lo hacen? Generalmente responde a estrés o inseguridad: llegada de nuevas mascotas, cambios en la rutina, conflictos con otros gatos (incluso viendo gatos callejeros por la ventana) o cambios en el hogar. Solución: El castigo empeora el problema. Lo ideal es identificar la fuente de estrés, limpiar la zona con enzimas específicas (para eliminar el olor por completo) y consultar con un veterinario o etólogo para evaluar si necesita ayuda conductual o médica."
               },
               {
@@ -313,23 +313,23 @@ export const categories: Category[] = [
             "intro": "Introducir un nuevo gato en casa es emocionante, pero puede ser estresante para tu gato residente. Los gatos son territoriales por naturaleza, así que la clave del éxito no es la rapidez, sino la paciencia. Si lo haces bien desde el principio, evitarás conflictos futuros y fomentarás una amistad (o al menos, una tolerancia",
             "sections": [
               {
-                "heading": "Paso 1: The Initial Quarantine (Days 1-4)",
+                "heading": "**Paso 1: The Initial Quarantine (Days 1-4)**",
                 "body": "El nuevo gato necesita sentirse seguro antes de conocer a nadie. Habitación propia: Prepara una habitación tranquila (que no sea la zona principal de tu gato actual) con su cama, comida, agua, juguetes y arenero. Refugio seguro: Deja su transportín abierto con una manta dentro para que tenga un escondite donde sentirse protegido. Cero contacto visual: Durante estos primeros días, no deben verse. Sin embargo, está bien que se huelan bajo la puerta. Esto les permite investigarse sin la presión del cara a cara."
               },
               {
-                "heading": "Paso 2: The Scent Exchange (The 'Dating' Olfactory)",
+                "heading": "**Paso 2: The Scent Exchange (The 'Dating' Olfactory)**",
                 "body": "Los gatos se conocen por el olfato, no por la vista. Intercambia objetos: Frota suavemente una toalla o calcetín en las mejillas de un gato (donde tienen glándulas de olor) y dáselo al otro, y viceversa. También puedes intercambiar sus mantas. Asociación positiva: Mientras huelen el objeto del otro, dales premios ricos o juega con ellos. Queremos que asocien el olor del 'otro' con cosas buenas (comida/juego). Atención equilibrada: Pasa tiempo de calidad con cada gato por separado, acariciándolos y jugando cerca de la puerta que los separa. Esto reduce la ansiedad y los celos."
               },
               {
-                "heading": "Paso 3: Controlled Visual Contact",
+                "heading": "**Paso 3: Controlled Visual Contact**",
                 "body": "Cuando ambos gatos estén relajados oliéndose bajo la puerta y no haya silbidos graves ni gruñidos constantes: La rendija: Abre la puerta solo una pulgada (unos 2-3 cm) o usa una barrera de rejilla para bebés. Deben poder verse, pero no tocarse. Observa: Si hay silbidos leves, es normal. Si hay agresión intensa (silbidos fuertes, boca abierta, orejas muy bajas), cierra la puerta y vuelve al Paso 2 durante unos días más. Premia la calma: Si se miran sin atacarse, dales premios inmediatamente."
               },
               {
-                "heading": "Paso 4: The First Supervised Interactions",
+                "heading": "**Paso 4: The First Supervised Interactions**",
                 "body": "Si el contacto visual va bien, es hora de dejarles compartir espacio, pero con reglas estrictas. Salida voluntaria: Abre la puerta y deja que el nuevo gato salga si quiere. Nunca lo forces. Si se queda escondido, respétalo. Sesiones cortas: Permíteles estar juntos 15-30 minutos máximo. Luego, sepáralos de nuevo en sus habitaciones. Repite esto varias veces al día. Distracción positiva: Juega con ellos usando juguetes de caña o lanza premios, pero mantén una distancia segura (al menos 1 metro entre ellos) para evitar que compitan por el juguete. El objetivo: Que aprendan que la presencia del otro no es una amenaza, sino algo neutro o incluso divertido."
               },
               {
-                "heading": "Paso 5: Gradual Increase in Time",
+                "heading": "**Paso 5: Gradual Increase in Time**",
                 "body": "Poco a poco, ve aumentando el tiempo que pasan juntos si las interacciones son tranquilas. Separa siempre al final: Termina la sesión antes de que haya algún conflicto. Es mejor dejarlos con ganas de más que con una pelea. Tiempo a solas: Después de cada sesión, déjales tiempo a solas en sus respectivas zonas para procesar la experiencia y recuperar su confianza territorial."
               },
               {
@@ -477,31 +477,31 @@ export const categories: Category[] = [
             "intro": "Algunos gatos amasan mantas, peluches o incluso el aire. Otros solo amasan sobre personas específicas. Hay gatos que amasan con las cuatro patas, otros solo con las delanteras. Todas las variantes son completamente normales.",
             "sections": [
               {
-                "heading": "Some cats knead blankets, toys or even the air. Others only knead on specific people. There are cats that knead with all four paws, others only with their front paws. All the variations are completely normal.",
+                "heading": "**Some cats knead blankets, toys or even the air. Others only knead on specific people. There are cats that knead with all four paws, others only with their front paws. All the variations are completely normal.**",
                 "body": "Tu gato también quiere aprender: Guía divertida para entrenar en casa"
               },
               {
-                "heading": "Your cat also wants to learn: Fun guide to training at home.",
+                "heading": "**Your cat also wants to learn: Fun guide to training at home.**",
                 "body": "Antes de enseñarle trucos complicados, enséñale a seguir tu dedo o un objeto. Esto se llama targeting y es la base de todo. Acerca tu dedo (o un palito con una punta brillante) a la nariz del gato. Por curiosidad, lo olerá o lo tocará. En cuanto lo toque, di '¡Bien!' (con voz alegre) y dale un premio inmediatamente. Repite esto varias veces. Pronto, seguirá tu dedo allá donde lo muevas porque sabe que tocarlo le trae cosas buenas. ¡Ya tienes el control suave de su movimiento!"
               },
               {
-                "heading": "**3. **Trucos fáciles para empezar",
+                "heading": "**3. Trucos fáciles para empezar********",
                 "body": "'Ven aquí' (La orden más importante): Es vital por seguridad. Llámalo por su nombre o chasquea la lengua. Cuando venga hacia ti, celebra mucho y dale un premio espectacular. Importante: Nunca le riñas cuando venga, aunque haya tardado mucho. Tiene que asociar 'venir' con 'fiesta'. 'Sentado': Los gatos se sientan naturalmente cuando miran hacia arriba. Con el gato de pie, pon una chuchería justo encima de su cabeza. Mueve la mano lentamente hacia atrás (hacia su cola). Para seguir la comida con la mirada, bajará el trasero automáticamente. En cuanto el culo toque el suelo, di 'Sentado' y dale el premio. 'Al regazo' o 'Sube': Ideal para que venga a dormir contigo o suba a sitios permitidos. Siéntate en una silla o sofá. Golpea suavemente tu pierna o el asiento y di 'Sube'. Guíalo con la chuchería si hace falta. Cuando suba, ¡premio inmediato! Pronto saltará solo para estar contigo."
               },
               {
-                "heading": "**4. **Retos un poco más avanzados",
+                "heading": "**4. Retos un poco más avanzados**",
                 "body": "'Quieto': Pídele que se siente. Pon la palma de tu mano frente a su cara (como un semáforo en rojo) y di 'Quieto'. Espera solo 1 segundo al principio. Si no se mueve, premio. Ve aumentando el tiempo poco a poco (2 segundos, 5 segundos...). Paciencia, esto cuesta más. 'Échate' (Tumbado): Es difícil porque es una posición vulnerable para ellos. Desde la posición de sentado, baja la chuchería al suelo, entre sus patas delanteras. Aléjala despacio hacia adelante. Si baja el pecho y se estira, ¡premio gordo! No esperes que se quede así mucho tiempo al principio."
               },
               {
-                "heading": "**5. **¿Pasear con correa? Sí, es posible",
+                "heading": "**5. ¿Pasear con correa? Sí, es posible**",
                 "body": "A muchos gatos les encanta explorar el exterior, pero debe ser seguro. El Arnés: Compra uno tipo chaleco (más cómodo y seguro que los de cuerda fina). Déjaselo puesto en casa unos minutos al día mientras juega, para que se acostumbre. La Correa: Añádela cuando ya ignore el arnés. Deja que la arrastre bajo tu supervisión. La Salida: Sal al pasillo o jardín. No tires de la correa. Deja que él explore y tú le sigues. Si se asusta, vuelve dentro. Sin prisas."
               },
               {
-                "heading": "**6. **Solucionando problemas con juego",
+                "heading": "**6. Solucionando problemas con juego**",
                 "body": "¿Araña el sofá? No le grites. Pon un rascador justo al lado del sofá. Usa el truco de 'la diana' para guiar sus patas al rascador y prémiale mucho cuando lo use. Haz que el rascador sea más interesante que el sofá (ponle catnip, por ejemplo). ¿Se aburre? El entrenamiento ES el juego. Dedica esos 10 minutos diarios a repasar trucos. Verás cómo deja de buscar atención negativa (maullidos, destrozos) porque ya tiene tu atención positiva."
               },
               {
-                "heading": "Consejo final: Disfruta del proceso",
+                "heading": "**Consejo final: Disfruta del proceso",
                 "body": "Don't seek perfection. Seek connection. You'll see how your cat starts to look for you to 'work' (play), how they look at you with their eyes waiting for instructions and how their personality shines. A trained cat is a confident, happy and much more affectionate cat. Cheer up! Your 'sofa tiger' has a lot of hidden potential."
               }
             ]
@@ -516,15 +516,15 @@ export const categories: Category[] = [
                 "body": "Make sure your cat is up to date with all their vaccinations and has a microchip. Safety comes first."
               },
               {
-                "heading": "Step 1: Positive Introduction (The Harness is a Friend)",
+                "heading": "**Step 1: Positive Introduction (The Harness is a Friend)**",
                 "body": "Don't just slap the harness on. We want them to associate it with good things. Scent phase: Leave the harness and lead near their bed or food bowl for a few days. Get them used to seeing and smelling them while they eat or sleep. Positive association: Hold the harness in your hand, let them sniff it and give them a tasty treat. Gently bring it close to their body without putting it on, keep giving rewards."
               },
               {
-                "heading": "Step 2: The First Fitting (Inside the House)",
+                "heading": "**Step 2: The First Fitting (Inside the House)**",
                 "body": "Now let's see how it fits. Place the harness gently over their shoulders and chest. Give them constant rewards while they sniff and touch it. Quickly fasten the harness. Golden rule: There should be two fingers' width between the harness and the cat's body (not too tight, not too loose). Leave it on for just 1 or 2 minutes at first. Play with them or give them wet food to distract them. Take it off before they get annoyed or try to remove it. Repeat this daily, gradually increasing the time if they seem relaxed."
               },
               {
-                "heading": "Step 3: The Ghost Lead",
+                "heading": "**Step 3: The Ghost Lead**",
                 "body": "Once the cat tolerates the harness, we add the lead. Connect the lead to the harness indoors. Allow the lead to drag on the floor while your cat plays or explores. Watch out for it getting caught on furniture or chair legs. Do this for several days until it completely ignores the weight of the lead dragging."
               },
               {
@@ -576,23 +576,23 @@ export const categories: Category[] = [
             "intro": "Cats are masters of disguise and hide their pain by instinct to appear vulnerable. Learning to read their subtle signals is essential to be their best ally and avoid their health deteriorating without realising it.",
             "sections": [
               {
-                "heading": "Painful little habits",
+                "heading": "**Painful little habits**",
                 "body": "Forget the whining or whimpering; the feline pain hides in changes of behaviour: it hides more (under the bed or wardrobes), changes its mood becoming irritable or unusually 'sticky', and stops grooming (dull or matted fur). It may also lick an area excessively, adopt a tense posture of 'bread loaf' with its head low, or stop jumping to places it used to frequent due to joint pain."
               },
               {
-                "heading": "Common pains",
+                "heading": "**Common pains**",
                 "body": "Identifying the type helps with the diagnosis: arthritis is common in cats over 7 years old (they stop playing or climbing high places); mouth pain (gingivoestomatitis or broken teeth) causes drooling, bad smell or refusing to eat; internal pain (cystitis, kidney or pancreatitis) generates a deep sense of unease and depression; and nerve pain (like in diabetes) can cause pain from the slightest touch of the skin."
               },
               {
-                "heading": "Veterinary Multimodal Treatment",
+                "heading": "**Veterinary Multimodal Treatment**",
                 "body": "Modern treatment uses various tools: safe medicines such as specific anti-inflammatories, analgesics (buprenorphine) or nerve modulators (gabapentin). It is complemented with therapies such as acupuncture, therapeutic laser or physical rehabilitation. In surgeries, local blocks are used. WARNING: Never use human ibuprofen or paracetamol, they are fatal to cats!"
               },
               {
-                "heading": "Your role at home: Environmental Management",
+                "heading": "**Your role at home: Environmental Management**",
                 "body": "Adapt the environment: install ramps or steps to get on sofas, use litter trays with low sides and orthopaedic beds. Weight control is crucial to not overloading joints. Also, reduce stress by maintaining calm routines and using pheromones if necessary, as stress worsens the perception of pain."
               },
               {
-                "heading": "Special Cases: Age and Condition",
+                "heading": "**Special Cases: Age and Condition**",
                 "body": "In kitten puppies, be very careful with dosages due to their maturing organs. In older cats with kidney or liver problems, dosages must be adjusted meticulously. In pregnant or lactating cats, only the vet should decide on treatment, as many analgesics pass to the foetus or milk."
               },
               {
@@ -613,27 +613,27 @@ export const categories: Category[] = [
             "intro": "We now know more about feline behaviour, and one of the main keys is stress. Many health and behaviour problems we see at home have their roots here. Understanding what is happening to your cat is the first step to improving their quality of life.",
             "sections": [
               {
-                "heading": "**1. **What is stress really?",
+                "heading": "**1. What is stress really?********",
                 "body": "Stress is not always 'bad'. It is a natural bodily reaction that prepares the cat to adapt to changes (a move, a journey, the arrival of a baby). Positive stress: It helps them react and adapt. Negative stress: It occurs when the situation is too intense or lasts too long. If the cat cannot adapt, the stress becomes chronic and can lead to anxiety. Key difference: Fear vs. Anxiety. Fear: An immediate reaction to a real danger. The heart beats faster and the cat is ready to flee or defend itself. It is useful for survival. Anxiety: The cat feels fear about something that is not dangerous or that they cannot control. They do not know how to resolve the situation, so they live in constant tension."
               },
               {
-                "heading": "**2. **Why are some cats more sensitive?",
+                "heading": "**2. Why are some cats more sensitive?**",
                 "body": "Not all cats react the same way. Their level of tolerance to stress depends on two main factors: A. Genetics and Character: Some cats are naturally more secure; others, more timid. Factors such as breed, sex and genetic heritage influence. An insecure cat will always need a more tranquil and predictable environment. B. Early Socialisation (The Critical Window): The first two to seven weeks of life are decisive. If there was loving human contact: The kitten will learn that people are safe. They will be more sociable and resistant to stress. If there was no contact or negative experiences: It is very likely that they will develop distrust and fear towards humans or new stimuli when they are an adult. The environment matters: Kittens raised in environments rich in stimuli (sounds, textures, games) tend to be more adaptable adults."
               },
               {
-                "heading": "**3. **What causes stress in my cat?",
+                "heading": "**3. What causes stress in my cat?**",
                 "body": "Los gatos necesitan sentir que tienen el control de su entorno. Cuando pierden ese control, aparece el estrés. Factores Sociales: Cambios en la rutina diaria. Llegada de nuevas personas, bebés u otras mascotas. Discusiones o gritos en casa. Castigos o atención irregular (a veces mucha, a veces nada). Factores Físicos: Mudanzas o reformas. Espacio insuficiente o mala organización (ej. arenero cerca de la comida). Competencia por recursos (si hay varios gatos y pocos platos o areneros)."
               },
               {
-                "heading": "¿Cómo sé si mi gato está estresado?",
+                "heading": "**¿Cómo sé si mi gato está estresado?",
                 "body": "Los gatos son expertos en ocultar el dolor y el malestar. Debes ser un detective. Síntomas Físicos Inmediatos: Respiración acelerada o jadeo. Pupilas muy dilatadas. Temblores o salivación excesiva. Vómitos o diarrea puntual (ej. antes de viajar). Cambios de Comportamiento: Postura: Orejas hacia atrás, cola baja, cuerpo tenso. Escondite: Pasa mucho tiempo oculto o bajo los muebles. Agresividad: Gruñe, bufa o ataca sin motivo aparente. Vigilancia extrema: No se relaja, está siempre 'en guardia'. Signos de Estrés Crónico (A largo plazo): Si el estrés no se trata, aparecen problemas más graves: Aseo compulsivo: Se lame tanto que se queda sin pelo (alopecia psicógena). Problemas de eliminación: Ora o defeca fuera del arenero (marcado territorial o ansiedad). Cambios en el sueño: Duerme poco, mal, o siempre en posiciones tensas (no boca arriba ni de lado relajado). Cambios alimenticios: Come en exceso (ansiedad) o deja de comer. Conductas repetitivas: Persigue su cola, maúlla constantemente o camina sin rumbo."
               },
               {
-                "heading": "El impacto en la Salud Física",
+                "heading": "**El impacto en la Salud Física**",
                 "body": "El estrés no es solo 'cosa de la mente'; enferma el cuerpo. Cistitis Idiopática Felina: Inflamación de la vejiga sin infección bacteriana, directamente ligada al estrés. Problemas digestivos: Gastritis, vómitos crónicos o diarreas. Problemas de piel: Heridas por lamido excesivo. Obesidad y Diabetes: A veces, los dueños dan comida para 'consolar' al gato, lo que lleva al sobrepeso. Bajada de defensas: Los gatitos o gatos mayores estresados se enferman más fácilmente (gripes, infecciones). Importante: Antes de asumir que es estrés, acude al veterinario. Problemas como hipertiroidismo, dolor articular o tumores pueden imitar síntomas de estrés o ansiedad."
               },
               {
-                "heading": "¿Cómo ayudar a tu gato? (Tratamiento y Manejo)",
+                "heading": "**¿Cómo ayudar a tu gato? (Tratamiento y Manejo)**",
                 "body": "El objetivo es devolverle la sensación de seguridad y control. A. Terapia de Conducta (Lo más importante): Identifica la causa del estrés y modifica el entorno. Respeta sus rutinas. Proporciona lugares altos y escondites seguros. Juega con él diariamente para liberar tensión. B. Ayudas Ambientales: Feromonas: Son sustancias químicas (como Feliway) que imitan las feromonas faciales de los gatos, transmitiendo mensaje de 'calma' y 'familiaridad'. Ayudan a reducir el marcado y la ansiedad. Enriquecimiento ambiental: Rascadores, juguetes interactivos y acceso a ventanas seguras. C. Alimentación Anti-Estrés: Existen dietas específicas o suplementos que ayudan: Triptófano: Un aminoácido precursor de la serotonina (la hormona de la felicidad). Derivados de la leche: Proteínas hidrolizadas con efecto calmante natural. Estos nutrientes ayudan a regular el estado de ánimo, mejorar la digestión y cuidar la piel. D. Medicación: En casos severos de ansiedad, el veterinario conductista puede recetar fármacos. Nunca mediques a tu gato por tu cuenta. Los medicamentos deben ser siempre el complemento de una terapia de conducta, no la única solución."
               },
               {
@@ -822,27 +822,27 @@ export const categories: Category[] = [
             "intro": "The genetics of cats is not magic, it's science. Understanding the basics will help you comprehend why your cat has that specific colour and how inheritance works on their coat, leaving aside old myths to focus on current science.",
             "sections": [
               {
-                "heading": "**1. **Debunking the Darwin myth",
+                "heading": "**1. Debunking the Darwin myth********",
                 "body": "For a long time, it was believed that domestication 'created' new varieties by itself, but this is false. Humans do not create genes, but rather select them. In nature, unusual mutations are usually eliminated if they do not help to survive, but at home we protect variations like long hair or certain colours for aesthetic reasons. All the current variety already existed potentially in the wild ancestors; we have only accelerated their appearance through selective breeding."
               },
               {
-                "heading": "**2. **How do colours work? (The basics)",
+                "heading": "**2. How do colours work? (The basics)**",
                 "body": "Characters depend on genes and their versions called 'alleles'. Using the example of Black (D) and Blue/Gray (d): DD (Homozygous Dominant) results in a black cat; Dd (Heterozygous) results in a black cat visually but 'carrier' of the blue gene; dd (Homozygous Recessive) results in a blue cat. The golden rule is that black dominates over blue: if there is at least one 'D', the cat will be black. To be blue, it must receive the 'd' gene from both parents."
               },
               {
-                "heading": "**3. **Importance of responsible selection",
+                "heading": "**3. Importance of responsible selection**",
                 "body": "A difference between dogs and cats is that the genetics of colour in cats is extremely specialised and distinctive between breeds. International judges and geneticists recommend following strict breeding guidelines to avoid unexpected results or health problems. Not all colour crosses are recommended, as some can lead to unwanted patterns by the breed standard."
               },
               {
-                "heading": "**4. **Quick Guide to Recommended Crosses (FIFE)",
+                "heading": "**4. Quick Guide to Recommended Crosses (FIFE)**",
                 "body": "The International Cat Federation (FIFE) suggests avoiding random crosses between very distinct colour varieties. The basic principles are: 1. Breeding within the same breed (e.g. Persians with Persians). 2. Respecting coat length (e.g. for short-haired, l for long-haired). 3. Avoiding 'prohibited' crosses: if there is no letter in the official tables for a specific combination, it is best to avoid it for unpredictable or unsatisfactory results."
               },
               {
-                "heading": "**5. **Curiosity: Do Cats See Colours?",
+                "heading": "**5. Curiosity: Do Cats See Colours?**",
                 "body": "Yes, but not like us. They have better colour vision than was thought, but distinguish fewer nuances than humans. It is ironic that, although they see fewer colours, humans have created a much richer and more complex variety of pigments and distributions in their coat than they themselves can appreciate."
               },
               {
-                "heading": "Conclusion for the Breeder or Owner",
+                "heading": "**Conclusion for the Breeder or Owner",
                 "body": "Genetics is probability: if you cross two black carriers of blue (Dd x Dd), you will have black offspring and some blues. If you cross two blues (dd x dd), they will all be blue. If you cross a pure black (DD) with a blue (dd), they will all be black but carriers. Knowing these basics allows you to predict litters and breed in an ethical, responsible and health-conscious way, respecting breed standards."
               }
             ]
@@ -956,23 +956,23 @@ export const categories: Category[] = [
             "intro": "First aid does not replace the vet, but it can save your kitten's life while you get to the clinic. The aim is to prevent it getting worse, stabilise it and transport it safely.",
             "sections": [
               {
-                "heading": "**1. **Calm and Safety",
+                "heading": "**1. Calm and Safety********",
                 "body": "Your safety is paramount; a kitten in pain may bite or scratch. Keep your face away from its claws and mouth. Do not use a muzzle, as it is contraindicated in cats with respiratory problems or vomiting. The 'blanket' technique is ideal: wrap it gently in a towel, leaving only its head exposed to calm it and handle it safely."
               },
               {
-                "heading": "**2. **Rapid Assessment (ABCDE Rule)",
+                "heading": "**2. Rapid Assessment (ABCDE Rule)**",
                 "body": "Before moving it, check: A (Airways): Ensure there are no obstructions in the nose or mouth. B (Breathing): Observe if the chest is moving. C (Circulation): Press bleeding wounds with clean gauze. D (Pain/Immobilisation): Do not move it suddenly if you suspect fractures. E (Exposure): Protect open wounds with clean cloths."
               },
               {
-                "heading": "**3. **Emergencies in Puppies",
+                "heading": "**3. Emergencies in Puppies**",
                 "body": "Babies are very fragile in the face of two dangers: 1. Hypoglycaemia (Low blood sugar): If they present extreme weakness or pale gums, apply honey or sugar under their tongue or on their gums. 2. Hypothermia: If the kitten is cold to the touch, warm it up with your body heat (under your clothing) or a warm water bottle wrapped in a towel (never directly)."
               },
               {
-                "heading": "Safe Transfer",
+                "heading": "**Safe Transfer",
                 "body": "Always use a sturdy carrier or box with ventilation. If you suspect broken bones, minimise movement using a board or rigid towel as an improvised stretcher. During the journey, speak softly and keep the vehicle stable to reduce their stress."
               },
               {
-                "heading": "Kitten Emergency Kit",
+                "heading": "**Kitten Emergency Kit**",
                 "body": "Have to hand: veterinary emergency phones, clean towels or blankets, sterile gauze, cane sugar or glucose, medical adhesive tape and a ready carrier. Being prepared makes all the difference in a critical situation."
               },
               {
@@ -1003,35 +1003,35 @@ export const categories: Category[] = [
             "intro": "Congratulations on the Adoption! Adopting a cat is a wonderful experience, but it also involves responsibility. The first few days are crucial for its adaptation. Here's everything you need to know to ensure its health, wellbeing and a happy coexistence.",
             "sections": [
               {
-                "heading": "**1. **The First Few Days: Vigilance and Adaptation",
+                "heading": "**1. The First Few Days: Vigilance and Adaptation********",
                 "body": "A change of environment generates stress, which can lower the cat's defences. Visit the vet: Take your cat to its new trusted clinic as soon as possible. Hand over all previous medical documentation (vaccinations, de-worming) and follow their instructions. What to look out for: Whether it eats and drinks normally, has energy in line with its age, has consistent stools (some initial softness due to diet change is normal, but persistent diarrhoea is not) and absence of symptoms like coughing, vomiting, sneezing or discharge. If in doubt, consult your vet."
               },
               {
-                "heading": "**2. **Preventative Health: Vaccinations, Parasites and Sterilisation",
+                "heading": "**2. Preventative Health: Vaccinations, Parasites and Sterilisation**",
                 "body": "Vaccination: Vaccines protect against serious diseases (such as panleucopenia, feline respiratory complex or leukaemia). Follow the schedule recommended by your vet. The rabies vaccine, although not always legally compulsory for cats (depending on the region), is highly recommended. De-worming: Essential for the cat's health and your family's (zoonosis). Internal: Recommended every 3 months. External: Vital if the cat goes out or has access to balconies/terraces. Sterilisation: The most responsible and healthy decision. Benefits: Prevents unwanted litters, reduces marking, decreases fights and prevents serious diseases (breast tumours, pyometras). Myths: Does not change its personality or make it 'lazy'. Sterilise your cat, whether male or female, indoor or outdoor."
               },
               {
-                "heading": "**3. **Nutrition and Hydration",
+                "heading": "**3. Nutrition and Hydration**",
                 "body": "Alimento adecuado: Usa pienso seco de calidad adaptado a su edad y condición física. Evita darle comida casera o sobras humanas. Premios: Úsalos con moderación para no causar obesidad. Agua fresca: Fundamental, coloca varios bebederos por casa, lejos de la comida y del arenero. Algunos gatos prefieren fuentes en movimiento. Incorporar comida húmeda ayuda a la hidratación. Prohibido: La leche de vaca (la mayoría de los gatos adultos son intolerantes a la lactosa). El yogur natural o queso sin sal pueden darse como premio puntual, pero no son necesarios."
               },
               {
-                "heading": "Higiene y Cuidado Físico",
+                "heading": "**Higiene y Cuidado Físico",
                 "body": "Los gatos necesitan tu ayuda en ciertos aspectos. Cepillado: Pelo corto una vez por semana (diario en muda); pelo largo diario para evitar nudos y bolas de pelo. Si expulsa bolas de pelo con dificultad, consulta sobre pastas de malta. Uñas: Corta solo la punta transparente, evitando la parte rosada (vascularizada). Baños: Generalmente no son necesarios, solo si está muy sucio o por indicación médica."
               },
               {
-                "heading": "El Arenero: Reglas de Oro",
+                "heading": "**El Arenero: Reglas de Oro**",
                 "body": "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina."
               },
               {
-                "heading": "Comportamiento y Enriquecimiento Ambiental",
+                "heading": "**Comportamiento y Enriquecimiento Ambiental**",
                 "body": "Lenguaje: Cola erguida es saludo amistoso; cola moviéndose rápido es irritación; orejas hacia atrás indican miedo. Ronroneo puede ser bienestar, dolor o estrés. Juego: Dedica 15-20 minutos diarios a caza simulada (cañas, pelotas). Evita usar tus manos o pies. Rascadores: Proporciona rascadores estables, altos y de materiales atractivos (sisal, madera). Nunca castigues por rascar muebles; redirige y premia. Verticalidad: Necesitan lugares altos para observar y refugios seguros para esconderse. Respeta su soledad."
               },
               {
-                "heading": "Consejos Específicos según la Edad",
+                "heading": "**Consejos Específicos según la Edad**",
                 "body": "CACHORRO: Socialización (2-8 semanas) es la etapa clave para aceptar el contacto humano y visitas al veterinario. Enséñale qué se puede morder. Acostúmbralo al transportín dejándolo abierto en casa. Protege cables y ventanas. ADULTO: Paciencia, la adaptación puede tardar semanas. Usa una habitación de aclimatación al llegar con todos sus recursos. Haz presentaciones con otros animales muy gradualmente. Mantén horarios fijos de comida y juego."
               },
               {
-                "heading": "Aspectos Legales y Seguridad",
+                "heading": "**Aspectos Legales y Seguridad**",
                 "body": "Microchip: It is compulsory and must be kept up to date (RIAC in Madrid). Accident Prevention: Cat Parachute Syndrome. Install mosquito nets resistant to windows and balconies. A fall from height can be fatal; do not rely on their 'ability' to land on their feet. Every cat is a world. Observe, respect their times and consult your vet at all times in the event of sudden changes."
               }
             ]
@@ -1058,23 +1058,23 @@ export const categories: Category[] = [
             "intro": "1. The Classic Historical Breeds",
             "sections": [
               {
-                "heading": "Ancient breeds with defined personalities: Abyssinian (Ethiopia/Egypt): Active, curious, 'dog-cat', needs a lot of mental stimulation. Siamese (Thailand): Extremely vocal, intelligent, demands constant attention. Persian (Iran): Calm, sweet, silent; requires daily brushing and facial cleaning. Maine Coon (USA): The 'gentle giant', sociable, ideal for families with children; requires space. Bengal (USA): High energy, athletic, appears like a miniature leopard; needs intense daily stimulation.",
+                "heading": "**Ancient breeds with defined personalities: Abyssinian (Ethiopia/Egypt): Active, curious, 'dog-cat', needs a lot of mental stimulation. Siamese (Thailand): Extremely vocal, intelligent, demands constant attention. Persian (Iran): Calm, sweet, silent; requires daily brushing and facial cleaning. Maine Coon (USA): The 'gentle giant', sociable, ideal for families with children; requires space. Bengal (USA): High energy, athletic, appears like a miniature leopard; needs intense daily stimulation.**",
                 "body": "2. Gentle Giants and Cold-Adaptable Breeds"
               },
               {
-                "heading": "Robust cats with dense coats. Maine Coon: One of the largest, stands out for its 'lynx tips' and soft meows. Norwegian Forest Cat (Skogkatt): Natural climber with waterproof coat, independent but affectionate. Siberian: Famous for being hypoallergenic (produces less Fel d 1), agile and affectionate. Ragdoll: Large and muscular, with a docile temperament; 'collapses' like a rag doll when picked up.",
+                "heading": "**Robust cats with dense coats. Maine Coon: One of the largest, stands out for its 'lynx tips' and soft meows. Norwegian Forest Cat (Skogkatt): Natural climber with waterproof coat, independent but affectionate. Siberian: Famous for being hypoallergenic (produces less Fel d 1), agile and affectionate. Ragdoll: Large and muscular, with a docile temperament; 'collapses' like a rag doll when picked up.**",
                 "body": "3. Elegance of Short Coat and Athletic Body"
               },
               {
-                "heading": "**3. **Elegancia de Pelo Corto y Cuerpo Atlético",
+                "heading": "**3. Elegancia de Pelo Corto y Cuerpo Atlético********",
                 "body": "Poco mantenimiento de pelo con mucha interacción."
               },
               {
-                "heading": "British Shorthair: Cara redonda, compacto y tranquilo; no le gusta que lo carguen mucho. Ruso Azul: Pelo plateado y ojos verdes, tímido con extraños pero leal. Burmés: Musculoso y pesado, muy orientado a las personas. Bombay: Parece una pantera negra en miniatura, le encanta el calor y los regazos. Chartreux: Raza francesa antigua, silencioso y cazador experto con pelo repelente al agua.",
+                "heading": "**British Shorthair: Cara redonda, compacto y tranquilo; no le gusta que lo carguen mucho. Ruso Azul: Pelo plateado y ojos verdes, tímido con extraños pero leal. Burmés: Musculoso y pesado, muy orientado a las personas. Bombay: Parece una pantera negra en miniatura, le encanta el calor y los regazos. Chartreux: Raza francesa antigua, silencioso y cazador experto con pelo repelente al agua.",
                 "body": "4. Mutaciones Únicas: Orejas, Colas y Texturas"
               },
               {
-                "heading": "Características genéticas exóticas. Scottish Fold: Orejas dobladas hacia adelante, posición de 'Buda'; requiere revisión articular. Munchkin: Patas cortas, extrovertido y curioso. Sphynx: Sin pelo, sociable y busca calor; requiere baños semanales. Devon Rex & Cornish Rex: Pelo rizado u ondulado, traviesos y apegados. American Curl: Orejas hacia atrás. Manx & Japanese Bobtail: El primero sin cola y robusto; el segundo con cola de pompón, símbolo de buena suerte.",
+                "heading": "**Características genéticas exóticas. Scottish Fold: Orejas dobladas hacia adelante, posición de 'Buda'; requiere revisión articular. Munchkin: Patas cortas, extrovertido y curioso. Sphynx: Sin pelo, sociable y busca calor; requiere baños semanales. Devon Rex & Cornish Rex: Pelo rizado u ondulado, traviesos y apegados. American Curl: Orejas hacia atrás. Manx & Japanese Bobtail: El primero sin cola y robusto; el segundo con cola de pompón, símbolo de buena suerte.**",
                 "body": "5. Exóticos y Pocas Unidades"
               },
               {
@@ -1105,27 +1105,27 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed is suited to your lifestyle, it is essential to acquire it responsibly. In Chile, the purchase of animals is regulated by Law 21.020 (Cholito Law), which protects animal welfare and requires responsible ownership. Buying a cat is not like buying an object; it is acquiring a living being with complex needs.",
             "sections": [
               {
-                "heading": "**1. **Why choose a Registered Breeder?",
+                "heading": "**1. Why choose a Registered Breeder?********",
                 "body": "Ethical breeders preserve the breed, care for genetic health, and socialise the kittens. The safest way to identify them is to check if they are registered with RENAGACH (Chilean National Cat Registry), which represents federations such as WCF and TICA. Advantages of buying from a breeder with a pedigree: Genetic Certification (guarantees the breed), Health (genetic tests to rule out diseases such as PKD in Persians or HCM in Maine Coons), and Socialisation (they grow up in a family environment, not in cages)."
               },
               {
-                "heading": "Directory of Reference (Ethical Breeders in Chile)",
+                "heading": "**Directory of Reference (Ethical Breeders in Chile)",
                 "body": "Indicative List (always verify records): Maine Coon: Colitas Arriba, Nahuelhuén (Santiago/La Reina). Persian / Himalayan: GatyKey Cattery, Viestmaden Cattery (La Florida). Ragdoll: Reflejo de Luna (docile temperament). Somali: Per-Bast Cattery (unique specialist). Sphynx: Ti Voglio Bene, The Kittens House. British Shorthair: Von & Von Cattery (robust structure)."
               },
               {
-                "heading": "**2. **Legal Framework: Your Rights and Responsibilities (Law 21.020)",
+                "heading": "**2. Legal Framework: Your Rights and Responsibilities (Law 21.020)********",
                 "body": "Para que la transaction be legal, the breeder must comply with: Microchip Obligatory (implanted and registered) and Sales Contract. The contract must detail health guarantees (negative tests for FeLV/FIV), commitment to sterilisation and a clause for return. Your Responsibility: Once the purchase has been made, you must register the animal on the National Pet Register if the details were not updated immediately."
               },
               {
-                "heading": "**3. **Checklist: How to detect an Ethical Breeder?",
+                "heading": "**3. Checklist: How to detect an Ethical Breeder?**",
                 "body": "Before paying, check: Do they allow visits? They should be clean and in human contact. Age of delivery? NEVER accept a kitten of less than 12 weeks (3 months). Complete documentation? You should receive a birth certificate/Preliminary Pedigree, a vaccination card up to date (signed by a registered veterinarian) and a parasite control certificate. Transparency of health? A good breeder will ask about your situation to ensure a good home."
               },
               {
-                "heading": "**4. **Legal Importation of Exotic Breeds",
+                "heading": "**4. Legal Importation of Exotic Breeds**",
                 "body": "If you are looking for breeds such as Lykoi, Toyger or Bengal from specific lines, the process is strict: comply with the requirements of the SAG (Agricultural and Livestock Service), health certificates from the country of origin and possible quarantines. It is recommended to consult with a specialised pet transport agency to avoid customs retention."
               },
               {
-                "heading": "Be Careful of the 'Cat Factories'!",
+                "heading": "**Be Careful of the 'Cat Factories'!",
                 "body": "Avoid buying at free fairs, informal markets or social media ads without a visible physical address. Be suspicious of places with multiple breeds available immediately. These places prioritise profit over welfare, resulting in animals with chronic health problems and short lives. Your conscious choice helps to eradicate this abuse."
               }
             ]
@@ -1142,19 +1142,19 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed suits your lifestyle, it is essential to acquire it in a responsible manner. In Argentina, animal ownership is protected by the National Law 27.592 (Alica Law) and various ordinances (such as Law 4040 in CABA), which recognise animals as sentient beings. Buying a cat is not a commercial transaction; it is incorporating a family member.",
             "sections": [
               {
-                "heading": "Por qué elegir un Criadero Registrado?",
+                "heading": "**Por qué elegir un Criadero Registrado?**",
                 "body": "The criaderos éticos in Argentina preserve the breed, look after the genetic and social health, and socialise the kittens. The main organisations are FAAC (Federación Argentina de Aficionados al Gato), affiliated to the WCF, and local clubs of TICA or FIFe. Advantages of buying with pedigree: Genetic Certification (guarantees registered ancestors), Preventative Health (genetic tests for PKD or HCM) and Early Socialisation (human stimuli that prevent behaviour problems)."
               },
               {
-                "heading": "Marco Legal: Tus Derechos y Deberes",
+                "heading": "**Marco Legal: Tus Derechos y Deberes**",
                 "body": "For the transaction to be legal in Argentina, the criadero must comply with: Identification (Microchip), obligatory in CABA, Córdoba and Santa Fe among others. Sales Contract with animal data, health guarantees, return clause and commitment to sterilisation. Vaccination Card: It must be signed by a registered Veterinary Doctor, with the triple feline vaccinations (and quintuple if applicable) up to date according to the age."
               },
               {
-                "heading": "Checklist: ¿Cómo detectar un Criadero Ético en Argentina?",
+                "heading": "**Checklist: ¿Cómo detectar un Criadero Ético en Argentina?**",
                 "body": "Before paying, check: Do they allow in-person visits? You must know the cattery and see the mother; be suspicious of deliveries in shopping centres. Age of delivery? NEVER before 12 weeks (3 months). Complete documentation? You should receive a Birth Certificate/Pedigree, vaccination card and invoice or receipt. Interview with the buyer? A good breeder will ask about window netting and your previous experience."
               },
               {
-                "heading": "Importación Legal de Razas Exóticas",
+                "heading": "**Importación Legal de Razas Exóticas**",
                 "body": "If you are looking for breeds not commonly bred (Lykoi, Toyger), the process is regulated by the SENASA (Servicio Nacional de Sanidad y Calidad Agroalimentaria). Requirements: Zoosanitary certificate of origin, rabies vaccination and possible quarantines. It is recommended to hire a specialised pet transport agency; bringing a cat on your own account can result in severe detentions or fines."
               },
               {
@@ -1179,23 +1179,23 @@ export const categories: Category[] = [
             "intro": "If you have decided that a particular breed suits your lifestyle, it is essential to acquire it in a responsible manner. In Uruguay, the keeping of animals is protected by the National Law 18.471 (Animal Protection) and regulated locally by decrees such as 319/011 in Montevideo. Buying a cat is not a routine commercial transaction; it is incorporating a sensitive family member.",
             "sections": [
               {
-                "heading": "**1. **Why Choose a Registered Breeder?",
+                "heading": "**1. Why Choose a Registered Breeder?********",
                 "body": "Ethical breeders in Uruguay preserve the breed, care for the genetic and social health of the kittens, and socialise them. The safest way to identify them is to verify their affiliation with the AFU (Uruguayan Cat Association), which represents the WCF, and occasionally TICA or FIFe. Advantages: Genetic Certification (registered ancestors), Preventive Health (PKD or HCM tests), and Early Socialisation (prevention of behaviour problems)."
               },
               {
-                "heading": "**2. **Legal Framework: Your Rights and Obligations",
+                "heading": "**2. Legal Framework: Your Rights and Obligations**",
                 "body": "For a secure transaction in Uruguay, the breeder must comply with: Identification (Microchip) according to municipal ordinances (particularly in Montevideo and Canelones) and registration in corresponding records. Sales Contract with data on the parties, guarantees of health (FeLV/FIV), a clause for return (prohibited abandonment) and a commitment to sterilisation. Vaccination Card: Signed by a registered Veterinarian with the triple feline vaccine."
               },
               {
-                "heading": "**3. **Checklist: How to Identify an Ethical Breeder in Uruguay?",
+                "heading": "**3. Checklist: How to Identify an Ethical Breeder in Uruguay?**",
                 "body": "Before paying, check: Do they allow in-person visits? You must know the cattery and see the mother; be wary of deliveries to shopping centres. What is the delivery age? NEVER before 12 weeks (3 months). Is the documentation complete? You should receive a Birth Certificate/Pedigree from the AFU, vaccination card and invoice or receipt. Is there an interview with the buyer? A good breeder will want to know about your window and balcony protections."
               },
               {
-                "heading": "**4. **Legal Importation of Exotic Breeds",
+                "heading": "**4. Legal Importation of Exotic Breeds**",
                 "body": "The process is regulated by the MGAP-DIGEGA (General Directorate of Agricultural Services). Requirements: International zoosanitary certificate, current rabies vaccination and entry protocols. It is recommended to hire a specialist pet relocation agency ('Pet Relocation') to handle customs formalities and avoid the animal being retained at the border."
               },
               {
-                "heading": "Beware of 'Cat Factories' and Scams!",
+                "heading": "**Beware of 'Cat Factories' and Scams!",
                 "body": "DO NOT BUY IF: They ask for advance payment without showing the animal (common scam; demand a real-time video call). They sell at street fairs or squares: high mortality rate due to poor hygiene (panleucopenia). They have an 'infinite' stock: indicates a factory where females are used indiscriminately. Suspiciously low prices: ethical breeding has high costs in health and records that a low price cannot cover."
               },
               {
@@ -1216,23 +1216,23 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed suits your lifestyle, it is essential to acquire it in a responsible manner. In Peru, animal ownership is protected by Law No. 30407 (Animal Protection and Welfare Law) and technically regulated by SENASA under MIDAGRI. This law recognises animals as sentient beings and prohibits their mistreatment, abandonment, and illegal trade.",
             "sections": [
               {
-                "heading": "Por qué elegir un Criadero Registrado?",
+                "heading": "**Por qué elegir un Criadero Registrado?**",
                 "body": "Los criaderos éticos en Perú preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a la FEPERU (Federación Peruana de Felinos), representante de WCF y, en algunos casos, TICA o FIFe. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de problemas de conducta como miedos o agresividad)."
               },
               {
-                "heading": "**2. **Marco Legal: Tus Derechos y Deberes",
+                "heading": "**2. Marco Legal: Tus Derechos y Deberes********",
                 "body": "Para que la transacción sea legal en Perú, el criadero debe cumplir con: Identificación (Microchip) exigido por muchas municipalidades (como Lima Metropolitana, Miraflores, San Isidro) para el registro municipal. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (prohibido el abandono) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario colegiado, con la triple felina (y quíntuple si corresponde) al día."
               },
               {
-                "heading": "**3. **Checklist: ¿Cómo detectar un Criadero Ético en Perú?",
+                "heading": "**3. Checklist: ¿Cómo detectar un Criadero Ético en Perú?**",
                 "body": "Antes de pagar, verifica: ¿Permiten visitas presenciales? Debes conocer el cattery y ver a la madre; desconfía de entregas en malls o parques. ¿Edad de entrega? NUNCA antes de las 12 semanas (3 meses). ¿Documentación completa? Debes recibir Certificado de Nacimiento/Pedigree de la FEPERU, carnet de vacunas y factura o recibo. ¿Entrevista al comprador? Un buen criador querrá saber sobre tus protecciones en ventanas y balcones, vital en edificios altos de Lima."
               },
               {
-                "heading": "**4. **Importación Legal de Razas Exóticas",
+                "heading": "**4. Importación Legal de Razas Exóticas**",
                 "body": "El proceso es regulado estrictamente por el SENASA. Requisitos: Certificado zoosanitario internacional, vacunación antirrábica vigente y protocolos de ingreso. Se recomienda contratar una agencia de transporte de mascotas especializada ('Pet Relocation') para gestionar trámites ante el SENASA y evitar retenciones en el aeropuerto Jorge Chávez o multas severas."
               },
               {
-                "heading": "¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
+                "heading": "**¡Cuidado con las 'Fábricas de Gatos' y Estafas!",
                 "body": "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (moquillo/panleucopenia). Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y alimentación premium que un precio bajo no cubre."
               },
               {
@@ -1253,15 +1253,15 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed suits your lifestyle, it is essential to acquire it responsibly. In Bolivia, animal ownership and welfare are fundamental, and the trade in breeds must be carried out under ethical and legal standards that recognise animals as sentient beings, prohibiting their mistreatment and illegal trade.",
             "sections": [
               {
-                "heading": "**3. **Checklist: How to Detect an Ethical Breeder in Bolivia?",
+                "heading": "**3. Checklist: How to Detect an Ethical Breeder in Bolivia?********",
                 "body": "Before making any transfer or payment, check these points. If the answer is 'no' to any of them, be suspicious. Do they allow on-site visits? An ethical breeder will invite you to visit their home or cattery. You should be able to see the mother and a clean and safe environment. Be wary of those who only make deliveries at shopping malls, bus stations or parks. What is the age of delivery? NEVER before 12 weeks (3 months). This is crucial for emotional and immunological development. Is there complete documentation? You should receive a Birth Certificate/Pedigree (or pre-pedigree issued by the relevant cat association), Vaccination and De-worming Certificate, and a Sales Invoice or Receipt. Will they interview you? A good breeder will ask you questions about your home, whether you have window or balcony protections (essential in high-rise buildings in La Paz or Santa Cruz), and your experience."
               },
               {
-                "heading": "**4. **Legal Importation of Exotic Breeds",
+                "heading": "**4. Legal Importation of Exotic Breeds**",
                 "body": "If you are looking for breeds that are not commonly bred in Bolivia (such as Lykoi, Toyger or specific Bengal lines), the process is strictly regulated by the SENASAG (National Service of Agricultural Health and Food Safety). Requirements: an international zoosanitary certificate from the country of origin, current rabies vaccination, and compliance with entry protocols. Quarantine: Depending on the country of origin and health status, additional quarantine or inspections may be required. Recommendation: Always hire a specialist pet relocation agency ('Pet Relocation') to handle the formalities with the SENASAG to avoid airport retention or severe fines."
               },
               {
-                "heading": "Be Careful of 'Cat Factories' and Scams!",
+                "heading": "**Be Careful of 'Cat Factories' and Scams!",
                 "body": "En Bolivia, the illegal trade is frequent on online platforms and informal fairs."
               },
               {
@@ -1282,19 +1282,19 @@ export const categories: Category[] = [
             "intro": "Colombia",
             "sections": [
               {
-                "heading": "Responsible Acquisition in Colombia: Legal and Ethical Guide",
+                "heading": "**Responsible Acquisition in Colombia: Legal and Ethical Guide**",
                 "body": "If you have decided that a specific breed suits your lifestyle, it is essential to acquire it in a responsible manner. In Colombia, animal ownership is protected by Law 1774 of 2016, which recognises animals as sentient beings not susceptible to being things, and prohibits their mistreatment and abandonment. Additionally, there are local regulations in cities such as Bogotá, Medellín, and Cali."
               },
               {
-                "heading": "Why Choose a Registered Breeder?",
+                "heading": "**Why Choose a Registered Breeder?**",
                 "body": "Ethical breeders in Colombia preserve the breed, care for genetic health, and socialise the kittens. The safest way to identify them is to verify their affiliation to ASOFELGA (Colombian Association of Cat Breeders), representative of the WCF, and, in some cases, TICA or FIFe. Advantages: Genetic Certification (official ancestors), Preventive Health (PKD or HCM tests), and Early Socialisation (prevention of fears and aggression)."
               },
               {
-                "heading": "¿Cómo detectar un Criadero Ético en Colombia?",
+                "heading": "**¿Cómo detectar un Criadero Ético en Colombia?**",
                 "body": "Before paying, check: ✅ Do they allow in-person visits? You must get to know the cattery and see the mother; be wary of deliveries at shopping centres or parks. ✅ What age of delivery? NEVER before 12 weeks (3 months). It is crucial for emotional and immunological weaning. ✅ Is the documentation complete? You should receive a Birth Certificate / Pedigree from ASOFELGA, vaccination card and invoice or receipt. ✅ Interview with the buyer? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Bogotá or Medellín."
               },
               {
-                "heading": "Importación Legal de Razas Exóticas",
+                "heading": "**Importación Legal de Razas Exóticas**",
                 "body": "The process is strictly regulated by the ICA (Colombian Agricultural and Livestock Institute). Requirements: International zoosanitary certificate, current anti-rabies vaccination and compliance with entry protocols (ICA Resolution). It is recommended to hire a pet relocation agency ('Pet Relocation') to manage procedures with the ICA and avoid airport detentions (El Dorado, José María Córdova, etc.) or severe fines."
               },
               {
@@ -1319,23 +1319,23 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed is suited to your lifestyle, it is essential to acquire it in a responsible manner. In Ecuador, the keeping of animals is protected by the Organic Code of Animal Welfare (COBA), promulgated in 2022. This law recognises animals as sentient beings, prohibits their mistreatment, abandonment and strictly regulates breeding and commercialisation.",
             "sections": [
               {
-                "heading": "Why choose a Registered Breeder?",
+                "heading": "**Why choose a Registered Breeder?**",
                 "body": "Ethical breeders in Ecuador preserve the breed, care for the genetic health and socialise the kittens. The safest way to identify them is to verify their affiliation to recognised feline associations (WCF, TICA) and that they have the necessary municipal permits. Advantages: Genetic Certification (official ancestors), Preventative Health (PKD or HCM tests) and Early Socialisation (prevention of fears and aggression)."
               },
               {
-                "heading": "**2. **Legal Framework: Your Rights and Obligations (COBA)",
+                "heading": "**2. Legal Framework: Your Rights and Obligations (COBA)********",
                 "body": "For a transaction to be legal in Ecuador, the breeder must comply with: Identification (Microchip) required by the COBA and municipal ordinances (Quito, Guayaquil, Cuenca) for municipal registration. Municipal Functioning Permit issued by the Municipal GAD of your canton. Sales Contract with details of the parties, health guarantees (FeLV/FIV), clause for return (abandonment prohibited) and commitment to sterilisation. Vaccination Card: Signed by a registered Veterinary Zootechnician."
               },
               {
-                "heading": "**3. **Checklist: How to detect an Ethical Breeder in Ecuador?",
+                "heading": "**3. Checklist: How to detect an Ethical Breeder in Ecuador?**",
                 "body": "Before paying, check: Do they allow on-site visits? You must know the cattery and see the mother; be wary of deliveries at shopping centres or parks. Age of delivery? NEVER before 12 weeks (3 months). It is crucial for emotional and immunological weaning. Is the documentation complete? You should receive an official Birth Certificate/Pedigree, up-to-date vaccination card and invoice or receipt (tax compliance). Will they interview you? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Quito or Guayaquil."
               },
               {
-                "heading": "**4. **Legal Importation of Exotic Breeds",
+                "heading": "**4. Legal Importation of Exotic Breeds**",
                 "body": "The process is strictly regulated by AGROCALIDAD (Agency for Regulation and Zoosanitary Control). Requirements: International zoosanitary certificate, current rabies vaccination and entry protocols. It is recommended to hire a specialist pet relocation agency ('Pet Relocation') to handle procedures and avoid airport detentions (Mariscal Sucre, José Joaquín de Olmedo, etc.) or severe fines."
               },
               {
-                "heading": "Be careful of 'Cat Factories' and Scams!",
+                "heading": "**Be careful of 'Cat Factories' and Scams!",
                 "body": "NO COMPRES SI: Te piden señas por adelantado sin mostrar el animal (estafa común; exige videollamada en tiempo real). Venden en ferias callejeras o plazas: alta mortalidad por falta de higiene (panleucopenia, leucemia). Tienen 'stock' infinito de múltiples razas: probable fábrica de explotación. Precios sospechosamente bajos: la crianza ética implica costos altos en salud y registros que un precio bajo no puede cubrir."
               },
               {
@@ -1356,23 +1356,23 @@ export const categories: Category[] = [
             "intro": "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Venezuela, la tenencia de animales está protegida por la Ley de Protección a la Fauna Doméstica Libre y en Cautiverio y diversas ordenanzas municipales que promueven la tenencia responsable, prohíben el maltrato y el abandono.",
             "sections": [
               {
-                "heading": "**1. **¿Por qué elegir un Criadero Registrado?",
+                "heading": "**1. ¿Por qué elegir un Criadero Registrado?********",
                 "body": "Los criaderos éticos en Venezuela preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a la Federación Canina de Venezuela (FCV) en su división felina, o a asociaciones como ASOVEFEL (Asociación Venezolana de Felinos), vinculadas a la WCF o TICA. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de miedos y agresividad)."
               },
               {
-                "heading": "**2. **Marco Legal: Tus Derechos y Deberes",
+                "heading": "**2. Marco Legal: Tus Derechos y Deberes**",
                 "body": "Para que la transacción sea legal en Venezuela, el criadero debe cumplir con: Identificación (Microchip) exigido o recomendado en alcaldías como Chacao, Baruta, El Hatillo (Caracas), Valencia y Maracaibo para el registro municipal. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario colegiado (CVZ), con las vacunas triples felinas al día según la edad."
               },
               {
-                "heading": "¿Cómo detectar un Criadero Ético en Venezuela?",
+                "heading": "**¿Cómo detectar un Criadero Ético en Venezuela?",
                 "body": "Before paying, check: Do they allow in-person visits? You must know the cattery and see the mother; be wary of deliveries in metres or shopping centres. What is the age of delivery? NEVER before 12 weeks (3 months). It is crucial for emotional and immunological weaning. Do you receive complete documentation? You should receive a Birth Certificate / Official Pedigree, up-to-date vaccination card and invoice or receipt. Do you have an interview with the buyer? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Caracas or Valencia."
               },
               {
-                "heading": "**4. **Importation of Exotic Breeds",
+                "heading": "**4. Importation of Exotic Breeds********",
                 "body": "The process is strictly regulated by the INSAI (National Institute of Integral Agricultural Health). Requirements: International zoosanitary certificate, current rabies vaccination and entry protocols. It is recommended to hire a specialist pet relocation agency ('Pet Relocation') to manage procedures with the INSAI and avoid delays at Simón Bolívar International Airport or severe fines."
               },
               {
-                "heading": "Be Careful with 'Cat Factories' and Scams!",
+                "heading": "**Be Careful with 'Cat Factories' and Scams!",
                 "body": "DO NOT BUY IF: They ask for advance payment without showing the animal (common scam; do not transfer funds or bolívares without a real-time video call). They sell at street markets or plazas: high mortality rate due to lack of hygiene (panleucopenia, leukaemia). They have an 'infinite' stock of multiple breeds: probable factory of exploitation. Suspiciously low prices: ethical breeding involves high costs in imported/premium food that a low price does not cover."
               },
               {
@@ -1393,19 +1393,19 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed is suited to your lifestyle, it is essential to acquire it in a responsible manner. In Paraguay, the ownership of animals is protected by Law No. 483/95 for the Protection of Animals and by Law No. 6541/20 for Animal Welfare, which recognises animals as sentient beings, prohibits their mistreatment and abandonment, and regulates responsible ownership.",
             "sections": [
               {
-                "heading": "Why choose a Registered Breeder?",
+                "heading": "**Why choose a Registered Breeder?**",
                 "body": "Ethical breeders in Paraguay preserve the breed, look after the genetic and social health of the cats, and socialise the kittens. The safest way to identify them is to check their affiliation to FELPAR (Paraguay Cat Federation), which represents the WCF or TICA. Advantages: Genetic Certification (officially registered ancestors), Preventative Health (PKD or HCM tests) and Early Socialisation (prevention of behaviour problems such as fears or aggression)."
               },
               {
-                "heading": "Legal Framework: Your Rights and Responsibilities",
+                "heading": "**Legal Framework: Your Rights and Responsibilities**",
                 "body": "For a secure transaction in Paraguay, the breeder must comply with: Identification (Microchip) implemented in municipalities such as Asunción, Luque, San Lorenzo, Lambaré, etc. Sales Contract with data on the parties, guarantees of health (FeLV/FIV), clause for return (prohibited abandonment) and commitment to sterilisation. Vaccination Card: Signed by a registered Veterinary Doctor in the CONAMEVET (National Council of Veterinary Medicine), with the triple feline vaccinations up to date."
               },
               {
-                "heading": "Checklist: How to Identify an Ethical Breeder in Paraguay?",
+                "heading": "**Checklist: How to Identify an Ethical Breeder in Paraguay?**",
                 "body": "Before paying, check: Do they allow on-site visits? You must know the cattery and see the mother; be wary of deliveries in shopping centres or parks. Age of delivery? NEVER before 12 weeks (3 months). This is crucial for emotional and immunological weaning. Do you receive complete documentation? You should receive a Birth Certificate / Pedigree from FELPAR, vaccination card and invoice or receipt. Do they interview the buyer? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Asunción."
               },
               {
-                "heading": "Legal Importation of Exotic Breeds",
+                "heading": "**Legal Importation of Exotic Breeds**",
                 "body": "The process is strictly regulated by the SENACSA (National Service for Animal Quality and Health). Requirements: International zoosanitary certificate, current rabies vaccination and entry protocols. It is recommended to hire a pet relocation agency to manage procedures with the SENACSA and avoid delays at Silvio Pettirossi Airport or severe fines."
               },
               {
@@ -1430,19 +1430,19 @@ export const categories: Category[] = [
             "intro": "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Brasil, la tenencia de animales está protegida por la Ley Federal nº 14.064/2020 (Ley Sansão) y por la Ley Arouca (Ley nº 11.794/2008). Comprar un gato no es una transacción comercial cualquiera; es incorporar un miembro sensible a la familia.",
             "sections": [
               {
-                "heading": "**1. **¿Por qué elegir un Criadero Registrado?",
+                "heading": "**1. ¿Por qué elegir un Criadero Registrado?********",
                 "body": "Los criaderos éticos en Brasil preservan la raza, cuidan la salud genética y socializan a los gatitos. La forma más segura de identificarlos es verificar su afiliación a GATOS do BRASIL (representante oficial de la WCF), o a clubes de TICA o FIFe. Ventajas: Certificación Genética (ancestros oficiales), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana ('home raised') para prevenir problemas de conducta."
               },
               {
-                "heading": "**2. **Marco Legal: Tus Derechos y Deberes",
+                "heading": "**2. Marco Legal: Tus Derechos y Deberes**",
                 "body": "Para que la transacción sea legal en Brasil, el criadero debe cumplir con: Identificación (Microchip) exigido en ciudades como São Paulo, Río de Janeiro y Curitiba para el registro municipal (RAA). Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (abandono é crime) y compromiso de esterilización. Carnet de Vacunación: Firmado por un Médico Veterinario registrado en el CRMV, con las vacunas V3/V4/V5 al día según la edad."
               },
               {
-                "heading": "How to detect an ethical breeder in Brazil?",
+                "heading": "**How to detect an ethical breeder in Brazil?",
                 "body": "Before making any transfer (PIX), check: Do they allow face-to-face visits? You must know the cattery and see the mother; be wary of deliveries in parks or shopping centres. What age of delivery? NEVER before 12 weeks (3 months). Is the documentation complete? You should receive a Birth Certificate / Pedigree from GATOS do BRASIL/WCF, vaccination card and invoice or receipt. Has the buyer been interviewed? A good breeder will want to know about your 'protection measures' (essential in high-rise buildings in Brazil)."
               },
               {
-                "heading": "Legal Importation of Exotic Breeds",
+                "heading": "**Legal Importation of Exotic Breeds**",
                 "body": "The process is strictly regulated by the MAPA (Ministry of Agriculture, Livestock and Supply) through the Vigiagro system. Requirements: International zoosanitary certificate, current rabies vaccination and entry protocols. It is recommended to hire a specialised pet relocation agency ('Pet Relocation') to avoid the animal being retained at airports such as Guarulhos or Galeão."
               },
               {
@@ -1467,23 +1467,23 @@ export const categories: Category[] = [
             "intro": "If you have decided that a specific breed is suited to your lifestyle, it is essential to acquire it in a responsible manner. In Spain, the regulations have changed dramatically with the introduction of the new Animal Welfare Act (Ley 7/2023). This law prohibits the sale of dogs, cats and ferrets in commercial premises and requires that all acquisitions be made through registered breeders or animal welfare organisations.",
             "sections": [
               {
-                "heading": "Why choose a Registered Breeder (Amateur)?",
+                "heading": "**Why choose a Registered Breeder (Amateur)?**",
                 "body": "In Spain, ethical breeders must be registered as a 'Zoological Nucleus' or 'Amateur Breeder' in their Autonomous Community. The safest way to identify them is to check if they are affiliated to the AFEC (Spanish Cat Association), representative of the WCF in the country, or to other recognised federations such as FIFe. Advantages: Guaranteed Legality (only registered breeders can sell under the new law), Genetic Health (PKD or HCM tests) and Socialisation (guarantees a balanced temperament)."
               },
               {
-                "heading": "**2. **Legal Framework: Your Rights and Obligations (Ley 7/2023)",
+                "heading": "**2. Legal Framework: Your Rights and Obligations (Ley 7/2023)********",
                 "body": "For the transaction to be legal in Spain, the breeder must comply with: Mandatory Microchip (registered in the RIAC of their Autonomous Community before delivery). Health Documentation: European passport or vaccination booklet (Trivalent) and daily deworming. Mandatory Sales Contract with the breeder's zoological nucleus number, health guarantees and a clause for return. Prohibition on Sales in Pet Stores: Selling in pet stores is illegal; it can only be done directly by the breeder or through adoption."
               },
               {
-                "heading": "**3. **Checklist: How to Detect an Ethical Breeder in Spain?",
+                "heading": "**3. Checklist: How to Detect an Ethical Breeder in Spain?**",
                 "body": "Before paying, check: Do they allow visits? You must know their address or cattery and see the mother; be wary of deliveries in car parks. Age of delivery? NEVER before 12 weeks (3 months). Complete documentation? Official pedigree from AFEC/WCF or similar, microchip already registered and veterinary certificate signed by a registered vet. Transparency? A good breeder will ask about your home (window netting on high floors) and will not be in a hurry to sell quickly."
               },
               {
-                "heading": "**4. **Legal Importation from the EU and Third Countries",
+                "heading": "**4. Legal Importation from the EU and Third Countries**",
                 "body": "From the EU: European passport, ISO microchip and rabies vaccination (at least 21 days old). From outside the EU (UK, USA): Official zoosanitary certificate, antibody titre (if applicable) and compliance with requirements from the Ministry of Agriculture, Fisheries and Food (MAPA). It is recommended to use specialised transportation agencies to avoid quarantines or returns to the origin."
               },
               {
-                "heading": "Beware of Scams and Illegal Trafficking!",
+                "heading": "**Beware of Scams and Illegal Trafficking!",
                 "body": "NO COMPRES SI: Te piden dinero por adelantado sin ver al gato (exige videollamada en tiempo real). No tienen número de Zoológico visible: es obligatorio exhibirlo en todo anuncio. Entregan cachorros menores de 3 meses: es ilegal y cruel. Precios sospechosamente bajos: suelen indicar 'granjas de cachorros' importadas ilegalmente de Europa del Este sin garantías de salud ni ética."
               },
               {
@@ -1504,19 +1504,19 @@ export const categories: Category[] = [
             "intro": "Si has decidido que una raza específica se adapta a tu estilo de vida, es fundamental adquirirla de manera responsable. En Mexico, la protección animal se rige por la Ley Federal de Protección Animal y por leyes estatales y locales (como la de CDMX o Jalisco), que reconocen a los animales como seres sintientes, prohíben el maltrato y regulan la tenencia responsable.",
             "sections": [
               {
-                "heading": "**1. **¿Por qué elegir un Criadero Registrado?",
+                "heading": "**1. ¿Por qué elegir un Criadero Registrado?********",
                 "body": "Los criaderos éticos en Mexico preservan la raza, cuidan la salud genética y socializan a los gatitos en entorno familiar. La forma más segura de identificarlos es verificar su afiliación a la AMFE (Asociación Mexicana Felina), representante de la WCF y TICA. Ventajas: Certificación Genética (ancestros registrados), Salud Preventiva (tests de PKD o HCM) y Socialización Temprana (prevención de miedos y agresividad)."
               },
               {
-                "heading": "**2. **Marco Legal: Tus Derechos y Deberes",
+                "heading": "**2. Marco Legal: Tus Derechos y Deberes**",
                 "body": "Para que la transacción sea legal en Mexico, el criadero debe cumplir con: Identificación (Microchip) obligatorio en entidades como CDMX (registro RECAN), Edomex, Jalisco y Nuevo León. Contrato de Compraventa con datos de las partes, garantías de salud (FeLV/FIV), cláusula de devolución (el abandono es delito) y compromiso de esterilización. Cartilla de Vacunación: Firmada por un Médico Veterinario Zootecnista con cédula profesional vigente, con las triples felinas al día."
               },
               {
-                "heading": "Checklist: How to detect an Ethical Breeder in Mexico?",
+                "heading": "**Checklist: How to detect an Ethical Breeder in Mexico?",
                 "body": "Before paying, check: Do they allow on-site visits? You need to know the cattery and see the mother; be wary of deliveries to commercial plazas or metro stations. What age of delivery? NEVER before 12 weeks (3 months). Is the documentation complete? Birth certificate/Pedigree (AMFE/WCF or TICA), vaccination card and receipt or invoice.  Do they conduct a buyer interview? A good breeder will want to know about your window and balcony protections, vital in Mexico City, Monterrey or Guadalajara apartments."
               },
               {
-                "heading": "**4. **Legal Importation of Exotic Breeds",
+                "heading": "**4. Legal Importation of Exotic Breeds********",
                 "body": "The process is strictly regulated by the SENASICA (National Service of Public Health, Safety and Agri-Food Quality) under the SADER. Requirements: International zoosanitary certificate, current rabies vaccination and entry protocols. It is recommended to hire a specialised pet transport agency ('Pet Relocation') to avoid airport delays such as those at Mexico City or Cancun airports."
               },
               {
