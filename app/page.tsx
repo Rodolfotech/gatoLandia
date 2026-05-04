@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useI18n } from "./i18n/I18nContext";
 import Navbar, { ContentType } from "./components/Navbar";
 import Footer from "./components/Footer";
 // Busca una línea similar a esta al principio del archivo
@@ -8,7 +9,8 @@ import  CategorySidebar  from '@/app/components/Categorysidebar';
 import  CategoryOverview  from '@/app/components/Categoryoverview'
 import  TopicContent  from '@/app/components/Topicontent'
 
-import { categories, getCategory, getSubcategory, getTopic } from "./data/cats";
+import { categories as defaultCategories, getCategory, getSubcategory, getTopic } from "./data/cats";
+import ChatWidget from "./components/ChatWidget";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -20,14 +22,19 @@ interface Selection {
 
 // ─── Home ─────────────────────────────────────────────────────────────────────
 export default function Home() {
+  const { t, categories } = useI18n();
   const [selection, setSelection] = useState<Selection | null>(null);
   const [activeCatSlug, setActiveCatSlug] = useState<string | null>(null);
   const [activeContentType, setActiveContentType] = useState<ContentType>("enciclopedia");
 
-  // Datos derivados para la vista actual
-  const currentCat    = activeCatSlug ? getCategory(activeCatSlug) : null;
-  const currentSub    = selection ? getSubcategory(selection.categorySlug, selection.subcategorySlug) : null;
-  const currentTopic  = selection ? getTopic(selection.categorySlug, selection.subcategorySlug, selection.topicSlug) : null;
+  // Datos derivados para la vista actual — use translated categories
+  const currentCat    = activeCatSlug ? categories.find(c => c.slug === activeCatSlug) ?? getCategory(activeCatSlug) : null;
+  const currentSub    = selection ? categories.find(c => c.slug === selection.categorySlug)?.subcategories.find(s => s.slug === selection.subcategorySlug) ?? getSubcategory(selection.categorySlug, selection.subcategorySlug) : null;
+  const currentTopic  = selection ? (() => {
+    const cat = categories.find(c => c.slug === selection.categorySlug);
+    const sub = cat?.subcategories.find(s => s.slug === selection.subcategorySlug);
+    return sub?.topics.find(t => t.slug === selection.topicSlug) ?? getTopic(selection.categorySlug, selection.subcategorySlug, selection.topicSlug);
+  })() : null;
 
   // Lógica de navegación Anterior / Siguiente
   const siblingTopics = currentSub?.topics ?? [];
@@ -122,7 +129,7 @@ export default function Home() {
                 fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase",
                 color: "#a0622a", fontWeight: 500, marginBottom: "1.5rem",
               }}>
-                Enciclopedia Felina Completa
+                {t('landing_badge')}
               </div>
 
               <h1 style={{
@@ -131,15 +138,15 @@ export default function Home() {
                 fontWeight: 900, lineHeight: 1.05, color: "#2c2416",
                 marginBottom: "1.5rem", letterSpacing: "-0.03em",
               }}>
-                El Universo<br />
-                <em style={{ color: "#d4853a" }}>Felino</em>
+                {t('landing_title_1')}<br />
+                <em style={{ color: "#d4853a" }}>{t('landing_title_2')}</em>
               </h1>
 
               <p style={{
                 fontSize: "1.1rem", color: "#6b5c44", maxWidth: 540,
                 margin: "0 auto 3rem", lineHeight: 1.7, fontWeight: 300,
               }}>
-                Todo lo que necesitas saber sobre los gatos, organizado por categorías, subcategorías y temas.
+                {t('landing_subtitle')}
               </p>
 
               {/* Cards de Categorías */}
@@ -178,10 +185,10 @@ export default function Home() {
               gap: "2rem", textAlign: "center",
             }}>
               {[
-                { n: categories.length, label: "Categorías" },
-                { n: categories.reduce((a, c) => a + c.subcategories.length, 0), label: "Subcategorías" },
-                { n: categories.reduce((a, c) => a + c.subcategories.reduce((b, s) => b + s.topics.length, 0), 0), label: "Temas" },
-                { n: "100%", label: "Felino" },
+                { n: categories.length, label: t('landing_stats_categories') },
+                { n: categories.reduce((a, c) => a + c.subcategories.length, 0), label: t('landing_stats_subcategories') },
+                { n: categories.reduce((a, c) => a + c.subcategories.reduce((b, s) => b + s.topics.length, 0), 0), label: t('landing_stats_topics') },
+                { n: "100%", label: t('landing_stats_feline') },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div style={{ fontSize: "3rem", fontWeight: 900, color: "#d4853a" }}>{stat.n}</div>
@@ -194,6 +201,7 @@ export default function Home() {
           <Footer />
         </>
       )}
+      <ChatWidget />
     </main>
   );
 }
