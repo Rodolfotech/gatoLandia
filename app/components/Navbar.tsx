@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import PawIcon from "./PawIcon";
 import { categories as defaultCategories, Category } from "../data/cats";
 import { useI18n } from "../i18n/I18nContext";
 import LanguageSelector from "./LanguageSelector";
 
-export type ContentType = "guias" | "preguntas" | "enciclopedia";
+export type ContentType = "razas" | "preguntas" | "enciclopedia";
 
 interface NavbarProps {
   categories?: Category[];
@@ -20,7 +21,7 @@ interface NavbarProps {
 function useContentTypes() {
   const { t } = useI18n();
   return [
-    { id: "guias" as ContentType,        label: t('content_guides'),       icon: "" },
+    { id: "razas" as ContentType,        label: "Razas",       icon: "" },
     { id: "preguntas" as ContentType,    label: t('content_questions'),   icon: "" },
     { id: "enciclopedia" as ContentType, label: t('content_encyclopedia'), icon: "" },
   ];
@@ -36,6 +37,7 @@ export default function Navbar({
 }: NavbarProps) {
   const { t, categories } = useI18n();
   const cats = propCategories || categories;
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [hoveredSub, setHoveredSub] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
@@ -157,23 +159,23 @@ export default function Navbar({
           paddingLeft: "1rem", borderLeft: "1px solid rgba(201,180,154,0.3)", flexShrink: 0,
         }}>
           {useContentTypes().map((ct) => (
-            <button
-              key={ct.id}
-              onClick={() => onContentTypeChange(ct.id)}
-              style={{
-                background: activeContentType === ct.id ? "#d4853a" : "transparent",
-                border: `1px solid ${activeContentType === ct.id ? "#d4853a" : "rgba(201,180,154,0.5)"}`,
-                borderRadius: 999, cursor: "pointer",
-                padding: "0.25rem 0.7rem", fontSize: "0.7rem",
-                fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
-                color: activeContentType === ct.id ? "#fff" : "#6b5c44",
-                display: "flex", alignItems: "center", gap: "0.3rem",
-                transition: "all 0.2s", whiteSpace: "nowrap",
-              }}
-            >
-              {ct.icon} {ct.label}
-            </button>
-          ))}
+               <button
+                key={ct.id}
+                onClick={() => ct.id === "razas" ? router.push("/razas") : onContentTypeChange(ct.id)}
+                style={{
+                  background: activeContentType === ct.id ? "#d4853a" : "transparent",
+                  border: `1px solid ${activeContentType === ct.id ? "#d4853a" : "rgba(201,180,154,0.5)"}`,
+                  borderRadius: 999, cursor: "pointer",
+                  padding: "0.25rem 0.7rem", fontSize: "0.7rem",
+                  fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
+                  color: activeContentType === ct.id ? "#fff" : "#6b5c44",
+                  display: "flex", alignItems: "center", gap: "0.3rem",
+                  transition: "all 0.2s", whiteSpace: "nowrap",
+                }}
+              >
+                {ct.icon} {ct.label}
+              </button>
+           ))}
         </div>
       </nav>
 

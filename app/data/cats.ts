@@ -1668,7 +1668,7 @@ export const categories: Category[] = [
   },
 
        {
-    slug: "a",
+    slug: "",
     label: "n",
     emoji: "",
     color: "#9b6bb5",
