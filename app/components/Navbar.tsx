@@ -23,7 +23,6 @@ function useContentTypes() {
   return [
     { id: "razas" as ContentType,        label: "Razas",       icon: "" },
     { id: "preguntas" as ContentType,    label: t('content_questions'),   icon: "" },
-    { id: "enciclopedia" as ContentType, label: t('content_encyclopedia'), icon: "" },
   ];
 }
 
@@ -146,36 +145,40 @@ export default function Navbar({
           })}
         </div>
 
-        <div style={{
-          display: "flex", alignItems: "center", gap: "0.5rem",
-          paddingLeft: "1rem", borderLeft: "1px solid rgba(201,180,154,0.3)", flexShrink: 0,
-        }}>
-          <LanguageSelector />
-        </div>
-
         {/* Content type pills */}
         <div style={{
           display: "flex", alignItems: "center", gap: "0.25rem",
-          paddingLeft: "1rem", borderLeft: "1px solid rgba(201,180,154,0.3)", flexShrink: 0,
+          paddingLeft: "1rem", flexShrink: 0,
         }}>
           {useContentTypes().map((ct) => (
-               <button
-                key={ct.id}
-                onClick={() => ct.id === "razas" ? router.push("/razas") : onContentTypeChange(ct.id)}
-                style={{
-                  background: activeContentType === ct.id ? "#d4853a" : "transparent",
-                  border: `1px solid ${activeContentType === ct.id ? "#d4853a" : "rgba(201,180,154,0.5)"}`,
-                  borderRadius: 999, cursor: "pointer",
-                  padding: "0.25rem 0.7rem", fontSize: "0.7rem",
-                  fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
-                  color: activeContentType === ct.id ? "#fff" : "#6b5c44",
-                  display: "flex", alignItems: "center", gap: "0.3rem",
-                  transition: "all 0.2s", whiteSpace: "nowrap",
-                }}
-              >
-                {ct.icon} {ct.label}
-              </button>
+             <button
+               key={ct.id}
+               onClick={() => {
+                 if (ct.id === "razas") router.push("/razas");
+                 else if (ct.id === "preguntas") router.push("/preguntas");
+                 else onContentTypeChange(ct.id);
+               }}
+               style={{
+                 background: activeContentType === ct.id ? "#d4853a" : "transparent",
+                 border: `1px solid ${activeContentType === ct.id ? "#d4853a" : "rgba(201,180,154,0.5)"}`,
+                 borderRadius: 999, cursor: "pointer",
+                 padding: "0.25rem 0.7rem", fontSize: "0.7rem",
+                 fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
+                 color: activeContentType === ct.id ? "#fff" : "#6b5c44",
+                 display: "flex", alignItems: "center", gap: "0.3rem",
+                 transition: "all 0.2s", whiteSpace: "nowrap",
+               }}
+             >
+               {ct.icon} {ct.label}
+             </button>
            ))}
+        </div>
+
+        <div style={{
+          display: "flex", alignItems: "center", gap: "0.5rem",
+          paddingLeft: "1rem", flexShrink: 0,
+        }}>
+          <LanguageSelector />
         </div>
       </nav>
 
