@@ -1667,43 +1667,439 @@ export const categories: Category[] = [
     ],
   },
 
-       {
-    slug: "",
-    label: "n",
+
+  {
+    slug: "cuidado-gatito",
+    label: "Cuidado del Gatito",
     emoji: "",
-    color: "#9b6bb5",
-    bg: "#f3eef8",
-    description: "Estimulación, juguetes y enriquecimiento",
+    color: "#e67e22",
+    bg: "#fef3e2",
+    description: "Guía integral desde el neonato hasta la edad adulta",
     subcategories: [
       {
-        slug: "importancia",
-        label: "Por qué es vital",
+        slug: "neonatos",
+        label: "Neonatos (0-20 días)",
         topics: [
           {
-            slug: "juego-cachorros",
-            title: "El juego en cachorros: la base de todo",
-            intro: "Los primeros seis meses de vida de un gato son un período crítico de desarrollo. Lo que aprenda durante el juego en esta etapa determinará en gran medida cómo se relacionará con humanos y otros animales el resto de su vida.",
+            slug: "guia-neonatos",
+            title: "Guía integral para el cuidado del gatito",
+            intro: "Fundamentos biológicos, rescate, control térmico, alimentación con biberón, estimulación de esfínteres y signos de alarma en neonatos.",
             sections: [
               {
-                heading: "La ventana de socialización",
-                body: "Entre las 2 y 9 semanas de vida, el gato aprende qué es normal en su mundo. Un cachorro que interactúa con personas, otros gatos, ruidos domésticos y experiencias variadas durante este período será un adulto más seguro y adaptable.",
+                heading: "Fundamentos biológicos y conductuales",
+                body: "El gato no es un perro pequeño ni un humano en miniatura. Sentidos adaptados a la caza nocturna: vista con tapetum lucidum, oído de frecuencias agudas, bigotes sensores como radar, y órgano de Jacobson para analizar olores complejos. El ronroneo no siempre indica felicidad; puede expresar dolor o estrés."
               },
               {
-                heading: "El error más común: las manos como juguete",
-                body: "Usar las manos o los pies para jugar con un cachorro parece inofensivo, pero enseña que la piel humana es una presa válida. Cuando ese gatito pese 5 kg, los mordiscos y arañazos serán dolorosos y el comportamiento difícil de corregir. Usa siempre juguetes con distancia.",
+                heading: "Primeros pasos: Rescate y cálculo de edad",
+                body: "Al encontrar un gatito: calor inmediato con ropa seca, no separar innecesariamente de hermanos, traslado en caja oscura y ventilada. Cálculo de edad: cordón umbilical (0-4 días), ojos cerrados (4-6 días), apertura de ojos (7-9 días), dientes emergiendo (15-18 días), caminata ágil (25-30 días)."
               },
               {
-                heading: "Juego como prevención de problemas",
-                body: "Un gato que no juega suficiente canaliza su energía de caza en conductas problemáticas: atacar tobillos, destruir objetos, agresión redirigida. 2 sesiones de juego de 15 minutos al día, especialmente antes de dormir, son el mejor antídoto.",
+                heading: "Ambiente, temperatura y humedad",
+                body: "Control térmico crítico hasta las 3 semanas: usar botellas de agua caliente envueltas en toallas, colocar en un extremo para que puedan alejarse. Temperatura ideal: 38-39.5°C. Prohibido mantas eléctricas. Control de humedad: nunca dejar húmedo, secar inmediatamente con toalla."
               },
-            ],
-          },
-        ],
+              {
+                heading: "Alimentación y nutrición (0-20 días)",
+                body: "Usar fórmula específica para gatitos (Royal Canin, Lactadiet). Emergencia: leche de cabra + huevo crudo. NUNCA leche humana o de vaca sola. Técnica: posición horizontal, tetina inclinada, gota previa en lengua. Frecuencia: cada 2-3h (0-5 días: 2-5ml, 5-10 días: 3-7ml, 10-15 días: 4-10ml)."
+              },
+              {
+                heading: "Higiene, eliminación y estimulación",
+                body: "Estimulación de esfínteres: frotar zona ano-genital con gasa húmeda después de cada toma. Orina aparece rápido, defecación puede tardar 24h. Estreñimiento: bastoncillo con aceite de oliva, gotas de aceite de parafina en biberón, o enema casero (agua tibia+jabón suave) si >3 días sin defecar."
+              },
+              {
+                heading: "Signos de alarma en neonatos",
+                body: "No quiere comer: verificar temperatura y heces. Se aparta de hermanos: revisar signos vitales. Diarrea/vómitos: riesgo alto deshidratación. Pegajoso/húmedo: secar inmediatamente. Dificultad respiratoria: gasa húmeda tibia en cuello/cara. Regla de oro: si alimentación + temperatura fallan simultáneamente = riesgo inminente."
+              }
+            ]
+          }
+        ]
       },
-    ],
-
-    
+      {
+        slug: "destete-crecimiento",
+        label: "Destete y Crecimiento (20 días - 12 meses)",
+        topics: [
+          {
+            slug: "guia-destete",
+            title: "Destete, crecimiento y transición a vida adulta",
+            intro: "Primera comida sólida, necesidades nutricionales por etapas, socialización, educación conductual, madurez sexual y esterilización.",
+            sections: [
+              {
+                heading: "Destete y primera comida sólida (~20-60 días)",
+                body: "A los 18-20 días emergen dientes. Ofrecer comida húmeda para kitten en papilla sobre toalla o con el dedo. Si rechaza: trocitos de pollo crudo/cocido o caldo de pollo sin sal. Continuar biberón al menos 2 semanas más. Mantener acceso a agua fresca y pienso kitten."
+              },
+              {
+                heading: "Crecimiento y necesidades nutricionales (2-12 meses)",
+                body: "Carnívoro estricto: requiere más proteína que el perro. Come 15-20 veces al día en pequeñas cantidades. Requerimientos: 7-8 semanas ~200 kcal/kg, 6 meses ~150 kcal/kg, adulto ~90 kcal/kg. Transición de alimento: mezclar progresivamente durante 1 semana. NUNCA acostumbrar a comer de la mesa."
+              },
+              {
+                heading: "Socialización, contacto y educación (2-7 semanas)",
+                body: "Ventana crítica para aprender pautas felinas. Primer día: silencio, sin manipulación excesiva, manta con olor materno. Los gatos aman la rutina; cambios bruscos generan estrés. Educación: detectar superficies para rascado, interrumpir acciones prohibidas con distracción (sonido seco, palmada suave en superficie). NUNCA castigo físico ni gritos."
+              },
+              {
+                heading: "Salud, prevención y signos de alarma",
+                body: "Primera visita veterinaria: examen general, temperatura, estado dental. Vacunación inicia a las 8-10 semanas. Desparasitación interna desde el 1er mes (cada 4 meses). Externa: pulgas, garrapatas, hongos. NUNCA automedicar: aspirina, paracetamol y fármacos humanos son altamente tóxicos para gatos."
+              },
+              {
+                heading: "Madurez sexual y esterilización",
+                body: "Hembras: primer celo a los 6-8 meses. Machos: madurez a los 11-12 meses. Recomendación: castración/esterilización segura (~4 meses). Reduce agresividad y marcaje con orina, elimina celos y crías no deseadas (una pareja puede generar ~65,500 descendientes en 5 años), previene tumores testiculares/prostáticos/uterinos/mamarios."
+              },
+              {
+                heading: "Crecimiento, madurez y transición a vida adulta",
+                body: "~20 días: eliminación autónoma, construir 'parque' con cajas. 1-3 meses: paso de reptar a correr, mayor gasto energético. 4-6 meses: pico de energía y juego. Escapadas: pueden regresar heridos o preñadas. Alimentación adulta: transición a fórmula para adultos (~1 año). Mantener agua fresca y pienso adecuado siempre disponible."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "principios-fundamentales",
+        label: "Principios Fundamentales",
+        topics: [
+          {
+            slug: "guia-principios",
+            title: "Principios fundamentales de supervivencia y cuidado",
+            intro: "Pilares absolutos, equilibrio descanso-contacto, registro y observación, y respeto a la naturaleza felina.",
+            sections: [
+              {
+                heading: "Pilares absolutos: Alimentación y temperatura",
+                body: "Son los indicadores vitales. Controlar con rigor salva vidas. Evitar cambios bruscos en dieta, ambiente o manejo. La adaptación felina es gradual."
+              },
+              {
+                heading: "Actuar con rapidez",
+                body: "Un neonato sano puede deteriorarse y fallecer en cuestión de horas. No esperar 'a ver si mejora'. Equilibrio descanso-contacto: 2-3h entre tomas marcan el ritmo natural. Ni manipulación constante ni abandono prolongado."
+              },
+              {
+                heading: "Registro y observación",
+                body: "Anotar cantidades, heces, temperatura y comportamiento. La globalidad del día importa más que un dato aislado."
+              },
+              {
+                heading: "Respetar su naturaleza",
+                body: "No son perros ni humanos. Su independencia, limpieza, rituales de marcaje y sensibilidad sensorial son adaptaciones evolutivas que deben guiar tu manejo."
+              },
+              {
+                heading: "Nota final",
+                body: "Sacar adelante un gatito abandonado exige dedicación, paciencia y conocimiento. A veces, a pesar del esfuerzo máximo, la fragilidad neonatal impone límites. No es un fracaso personal; es la realidad biológica. Cada intento brinda una oportunidad de vida. Gracias por informarte, por actuar con responsabilidad y por ofrecer una segunda oportunidad a quienes nacen en la indefensión. Para seguimiento nutricional detallado o casos clínicos, consultar siempre a un veterinario colegiado."
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
+  {
+    slug: "tenencia-responsable",
+    label: "Tenencia Responsable",
+    emoji: "",
+    color: "#2ecc71",
+    bg: "#e8f8f0",
+    description: "Guía universal para el cuidado ético y bienestar felino",
+    subcategories: [
+      {
+        slug: "principios-universales",
+        label: "Principios y Naturaleza Felina",
+        topics: [
+          {
+            slug: "guia-tenencia-responsable",
+            title: "Tenencia Responsable de Gatos",
+            intro: "Compromiso universal que trasciende fronteras: garantizar el bienestar físico, emocional y social del gato durante toda su vida (15-20 años).",
+            sections: [
+              {
+                heading: "Introducción: Un compromiso universal",
+                body: "La tenencia responsable trasciende fronteras, culturas y legislaciones. Principio rector: Un gato no es un objeto, ni un accesorio temporal. Es un ser sintiente con necesidades específicas que debemos comprender y respetar."
+              },
+              {
+                heading: "Comprender la naturaleza felina",
+                body: "Diferencias fundamentales: No son animales gregarios (no buscan un 'líder', valoran autonomía). Sentidos adaptados a la caza nocturna: vista con tapetum lucidum, oído de frecuencias ultrasónicas, olfato + órgano de Jacobson para analizar feromonas. Bigotes sensores como radar táctil. Equilibrio excepcional con reflejo de enderezamiento. El ronroneo es polivalente: indica bienestar, pero también dolor, estrés o necesidad."
+              },
+              {
+                heading: "Cronología del desarrollo felino",
+                body: "Gestación: ~9 semanas. Nacimiento: ojos cerrados, sordera, dependencia térmica total. 9-10 días: apertura de ojos. 3 semanas: primeros pasos, inicio de juego social. 4-6 semanas: inicio del destete natural. 8 semanas: destete completo, listo para adopción responsable. 2-7 meses: ventana crítica de socialización. 6-8 meses (hembras) / 11-12 meses (machos): madurez sexual. 12 meses: adultez física (algunas razas tardan hasta 18-24 meses). 7+ años: etapa senior."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "marco-etico-legal",
+        label: "Marco Ético y Legal",
+        topics: [
+          {
+            slug: "marco-etico-legal",
+            title: "Marco Ético y Legal Global",
+            intro: "Principios universales de protección animal y responsabilidades del tutor, independientemente del país.",
+            sections: [
+              {
+                heading: "Principios universales de protección animal",
+                body: "Aunque las leyes tienen nombres distintos (Animal Welfare Act, Ley de Tenencia Responsable, etc.), comparten ejes comunes: Prohibición del abandono (entregar sin garantizar reubicación es maltrato). Identificación permanente (microchip o tatuaje registrado). Cuidados básicos obligatorios (alimentación, albergue, atención veterinaria). Prohibición de sacrificio poblacional (el control ético se basa en esterilización). Acceso a la denuncia ciudadana."
+              },
+              {
+                heading: "Responsabilidades del tutor",
+                body: "Antes de adoptar: evaluar recursos económicos, tiempo, estabilidad residencial y compromiso a largo plazo. Durante la tenencia: registro, identificación, vacunación, desparasitación, esterilización. En caso de mudanza o crisis: planificar con anticipación el cuidado. Al final de la vida: acompañar con dignidad, considerar eutanasia humanitaria cuando el sufrimiento sea irreversible. Nota: Consultar siempre la legislación local, pero recordar que la ética del cuidado trasciende la ley mínima."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "salud-preventiva",
+        label: "Salud Preventiva",
+        topics: [
+          {
+            slug: "salud-preventiva-global",
+            title: "Salud Preventiva y Atención Veterinaria",
+            intro: "Enfermedades infeccontagiosas clave, protocolo sanitario básico y signos de alarma.",
+            sections: [
+              {
+                heading: "Enfermedades infeccontagiosas clave",
+                body: "Panleucopenia: transmisión por heces/orina/fómites, vacuna Triple Felina, alta mortalidad en neonatos. Rinotraqueítis/Calicivirus: secreciones/contacto directo, vacuna Triple Felina, puede cronificarse. Leucemia Felina (FeLV): saliva/sangre/gestación, vacuna + test previo. Inmunodeficiencia Felina (FIV): mordeduras, esterilización y tests. Rabia: mordedura de animal infectado, vacuna obligatoria en zonas endémicas. PIF: mutación del coronavirus entérico, higiene y evitar hacinamiento. Toxoplasmosis: ingestión de tejidos infectados, cocinar carnes y limpiar bandeja diaria."
+              },
+              {
+                heading: "Protocolo sanitario básico",
+                body: "1. Adopción/Rescate → Examen veterinario completo. 2. Desparasitación interna/externa. 3. Pruebas de FeLV/FIV si hay riesgo. 4. Inicio de esquema vacunal: 6-8 semanas (Primera Triple), 12 semanas (Refuerzo + Rabia si aplica). 5. Esterilización a los 4-6 meses. 6. Chequeos anuales (semestrales si es senior o crónico)."
+              },
+              {
+                heading: "Signos de alarma: Cuándo acudir al veterinario",
+                body: "URGENCIA INMEDIATA: Dificultad respiratoria, encías pálidas/azuladas, incapacidad para orinar, convulsiones, pérdida de conciencia, traumatismo evidente. Consulta en <24h: Vómitos/diarrea persistentes, rechazo total de comida/agua >24h, letargo extremo, sangre en orina/heces/vómito. Monitorear: cambios en hábitos de arenero, pérdida de peso, rascado excesivo, mal aliento. NUNCA automedicar: Paracetamol, Ibuprofeno y AINEs son altamente tóxicos."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "nutricion-cientifica",
+        label: "Nutrición Científica",
+        topics: [
+          {
+            slug: "nutricion-etapas",
+            title: "Nutrición Científica por Etapas",
+            intro: "Principios fisiológicos universales, requerimientos por etapa y alimentos tóxicos.",
+            sections: [
+              {
+                heading: "Principios fisiológicos universales",
+                body: "Carnívoros estrictos: requieren proteína animal de alta calidad, taurina, arginina, vitamina A preformada. Metabolismo hídrico: beben poco por naturaleza; la dieta húmeda es clave para salud renal. Alimentación fraccionada: en libertad cazan 10-20 presas pequeñas/día; en casa ofrecer múltiples comidas o usar comederos interactivos."
+              },
+              {
+                heading: "Requerimientos por etapa de vida",
+                body: "Lactante (0-2 meses): 200-250 kcal/kg/día, proteína mínima ≥30%, leche maternizada específica. Cachorro (2-12 meses): 150-200 kcal/kg/día, proteína ≥30%, alimento kitten. Adulto (1-7 años): 80-100 kcal/kg/día, proteína ≥26%, control de peso según estilo de vida. Senior (7+ años): 70-90 kcal/kg/día, proteína ≥28% (alta digestibilidad), dietas geriátricas. Esterilizado: 60-80 kcal/kg/día, proteína ≥30%, control estricto de porciones."
+              },
+              {
+                heading: "Alimentos y sustancias tóxicas",
+                body: "NUNCA ofrecer: Chocolate, café, té (metilxantinas), cebolla, ajo, puerro (anemia hemolítica), uvas, pasas (fallo renal), alcohol, masa cruda con levadura, xilitol (hipoglucemia), medicamentos humanos. Plantas de alto riesgo: Lirios (tóxicos renales letales), azaleas, rododendros, tejo, cicuta, digital, eucalipto, poinsettia."
+              },
+              {
+                heading: "Estrategias prácticas de hidratación",
+                body: "Fuentes de agua corriente + recipientes estáticos. Agua fresca diaria. Colocar bebederos lejos de comederos y bandejas (n+1 regla). Alimento húmedo como complemento esencial para salud renal y urinaria."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "enriquecimiento-ambiental",
+        label: "Enriquecimiento Ambiental",
+        topics: [
+          {
+            slug: "5-pilares-ambientales",
+            title: "Enriquecimiento Ambiental y Bienestar Conductual",
+            intro: "Los 5 Pilares del Ambiente Felino Saludable: espacio, recursos, juego, interacción y olfato.",
+            sections: [
+              {
+                heading: "Pilar 1: Espacio seguro y vertical",
+                body: "Altura = seguridad: repisas, árboles para gatos, estanterías permiten observar sin sentirse vulnerables. Refugios accesibles: cajas, túneles, camas cerradas donde poder esconderse. Rutas de escape: evitar callejones sin salida en la distribución del hogar."
+              },
+              {
+                heading: "Pilar 2: Recursos clave distribuidos (regla n+1)",
+                body: "Comederos: separados de bebederos y bandejas, múltiples ubicaciones si hay >1 gato. Bebederos: fuentes + recipientes estáticos, agua fresca diaria. Bandejas: n+1 (número de gatos +1), ubicadas en zonas tranquilas, lejos de ruido. Rascadores: verticales y horizontales, materiales sisal/cartón/madera, ubicar cerca de zonas de descanso."
+              },
+              {
+                heading: "Pilar 3: Juego que simula la caza",
+                body: "Secuencia natural: acechar → perseguir → capturar → 'comer'. Juguetes interactivos: cañas con plumas, láseres (siempre finalizar con premio físico), rompecabezas de comida. Sesiones cortas: 2-3 juegos de 10-15 min/día, preferentemente al atardecer (horario natural de actividad felina)."
+              },
+              {
+                heading: "Pilar 4: Interacción humana predecible y positiva",
+                body: "Respetar el consentimiento: dejar que el gato inicie el contacto, no forzar caricias. Comunicación suave: voz tranquila, movimientos lentos, parpadeo lento ('beso de gato'). Refuerzo positivo: premiar conductas deseadas con comida/juego/atención. NUNCA castigo físico ni gritos (generan miedo/agresividad)."
+              },
+              {
+                heading: "Pilar 5: Respeto por el olfato felino",
+                body: "El mundo es olor: identifican personas, territorios y estados emocionales por feromonas. Evitar limpieza excesiva: no lavar con frecuencia las zonas donde se frota (mejillas, cabeza). Feromonas sintéticas: Feliway® o equivalentes pueden reducir estrés en mudanzas, visitas al vet o llegada de nuevos miembros."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "gestion-reproductiva",
+        label: "Gestión Reproductiva y TNR",
+        topics: [
+          {
+            slug: "esterilizacion-evidencia",
+            title: "Gestión Reproductiva y Control Poblacional Ético",
+            intro: "Esterilización: evidencia global, mitos desmentidos y protocolo TNR para gatos ferales.",
+            sections: [
+              {
+                heading: "Esterilización: Evidencia Global",
+                body: "¿Qué es? Hembras: Ovariohisterectomía. Machos: Orquiectomía. ¿Cuándo? Recomendación internacional: 4-6 meses (antes del primer celo). ¿Por qué? Prevención de cáncer mamario (>90% reducción si se hace antes del primer celo), eliminación de piometra (infección uterina mortal), reducción de marcaje con orina/vagabundeo/peleas, prevención de transmisión FeLV/FIV, control poblacional humanitario."
+              },
+              {
+                heading: "Mitologicos desmentidos con evidencia",
+                body: "Mito: 'Es bueno que tenga una camada antes de esterilizar' → Realidad: No aporta beneficios, solo aumenta riesgo de sobrepoblación. Mito: 'Los machos esterilizados engordan' → Realidad: El peso depende de dieta y ejercicio; la esterilización reduce un 20-30% el requerimiento energético. Mito: 'La esterilización cambia la personalidad' → Realidad: Reduce conductas por hormonas, pero no la esencia del gato. Mito: 'Es cruel operarlos tan jóvenes' → Realidad: La recuperación es más rápida en jóvenes."
+              },
+              {
+                heading: "Protocolo TNR (Trap-Neuter-Return)",
+                body: "1. CAPTURA: Jaulas trampa con cebo, monitoreo constante, protección climática, cubrir jaula. 2. INTERVENCIÓN: Esterilización por profesional experto, analgesia pre/intra/postoperatoria, vacunación, corte de oreja (ear-tip) 0.8-1cm punta izquierda para identificación. 3. RETORNO: Al mismo punto de captura, cuidador comunitario provee alimento/agua/refugio. Beneficios: Reducción progresiva de población, disminución de ruidos nocturnos, menos marcaje, convivencia más armónica."
+              },
+              {
+                heading: "Gatos ferales vs. callejeros sociables",
+                body: "Gato feral: Nacido sin contacto humano, evita interacción, NO adoptable, su bienestar está en su territorio con cuidados a distancia. Gato callejero sociable: Fue mascota, busca interacción, SÍ adoptable con paciencia. Manejo: Programas TNR para ferales, rescate y adopción responsable para sociables."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        slug: "vinculo-largo-plazo",
+        label: "Vínculo y Compromiso a Largo Plazo",
+        topics: [
+          {
+            slug: "vinculo-humano-felino",
+            title: "El Vínculo Humano-Felino y el Compromiso a Largo Plazo",
+            intro: "Beneficios de la convivencia, preparación para el final de la vida y checklist de tenencia responsable.",
+            sections: [
+              {
+                heading: "Beneficios documentados de la convivencia",
+                body: "Salud cardiovascular: menor riesgo de infarto e ictus. Salud mental: el ronroneo (25-150 Hz) reduce estrés y presión arterial, disminuye sensación de soledad. Desarrollo infantil: menor incidencia de alergias y asma. Terapia asistida: gatos en hospitales, residencias y centros educativos."
+              },
+              {
+                heading: "Prepararse para el final de la vida",
+                body: "Señales: pérdida de interés en comida/agua/interacción, dificultad para moverse, incontinencia, dolor crónico no manejable, enfermedad terminal. Decisiones éticas: consultar opciones paliativas, evaluar calidad de vida con escalas validadas (HHHHMM), considerar eutanasia humanitaria cuando el sufrimiento sea irreversible. Acompañar con dignidad: presencia, caricias, voz tranquila. Permitirse el duelo: la pérdida de un compañero es real y válida."
+              },
+              {
+                heading: "Checklist de tenencia responsable",
+                body: "ANTES DE ADOPTAR: Evaluar tiempo/recursos/compromiso a 15-20 años. Preparar hogar: protección ventanas, espacios verticales, bandeja, rascador. Investigar veterinarios con enfoque felino. PRIMEROS 30 DÍAS: Identificación (microchip), examen veterinario, desparasitación, inicio vacunal, adaptación gradual a dieta, establecer rutina. MANTENIMIENTO ANUAL: Chequeo preventivo, refuerzo vacunas, control de peso, renovación antiparasitarios, evaluación de enriquecimiento ambiental. SEÑALES DE ALARMA: No come/bebe >24h, vómitos/diarrea con sangre, dificultad para orinar, letargo extremo, temperatura >39.5°C o <37.5°C."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "castracion",
+    label: "Castración",
+    emoji: "",
+    color: "#3498db",
+    bg: "#eaf2f8",
+    description: "Guía familiar: ¿Por qué, cuándo y cómo castrar a tu gato?",
+    subcategories: [
+      {
+        slug: "guia-infantil",
+        label: "Guía para Niños y Familias",
+        topics: [
+          {
+            slug: "por-que-castrar",
+            title: "¿Por qué castrar a los gatitos?",
+            intro: "¡Una operación segura que hace el veterinario para que los gatos no tengan bebés y vivan más felices y sanos!",
+            sections: [
+              {
+                heading: "¿Qué significa 'castrar' o 'esterilizar' a un gato?",
+                body: "Es una operación especial que hace el veterinario para que los gatitos no puedan tener bebés.\n• A las gatas: Se llama 'esterilización' y le quitan los ovarios y el útero.\n• A los gatos machos: Se llama 'castración' y le quitan los testículos.\n¡Es como poner un 'modo tranquilo' para que vivan más felices y sanos! 😊"
+              },
+              {
+                heading: "¿Duele la operación?",
+                body: "¡No te preocupes!\n✅ El veterinario le pone una 'siesta mágica' (anestesia) para que el gatito duerma tranquilo y no sienta nada.\n✅ Después le dan medicinas especiales para que no le duela cuando despierte.\n✅ Los gatitos se recuperan muy rápido: ¡en 1 o 2 días ya están jugando como siempre! 🎾"
+              },
+              {
+                heading: "¿Por qué es bueno castrar a los gatos?",
+                body: "¡Porque les ayuda a vivir mejor! Mira estos superpoderes que ganan:\n\n| Beneficio | ¿Qué significa para tu gatito? |\n| --- | --- |\n| 🏥 Más salud | No se enferman de cosas graves como infecciones en la panza o cáncer. |\n| 😌 Más tranquilo | Los machos no pelean tanto con otros gatos y no se escapan tanto. |\n| 🏠 Más casero | Se quedan más tiempo en casa contigo, ¡y eso es genial! |\n| 🔇 Menos ruidos | Las gatas no maúllan fuerte buscando novio por las noches. |\n| 💩 Menos olores | Los machos no hacen 'pipí con olor fuerte' para marcar territorio. |\n| ❤️ Más amor | Al no estar nerviosos por el celo, ¡te dan más cariños! |"
+              },
+              {
+                heading: "¿A qué edad se puede castrar a un gatito?",
+                body: "🐱 Lo ideal: Entre los 4 y 6 meses de edad, antes de que tengan su primer 'celo'.\n🐱 También se puede: Desde los 3 meses si el veterinario lo recomienda, ¡y se recuperan aún más rápido!\n🚫 Mito importante: NO es necesario que la gata tenga una camada de gatitos antes de operarla. ¡Eso es un cuento viejo! Operarla antes es más sano para ella."
+              },
+              {
+                heading: "¿Mi gato va a engordar después de la operación?",
+                body: "¡No necesariamente!\n✅ Es verdad que algunos gatos pueden subir de peso, pero eso pasa si comen mucho y no juegan.\n✅ La solución es fácil: darle la comida justa y jugar con él todos los días.\n✅ ¡Un gato que juega es un gato feliz y delgadito! 🎣🧶"
+              },
+              {
+                heading: "¿Mi gato va a cambiar de personalidad?",
+                body: "¡Para bien, sí! Pero sigue siendo el mismo gatito que amas.\n\n🔹 Lo que SÍ cambia:\n• Ya no se escapa tanto buscando novias/novios\n• No pelea con otros gatos por territorio\n• No hace pipí en las paredes para marcar\n\n🔹 Lo que NO cambia:\n• Sigue siendo cariñoso contigo ❤️\n• Sigue jugando con sus juguetes 🎾\n• Sigue ronroneando cuando lo acaricias 😻\n¡Sigue siendo TU gatito!"
+              },
+              {
+                heading: "¿Qué pasa si NO castro a mi gato?",
+                body: "Respuesta: Pueden pasar cosas que no son tan bonitas:\n\nPara las gatas:\n• Pueden tener muchos gatitos (¡hasta 3 camadas al año!)\n• Y si no hay hogares para todos... algunos gatitos pueden quedarse sin familia 😢\n• Pueden enfermarse del útero (una infección grave llamada 'piometra')\n• Tienen más riesgo de cáncer de mama\n\n🚨 Para los gatos machos:\n• Se escapan mucho y pueden perderse o tener accidentes\n• Pelean con otros gatos y pueden lastimarse o enfermarse\n• Hacen pipí con olor muy fuerte en la casa\n• Gritan y maúllan mucho buscando gatas"
+              },
+              {
+                heading: "¿Y los gatitos que ya viven en la calle?",
+                body: "¡También hay una solución especial para ellos! Se llama TNR:\n\nT = TRAP (Atrapar con cuidado en una jaula especial)\n🔹 N = NEUTER (Operar para que no tengan más bebés)\n🔹 R = RETURN (Devolverlos a su lugar, donde un cuidador les da comida)\n\n✨ Además, les cortan un poquito la puntita de la oreja izquierda (¡no les duele! lo hacen mientras duermen con la anestesia) para saber que ya están operados.\n\n💚 Así, poco a poco, hay menos gatitos en la calle y los que están reciben mejores cuidados. ¡Todos ganan!"
+              },
+              {
+                heading: "¿Castrar ayuda a los gatitos abandonados?",
+                body: "¡Sí, muchísimo! Mira este número impresionante:\n\n📊 Una sola pareja de gatos puede tener...\n   ¡65,500 descendientes en solo 5 años! 😱\n\n🔢 ¿Cómo? \n   • Una gata puede tener 3 camadas al año\n   • Cada camada puede tener 4-6 gatitos\n   • Esos gatitos crecen y también tienen gatitos...\n   • ¡Y así se multiplica como una cadena!\n\n✅ Al castrar, rompemos esa cadena y ayudamos a que menos gatitos nazcan sin hogar. ¡Es un acto de amor! 💙"
+              },
+              {
+                heading: "RESUMEN PARA RECORDAR (¡EN 3 FRASES!)",
+                body: "🩺 Castrar es una operación segura que hace el veterinario para que los gatos no tengan bebés y vivan más sanos.\n\n❤️ Es un acto de amor: protege a tu gato de enfermedades, lo hace más tranquilo y ayuda a que menos gatitos vivan en la calle.\n\n🏠 Tu gato seguirá siendo el mismo: solo que más sano, más casero y con más ganas de darte cariños."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "impacto-conciencia",
+    label: "Impacto y Conciencia",
+    emoji: "",
+    color: "#8e44ad",
+    bg: "#f4ecf7",
+    description: "El lado oculto y responsabilidad global de nuestros gatos",
+    subcategories: [
+      {
+        slug: "vida-secreta",
+        label: "La Vida Secreta del Gato",
+        topics: [
+          {
+            slug: "vida-secreta-gatos",
+            title: "La Vida Secreta de Nuestros Gatos",
+            intro: "¿Sabías que tu gato es un superhéroe... y un poco villano? Descubre la verdad sobre sus superpoderes, su vida nocturna y su impacto en el planeta.",
+            sections: [
+              {
+                heading: "Los superpoderes del gato (sí, en serio)",
+                body: "👁️ Visión nocturna nivel PRO: Sus ojos ven 7 veces mejor que los humanos en la oscuridad gracias al tapetum lucidum. ¡Es como tener faros integrados! Pero con mucha luz, ven menos detalles. Su pupila vertical se cierra como una rendija para regular.\n\n👂 Oídos de radar: Escuchan frecuencias ultrasónicas que nosotros ni imaginamos. Sus orejas se mueven independientemente como antenas parabólicas 🛰️. En oscuridad total, pueden localizar una presa solo por el sonido de sus pasos.\n\n🤸 Bigotes sensores = GPS táctil: No son solo pelos bonitos, son sensores que detectan corrientes de aire, obstáculos y movimientos. También tienen en mejillas, sobre los ojos y en las patas delanteras. NUNCA los cortes.\n\n🤸 Equilibrio de ninja: Su reflejo de enderezamiento les permite caer de pie (casi siempre). Extienden los pliegues de su piel como un paracaídas natural. Mito: 'Los gatos siempre caen bien'. Realidad: Pueden lastimarse en caídas altas. ¡Protégelos con mallas!\n\n💪 Cuerpo de atleta olímpico: Músculos que les permiten correr a 48 km/h y cambiar de dirección en pleno salto. Garras retráctiles para trepar, sujetar presas y... afilar en tu sofá favorito 😅"
+              },
+              {
+                heading: "El lado oscuro (sí, hay uno)",
+                body: "🚨 Tu gato es una especie invasora: Aunque lo veas como una bolita de amor, globalmente los gatos domésticos están en la lista de las 100 especies invasoras más dañinas del planeta.\n\n📊 DATOS QUE IMPACTAN:\n• 1 de cada 3 gatos bien alimentados caza 2-3 animales por semana\n• Un gato cazador mata entre 100 y 150 animales al año\n• En EE.UU., gatos domésticos cazan ~3.000 MILLONES de animales silvestres al año\n• En islas, han contribuido a extinguir al menos 30 especies de aves\n• En Australia, ayudaron a extinguir 28 especies de marsupiales 😢\n\n¿Qué cazan realmente? Un estudio en Morelia, México, reveló que los gatos urbanos matan 43 especies de vertebrados:\n• 🐦 Pájaros (los más afectados)\n• 🐭 Roedores\n• 🦎 Lagartijas y serpientes\n• 🦇 Murciélagos\n• 🐰 Conejos silvestres\n\n💡 Reflexión juvenil: Amar a tu gato no significa ignorar su impacto. Podemos quererlo Y proteger la biodiversidad."
+              },
+              {
+                heading: "¿Hasta dónde llega tu gato cuando sale?",
+                body: "📱 El experimento del GPS: Científicos pusieron collares con GPS a gatos domésticos y descubrieron:\n\nLo normal:\n• Se quedan a 1-2 manzanas de casa la mayor parte del tiempo\n\n🌌 Pero... ¡sorpresa!\n• 1-2 veces por semana, algunos recorren HASTA 20 KM en una noche\n• Cruzan ciudades, llegan al campo, entran a bosques... y regresan al amanecer\n\n🤯 Traducción: Tu 'gato de interior' podría estar de aventura nocturna sin que lo sepas.\n\nRiesgos de dejarlo libre:\n| Para tu gato | Para la fauna | Para ti |\n| --- | --- | --- |\n| 🚗 Atropellos | 📉 Disminución de aves hasta 40% en algunas zonas | 🦠 Enfermedades zoonóticas |\n| 🧪 Envenenamientos | 🐦 Extinción de especies endémicas | 🤢 Parásitos traídos de la calle |\n| 😿 Estrés y desorientación | 🌱 Alteración de ecosistemas | 💩 Excrementos en espacios públicos |\n\n🎯 Dato clave: Se han encontrado restos de pañales desechables en heces de gatos callejeros. Sí, los comen. Antes de que te lama la cara... piensa en dónde ha estado 🤢"
+              },
+              {
+                heading: "El problema de la sobrepoblación (y cómo ayudar)",
+                body: "📈 Matemáticas que asustan: Una pareja de gatos + su descendencia puede generar:\n• 🔹 400,000 gatos en solo 7 años\n• Hasta 3 camadas/año por gata\n• 4-6 gatitos por camada en promedio\n\n🧮 Haz la cuenta: 1 gata → 4 gatitos → esos 4 se reproducen → y así sucesivamente... ¡Es una explosión demográfica felina!\n\nEn números reales (ejemplo: una ciudad mediana):\n• 15% de hogares tiene gatos (promedio 3 por casa)\n• En una ciudad de 150,000 viviendas → ~67,500 gatos domésticos (sin contar callejeros)\n• Resultado: Más de 2 millones de animales silvestres cazados al año solo en esa ciudad"
+              },
+              {
+                heading: "Ser joven y responsable: Tu poder de cambio",
+                body: "✅ Lo que SÍ puedes hacer (y marca la diferencia):\n\n🏠 Mantén a tu gato indoor (o en espacios seguros):\n• Catio: Jaulas o cerramientos tipo 'jardín para gatos' en balcones/ventanas\n• Mallas de seguridad: Evitan caídas y fugas\n• Enriquecimiento indoor: Rascadores, juguetes interactivos, repisas, escondites\n\n💉 Esteriliza a tiempo:\n• Hembras: Desde los 4 meses (antes del primer celo)\n• Machos: Desde los 5-6 meses\n• Beneficios: ✅ Reduce escapadas y peleas ✅ Previene cánceres ✅ Disminuye marcaje ✅ Controla la sobrepoblación\n\n🩺 Cuida su salud preventiva:\n• Vacunas al día (Triple Felina + Antirrábica según zona)\n• Desparasitación interna/externa regular\n• Chequeos veterinarios anuales\n\n🍽️ Alimentación consciente:\n• Dieta balanceada específica (son carnívoros estrictos)\n• Evita dar comida humana: chocolate, cebolla, uvas, etc. son tóxicos\n• Agua fresca siempre disponible"
+              },
+              {
+                heading: "MITOS vs. REALIDAD (Quiz rápido)",
+                body: "| Mito | Realidad científica |\n| --- | --- |\n| ❌ 'Si lo alimento bien, no caza' | ✅ 1 de cada 3 gatos bien alimentados caza igual. El instinto no se apaga con el pienso. |\n| ❌ 'Los gatos siempre caen de pie' | ✅ Tienen reflejo de enderezamiento, pero caídas altas pueden ser mortales. |\n| ❌ 'Esterilizarlos es cruel' | ✅ Es más cruel permitir nacimientos que terminan en abandono, sufrimiento o eutanasia. |\n| ❌ 'Mi gato no se aleja de casa' | ✅ Estudios con GPS muestran que pueden recorrer hasta 20 km en una noche. |\n| ❌ 'Los gatos ferales pueden adoptarse' | ✅ Los gatos ferales (sin socialización humana) no son candidatos a adopción. Requieren manejo TNR. |"
+              },
+              {
+                heading: "Tu checklist de acción (Para imprimir o guardar)",
+                body: "✅ Si ya tienes un gato:\n• Microchip + registro en base de datos local\n• Esterilización programada (si aún no lo está)\n• Mallas de seguridad en ventanas/balcones\n• Enriquecimiento indoor: rascador, juguetes, repisas\n• Chequeo veterinario anual\n\n✅ Si quieres adoptar:\n• Evaluar compromiso a largo plazo (15-20 años de vida)\n• Preparar hogar antes de la llegada\n• Elegir protectora con protocolo de adopción responsable\n• Considerar gatos adultos: ¡son increíbles y a veces pasan desapercibidos!\n\n✅ Si quieres ayudar sin adoptar:\n• Voluntariado en refugios locales\n• Difundir información verificada en redes\n• Apoyar campañas de esterilización comunitaria\n• Reportar colonias ferales a autoridades para activar TNR"
+              },
+              {
+                heading: "Conclusión: Amar con conciencia",
+                body: "Los gatos nos han acompañado por milenios: guardaron nuestros graneros, nos hicieron compañía en noches solas y nos regalan ronroneos que bajan el estrés.\n\nPero hoy, con ciudades más densas y ecosistemas más frágiles, amarlos responsablemente significa equilibrar su bienestar con el del planeta.\n\n🐱 Tu gato no es 'malo' por cazar. Es un felino, y esa es su naturaleza.\n🌍 Tú no eres 'malo' por querer proteger la biodiversidad. Es tu responsabilidad como ciudadano global.\n\n💚 La solución no está en elegir uno u otro, sino en encontrar el punto medio: cuidar a tu gato y al mundo que compartimos.\n\nEl futuro de la convivencia humano-felino-fauna silvestre está en tus manos. ¿Listo para ser parte del cambio? ✨"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
