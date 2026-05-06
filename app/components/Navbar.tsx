@@ -131,19 +131,19 @@ export default function Navbar({
           </button>
         )}
 
-        {/* Categories Carousel */}
-        <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
-          <div
-            ref={carouselRef}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.25rem",
-              transition: "transform 0.3s ease",
-              transform: `translateX(-${carouselIndex * (100 / itemsPerView)}%)`,
-              width: `${(cats.length / itemsPerView) * 100}%`,
-            }}
-          >
+         {/* Categories Carousel */}
+         <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
+           <div
+             ref={carouselRef}
+             style={{
+               display: "flex",
+               alignItems: "center",
+               gap: "0.25rem",
+               transition: "transform 0.3s ease",
+               transform: `translateX(-${carouselIndex * (100 / itemsPerView)}%)`,
+               width: `${(cats.length / itemsPerView) * 100}%`,
+             }}
+           >
             {cats.map((cat) => {
               const isOpen = openMenu === cat.slug;
               const isActive = activeCategorySlug === cat.slug;
@@ -164,6 +164,18 @@ export default function Navbar({
                     whiteSpace: "nowrap",
                     transition: "all 0.2s ease",
                     flexShrink: 0,
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isOpen && !isActive) {
+                      e.currentTarget.style.background = "rgba(0, 0, 0, 0.04)";
+                      e.currentTarget.style.borderColor = "rgba(0, 0, 0, 0.08)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isOpen && !isActive) {
+                      e.currentTarget.style.background = "none";
+                      e.currentTarget.style.borderColor = "transparent";
+                    }
                   }}
                 >
                   {cat.label}
@@ -215,19 +227,29 @@ export default function Navbar({
                 else onContentTypeChange(ct.id);
               }}
               style={{
-                background: activeContentType === ct.id ? "#1a1a1a" : "transparent",
-                border: activeContentType === ct.id ? "1px solid #1a1a1a" : "1px solid rgba(0, 0, 0, 0.12)",
+                background: "transparent",
+                border: "1px solid rgba(0, 0, 0, 0.12)",
                 borderRadius: 8,
                 cursor: "pointer",
                 padding: "0.45rem 0.9rem",
                 fontSize: "0.78rem",
                 fontFamily: "'Inter', sans-serif",
                 fontWeight: 500,
-                color: activeContentType === ct.id ? "#fff" : "#666",
+                color: "#666",
                 display: "flex", alignItems: "center", gap: "0.3rem",
                 transition: "all 0.2s ease",
                 whiteSpace: "nowrap",
                 flexShrink: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(212, 133, 58, 0.08)";
+                e.currentTarget.style.borderColor = "rgba(212, 133, 58, 0.2)";
+                e.currentTarget.style.color = "#d4853a";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor = "rgba(0, 0, 0, 0.12)";
+                e.currentTarget.style.color = "#666";
               }}
             >
               {ct.label}
