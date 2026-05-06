@@ -134,24 +134,47 @@ export default function Footer() {
         }}>
           © {new Date().getFullYear()} GatoLandia. Todos los derechos reservados.
         </p>
-        <div style={{ display: "flex", gap: "1.5rem" }}>
-          {["Privacidad", "Términos", "Contacto"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              style={{
-                fontSize: "0.75rem",
-                color: "#8a7560",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#c9b49a")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#8a7560")}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
+        <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
+           <a
+             href="/privacidad"
+             style={{
+               fontSize: "0.75rem",
+               color: "#8a7560",
+               textDecoration: "none",
+               transition: "color 0.2s",
+             }}
+             onMouseEnter={(e) => (e.currentTarget.style.color = "#c9b49a")}
+             onMouseLeave={(e) => (e.currentTarget.style.color = "#8a7560")}
+           >
+             Política de Privacidad
+           </a>
+           <a
+             href="/terminos"
+             style={{
+               fontSize: "0.75rem",
+               color: "#8a7560",
+               textDecoration: "none",
+               transition: "color 0.2s",
+             }}
+             onMouseEnter={(e) => (e.currentTarget.style.color = "#c9b49a")}
+             onMouseLeave={(e) => (e.currentTarget.style.color = "#8a7560")}
+           >
+             Términos y Condiciones
+           </a>
+           <a
+             href="mailto:conexiongatuna@gmail.com"
+             style={{
+               fontSize: "0.75rem",
+               color: "#8a7560",
+               textDecoration: "none",
+               transition: "color 0.2s",
+             }}
+             onMouseEnter={(e) => (e.currentTarget.style.color = "#c9b49a")}
+             onMouseLeave={(e) => (e.currentTarget.style.color = "#8a7560")}
+           >
+             conexiongatuna@gmail.com
+           </a>
+         </div>
       </div>
     </footer>
   );
