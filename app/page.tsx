@@ -201,7 +201,7 @@ export default function Home() {
               {/* Category Cards Preview */}
               <div style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
                 gap: "1rem", maxWidth: 1000, margin: "0 auto",
               }}>
                 {categories.map((cat) => (
@@ -209,33 +209,61 @@ export default function Home() {
                     key={cat.slug}
                     onClick={() => handleCategoryTabClick(cat.slug)}
                     style={{
-                      background: cat.bg,
-                      border: `1px solid ${cat.color}25`,
-                      borderRadius: 16, padding: "1.5rem 1rem",
-                      cursor: "pointer", textAlign: "center",
-                      transition: "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                      textAlign: "left",
+                      background: "rgba(255, 255, 255, 0.8)",
+                      backdropFilter: "blur(10px)",
+                      border: "1px solid rgba(0, 0, 0, 0.06)",
+                      borderRadius: 12,
+                      padding: "1.25rem 1.25rem 1.25rem 1.5rem",
                       fontFamily: "'Inter', sans-serif",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                      cursor: "pointer",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+                      position: "relative",
+                      overflow: "hidden",
                     }}
                     onMouseEnter={(e) => {
                       const el = e.currentTarget;
-                      el.style.transform = "translateY(-4px) scale(1.02)";
-                      el.style.boxShadow = `0 12px 32px ${cat.color}15`;
-                      el.style.borderColor = `${cat.color}50`;
+                      el.style.background = "rgba(255, 255, 255, 0.95)";
+                      el.style.borderColor = cat.color;
+                      el.style.transform = "translateY(-2px)";
+                      el.style.boxShadow = `0 8px 24px ${cat.color}15`;
                     }}
                     onMouseLeave={(e) => {
                       const el = e.currentTarget;
-                      el.style.transform = "translateY(0) scale(1)";
-                      el.style.boxShadow = "none";
-                      el.style.borderColor = `${cat.color}25`;
+                      el.style.background = "rgba(255, 255, 255, 0.8)";
+                      el.style.borderColor = "rgba(0, 0, 0, 0.06)";
+                      el.style.transform = "translateY(0)";
+                      el.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)";
                     }}
                   >
-                    <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}></div>
-                    <div style={{ fontWeight: 700, fontSize: "0.9rem", color: "#2c2416", marginBottom: "0.3rem" }}>
+                    <div style={{
+                      position: "absolute",
+                      left: 0,
+                      top: 0,
+                      bottom: 0,
+                      width: 4,
+                      background: cat.color,
+                      borderRadius: "12px 0 0 12px",
+                      opacity: 0.6,
+                    }} />
+                    <p style={{ fontSize: "0.95rem", fontWeight: 600, color: "#1a1a1a", margin: "0 0 0.4rem", lineHeight: 1.3 }}>
                       {cat.label}
-                    </div>
-                    <div style={{ fontSize: "0.75rem", color: "#8a7560" }}>
-                      {cat.subcategories.reduce((a, s) => a + s.topics.length, 0)} temas
-                    </div>
+                    </p>
+                    <p style={{
+                      fontSize: "0.75rem", color: "#888", margin: 0, lineHeight: 1.5,
+                      display: "flex", alignItems: "center", gap: "0.3rem",
+                    }}>
+                      <span style={{
+                        background: "rgba(0, 0, 0, 0.04)",
+                        padding: "0.1rem 0.4rem",
+                        borderRadius: 10,
+                        fontSize: "0.7rem",
+                        fontWeight: 500,
+                      }}>
+                        {cat.subcategories.reduce((a, s) => a + s.topics.length, 0)} temas
+                      </span>
+                    </p>
                   </button>
                 ))}
               </div>
@@ -287,14 +315,14 @@ export default function Home() {
 
             <div style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(2, 1fr)",
               gap: "1.5rem",
             }}>
               {[
-                { emoji: "🐾", title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar." },
-                { emoji: "✨", title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa." },
-                { emoji: "💙", title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización." },
-                { emoji: "🌍", title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema." },
+                { title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar." },
+                { title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa." },
+                { title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización." },
+                { title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema." },
               ].map((item) => (
                 <div
                   key={item.title}
@@ -313,7 +341,6 @@ export default function Home() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>{item.emoji}</div>
                   <h3 style={{
                     fontFamily: "'Playfair Display', serif",
                     fontSize: "1.2rem", fontWeight: 700, color: "#2c2416",
