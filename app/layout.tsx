@@ -1,9 +1,26 @@
-
-
-
+ 
+ 
 import type { Metadata } from "next";
+import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "./i18n/I18nContext";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+const playfair = Playfair_Display({ 
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-playfair"
+});
+
+const dmSans = DM_Sans({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+  variable: "--font-dm-sans"
+});
 
 export const metadata: Metadata = {
   title: "Gatitos · Enciclopedia Felina",
@@ -16,15 +33,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-      </head>
-      <body>
+    <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
+      <body className={`${playfair.variable} ${dmSans.variable}`}>
         <I18nProvider>
-          {children}
+          <Navbar />
+          <main style={{ flex: 1 }}>
+            {children}
+          </main>
+          <Footer />
         </I18nProvider>
       </body>
     </html>

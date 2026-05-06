@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json();
     return NextResponse.json({ reply: data.choices[0].message.content });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
       { error: 'Error al procesar la solicitud' },
       { status: 500 }

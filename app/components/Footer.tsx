@@ -45,7 +45,7 @@ export default function Footer() {
             color: "#8a7560",
             margin: 0,
           }}>
-            {t('footer_tagline')}
+            Hecho con amor por humanos para los gatos
           </p>
         </div>
 

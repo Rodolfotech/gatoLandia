@@ -13,6 +13,7 @@ interface NavbarProps {
 
 function useContentTypes() {
   return [
+    { id: "inicio", label: "Inicio" },
     { id: "sobre-nosotros", label: "Sobre Nosotros" },
     { id: "contacto", label: "Contáctanos" },
     { id: "razas", label: "Razas" },
@@ -65,14 +66,14 @@ export default function Navbar({ onLogoClick = () => {} }: NavbarProps) {
         {/* Right side */}
         <div style={{
           display: "flex", alignItems: "center", gap: "0.5rem",
-          borderLeft: "1px solid rgba(0, 0, 0, 0.08)",
           paddingLeft: "1rem",
         }}>
           {useContentTypes().map((ct) => (
             <button
               key={ct.id}
               onClick={() => {
-                if (ct.id === "sobre-nosotros") router.push("/sobre-nosotros");
+                if (ct.id === "inicio") router.push("/");
+                else if (ct.id === "sobre-nosotros") router.push("/sobre-nosotros");
                 else if (ct.id === "contacto") router.push("/contacto");
                 else if (ct.id === "razas") router.push("/razas");
                 else if (ct.id === "preguntas") router.push("/preguntas");

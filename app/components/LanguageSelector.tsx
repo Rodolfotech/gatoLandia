@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useI18n } from '../i18n/I18nContext';
-import { Locale, LOCALES } from '../i18n/types';
+import { LOCALES } from '../i18n/types';
 
 export default function LanguageSelector() {
   const { locale, setLocale, t } = useI18n();

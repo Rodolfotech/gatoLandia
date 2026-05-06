@@ -15,6 +15,7 @@ export default function CategoryBar({
   categories: propCategories,
   activeCategorySlug = null,
   onCategoryClick = () => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onLogoClick = () => {},
 }: CategoryBarProps) {
   const { categories } = useI18n();
@@ -92,21 +93,19 @@ export default function CategoryBar({
     <div ref={navRef} style={{ position: "relative", zIndex: 200 }}>
       <div style={{
         background: "rgba(255, 255, 255, 0.95)",
-        borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
         padding: "0.5rem 1.5rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         gap: "0.5rem",
-        maxWidth: 1200,
-        margin: "0 auto",
+        width: "100%",
       }}>
         {/* Carousel Left Button */}
         <button
           onClick={() => scrollCarousel('left')}
           disabled={!canScrollLeft}
           style={{
-            background: "none", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "50%",
+            background: "none", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8,
             width: 28, height: 28, cursor: canScrollLeft ? "pointer" : "not-allowed", flexShrink: 0,
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: "0.7rem", color: canScrollLeft ? "#666" : "#ccc", transition: "all 0.2s",
@@ -148,7 +147,7 @@ export default function CategoryBar({
                   onClick={() => handleCategoryClick(cat.slug)}
                   style={{
                     background: isOpen ? "rgba(212, 133, 58, 0.08)" : isActive ? "rgba(0, 0, 0, 0.04)" : "none",
-                    border: isOpen ? "1px solid rgba(212, 133, 58, 0.2)" : "1px solid transparent",
+                    border: "none",
                     cursor: "pointer",
                     padding: "0.45rem 0.8rem",
                     fontSize: "0.82rem",
@@ -191,7 +190,7 @@ export default function CategoryBar({
           onClick={() => scrollCarousel('right')}
           disabled={!canScrollRight}
           style={{
-            background: "none", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "50%",
+            background: "none", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8,
             width: 28, height: 28, cursor: canScrollRight ? "pointer" : "not-allowed", flexShrink: 0,
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: "0.7rem", color: canScrollRight ? "#666" : "#ccc", transition: "all 0.2s",
@@ -223,7 +222,7 @@ export default function CategoryBar({
         >
           {/* Left: Subcategories */}
           <div style={{
-            width: 240, borderRight: "1px solid rgba(0, 0, 0, 0.06)",
+            width: 240,
             padding: "1.5rem 0", flexShrink: 0,
             background: "rgba(0, 0, 0, 0.01)",
           }}>
@@ -238,14 +237,13 @@ export default function CategoryBar({
               const isHov = hoveredSub === sub.slug;
               const topicCount = sub.topics.length;
               return (
-                <button
+                 <button
                   key={sub.slug}
                   onClick={() => setHoveredSub(sub.slug)}
                   style={{
                     width: "100%", textAlign: "left",
                     background: isHov ? "rgba(212, 133, 58, 0.06)" : "none",
                     border: "none",
-                    borderLeft: isHov ? `3px solid ${activeCat.color}` : "3px solid transparent",
                     cursor: "pointer",
                     padding: "0.65rem 1.5rem",
                     fontSize: "0.85rem",
@@ -254,18 +252,18 @@ export default function CategoryBar({
                     color: isHov ? "#1a1a1a" : "#333",
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                     transition: "all 0.15s ease",
-                  }}
-                >
-                  <span>{sub.label}</span>
-                  <span style={{
-                    fontSize: "0.65rem", color: "#999",
-                    background: "rgba(0, 0, 0, 0.04)",
-                    padding: "0.1rem 0.4rem", borderRadius: 10,
-                  }}>
-                    {topicCount}
-                  </span>
-                </button>
-              );
+                     outline: "none",
+                   }}>
+                       {sub.label}
+                       <span style={{
+                         fontSize: "0.65rem", color: "#999",
+                         background: "rgba(0, 0, 0, 0.04)",
+                         padding: "0.1rem 0.4rem", borderRadius: 10,
+                       }}>
+                         {topicCount}
+                       </span>
+                     </button>
+               );
             })}
           </div>
 

@@ -19,7 +19,7 @@ export default function SobreNosotrosPage() {
           Nuestra Misión
         </h2>
         <p style={{ lineHeight: 1.7, fontSize: "1rem" }}>
-          Este sitio nació con el objetivo de ser una fuente clara, técnica y detallada sobre nuestros amigos felinos. Sabemos que en internet hay mucha información dispersa, por eso nos enfocamos en recopilar y organizar datos precisos para que cualquier "cat lover" encuentre lo que busca de forma sencilla y rápida.
+           Este sitio nació con el objetivo de ser una fuente clara, técnica y detallada sobre nuestros amigos felinos. Sabemos que en internet hay mucha información dispersa, por eso nos enfocamos en recopilar y organizar datos precisos para que cualquier &quot;cat lover&quot; encuentre lo que busca de forma sencilla y rápida.
         </p>
       </section>
 

@@ -53,14 +53,16 @@ export default function ChatWidget() {
       }
 
       setMessages((prev) => [...prev, { role: 'assistant', content: data.reply }]);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      let errorMessage = 'Error de conexión';
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content:
-            t('chat_error') + '\n\n' +
-            (err.message || 'Error de conexión'),
+          content: t('chat_error') + '\n\n' + errorMessage,
         },
       ]);
     } finally {
@@ -86,9 +88,9 @@ export default function ChatWidget() {
           right: 24,
           width: 56,
           height: 56,
-          borderRadius: '50%',
-          background: '#d4853a',
-          border: 'none',
+           borderRadius: 12,
+           background: '#d4853a',
+           border: 'none',
           cursor: 'pointer',
           boxShadow: '0 4px 16px rgba(212,133,58,0.4)',
           display: 'flex',
@@ -205,7 +207,7 @@ export default function ChatWidget() {
                     display: 'inline-block',
                     width: 8,
                     height: 8,
-                    borderRadius: '50%',
+                    borderRadius: 4,
                     background: '#d4853a',
                     animation: 'bounce 1.2s infinite 0ms',
                   }}
@@ -215,7 +217,7 @@ export default function ChatWidget() {
                     display: 'inline-block',
                     width: 8,
                     height: 8,
-                    borderRadius: '50%',
+                    borderRadius: 4,
                     background: '#d4853a',
                     animation: 'bounce 1.2s infinite 200ms',
                   }}
@@ -225,7 +227,7 @@ export default function ChatWidget() {
                     display: 'inline-block',
                     width: 8,
                     height: 8,
-                    borderRadius: '50%',
+                    borderRadius: 4,
                     background: '#d4853a',
                     animation: 'bounce 1.2s infinite 400ms',
                   }}
