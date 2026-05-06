@@ -7,7 +7,7 @@ import { categories as defaultCategories, Category } from "../data/cats";
 import { useI18n } from "../i18n/I18nContext";
 import LanguageSelector from "./LanguageSelector";
 
-export type ContentType = "razas" | "preguntas" | "enciclopedia";
+export type ContentType = "razas" | "preguntas";
 
 interface NavbarProps {
   categories?: Category[];
@@ -19,17 +19,16 @@ interface NavbarProps {
 }
 
 function useContentTypes() {
-  const { t } = useI18n();
   return [
-    { id: "razas" as ContentType,        label: "Razas",       icon: "" },
-    { id: "preguntas" as ContentType,    label: t('content_questions'),   icon: "" },
+    { id: "razas" as ContentType, label: "Razas" },
+    { id: "preguntas" as ContentType, label: "Preguntas" },
   ];
 }
 
 export default function Navbar({
   categories: propCategories,
   activeCategorySlug = null,
-  activeContentType = "enciclopedia",
+  activeContentType = "razas",
   onCategoryClick = () => {},
   onContentTypeChange = () => {},
   onLogoClick = () => {},
@@ -39,8 +38,12 @@ export default function Navbar({
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [hoveredSub, setHoveredSub] = useState<string | null>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const navRef = useRef<HTMLDivElement>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const itemsPerView = 5;
+  const maxIndex = Math.max(0, cats.length - itemsPerView);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -53,203 +56,273 @@ export default function Navbar({
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  function openCat(id: string) {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    const cat = cats.find((c) => c.slug === id)!;
-    setOpenMenu(id);
-    setHoveredSub(cat.subcategories[0]?.slug ?? null);
-  }
-
-  function scheduleClose() {
-    closeTimer.current = setTimeout(() => {
+  function handleCategoryClick(catSlug: string) {
+    if (openMenu === catSlug) {
       setOpenMenu(null);
       setHoveredSub(null);
-    }, 150);
-  }
-
-  function cancelClose() {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
+    } else {
+      const cat = cats.find((c) => c.slug === catSlug)!;
+      setOpenMenu(catSlug);
+      setHoveredSub(cat.subcategories[0]?.slug ?? null);
+    }
   }
 
   const activeCat = cats.find((c) => c.slug === openMenu);
   const activeSub = activeCat?.subcategories.find((s) => s.slug === hoveredSub);
 
+  function scrollCarousel(direction: 'left' | 'right') {
+    setCarouselIndex(prev => {
+      const newIndex = direction === 'left' 
+        ? Math.max(0, prev - 1) 
+        : Math.min(maxIndex, prev + 1);
+      return newIndex;
+    });
+  }
+
   return (
     <div ref={navRef} style={{ position: "sticky", top: 0, zIndex: 200 }}>
-      {/* ── Top bar ── */}
       <nav
         style={{
-          backdropFilter: "blur(14px)",
-          backgroundColor: "rgba(253,246,236,0.97)",
-          borderBottom: `1px solid ${openMenu ? "transparent" : "rgba(201,180,154,0.3)"}`,
-          padding: "0 2rem",
+          background: "rgba(255, 255, 255, 0.9)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
+          padding: "0 1.5rem",
           display: "flex",
-          alignItems: "stretch",
-          justifyContent: "space-between",
-          height: 60,
-          transition: "border-color 0.2s",
+          alignItems: "center",
+          height: 64,
+          boxShadow: "0 1px 3px rgba(0, 0, 0, 0.04)",
+          gap: "0.5rem",
         }}
       >
-        {/* Logo */}
+        {/* Logo - Fixed left */}
         <button
           onClick={() => { onLogoClick(); setOpenMenu(null); }}
           style={{
-            display: "flex", alignItems: "center", gap: "0.55rem",
+            display: "flex", alignItems: "center", gap: "0.6rem",
             background: "none", border: "none", cursor: "pointer",
-            padding: "0 1.25rem 0 0", flexShrink: 0,
+            padding: "0 1rem 0 0", flexShrink: 0,
           }}
         >
-
-          {/* Logo */}
-          <PawIcon size={18} color="#d4853a" /> 
+          <PawIcon size={20} color="#d4853a" />
           <span style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "1.15rem", fontWeight: 700, color: "#2c2416", letterSpacing: "-0.02em",
+            fontSize: "1.2rem", fontWeight: 700, color: "#1a1a1a",
+            letterSpacing: "-0.02em",
           }}>
             {t('nav_logo')}
           </span>
         </button>
 
-        {/* Category tabs */}
-        <div style={{ display: "flex", alignItems: "stretch", flex: 1, overflow: "hidden" }}>
-          {cats.map((cat) => {
-            const isOpen   = openMenu === cat.slug;
-            const isActive = activeCategorySlug === cat.slug;
-            return (
-              <button
-                key={cat.slug}
-                onMouseEnter={() => openCat(cat.slug)}
-                onMouseLeave={scheduleClose}
-                style={{
-                  background: "none", border: "none", cursor: "pointer",
-                  padding: "0 0.65rem",
-                  fontSize: "0.8rem",
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: isOpen || isActive ? 600 : 400,
-                  color: isOpen || isActive ? cat.color : "#6b5c44",
-                  display: "flex", alignItems: "center", gap: "0.3rem",
-                  borderBottom: isOpen || isActive ? `2px solid ${cat.color}` : "2px solid transparent",
-                  whiteSpace: "nowrap",
-                  transition: "color 0.15s, border-color 0.15s",
-                  flexShrink: 0,
-                }}
-              >
-                 {/* <span style={{ fontSize: "0.9rem" }}>{cat.emoji}</span> */}
-                {cat.label}
-                <span style={{
-                  fontSize: "0.55rem", color: isOpen ? cat.color : "#c9b49a", marginLeft: 1,
-                  transform: isOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s",
-                }}>▾</span>
-              </button>
-            );
-          })}
+        {/* Carousel Left Button */}
+        {carouselIndex > 0 && (
+          <button
+            onClick={() => scrollCarousel('left')}
+            style={{
+              background: "none", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "50%",
+              width: 28, height: 28, cursor: "pointer", flexShrink: 0,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "0.7rem", color: "#666", transition: "all 0.2s",
+            }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = "#d4853a"}
+            onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(0,0,0,0.08)"}
+          >
+            ‹
+          </button>
+        )}
+
+        {/* Categories Carousel */}
+        <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
+          <div
+            ref={carouselRef}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.25rem",
+              transition: "transform 0.3s ease",
+              transform: `translateX(-${carouselIndex * (100 / itemsPerView)}%)`,
+              width: `${(cats.length / itemsPerView) * 100}%`,
+            }}
+          >
+            {cats.map((cat) => {
+              const isOpen = openMenu === cat.slug;
+              const isActive = activeCategorySlug === cat.slug;
+              return (
+                <button
+                  key={cat.slug}
+                  onClick={() => handleCategoryClick(cat.slug)}
+                  style={{
+                    background: isOpen ? "rgba(212, 133, 58, 0.08)" : isActive ? "rgba(0, 0, 0, 0.04)" : "none",
+                    border: isOpen ? "1px solid rgba(212, 133, 58, 0.2)" : "1px solid transparent",
+                    cursor: "pointer",
+                    padding: "0.45rem 0.8rem",
+                    fontSize: "0.82rem",
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: isOpen || isActive ? 600 : 400,
+                    color: isOpen ? "#d4853a" : isActive ? "#1a1a1a" : "#666",
+                    borderRadius: 8,
+                    whiteSpace: "nowrap",
+                    transition: "all 0.2s ease",
+                    flexShrink: 0,
+                  }}
+                >
+                  {cat.label}
+                  <span style={{
+                    fontSize: "0.55rem", color: isOpen ? "#d4853a" : "#999",
+                    transform: isOpen ? "rotate(180deg)" : "none",
+                    transition: "transform 0.2s ease",
+                    marginLeft: "0.15rem",
+                  }}>▾</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Content type pills */}
+        {/* Carousel Right Button */}
+        {carouselIndex < maxIndex && (
+          <button
+            onClick={() => scrollCarousel('right')}
+            style={{
+              background: "none", border: "1px solid rgba(0,0,0,0.08)", borderRadius: "50%",
+              width: 28, height: 28, cursor: "pointer", flexShrink: 0,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "0.7rem", color: "#666", transition: "all 0.2s",
+            }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = "#d4853a"}
+            onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(0,0,0,0.08)"}
+          >
+            ›
+          </button>
+        )}
+
+        {/* Right side - Fixed: Razas, Preguntas, Idiomas */}
         <div style={{
-          display: "flex", alignItems: "center", gap: "0.25rem",
-          paddingLeft: "1rem", flexShrink: 0,
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          flexShrink: 0,
+          borderLeft: "1px solid rgba(0, 0, 0, 0.08)",
+          paddingLeft: "1rem",
         }}>
+          {/* Content type buttons */}
           {useContentTypes().map((ct) => (
-             <button
-               key={ct.id}
-               onClick={() => {
-                 if (ct.id === "razas") router.push("/razas");
-                 else if (ct.id === "preguntas") router.push("/preguntas");
-                 else onContentTypeChange(ct.id);
-               }}
-               style={{
-                 background: activeContentType === ct.id ? "#d4853a" : "transparent",
-                 border: `1px solid ${activeContentType === ct.id ? "#d4853a" : "rgba(201,180,154,0.5)"}`,
-                 borderRadius: 999, cursor: "pointer",
-                 padding: "0.25rem 0.7rem", fontSize: "0.7rem",
-                 fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
-                 color: activeContentType === ct.id ? "#fff" : "#6b5c44",
-                 display: "flex", alignItems: "center", gap: "0.3rem",
-                 transition: "all 0.2s", whiteSpace: "nowrap",
-               }}
-             >
-               {ct.icon} {ct.label}
-             </button>
-           ))}
-        </div>
+            <button
+              key={ct.id}
+              onClick={() => {
+                if (ct.id === "razas") router.push("/razas");
+                else if (ct.id === "preguntas") router.push("/preguntas");
+                else onContentTypeChange(ct.id);
+              }}
+              style={{
+                background: activeContentType === ct.id ? "#1a1a1a" : "transparent",
+                border: activeContentType === ct.id ? "1px solid #1a1a1a" : "1px solid rgba(0, 0, 0, 0.12)",
+                borderRadius: 8,
+                cursor: "pointer",
+                padding: "0.45rem 0.9rem",
+                fontSize: "0.78rem",
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500,
+                color: activeContentType === ct.id ? "#fff" : "#666",
+                display: "flex", alignItems: "center", gap: "0.3rem",
+                transition: "all 0.2s ease",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}
+            >
+              {ct.label}
+            </button>
+          ))}
 
-        <div style={{
-          display: "flex", alignItems: "center", gap: "0.5rem",
-          paddingLeft: "1rem", flexShrink: 0,
-        }}>
+          {/* Language Selector */}
           <LanguageSelector />
         </div>
       </nav>
 
-      {/* ── Mega-menu ── */}
+      {/* Mega-menu */}
       {openMenu && activeCat && (
         <div
-          onMouseEnter={cancelClose}
-          onMouseLeave={scheduleClose}
+          onMouseEnter={() => {}}
+          onMouseLeave={() => { setOpenMenu(null); setHoveredSub(null); }}
           style={{
             position: "absolute", top: "100%", left: 0, right: 0,
-            backgroundColor: "rgba(253,246,236,0.99)",
-            backdropFilter: "blur(14px)",
-            borderBottom: "1px solid rgba(201,180,154,0.3)",
-            boxShadow: "0 16px 40px rgba(44,36,22,0.1)",
+            background: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(20px)",
+            borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
+            boxShadow: "0 12px 40px rgba(0, 0, 0, 0.08)",
             display: "flex",
-            animation: "fadeDown 0.18s ease",
+            animation: "fadeDown 0.2s ease",
           }}
         >
-          {/* Left: subcategories */}
+          {/* Left: Subcategories */}
           <div style={{
-            width: 200, borderRight: "1px solid rgba(201,180,154,0.25)",
-            padding: "1.25rem 0", flexShrink: 0,
+            width: 240, borderRight: "1px solid rgba(0, 0, 0, 0.06)",
+            padding: "1.5rem 0", flexShrink: 0,
+            background: "rgba(0, 0, 0, 0.01)",
           }}>
             <div style={{
-              padding: "0 1.25rem 0.6rem",
-              fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase",
-              color: "#c9b49a", fontWeight: 600,
+              padding: "0 1.5rem 1rem",
+              fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase",
+              color: "#999", fontWeight: 600,
             }}>
-              {activeCat.emoji} {activeCat.label}
+              {activeCat.label}
             </div>
             {activeCat.subcategories.map((sub) => {
               const isHov = hoveredSub === sub.slug;
+              const topicCount = sub.topics.length;
               return (
                 <button
                   key={sub.slug}
-                  onMouseEnter={() => setHoveredSub(sub.slug)}
+                  onClick={() => setHoveredSub(sub.slug)}
                   style={{
                     width: "100%", textAlign: "left",
-                    background: isHov ? `${activeCat.color}0d` : "none",
+                    background: isHov ? "rgba(212, 133, 58, 0.06)" : "none",
                     border: "none",
                     borderLeft: isHov ? `3px solid ${activeCat.color}` : "3px solid transparent",
                     cursor: "pointer",
-                    padding: "0.55rem 1.25rem",
-                    fontSize: "0.84rem",
-                    fontFamily: "'DM Sans', sans-serif",
+                    padding: "0.65rem 1.5rem",
+                    fontSize: "0.85rem",
+                    fontFamily: "'Inter', sans-serif",
                     fontWeight: isHov ? 600 : 400,
-                    color: isHov ? activeCat.color : "#2c2416",
+                    color: isHov ? "#1a1a1a" : "#333",
                     display: "flex", alignItems: "center", justifyContent: "space-between",
-                    transition: "all 0.12s",
+                    transition: "all 0.15s ease",
                   }}
                 >
-                  {sub.label}
-                  {isHov && <span style={{ fontSize: "0.65rem", color: activeCat.color }}>›</span>}
+                  <span>{sub.label}</span>
+                  <span style={{
+                    fontSize: "0.65rem", color: "#999",
+                    background: "rgba(0, 0, 0, 0.04)",
+                    padding: "0.1rem 0.4rem", borderRadius: 10,
+                  }}>
+                    {topicCount}
+                  </span>
                 </button>
               );
             })}
           </div>
 
-          {/* Right: topics */}
+          {/* Right: Topics */}
           {activeSub && (
-            <div style={{ flex: 1, padding: "1.25rem 1.75rem" }}>
+            <div style={{ flex: 1, padding: "1.5rem 2rem" }}>
               <div style={{
-                fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase",
-                color: "#c9b49a", fontWeight: 600, marginBottom: "0.85rem",
+                fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase",
+                color: "#999", fontWeight: 600, marginBottom: "1.25rem",
+                display: "flex", alignItems: "center", gap: "0.5rem",
               }}>
                 {activeSub.label}
+                <span style={{
+                  fontSize: "0.65rem", color: "#999",
+                  background: "rgba(0, 0, 0, 0.04)",
+                  padding: "0.1rem 0.4rem", borderRadius: 10,
+                }}>
+                  {activeSub.topics.length} temas
+                </span>
               </div>
               <div style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-                gap: "0.5rem",
+                gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+                gap: "0.6rem",
               }}>
                 {activeSub.topics.map((topic) => (
                   <button
@@ -259,29 +332,31 @@ export default function Navbar({
                       onCategoryClick(activeCat.slug, activeSub.slug, topic.slug);
                     }}
                     style={{
-                      textAlign: "left", background: "none",
-                      border: "1px solid rgba(201,180,154,0.3)",
-                      borderRadius: 8, cursor: "pointer",
-                      padding: "0.6rem 0.85rem",
-                      fontFamily: "'DM Sans', sans-serif",
-                      transition: "all 0.15s",
+                      textAlign: "left", background: "rgba(0, 0, 0, 0.02)",
+                      border: "1px solid rgba(0, 0, 0, 0.06)",
+                      borderRadius: 10, cursor: "pointer",
+                      padding: "0.85rem 1rem",
+                      fontFamily: "'Inter', sans-serif",
+                      transition: "all 0.2s ease",
                     }}
                     onMouseEnter={(e) => {
                       const el = e.currentTarget as HTMLElement;
-                      el.style.background = `${activeCat.color}0d`;
-                      el.style.borderColor = `${activeCat.color}50`;
+                      el.style.background = "rgba(212, 133, 58, 0.04)";
+                      el.style.borderColor = "rgba(212, 133, 58, 0.2)";
+                      el.style.transform = "translateY(-1px)";
                     }}
                     onMouseLeave={(e) => {
                       const el = e.currentTarget as HTMLElement;
-                      el.style.background = "none";
-                      el.style.borderColor = "rgba(201,180,154,0.3)";
+                      el.style.background = "rgba(0, 0, 0, 0.02)";
+                      el.style.borderColor = "rgba(0, 0, 0, 0.06)";
+                      el.style.transform = "translateY(0)";
                     }}
                   >
-                    <p style={{ fontSize: "0.83rem", fontWeight: 600, color: "#2c2416", margin: "0 0 0.2rem", lineHeight: 1.3 }}>
+                    <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#1a1a1a", margin: "0 0 0.3rem", lineHeight: 1.3 }}>
                       {topic.title}
                     </p>
                     <p style={{
-                      fontSize: "0.72rem", color: "#8a7560", margin: 0, lineHeight: 1.4,
+                      fontSize: "0.72rem", color: "#888", margin: 0, lineHeight: 1.5,
                       display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" as const, overflow: "hidden",
                     }}>
                       {topic.intro}
@@ -296,7 +371,7 @@ export default function Navbar({
 
       <style>{`
         @keyframes fadeDown {
-          from { opacity: 0; transform: translateY(-6px); }
+          from { opacity: 0; transform: translateY(-8px); }
           to   { opacity: 1; transform: translateY(0); }
         }
       `}</style>

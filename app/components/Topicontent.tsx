@@ -2,17 +2,130 @@
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 
-// Basic markdown: converts **text** to <strong>text</strong>
+// Enhanced markdown: handles **bold**, line breaks, list items, and emojis
 function renderMarkdown(text: string): React.ReactNode {
+  const lines = text.split('\n');
+  return lines.map((line, lineIdx) => {
+    // Handle table-like structures (lines with | separator)
+    if (line.includes('|') && line.trim().startsWith('|')) {
+      const cells = line.split('|').filter(c => c.trim());
+      return (
+        <div key={lineIdx} style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${cells.length}, 1fr)`,
+          gap: "0.5rem",
+          padding: "0.5rem 0",
+          borderBottom: "1px solid rgba(0,0,0,0.06)",
+        }}>
+          {cells.map((cell, i) => (
+            <div key={i} style={{
+              fontSize: "0.85rem",
+              color: lineIdx === 0 ? "#2c2416" : "#4a3d2c",
+              fontWeight: lineIdx === 0 ? 600 : 400,
+            }}>
+              {renderInlineMarkdown(cell.trim())}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    
+    // Handle list items (•, -, etc.)
+    if (line.trim().startsWith('•') || line.trim().startsWith('-') || line.trim().startsWith('*')) {
+      return (
+        <div key={lineIdx} style={{
+          display: "flex",
+          gap: "0.5rem",
+          marginBottom: "0.35rem",
+          paddingLeft: "1rem",
+        }}>
+          <span style={{ color: "#c9b49a", flexShrink: 0 }}>•</span>
+          <span style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "#4a3d2c" }}>
+            {renderInlineMarkdown(line.replace(/^[•\-\*]\s*/, ''))}
+          </span>
+        </div>
+      );
+    }
+    
+    // Handle numbered items (1., 2., etc.)
+    if (/^\d+\.\s/.test(line.trim())) {
+      const num = line.trim().match(/^(\d+)\./)?.[1];
+      return (
+        <div key={lineIdx} style={{
+          display: "flex",
+          gap: "0.5rem",
+          marginBottom: "0.35rem",
+          paddingLeft: "1rem",
+        }}>
+          <span style={{ 
+            color: "#fff", 
+            background: "#d4853a", 
+            borderRadius: "50%", 
+            width: 20, 
+            height: 20, 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center",
+            fontSize: "0.7rem",
+            fontWeight: 700,
+            flexShrink: 0,
+          }}>
+            {num}
+          </span>
+          <span style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "#4a3d2c" }}>
+            {renderInlineMarkdown(line.replace(/^\d+\.\s/, ''))}
+          </span>
+        </div>
+      );
+    }
+    
+    // Handle warning/info boxes (lines starting with emojis like 🚨, ✅, ⚠️)
+    if (/^[🚨🟡⚠️✅❌🔹🔸📌📋🩺🏥🍽️🐾🧬📚🎁⏱️🔪🚫📈📉🌿]/.test(line.trim())) {
+      return (
+        <div key={lineIdx} style={{
+          background: "rgba(212, 133, 58, 0.06)",
+          borderLeft: "3px solid #d4853a",
+          padding: "0.75rem 1rem",
+          borderRadius: "0 8px 8px 0",
+          marginBottom: "0.75rem",
+          fontSize: "0.9rem",
+          lineHeight: 1.7,
+          color: "#4a3d2c",
+        }}>
+          {renderInlineMarkdown(line)}
+        </div>
+      );
+    }
+    
+    // Regular paragraph
+    if (line.trim()) {
+      return (
+        <p key={lineIdx} style={{
+          fontSize: "0.95rem",
+          lineHeight: 1.8,
+          color: "#4a3d2c",
+          marginBottom: "0.75rem",
+        }}>
+          {renderInlineMarkdown(line)}
+        </p>
+      );
+    }
+    
+    // Empty line = spacing
+    return <div key={lineIdx} style={{ height: "0.5rem" }} />;
+  });
+}
+
+// Inline markdown: handles **bold**
+function renderInlineMarkdown(text: string): React.ReactNode {
   const parts = text.split(/(\*\*.*?\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>;
+      return <strong key={i} style={{ fontWeight: 700, color: "#2c2416" }}>{part.slice(2, -2)}</strong>;
     }
     return part;
   });
 }
-
 
 interface TopicContentProps {
   category: Category;
@@ -32,13 +145,14 @@ export default function TopicContent({
   onNavigate,
 }: TopicContentProps) {
   const { t } = useI18n();
+  
   return (
     <article
       style={{
         flex: 1,
         padding: "3rem 3.5rem",
-        maxWidth: 780,
-        fontFamily: "'DM Sans', sans-serif",
+        maxWidth: 900,
+        fontFamily: "'Inter', 'DM Sans', sans-serif",
       }}
     >
       {/* Breadcrumb */}
@@ -52,7 +166,6 @@ export default function TopicContent({
           marginBottom: "2rem",
         }}
       >
-        <span>{category.emoji}</span>
         <span style={{ color: category.color, fontWeight: 500 }}>
           {category.label}
         </span>
@@ -72,11 +185,11 @@ export default function TopicContent({
           letterSpacing: "-0.02em",
         }}
       >
-        {renderMarkdown(topic.title)}
+        {topic.title}
       </h1>
 
       {/* Intro */}
-      <p
+      <div
         style={{
           fontSize: "1.05rem",
           color: "#6b5c44",
@@ -87,10 +200,10 @@ export default function TopicContent({
         }}
       >
         {renderMarkdown(topic.intro)}
-      </p>
+      </div>
 
       {/* Sections */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "2.25rem" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
         {topic.sections.map((section, i) => (
           <section key={section.heading}>
             <div
@@ -98,21 +211,21 @@ export default function TopicContent({
                 display: "flex",
                 alignItems: "flex-start",
                 gap: "1rem",
-                marginBottom: "0.75rem",
+                marginBottom: "1rem",
               }}
             >
               <span
                 style={{
                   flexShrink: 0,
-                  width: 28,
-                  height: 28,
+                  width: 32,
+                  height: 32,
                   borderRadius: "50%",
                   background: `${category.color}18`,
                   border: `1.5px solid ${category.color}40`,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "0.7rem",
+                  fontSize: "0.75rem",
                   fontWeight: 700,
                   color: category.color,
                   marginTop: 2,
@@ -123,27 +236,24 @@ export default function TopicContent({
               <h2
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "1.25rem",
+                  fontSize: "1.35rem",
                   fontWeight: 700,
                   color: "#2c2416",
                   margin: 0,
                   lineHeight: 1.3,
                 }}
               >
-                {renderMarkdown(section.heading)}
+                {section.heading}
               </h2>
             </div>
-            <p
+            <div
               style={{
-                color: "#4a3d2c",
-                lineHeight: 1.8,
-                fontSize: "0.95rem",
-                paddingLeft: "2.75rem",
+                paddingLeft: "3rem",
                 margin: 0,
               }}
             >
-               {renderMarkdown(section.body)}
-            </p>
+              {renderMarkdown(section.body)}
+            </div>
           </section>
         ))}
       </div>
@@ -169,16 +279,18 @@ export default function TopicContent({
               borderRadius: 12,
               padding: "1rem 1.25rem",
               cursor: "pointer",
-              transition: "border-color 0.2s, box-shadow 0.2s",
-              fontFamily: "'DM Sans', sans-serif",
+              transition: "all 0.2s",
+              fontFamily: "'Inter', sans-serif",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = category.color + "60";
-              (e.currentTarget as HTMLElement).style.boxShadow = `0 4px 16px ${category.color}10`;
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = category.color + "60";
+              el.style.boxShadow = `0 4px 16px ${category.color}10`;
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,180,154,0.4)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = "rgba(201,180,154,0.4)";
+              el.style.boxShadow = "none";
             }}
           >
             <p style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#c9b49a", margin: "0 0 0.3rem" }}>
@@ -200,16 +312,18 @@ export default function TopicContent({
               borderRadius: 12,
               padding: "1rem 1.25rem",
               cursor: "pointer",
-              transition: "border-color 0.2s, box-shadow 0.2s",
-              fontFamily: "'DM Sans', sans-serif",
+              transition: "all 0.2s",
+              fontFamily: "'Inter', sans-serif",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = category.color + "70";
-              (e.currentTarget as HTMLElement).style.boxShadow = `0 4px 16px ${category.color}15`;
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = category.color + "70";
+              el.style.boxShadow = `0 4px 16px ${category.color}15`;
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = category.color + "30";
-              (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              const el = e.currentTarget as HTMLElement;
+              el.style.borderColor = category.color + "30";
+              el.style.boxShadow = "none";
             }}
           >
             <p style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#c9b49a", margin: "0 0 0.3rem" }}>
