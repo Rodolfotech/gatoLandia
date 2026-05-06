@@ -228,7 +228,6 @@ export default function Navbar({
                  else if (ct.id === "contacto") router.push("/contacto");
                  else if (ct.id === "razas") router.push("/razas");
                  else if (ct.id === "preguntas") router.push("/preguntas");
-                 else onContentTypeChange(ct.id);
                }}
               style={{
                 background: "transparent",
