@@ -1,4 +1,5 @@
 // app/razas/page.jsx
+import Image from 'next/image';
 export const dynamic = 'force-dynamic';
 const PAGE_SIZE = 9;
 
@@ -72,7 +73,7 @@ export default async function RazasPage({ searchParams }) {
 
       {filtered.length === 0 && search.trim() && (
         <p style={{ color: "#c0392b", fontSize: "0.9rem", padding: "1rem", background: "#fee", borderRadius: 8 }}>
-          La raza "{search}" no está disponible en estos momentos
+          La raza &quot;{search}&quot; no está disponible en estos momentos
         </p>
       )}
 
@@ -81,10 +82,13 @@ export default async function RazasPage({ searchParams }) {
           <div key={idx} style={{
             border: "1px solid rgba(201,180,154,0.3)", borderRadius: 12, overflow: "hidden"
           }}>
-            <img
+            <Image
               src={cat.imagen}
               alt={cat.raza}
+              width={400}
+              height={200}
               style={{ width: "100%", height: 200, objectFit: "cover" }}
+              unoptimized
             />
             <div style={{ padding: "1.25rem" }}>
               <h2 style={{ margin: "0 0 0.5rem", fontSize: "1.15rem", color: "#2c2416" }}>

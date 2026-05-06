@@ -51,13 +51,16 @@ function mergeCategories(original: Category[], translated: Category[]): Category
 
 export function getContent(locale: Locale): { categories: Category[] } {
   if (locale === DEFAULT_LOCALE) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { categories } = require('../../data/cats');
     return { categories };
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { categories: original } = require('../../data/cats');
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const mod = require(`./content.${locale}`);
     if (mod && mod.categories && mod.categories.length > 0) {
       return { categories: mergeCategories(original, mod.categories) };

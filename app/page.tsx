@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { useI18n } from "./i18n/I18nContext";
-import Navbar, { ContentType } from "./components/Navbar";
+import { ContentType } from "./components/Navbar";
 import CategoryBar from "./components/CategoryBar";
-import Footer from "./components/Footer";
 import CategorySidebar from './components/Categorysidebar';
 import CategoryOverview from './components/Categoryoverview';
 import TopicContent from './components/Topicontent';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { categories as defaultCategories, getCategory, getSubcategory, getTopic } from "./data/cats";
 import ChatWidget from "./components/ChatWidget";
 
@@ -18,9 +18,11 @@ interface Selection {
 }
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { t, categories } = useI18n();
   const [selection, setSelection] = useState<Selection | null>(null);
   const [activeCatSlug, setActiveCatSlug] = useState<string | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeContentType, setActiveContentType] = useState<ContentType>("razas");
 
   const currentCat    = activeCatSlug ? categories.find(c => c.slug === activeCatSlug) ?? getCategory(activeCatSlug) : null;
@@ -54,9 +56,8 @@ export default function Home() {
   const showExplorer = activeCatSlug !== null;
 
    return (
-     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-       <Navbar onLogoClick={handleLogoClick} />
-       <CategoryBar
+      <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <CategoryBar
          categories={categories}
          activeCategorySlug={activeCatSlug}
          onCategoryClick={selectTopic}
@@ -111,15 +112,7 @@ export default function Home() {
             }}
           >
             {/* Decorative shapes */}
-            <div style={{
-              position: "absolute", top: "10%", right: "8%", width: 400, height: 400, borderRadius: "50%",
-              border: "1px solid rgba(212,133,58,0.1)", background: "rgba(212,133,58,0.03)",
-            }} />
-            <div style={{
-              position: "absolute", bottom: "10%", left: "5%", width: 200, height: 200, borderRadius: "50%",
-              background: "rgba(201,180,154,0.08)",
-            }} />
-
+        
             <div style={{ maxWidth: 1100, textAlign: "center", position: "relative" }}>
               {/* Badge */}
               <div style={{
@@ -355,8 +348,6 @@ export default function Home() {
               ))}
             </div>
           </section>
-
-          <Footer />
         </>
       )}
 
