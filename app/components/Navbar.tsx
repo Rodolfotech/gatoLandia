@@ -20,6 +20,8 @@ interface NavbarProps {
 
 function useContentTypes() {
   return [
+    { id: "sobre-nosotros", label: "Sobre Nosotros" },
+    { id: "contacto", label: "Contáctanos" },
     { id: "razas" as ContentType, label: "Razas" },
     { id: "preguntas" as ContentType, label: "Preguntas" },
   ];
@@ -218,14 +220,16 @@ export default function Navbar({
           paddingLeft: "1rem",
         }}>
           {/* Content type buttons */}
-          {useContentTypes().map((ct) => (
-            <button
-              key={ct.id}
-              onClick={() => {
-                if (ct.id === "razas") router.push("/razas");
-                else if (ct.id === "preguntas") router.push("/preguntas");
-                else onContentTypeChange(ct.id);
-              }}
+           {useContentTypes().map((ct) => (
+             <button
+               key={ct.id}
+               onClick={() => {
+                 if (ct.id === "sobre-nosotros") router.push("/sobre-nosotros");
+                 else if (ct.id === "contacto") router.push("/contacto");
+                 else if (ct.id === "razas") router.push("/razas");
+                 else if (ct.id === "preguntas") router.push("/preguntas");
+                 else onContentTypeChange(ct.id);
+               }}
               style={{
                 background: "transparent",
                 border: "1px solid rgba(0, 0, 0, 0.12)",
