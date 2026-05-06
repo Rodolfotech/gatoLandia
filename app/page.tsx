@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useI18n } from "./i18n/I18nContext";
 import Navbar, { ContentType } from "./components/Navbar";
+import CategoryBar from "./components/CategoryBar";
 import Footer from "./components/Footer";
 import CategorySidebar from './components/Categorysidebar';
 import CategoryOverview from './components/Categoryoverview';
@@ -52,18 +53,17 @@ export default function Home() {
 
   const showExplorer = activeCatSlug !== null;
 
-  return (
-    <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-      <Navbar
-        categories={categories}
-        activeCategorySlug={activeCatSlug}
-        activeContentType={activeContentType}
-        onLogoClick={handleLogoClick}
-        onCategoryClick={selectTopic}
-        onContentTypeChange={setActiveContentType}
-      />
+   return (
+     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+       <Navbar onLogoClick={handleLogoClick} />
+       <CategoryBar
+         categories={categories}
+         activeCategorySlug={activeCatSlug}
+         onCategoryClick={selectTopic}
+         onLogoClick={handleLogoClick}
+       />
 
-      {showExplorer ? (
+       {showExplorer ? (
         <div style={{ display: "flex", flex: 1, background: "#fdf6ec" }}>
           <CategorySidebar
             categories={categories}

@@ -1,4 +1,5 @@
 // app/razas/page.jsx
+export const dynamic = 'force-dynamic';
 const PAGE_SIZE = 9;
 
 async function getCats() {
