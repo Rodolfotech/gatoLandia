@@ -20,7 +20,7 @@ export default function Home() {
   const { t, categories } = useI18n();
   const [selection, setSelection] = useState<Selection | null>(null);
   const [activeCatSlug, setActiveCatSlug] = useState<string | null>(null);
-  const [activeContentType, setActiveContentType] = useState<ContentType>("enciclopedia");
+  const [activeContentType, setActiveContentType] = useState<ContentType>("razas");
 
   const currentCat    = activeCatSlug ? categories.find(c => c.slug === activeCatSlug) ?? getCategory(activeCatSlug) : null;
   const currentSub    = selection ? categories.find(c => c.slug === selection.categorySlug)?.subcategories.find(s => s.slug === selection.subcategorySlug) ?? getSubcategory(selection.categorySlug, selection.subcategorySlug) : null;
