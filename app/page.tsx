@@ -204,6 +204,7 @@ export default function Home() {
               <CategoryCards
                 categories={categories}
                 onCategoryClick={handleCategoryTabClick}
+                imageMap={{ salud: "CategoryCards/salud.png", comportamiento: "CategoryCards/comportamiento.png", alimentacion: "CategoryCards/alimentacion.png" }}
               />
             </div>
           </section>
