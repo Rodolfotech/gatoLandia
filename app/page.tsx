@@ -10,6 +10,7 @@ import TopicContent from './components/Topicontent';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { categories as defaultCategories, getCategory, getSubcategory, getTopic } from "./data/cats";
 import ChatWidget from "./components/ChatWidget";
+import FeaturedContent from "./components/FeaturedContent";
 
 interface Selection {
   categorySlug: string;
@@ -293,61 +294,14 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ── FEATURED CONTENT ── */}
-          <section style={{
-            padding: "6rem 2rem", maxWidth: 1100, margin: "0 auto",
-          }}>
-            <h2 style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-              fontWeight: 700, color: "#2c2416",
-              textAlign: "center", marginBottom: "3rem",
-            }}>
-              Contenido destacado
-            </h2>
-
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "1.5rem",
-            }}>
-              {[
-                { title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar." },
-                { title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa." },
-                { title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización." },
-                { title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema." },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  style={{
-                    padding: "2rem", borderRadius: 16,
-                    background: "rgba(253,246,236,0.8)",
-                    border: "1px solid rgba(201,180,154,0.2)",
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.06)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <h3 style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: "1.2rem", fontWeight: 700, color: "#2c2416",
-                    marginBottom: "0.75rem",
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: "0.9rem", color: "#6b5c44", lineHeight: 1.7, margin: 0 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <FeaturedContent
+            items={[
+              { title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar.", img: "cuidadoIntegral.png" },
+              { title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa.", img: "tenenciaResponsable.png" },
+              { title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización.", img: "castracion.png" },
+              { title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "impactoConciencia.png" },
+            ]}
+          />
         </>
       )}
 
