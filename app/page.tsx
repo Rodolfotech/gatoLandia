@@ -12,6 +12,7 @@ import { categories as defaultCategories, getCategory, getSubcategory, getTopic 
 import ChatWidget from "./components/ChatWidget";
 import FeaturedContent from "./components/FeaturedContent";
 import CategoryCards from "./components/CategoryCards";
+import HeroSection from "./components/HeroSection";
 
 interface Selection {
   categorySlug: string;
@@ -95,119 +96,29 @@ export default function Home() {
         </div>
       ) : (
         <>
-          {/* ── HERO SECTION ── */}
-          <section
-            style={{
-              minHeight: "100vh",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: `
-                radial-gradient(ellipse at 20% 50%, rgba(212,133,58,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(201,180,154,0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 80%, rgba(255,224,196,0.15) 0%, transparent 50%),
-                #fdf6ec
-              `,
-              position: "relative",
-              overflow: "hidden",
-              padding: "4rem 2rem",
-            }}
+          <HeroSection
+            heading={<>
+              Todo lo que tu gato<br />
+              <em style={{ color: "#d4853a" }}>necesita</em> saber
+            </>}
+            subtitle="Desde cuidados neonatales hasta tenencia responsable. La enciclopedia definitiva para una convivencia feliz y saludable."
+            primaryCta={{ text: "Comenzar Guía →", onClick: () => handleCategoryTabClick('cuidado-gatito') }}
+            secondaryCta={{ text: "🐾 Explorar Razas", onClick: () => window.location.href = '/razas' }}
           >
-            {/* Decorative shapes */}
-        
-            <div style={{ maxWidth: 1100, textAlign: "center", position: "relative" }}>
-              {/* Badge */}
-              <div style={{
-                display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                padding: "0.4rem 1.2rem",
-                background: "rgba(212,133,58,0.1)", borderRadius: 999,
-                fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase" as const,
-                color: "#a0622a", fontWeight: 500, marginBottom: "2rem",
-              }}>
-                <span style={{ fontSize: "0.9rem" }}>🐱</span>
-                Conocimiento felino de expertos
-              </div>
-
-              {/* Main heading */}
-              <h1 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
-                fontWeight: 900, lineHeight: 1.05, color: "#2c2416",
-                marginBottom: "1.5rem", letterSpacing: "-0.03em",
-              }}>
-                Todo lo que tu gato<br />
-                <em style={{ color: "#d4853a" }}>necesita</em> saber
-              </h1>
-
-              {/* Subtitle */}
-              <p style={{
-                fontSize: "1.15rem", color: "#6b5c44", maxWidth: 640,
-                margin: "0 auto 3rem", lineHeight: 1.8, fontWeight: 300,
-              }}>
-                Desde cuidados neonatales hasta tenencia responsable.
-                La enciclopedia definitiva para una convivencia feliz y saludable.
-              </p>
-
-              {/* CTA Buttons */}
-              <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "4rem" }}>
-                <button
-                  onClick={() => handleCategoryTabClick('cuidado-gatito')}
-                  style={{
-                    padding: "0.85rem 2rem", borderRadius: 12,
-                    background: "#d4853a", color: "#fff", border: "none",
-                    fontSize: "0.95rem", fontWeight: 600, cursor: "pointer",
-                    fontFamily: "'Inter', sans-serif",
-                    transition: "transform 0.2s, box-shadow 0.2s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 8px 24px rgba(212,133,58,0.3)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  Comenzar Guía →
-                </button>
-                <button
-                  onClick={() => window.location.href = '/razas'}
-                  style={{
-                    padding: "0.85rem 2rem", borderRadius: 12,
-                    background: "transparent", color: "#2c2416",
-                    border: "1px solid rgba(201,180,154,0.5)",
-                    fontSize: "0.95rem", fontWeight: 600, cursor: "pointer",
-                    fontFamily: "'Inter', sans-serif",
-                    transition: "all 0.2s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(0,0,0,0.02)";
-                    e.currentTarget.style.borderColor = "rgba(201,180,154,0.8)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.borderColor = "rgba(201,180,154,0.5)";
-                  }}
-                >
-                  🐾 Explorar Razas
-                </button>
-              </div>
-
-              <h2 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(1.6rem, 2.5vw, 2rem)",
-                fontWeight: 700, color: "#2c2416",
-                textAlign: "center", marginBottom: "2rem",
-              }}>
-                Todo sobre el cuidado de nuestro compañero felino
-              </h2>
-              <CategoryCards
-                categories={categories}
-                onCategoryClick={handleCategoryTabClick}
-                imageMap={{ salud: "CategoryCards/salud.png", comportamiento: "CategoryCards/comportamiento.png", alimentacion: "CategoryCards/alimentacion.png" }}
-              />
-            </div>
-          </section>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(1.6rem, 2.5vw, 2rem)",
+              fontWeight: 700, color: "#2c2416",
+              textAlign: "center", marginBottom: "2rem",
+            }}>
+              Todo sobre el cuidado de nuestro compañero felino
+            </h2>
+            <CategoryCards
+              categories={categories}
+              onCategoryClick={handleCategoryTabClick}
+              imageMap={{ salud: "CategoryCards/salud.png", comportamiento: "CategoryCards/comportamiento.png", alimentacion: "CategoryCards/alimentacion.png" }}
+            />
+          </HeroSection>
 
           {/* ── STATS SECTION ── */}
           <section style={{
