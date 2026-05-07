@@ -296,10 +296,10 @@ export default function Home() {
 
           <FeaturedContent
             items={[
-              { title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar.", img: "cuidadoIntegral.png" },
-              { title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa.", img: "tenenciaResponsable.png" },
-              { title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización.", img: "castracion.png" },
-              { title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "impactoConciencia.png" },
+              { id: 1, title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar.", img: "cuidadoIntegral.png" },
+              { id: 2, title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa.", img: "tenenciaResponsable.png" },
+              { id: 3, title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización.", img: "castracion.png" },
+              { id: 4, title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "impactoConciencia.png" },
             ]}
           />
         </>
