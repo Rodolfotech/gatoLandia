@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
+import Pagination from "./Pagination";
 
 // Enhanced markdown: handles **bold**, line breaks, list items, and emojis
 function renderMarkdown(text: string): React.ReactNode {
@@ -134,6 +135,8 @@ interface TopicContentProps {
   topic: Topic;
   nextTopic: Topic | null;
   prevTopic: Topic | null;
+  pageIndex: number;
+  totalPages: number;
   onNavigate: (topicSlug: string) => void;
 }
 
@@ -143,6 +146,8 @@ export default function TopicContent({
   topic,
   nextTopic,
   prevTopic,
+  pageIndex,
+  totalPages,
   onNavigate,
 }: TopicContentProps) {
   const { t } = useI18n();
@@ -350,83 +355,17 @@ export default function TopicContent({
         ))}
       </div>
 
-      {/* Navigation */}
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          marginTop: "3.5rem",
-          paddingTop: "2rem",
-          borderTop: "1px solid rgba(201,180,154,0.3)",
-        }}
-      >
-        {prevTopic && (
-          <button
-            onClick={() => onNavigate(prevTopic.slug)}
-            style={{
-              flex: 1,
-              textAlign: "left",
-              background: "#fff",
-              border: "1px solid rgba(201,180,154,0.4)",
-              borderRadius: 12,
-              padding: "1rem 1.25rem",
-              cursor: "pointer",
-              transition: "all 0.2s",
-              fontFamily: "'Inter', sans-serif",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = category.color + "60";
-              el.style.boxShadow = `0 4px 16px ${category.color}10`;
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = "rgba(201,180,154,0.4)";
-              el.style.boxShadow = "none";
-            }}
-          >
-            <p style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#c9b49a", margin: "0 0 0.3rem" }}>
-              {t('topic_prev')}
-            </p>
-            <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#2c2416", margin: 0 }}>
-              {prevTopic.title}
-            </p>
-          </button>
-        )}
-        {nextTopic && (
-          <button
-            onClick={() => onNavigate(nextTopic.slug)}
-            style={{
-              flex: 1,
-              textAlign: "right",
-              background: `${category.color}08`,
-              border: `1px solid ${category.color}30`,
-              borderRadius: 12,
-              padding: "1rem 1.25rem",
-              cursor: "pointer",
-              transition: "all 0.2s",
-              fontFamily: "'Inter', sans-serif",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = category.color + "70";
-              el.style.boxShadow = `0 4px 16px ${category.color}15`;
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = category.color + "30";
-              el.style.boxShadow = "none";
-            }}
-          >
-            <p style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#c9b49a", margin: "0 0 0.3rem" }}>
-              {t('topic_next')}
-            </p>
-            <p style={{ fontSize: "0.85rem", fontWeight: 600, color: category.color, margin: 0 }}>
-              {nextTopic.title}
-            </p>
-          </button>
-        )}
-      </div>
+      <Pagination
+        current={pageIndex}
+        total={totalPages}
+        hasPrev={!!prevTopic}
+        hasNext={!!nextTopic}
+        color={category.color}
+        onPrev={() => onNavigate(prevTopic!.slug)}
+        onNext={() => onNavigate(nextTopic!.slug)}
+        prevLabel={t('topic_prev_label')}
+        nextLabel={t('topic_next_label')}
+      />
     </article>
   );
 }
