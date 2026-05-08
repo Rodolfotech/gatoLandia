@@ -82,6 +82,8 @@ export default function Home() {
                 topic={currentTopic}
                 prevTopic={prevTopic}
                 nextTopic={nextTopic}
+                pageIndex={topicIdx + 1}
+                totalPages={siblingTopics.length}
                 onNavigate={(slug) =>
                   selectTopic(selection!.categorySlug, selection!.subcategorySlug, slug)
                 }
