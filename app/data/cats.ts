@@ -53,7 +53,7 @@ export const categories: Category[] = [
               {
                 heading: "Vacunas obligatorias",
                 body: "La vacuna triple felina (Rinotraqueítis, Calicivirus y Panleucopenia) es la base de cualquier protocolo. Se administra a las 8, 12 y 16 semanas de vida, con refuerzos anuales o cada 3 años según el producto.",
-                image: "/CategoryCards/salud.png",
+                image: "/Articles/vacunacion.png",
               },
               {
                 heading: "Vacunas opcionales recomendadas",
@@ -74,7 +74,7 @@ export const categories: Category[] = [
               {
                 heading: "Parásitos internos",
                 body: "Los más frecuentes son los áscaris (lombrices), tenias y Toxoplasma. Se tratan con antiparasitarios orales cada 3–6 meses en adultos, y mensualmente en cachorros hasta los 6 meses.",
-                image: "/CategoryCards/cuidado.png",
+                image: "/Articles/desparasitacion.png",
               },
               {
                 heading: "Parásitos externos",
@@ -94,6 +94,7 @@ export const categories: Category[] = [
               {
                 heading: "El botiquín básico",
                 body: "Todo hogar con gatos debería tener: solución salina, gasas estériles, antiséptico sin alcohol (como clorhexidina diluida), termómetro digital y el número de una clínica veterinaria de urgencias.",
+                image: "/Articles/primeros_auxilios.png",
               },
               {
                 heading: "Señales de emergencia",
@@ -119,6 +120,7 @@ export const categories: Category[] = [
               {
                 heading: "Señales de alerta",
                 body: "Beber mucho agua, orinar con mayor frecuencia, pérdida de peso progresiva, pelo opaco y falta de apetito son los signos más comunes. Muchos gatos no muestran síntomas hasta perder el 75% de la función renal.",
+                image: "/Articles/enfermedad.png",
               },
               {
                 heading: "Diagnóstico y seguimiento",
@@ -138,6 +140,7 @@ export const categories: Category[] = [
               {
                 heading: "Factores de riesgo",
                 body: "Obesidad, edad avanzada, sexo masculino y dietas altas en carbohidratos son los principales factores. Los gatos Burmeses tienen predisposición genética.",
+                image: "/Articles/diabetes.png",
               },
               {
                 heading: "Síntomas",
@@ -163,6 +166,7 @@ export const categories: Category[] = [
               {
                 heading: "Por qué es importante",
                 body: "Las bacterias de la boca entran al torrente sanguíneo y pueden dañar riñones, corazón e hígado. Un gato con dolor dental come menos, está más irritable y su calidad de vida se resiente enormemente.",
+                image: "/Articles/sarro.png",
               },
               {
                 heading: "Prevención en casa",
@@ -189,6 +193,7 @@ export const categories: Category[] = [
         {
           heading: "La causa: Proteína Fel d 1",
           body: "La alergia no es causada por el pelo, sino por la proteína Fel d 1 producida en la piel, saliva y orina. Se propaga cuando el gato se lame y la proteína se dispersa en el aire a través de la caspa (piel muerta). Los machos producen más que las hembras, y la castración reduce estos niveles.",
+          image: "/Articles/alergia.png",
         },
         {
           heading: "Síntomas y Diagnóstico",
@@ -222,6 +227,7 @@ export const categories: Category[] = [
         {
           heading: "Paso 1: Causas y factores de riesgo",
           body: "La diabetes felina suele ser una combinación de factores: obesidad y edad (común en mayores de 9 años), sexo y raza (más común en machos 4:1 y en raza Siamés). También influyen los depósitos de amiloide que dañan el páncreas y el uso de fármacos como progestágenos o corticoides. Es fundamental destacar que la pancreatitis suele estar estrechamente asociada a esta enfermedad y, en muchos casos, puede ser la causa desencadenante de la diabetes.",
+          image: "/Articles/diabete.png",
         },
         {
           heading: "Paso 2: Identificación de síntomas",
@@ -263,6 +269,7 @@ export const categories: Category[] = [
         {
           heading: "Paso 1: Identificación del sobrepeso",
           body: "No te fíes solo de la báscula. En la 'Prueba de las costillas', deberías sentirlas fácilmente sin presionar fuerte; si no, hay exceso de grasa. Al mirarlo desde arriba, debe marcarse una cintura detrás de las costillas; si es rectangular o tiene forma de barril, hay sobrepeso. De perfil, su abdomen no debe colgar ni tocar el suelo. Se considera sobrepeso si supera un 10-19% su peso ideal, y obeso si supera el 20%.",
+          image: "/Articles/obesidad.png",
         },
         {
           heading: "Paso 2: Causas y Factores",
@@ -316,6 +323,7 @@ export const categories: Category[] = [
         {
           heading: "**1. ¿Interior o Exterior? Tomando la decisión correcta**",
           body: "Una de las primeras decisiones al adoptar es si el gato vivirá solo dentro de casa o tendrá acceso al exterior. Ambas opciones tienen implicaciones importantes: Gatos de exterior: Tienen más libertad y estimulación natural, pero corren mayores riesgos: atropellos, peleas con otros animales, enfermedades infecciosas y parásitos (pulgas, gusanos). Su esperanza de vida suele ser menor. Gatos de interior: Están mucho más protegidos y viven más años, pero dependen totalmente de nosotros para su estimulación. El aburrimiento es su mayor enemigo. Si eliges esta opción, debes comprometerte a enriquecer su entorno con juegos, rascadores y tiempo de calidad. Consejo: Sea cual sea tu elección, la clave está en la seguridad y la estimulación mental.",
+          image: "/Articles/interior_exterior.png",
         },
         {
           heading: "**2. El Instinto de Rascar: No es vandalismo, es comunicación**",
@@ -355,6 +363,7 @@ export const categories: Category[] = [
         {
           heading: "Paso 1: La Cuarentena Inicial (Días 1-4)",
           body: "El nuevo gato necesita sentirse seguro antes de conocer a nadie. Habitación propia: Prepara una habitación tranquila (que no sea la zona principal de tu gato actual) con su cama, comida, agua, juguetes y arenero. Refugio seguro: Deja su transportín abierto con una manta dentro para que tenga un escondite donde sentirse protegido. Cero contacto visual: Durante estos primeros días, no deben verse. Sin embargo, está bien que se huelan bajo la puerta. Esto les permite investigarse sin la presión del cara a cara.",
+          image: "/Articles/aceptar.png",
         },
         {
           heading: "Paso 2: Intercambio de Olores (El 'Dating' Olfativo)",
@@ -401,6 +410,7 @@ export const categories: Category[] = [
            {
           heading: "La cola como barómetro emocional",
           body: "La cola es una de las señales más claras: Alta y recta indica confianza, saludo afectuoso o felicidad (si tiene la punta curvada es felicidad máxima). Baja o entre las patas expresa miedo, inseguridad o sumisión. Moviéndose de lado a lado rápidamente o con movimiento lento revela irritación, molestia o concentración. Si está esponjada, erizada o arqueada, el gato siente amenaza o terror.",
+          image: "/Articles/comunicacion.png",
         },
         {
           heading: "Las orejas no mienten",
@@ -432,6 +442,7 @@ export const categories: Category[] = [
               {
                 heading: "El maullido",
                 body: "Un maullido corto y agudo suele ser un saludo. Uno largo y sostenido, una demanda (comida, atención). Los maullidos repetitivos pueden indicar dolor, desorientación (especialmente en gatos mayores) o angustia.",
+                image: "/Articles/vocalizacion.png",
               },
               {
                 heading: "El ronroneo",
@@ -451,6 +462,7 @@ export const categories: Category[] = [
               {
                 heading: "Qué significa",
                 body: "Cuando un gato te mira y parpadea lentamente, te está diciendo que se siente seguro y a gusto en tu presencia. Es el equivalente felino de una sonrisa relajada y un gesto de confianza plena.",
+                image: "/Articles/parpadeo.png",
               },
               {
                 heading: "Cómo hacerlo",
@@ -476,6 +488,7 @@ export const categories: Category[] = [
               {
                 heading: "Las tres razones del arañado",
                 body: "Los gatos arañan para marcar territorio visualmente y con feromonas de las almohadillas, para estirar músculos y tendones de forma saludable, y para eliminar las capas muertas de las uñas. Es un comportamiento instintivo que no puede eliminarse, solo redirigirse.",
+                image: "/Articles/arana.png",
               },
               {
                 heading: "Cómo proteger el mobiliario",
@@ -495,6 +508,7 @@ export const categories: Category[] = [
               {
                 heading: "El origen del comportamiento",
                 body: "Los gatitos amasan el vientre de la madre para estimular la producción de leche. En adultos, es un comportamiento de confort que persiste de la infancia: lo hacen cuando se sienten seguros, felices y relajados.",
+                image: "/Articles/amasado.png",
               },
               {
                 heading: "¿Qué indica cuando amasan sobre ti?",
@@ -520,6 +534,7 @@ export const categories: Category[] = [
         {
           heading: "**1. El secreto: Usa su instinto, no la fuerza**",
           body: "Los gatos no responden bien a las órdenes secas ni a los castigos. Responden al refuerzo positivo. La regla de oro: Si hace algo bien, recibe un premio (una chuchería rica, un poco de atún o muchas caricias). Nunca forces: Si tiras de él o le gritas, se cerrará en banda. El entrenamiento debe ser siempre voluntario y divertido. Sesiones cortas: 5 o 10 minutos son suficientes. Si ves que se distrae, termina la sesión con algo que ya sepa hacer bien para que acabe con buena sensación.",
+          image: "/Articles/aprender.png",
         },
         {
           heading: "**2. La herramienta mágica: 'La Diana' (Targeting)**",
@@ -556,6 +571,7 @@ export const categories: Category[] = [
         {
           heading: "Antes de empezar",
           body: "Asegúrate de que tu gato tenga todas sus vacunas al día y lleve microchip. La seguridad es lo primero.",
+          image: "/Articles/paseos.png",
         },
         {
           heading: "Paso 1: Presentación positiva (El arnés es amigo)",
@@ -595,6 +611,7 @@ export const categories: Category[] = [
               {
                 heading: "Cómo funciona el clicker",
                 body: "El clic marca el momento exacto del comportamiento correcto, y va siempre seguido de un premio. El gato aprende que ese sonido específico predice una recompensa, lo que lo motiva a repetir la conducta. La precisión del momento es clave.",
+                image: "/Articles/clicker.png",
               },
               {
                 heading: "Por dónde empezar",
@@ -620,6 +637,7 @@ export const categories: Category[] = [
         {
           heading: "**1. Pistas sutiles de dolor**",
           body: "Olvida los llantos o cojeras; el dolor felino se esconde en cambios de comportamiento: se esconde más (bajo la cama o armarios), cambia su humor volviéndose irritable o inusualmente 'pegajoso', y deja de acicalarse (pelo opaco o con nudos). También puede lamerse en exceso una zona específica, adoptar una postura tensa de 'pan de molde' con la cabeza baja, o dejar de saltar a lugares que antes frecuentaba por dolor articular.",
+          image: "/Articles/dolor.png",
         },
         {
           heading: "**2. Los dolores más comunes**",
@@ -657,6 +675,7 @@ export const categories: Category[] = [
         {
           heading: "**1. ¿Qué es realmente el estrés?**",
           body: "El estrés no es siempre 'malo'. Es una reacción natural del cuerpo que prepara al gato para adaptarse a cambios (una mudanza, un viaje, la llegada de un bebé). Estrés positivo: Le ayuda a reaccionar y adaptarse. Estrés negativo: Ocurre cuando la situación es demasiado intensa o dura demasiado tiempo. Si el gato no logra adaptarse, el estrés se cronifica y puede derivar en ansiedad. Diferencia clave: Miedo vs. Ansiedad. Miedo: Reacción inmediata ante un peligro real. El corazón se acelera y el gato está listo para huir o defenderse. Es útil para sobrevivir. Ansiedad: El gato siente miedo ante algo que no es peligroso o que no puede controlar. No sabe cómo resolver la situación, así que vive en tensión constante.",
+          image: "/Articles/estres.png",
         },
         {
           heading: "**2. ¿Por qué algunos gatos son más sensibles?**",

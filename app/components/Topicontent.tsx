@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 import Pagination from "./Pagination";
@@ -244,136 +244,154 @@ export default function TopicContent({
     };
   }, [topic, category, subcategory]);
   
+  const mediaItems = topic.sections.filter(s => s.image || s.adSlot);
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
   return (
-    <article
-      style={{
-        flex: 1,
-        padding: "3rem 3.5rem",
-        maxWidth: 900,
-        fontFamily: "'Inter', 'DM Sans', sans-serif",
-      }}
-    >
-      {/* Breadcrumb */}
-      <nav
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "0.4rem",
-          fontSize: "0.75rem",
-          color: "#c9b49a",
-          marginBottom: "2rem",
-        }}
-      >
-        <span style={{ color: category.color, fontWeight: 500 }}>
-          {category.label}
-        </span>
-        <span>›</span>
-        <span>{subcategory.label}</span>
-      </nav>
-
-      {/* Title */}
-      <h1
-        style={{
-          fontFamily: "'Playfair Display', serif",
-          fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-          fontWeight: 900,
-          color: "#2c2416",
-          lineHeight: 1.15,
-          marginBottom: "1.25rem",
-          letterSpacing: "-0.02em",
-        }}
-      >
-        {topic.title}
-      </h1>
-
-      {/* Intro */}
+    <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
       <div
         style={{
-          fontSize: "1.05rem",
-          color: "#6b5c44",
-          lineHeight: 1.75,
-          marginBottom: "2.5rem",
-          paddingBottom: "2rem",
-          borderBottom: `2px solid ${category.color}20`,
+          display: "flex",
+          gap: "2rem",
+          alignItems: "flex-start",
         }}
       >
-        {renderMarkdown(topic.intro)}
-      </div>
+        <article
+          style={{
+            flex: 1,
+            padding: "3rem 3.5rem",
+            maxWidth: 900,
+            fontFamily: "'Inter', 'DM Sans', sans-serif",
+          }}
+        >
+          {/* Breadcrumb */}
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              fontSize: "0.75rem",
+              color: "#c9b49a",
+              marginBottom: "2rem",
+            }}
+          >
+            <span style={{ color: category.color, fontWeight: 500 }}>
+              {category.label}
+            </span>
+            <span>›</span>
+            <span>{subcategory.label}</span>
+          </nav>
 
-      {/* Sections */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-        {topic.sections.map((section, i) => (
-          <section key={section.heading}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "1rem",
-                marginBottom: "1rem",
-              }}
-            >
-              <span
-                style={{
-                  flexShrink: 0,
-                  width: 32,
-                  height: 32,
-                  borderRadius: "50%",
-                  background: `${category.color}18`,
-                  border: `1.5px solid ${category.color}40`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.75rem",
-                  fontWeight: 700,
-                  color: category.color,
-                  marginTop: 2,
-                }}
-              >
-                {i + 1}
-              </span>
-              <h2
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "1.35rem",
-                  fontWeight: 700,
-                  color: "#2c2416",
-                  margin: 0,
-                  lineHeight: 1.3,
-                }}
-              >
-                {section.heading}
-              </h2>
-            </div>
-            <div
-              style={{
-                paddingLeft: "3rem",
-                margin: 0,
-                display: "flex",
-                gap: section.image || section.adSlot ? "2rem" : 0,
-                alignItems: "flex-start",
-              }}
-            >
-              <div style={{ flex: 1, minWidth: 0 }}>
-                {renderMarkdown(section.body)}
-              </div>
-              {(section.image || section.adSlot) && (
+          {/* Title */}
+          <h1
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+              fontWeight: 900,
+              color: "#2c2416",
+              lineHeight: 1.15,
+              marginBottom: "1.25rem",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {topic.title}
+          </h1>
+
+          {/* Intro */}
+          <div
+            style={{
+              fontSize: "1.05rem",
+              color: "#6b5c44",
+              lineHeight: 1.75,
+              marginBottom: "2.5rem",
+              paddingBottom: "2rem",
+              borderBottom: `2px solid ${category.color}20`,
+            }}
+          >
+            {renderMarkdown(topic.intro)}
+          </div>
+
+          {/* Sections */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+            {topic.sections.map((section, i) => (
+              <section key={section.heading}>
                 <div
                   style={{
-                    width: 280,
-                    flexShrink: 0,
                     display: "flex",
-                    flexDirection: "column",
-                    gap: "1.5rem",
+                    alignItems: "flex-start",
+                    gap: "1rem",
+                    marginBottom: "1rem",
                   }}
                 >
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      width: 32,
+                      height: 32,
+                      borderRadius: "50%",
+                      background: `${category.color}18`,
+                      border: `1.5px solid ${category.color}40`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.75rem",
+                      fontWeight: 700,
+                      color: category.color,
+                      marginTop: 2,
+                    }}
+                  >
+                    {i + 1}
+                  </span>
+                  <h2
+                    style={{
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: "1.35rem",
+                      fontWeight: 700,
+                      color: "#2c2416",
+                      margin: 0,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {section.heading}
+                  </h2>
+                </div>
+                <div
+                  style={{
+                    paddingLeft: "3rem",
+                    margin: 0,
+                  }}
+                >
+                  {renderMarkdown(section.body)}
+                </div>
+              </section>
+            ))}
+          </div>
+        </article>
+
+        {mediaItems.length > 0 && (
+          <div
+            style={{
+              width: 800,
+              flexShrink: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: "2.5rem",
+              padding: "3rem 0",
+            }}
+          >
+            {topic.sections.map((section) => (
+              (section.image || section.adSlot) && (
+                <div key={section.heading} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                   {section.image && (
                     <img
                       src={section.image}
                       alt={section.heading}
+                      onClick={() => setLightbox(section.image!)}
                       style={{
                         width: "100%",
                         height: "auto",
                         borderRadius: 12,
+                        cursor: "pointer",
                       }}
                     />
                   )}
@@ -381,10 +399,10 @@ export default function TopicContent({
                     <AdBanner dataAdSlot={section.adSlot} dataAdFormat="auto" style={{ display: "block" }} />
                   )}
                 </div>
-              )}
-            </div>
-          </section>
-        ))}
+              )
+            ))}
+          </div>
+        )}
       </div>
 
       <Pagination
@@ -398,6 +416,35 @@ export default function TopicContent({
         prevLabel={t('topic_prev_label')}
         nextLabel={t('topic_next_label')}
       />
-    </article>
+
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.85)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+            cursor: "zoom-out",
+          }}
+        >
+          <img
+            src={lightbox}
+            alt=""
+            style={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              width: "auto",
+              height: "auto",
+              borderRadius: 8,
+              boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
+            }}
+          />
+        </div>
+      )}
+    </div>
   );
 }

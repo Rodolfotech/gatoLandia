@@ -28,7 +28,7 @@ export default function Pagination({
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
         gap: "0.75rem",
         marginTop: "3.5rem",
         paddingTop: "2rem",
@@ -41,7 +41,9 @@ export default function Pagination({
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           gap: "0.35rem",
+          width: 120,
           padding: "0.5rem 1rem",
           borderRadius: 8,
           border: `1px solid ${hasPrev ? `${color}40` : "transparent"}`,
@@ -100,7 +102,9 @@ export default function Pagination({
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           gap: "0.35rem",
+          width: 120,
           padding: "0.5rem 1rem",
           borderRadius: 8,
           border: `1px solid ${hasNext ? `${color}40` : "transparent"}`,
