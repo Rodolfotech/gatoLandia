@@ -23,8 +23,24 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Gatitos · Enciclopedia Felina",
+  title: {
+    template: "%s · Gatitos · Enciclopedia Felina",
+    default: "Gatitos · Enciclopedia Felina",
+  },
   description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
+  metadataBase: new URL("https://gatitos.cl"),
+  openGraph: {
+    type: "website",
+    siteName: "Gatitos · Enciclopedia Felina",
+    title: "Gatitos · Enciclopedia Felina",
+    description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
+    locale: "es_CL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gatitos · Enciclopedia Felina",
+    description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
+  },
 };
 
 export default function RootLayout({
