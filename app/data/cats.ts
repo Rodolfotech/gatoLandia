@@ -3,6 +3,8 @@
 export interface Section {
   heading: string;
   body: string;
+  image?: string;
+  adSlot?: string;
 }
 
 export interface Topic {
@@ -51,6 +53,7 @@ export const categories: Category[] = [
               {
                 heading: "Vacunas obligatorias",
                 body: "La vacuna triple felina (Rinotraqueítis, Calicivirus y Panleucopenia) es la base de cualquier protocolo. Se administra a las 8, 12 y 16 semanas de vida, con refuerzos anuales o cada 3 años según el producto.",
+                image: "/CategoryCards/salud.png",
               },
               {
                 heading: "Vacunas opcionales recomendadas",
@@ -59,6 +62,7 @@ export const categories: Category[] = [
               {
                 heading: "¿Qué pasa si me salto una dosis?",
                 body: "Si el gato adulto lleva más de 3 años sin vacunarse, se recomienda repetir la serie inicial. Consulta siempre con tu veterinario antes de administrar cualquier vacuna.",
+                adSlot: "1234567890",
               },
             ],
           },
@@ -70,6 +74,7 @@ export const categories: Category[] = [
               {
                 heading: "Parásitos internos",
                 body: "Los más frecuentes son los áscaris (lombrices), tenias y Toxoplasma. Se tratan con antiparasitarios orales cada 3–6 meses en adultos, y mensualmente en cachorros hasta los 6 meses.",
+                image: "/CategoryCards/cuidado.png",
               },
               {
                 heading: "Parásitos externos",

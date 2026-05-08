@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 import Pagination from "./Pagination";
+import AdBanner from "./AdBanner";
 
 // Enhanced markdown: handles **bold**, line breaks, list items, and emojis
 function renderMarkdown(text: string): React.ReactNode {
@@ -347,9 +348,40 @@ export default function TopicContent({
               style={{
                 paddingLeft: "3rem",
                 margin: 0,
+                display: "flex",
+                gap: section.image || section.adSlot ? "2rem" : 0,
+                alignItems: "flex-start",
               }}
             >
-              {renderMarkdown(section.body)}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                {renderMarkdown(section.body)}
+              </div>
+              {(section.image || section.adSlot) && (
+                <div
+                  style={{
+                    width: 280,
+                    flexShrink: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "1.5rem",
+                  }}
+                >
+                  {section.image && (
+                    <img
+                      src={section.image}
+                      alt={section.heading}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: 12,
+                      }}
+                    />
+                  )}
+                  {section.adSlot && (
+                    <AdBanner dataAdSlot={section.adSlot} dataAdFormat="auto" style={{ display: "block" }} />
+                  )}
+                </div>
+              )}
             </div>
           </section>
         ))}
