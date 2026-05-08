@@ -149,68 +149,84 @@ export default function TopicContent({
 
   useEffect(() => {
     const siteName = "Gatitos · Enciclopedia Felina";
-    const title = `${topic.title} · ${siteName}`;
-    const description = topic.intro.replace(/\*\*/g, "").slice(0, 160);
-    const url = `https://gatitos.cl/${category.slug}/${subcategory.slug}/${topic.slug}`;
+    const path = `/${category.slug}/${subcategory.slug}/${topic.slug}`;
+    const desc = topic.intro.replace(/\*\*/g, "").slice(0, 160);
 
-    document.title = title;
+    let cancelled = false;
 
-    const setMeta = (name: string, content: string, property = false) => {
-      const attr = property ? "property" : "name";
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
+    function apply(titleText: string, descText: string, kw?: string) {
+      if (cancelled) return;
+      const title = `${titleText} · ${siteName}`;
+      const url = `https://gatitos.cl/${category.slug}/${subcategory.slug}/${topic.slug}`;
+
+      document.title = title;
+
+      const setMeta = (name: string, content: string, property = false) => {
+        const attr = property ? "property" : "name";
+        let el = document.querySelector(`meta[${attr}="${name}"]`);
+        if (!el) {
+          el = document.createElement("meta");
+          el.setAttribute(attr, name);
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      };
+
+      setMeta("description", descText);
+      setMeta("keywords", kw || "");
+      setMeta("og:title", title, true);
+      setMeta("og:description", descText, true);
+      setMeta("og:url", url, true);
+      setMeta("og:site_name", siteName, true);
+      setMeta("twitter:title", title);
+      setMeta("twitter:description", descText);
+      setMeta("twitter:url", url);
+
+      const sectionsLd = topic.sections.map((s) => ({
+        "@type": "ListItem",
+        position: topic.sections.indexOf(s) + 1,
+        item: { "@type": "Article", headline: s.heading, description: s.body.replace(/\*\*/g, "").slice(0, 200) },
+      }));
+
+      const ld = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: topic.title,
+        description: descText,
+        url,
+        author: { "@type": "Organization", name: siteName },
+        about: category.label,
+        isPartOf: { "@type": "WebPage", name: subcategory.label, url: `https://gatitos.cl/${category.slug}/${subcategory.slug}` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        ...(sectionsLd.length > 0 ? { hasPart: sectionsLd } : {}),
+      });
+
+      let ldEl = document.querySelector('script[type="application/ld+json"]');
+      if (!ldEl) {
+        ldEl = document.createElement("script");
+        ldEl.setAttribute("type", "application/ld+json");
+        document.head.appendChild(ldEl);
       }
-      el.setAttribute("content", content);
-    };
-
-    const removeMeta = (name: string, property = false) => {
-      const attr = property ? "property" : "name";
-      const el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (el) el.remove();
-    };
-
-    setMeta("description", description);
-    setMeta("og:title", title, true);
-    setMeta("og:description", description, true);
-    setMeta("og:url", url, true);
-    setMeta("og:site_name", siteName, true);
-    setMeta("twitter:title", title);
-    setMeta("twitter:description", description);
-    setMeta("twitter:url", url);
-
-    const sectionsLd = topic.sections.map((s) => ({
-      "@type": "ListItem",
-      position: topic.sections.indexOf(s) + 1,
-      item: { "@type": "Article", headline: s.heading, description: s.body.replace(/\*\*/g, "").slice(0, 200) },
-    }));
-
-    const ld = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: topic.title,
-      description,
-      url,
-      author: { "@type": "Organization", name: siteName },
-      about: category.label,
-      isPartOf: { "@type": "WebPage", name: subcategory.label, url: `https://gatitos.cl/${category.slug}/${subcategory.slug}` },
-      mainEntityOfPage: { "@type": "WebPage", "@id": url },
-      ...(sectionsLd.length > 0 ? { hasPart: sectionsLd } : {}),
-    });
-
-    let ldEl = document.querySelector('script[type="application/ld+json"]');
-    if (!ldEl) {
-      ldEl = document.createElement("script");
-      ldEl.setAttribute("type", "application/ld+json");
-      document.head.appendChild(ldEl);
+      ldEl.textContent = ld;
     }
-    ldEl.textContent = ld;
+
+    fetch("/api/seo-data")
+      .then((r) => r.json())
+      .then((overrides) => {
+        const o = overrides[path];
+        apply(o?.title || topic.title, o?.description || desc, o?.keywords);
+      })
+      .catch(() => apply(topic.title, desc));
 
     return () => {
+      cancelled = true;
       document.title = siteName;
+      const removeMeta = (name: string, property = false) => {
+        const attr = property ? "property" : "name";
+        document.querySelector(`meta[${attr}="${name}"]`)?.remove();
+      };
       removeMeta("description");
+      removeMeta("keywords");
       removeMeta("og:title", true);
       removeMeta("og:description", true);
       removeMeta("og:url", true);
@@ -218,8 +234,7 @@ export default function TopicContent({
       removeMeta("twitter:title");
       removeMeta("twitter:description");
       removeMeta("twitter:url");
-      const jsonld = document.querySelector('script[type="application/ld+json"]');
-      if (jsonld) jsonld.remove();
+      document.querySelector('script[type="application/ld+json"]')?.remove();
     };
   }, [topic, category, subcategory]);
   

@@ -17,71 +17,87 @@ export default function CategoryOverview({
 
   useEffect(() => {
     const siteName = "Gatitos · Enciclopedia Felina";
-    const title = `${category.label} · ${siteName}`;
-    const description = category.description;
-    const url = `https://gatitos.cl/${category.slug}`;
+    const path = `/${category.slug}`;
+    const defaultDesc = category.description;
 
-    document.title = title;
+    let cancelled = false;
 
-    const setMeta = (name: string, content: string, property = false) => {
-      const attr = property ? "property" : "name";
-      let el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
+    function apply(seoTitle: string, descText: string, kw?: string) {
+      if (cancelled) return;
+      const title = `${seoTitle} · ${siteName}`;
+      const url = `https://gatitos.cl/${category.slug}`;
+
+      document.title = title;
+
+      const setMeta = (name: string, content: string, property = false) => {
+        const attr = property ? "property" : "name";
+        let el = document.querySelector(`meta[${attr}="${name}"]`);
+        if (!el) {
+          el = document.createElement("meta");
+          el.setAttribute(attr, name);
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      };
+
+      setMeta("description", descText);
+      setMeta("keywords", kw || "");
+      setMeta("og:title", title, true);
+      setMeta("og:description", descText, true);
+      setMeta("og:url", url, true);
+      setMeta("og:site_name", siteName, true);
+      setMeta("twitter:title", title);
+      setMeta("twitter:description", descText);
+      setMeta("twitter:url", url);
+
+      const subItems = category.subcategories.flatMap((s) =>
+        s.topics.map((t, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: { "@type": "Article", headline: t.title, description: t.intro.replace(/\*\*/g, "").slice(0, 200) },
+        }))
+      );
+
+      const ld = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        headline: category.label,
+        description: descText,
+        url,
+        author: { "@type": "Organization", name: siteName },
+        about: category.label,
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: subItems,
+        },
+      });
+
+      let ldEl = document.querySelector('script[type="application/ld+json"]');
+      if (!ldEl) {
+        ldEl = document.createElement("script");
+        ldEl.setAttribute("type", "application/ld+json");
+        document.head.appendChild(ldEl);
       }
-      el.setAttribute("content", content);
-    };
-
-    const removeMeta = (name: string, property = false) => {
-      const attr = property ? "property" : "name";
-      const el = document.querySelector(`meta[${attr}="${name}"]`);
-      if (el) el.remove();
-    };
-
-    setMeta("description", description);
-    setMeta("og:title", title, true);
-    setMeta("og:description", description, true);
-    setMeta("og:url", url, true);
-    setMeta("og:site_name", siteName, true);
-    setMeta("twitter:title", title);
-    setMeta("twitter:description", description);
-    setMeta("twitter:url", url);
-
-    const subItems = category.subcategories.flatMap((s) =>
-      s.topics.map((t, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        item: { "@type": "Article", headline: t.title, description: t.intro.replace(/\*\*/g, "").slice(0, 200) },
-      }))
-    );
-
-    const ld = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      headline: category.label,
-      description,
-      url,
-      author: { "@type": "Organization", name: siteName },
-      about: category.label,
-      mainEntity: {
-        "@type": "ItemList",
-        itemListElement: subItems,
-      },
-    });
-
-    let ldEl = document.querySelector('script[type="application/ld+json"]');
-    if (!ldEl) {
-      ldEl = document.createElement("script");
-      ldEl.setAttribute("type", "application/ld+json");
-      document.head.appendChild(ldEl);
+      ldEl.textContent = ld;
     }
-    ldEl.textContent = ld;
+
+    fetch("/api/seo-data")
+      .then((r) => r.json())
+      .then((overrides) => {
+        const o = overrides[path];
+        apply(o?.title || category.label, o?.description || defaultDesc, o?.keywords);
+      })
+      .catch(() => apply(category.label, defaultDesc));
 
     return () => {
+      cancelled = true;
       document.title = siteName;
+      const removeMeta = (name: string, property = false) => {
+        const attr = property ? "property" : "name";
+        document.querySelector(`meta[${attr}="${name}"]`)?.remove();
+      };
       removeMeta("description");
+      removeMeta("keywords");
       removeMeta("og:title", true);
       removeMeta("og:description", true);
       removeMeta("og:url", true);
@@ -89,8 +105,7 @@ export default function CategoryOverview({
       removeMeta("twitter:title");
       removeMeta("twitter:description");
       removeMeta("twitter:url");
-      const jsonld = document.querySelector('script[type="application/ld+json"]');
-      if (jsonld) jsonld.remove();
+      document.querySelector('script[type="application/ld+json"]')?.remove();
     };
   }, [category]);
 
