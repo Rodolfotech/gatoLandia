@@ -33,6 +33,62 @@ export interface Category {
 // ─── Datos ────────────────────────────────────────────────────────────────────
 
 export const categories: Category[] = [
+    {
+    slug: "adopción",
+    label: "Adopción",
+    emoji: "",
+    color: "#5b8db8",
+    bg: "#eef3f8",
+    description: "Como adoptar a un gato",
+    subcategories: [
+     {
+  slug: "bienvenida",
+  label: "Bienvenida",
+  topics: [
+    {
+      slug: "guia-bienvenida-cuidados",
+      title: "Bienvenido a casa: cómo cuidar a tu nuevo gato desde el primer día",
+      intro: "¡Felicidades por la adopción! Acoger a un gato es una experiencia maravillosa, pero también implica responsabilidad. Los primeros días son cruciales para su adaptación. Aquí tienes todo lo que necesitas saber para asegurar su salud, bienestar y una convivencia feliz.",
+      sections: [
+        {
+          heading: "**1. Los Primeros Días: Vigilancia y Adaptación**",
+          body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
+          image: "/Articles/bienvenida.png",
+        },
+        {
+          heading: "**2. Salud Preventiva: Vacunas, Parásitos y Esterilización**",
+          body: "Vacunación: Las vacunas protegen contra enfermedades graves (como la panleucopenia, el complejo respiratorio felino o la leucemia). Sigue el calendario que te indique tu veterinario. La vacuna de la rabia, aunque no siempre es obligatoria legalmente para gatos (depende de la región), está muy recomendada.  Desparasitación: Es fundamental para la salud del gato y de tu familia (zoonosis). Interna: se recomienda cada 3 meses. Externa: vital si el gato sale o tiene acceso a balcones/terrazas. Esterilización: Es la decisión más responsable y saludable. Beneficios: evita camadas no deseadas, reduce el marcaje, disminuye peleas y previene enfermedades graves (tumores de mama, piometras). Mitos: No cambia su personalidad ni los vuelve 'vagos'. Esteriliza a tu gato, sea macho o hembra, interior o exterior.",
+        },
+        {
+          heading: "**3. Alimentación e Hidratación**",
+          body: "Alimento adecuado: Usa pienso seco de calidad adaptado a su edad y condición física. Evita darle comida casera o sobras humanas. Premios: Úsalos con moderación para no causar obesidad. Agua fresca: Fundamental, coloca varios bebederos por casa, lejos de la comida y del arenero. Algunos gatos prefieren fuentes en movimiento. Incorporar comida húmeda ayuda a la hidratación. Prohibido: La leche de vaca (la mayoría de los gatos adultos son intolerantes a la lactosa). El yogur natural o queso sin sal pueden darse como premio puntual, pero no son necesarios.",
+        },
+        {
+          heading: "**4. Higiene y Cuidado Físico**",
+          body: "Los gatos necesitan tu ayuda en ciertos aspectos. Cepillado: Pelo corto una vez por semana (diario en muda); pelo largo diario para evitar nudos y bolas de pelo. Si expulsa bolas de pelo con dificultad, consulta sobre pastas de malta. Uñas: Corta solo la punta transparente, evitando la parte rosada (vascularizada). Baños: Generalmente no son necesarios, solo si está muy sucio o por indicación médica.",
+        },
+        {
+          heading: "**5. El Arenero: Reglas de Oro**",
+          body: "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina.",
+        },
+        {
+          heading: "**6. Comportamiento y Enriquecimiento Ambiental**",
+          body: "Lenguaje: Cola erguida es saludo amistoso; cola moviéndose rápido es irritación; orejas hacia atrás indican miedo. Ronroneo puede ser bienestar, dolor o estrés. Juego: Dedica 15-20 minutos diarios a caza simulada (cañas, pelotas). Evita usar tus manos o pies. Rascadores: Proporciona rascadores estables, altos y de materiales atractivos (sisal, madera). Nunca castigues por rascar muebles; redirige y premia. Verticalidad: Necesitan lugares altos para observar y refugios seguros para esconderse. Respeta su soledad.",
+        },
+        {
+          heading: "**7. Consejos Específicos según la Edad**",
+          body: "CACHORRO: Socialización (2-8 semanas) es la etapa clave para aceptar el contacto humano y visitas al veterinario. Enséñale qué se puede morder. Acostúmbralo al transportín dejándolo abierto en casa. Protege cables y ventanas. ADULTO: Paciencia, la adaptación puede tardar semanas. Usa una habitación de aclimatación al llegar con todos sus recursos. Haz presentaciones con otros animales muy gradualmente. Mantén horarios fijos de comida y juego.",
+        },
+        {
+          heading: "**8. Aspectos Legales y Seguridad**",
+          body: "Microchip: Es obligatorio y debe tener los datos actualizados (RIAC en Madrid). Prevención de Accidentes: El Síndrome del Gato Paracaidista. Instala redes mosquiteras resistentes en ventanas y balcones. Una caída desde altura puede ser mortal; no confíes en su 'habilidad' para caer de pie. Cada gato es un mundo. Observa, respeta sus tiempos y consulta siempre a tu veterinario ante cambios bruscos.",
+        }
+      ],
+    },
+  ],
+},
+  ],
+},
   {
     slug: "salud",
     label: "Salud",
@@ -728,6 +784,7 @@ export const categories: Category[] = [
               {
                 heading: "La naturaleza del gato y el agua",
                 body: "Los gatos evolucionaron en ambientes áridos y obtienen la mayor parte del agua de sus presas. Su sed está 'calibrada' para comida con 70% de humedad. El pienso seco tiene solo un 10%, lo que puede llevar a deshidratación crónica y problemas renales y urinarios.",
+                image: "/Articles/comida.png",
               },
               {
                 heading: "Ventajas de la comida húmeda",
@@ -747,6 +804,7 @@ export const categories: Category[] = [
               {
                 heading: "Fundamentos de la BARF",
                 body: "La dieta ideal para un gato BARF incluye aproximadamente 70% de carne magra, 10% de huesos carnosos (nunca cocidos), 10% de vísceras (hígado, corazón) y el 10% restante de otros tejidos. Requiere suplementación cuidadosa con taurina, calcio y vitaminas.",
+                image: "/Articles/dieta.png",
               },
               {
                 heading: "Beneficios reportados",
@@ -772,6 +830,7 @@ export const categories: Category[] = [
               {
                 heading: "Peligro extremo: tóxicos graves",
                 body: "Cebolla, ajo, puerro y cebollín (en todas sus formas: crudos, cocinados o en polvo) destruyen los glóbulos rojos. Chocolate y café contienen teobromina y cafeína que pueden causar convulsiones y muerte. Uvas y pasas causan insuficiencia renal aguda por razones aún desconocidas.",
+                image: "/Articles/toxico.png",
               },
               {
                 heading: "Peligro moderado",
@@ -807,6 +866,7 @@ export const categories: Category[] = [
               {
                 heading: "La ventana de socialización",
                 body: "Entre las 2 y 9 semanas de vida, el gato aprende qué es normal en su mundo. Un cachorro que interactúa con personas, otros gatos, ruidos domésticos y experiencias variadas durante este período será un adulto más seguro y adaptable.",
+                image: "/Articles/juego_cachorro.png",
               },
               {
                 heading: "El error más común: las manos como juguete",
@@ -832,6 +892,7 @@ export const categories: Category[] = [
               {
                 heading: "Por qué funcionan tan bien",
                 body: "Activan el instinto de caza en su totalidad: el movimiento irregular imita el de una presa real. El gato puede acechar, perseguir, atrapar y 'matar'. Esta secuencia completa libera endorfinas y satisface profundamente.",
+                image: "/Articles/cañas.png",
               },
               {
                 heading: "Cómo moverlas correctamente",
@@ -851,6 +912,7 @@ export const categories: Category[] = [
               {
                 heading: "Beneficios comprobados",
                 body: "Reducen la ansiedad y el aburrimiento, ralentizan la ingesta (previniendo vómitos por comer demasiado rápido), estimulan cognitivamente, fomentan el movimiento y pueden reducir la obesidad.",
+                image: "/Articles/puzzles.png",
               },
               {
                 heading: "Cómo empezar",
@@ -886,6 +948,7 @@ export const categories: Category[] = [
         {
           heading: "**1. Desmontando el mito de Darwin**",
           body: "Durante mucho tiempo se creyó que la domesticación 'creaba' nuevas variedades por sí misma, pero esto es falso. Los humanos no creamos los genes, sino que los seleccionamos. En la naturaleza, las mutaciones extrañas suelen eliminarse si no ayudan a sobrevivir, pero en casa protegemos variaciones como el pelo largo o ciertos colores por estética. Toda la variedad actual ya existía potencialmente en los ancestros salvajes; nosotros solo hemos acelerado su aparición mediante la cría selectiva.",
+          image: "/Articles/genetica.png",
         },
         {
           heading: "**2. ¿Cómo funcionan los colores? (Lo básico)**",
@@ -924,6 +987,7 @@ export const categories: Category[] = [
         {
           heading: "¿Cómo funciona el ciclo de una gata?",
           body: "La gata es como un 'reloj estacional' que entra en celo cuando hay más horas de luz (primavera-verano). El apareamiento es la llave: la gata no ovula sola, sino que necesita el estímulo físico de la monta para liberar la hormona LH y que sus óvulos salgan de los ovarios entre 24 y 50 horas después. Si no hay monta fértil, puede tener una 'pseudogestación', donde su cuerpo actúa como si estuviera preñada por aproximadamente 45 días, aunque no haya gatitos.",
+          image: "/Articles/gestacion.png",
         },
         {
           heading: "El viaje del embarazo, paso a paso",
@@ -961,6 +1025,7 @@ export const categories: Category[] = [
               {
                 heading: "0–2 semanas: periodo neonatal",
                 body: "Los gatitos nacen ciegos, sordos y sin capacidad de regular su temperatura. Dependen completamente de la madre para alimentarse (cada 2 horas), calentarse y estimular la micción y defecación. Su único sentido funcional al nacer es el olfato.",
+                image: "/Articles/primeras_semanas.png",
               },
               {
                 heading: "2–7 semanas: socialización primaria",
@@ -986,6 +1051,7 @@ export const categories: Category[] = [
               {
                 heading: "Cambios físicos esperados",
                 body: "Menor flexibilidad articular, pelaje menos brillante, posible pérdida de masa muscular, cambios en los patrones de sueño, reducción de la agudeza sensorial y mayor vulnerabilidad a enfermedades crónicas. No todos los cambios son patológicos: algunos son simplemente el envejecimiento normal.",
+                image: "/Articles/senior.png",
               },
               {
                 heading: "Adaptaciones del entorno",
@@ -1000,7 +1066,7 @@ export const categories: Category[] = [
         ],
       },
       
-    ], 
+    ],
   },
     {
     slug: "emergencia",
@@ -1022,6 +1088,7 @@ export const categories: Category[] = [
         {
           heading: "**1. Calma y Seguridad**",
           body: "Tu seguridad es lo primero; un gatito con dolor puede morder o arañar. Mantén tu rostro alejado de sus garras y boca. No uses bozal, pues está contraindicado en gatos con problemas respiratorios o vómitos. La técnica de la 'manta' es ideal: envuélvelo suavemente en una toalla dejando solo la cabeza fuera para calmarlo y manejarlo con seguridad.",
+          image: "/Articles/primeros_auxilios_gatitos.png",
         },
         {
           heading: "**2. Evaluación Rápida (Regla ABCDE)**",
@@ -1050,63 +1117,8 @@ export const categories: Category[] = [
 
       ]
     },
-    {
-    slug: "adopción",
-    label: "Adopción",
-    emoji: "",
-    color: "#5b8db8",
-    bg: "#eef3f8",
-    description: "Como adoptar a un gato",
-    subcategories: [
-     {
-  slug: "bienvenida",
-  label: "Bienvenida",
-  topics: [
-    {
-      slug: "guia-bienvenida-cuidados",
-      title: "Bienvenido a casa: cómo cuidar a tu nuevo gato desde el primer día",
-      intro: "¡Felicidades por la adopción! Acoger a un gato es una experiencia maravillosa, pero también implica responsabilidad. Los primeros días son cruciales para su adaptación. Aquí tienes todo lo que necesitas saber para asegurar su salud, bienestar y una convivencia feliz.",
-      sections: [
-        {
-          heading: "**1. Los Primeros Días: Vigilancia y Adaptación**",
-          body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
-        },
-        {
-          heading: "**2. Salud Preventiva: Vacunas, Parásitos y Esterilización**",
-          body: "Vacunación: Las vacunas protegen contra enfermedades graves (como la panleucopenia, el complejo respiratorio felino o la leucemia). Sigue el calendario que te indique tu veterinario. La vacuna de la rabia, aunque no siempre es obligatoria legalmente para gatos (depende de la región), está muy recomendada.  Desparasitación: Es fundamental para la salud del gato y de tu familia (zoonosis). Interna: se recomienda cada 3 meses. Externa: vital si el gato sale o tiene acceso a balcones/terrazas. Esterilización: Es la decisión más responsable y saludable. Beneficios: evita camadas no deseadas, reduce el marcaje, disminuye peleas y previene enfermedades graves (tumores de mama, piometras). Mitos: No cambia su personalidad ni los vuelve 'vagos'. Esteriliza a tu gato, sea macho o hembra, interior o exterior.",
-        },
-        {
-          heading: "**3. Alimentación e Hidratación**",
-          body: "Alimento adecuado: Usa pienso seco de calidad adaptado a su edad y condición física. Evita darle comida casera o sobras humanas. Premios: Úsalos con moderación para no causar obesidad. Agua fresca: Fundamental, coloca varios bebederos por casa, lejos de la comida y del arenero. Algunos gatos prefieren fuentes en movimiento. Incorporar comida húmeda ayuda a la hidratación. Prohibido: La leche de vaca (la mayoría de los gatos adultos son intolerantes a la lactosa). El yogur natural o queso sin sal pueden darse como premio puntual, pero no son necesarios.",
-        },
-        {
-          heading: "**4. Higiene y Cuidado Físico**",
-          body: "Los gatos necesitan tu ayuda en ciertos aspectos. Cepillado: Pelo corto una vez por semana (diario en muda); pelo largo diario para evitar nudos y bolas de pelo. Si expulsa bolas de pelo con dificultad, consulta sobre pastas de malta. Uñas: Corta solo la punta transparente, evitando la parte rosada (vascularizada). Baños: Generalmente no son necesarios, solo si está muy sucio o por indicación médica.",
-        },
-        {
-          heading: "**5. El Arenero: Reglas de Oro**",
-          body: "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina.",
-        },
-        {
-          heading: "**6. Comportamiento y Enriquecimiento Ambiental**",
-          body: "Lenguaje: Cola erguida es saludo amistoso; cola moviéndose rápido es irritación; orejas hacia atrás indican miedo. Ronroneo puede ser bienestar, dolor o estrés. Juego: Dedica 15-20 minutos diarios a caza simulada (cañas, pelotas). Evita usar tus manos o pies. Rascadores: Proporciona rascadores estables, altos y de materiales atractivos (sisal, madera). Nunca castigues por rascar muebles; redirige y premia. Verticalidad: Necesitan lugares altos para observar y refugios seguros para esconderse. Respeta su soledad.",
-        },
-        {
-          heading: "**7. Consejos Específicos según la Edad**",
-          body: "CACHORRO: Socialización (2-8 semanas) es la etapa clave para aceptar el contacto humano y visitas al veterinario. Enséñale qué se puede morder. Acostúmbralo al transportín dejándolo abierto en casa. Protege cables y ventanas. ADULTO: Paciencia, la adaptación puede tardar semanas. Usa una habitación de aclimatación al llegar con todos sus recursos. Haz presentaciones con otros animales muy gradualmente. Mantén horarios fijos de comida y juego.",
-        },
-        {
-          heading: "**8. Aspectos Legales y Seguridad**",
-          body: "Microchip: Es obligatorio y debe tener los datos actualizados (RIAC en Madrid). Prevención de Accidentes: El Síndrome del Gato Paracaidista. Instala redes mosquiteras resistentes en ventanas y balcones. Una caída desde altura puede ser mortal; no confíes en su 'habilidad' para caer de pie. Cada gato es un mundo. Observa, respeta sus tiempos y consulta siempre a tu veterinario ante cambios bruscos.",
-        }
-      ],
-    },
-  ],
-}
 
 
-      ]
-    },
     {
     slug: "razas",
     label: "Razas",
