@@ -1133,7 +1133,7 @@ export const categories: Category[] = [
     },
     {
     slug: "adquisicion responsable",
-    label: "Adquisicion responsabe",
+    label: "Adquisición responsable",
     emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
