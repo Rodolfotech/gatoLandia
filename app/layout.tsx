@@ -6,6 +6,7 @@ import "./globals.css";
 import { I18nProvider } from "./i18n/I18nContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className={`${playfair.variable} ${dmSans.variable}`}>
+        <GoogleAnalytics />
         <I18nProvider>
           <Navbar />
           <main style={{ flex: 1 }}>

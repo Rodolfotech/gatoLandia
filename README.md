@@ -40,3 +40,6 @@ http://localhost:3000/gnt-admin
 http://localhost:3000/gnt-admin/dashboard
 
 clave: gatitos2024
+
+#ruta en vercel
+https://gato-landia-6h3vugirw-tvamorfia-5125s-projects.vercel.app/gnt-admin
