@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { Category } from "../data/cats";
 import { useI18n } from "../i18n/I18nContext";
 
@@ -13,6 +14,86 @@ export default function CategoryOverview({
   onTopicSelect,
 }: CategoryOverviewProps) {
   const { t } = useI18n();
+
+  useEffect(() => {
+    const siteName = "Gatitos · Enciclopedia Felina";
+    const title = `${category.label} · ${siteName}`;
+    const description = category.description;
+    const url = `https://gatitos.cl/${category.slug}`;
+
+    document.title = title;
+
+    const setMeta = (name: string, content: string, property = false) => {
+      const attr = property ? "property" : "name";
+      let el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+
+    const removeMeta = (name: string, property = false) => {
+      const attr = property ? "property" : "name";
+      const el = document.querySelector(`meta[${attr}="${name}"]`);
+      if (el) el.remove();
+    };
+
+    setMeta("description", description);
+    setMeta("og:title", title, true);
+    setMeta("og:description", description, true);
+    setMeta("og:url", url, true);
+    setMeta("og:site_name", siteName, true);
+    setMeta("twitter:title", title);
+    setMeta("twitter:description", description);
+    setMeta("twitter:url", url);
+
+    const subItems = category.subcategories.flatMap((s) =>
+      s.topics.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: { "@type": "Article", headline: t.title, description: t.intro.replace(/\*\*/g, "").slice(0, 200) },
+      }))
+    );
+
+    const ld = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      headline: category.label,
+      description,
+      url,
+      author: { "@type": "Organization", name: siteName },
+      about: category.label,
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: subItems,
+      },
+    });
+
+    let ldEl = document.querySelector('script[type="application/ld+json"]');
+    if (!ldEl) {
+      ldEl = document.createElement("script");
+      ldEl.setAttribute("type", "application/ld+json");
+      document.head.appendChild(ldEl);
+    }
+    ldEl.textContent = ld;
+
+    return () => {
+      document.title = siteName;
+      removeMeta("description");
+      removeMeta("og:title", true);
+      removeMeta("og:description", true);
+      removeMeta("og:url", true);
+      removeMeta("og:site_name", true);
+      removeMeta("twitter:title");
+      removeMeta("twitter:description");
+      removeMeta("twitter:url");
+      const jsonld = document.querySelector('script[type="application/ld+json"]');
+      if (jsonld) jsonld.remove();
+    };
+  }, [category]);
+
   return (
     <div
       style={{
