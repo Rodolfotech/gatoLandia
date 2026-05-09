@@ -371,7 +371,7 @@ export default function TopicContent({
         {mediaItems.length > 0 && (
           <div
             style={{
-              width: "min(40vw, 800px)",
+              width: 700,
               display: "flex",
               flexDirection: "column",
               gap: "2.5rem",
