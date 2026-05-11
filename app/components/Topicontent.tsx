@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 import Pagination from "./Pagination";
@@ -382,17 +383,25 @@ export default function TopicContent({
               (section.image || section.adSlot) && (
                 <div key={section.heading} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                   {section.image && (
-                    <img
-                      src={section.image}
-                      alt={section.heading}
+                    <div
                       onClick={() => setLightbox(section.image!)}
                       style={{
                         width: "100%",
-                        height: "auto",
+                        aspectRatio: "16/9",
+                        position: "relative",
+                        overflow: "hidden",
                         borderRadius: 12,
                         cursor: "pointer",
                       }}
-                    />
+                    >
+                      <Image
+                        src={section.image}
+                        alt={section.heading}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        style={{ objectFit: "cover", objectPosition: "center top" }}
+                      />
+                    </div>
                   )}
                   {section.adSlot && (
                     <AdBanner dataAdSlot={section.adSlot} dataAdFormat="auto" style={{ display: "block" }} />
