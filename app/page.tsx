@@ -67,8 +67,8 @@ export default function Home() {
          onLogoClick={handleLogoClick}
        />
 
-       {showExplorer ? (
-        <div style={{ display: "flex", flex: 1, background: "#fdf6ec" }}>
+        {showExplorer ? (
+         <div key="explorer" style={{ display: "flex", flex: 1, background: "#fdf6ec" }}>
           <CategorySidebar
             categories={categories}
             selection={selection}
@@ -96,8 +96,8 @@ export default function Home() {
             ) : null}
           </div>
         </div>
-      ) : (
-        <>
+        ) : (
+          <div key="home">
           <HeroSection
             heading={<>
               Todo lo que tu gato<br />
@@ -160,10 +160,8 @@ export default function Home() {
               { id: 4, title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "featuredcontent/impactoConciencia.png" },
             ]}
           />
-        </>
-      )}
-
-      <ChatWidget />
+          </div>
+      )}<ChatWidget />
     </main>
   );
 }
