@@ -44,11 +44,13 @@ export default function Home() {
   function selectTopic(catSlug: string, subSlug: string, topicSlug: string) {
     setSelection({ categorySlug: catSlug, subcategorySlug: subSlug, topicSlug });
     setActiveCatSlug(catSlug);
+    window.history.replaceState(null, "", `/categoria/${catSlug}/${subSlug}/${topicSlug}`);
   }
 
   function handleLogoClick() {
     setSelection(null);
     setActiveCatSlug(null);
+    window.history.replaceState(null, "", "/");
   }
 
   function handleCategoryTabClick(catSlug: string) {

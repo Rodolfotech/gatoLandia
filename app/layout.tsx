@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: "Gatitos · Enciclopedia Felina",
   },
   description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
-  metadataBase: new URL("https://gatitos.cl"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://gato-landia.vercel.app"),
   openGraph: {
     type: "website",
     siteName: "Gatitos · Enciclopedia Felina",
