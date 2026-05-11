@@ -117,7 +117,7 @@ export default function CategoryOverview({
     <div
       style={{
         flex: 1,
-        padding: "3rem 3.5rem",
+        padding: "var(--page-padding-lg, 3.5rem) var(--page-padding, 3rem)",
         maxWidth: 860,
         fontFamily: "'DM Sans', sans-serif",
       }}

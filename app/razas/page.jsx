@@ -42,8 +42,8 @@ export default async function RazasPage({ searchParams }) {
   }
 
   return (
-    <main style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 1.5rem" }}>
-      <h1 style={{ fontSize: "2rem", color: "#2c2416", marginBottom: "1.5rem" }}>
+    <main style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 clamp(0.75rem, 3vw, 1.5rem)" }}>
+      <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "#2c2416", marginBottom: "1.5rem" }}>
         Guía de Razas de Gatos ({cats.length} razas)
       </h1>
 
@@ -77,7 +77,20 @@ export default async function RazasPage({ searchParams }) {
         </p>
       )}
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem" }}>
+      <div className="razas-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.25rem" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .razas-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.75rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .razas-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
         {current.map((cat, idx) => (
           <div key={idx} style={{
             border: "1px solid rgba(201,180,154,0.3)", borderRadius: 12, overflow: "hidden"

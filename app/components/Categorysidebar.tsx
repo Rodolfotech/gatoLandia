@@ -38,18 +38,19 @@ export default function CategorySidebar({
     setOpenSub((prev) => (prev === slug ? null : slug));
   }
 
-  return (
-    <aside
-      style={{
-        width: 260,
-        flexShrink: 0,
-        borderRight: "1px solid rgba(201,180,154,0.3)",
-        overflowY: "auto",
-        height: "calc(100vh - 60px)",
-        position: "sticky",
-        top: 60,
-      }}
-    >
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  function handleSelect(sel: Selection) {
+    onSelect(sel);
+    setMobileOpen(false);
+  }
+
+  function handleToggleCat(slug: string) {
+    toggleCat(slug);
+  }
+
+  const sidebarContent = (
+    <>
       {/* Header */}
       <div
         style={{
@@ -81,7 +82,7 @@ export default function CategorySidebar({
             <div key={cat.slug}>
               {/* Category row */}
               <button
-                onClick={() => toggleCat(cat.slug)}
+                onClick={() => handleToggleCat(cat.slug)}
                 style={{
                   width: "100%",
                   textAlign: "left",
@@ -186,7 +187,7 @@ export default function CategorySidebar({
                                 <button
                                   key={topic.slug}
                                   onClick={() =>
-                                    onSelect({
+                                    handleSelect({
                                       categorySlug: cat.slug,
                                       subcategorySlug: sub.slug,
                                       topicSlug: topic.slug,
@@ -237,6 +238,76 @@ export default function CategorySidebar({
           );
         })}
       </nav>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      {/* Mobile toggle button */}
+      <button
+        className="show-mobile"
+        onClick={() => setMobileOpen(true)}
+        style={{
+          position: "fixed", bottom: 80, right: 16, zIndex: 100,
+          width: 48, height: 48, borderRadius: "50%",
+          background: "#d4853a", color: "#fff", border: "none",
+          boxShadow: "0 4px 16px rgba(212,133,58,0.4)",
+          cursor: "pointer", fontSize: "1.2rem",
+          display: "flex", alignItems: "center", justifyContent: "center",
+        }}
+        aria-label="Abrir menú"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+          <path d="M3 12h18" />
+          <path d="M3 6h18" />
+          <path d="M3 18h18" />
+        </svg>
+      </button>
+
+      {/* Desktop sidebar */}
+      <aside className="hide-mobile" style={{
+        width: 260,
+        flexShrink: 0,
+        borderRight: "1px solid rgba(201,180,154,0.3)",
+        overflowY: "auto",
+        height: "calc(100vh - 60px)",
+        position: "sticky",
+        top: 60,
+      }}>
+        {sidebarContent}
+      </aside>
+
+      {/* Mobile sidebar overlay */}
+      {mobileOpen && (
+        <div
+          style={{
+            position: "fixed", inset: 0, zIndex: 500,
+            background: "rgba(0,0,0,0.3)",
+          }}
+          onClick={() => setMobileOpen(false)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: "absolute", left: 0, top: 0, bottom: 0,
+              width: "85%", maxWidth: 320,
+              background: "#fdf6ec",
+              overflowY: "auto",
+              boxShadow: "4px 0 24px rgba(0,0,0,0.15)",
+              animation: "slideIn 0.2s ease",
+            }}
+          >
+            {sidebarContent}
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes slideIn {
+          from { transform: translateX(-100%); }
+          to   { transform: translateX(0); }
+        }
+      `}</style>
+    </>
   );
 }
