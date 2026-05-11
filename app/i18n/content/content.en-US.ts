@@ -1,256 +1,32 @@
-import { Category } from '../../data/cats';
-
 export const categories: Category[] = [
-  {
-    "slug": "salud",
-    "label": "Good health",
+{
+    "slug": "a",
+    "label": "Stimulation, toys, and enrichment",
     "emoji": "",
-    "color": "#7a9e7e",
-    "bg": "#eef4ef",
-    "description": "Prevention, diseases, and medical care",
+    "color": "#9b6bb5",
+    "bg": "#f3eef8",
+    "description": "Why it's vital",
     "subcategories": [
       {
-        "slug": "prevencion",
-        "label": "Prevention",
+        "slug": "importancia",
+        "label": "Play in puppies: the foundation of all",
         "topics": [
           {
-            "slug": "vacunacion",
-            "title": "Feline vaccination",
-            "intro": "Vaccination is the most effective tool to protect your cat from serious diseases. Knowing the schedule and mandatory vaccines makes a difference between a long and a complicated life.",
+            "slug": "juego-cachorros",
+            "title": "The first six months of a cat's life are a critical period of development. What it learns during play in this stage will largely determine how it will relate to humans and other animals for the rest of its life.",
+            "intro": "The window of socialization",
             "sections": [
               {
-                "heading": "Mandatory vaccines",
-                "body": "The triple cat vaccine (Rhinotracheitis, Calicivirus, and Panleucopenia) is the base of any protocol. It is administered at 8, 12, and 16 weeks of life, with annual boosters or every 3 years depending on the product."
+                "heading": "Between two and nine weeks of life, the cat learns what is normal in its world. A kitten that interacts with people, other cats, household noises, and varied experiences during this period will be a more secure and adaptable adult.",
+                "body": "The most common mistake: hands as toys"
               },
               {
-                "heading": "Recommended optional vaccines",
-                "body": "The vaccine against Feline Leukemia (FeLV) is highly recommended for cats that go outside or live with other cats. The rabies vaccine is mandatory in many countries and recommended in Chile."
+                "heading": "Using hands or feet to play with a kitten seems harmless, but teaches that human skin is a valid prey. When that kitten weighs 11 pounds, the bites and scratches will be painful and the behavior difficult to correct. Always use toys with distance.",
+                "body": "Play as prevention of problems"
               },
               {
-                "heading": "What happens if I miss a dose?",
-                "body": "If the adult cat has not been vaccinated for more than 3 years, it is recommended to repeat the initial series. Always consult with your veterinarian before administering any vaccine."
-              }
-            ]
-          },
-          {
-            "slug": "desparasitacion",
-            "title": "Internal and external deworming",
-            "intro": "Parasites are one of the most common and easily preventable problems in cats. A regular deworming plan protects both the cat and the people in the household.",
-            "sections": [
-              {
-                "heading": "Internal parasites",
-                "body": "The most common ones are roundworms (ascarids), tapeworms, and Toxoplasma. They are treated with oral antiparasitic medications every 3-6 months in adults, and monthly in kittens until 6 months old."
-              },
-              {
-                "heading": "External parasites",
-                "body": "Fleas, ticks, and ear mites are the most common ones. Monthly spot-on pipettes are the most practical solution. Antiparasitic collars offer prolonged protection but require proper adjustment."
-              },
-              {
-                "heading": "Indoor vs. outdoor cats",
-                "body": "Indoor cats have a lower risk, but are not exempt: fleas can enter on clothing and shoes. It is recommended to deworm internally 2 times a year and externally 4 times a year at a minimum."
-              }
-            ]
-          },
-          {
-            "slug": "primeros-auxilios",
-            "title": "Feline first aid",
-            "intro": "Acting quickly in an emergency can save your cat's life. These basic knowledge prepare you for the most critical moments until you reach the veterinarian.",
-            "sections": [
-              {
-                "heading": "Basic First Aid Kit",
-                "body": "Every home with cats should have: saline solution, sterile gauze, non-alcoholic antiseptic (such as diluted chlorhexidine), digital thermometer, and the phone number of an emergency veterinary clinic."
-              },
-              {
-                "heading": "Emergency Signs",
-                "body": "Take your cat to an emergency veterinarian if it shows: difficulty breathing, loss of consciousness, convulsions, inability to urinate for more than 12 hours, uncontrolled bleeding, or possible poisoning."
-              },
-              {
-                "heading": "What You Should Never Do",
-                "body": "Never administer ibuprofen, acetaminophen, or aspirin to a cat: they are fatal to them. Never try to induce vomiting without a veterinarian's instruction. Never put alcohol on open wounds."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "enfermedades",
-        "label": "Common Diseases",
-        "topics": [
-          {
-            "slug": "enfermedad-renal",
-            "title": "Chronic Kidney Disease",
-            "intro": "Chronic kidney insufficiency is the main cause of death in cats over 7 years old. Detecting it in time can add years of quality of life to your companion.",
-            "sections": [
-              {
-                "heading": "Warning Signs",
-                "body": "Drinking a lot of water, urinating more frequently, progressive weight loss, dull coat, and loss of appetite are the most common signs. Many cats do not show symptoms until they lose 75% of their kidney function."
-              },
-              {
-                "heading": "Diagnosis and Monitoring",
-                "body": "An annual blood and urine test starting at 7 years old is the best detection tool. The SDMA biomarker allows for the detection of kidney damage months before traditional markers."
-              },
-              {
-                "heading": "Management and Treatment",
-                "body": "There is no cure, but it can be managed with a low-phosphorus, low-protein renal diet, hydration (wet food or subcutaneous fluids at home), supplements, and frequent check-ups."
-              }
-            ]
-          },
-          {
-            "slug": "diabetes-felina",
-            "title": "Feline Diabetes",
-            "intro": "Feline diabetes is more common than people think, especially in overweight, neutered male cats. The good news: with proper management, many cats can go into remission.",
-            "sections": [
-              {
-                "heading": "Risk Factors",
-                "body": "Obesity, advanced age, male sex, and high-carbohydrate diets are the main factors. Burmese cats have a genetic predisposition."
-              },
-              {
-                "heading": "Symptoms",
-                "body": "Signs include excessive thirst, excessive urination, weight loss despite eating well, and weakness in the hind legs (diabetic neuropathy)."
-              },
-              {
-                "heading": "Treatment and Remission",
-                "body": "Daily insulin, a low-carb diet (high-quality wet food) and home glucose monitoring are the foundation. Up to 90% of cats can achieve remission with early and strict treatment."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "dental",
-        "label": "Oral Health",
-        "topics": [
-          {
-            "slug": "sarro-gingivitis",
-            "title": "Gingivitis",
-            "intro": "Periodontal disease affects 70% of cats over 3 years old and is one of the most overlooked causes of chronic pain and overall health decline.",
-            "sections": [
-              {
-                "heading": "Why It's Important",
-                "body": "Bacteria in the mouth enter the bloodstream and can damage kidneys, heart, and liver. A cat with dental pain eats less, is more irritable, and its quality of life is severely affected."
-              },
-              {
-                "heading": "Prevention at Home",
-                "body": "Brush your cat's teeth 3 times a week with feline toothpaste (never human) is the most effective method. Dental snacks and chew toys are a useful complement but not enough on their own."
-              },
-              {
-                "heading": "Professional cleaning",
-                "body": "Veterinary dental cleaning under anesthesia is recommended annually from age 3. Cats with a predisposition (Persians, Siamese) may need it earlier."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "alergia",
-        "label": "Allergies",
-        "topics": [
-          {
-            "slug": "guia-alergia-gatos",
-            "title": "Cat allergy: A practical guide to cohabiting",
-            "intro": "Allergies to pets affect between 15% and 30% of people. Being allergic to cats is twice as common as to dogs, but with proper management, cohabiting is possible.",
-            "sections": [
-              {
-                "heading": "The cause: Protein Fel d 1",
-                "body": "Allergy is not caused by the hair, but by the Fel d 1 protein produced in the skin, saliva, and urine. It spreads when the cat licks and the protein disperses in the air through dander (dead skin). Males produce more than females, and neutering reduces these levels."
-              },
-              {
-                "heading": "Symptoms and Diagnosis",
-                "body": "Reactions vary from hives and itching to sneezing, runny eyes, and asthma attacks. It's vital to see an allergist to perform skin tests, blood tests, or spirometry, as the culprit could be dust or pollen and not the cat."
-              },
-              {
-                "heading": "Home and Allergy-Free Zones",
-                "body": "Create a \"sanctuary\" by keeping the bedroom closed to the cat. Remove carpets or use only those that can be washed with hot water. It's essential to use HEPA-filter vacuum cleaners and air purifiers for at least 4 hours a day."
-              },
-              {
-                "heading": "Direct Care and Products",
-                "body": "Bathing should be done by someone not allergic outside the home. Weekly baths and the use of neutralizing products (such as Vetriderm) on the coat help eliminate saliva residue. Castration and regular haircuts for long-haired cats are also effective strategies."
-              },
-              {
-                "heading": "Advanced Treatments",
-                "body": "Consult about immunotherapy (desensitization vaccines), which are effective in the long term. If, despite all cleaning measures and medical treatment, health is severely affected, the most responsible decision may be to seek a new home for the cat."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "diabetes-felina",
-        "label": "Diabetes",
-        "topics": [
-          {
-            "slug": "diabetes-guia-completa",
-            "title": "Feline Diabetes: A Complete Guide to Understanding and Managing It",
-            "intro": "Diabetes in cats is a complex condition, but with proper management, your cat can live a long and happy life. Unlike dogs, cats have unique characteristics that we must know to avoid common mistakes.",
-            "sections": [
-              {
-                "heading": "Step 1: Causes and Risk Factors",
-                "body": "Feline diabetes is usually a combination of factors: obesity and age (common in cats over 9 years old), sex and breed (more common in males 4:1 and in Siamese breed). Amyloid deposits that damage the pancreas and the use of medications such as progestins or corticosteroids also play a role. It is essential to note that pancreatitis is often closely associated with this disease and, in many cases, can be the triggering cause of diabetes."
-              },
-              {
-                "heading": "Step 2: Identifying symptoms",
-                "body": "Pay attention to an increase in thirst and urination (drinking a lot of water or urinating outside the litter box) and changes in appetite or weight. A distinctive sign is diabetic neuropathy: the cat walks with the entire heel on the ground. Also, observe neglected fur (dry or with dandruff). Unlike dogs, cataracts are very rare in cats."
-              },
-              {
-                "heading": "Step 3: Correct Diagnosis",
-                "body": "Stress in the clinic generates the \"White Coat\" effect, temporarily raising blood sugar. For a certain diagnosis, the veterinarian must confirm glucose in both blood and urine. Complete analyses are required to rule out other conditions such as urinary tract infections, liver problems, or pancreatitis, which often accompany diabetes."
-              },
-              {
-                "heading": "Step 4: Treatment and Regulation",
-                "body": "It is based on three pillars: 1. Insulin: Intermediate or long-acting insulin (NPH or PZI) is used, usually twice a day with meals. 2. Diet: Strictly carnivorous, high in protein and low in carbohydrates with fixed schedules. 3. Monitoring: It is ideal to measure blood glucose (pinch in the ear) at \"peak\" moments to adjust the dose with precision."
-              },
-              {
-                "heading": "Step 5: Emergency of Ketoacidosis",
-                "body": "If not treated, it can lead to ketoacidosis, a life-threatening emergency with symptoms such as vomiting, extreme lethargy, dehydration, and breath with a fruity or acetone odor. It requires immediate hospitalization for intravenous fluids, rapid-acting insulin, and correction of electrolytes (potassium, phosphorus)."
-              },
-              {
-                "heading": "Step 6: Complications and Expectations",
-                "body": "Possible remission (stopping insulin needs) if weight is controlled and diagnosed early. The biggest risk is hypoglycemia: if the cat trembles or convulses, apply honey or sugar to its gums and rush to the vet. Also, regularly check for urinary tract infections (blood or straining to urinate)."
-              },
-              {
-                "heading": "Key tips for the owner",
-                "body": "Never adjust insulin on your own. Keep a strict record of doses, meal times, and behavior. Controlling weight is the best preventive tool and observing any change in gait is crucial to report to the specialist."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "obesidad-felina",
-        "label": "Obesity",
-        "topics": [
-          {
-            "slug": "guia-obesidad-prevencion",
-            "title": "Feline Obesity: How to Protect Your Cat's Health and Life",
-            "intro": "Obesity is not just a cosmetic issue; it's a disease that reduces your cat's life expectancy and increases the risk of diabetes, joint problems, and surgical complications. With patience and strategy, you can help your cat regain its ideal weight.",
-            "sections": [
-              {
-                "heading": "Step 1: Identifying Overweight",
-                "body": "Don't rely on the scale alone. In the \"Rib Test,\" you should be able to feel them easily without pressing hard; if not, there's excess fat. Looking at it from above, there should be a waistline behind the ribs; if it's rectangular or barrel-shaped, there's overweight. From the side, its abdomen shouldn't sag or touch the floor. It's considered overweight if it's 10-19% above its ideal weight, and obese if it's 20% or more above."
-              },
-              {
-                "heading": "Step 2: Causes and Factors",
-                "body": "It's a combination of factors: after spaying/neutering, metabolism drops and appetite increases; from 6-8 years old, cats burn fewer calories; sedentary indoor cats without stimulation; and inadequate diets (food always available, excessive rewards, or too many carbohydrates). Breeds like the Siamese or Burmese may have a greater genetic predisposition."
-              },
-              {
-                "heading": "Step 3: Safe Action Plan",
-                "body": "Weight loss should be slow. Golden rule: a cat should not lose more than 1% or 2% of its weight per week (example: an 8 kg cat should not lose more than 160 grams per week). Losing weight too quickly is dangerous and can cause hepatic lipidosis, a potentially fatal liver disease."
-              },
-              {
-                "heading": "Step 4: Strategic Dietary Management",
-                "body": "Ask your veterinarian to calculate calories for the ideal weight, not the current weight. Generally, this is between 60% and 75% of the cat's current maintenance calories. Look for high-protein diets (to maintain muscle and provide satiety) and low-carbohydrate diets. Divide the ration into 3 or 4 feedings to keep the metabolism active and use part of the ration as a reward instead of calorie-rich snacks."
-              },
-              {
-                "heading": "Step 5: Physical Activity and Enrichment",
-                "body": "Exercise should be gradual. Spend 10 minutes a day on interactive games (sticks, lasers, balls). Use environmental enrichment: hide food in different locations, use interactive feeders or puzzles, and install shelves or trees that force the cat to jump and climb to get its food."
-              },
-              {
-                "heading": "Step 6: Commitment and Monitoring",
-                "body": "Success depends on the whole family following the rules without sneaking food to the cat. Weigh the cat every 2 weeks: if it doesn't lose weight, adjust the ration; if it loses weight too quickly, increase it a bit. The human factor is essential; accepting that the cat needs to lose weight is not 'cruel', but an act of love to care for its long-term health."
-              },
-              {
-                "heading": "Warning Signs: When to See a Veterinarian",
-                "body": "Before starting any diet, visit the specialist to rule out medical causes such as hypothyroidism (although rare in cats) or diabetes, and to set a realistic weight goal. The veterinarian should help choose the right commercial diet or formulate a balanced homemade diet. Remember that prevention is better than cure to ensure your cat stays with you for many more years, healthy and active."
+                "heading": "Juego como prevención de problemas",
+                "body": "A cat that doesn't play enough channels its hunting energy into problematic behaviors: attacking ankles, destroying objects, redirected aggression. 2 play sessions of 15 minutes a day, especially before bed, are the best antidote."
               }
             ]
           }
@@ -258,7 +34,188 @@ export const categories: Category[] = [
       }
     ]
   },
-  {
+{
+    "slug": "adopción",
+    "label": "Adoption",
+    "emoji": "",
+    "color": "#5b8db8",
+    "bg": "#eef3f8",
+    "description": "How to Adopt a Cat",
+    "subcategories": [
+      {
+        "slug": "bienvenida",
+        "label": "Welcome",
+        "topics": [
+          {
+            "slug": "guia-bienvenida-cuidados",
+            "title": "Welcome Home: How to Care for Your New Cat from Day One",
+            "intro": "Congratulations on the Adoption! Adopting a cat is a wonderful experience, but it also involves responsibility. The first few days are crucial for their adaptation. Here's everything you need to know to ensure their health, well-being, and a happy coexistence.",
+            "sections": [
+              {
+                "heading": "**1. The First Days: Vigilance and Adapta**tion",
+                "body": "The change of environment generates stress, which can lower the cat's defenses. Visit the vet: Take your cat to their new trusted clinic as soon as possible. Bring all previous medical records (vaccinations, deworming) and follow their instructions. What to observe: That they eat and drink normally, have energy according to their age, have consistent stools (some initial softness due to diet change is normal, but persistent diarrhea is not) and absence of symptoms like coughing, vomiting, sneezing, or discharge. If you have any doubts, consult your vet."
+              },
+              {
+                "heading": "**2. Preventive Health: Vaccines, Parasites, and Steriliza**tion",
+                "body": "Vaccination: Vaccines protect against serious diseases (like panleukopenia, feline respiratory complex, or leukemia). Follow the schedule recommended by your vet. The rabies vaccine, although not always mandatory by law for cats (depending on the region), is highly recommended. Deworming: It's essential for the cat's health and your family's (zoonosis). Internal: Recommended every 3 months. External: Vital if the cat goes outside or has access to balconies/terraces. Sterilization: It's the most responsible and healthy decision. Benefits: Prevents unwanted litters, reduces marking, decreases fights, and prevents serious diseases (breast tumors, pyometras). Myths: It doesn't change their personality or make them 'lazy'. Sterilize your cat, whether male or female, indoor or outdoor."
+              },
+              {
+                "heading": "**3. Nutrition and Hydra**tion",
+                "body": "Proper Food: Use high-quality dry food adapted to your cat's age and physical condition. Avoid giving homemade or human leftovers. Rewards: Use them in moderation to avoid obesity. Fresh Water: Essential, place multiple water fountains around the house, away from food and litter. Some cats prefer moving water sources. Adding wet food helps with hydration. Forbidden: Cow's milk (most adult cats are lactose intolerant). Natural yogurt or unsalted cheese can be given as an occasional reward, but are not necessary."
+              },
+              {
+                "heading": "**Hygiene and Physical **Care",
+                "body": "Cats need your help in certain areas. Grooming: Short hair once a week (daily during shedding); long hair daily to prevent knots and hairballs. If they have trouble expelling hairballs, consult about oatmeal pastes. Nails: Cut only the transparent tip, avoiding the pink (vascularized) part. Baths: Generally not necessary, only if they're extremely dirty or a doctor recommends it."
+              },
+              {
+                "heading": "**The Litter Box: Golden R**ules",
+                "body": "A cat that doesn't use the litter box usually expresses a medical or stress problem. Quantity: Rule N+1 (number of cats + 1 box). Location: Quiet, accessible places, away from noise (washers) and food. Type: Many don't like enclosed ones; try an open and large one. Cleaning: Remove waste daily and regularly wash the box with water and neutral soap (avoid bleach or ammonia). Sand: They prefer unscented and fine-textured sand."
+              },
+              {
+                "heading": "**Behavior and Environmental Enrich**ment",
+                "body": "Language: Ears up is a friendly greeting; ears back indicate fear. Tail movement can be irritation or excitement. Purring can be happiness, pain, or stress. Play: Spend 15-20 minutes daily on simulated hunting (sticks, balls). Avoid using your hands or feet. Scratching Posts: Provide stable, tall, and attractive materials (sisal, wood). Never punish for scratching furniture; redirect and reward. Verticality: They need high places to observe and safe hiding spots. Respect their solitude."
+              },
+              {
+                "heading": "**Age-Specific Ti**ps",
+                "body": "PUPPY: Socialization (2-8 weeks) is key to accepting human contact and vet visits. Teach them what's okay to bite. Get them accustomed to the carrier by leaving it open at home. Protect cables and windows. ADULT: Be patient, adaptation can take weeks. Use a separate room for acclimation when bringing them home with all their resources. Introduce other animals gradually. Maintain fixed feeding and play schedules."
+              },
+              {
+                "heading": "**Legal and Safety Aspe**cts",
+                "body": "Microchip: It is mandatory and must be up to date (RIAC in Madrid). Accident Prevention: Cat Parachute Syndrome. Install mosquito nets resistant to windows and balconies. A fall from a height can be fatal; don't rely on their 'ability' to land on their feet. Every cat is a world. Observe, respect their times and always consult your veterinarian in case of sudden changes."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+{
+    "slug": "adquisicion responsable",
+    "label": "Responsible Acquisition",
+    "emoji": "",
+    "color": "#5b8db8",
+    "bg": "#eef3f8",
+    "description": "Cat Breeds",
+    "subcategories": [
+      {
+        "slug": "guia-adquisicion-responsable",
+        "label": "General Guide",
+        "topics": [
+          {
+            "slug": "adquisicion-responsable-global",
+            "title": "Responsible Acquisition: Universal Legal and Ethical Guide",
+            "intro": "Acquiring a purebred cat is an important decision that carries legal and ethical responsibilities. More and more countries recognize animals as sentient beings and regulate their trade to protect their welfare. This guide covers the universal principles for responsible acquisition, regardless of your location.",
+            "sections": [
+              {
+                "heading": "Why Choose a Registered Breeder?",
+                "body": "Ethical breeders preserve the breed, prioritize genetic health, and socialize kittens in a family environment. Look for breeders registered with recognized feline associations such as WCF, TICA, or FIFe. They provide genetic certification, health screenings for hereditary diseases, and early socialization that prevents behavioral problems."
+              },
+              {
+                "heading": "Legal Framework: Rights and Duties",
+                "body": "Most jurisdictions require breeders to comply with identification (microchip), health documentation, and a formal sales contract. The contract should include health guarantees, a return clause, and a sterilization commitment. As a buyer, you are responsible for registering the animal, providing proper veterinary care, and complying with local animal welfare laws."
+              },
+              {
+                "heading": "Checklist: How to Spot an Ethical Breeder",
+                "body": "Before paying, verify these points: Do they allow in-person visits to see the cattery and the mother? Is the kitten at least 12 weeks old at delivery? Do you receive complete documentation including pedigree, vaccination card, and invoice? Does the breeder interview you about your home and lifestyle? A 'no' to any of these is a red flag."
+              },
+              {
+                "heading": "Legal Import of Exotic Breeds",
+                "body": "Importing breeds not commonly available locally requires strict compliance with veterinary and customs regulations. You will need an international zoosanitary certificate, up-to-date rabies vaccination, and adherence to entry protocols. Hiring a specialized pet relocation agency is strongly recommended to navigate the bureaucracy and avoid quarantine or confiscation."
+              },
+              {
+                "heading": "Beware of Kitten Mills and Scams",
+                "body": "Avoid buying from sellers who demand advance payment without showing the animal, sell at street fairs or markets, advertise multiple breeds available immediately, or offer prices well below market rate. These are hallmarks of kitten mills and scam operations that prioritize profit over animal welfare."
+              },
+              {
+                "heading": "Conclusion",
+                "body": "Acquiring a purebred cat is a legal and moral responsibility. By choosing an ethical, registered breeder, you support breed preservation, animal welfare, and responsible breeding practices. Before buying, also consider adoption — many rescue organizations have purebred cats looking for loving homes."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+{
+    "slug": "alimentacion",
+    "label": "Food",
+    "emoji": "",
+    "color": "#d4853a",
+    "bg": "#fff3e6",
+    "description": "Nutrition, diets, and what they can't eat",
+    "subcategories": [
+      {
+        "slug": "dietas",
+        "label": "Types of diets",
+        "topics": [
+          {
+            "slug": "comida-humeda-vs-seca",
+            "title": "Wet food vs. dry food",
+            "intro": "This is one of the most frequent and debated questions among cat owners. The answer is important because cats have a particular relationship with water that makes the type of food directly impact their renal health.",
+            "sections": [
+              {
+                "heading": "The nature of the cat and water",
+                "body": "Cats evolved in arid environments and obtain most of their water from their prey. Their thirst is 'calibrated' for food with 70% moisture. Dry food has only a 10% moisture level, which can lead to chronic dehydration and renal and urinary problems."
+              },
+              {
+                "heading": "Advantages of wet food",
+                "body": "Greater hydration, greater satiety with fewer calories, more similar to a natural diet, better for cats with a tendency to urinary or renal problems. Most veterinarians recommend it as a main food."
+              },
+              {
+                "heading": "The role of dry food",
+                "body": "It's not bad, but it shouldn't be the only food. It can be useful as a supplement, for puzzle toys or as a snack. Choose feed with a high percentage of animal protein (not vegetable) and no grains as the first ingredient."
+              }
+            ]
+          },
+          {
+            "slug": "dieta-barf",
+            "title": "Raw Diet for Cats",
+            "intro": "The BARF diet (Biologically Appropriate Raw Food) is based on feeding the cat raw meat, meaty bones, and organs, imitating the diet of its wild ancestors. It has passionate defenders and detractors with solid arguments.",
+            "sections": [
+              {
+                "heading": "Principles of BARF",
+                "body": "The ideal diet for a BARF cat includes approximately 70% lean meat, 10% meaty bones (never cooked), 10% organs (liver, heart), and the remaining 10% of other tissues. It requires careful supplementation with taurine, calcium, and vitamins."
+              },
+              {
+                "heading": "Reported Benefits",
+                "body": "Improved coat, reduced stool production, better hydration, cleaner teeth, and increased energy are the most cited benefits by those who practice it. Some studies suggest a lower risk of obesity."
+              },
+              {
+                "heading": "Risks to Consider",
+                "body": "Bacterial contamination (Salmonella, Listeria), nutritional imbalances if not formulated correctly, and the risk of choking on bones. It's not recommended for immunocompromised cats, those undergoing cancer treatment, or older cats with compromised digestive systems."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "prohibidos",
+        "label": "Forbidden Foods",
+        "topics": [
+          {
+            "slug": "toxicos-comunes",
+            "title": "Toxic Foods for Cats",
+            "intro": "Many foods completely safe for humans are hazardous or lethal to cats. Knowing this list can save your companion's life.",
+            "sections": [
+              {
+                "heading": "Extreme Danger: Severe Toxins",
+                "body": "Onion, garlic, leek, and chives (in all forms: raw, cooked, or powdered) destroy red blood cells. Chocolate and coffee contain theobromine and caffeine that can cause seizures and death. Grapes and raisins cause acute kidney failure for unknown reasons."
+              },
+              {
+                "heading": "Moderate Danger",
+                "body": "Cow's milk causes diarrhea in most adult cats, which are lactose intolerant. Avocado contains persin, toxic to many animals. Any amount of alcohol is hazardous. Macadamia nuts can cause weakness and fever."
+              },
+              {
+                "heading": "What They Can Eat as a Treat",
+                "body": "Small amounts of cooked chicken or turkey without bones, cooked salmon or tuna (not canned in oil with salt), cooked carrot, cooked pumpkin, blueberries, and cucumber are safe options as an occasional snack."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+{
     "slug": "comportamiento",
     "label": "Behavior",
     "emoji": "",
@@ -646,78 +603,46 @@ export const categories: Category[] = [
       }
     ]
   },
-  {
-    "slug": "alimentacion",
-    "label": "Food",
+{
+    "slug": "emergencia",
+    "label": "Emergency",
     "emoji": "",
-    "color": "#d4853a",
-    "bg": "#fff3e6",
-    "description": "Nutrition, diets, and what they can't eat",
+    "color": "#5b8db8",
+    "bg": "#eef3f8",
+    "description": "Dog, adult, senior, and their needs",
     "subcategories": [
       {
-        "slug": "dietas",
-        "label": "Types of diets",
+        "slug": "emergencias-felinas",
+        "label": "First Aid",
         "topics": [
           {
-            "slug": "comida-humeda-vs-seca",
-            "title": "Wet food vs. dry food",
-            "intro": "This is one of the most frequent and debated questions among cat owners. The answer is important because cats have a particular relationship with water that makes the type of food directly impact their renal health.",
+            "slug": "guia-primeros-auxilios-gatitos",
+            "title": "First Aid for Kittens: What to Do in an Emergency",
+            "intro": "First aid does not replace the veterinarian, but it can save your kitten's life while you get to the clinic. The goal is to prevent it from getting worse, stabilize it, and transport it safely.",
             "sections": [
               {
-                "heading": "The nature of the cat and water",
-                "body": "Cats evolved in arid environments and obtain most of their water from their prey. Their thirst is 'calibrated' for food with 70% moisture. Dry food has only a 10% moisture level, which can lead to chronic dehydration and renal and urinary problems."
+                "heading": "**1. Calm and Saf**ety",
+                "body": "Your safety comes first; a kitten in pain can bite or scratch. Keep your face away from its claws and mouth. Don't use a muzzle, as it's contraindicated in cats with respiratory problems or vomiting. The \"blanket\" technique is ideal: wrap it gently in a towel, leaving only its head exposed to calm it and handle it safely."
               },
               {
-                "heading": "Advantages of wet food",
-                "body": "Greater hydration, greater satiety with fewer calories, more similar to a natural diet, better for cats with a tendency to urinary or renal problems. Most veterinarians recommend it as a main food."
+                "heading": "**2. Rapid Evaluation (ABCDE R**ule)",
+                "body": "Before moving it, check: A (Airways): Make sure there are no blockages in the nose or mouth. B (Breathing): Observe if the chest is moving. C (Circulation): Press bleeding wounds with clean gauze. D (Pain/Immobilization): Don't move it abruptly if you suspect fractures. E (Exposure): Protect open wounds with clean cloths."
               },
               {
-                "heading": "The role of dry food",
-                "body": "It's not bad, but it shouldn't be the only food. It can be useful as a supplement, for puzzle toys or as a snack. Choose feed with a high percentage of animal protein (not vegetable) and no grains as the first ingredient."
-              }
-            ]
-          },
-          {
-            "slug": "dieta-barf",
-            "title": "Raw Diet for Cats",
-            "intro": "The BARF diet (Biologically Appropriate Raw Food) is based on feeding the cat raw meat, meaty bones, and organs, imitating the diet of its wild ancestors. It has passionate defenders and detractors with solid arguments.",
-            "sections": [
-              {
-                "heading": "Principles of BARF",
-                "body": "The ideal diet for a BARF cat includes approximately 70% lean meat, 10% meaty bones (never cooked), 10% organs (liver, heart), and the remaining 10% of other tissues. It requires careful supplementation with taurine, calcium, and vitamins."
+                "heading": "**3. Emergencies in Pup**pies",
+                "body": "The babies are very fragile to two dangers: 1. Hypoglycemia (Low blood sugar): If it presents extreme weakness or pale gums, apply honey or sugar under its tongue or on its gums. 2. Hypothermia: If the kitten is cold to the touch, warm it up with your body heat (under your clothes) or a warm water bottle wrapped in a towel (never directly)."
               },
               {
-                "heading": "Reported Benefits",
-                "body": "Improved coat, reduced stool production, better hydration, cleaner teeth, and increased energy are the most cited benefits by those who practice it. Some studies suggest a lower risk of obesity."
+                "heading": "**Safe Transp**ort",
+                "body": "Always use a sturdy carrier or box with ventilation. If you suspect broken bones, minimize movement by using a board or rigid towel as an improvised stretcher. During the trip, speak softly and keep the vehicle stable to reduce its stress."
               },
               {
-                "heading": "Risks to Consider",
-                "body": "Bacterial contamination (Salmonella, Listeria), nutritional imbalances if not formulated correctly, and the risk of choking on bones. It's not recommended for immunocompromised cats, those undergoing cancer treatment, or older cats with compromised digestive systems."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "prohibidos",
-        "label": "Forbidden Foods",
-        "topics": [
-          {
-            "slug": "toxicos-comunes",
-            "title": "Toxic Foods for Cats",
-            "intro": "Many foods completely safe for humans are hazardous or lethal to cats. Knowing this list can save your companion's life.",
-            "sections": [
-              {
-                "heading": "Extreme Danger: Severe Toxins",
-                "body": "Onion, garlic, leek, and chives (in all forms: raw, cooked, or powdered) destroy red blood cells. Chocolate and coffee contain theobromine and caffeine that can cause seizures and death. Grapes and raisins cause acute kidney failure for unknown reasons."
+                "heading": "**Feline Emergency **Kit",
+                "body": "Have on hand: veterinary emergency phone numbers, clean towels or blankets, sterile gauze, honey or glucose, medical adhesive tape, and a ready carrier. Being prepared makes all the difference in a critical situation."
               },
               {
-                "heading": "Moderate Danger",
-                "body": "Cow's milk causes diarrhea in most adult cats, which are lactose intolerant. Avocado contains persin, toxic to many animals. Any amount of alcohol is hazardous. Macadamia nuts can cause weakness and fever."
-              },
-              {
-                "heading": "What They Can Eat as a Treat",
-                "body": "Small amounts of cooked chicken or turkey without bones, cooked salmon or tuna (not canned in oil with salt), cooked carrot, cooked pumpkin, blueberries, and cucumber are safe options as an occasional snack."
+                "heading": "Final Warnings",
+                "body": "Call the vet while driving to the clinic so they can wait for you. NEVER medicate with human pharmaceuticals (acetaminophen or ibuprofen), as they are deadly. Act fast: in an emergency, every minute counts to save its life."
               }
             ]
           }
@@ -725,86 +650,7 @@ export const categories: Category[] = [
       }
     ]
   },
-  {
-    "slug": "juego",
-    "label": "Play",
-    "emoji": "",
-    "color": "#9b6bb5",
-    "bg": "#f3eef8",
-    "description": "Stimulation, toys and enrichment",
-    "subcategories": [
-      {
-        "slug": "importancia",
-        "label": "Why it's vital",
-        "topics": [
-          {
-            "slug": "juego-cachorros",
-            "title": "Play in puppies: the foundation of everything",
-            "intro": "The first six months of a cat's life are a critical period of development. What it learns during play at this stage will largely determine how it will relate to humans and other animals for the rest of its life.",
-            "sections": [
-              {
-                "heading": "The window of socialization",
-                "body": "Between two and nine weeks of life, the cat learns what is normal in its world. A kitten that interacts with people, other cats, household noises and varied experiences during this period will be a more secure and adaptable adult."
-              },
-              {
-                "heading": "The most common mistake: hands as toys",
-                "body": "Using hands or feet to play with a kitten seems harmless, but teaches that human skin is a valid prey. When that kitten weighs 11 pounds, the bites and scratches will be painful and the behavior difficult to correct. Always use toys with distance."
-              },
-              {
-                "heading": "Play as prevention of problems",
-                "body": "A cat that doesn't play enough channels its hunting energy into problematic behaviors: attacking ankles, destroying objects, redirected aggression. 2 play sessions of 15 minutes a day, especially before bed, are the best antidote."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "juguetes",
-        "label": "Toys",
-        "topics": [
-          {
-            "slug": "canas-y-plumas",
-            "title": "Poles and prey toys",
-            "intro": "Poles with feathers, mice, or worms dangling are the most effective toys because they allow you to simulate the complete hunting sequence. They're indispensable in any cat's repertoire.",
-            "sections": [
-              {
-                "heading": "Why they work so well",
-                "body": "They activate the hunting instinct in its entirety: the irregular movement imitates that of a real prey. The cat can stalk, chase, catch, and 'kill'. This complete sequence releases endorphins and deeply satisfies."
-              },
-              {
-                "heading": "How to move them correctly",
-                "body": "The most common mistake is moving them too fast and without stopping. Real prey stops, hides, moves in unpredictable angles. Simulate that: pause, hide it behind a cushion, make it pop out suddenly, let it move slowly."
-              },
-              {
-                "heading": "Finishing the session well",
-                "body": "Always end by allowing the cat to 'catch' and 'kill' the toy several times at the end. A cat that never catches the prey gets frustrated. After playtime, a small snack completes the natural cycle: hunt → eat → groom → sleep."
-              }
-            ]
-          },
-          {
-            "slug": "puzzles-de-comida",
-            "title": "Food puzzles and intelligence",
-            "intro": "Food puzzles are one of the most underappreciated enrichment activities. In nature, a cat spends between 6 and 8 hours hunting. A conventional feeder resolves that need in 30 seconds, leaving the cat without mental stimulation.",
-            "sections": [
-              {
-                "heading": "Proven benefits",
-                "body": "They reduce anxiety and boredom, slow down eating (preventing vomiting from eating too quickly), stimulate cognitively, encourage movement, and may reduce obesity."
-              },
-              {
-                "heading": "How to start",
-                "body": "Begin with very easy puzzles: a tray with compartments, a simple ball dispenser. If the puzzle is too difficult from the start, the cat will get frustrated and reject it. Gradually increase the difficulty over weeks."
-              },
-              {
-                "heading": "Homemade puzzles",
-                "body": "You don't need to buy anything: a cardboard box with holes, an ice tray with treats, a plastic bottle with small openings, or hiding rewards under cups are effective and free puzzles."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
+{
     "slug": "etapas",
     "label": "Life Stages",
     "emoji": "",
@@ -938,602 +784,7 @@ export const categories: Category[] = [
       }
     ]
   },
-  {
-    "slug": "emergencia",
-    "label": "Emergency",
-    "emoji": "",
-    "color": "#5b8db8",
-    "bg": "#eef3f8",
-    "description": "Dog, adult, senior, and their needs",
-    "subcategories": [
-      {
-        "slug": "emergencias-felinas",
-        "label": "First Aid",
-        "topics": [
-          {
-            "slug": "guia-primeros-auxilios-gatitos",
-            "title": "First Aid for Kittens: What to Do in an Emergency",
-            "intro": "First aid does not replace the veterinarian, but it can save your kitten's life while you get to the clinic. The goal is to prevent it from getting worse, stabilize it, and transport it safely.",
-            "sections": [
-              {
-                "heading": "**1. Calm and Saf**ety",
-                "body": "Your safety comes first; a kitten in pain can bite or scratch. Keep your face away from its claws and mouth. Don't use a muzzle, as it's contraindicated in cats with respiratory problems or vomiting. The \"blanket\" technique is ideal: wrap it gently in a towel, leaving only its head exposed to calm it and handle it safely."
-              },
-              {
-                "heading": "**2. Rapid Evaluation (ABCDE R**ule)",
-                "body": "Before moving it, check: A (Airways): Make sure there are no blockages in the nose or mouth. B (Breathing): Observe if the chest is moving. C (Circulation): Press bleeding wounds with clean gauze. D (Pain/Immobilization): Don't move it abruptly if you suspect fractures. E (Exposure): Protect open wounds with clean cloths."
-              },
-              {
-                "heading": "**3. Emergencies in Pup**pies",
-                "body": "The babies are very fragile to two dangers: 1. Hypoglycemia (Low blood sugar): If it presents extreme weakness or pale gums, apply honey or sugar under its tongue or on its gums. 2. Hypothermia: If the kitten is cold to the touch, warm it up with your body heat (under your clothes) or a warm water bottle wrapped in a towel (never directly)."
-              },
-              {
-                "heading": "**Safe Transp**ort",
-                "body": "Always use a sturdy carrier or box with ventilation. If you suspect broken bones, minimize movement by using a board or rigid towel as an improvised stretcher. During the trip, speak softly and keep the vehicle stable to reduce its stress."
-              },
-              {
-                "heading": "**Feline Emergency **Kit",
-                "body": "Have on hand: veterinary emergency phone numbers, clean towels or blankets, sterile gauze, honey or glucose, medical adhesive tape, and a ready carrier. Being prepared makes all the difference in a critical situation."
-              },
-              {
-                "heading": "Final Warnings",
-                "body": "Call the vet while driving to the clinic so they can wait for you. NEVER medicate with human pharmaceuticals (acetaminophen or ibuprofen), as they are deadly. Act fast: in an emergency, every minute counts to save its life."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "adopción",
-    "label": "Adoption",
-    "emoji": "",
-    "color": "#5b8db8",
-    "bg": "#eef3f8",
-    "description": "How to Adopt a Cat",
-    "subcategories": [
-      {
-        "slug": "bienvenida",
-        "label": "Welcome",
-        "topics": [
-          {
-            "slug": "guia-bienvenida-cuidados",
-            "title": "Welcome Home: How to Care for Your New Cat from Day One",
-            "intro": "Congratulations on the Adoption! Adopting a cat is a wonderful experience, but it also involves responsibility. The first few days are crucial for their adaptation. Here's everything you need to know to ensure their health, well-being, and a happy coexistence.",
-            "sections": [
-              {
-                "heading": "**1. The First Days: Vigilance and Adapta**tion",
-                "body": "The change of environment generates stress, which can lower the cat's defenses. Visit the vet: Take your cat to their new trusted clinic as soon as possible. Bring all previous medical records (vaccinations, deworming) and follow their instructions. What to observe: That they eat and drink normally, have energy according to their age, have consistent stools (some initial softness due to diet change is normal, but persistent diarrhea is not) and absence of symptoms like coughing, vomiting, sneezing, or discharge. If you have any doubts, consult your vet."
-              },
-              {
-                "heading": "**2. Preventive Health: Vaccines, Parasites, and Steriliza**tion",
-                "body": "Vaccination: Vaccines protect against serious diseases (like panleukopenia, feline respiratory complex, or leukemia). Follow the schedule recommended by your vet. The rabies vaccine, although not always mandatory by law for cats (depending on the region), is highly recommended. Deworming: It's essential for the cat's health and your family's (zoonosis). Internal: Recommended every 3 months. External: Vital if the cat goes outside or has access to balconies/terraces. Sterilization: It's the most responsible and healthy decision. Benefits: Prevents unwanted litters, reduces marking, decreases fights, and prevents serious diseases (breast tumors, pyometras). Myths: It doesn't change their personality or make them 'lazy'. Sterilize your cat, whether male or female, indoor or outdoor."
-              },
-              {
-                "heading": "**3. Nutrition and Hydra**tion",
-                "body": "Proper Food: Use high-quality dry food adapted to your cat's age and physical condition. Avoid giving homemade or human leftovers. Rewards: Use them in moderation to avoid obesity. Fresh Water: Essential, place multiple water fountains around the house, away from food and litter. Some cats prefer moving water sources. Adding wet food helps with hydration. Forbidden: Cow's milk (most adult cats are lactose intolerant). Natural yogurt or unsalted cheese can be given as an occasional reward, but are not necessary."
-              },
-              {
-                "heading": "**Hygiene and Physical **Care",
-                "body": "Cats need your help in certain areas. Grooming: Short hair once a week (daily during shedding); long hair daily to prevent knots and hairballs. If they have trouble expelling hairballs, consult about oatmeal pastes. Nails: Cut only the transparent tip, avoiding the pink (vascularized) part. Baths: Generally not necessary, only if they're extremely dirty or a doctor recommends it."
-              },
-              {
-                "heading": "**The Litter Box: Golden R**ules",
-                "body": "A cat that doesn't use the litter box usually expresses a medical or stress problem. Quantity: Rule N+1 (number of cats + 1 box). Location: Quiet, accessible places, away from noise (washers) and food. Type: Many don't like enclosed ones; try an open and large one. Cleaning: Remove waste daily and regularly wash the box with water and neutral soap (avoid bleach or ammonia). Sand: They prefer unscented and fine-textured sand."
-              },
-              {
-                "heading": "**Behavior and Environmental Enrich**ment",
-                "body": "Language: Ears up is a friendly greeting; ears back indicate fear. Tail movement can be irritation or excitement. Purring can be happiness, pain, or stress. Play: Spend 15-20 minutes daily on simulated hunting (sticks, balls). Avoid using your hands or feet. Scratching Posts: Provide stable, tall, and attractive materials (sisal, wood). Never punish for scratching furniture; redirect and reward. Verticality: They need high places to observe and safe hiding spots. Respect their solitude."
-              },
-              {
-                "heading": "**Age-Specific Ti**ps",
-                "body": "PUPPY: Socialization (2-8 weeks) is key to accepting human contact and vet visits. Teach them what's okay to bite. Get them accustomed to the carrier by leaving it open at home. Protect cables and windows. ADULT: Be patient, adaptation can take weeks. Use a separate room for acclimation when bringing them home with all their resources. Introduce other animals gradually. Maintain fixed feeding and play schedules."
-              },
-              {
-                "heading": "**Legal and Safety Aspe**cts",
-                "body": "Microchip: It is mandatory and must be up to date (RIAC in Madrid). Accident Prevention: Cat Parachute Syndrome. Install mosquito nets resistant to windows and balconies. A fall from a height can be fatal; don't rely on their 'ability' to land on their feet. Every cat is a world. Observe, respect their times and always consult your veterinarian in case of sudden changes."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "razas",
-    "label": "Breeds",
-    "emoji": "",
-    "color": "#5b8db8",
-    "bg": "#eef3f8",
-    "description": "Cat Breeds",
-    "subcategories": [
-      {
-        "slug": "razas-felinas",
-        "label": "Cat Breeds",
-        "topics": [
-          {
-            "slug": "guia-completa-razas",
-            "title": "Complete Guide to Cat Breeds",
-            "intro": "The feline world is vast and fascinating. Although all cats share basic instincts, each breed has a unique personality, care needs, and physical characteristics. This guide integrates historical records with modern classifications from organizations like TICA, CFA, and FIFe, organized to help you understand which type of cat fits best in your home. Note: Beyond breed, individual personality and early socialization play a fundamental role.",
-            "sections": [
-              {
-                "heading": "**1. The Classic Histori**cals",
-                "body": "Ancient breeds with defined personalities: Abyssinian (Ethiopia/Egypt): Active, curious, 'dog-cat,' needs a lot of mental stimulation. Siamese (Thailand): Extremely vocal, intelligent, demands constant attention. Persian (Iran): Calm, sweet, quiet; requires daily brushing and facial cleaning. Maine Coon (USA): The 'gentle giant,' sociable, ideal for families with children; requires space. Bengal (USA): High energy, athletic, looks like a miniature leopard; needs intense daily stimulation."
-              },
-              {
-                "heading": "**2. Gentle Giants and Cold-Adaptable Br**eeds",
-                "body": "Robust cats with dense coats. Maine Coon: One of the largest, stands out with its 'lynx tips' and soft meows. Norwegian Forest Cat (Skogkatt): Natural climber with waterproof coat, independent but affectionate. Siberian: Famous for being hypoallergenic (produces less Fel d 1), agile, and affectionate. Ragdoll: Large and muscular, has a gentle temperament; 'collapses' like a rag doll when picked up."
-              },
-              {
-                "heading": "**3. Elegance of Short Hair and Athletic **Body",
-                "body": "Low-maintenance coat with lots of interaction. British Shorthair: Round face, compact, and calm; doesn't like to be carried around much. Russian Blue: Silver coat and green eyes, shy with strangers but loyal. Burmese: Muscular and heavy, very people-oriented. Bombay: Looks like a miniature black panther, loves heat and cuddles. Chartreux: Old French breed, silent and expert hunter with water-repellent coat."
-              },
-              {
-                "heading": "**4. Unique Mutations: Ears, Tails, and Text**ures",
-                "body": "Exotic genetic characteristics. Scottish Fold: Ears folded forward, \"Buddha\" position; requires joint review. Munchkin: Short legs, outgoing, and curious. Sphynx: Hairless, sociable, and seeks heat; requires weekly baths. Devon Rex & Cornish Rex: Wavy or curly coat, mischievous, and attached. American Curl: Ears curled back. Manx & Japanese Bobtail: The first is tailless and robust; the second has a pom-pom tail, symbol of good luck."
-              },
-              {
-                "heading": "**5. Exotics and Few Un**its",
-                "body": "Less common breeds. Ocicat: Looks like a wild ocelot, trainable, and sociable. Toyger: Tiger imitation, intelligent. Lykoi: The \"werewolf cat,\" man-like appearance, curious, and playful. Singapura: One of the smallest breeds, mischievous, and loves heights. Korat: Thai gray plate with heart-shaped marking, sensitive to noise, and good luck charm."
-              },
-              {
-                "heading": "Write Your Breed",
-                "body": "Level of Activity: Sofa companion (Persian) or athlete (Bengal)? Grooming Time: Daily brushing (Maine Coon) or low maintenance (Russian Blue)? Vocalization: If you prefer silence, avoid Siameses and opt for Ragdolls. Children and pets: Maine Coon and Birman are more tolerant. Allergies: None are 100% hypoallergenic, but the Siberian and Russian Blue are usually better tolerated."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "adquisicion responsable",
-    "label": "Responsible Acquisition",
-    "emoji": "",
-    "color": "#5b8db8",
-    "bg": "#eef3f8",
-    "description": "Cat Breeds",
-    "subcategories": [
-      {
-        "slug": "adquisición chile",
-        "label": "🇨🇱 Chile",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-chile",
-            "title": "Responsible Acquisition in Chile: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it responsibly. In Chile, the purchase of animals is regulated by Law 21.020 (Cholito Law), which protects animal welfare and requires responsible ownership. Buying a cat is not like buying an object; it is acquiring a living being with complex needs.",
-            "sections": [
-              {
-                "heading": "**1. Why Choose a Registered Bree**der?",
-                "body": "Ethical breeders preserve the breed, care for genetic health, and socialize the kittens. The safest way to identify them is to verify that they are registered with RENAGACH (Chilean National Cat Registry), representing federations like WCF and TICA. Advantages of buying with pedigree: Genetic Certification (guarantees the breed), Health (genetic tests to rule out diseases like PKD in Persians or HCM in Maine Coons), and Socialization (grow up in a family environment, not in cages)."
-              },
-              {
-                "heading": "Directory of Reference (Ethical Breeders in Chile)",
-                "body": "Guideline list (always verify records): Maine Coon: Colitas Arriba, Nahuelhuén (Santiago/La Reina). Persian / Himalayan: GatyKey Cattery, Viestmaden Cattery (La Florida). Ragdoll: Reflejo de Luna (docile temperament). Somali: Per-Bast Cattery (unique specialized). Sphynx: Ti Voglio Bene, The Kittens House. British Shorthair: Von & Von Cattery (robust structure)."
-              },
-              {
-                "heading": "**2. Legal Framework: Your Rights and Obligations (Law 21**.020)",
-                "body": "To ensure the transaction is legal, the breeder must comply with: Mandatory Microchip (implanted and registered) and Sales Contract. The contract must detail health guarantees (negative tests for FeLV/FIV), sterilization commitment, and return clause. Your Responsibility: Once the purchase is made, you must register the animal in the National Pet Registry if the information was not updated immediately."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breed**er?",
-                "body": "Before paying, check: Do they allow visits? They should be clean and in human contact. Age of delivery? NEVER accept a kitten less than 12 weeks (3 months) old. Complete documentation? You should receive a birth certificate/Preliminary Pedigree, up-to-date vaccination card (signed by a licensed veterinarian), and parasite control certificate. Transparency in health? A good breeder will ask about your situation to ensure a good home."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "If you're looking for breeds like Lykoi, Toyger, or Bengal from specific lines, the process is strict: comply with SAG (Agricultural and Livestock Service) requirements, health certificates from the country of origin, and possible quarantines. It's recommended to consult with a specialized pet transportation agency to avoid customs retention."
-              },
-              {
-                "heading": "Beware of \"Cat Factories\"!",
-                "body": "Avoid buying from free fairs, informal markets, or social media ads without a visible physical address. Be suspicious of places with multiple breeds available immediately. These places prioritize profit over welfare, resulting in animals with chronic health problems and short lives. Your conscious choice helps to eradicate this abuse."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición argentina",
-        "label": "Argentina",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-argentina",
-            "title": "Responsible Acquisition in Argentina: Legal and Ethical Guide",
-            "intro": "If you've decided that a specific breed fits your lifestyle, it's essential to acquire it responsibly. In Argentina, animal ownership is protected by the National Law 27,592 (Alica Law) and various ordinances (such as Law 4040 in CABA), which recognize animals as sentient beings. Buying a cat is not a regular commercial transaction; it's incorporating a family member.",
-            "sections": [
-              {
-                "heading": "**Why Choose a Registered Breed**er?",
-                "body": "The ethical breeders in Argentina preserve the breed, care for the genetic and social health of the kittens, and socialize them. The main entities are FAAC (Argentine Federation of Cat Lovers), affiliated with the WCF, and local TICA or FIFe clubs. Advantages of buying with pedigree: Genetic Certification (guarantees registered ancestors), Preventive Health (genetic tests for PKD or HCM), and Early Socialization (human stimuli that prevent behavioral problems)."
-              },
-              {
-                "heading": "**Legal Framework: Your Rights and Obliga**tions",
-                "body": "For a transaction to be legal in Argentina, the breeder must comply with: Identification (Microchip), mandatory in CABA, Córdoba, and Santa Fe, among others. Sales Contract with animal data, health guarantees, return clause, and sterilization commitment. Vaccination Card: Must be signed by a registered Veterinarian, with triple feline vaccines (and quintuple if necessary) up to date according to the age."
-              },
-              {
-                "heading": "**Checklist: How to Detect an Ethical Breeder in Argent**ina?",
-                "body": "Before paying, verify: Do they allow in-person visits? You should know the cattery and see the mother; be suspicious of deliveries in shopping malls. Age of delivery? NEVER before 12 weeks (3 months). Complete documentation? You should receive a Birth Certificate/Pedigree, vaccination card, and invoice or receipt. Buyer interview? A good breeder will ask about window screens and your previous experience."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "If you're looking for breeds not commonly raised (Lykoi, Toyger), the process is regulated by SENASA (National Service of Sanitary and Food Quality). Requirements: Sanitary certificate of origin, rabies vaccination, and possible quarantines. It's recommended to hire a specialized pet transportation agency; bringing a cat on your own can result in severe retention or fines."
-              },
-              {
-                "heading": "Beware of \"Cat Factories\" and Scams!",
-                "body": "DON'T BUY IF: They ask for advance payment without showing the animal (common scam; use real-time video calls). They sell at fairs or plazas: animals without sanitary control usually die soon (\"cat of the week\"). They have an infinite \"stock\" of multiple breeds available immediately. Suspiciously low prices: ethical breeding involves high costs in health and premium food that a low price does not cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Argentina is a legal and moral responsibility. When choosing a breeder registered with FAAC or international federations, you are financing the preservation of the breed and animal welfare, and saying \"no\" to the mistreatment of clandestine factory farms."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición uruguay",
-        "label": "Uruguay",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-uruguay",
-            "title": "Responsible Acquisition in Uruguay: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it in a responsible manner. In Uruguay, animal ownership is protected by the National Law 18.471 (Animal Protection) and regulated locally by decrees such as 319/011 in Montevideo. Buying a cat is not a commercial transaction; it is incorporating a sensitive family member.",
-            "sections": [
-              {
-                "heading": "**1. Why Choose a Registered Bree**der?",
-                "body": "Ethical breeders in Uruguay preserve the breed, care for genetic health, and socialize kittens. The safest way to identify them is to verify their affiliation with the AFU (Uruguayan Feline Association), representative of the WCF, and sometimes TICA or FIFe. Advantages: Genetic Certification (registered ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of behavioral problems)."
-              },
-              {
-                "heading": "**2. Legal Framework: Your Rights and Obliga**tions",
-                "body": "For a secure transaction in Uruguay, the breeder must comply with: Identification (Microchip) according to municipal ordinances (especially in Montevideo and Canelones) and registration in corresponding records. Sales Contract with party data, health guarantees (FeLV/FIV), return clause (abandonment prohibited), and sterilization commitment. Vaccination Card: Signed by a registered Veterinarian, with triple feline vaccination on the same day."
-              },
-              {
-                "heading": "**3. Checklist: How to Detect an Ethical Breeder in Urug**uay?",
-                "body": "Before paying, check: Do they allow in-person visits? You need to know the cattery and see the mother; be wary of deliveries to shopping malls. What's the delivery age? NEVER before 12 weeks (3 months). Is the documentation complete? You should receive a Birth Certificate/Pedigree from the AFU, vaccination card, and receipt. Does the seller conduct a buyer interview? A good breeder will want to know about your window and balcony protections."
-              },
-              {
-                "heading": "**4. Legal Importation of Exotic Br**eeds",
-                "body": "The process is regulated by the MGAP-DIGEGA (General Directorate of Agricultural Services). Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It's recommended to hire a specialized pet relocation agency ('Pet Relocation') to handle customs procedures and avoid animal retention at the border."
-              },
-              {
-                "heading": "Be Careful with 'Cat Factories' and Scams!",
-                "body": "DON'T BUY IF: They ask for advance payment without showing the animal (common scam; demand a real-time video call). They sell at street fairs or plazas: high mortality rate due to lack of hygiene (panleucopenia). They have an infinite 'stock': indicates a factory where females are used indiscriminately. Suspiciously low prices: ethical breeding has high costs in health and records that a low price can't cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Uruguay is a legal and moral responsibility. By choosing a registered breeder in the AFU, you're financing the preservation of the breed and animal welfare, and saying 'no' to the mistreatment of clandestine factories."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición peru",
-        "label": "Peru",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-peru",
-            "title": "Responsible Acquisition in Peru: Legal and Ethical Guide",
-            "intro": "If you've decided that a specific breed fits your lifestyle, it's essential to acquire it responsibly. In Peru, animal ownership is protected by Law No. 30407 (Animal Protection and Welfare Law) and technically regulated by SENASA under MIDAGRI. This law recognizes animals as sentient beings and prohibits their mistreatment, abandonment, and illegal trade.",
-            "sections": [
-              {
-                "heading": "**Why Choose a Registered Breed**er?",
-                "body": "Ethical breeders in Peru preserve the breed, care for genetic and social health, and socialize kittens. The safest way to identify them is to verify their affiliation with FEPERU (Peruvian Federation of Felines), representing WCF and, in some cases, TICA or FIFe. Advantages: Genetic Certification (official ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of behavioral problems such as fears or aggression)."
-              },
-              {
-                "heading": "**Legal Framework: Your Rights and Obliga**tions",
-                "body": "For a transaction to be legal in Peru, the breeder must comply with: Identification (Microchip) required by many municipalities (such as Lima Metropolitan, Miraflores, San Isidro) for municipal registration. Sales Contract with party data, health guarantees (FeLV/FIV), return clause (abandonment prohibited), and sterilization commitment. Vaccination Card: Signed by a registered Veterinarian, with triple feline (and quintuple if applicable) vaccination up to date."
-              },
-              {
-                "heading": "**Checklist: How to Detect an Ethical Breeder in P**eru?",
-                "body": "Before paying, verify: Do they allow in-person visits? You should know the cattery and see the mother; be wary of deliveries in malls or parks. Age of delivery? NEVER before 12 weeks (3 months). Do you receive a complete documentation package? You should receive a FEPERU birth certificate/pedigree, vaccination card, and invoice or receipt. Do they conduct a buyer interview? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Lima."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "The process is strictly regulated by SENASA. Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It is recommended to hire a specialized pet relocation agency ('Pet Relocation') to handle SENASA procedures and avoid airport retention or severe fines."
-              },
-              {
-                "heading": "Beware of 'Cat Factories' and Scams!",
-                "body": "DO NOT BUY IF: They ask for advance payment without showing the animal (common scam; demand a real-time video call). They sell at street fairs or plazas: high mortality due to lack of hygiene (miliary fever/panleucopenia). They have an infinite 'stock' of multiple breeds: probable exploitation factory. Suspiciously low prices: ethical breeding involves high costs in health and premium food that a low price cannot cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Peru is a legal and moral responsibility. When choosing a registered breeder from FEPERU, you are financing the preservation of the breed and animal welfare, and saying no to the abuse of clandestine factories. Remember: Before buying, also consider adoption."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición bolivia",
-        "label": "Bolivia",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-bolivia",
-            "title": "Responsible Acquisition in Bolivia: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it responsibly. In Bolivia, animal ownership and welfare are fundamental, and the trade of breeds must be carried out under ethical and legal standards that recognize animals as sentient beings, prohibiting their abuse and illegal trade.",
-            "sections": [
-              {
-                "heading": "**3. Checklist: How to Detect an Ethical Breeder in Boli**via?",
-                "body": "Before making any transfer or payment, verify these points. If the answer is \"no\" to any of them, be suspicious. Do they allow in-person visits? An ethical breeder will invite you to visit their home or cattery. You should be able to see the mother and a clean and safe environment. Be suspicious of those who only make deliveries at shopping malls, parks, or other public places. What is the age of delivery? NEVER before 12 weeks (3 months). It is crucial for emotional and immunological weaning. Is there complete documentation? You should receive a Birth Certificate/Pedigree (or pre-pedigree issued by the corresponding feline association), Vaccination and deworming card, and Sales invoice or receipt. Will they interview you? A good breeder will ask you questions about your home, if you have window or balcony protections (vital in high-rise buildings in La Paz or Santa Cruz), and your experience."
-              },
-              {
-                "heading": "**4. Legal Importation of Exotic Br**eeds",
-                "body": "If you are looking for breeds that are not commonly raised in Bolivia (such as Lykoi, Toyger, or specific Bengal lines), the process is strictly regulated by the SENASAG (National Service of Agricultural Health and Food Safety). Requirements: International zoosanitary certificate from the country of origin, current rabies vaccination, and compliance with entry protocols. Quarantine: Depending on the country of origin and health status, additional quarantine or inspections may be required. Recommendation: Always hire a specialized pet relocation agency (\"Pet Relocation\") that will handle the paperwork with the SENASAG to avoid airport detentions (El Alto, Viru Viru, etc.) or severe fines."
-              },
-              {
-                "heading": "Be Careful with \"Cat Factories\" and Scams!",
-                "body": "In Bolivia, illegal trade is common on online platforms and informal fairs. NO BUY IF: They ask for signs in advance without showing the animal (common scam; requires a real-time video call). They sell at street fairs or plazas: exposed kittens without hygiene usually are sick (panleucopenia, leukemia) and have high mortality. They have an \"infinite\" stock: probable factory of exploitation where females are used indiscriminately. Suspiciously low prices: ethical breeding involves high costs in health and records that a low price cannot cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Bolivia is a legal and moral responsibility. When choosing a registered breeder in the AFUBO or recognized associations, you are financing the preservation of the breed and animal welfare, and saying \"no\" to the mistreatment of clandestine factories. Remember: Before buying, also consider adoption. Many organizations rescue beautiful purebred or mixed-breed cats looking for a loving home all over the country."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición colombia",
-        "label": "Colombia",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-colombia",
-            "title": "Responsible Acquisition in Colombia: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it in a responsible manner. In Colombia, animal ownership is protected by Law 1774 of 2016, which recognizes animals as sentient beings not susceptible to being things, and prohibits their mistreatment and abandonment. Additionally, there are local regulations in cities such as Bogotá, Medellín, and Cali.",
-            "sections": [
-              {
-                "heading": "**1. Why Choose a Registered Bree**der?",
-                "body": "Ethical breeders in Colombia preserve the breed, care for genetic health, and socialize kittens. The safest way to identify them is to verify their affiliation to ASOFELGA (Colombian Association of Cat Breeders), representative of the WCF, and in some cases, TICA or FIFe. Advantages: Genetic Certification (official ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of fears and aggression)."
-              },
-              {
-                "heading": "**2. Legal Framework: Your Rights and Obligations (Alica** Law)",
-                "body": "For a secure transaction in Colombia, the breeder must comply with: Identification (Microchip) required by municipalities (such as Bogotá with Decree 319 of 2019) for municipal registration. Sales Contract with data from the parties, health guarantees (FeLV/FIV), clause of return (prohibited abandonment), and commitment to sterilization. Vaccination Card: Signed by a Veterinarian Zootechnician with a valid professional card."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breeder in Colomb**ia?",
-                "body": "Before paying, check:  You must allow visits in person; you need to know the cattery and see the mother; be wary of deliveries in shopping centers or parks.  You must receive kittens at no younger than 12 weeks (3 months); it's crucial for emotional and immunological weaning.  You must receive complete documentation; you should receive a birth certificate/Pedigree from ASOFELGA, vaccination card, and invoice or receipt.  The breeder should interview you; a good breeder wants to know about your window and balcony protections, vital in high-rise buildings in Bogotá or Medellín."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "The process is strictly regulated by the ICA (Colombian Agricultural and Livestock Institute).  Requirements: International zoosanitary certificate, current rabies vaccination, and compliance with entry protocols (ICA Resolution).  It's recommended to hire a specialized pet relocation agency ('Pet Relocation') to handle ICA procedures and avoid airport detentions or severe fines."
-              },
-              {
-                "heading": "Beware of 'Cat Factories' and Scams!",
-                "body": "Don't buy if:  They ask for payment in advance without showing the animal (common scam; demand a real-time video call).  They sell at street fairs or plazas: high mortality due to lack of hygiene (upper respiratory infection/panleukopenia).  They have an infinite 'stock' of multiple breeds: probable exploitation factory.  Suspiciously low prices: ethical breeding involves high costs in health and records that a low price can't cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Buying a purebred cat in Colombia is a legal and moral responsibility.  By choosing a breeder registered with ASOFELGA, you're financing the preservation of the breed and animal welfare, and saying 'no' to the mistreatment of clandestine factories."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición ecuador",
-        "label": "Ecuador",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-ecuador",
-            "title": "Responsible Acquisition in Ecuador: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed is suitable for your lifestyle, it is essential to acquire it in a responsible manner. In Ecuador, animal ownership is protected by the Organic Animal Welfare Code (COBA), enacted in 2022. This law recognizes animals as sentient beings, prohibits their mistreatment, abandonment, and strictly regulates breeding and commercialization.",
-            "sections": [
-              {
-                "heading": "**Why choose a Registered Breed**er?",
-                "body": "Ethical breeders in Ecuador preserve the breed, care for genetic health, and socialize kittens. The safest way to identify them is to verify their affiliation with recognized feline associations (WCF, TICA) and that they have the necessary municipal permits. Advantages: Genetic Certification (official ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of fears and aggression)."
-              },
-              {
-                "heading": "**Legal Framework: Your Rights and Obligations (**COBA)",
-                "body": "For a transaction to be legal in Ecuador, the breeder must comply with: Identification (Microchip) required by COBA and municipal ordinances (Quito, Guayaquil, Cuenca) for municipal registration. Municipal Functioning Permit issued by the Municipal GAD of your canton. Sales Contract with data from the parties, health guarantees (FeLV/FIV), return clause (abandonment prohibited), and sterilization commitment. Vaccination Card: Signed by a registered Veterinary Zootechnician."
-              },
-              {
-                "heading": "**Checklist: How to Detect an Ethical Breeder in Ecua**dor?",
-                "body": "Before paying, verify: Do they allow in-person visits? You must know the cattery and see the mother; be suspicious of deliveries in shopping centers or parks. Age of delivery? NEVER before 12 weeks (3 months). It is crucial for emotional and immunological weaning. Complete documentation? You should receive an official Birth Certificate / Pedigree, up-to-date vaccination card, and invoice or receipt (tax compliance). Buyer interview? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Quito or Guayaquil."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "The process is strictly regulated by AGROCALIDAD (Agency for Regulation and Zoosanitary Control). Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It is recommended to hire a specialized pet relocation agency ('Pet Relocation') to manage procedures and avoid airport detentions (Mariscal Sucre, José Joaquín de Olmedo, etc.) or severe fines."
-              },
-              {
-                "heading": "Beware of 'Cat Factories' and Scams!",
-                "body": "Don't Buy If: They ask you for signs in advance without showing the animal (common scam; requires real-time video call). They sell at street fairs or plazas: high mortality rate due to lack of hygiene (panleucopenia, leukemia). They have an infinite \"stock\" of multiple breeds: probable factory farm. Suspiciously low prices: ethical breeding involves high costs in health and records that a low price cannot cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Ecuador is a legal and moral responsibility under the COBA. By choosing a registered breeder with municipal permits, you are financing the preservation of the breed and animal welfare, and saying \"no\" to the mistreatment of clandestine factories. Remember: Before buying, also consider adoption."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición venezuela",
-        "label": "Venezuela",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-venezuela",
-            "title": "Responsible Acquisition in Venezuela: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it in a responsible manner. In Venezuela, animal ownership is protected by the Law of Protection of Free and Domesticated Fauna and various municipal ordinances that promote responsible ownership, prohibit mistreatment, and abandonment.",
-            "sections": [
-              {
-                "heading": "**1. Why Choose a Registered Bree**der?",
-                "body": "Ethical breeders in Venezuela preserve the breed, care for genetic health, and socialize kittens. The safest way to identify them is to verify their affiliation with the Venezuelan Canine Federation (FCV) in its feline division, or with associations like ASOVEFEL (Venezuelan Association of Felines), linked to WCF or TICA. Advantages: Genetic Certification (official ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of fears and aggression)."
-              },
-              {
-                "heading": "**2. Legal Framework: Your Rights and Obliga**tions",
-                "body": "For the transaction to be legal in Venezuela, the breeder must comply with: Identification (Microchip) required or recommended in municipalities like Chacao, Baruta, El Hatillo (Caracas), Valencia, and Maracaibo for municipal registration. Sales Contract with data from the parties, health guarantees (FeLV/FIV), return clause, and sterilization commitment. Vaccination Card: Signed by a registered Veterinarian (CVZ), with triple feline vaccinations up to date according to age."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breeder in Venezue**la?",
-                "body": "Before paying, check: Do they allow in-person visits? You should know the cattery and see the mother; be wary of deliveries at metro stations or shopping centers. What's the age of delivery? NEVER before 12 weeks (3 months). It's crucial for emotional and immunological weaning. Do you receive complete documentation? You should get an official Birth Certificate/Pedigree, up-to-date vaccination card, and receipt. Will the seller interview you? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Caracas or Valencia."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "The process is strictly regulated by the INSAI (National Institute of Integral Agricultural Health). Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It's recommended to hire a specialized pet relocation agency ('Pet Relocation') to handle INSAI procedures and avoid airport retention or severe fines at the Simón Bolívar International Airport."
-              },
-              {
-                "heading": "Beware of 'Cat Factories' and Scams!",
-                "body": "DON'T BUY IF: They ask for advance payment without showing the animal (common scam; don't transfer funds or bolívares without a real-time video call). They sell at street fairs or plazas: high mortality due to lack of hygiene (panleucopenia, leukemia). They have an infinite 'stock' of multiple breeds: probable exploitation factory. Suspiciously low prices: ethical breeding involves high costs for imported/premium food that a low price can't cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Buying a purebred cat in Venezuela is a legal and moral responsibility. By choosing a registered breeder in ASOVEFEL or affiliated with international federations, you're financing the preservation of the breed and animal welfare, and saying 'no' to the mistreatment of clandestine factories. Remember: Before buying, also consider adoption."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición paraguay",
-        "label": "Paraguay",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-paraguay",
-            "title": "Responsible Acquisition in Paraguay: Legal and Ethical Guide",
-            "intro": "If you've decided that a specific breed fits your lifestyle, it's essential to get one responsibly. In Paraguay, animal ownership is protected by Law No. 483/95 of Animal Protection and by Law No. 6541/20 of Animal Welfare, which recognizes animals as sentient beings, prohibits their mistreatment and abandonment, and regulates responsible ownership.",
-            "sections": [
-              {
-                "heading": "**Why Choose a Registered Breed**er?",
-                "body": "Ethical breeders in Paraguay preserve the breed, care for genetic and social health, and socialize kittens. The safest way to identify them is to check their affiliation with FELPAR (Paraguay Feline Federation), which represents the WCF or TICA. Benefits: Genetic Certification (officially registered ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of behavioral problems such as fears or aggression)."
-              },
-              {
-                "heading": "**Your Rights and Obligations: Legal Fram**ework",
-                "body": "For a secure transaction in Paraguay, the breeder must comply with: Identification (microchip) implemented in municipalities such as Asunción, Luque, San Lorenzo, Lambaré, etc. Sales Contract with party data, health guarantees (FeLV/FIV), return clause (prohibited abandonment), and sterilization commitment. Vaccination Card: Signed by a registered veterinarian in the CONAMEVET (National Council of Veterinary Medicine), with triple cat vaccinations up to date."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breeder in Paraguay: Check**list",
-                "body": "Before paying, verify: Do they allow in-person visits? You must know the cattery and see the mother; be wary of deliveries in shopping centers or parks. Age of delivery? NEVER before 12 weeks (3 months). It's crucial for emotional and immunological weaning. Complete documentation? You should receive a birth certificate/Pedigree from FELPAR, vaccination card, and invoice or receipt. Do they interview the buyer? A good breeder will want to know about your window and balcony protections, vital in high-rise buildings in Asunción."
-              },
-              {
-                "heading": "**Importing Exotic Breeds Lega**lly",
-                "body": "The process is strictly regulated by SENACSA (National Service of Animal Quality and Health). Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It's recommended to hire a specialized pet relocation agency ('Pet Relocation') to handle SENACSA procedures and avoid airport retentions or severe fines."
-              },
-              {
-                "heading": "Beware of \"Cat Factories\" and Scams!",
-                "body": "NO SELL IF: They ask you for signs in advance without showing the animal (common scam; don't transfer money or wire transfers without a real-time video call). They sell at street fairs or plazas: high mortality rate due to lack of hygiene (panleucopenia, leukemia). They have an 'infinite stock': probable factory farm. Low suspicious prices: ethical breeding involves high costs in health and premium food that a low price does not cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Paraguay is a legal and moral responsibility under the Animal Welfare Law. When choosing a registered breeder in FELPAR, you are financing the preservation of the breed and animal welfare, and saying 'no' to the mistreatment of clandestine factory farms. Remember: Before buying, also consider adoption."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición brasil",
-        "label": "Brazil",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-brasil",
-            "title": "Responsible Acquisition in Brazil: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it in a responsible manner. In Brazil, animal ownership is protected by Federal Law No. 14,064/2020 (Sansão Law) and Arouca Law (Law No. 11,794/2008). Buying a cat is not a regular commercial transaction; it is incorporating a sensitive family member.",
-            "sections": [
-              {
-                "heading": "**Why Choose a Registered Breed**er?",
-                "body": "Ethical breeders in Brazil preserve the breed, care for genetic health, and socialize kittens. The safest way to identify them is to verify their affiliation with GATOS do BRASIL (official representative of the WCF), or TICA or FIFe clubs. Advantages: Genetic Certification (official ancestors), Preventive Health (PKD or HCM tests), and Early Socialization ('home raised') to prevent behavioral problems."
-              },
-              {
-                "heading": "**Legal Framework: Your Rights and Obliga**tions",
-                "body": "For the transaction to be legal in Brazil, the breeder must comply with: Identification (Microchip) required in cities like São Paulo, Rio de Janeiro, and Curitiba for municipal registration (RAA). Sales Contract with party data, health guarantees (FeLV/FIV), return clause (abandonment is a crime), and sterilization commitment. Vaccination Card: Signed by a Registered Veterinarian in the CRMV, with V3/V4/V5 vaccinations up to date according to age."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breeder in Braz**il?",
-                "body": "Before making any transfer (PIX), verify: Do they allow in-person visits? You must know the cattery and see the mother; be wary of deliveries in parks or shopping malls. What is the delivery age? NEVER before 12 weeks (3 months). Is the documentation complete? You should receive a Certificate of Birth/Pedigree from CATS of BRAZIL/WCF, vaccination card, and invoice or receipt. Did the seller interview you? A good breeder will want to know about your 'protection screens' (essential in high-rise buildings in Brazil)."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "The process is strictly regulated by the MAPA (Ministry of Agriculture, Livestock, and Supply) through the Vigiagro system. Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It is recommended to hire a specialized pet relocation agency ('Pet Relocation') to avoid animal retention at airports like Guarulhos or Galeão."
-              },
-              {
-                "heading": "Beware of 'Cat Factories' and Scams!",
-                "body": "DON'T BUY IF: They ask for PIX in advance without showing the animal (common scam; demand a real-time video call). They sell at street fairs or plazas: high mortality rate due to lack of hygiene. They have an infinite 'stock' of multiple breeds: probable exploitation factory. Prices suspiciously low: ethical breeding involves high costs in health and records that a low price cannot cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Buying a purebred cat in Brazil is a legal and moral responsibility under the Sansão Law and the Arouca Law. By choosing a breeder registered with CATS of BRAZIL, you are financing the preservation of the breed and animal welfare, and saying 'no' to the mistreatment of clandestine factories. Remember: Before buying, also consider adoption."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición españa",
-        "label": "Spain",
-        "topics": [
-          {
-            "slug": "guia-adquisicion-responsable-espana",
-            "title": "Responsible Purchase in Spain: Legal and Ethical Guide",
-            "intro": "If you have decided that a specific breed fits your lifestyle, it is essential to acquire it in a responsible manner. In Spain, the regulations have changed drastically with the entry into force of the new Animal Welfare Law (Law 7/2023). This law prohibits the sale of dogs, cats, and ferrets in commercial establishments and requires that all acquisitions be made through registered breeders or animal protection entities.",
-            "sections": [
-              {
-                "heading": "**Why choose a Registered Breeder (Hobbyis**t)?",
-                "body": "In Spain, ethical breeders must be registered as 'Zoological Nucleus' or 'Hobbyist Breeder' in their Autonomous Community. The safest way to identify them is to verify that they are affiliated with the AFEC (Spanish Feline Association), representative of the WCF in the country, or other recognized federations such as FIFe. Advantages: Guaranteed Legality (only registered breeders can sell under the new law), Genetic Health (PKD or HCM tests) and Socialization (guarantees a balanced temperament)."
-              },
-              {
-                "heading": "**Your Rights and Obligations (Law 7/20**23)",
-                "body": "For the transaction to be legal in Spain, the breeder must comply with: Mandatory Microchip (registered in the RIAC of their Autonomous Community before delivery). Health Documentation: European passport or vaccination card (Trivalent) and daily deworming. Mandatory Sales Contract with the zoological nucleus number, health guarantees, and return clause. Prohibition of Sales in Pet Stores: Selling in pet stores is illegal; it can only be done directly by the breeder or through adoption."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breeder in Spa**in?",
-                "body": "Before paying, verify: Do they allow visits? You must know their home or cattery and see the mother; be suspicious of deliveries in parking lots. Age of delivery? NEVER before 12 weeks (3 months). Complete documentation? Official pedigree of AFEC/WCF or similar, microchip already registered, and signed veterinary card. Transparency? A good breeder will ask about your home (window screens on high floors) and will not be in a hurry to sell quickly."
-              },
-              {
-                "heading": "**Importation of Animals from the EU and Third Count**ries",
-                "body": "From the EU: European passport, ISO microchip, and rabies vaccine (minimum 21 days old). From outside the EU (United Kingdom, USA): Official Zoosanitary Certificate, antibody titration (if applicable), and compliance with requirements of the Ministry of Agriculture, Fisheries and Food (MAPA). It is recommended to use specialized transportation agencies to avoid quarantines or returns to the origin."
-              },
-              {
-                "heading": "Be Careful with Scams and Illegal Trafficking!",
-                "body": "Don't pay if: They ask for money upfront without seeing the cat (require live video call). No visible zoo nucleus number: it's mandatory to display it in all ads. They deliver kittens under 3 months: it's illegal and cruel. Suspiciously low prices: usually indicate 'kitten farms' illegally imported from Eastern Europe without health or ethical guarantees."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Acquiring a purebred cat in Spain is a regulated and protected act. When choosing a breeder affiliated with the AFEC and with a zoo nucleus, you are complying with the Animal Welfare Law, financing the preservation of the breed and avoiding animal suffering. Remember: Before buying, consider adoption from specific shelters like the Persian Rescue or Maine Coon Rescue."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "slug": "adquisición mexico",
-        "label": "Mexico",
-        "topics": [
-          {
-            "slug": "guia-tenencia-responsable-mexico",
-            "title": "Responsible Cat Ownership in Mexico: A Legal and Ethical Guide to Acquiring a Cat",
-            "intro": "If you've decided that a specific breed fits your lifestyle, it's essential to acquire it responsibly. In Mexico, animal protection is governed by the Federal Animal Protection Law and state and local laws (such as the CDMX or Jalisco laws), which recognize animals as sentient beings, prohibit abuse, and regulate responsible ownership.",
-            "sections": [
-              {
-                "heading": "**Why Choose a Registered Breed**er?",
-                "body": "Ethical breeders in Mexico preserve the breed, care for genetic health, and socialize kittens in a family environment. The safest way to identify them is to verify their affiliation with the AMFE (Mexican Felin Association), which represents the WCF and TICA. Advantages: Genetic Certification (registered ancestors), Preventive Health (PKD or HCM tests), and Early Socialization (prevention of fears and aggression)."
-              },
-              {
-                "heading": "**Your Rights and Obligations: Legal Fram**ework",
-                "body": "For a transaction to be legal in Mexico, the breeder must comply with: Mandatory identification (microchip) in entities like CDMX (RECAN registration), Edomex, Jalisco, and Nuevo León. Sales Contract with party data, health guarantees (FeLV/FIV), return clause (abandonment is a crime), and sterilization commitment. Vaccination Record: Signed by a Licensed Veterinarian with a valid professional ID, with all three feline vaccinations up to date."
-              },
-              {
-                "heading": "**How to Detect an Ethical Breeder in Mexi**co?",
-                "body": "Before you pay, check: Do they allow in-person visits? You need to know the cattery and see the mother; be wary of deliveries at commercial plazas or metro stations. What's the age of delivery? NEVER before 12 weeks (3 months). Is the documentation complete? Birth certificate/Pedigree (AMFE/WCF or TICA), vaccination records, and receipt or invoice.  Do they conduct a buyer interview? A good breeder will want to know about your window and balcony protections, especially in Mexico City, Monterrey, or Guadalajara apartments."
-              },
-              {
-                "heading": "**Legal Importation of Exotic Br**eeds",
-                "body": "The process is strictly regulated by the SENASICA (National Service of Health, Safety, and Agri-Food Quality) under the SADER. Requirements: International zoosanitary certificate, current rabies vaccination, and entry protocols. It's recommended to hire a specialized pet relocation agency ('Pet Relocation') to avoid airport detentions in Mexico City or Cancun."
-              },
-              {
-                "heading": "Beware of Cat Factories and Scams!",
-                "body": "DON'T BUY IF: They ask for deposits in advance without showing the animal (common scam; demand a live video call). They sell at markets or streets: high mortality rate due to poor hygiene (Upper Respiratory Infection/Leukopenia). They have an \"infinite\" stock: probable exploitation factory. Prices suspiciously low: ethical breeding involves high costs in health and records that a low price can't cover."
-              },
-              {
-                "heading": "Conclusion",
-                "body": "Buying a purebred cat in Mexico is a legal and moral responsibility. By choosing a breeder registered with the AMFE, you're financing the preservation of the breed and animal welfare, and saying no to the abuse of clandestine factories."
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
+{
     "slug": "historia",
     "label": "History, Origin and Expansion",
     "emoji": "",
@@ -1603,34 +854,382 @@ export const categories: Category[] = [
       }
     ]
   },
-  {
-    "slug": "a",
-    "label": "Stimulation, toys, and enrichment",
+{
+    "slug": "juego",
+    "label": "Play",
     "emoji": "",
     "color": "#9b6bb5",
     "bg": "#f3eef8",
-    "description": "Why it's vital",
+    "description": "Stimulation, toys and enrichment",
     "subcategories": [
       {
         "slug": "importancia",
-        "label": "Play in puppies: the foundation of all",
+        "label": "Why it's vital",
         "topics": [
           {
             "slug": "juego-cachorros",
-            "title": "The first six months of a cat's life are a critical period of development. What it learns during play in this stage will largely determine how it will relate to humans and other animals for the rest of its life.",
-            "intro": "The window of socialization",
+            "title": "Play in puppies: the foundation of everything",
+            "intro": "The first six months of a cat's life are a critical period of development. What it learns during play at this stage will largely determine how it will relate to humans and other animals for the rest of its life.",
             "sections": [
               {
-                "heading": "Between two and nine weeks of life, the cat learns what is normal in its world. A kitten that interacts with people, other cats, household noises, and varied experiences during this period will be a more secure and adaptable adult.",
-                "body": "The most common mistake: hands as toys"
+                "heading": "The window of socialization",
+                "body": "Between two and nine weeks of life, the cat learns what is normal in its world. A kitten that interacts with people, other cats, household noises and varied experiences during this period will be a more secure and adaptable adult."
               },
               {
-                "heading": "Using hands or feet to play with a kitten seems harmless, but teaches that human skin is a valid prey. When that kitten weighs 11 pounds, the bites and scratches will be painful and the behavior difficult to correct. Always use toys with distance.",
-                "body": "Play as prevention of problems"
+                "heading": "The most common mistake: hands as toys",
+                "body": "Using hands or feet to play with a kitten seems harmless, but teaches that human skin is a valid prey. When that kitten weighs 11 pounds, the bites and scratches will be painful and the behavior difficult to correct. Always use toys with distance."
               },
               {
-                "heading": "Juego como prevención de problemas",
+                "heading": "Play as prevention of problems",
                 "body": "A cat that doesn't play enough channels its hunting energy into problematic behaviors: attacking ankles, destroying objects, redirected aggression. 2 play sessions of 15 minutes a day, especially before bed, are the best antidote."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "juguetes",
+        "label": "Toys",
+        "topics": [
+          {
+            "slug": "canas-y-plumas",
+            "title": "Poles and prey toys",
+            "intro": "Poles with feathers, mice, or worms dangling are the most effective toys because they allow you to simulate the complete hunting sequence. They're indispensable in any cat's repertoire.",
+            "sections": [
+              {
+                "heading": "Why they work so well",
+                "body": "They activate the hunting instinct in its entirety: the irregular movement imitates that of a real prey. The cat can stalk, chase, catch, and 'kill'. This complete sequence releases endorphins and deeply satisfies."
+              },
+              {
+                "heading": "How to move them correctly",
+                "body": "The most common mistake is moving them too fast and without stopping. Real prey stops, hides, moves in unpredictable angles. Simulate that: pause, hide it behind a cushion, make it pop out suddenly, let it move slowly."
+              },
+              {
+                "heading": "Finishing the session well",
+                "body": "Always end by allowing the cat to 'catch' and 'kill' the toy several times at the end. A cat that never catches the prey gets frustrated. After playtime, a small snack completes the natural cycle: hunt → eat → groom → sleep."
+              }
+            ]
+          },
+          {
+            "slug": "puzzles-de-comida",
+            "title": "Food puzzles and intelligence",
+            "intro": "Food puzzles are one of the most underappreciated enrichment activities. In nature, a cat spends between 6 and 8 hours hunting. A conventional feeder resolves that need in 30 seconds, leaving the cat without mental stimulation.",
+            "sections": [
+              {
+                "heading": "Proven benefits",
+                "body": "They reduce anxiety and boredom, slow down eating (preventing vomiting from eating too quickly), stimulate cognitively, encourage movement, and may reduce obesity."
+              },
+              {
+                "heading": "How to start",
+                "body": "Begin with very easy puzzles: a tray with compartments, a simple ball dispenser. If the puzzle is too difficult from the start, the cat will get frustrated and reject it. Gradually increase the difficulty over weeks."
+              },
+              {
+                "heading": "Homemade puzzles",
+                "body": "You don't need to buy anything: a cardboard box with holes, an ice tray with treats, a plastic bottle with small openings, or hiding rewards under cups are effective and free puzzles."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+{
+    "slug": "razas",
+    "label": "Breeds",
+    "emoji": "",
+    "color": "#5b8db8",
+    "bg": "#eef3f8",
+    "description": "Cat Breeds",
+    "subcategories": [
+      {
+        "slug": "razas-felinas",
+        "label": "Cat Breeds",
+        "topics": [
+          {
+            "slug": "guia-completa-razas",
+            "title": "Complete Guide to Cat Breeds",
+            "intro": "The feline world is vast and fascinating. Although all cats share basic instincts, each breed has a unique personality, care needs, and physical characteristics. This guide integrates historical records with modern classifications from organizations like TICA, CFA, and FIFe, organized to help you understand which type of cat fits best in your home. Note: Beyond breed, individual personality and early socialization play a fundamental role.",
+            "sections": [
+              {
+                "heading": "**1. The Classic Histori**cals",
+                "body": "Ancient breeds with defined personalities: Abyssinian (Ethiopia/Egypt): Active, curious, 'dog-cat,' needs a lot of mental stimulation. Siamese (Thailand): Extremely vocal, intelligent, demands constant attention. Persian (Iran): Calm, sweet, quiet; requires daily brushing and facial cleaning. Maine Coon (USA): The 'gentle giant,' sociable, ideal for families with children; requires space. Bengal (USA): High energy, athletic, looks like a miniature leopard; needs intense daily stimulation."
+              },
+              {
+                "heading": "**2. Gentle Giants and Cold-Adaptable Br**eeds",
+                "body": "Robust cats with dense coats. Maine Coon: One of the largest, stands out with its 'lynx tips' and soft meows. Norwegian Forest Cat (Skogkatt): Natural climber with waterproof coat, independent but affectionate. Siberian: Famous for being hypoallergenic (produces less Fel d 1), agile, and affectionate. Ragdoll: Large and muscular, has a gentle temperament; 'collapses' like a rag doll when picked up."
+              },
+              {
+                "heading": "**3. Elegance of Short Hair and Athletic **Body",
+                "body": "Low-maintenance coat with lots of interaction. British Shorthair: Round face, compact, and calm; doesn't like to be carried around much. Russian Blue: Silver coat and green eyes, shy with strangers but loyal. Burmese: Muscular and heavy, very people-oriented. Bombay: Looks like a miniature black panther, loves heat and cuddles. Chartreux: Old French breed, silent and expert hunter with water-repellent coat."
+              },
+              {
+                "heading": "**4. Unique Mutations: Ears, Tails, and Text**ures",
+                "body": "Exotic genetic characteristics. Scottish Fold: Ears folded forward, \"Buddha\" position; requires joint review. Munchkin: Short legs, outgoing, and curious. Sphynx: Hairless, sociable, and seeks heat; requires weekly baths. Devon Rex & Cornish Rex: Wavy or curly coat, mischievous, and attached. American Curl: Ears curled back. Manx & Japanese Bobtail: The first is tailless and robust; the second has a pom-pom tail, symbol of good luck."
+              },
+              {
+                "heading": "**5. Exotics and Few Un**its",
+                "body": "Less common breeds. Ocicat: Looks like a wild ocelot, trainable, and sociable. Toyger: Tiger imitation, intelligent. Lykoi: The \"werewolf cat,\" man-like appearance, curious, and playful. Singapura: One of the smallest breeds, mischievous, and loves heights. Korat: Thai gray plate with heart-shaped marking, sensitive to noise, and good luck charm."
+              },
+              {
+                "heading": "Write Your Breed",
+                "body": "Level of Activity: Sofa companion (Persian) or athlete (Bengal)? Grooming Time: Daily brushing (Maine Coon) or low maintenance (Russian Blue)? Vocalization: If you prefer silence, avoid Siameses and opt for Ragdolls. Children and pets: Maine Coon and Birman are more tolerant. Allergies: None are 100% hypoallergenic, but the Siberian and Russian Blue are usually better tolerated."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+{
+    "slug": "salud",
+    "label": "Good health",
+    "emoji": "",
+    "color": "#7a9e7e",
+    "bg": "#eef4ef",
+    "description": "Prevention, diseases, and medical care",
+    "subcategories": [
+      {
+        "slug": "prevencion",
+        "label": "Prevention",
+        "topics": [
+          {
+            "slug": "vacunacion",
+            "title": "Feline vaccination",
+            "intro": "Vaccination is the most effective tool to protect your cat from serious diseases. Knowing the schedule and mandatory vaccines makes a difference between a long and a complicated life.",
+            "sections": [
+              {
+                "heading": "Mandatory vaccines",
+                "body": "The triple cat vaccine (Rhinotracheitis, Calicivirus, and Panleucopenia) is the base of any protocol. It is administered at 8, 12, and 16 weeks of life, with annual boosters or every 3 years depending on the product."
+              },
+              {
+                "heading": "Recommended optional vaccines",
+                "body": "The vaccine against Feline Leukemia (FeLV) is highly recommended for cats that go outside or live with other cats. The rabies vaccine is mandatory in many countries and recommended in Chile."
+              },
+              {
+                "heading": "What happens if I miss a dose?",
+                "body": "If the adult cat has not been vaccinated for more than 3 years, it is recommended to repeat the initial series. Always consult with your veterinarian before administering any vaccine."
+              }
+            ]
+          },
+          {
+            "slug": "desparasitacion",
+            "title": "Internal and external deworming",
+            "intro": "Parasites are one of the most common and easily preventable problems in cats. A regular deworming plan protects both the cat and the people in the household.",
+            "sections": [
+              {
+                "heading": "Internal parasites",
+                "body": "The most common ones are roundworms (ascarids), tapeworms, and Toxoplasma. They are treated with oral antiparasitic medications every 3-6 months in adults, and monthly in kittens until 6 months old."
+              },
+              {
+                "heading": "External parasites",
+                "body": "Fleas, ticks, and ear mites are the most common ones. Monthly spot-on pipettes are the most practical solution. Antiparasitic collars offer prolonged protection but require proper adjustment."
+              },
+              {
+                "heading": "Indoor vs. outdoor cats",
+                "body": "Indoor cats have a lower risk, but are not exempt: fleas can enter on clothing and shoes. It is recommended to deworm internally 2 times a year and externally 4 times a year at a minimum."
+              }
+            ]
+          },
+          {
+            "slug": "primeros-auxilios",
+            "title": "Feline first aid",
+            "intro": "Acting quickly in an emergency can save your cat's life. These basic knowledge prepare you for the most critical moments until you reach the veterinarian.",
+            "sections": [
+              {
+                "heading": "Basic First Aid Kit",
+                "body": "Every home with cats should have: saline solution, sterile gauze, non-alcoholic antiseptic (such as diluted chlorhexidine), digital thermometer, and the phone number of an emergency veterinary clinic."
+              },
+              {
+                "heading": "Emergency Signs",
+                "body": "Take your cat to an emergency veterinarian if it shows: difficulty breathing, loss of consciousness, convulsions, inability to urinate for more than 12 hours, uncontrolled bleeding, or possible poisoning."
+              },
+              {
+                "heading": "What You Should Never Do",
+                "body": "Never administer ibuprofen, acetaminophen, or aspirin to a cat: they are fatal to them. Never try to induce vomiting without a veterinarian's instruction. Never put alcohol on open wounds."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "enfermedades",
+        "label": "Common Diseases",
+        "topics": [
+          {
+            "slug": "enfermedad-renal",
+            "title": "Chronic Kidney Disease",
+            "intro": "Chronic kidney insufficiency is the main cause of death in cats over 7 years old. Detecting it in time can add years of quality of life to your companion.",
+            "sections": [
+              {
+                "heading": "Warning Signs",
+                "body": "Drinking a lot of water, urinating more frequently, progressive weight loss, dull coat, and loss of appetite are the most common signs. Many cats do not show symptoms until they lose 75% of their kidney function."
+              },
+              {
+                "heading": "Diagnosis and Monitoring",
+                "body": "An annual blood and urine test starting at 7 years old is the best detection tool. The SDMA biomarker allows for the detection of kidney damage months before traditional markers."
+              },
+              {
+                "heading": "Management and Treatment",
+                "body": "There is no cure, but it can be managed with a low-phosphorus, low-protein renal diet, hydration (wet food or subcutaneous fluids at home), supplements, and frequent check-ups."
+              }
+            ]
+          },
+          {
+            "slug": "diabetes-felina",
+            "title": "Feline Diabetes",
+            "intro": "Feline diabetes is more common than people think, especially in overweight, neutered male cats. The good news: with proper management, many cats can go into remission.",
+            "sections": [
+              {
+                "heading": "Risk Factors",
+                "body": "Obesity, advanced age, male sex, and high-carbohydrate diets are the main factors. Burmese cats have a genetic predisposition."
+              },
+              {
+                "heading": "Symptoms",
+                "body": "Signs include excessive thirst, excessive urination, weight loss despite eating well, and weakness in the hind legs (diabetic neuropathy)."
+              },
+              {
+                "heading": "Treatment and Remission",
+                "body": "Daily insulin, a low-carb diet (high-quality wet food) and home glucose monitoring are the foundation. Up to 90% of cats can achieve remission with early and strict treatment."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "dental",
+        "label": "Oral Health",
+        "topics": [
+          {
+            "slug": "sarro-gingivitis",
+            "title": "Gingivitis",
+            "intro": "Periodontal disease affects 70% of cats over 3 years old and is one of the most overlooked causes of chronic pain and overall health decline.",
+            "sections": [
+              {
+                "heading": "Why It's Important",
+                "body": "Bacteria in the mouth enter the bloodstream and can damage kidneys, heart, and liver. A cat with dental pain eats less, is more irritable, and its quality of life is severely affected."
+              },
+              {
+                "heading": "Prevention at Home",
+                "body": "Brush your cat's teeth 3 times a week with feline toothpaste (never human) is the most effective method. Dental snacks and chew toys are a useful complement but not enough on their own."
+              },
+              {
+                "heading": "Professional cleaning",
+                "body": "Veterinary dental cleaning under anesthesia is recommended annually from age 3. Cats with a predisposition (Persians, Siamese) may need it earlier."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "alergia",
+        "label": "Allergies",
+        "topics": [
+          {
+            "slug": "guia-alergia-gatos",
+            "title": "Cat allergy: A practical guide to cohabiting",
+            "intro": "Allergies to pets affect between 15% and 30% of people. Being allergic to cats is twice as common as to dogs, but with proper management, cohabiting is possible.",
+            "sections": [
+              {
+                "heading": "The cause: Protein Fel d 1",
+                "body": "Allergy is not caused by the hair, but by the Fel d 1 protein produced in the skin, saliva, and urine. It spreads when the cat licks and the protein disperses in the air through dander (dead skin). Males produce more than females, and neutering reduces these levels."
+              },
+              {
+                "heading": "Symptoms and Diagnosis",
+                "body": "Reactions vary from hives and itching to sneezing, runny eyes, and asthma attacks. It's vital to see an allergist to perform skin tests, blood tests, or spirometry, as the culprit could be dust or pollen and not the cat."
+              },
+              {
+                "heading": "Home and Allergy-Free Zones",
+                "body": "Create a \"sanctuary\" by keeping the bedroom closed to the cat. Remove carpets or use only those that can be washed with hot water. It's essential to use HEPA-filter vacuum cleaners and air purifiers for at least 4 hours a day."
+              },
+              {
+                "heading": "Direct Care and Products",
+                "body": "Bathing should be done by someone not allergic outside the home. Weekly baths and the use of neutralizing products (such as Vetriderm) on the coat help eliminate saliva residue. Castration and regular haircuts for long-haired cats are also effective strategies."
+              },
+              {
+                "heading": "Advanced Treatments",
+                "body": "Consult about immunotherapy (desensitization vaccines), which are effective in the long term. If, despite all cleaning measures and medical treatment, health is severely affected, the most responsible decision may be to seek a new home for the cat."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "diabetes-felina",
+        "label": "Diabetes",
+        "topics": [
+          {
+            "slug": "diabetes-guia-completa",
+            "title": "Feline Diabetes: A Complete Guide to Understanding and Managing It",
+            "intro": "Diabetes in cats is a complex condition, but with proper management, your cat can live a long and happy life. Unlike dogs, cats have unique characteristics that we must know to avoid common mistakes.",
+            "sections": [
+              {
+                "heading": "Step 1: Causes and Risk Factors",
+                "body": "Feline diabetes is usually a combination of factors: obesity and age (common in cats over 9 years old), sex and breed (more common in males 4:1 and in Siamese breed). Amyloid deposits that damage the pancreas and the use of medications such as progestins or corticosteroids also play a role. It is essential to note that pancreatitis is often closely associated with this disease and, in many cases, can be the triggering cause of diabetes."
+              },
+              {
+                "heading": "Step 2: Identifying symptoms",
+                "body": "Pay attention to an increase in thirst and urination (drinking a lot of water or urinating outside the litter box) and changes in appetite or weight. A distinctive sign is diabetic neuropathy: the cat walks with the entire heel on the ground. Also, observe neglected fur (dry or with dandruff). Unlike dogs, cataracts are very rare in cats."
+              },
+              {
+                "heading": "Step 3: Correct Diagnosis",
+                "body": "Stress in the clinic generates the \"White Coat\" effect, temporarily raising blood sugar. For a certain diagnosis, the veterinarian must confirm glucose in both blood and urine. Complete analyses are required to rule out other conditions such as urinary tract infections, liver problems, or pancreatitis, which often accompany diabetes."
+              },
+              {
+                "heading": "Step 4: Treatment and Regulation",
+                "body": "It is based on three pillars: 1. Insulin: Intermediate or long-acting insulin (NPH or PZI) is used, usually twice a day with meals. 2. Diet: Strictly carnivorous, high in protein and low in carbohydrates with fixed schedules. 3. Monitoring: It is ideal to measure blood glucose (pinch in the ear) at \"peak\" moments to adjust the dose with precision."
+              },
+              {
+                "heading": "Step 5: Emergency of Ketoacidosis",
+                "body": "If not treated, it can lead to ketoacidosis, a life-threatening emergency with symptoms such as vomiting, extreme lethargy, dehydration, and breath with a fruity or acetone odor. It requires immediate hospitalization for intravenous fluids, rapid-acting insulin, and correction of electrolytes (potassium, phosphorus)."
+              },
+              {
+                "heading": "Step 6: Complications and Expectations",
+                "body": "Possible remission (stopping insulin needs) if weight is controlled and diagnosed early. The biggest risk is hypoglycemia: if the cat trembles or convulses, apply honey or sugar to its gums and rush to the vet. Also, regularly check for urinary tract infections (blood or straining to urinate)."
+              },
+              {
+                "heading": "Key tips for the owner",
+                "body": "Never adjust insulin on your own. Keep a strict record of doses, meal times, and behavior. Controlling weight is the best preventive tool and observing any change in gait is crucial to report to the specialist."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "obesidad-felina",
+        "label": "Obesity",
+        "topics": [
+          {
+            "slug": "guia-obesidad-prevencion",
+            "title": "Feline Obesity: How to Protect Your Cat's Health and Life",
+            "intro": "Obesity is not just a cosmetic issue; it's a disease that reduces your cat's life expectancy and increases the risk of diabetes, joint problems, and surgical complications. With patience and strategy, you can help your cat regain its ideal weight.",
+            "sections": [
+              {
+                "heading": "Step 1: Identifying Overweight",
+                "body": "Don't rely on the scale alone. In the \"Rib Test,\" you should be able to feel them easily without pressing hard; if not, there's excess fat. Looking at it from above, there should be a waistline behind the ribs; if it's rectangular or barrel-shaped, there's overweight. From the side, its abdomen shouldn't sag or touch the floor. It's considered overweight if it's 10-19% above its ideal weight, and obese if it's 20% or more above."
+              },
+              {
+                "heading": "Step 2: Causes and Factors",
+                "body": "It's a combination of factors: after spaying/neutering, metabolism drops and appetite increases; from 6-8 years old, cats burn fewer calories; sedentary indoor cats without stimulation; and inadequate diets (food always available, excessive rewards, or too many carbohydrates). Breeds like the Siamese or Burmese may have a greater genetic predisposition."
+              },
+              {
+                "heading": "Step 3: Safe Action Plan",
+                "body": "Weight loss should be slow. Golden rule: a cat should not lose more than 1% or 2% of its weight per week (example: an 8 kg cat should not lose more than 160 grams per week). Losing weight too quickly is dangerous and can cause hepatic lipidosis, a potentially fatal liver disease."
+              },
+              {
+                "heading": "Step 4: Strategic Dietary Management",
+                "body": "Ask your veterinarian to calculate calories for the ideal weight, not the current weight. Generally, this is between 60% and 75% of the cat's current maintenance calories. Look for high-protein diets (to maintain muscle and provide satiety) and low-carbohydrate diets. Divide the ration into 3 or 4 feedings to keep the metabolism active and use part of the ration as a reward instead of calorie-rich snacks."
+              },
+              {
+                "heading": "Step 5: Physical Activity and Enrichment",
+                "body": "Exercise should be gradual. Spend 10 minutes a day on interactive games (sticks, lasers, balls). Use environmental enrichment: hide food in different locations, use interactive feeders or puzzles, and install shelves or trees that force the cat to jump and climb to get its food."
+              },
+              {
+                "heading": "Step 6: Commitment and Monitoring",
+                "body": "Success depends on the whole family following the rules without sneaking food to the cat. Weigh the cat every 2 weeks: if it doesn't lose weight, adjust the ration; if it loses weight too quickly, increase it a bit. The human factor is essential; accepting that the cat needs to lose weight is not 'cruel', but an act of love to care for its long-term health."
+              },
+              {
+                "heading": "Warning Signs: When to See a Veterinarian",
+                "body": "Before starting any diet, visit the specialist to rule out medical causes such as hypothyroidism (although rare in cats) or diabetes, and to set a realistic weight goal. The veterinarian should help choose the right commercial diet or formulate a balanced homemade diet. Remember that prevention is better than cure to ensure your cat stays with you for many more years, healthy and active."
               }
             ]
           }
