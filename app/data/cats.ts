@@ -51,36 +51,36 @@ export const categories: Category[] = [
       intro: "¡Felicidades por la adopción! Acoger a un gato es una experiencia maravillosa, pero también implica responsabilidad. Los primeros días son cruciales para su adaptación. Aquí tienes todo lo que necesitas saber para asegurar su salud, bienestar y una convivencia feliz.",
       sections: [
         {
-          heading: "**1. Los Primeros Días: Vigilancia y Adaptación**",
+          heading: "Los Primeros Días: Vigilancia y Adaptación",
           body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
           image: "/Articles/bienvenida.png",
         },
         {
-          heading: "**2. Salud Preventiva: Vacunas, Parásitos y Esterilización**",
+          heading: "Salud Preventiva: Vacunas, Parásitos y Esterilización",
           body: "Vacunación: Las vacunas protegen contra enfermedades graves (como la panleucopenia, el complejo respiratorio felino o la leucemia). Sigue el calendario que te indique tu veterinario. La vacuna de la rabia, aunque no siempre es obligatoria legalmente para gatos (depende de la región), está muy recomendada.  Desparasitación: Es fundamental para la salud del gato y de tu familia (zoonosis). Interna: se recomienda cada 3 meses. Externa: vital si el gato sale o tiene acceso a balcones/terrazas. Esterilización: Es la decisión más responsable y saludable. Beneficios: evita camadas no deseadas, reduce el marcaje, disminuye peleas y previene enfermedades graves (tumores de mama, piometras). Mitos: No cambia su personalidad ni los vuelve 'vagos'. Esteriliza a tu gato, sea macho o hembra, interior o exterior.",
         },
         {
-          heading: "**3. Alimentación e Hidratación**",
+          heading: "Alimentación e Hidratación",
           body: "Alimento adecuado: Usa pienso seco de calidad adaptado a su edad y condición física. Evita darle comida casera o sobras humanas. Premios: Úsalos con moderación para no causar obesidad. Agua fresca: Fundamental, coloca varios bebederos por casa, lejos de la comida y del arenero. Algunos gatos prefieren fuentes en movimiento. Incorporar comida húmeda ayuda a la hidratación. Prohibido: La leche de vaca (la mayoría de los gatos adultos son intolerantes a la lactosa). El yogur natural o queso sin sal pueden darse como premio puntual, pero no son necesarios.",
         },
         {
-          heading: "**4. Higiene y Cuidado Físico**",
+          heading: "Higiene y Cuidado Físico",
           body: "Los gatos necesitan tu ayuda en ciertos aspectos. Cepillado: Pelo corto una vez por semana (diario en muda); pelo largo diario para evitar nudos y bolas de pelo. Si expulsa bolas de pelo con dificultad, consulta sobre pastas de malta. Uñas: Corta solo la punta transparente, evitando la parte rosada (vascularizada). Baños: Generalmente no son necesarios, solo si está muy sucio o por indicación médica.",
         },
         {
-          heading: "**5. El Arenero: Reglas de Oro**",
+          heading: "El Arenero: Reglas de Oro",
           body: "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina.",
         },
         {
-          heading: "**6. Comportamiento y Enriquecimiento Ambiental**",
+          heading: "Comportamiento y Enriquecimiento Ambiental",
           body: "Lenguaje: Cola erguida es saludo amistoso; cola moviéndose rápido es irritación; orejas hacia atrás indican miedo. Ronroneo puede ser bienestar, dolor o estrés. Juego: Dedica 15-20 minutos diarios a caza simulada (cañas, pelotas). Evita usar tus manos o pies. Rascadores: Proporciona rascadores estables, altos y de materiales atractivos (sisal, madera). Nunca castigues por rascar muebles; redirige y premia. Verticalidad: Necesitan lugares altos para observar y refugios seguros para esconderse. Respeta su soledad.",
         },
         {
-          heading: "**7. Consejos Específicos según la Edad**",
+          heading: "Consejos Específicos según la Edad",
           body: "CACHORRO: Socialización (2-8 semanas) es la etapa clave para aceptar el contacto humano y visitas al veterinario. Enséñale qué se puede morder. Acostúmbralo al transportín dejándolo abierto en casa. Protege cables y ventanas. ADULTO: Paciencia, la adaptación puede tardar semanas. Usa una habitación de aclimatación al llegar con todos sus recursos. Haz presentaciones con otros animales muy gradualmente. Mantén horarios fijos de comida y juego.",
         },
         {
-          heading: "**8. Aspectos Legales y Seguridad**",
+          heading: "Aspectos Legales y Seguridad",
           body: "Microchip: Es obligatorio y debe tener los datos actualizados (RIAC en Madrid). Prevención de Accidentes: El Síndrome del Gato Paracaidista. Instala redes mosquiteras resistentes en ventanas y balcones. Una caída desde altura puede ser mortal; no confíes en su 'habilidad' para caer de pie. Cada gato es un mundo. Observa, respeta sus tiempos y consulta siempre a tu veterinario ante cambios bruscos.",
         }
       ],
@@ -377,24 +377,24 @@ export const categories: Category[] = [
       intro: "Los gatos son hoy una de las mascotas más populares del mundo. Aunque históricamente no se les veía como compañeros de vida tal como los conocemos ahora, la realidad es que, al igual que los perros, necesitan interacción, atención y cariño. La diferencia radica en cómo expresan esas necesidades. Para convivir en armonía con tu felino, es fundamental entender su naturaleza y adaptar su entorno a sus instintos.",
       sections: [
         {
-          heading: "**1. ¿Interior o Exterior? Tomando la decisión correcta**",
+          heading: "¿Interior o Exterior? Tomando la decisión correcta",
           body: "Una de las primeras decisiones al adoptar es si el gato vivirá solo dentro de casa o tendrá acceso al exterior. Ambas opciones tienen implicaciones importantes: Gatos de exterior: Tienen más libertad y estimulación natural, pero corren mayores riesgos: atropellos, peleas con otros animales, enfermedades infecciosas y parásitos (pulgas, gusanos). Su esperanza de vida suele ser menor. Gatos de interior: Están mucho más protegidos y viven más años, pero dependen totalmente de nosotros para su estimulación. El aburrimiento es su mayor enemigo. Si eliges esta opción, debes comprometerte a enriquecer su entorno con juegos, rascadores y tiempo de calidad. Consejo: Sea cual sea tu elección, la clave está en la seguridad y la estimulación mental.",
           image: "/Articles/interior_exterior.png",
         },
         {
-          heading: "**2. El Instinto de Rascar: No es vandalismo, es comunicación**",
+          heading: "El Instinto de Rascar: No es vandalismo, es comunicación",
           body: "Arañar es un comportamiento natural e imprescindible que comienza alrededor de las 5 semanas de vida. Para un gato, rascar no es solo afilar uñas; es una forma de comunicación visual y olfativa (marcan territorio con las glándulas de sus patas) y una manera de estirar su musculatura. El conflicto surge cuando eligen nuestros muebles. La solución no es castigar, sino ofrecer una alternativa mejor. ¿Cómo elegir el rascador perfecto? Estabilidad: Debe ser firme y no tambalearse. Si se mueve, el gato no lo usará por inseguridad. Altura: Debe ser lo suficientemente alto para que el gato pueda estirarse completamente de pie. Material: El sisal, la madera natural o la cuerda suelen ser los más atractivos. Ubicación: Colócalo en zonas visibles y de paso (no escondido en un sótano). A los gatos les gusta marcar donde ocurre la 'vida' de la casa. Paciencia: Una vez que elija un rascador, no lo cambies de sitio. Además, cuanto más usado esté, más le gustará, porque estará impregnado de su olor.",
         },
         {
-          heading: "**3. El Juego: Ejercicio físico y mental**",
+          heading: "El Juego: Ejercicio físico y mental",
           body: "Jugar no es solo entretenimiento; es la forma en que el gato ejercita su instinto de caza. Un gato que no juega puede desarrollar problemas de comportamiento por acumulación de energía o estrés. Claves para un juego exitoso: Imita a una presa: Usa juguetes que se muevan, se escondan, salten o vibren. Las cañas con plumas o cuerdas son ideales porque te permiten interactuar a distancia. Seguridad ante todo: Evita hilos largos sin supervisión o piezas pequeñas que pueda tragar. Rutina diaria: Dedica al menos 15 minutos al día a jugar activamente con él. Esto fortalece vuestro vínculo y mantiene su mente ágil. Variedad: Rotar los juguetes evita que se aburra de los mismos objetos.",
         },
         {
-          heading: "**4. Higiene y Areneros: La regla de oro**",
+          heading: "Higiene y Areneros: La regla de oro",
           body: "Los gatos son extremadamente limpios y exigentes con su baño. Un arenero sucio o mal ubicado es la causa número uno de problemas de eliminación inadecuada. Recomendaciones básicas: La regla del 'N+1': Debes tener una caja de arena por cada gato, más una extra. (Ejemplo: 1 gato = 2 cajas; 2 gatos = 3 cajas). Algunos gatos prefieren incluso usar una caja solo para orinar y otra para defecar. Tipo de arena: La mayoría prefiere arenas sin perfume y de textura fina y suave. Ubicación: Lugares tranquilos, privados y lejos de ruidos fuertes (lavadoras, secadoras) o de su zona de comida. Limpieza: Retira los desechos a diario y lava las cajas regularmente con agua y jabón neutro (evita lejías o amoniaco, cuyos olores pueden atraerles a orinar fuera). Alerta: Si tu gato empieza a orinar o defecar fuera de la caja, acude al veterinario. A menudo es el primer síntoma de dolor o enfermedad urinaria, no un acto de venganza.",
         },
         {
-          heading: "**5. El Marcaje con Orina: Entendiendo el mensaje**",
+          heading: "El Marcaje con Orina: Entendiendo el mensaje",
           body: "El marcaje vertical con orina (rociar paredes o muebles) es diferente a vaciar la vejiga en el suelo. Es un comportamiento comunicativo, no necesariamente higiénico. ¿Quiénes lo hacen? Puede ocurrir en gatos esterilizados, aunque es más común en no esterilizados (aprox. 10% de machos y 5% de hembras castradas pueden hacerlo ocasionalmente). ¿Por qué lo hacen? Generalmente responde a estrés o inseguridad: llegada de nuevas mascotas, cambios en la rutina, conflictos con otros gatos (incluso viendo gatos callejeros por la ventana) o cambios en el hogar. Solución: El castigo empeora el problema. Lo ideal es identificar la fuente de estrés, limpiar la zona con enzimas específicas (para eliminar el olor por completo) y consultar con un veterinario o etólogo para evaluar si necesita ayuda conductual o médica.",
         },
         {
@@ -588,28 +588,28 @@ export const categories: Category[] = [
       intro: "¿Crees que los gatos son independientes y pasan del adiestramiento? ¡Nada más lejos de la realidad! Los gatos son inteligentes, curiosos y, sobre todo, les encanta tener 'cosas que hacer'. En la naturaleza, pasarían el día cazando y explorando; en casa, si solo duermen y comen, se aburren. Y un gato aburrido es un gato que araña el sofá o maúlla por la noche. Entrenar a tu gato no es hacerlo obedecer como a un perro militarizado. Es jugar con propósito. Es una forma increíble de conectar con él, estimular su mente y fortalecer vuestra amistad. ¡Y lo mejor? Solo necesitas 10 minutos al día.",
       sections: [
         {
-          heading: "**1. El secreto: Usa su instinto, no la fuerza**",
+          heading: "El secreto: Usa su instinto, no la fuerza",
           body: "Los gatos no responden bien a las órdenes secas ni a los castigos. Responden al refuerzo positivo. La regla de oro: Si hace algo bien, recibe un premio (una chuchería rica, un poco de atún o muchas caricias). Nunca forces: Si tiras de él o le gritas, se cerrará en banda. El entrenamiento debe ser siempre voluntario y divertido. Sesiones cortas: 5 o 10 minutos son suficientes. Si ves que se distrae, termina la sesión con algo que ya sepa hacer bien para que acabe con buena sensación.",
           image: "/Articles/aprender.png",
         },
         {
-          heading: "**2. La herramienta mágica: 'La Diana' (Targeting)**",
+          heading: "La herramienta mágica: 'La Diana' (Targeting)",
           body: "Antes de enseñarle trucos complicados, enséñale a seguir tu dedo o un objeto. Esto se llama targeting y es la base de todo. Acerca tu dedo (o un palito con una punta brillante) a la nariz del gato. Por curiosidad, lo olerá o lo tocará. En cuanto lo toque, di '¡Bien!' (con voz alegre) y dale un premio inmediatamente. Repite esto varias veces. Pronto, seguirá tu dedo allá donde lo muevas porque sabe que tocarlo le trae cosas buenas. ¡Ya tienes el control suave de su movimiento!",
         },
         {
-          heading: "**3. Trucos fáciles para empezar**",
+          heading: "Trucos fáciles para empezar",
           body: "'Ven aquí' (La orden más importante): Es vital por seguridad. Llámalo por su nombre o chasquea la lengua. Cuando venga hacia ti, celebra mucho y dale un premio espectacular. Importante: Nunca le riñas cuando venga, aunque haya tardado mucho. Tiene que asociar 'venir' con 'fiesta'. 'Sentado': Los gatos se sientan naturalmente cuando miran hacia arriba. Con el gato de pie, pon una chuchería justo encima de su cabeza. Mueve la mano lentamente hacia atrás (hacia su cola). Para seguir la comida con la mirada, bajará el trasero automáticamente. En cuanto el culo toque el suelo, di 'Sentado' y dale el premio. 'Al regazo' o 'Sube': Ideal para que venga a dormir contigo o suba a sitios permitidos. Siéntate en una silla o sofá. Golpea suavemente tu pierna o el asiento y di 'Sube'. Guíalo con la chuchería si hace falta. Cuando suba, ¡premio inmediato! Pronto saltará solo para estar contigo.",
         },
         {
-          heading: "**4. Retos un poco más avanzados**",
+          heading: "Retos un poco más avanzados",
           body: "'Quieto': Pídele que se siente. Pon la palma de tu mano frente a su cara (como un semáforo en rojo) y di 'Quieto'. Espera solo 1 segundo al principio. Si no se mueve, premio. Ve aumentando el tiempo poco a poco (2 segundos, 5 segundos...). Paciencia, esto cuesta más. 'Échate' (Tumbado): Es difícil porque es una posición vulnerable para ellos. Desde la posición de sentado, baja la chuchería al suelo, entre sus patas delanteras. Aléjala despacio hacia adelante. Si baja el pecho y se estira, ¡premio gordo! No esperes que se quede así mucho tiempo al principio.",
         },
         {
-          heading: "**5. ¿Pasear con correa? Sí, es posible**",
+          heading: "¿Pasear con correa? Sí, es posible",
           body: "A muchos gatos les encanta explorar el exterior, pero debe ser seguro. El Arnés: Compra uno tipo chaleco (más cómodo y seguro que los de cuerda fina). Déjaselo puesto en casa unos minutos al día mientras juega, para que se acostumbre. La Correa: Añádela cuando ya ignore el arnés. Deja que la arrastre bajo tu supervisión. La Salida: Sal al pasillo o jardín. No tires de la correa. Deja que él explore y tú le sigues. Si se asusta, vuelve dentro. Sin prisas.",
         },
         {
-          heading: "**6. Solucionando problemas con juego**",
+          heading: "Solucionando problemas con juego",
           body: "¿Araña el sofá? No le grites. Pon un rascador justo al lado del sofá. Usa el truco de 'la diana' para guiar sus patas al rascador y prémiale mucho cuando lo use. Haz que el rascador sea más interesante que el sofá (ponle catnip, por ejemplo). ¿Se aburre? El entrenamiento ES el juego. Dedica esos 10 minutos diarios a repasar trucos. Verás cómo deja de buscar atención negativa (maullidos, destrozos) porque ya tiene tu atención positiva.",
         },
         {
@@ -691,24 +691,24 @@ export const categories: Category[] = [
       intro: "Los gatos son maestros del disimulo y ocultan su dolor por instinto para no parecer vulnerables. Aprender a leer sus señales sutiles es fundamental para ser su mejor aliado y evitar que su salud se deteriore sin que nos demos cuenta.",
       sections: [
         {
-          heading: "**1. Pistas sutiles de dolor**",
+          heading: "Pistas sutiles de dolor",
           body: "Olvida los llantos o cojeras; el dolor felino se esconde en cambios de comportamiento: se esconde más (bajo la cama o armarios), cambia su humor volviéndose irritable o inusualmente 'pegajoso', y deja de acicalarse (pelo opaco o con nudos). También puede lamerse en exceso una zona específica, adoptar una postura tensa de 'pan de molde' con la cabeza baja, o dejar de saltar a lugares que antes frecuentaba por dolor articular.",
           image: "/Articles/dolor.png",
         },
         {
-          heading: "**2. Los dolores más comunes**",
+          heading: "Los dolores más comunes",
           body: "Identificar el tipo ayuda al diagnóstico: la Artrosis es común en mayores de 7 años (dejan de jugar o subir a sitios altos); el dolor de boca (gingivoestomatitis o dientes rotos) causa babeo, mal olor o dejar de comer; el dolor interno (cistitis, riñón o pancreatitis) genera un malestar profundo y depresión; y el dolor nervioso (como en la diabetes) puede causar dolor al simple roce de la piel.",
         },
         {
-          heading: "**3. Tratamiento Veterinario Multimodal**",
+          heading: "Tratamiento Veterinario Multimodal",
           body: "El tratamiento moderno usa varias herramientas: medicamentos seguros como antiinflamatorios específicos, analgésicos (buprenorfina) o moduladores nerviosos (gabapentina). Se complementa con terapias como acupuntura, láser terapéutico o rehabilitación física. En cirugías, se usan bloqueos locales. ADVERTENCIA: ¡Nunca uses ibuprofeno o paracetamol humanos, son mortales para los gatos!",
         },
         {
-          heading: "**4. Tu papel en casa: Manejo Ambiental**",
+          heading: "Tu papel en casa: Manejo Ambiental",
           body: "Adapta el entorno: instala rampas o escalones para subir a sofás, usa areneros con bordes bajos y camas ortopédicas. El control de peso es crucial para no sobrecargar articulaciones. Además, reduce el estrés manteniendo rutinas tranquilas y usando feromonas si es necesario, ya que el estrés empeora la percepción del dolor.",
         },
         {
-          heading: "**5. Casos Especiales: Edad y Estado**",
+          heading: "Casos Especiales: Edad y Estado",
           body: "En gatitos cachorros, hay que tener mucho cuidado con las dosis por sus órganos en maduración. En gatos mayores con problemas de riñón o hígado, las dosis deben ajustarse minuciosamente. En gatas gestantes o lactantes, solo el veterinario debe decidir el tratamiento, ya que muchos analgésicos pasan a los fetos o a la leche.",
         },
         {
@@ -729,29 +729,29 @@ export const categories: Category[] = [
       intro: "Cada vez sabemos más sobre el comportamiento felino, y una de las claves principales es el estrés. Muchos problemas de salud y conducta que vemos en casa tienen su raíz aquí. Entender qué le pasa a tu gato es el primer paso para mejorar su calidad de vida.",
       sections: [
         {
-          heading: "**1. ¿Qué es realmente el estrés?**",
+          heading: "¿Qué es realmente el estrés?",
           body: "El estrés no es siempre 'malo'. Es una reacción natural del cuerpo que prepara al gato para adaptarse a cambios (una mudanza, un viaje, la llegada de un bebé). Estrés positivo: Le ayuda a reaccionar y adaptarse. Estrés negativo: Ocurre cuando la situación es demasiado intensa o dura demasiado tiempo. Si el gato no logra adaptarse, el estrés se cronifica y puede derivar en ansiedad. Diferencia clave: Miedo vs. Ansiedad. Miedo: Reacción inmediata ante un peligro real. El corazón se acelera y el gato está listo para huir o defenderse. Es útil para sobrevivir. Ansiedad: El gato siente miedo ante algo que no es peligroso o que no puede controlar. No sabe cómo resolver la situación, así que vive en tensión constante.",
           image: "/Articles/estres.png",
         },
         {
-          heading: "**2. ¿Por qué algunos gatos son más sensibles?**",
-          body: "No todos los gatos reaccionan igual. Su nivel de tolerancia al estrés depende de dos factores principales: A. Genética y Carácter: Algunos gatos son naturalmente más seguros; otros, más tímidos. Factores como la raza, el sexo y la herencia genética influyen. Un gato inseguro necesitará siempre un entorno más tranquilo y predecible. B. La Socialización Temprana (La ventana crítica): Las primeras 2 a 7 semanas de vida son decisivas. Si hubo contacto humano cariñoso: El gatito aprenderá que las personas son seguras. Será más sociable y resistente al estrés. Si faltó contacto o hubo experiencias negativas: Es muy probable que desarrolle desconfianza y miedo hacia los humanos o nuevos estímulos cuando sea adulto. El entorno importa: Los gatitos criados en ambientes ricos en estímulos (sonidos, texturas, juegos) suelen ser adultos más adaptables.",
+          heading: "¿Por qué algunos gatos son más sensibles?",
+          body: "No todos los gatos reaccionan igual. Su nivel de tolerancia al estrés depende de dos factores principales:\n\nA. Genética y Carácter: Algunos gatos son naturalmente más seguros; otros, más tímidos. Factores como la raza, el sexo y la herencia genética influyen. Un gato inseguro necesitará siempre un entorno más tranquilo y predecible.\n\nB. La Socialización Temprana (La ventana crítica): Las primeras 2 a 7 semanas de vida son decisivas. Si hubo contacto humano cariñoso: El gatito aprenderá que las personas son seguras. Será más sociable y resistente al estrés. Si faltó contacto o hubo experiencias negativas: Es muy probable que desarrolle desconfianza y miedo hacia los humanos o nuevos estímulos cuando sea adulto. El entorno importa: Los gatitos criados en ambientes ricos en estímulos (sonidos, texturas, juegos) suelen ser adultos más adaptables.",
         },
         {
-          heading: "**3. ¿Qué causa estrés en mi gato?**",
+          heading: "¿Qué causa estrés en mi gato?",
           body: "Los gatos necesitan sentir que tienen el control de su entorno. Cuando pierden ese control, aparece el estrés. Factores Sociales: Cambios en la rutina diaria. Llegada de nuevas personas, bebés u otras mascotas. Discusiones o gritos en casa. Castigos o atención irregular (a veces mucha, a veces nada). Factores Físicos: Mudanzas o reformas. Espacio insuficiente o mala organización (ej. arenero cerca de la comida). Competencia por recursos (si hay varios gatos y pocos platos o areneros).",
         },
         {
-          heading: "**4. Señales de Alerta: ¿Cómo sé si mi gato está estresado?**",
+          heading: "Señales de Alerta: ¿Cómo sé si mi gato está estresado?",
           body: "Los gatos son expertos en ocultar el dolor y el malestar. Debes ser un detective. Síntomas Físicos Inmediatos: Respiración acelerada o jadeo. Pupilas muy dilatadas. Temblores o salivación excesiva. Vómitos o diarrea puntual (ej. antes de viajar). Cambios de Comportamiento: Postura: Orejas hacia atrás, cola baja, cuerpo tenso. Escondite: Pasa mucho tiempo oculto o bajo los muebles. Agresividad: Gruñe, bufa o ataca sin motivo aparente. Vigilancia extrema: No se relaja, está siempre 'en guardia'. Signos de Estrés Crónico (A largo plazo): Si el estrés no se trata, aparecen problemas más graves: Aseo compulsivo: Se lame tanto que se queda sin pelo (alopecia psicógena). Problemas de eliminación: Ora o defeca fuera del arenero (marcado territorial o ansiedad). Cambios en el sueño: Duerme poco, mal, o siempre en posiciones tensas (no boca arriba ni de lado relajado). Cambios alimenticios: Come en exceso (ansiedad) o deja de comer. Conductas repetitivas: Persigue su cola, maúlla constantemente o camina sin rumbo.",
         },
         {
-          heading: "**5. El impacto en la Salud Física**",
+          heading: "El impacto en la Salud Física",
           body: "El estrés no es solo 'cosa de la mente'; enferma el cuerpo. Cistitis Idiopática Felina: Inflamación de la vejiga sin infección bacteriana, directamente ligada al estrés. Problemas digestivos: Gastritis, vómitos crónicos o diarreas. Problemas de piel: Heridas por lamido excesivo. Obesidad y Diabetes: A veces, los dueños dan comida para 'consolar' al gato, lo que lleva al sobrepeso. Bajada de defensas: Los gatitos o gatos mayores estresados se enferman más fácilmente (gripes, infecciones). Importante: Antes de asumir que es estrés, acude al veterinario. Problemas como hipertiroidismo, dolor articular o tumores pueden imitar síntomas de estrés o ansiedad.",
         },
         {
-          heading: "**6. ¿Cómo ayudar a tu gato? (Tratamiento y Manejo)**",
-          body: "El objetivo es devolverle la sensación de seguridad y control. A. Terapia de Conducta (Lo más importante): Identifica la causa del estrés y modifica el entorno. Respeta sus rutinas. Proporciona lugares altos y escondites seguros. Juega con él diariamente para liberar tensión. B. Ayudas Ambientales: Feromonas: Son sustancias químicas (como Feliway) que imitan las feromonas faciales de los gatos, transmitiendo mensaje de 'calma' y 'familiaridad'. Ayudan a reducir el marcado y la ansiedad. Enriquecimiento ambiental: Rascadores, juguetes interactivos y acceso a ventanas seguras. C. Alimentación Anti-Estrés: Existen dietas específicas o suplementos que ayudan: Triptófano: Un aminoácido precursor de la serotonina (la hormona de la felicidad). Derivados de la leche: Proteínas hidrolizadas con efecto calmante natural. Estos nutrientes ayudan a regular el estado de ánimo, mejorar la digestión y cuidar la piel. D. Medicación: En casos severos de ansiedad, el veterinario conductista puede recetar fármacos. Nunca mediques a tu gato por tu cuenta. Los medicamentos deben ser siempre el complemento de una terapia de conducta, no la única solución.",
+          heading: "¿Cómo ayudar a tu gato? (Tratamiento y Manejo)",
+          body: "El objetivo es devolverle la sensación de seguridad y control.\n\nA. Terapia de Conducta (Lo más importante): Identifica la causa del estrés y modifica el entorno. Respeta sus rutinas. Proporciona lugares altos y escondites seguros. Juega con él diariamente para liberar tensión.\n\nB. Ayudas Ambientales: Feromonas: Son sustancias químicas (como Feliway) que imitan las feromonas faciales de los gatos, transmitiendo mensaje de 'calma' y 'familiaridad'. Ayudan a reducir el marcado y la ansiedad. Enriquecimiento ambiental: Rascadores, juguetes interactivos y acceso a ventanas seguras.\n\nC. Alimentación Anti-Estrés: Existen dietas específicas o suplementos que ayudan: Triptófano: Un aminoácido precursor de la serotonina (la hormona de la felicidad). Derivados de la leche: Proteínas hidrolizadas con efecto calmante natural. Estos nutrientes ayudan a regular el estado de ánimo, mejorar la digestión y cuidar la piel.\n\nD. Medicación: En casos severos de ansiedad, el veterinario conductista puede recetar fármacos. Nunca mediques a tu gato por tu cuenta. Los medicamentos deben ser siempre el complemento de una terapia de conducta, no la única solución.",
         },
         {
           heading: "Conclusión",
@@ -946,24 +946,24 @@ export const categories: Category[] = [
       intro: "La genética de los gatos no es magia, es ciencia. Entender las bases te ayudará a comprender por qué tu gato tiene ese color específico y cómo funciona la herencia en su pelaje, dejando de lado los mitos antiguos para centrarse en la ciencia actual.",
       sections: [
         {
-          heading: "**1. Desmontando el mito de Darwin**",
+          heading: "Desmontando el mito de Darwin",
           body: "Durante mucho tiempo se creyó que la domesticación 'creaba' nuevas variedades por sí misma, pero esto es falso. Los humanos no creamos los genes, sino que los seleccionamos. En la naturaleza, las mutaciones extrañas suelen eliminarse si no ayudan a sobrevivir, pero en casa protegemos variaciones como el pelo largo o ciertos colores por estética. Toda la variedad actual ya existía potencialmente en los ancestros salvajes; nosotros solo hemos acelerado su aparición mediante la cría selectiva.",
           image: "/Articles/genetica.png",
         },
         {
-          heading: "**2. ¿Cómo funcionan los colores? (Lo básico)**",
+          heading: "¿Cómo funcionan los colores? (Lo básico)",
           body: "Los caracteres dependen de los genes y sus versiones llamadas 'alelos'. Usando el ejemplo del Negro (D) y el Azul/Gris (d): DD (Homocigoto Dominante) resulta en un gato Negro; Dd (Heterocigoto) resulta en un gato Negro visualmente pero 'portador' del gen azul; dd (Homocigoto Recesivo) resulta en un gato Azul. La regla de oro es que el negro domina sobre el azul: si hay al menos una 'D', el gato será negro. Para ser azul, debe recibir el gen 'd' de ambos padres.",
         },
         {
-          heading: "**3. Importancia de la selección responsable**",
+          heading: "Importancia de la selección responsable",
           body: "A diferencia de los perros, la genética del color en gatos es extremadamente especializada y distintiva entre razas. Los jueces internacionales y genetistas recomiendan seguir normas estrictas de cruza para evitar resultados inesperados o problemas de salud. No todos los cruces de colores son recomendables, ya que algunos pueden dar lugar a patrones no deseados por el estándar de la raza.",
         },
         {
-          heading: "**4. Guía rápida de Cruces Recomendados (FIFE)**",
+          heading: "Guía rápida de Cruces Recomendados (FIFE)",
           body: "La Federación Internacional Felina (FIFE) sugiere evitar cruces aleatorios entre variedades de color muy distintas. Los principios básicos son: 1. Cruzar dentro de la misma raza (ej. Persas con Persas). 2. Respetar la longitud del pelo (e para pelo corto, l para pelo largo). 3. Evitar cruces 'prohibidos': si en las tablas oficiales no aparece una letra para una combinación específica, es mejor abstenerse por resultados impredecibles o insatisfactorios.",
         },
         {
-          heading: "**5. Curiosidad: ¿Ven los colores los gatos?**",
+          heading: "Curiosidad: ¿Ven los colores los gatos?",
           body: "Sí, pero no como nosotros. Tienen mejor visión cromática de lo que se creía, pero distinguen menos matices que los humanos. Es irónico que, aunque ellos ven menos colores, los humanos hayamos creado una variedad de pigmentos y distribuciones en su pelaje mucho más rica y compleja de lo que ellos mismos pueden apreciar.",
         },
         {
@@ -1086,24 +1086,24 @@ export const categories: Category[] = [
       intro: "Los primeros auxilios no sustituyen al veterinario, pero pueden salvar la vida de tu gatito mientras llegas a la clínica. El objetivo es evitar que empeore, estabilizarlo y trasladarlo con seguridad.",
       sections: [
         {
-          heading: "**1. Calma y Seguridad**",
+          heading: "Calma y Seguridad",
           body: "Tu seguridad es lo primero; un gatito con dolor puede morder o arañar. Mantén tu rostro alejado de sus garras y boca. No uses bozal, pues está contraindicado en gatos con problemas respiratorios o vómitos. La técnica de la 'manta' es ideal: envuélvelo suavemente en una toalla dejando solo la cabeza fuera para calmarlo y manejarlo con seguridad.",
           image: "/Articles/primeros_auxilios_gatitos.png",
         },
         {
-          heading: "**2. Evaluación Rápida (Regla ABCDE)**",
+          heading: "Evaluación Rápida (Regla ABCDE)",
           body: "Antes de moverlo, revisa: A (Vías aéreas): Que no haya bloqueos en nariz o boca. B (Respiración): Observar si el pecho se mueve. C (Circulación): Presionar hemorragias con gasas limpias. D (Dolor/Inmovilización): No mover bruscamente si sospechas de fracturas. E (Exposición): Proteger heridas abiertas con paños limpios.",
         },
         {
-          heading: "**3. Emergencias en Cachorros**",
+          heading: "Emergencias en Cachorros",
           body: "Los bebés son muy frágiles ante dos peligros: 1. Hipoglucemia (Bajón de azúcar): Si presenta debilidad extrema o encías pálidas, aplica miel o azúcar bajo su lengua o en encías. 2. Hipotermia: Si el gatito está frío al tacto, abrígalo con tu calor corporal (bajo tu ropa) o una botella de agua tibia envuelta en una toalla (nunca directa).",
         },
         {
-          heading: "**4. Traslado Seguro**",
+          heading: "Traslado Seguro",
           body: "Usa siempre una transportadora o caja resistente con ventilación. Si sospechas de huesos rotos, minimiza el movimiento usando una tabla o toalla rígida como camilla improvisada. Durante el viaje, habla suavemente y mantén el vehículo estable para reducir su estrés.",
         },
         {
-          heading: "**5. Kit de Emergencia Felino**",
+          heading: "Kit de Emergencia Felino",
           body: "Ten a mano: Teléfonos de urgencia veterinaria, toallas o mantas limpias, gasas estériles, miel de caña o glucosa, cinta adhesiva médica y una transportadora lista. Estar preparado marca la diferencia en una situación crítica.",
         },
         {
@@ -1137,27 +1137,27 @@ export const categories: Category[] = [
       intro: "El mundo felino es vasto y fascinante. Aunque todos los gatos comparten instintos básicos, cada raza tiene una personalidad, necesidades de cuidado y características físicas únicas. Esta guía integra el registro histórico con las clasificaciones modernas de asociaciones como TICA, CFA y FIFe, organizadas para ayudarte a entender qué tipo de gato encaja mejor en tu hogar. Nota: Más allá de la raza, la personalidad individual y la socialización temprana juegan un papel fundamental.",
       sections: [
         {
-          heading: "**1. Los Clásicos Históricos**",
+          heading: "Los Clásicos Históricos",
           body: "Razas antiguas con personalidades definidas: Abisinio (Etiopía/Egipto): Activo, curioso, 'perro-gato', necesita mucho juego mental. Siamés (Tailandia): Extremadamente vocal, inteligente, demanda atención constante. Persa (Irán): Tranquilo, dulce, silencioso; requiere cepillado y limpieza facial diaria. Maine Coon (EE.UU.): El 'gigante amable', sociable, ideal para familias con niños; requiere espacio. Bengala (EE.UU.): Energía alta, atlético, parece un leopardo en miniatura; necesita estimulación diaria intensa.",
         },
         {
-          heading: "**2. Gigantes Gentiles y Adaptables al Frío**",
+          heading: "Gigantes Gentiles y Adaptables al Frío",
           body: "Gatos robustos con pelajes densos. Maine Coon: Uno de los más grandes, destaca por sus 'lynx tips' y maullidos suaves. Bosque de Noruega (Skogkatt): Escalador nato con pelaje impermeable, independiente pero cariñoso. Siberiano: Famoso por ser hipoalergénico (produce menos Fel d 1), ágil y afectuoso. Ragdoll: Grande y musculoso, de temperamento dócil; se 'desploma' como un muñeco de trapo al cargarlo.",
         },
         {
-          heading: "**3. Elegancia de Pelo Corto y Cuerpo Atlético**",
+          heading: "Elegancia de Pelo Corto y Cuerpo Atlético",
           body: "Poco mantenimiento de pelaje con mucha interacción. British Shorthair: Cara redonda, compacto y tranquilo; no le gusta que lo carguen mucho. Ruso Azul: Pelaje plateado y ojos verdes, tímido con extraños pero leal. Burmés: Musculoso y pesado, muy orientado a las personas. Bombay: Parece una pantera negra en miniatura, le encanta el calor y los regazos. Chartreux: Raza francesa antigua, silencioso y cazador experto con pelaje repelente al agua.",
         },
         {
-          heading: "**4. Mutaciones Únicas: Orejas, Colas y Texturas**",
+          heading: "Mutaciones Únicas: Orejas, Colas y Texturas",
           body: "Características genéticas exóticas. Scottish Fold: Orejas dobladas hacia adelante, posición de 'Buda'; requiere revisión articular. Munchkin: Patas cortas, extrovertido y curioso. Sphynx: Sin pelo, sociable y busca calor; requiere baños semanales. Devon Rex & Cornish Rex: Pelaje rizado u ondulado, traviesos y apegados. American Curl: Orejas hacia atrás. Manx & Japanese Bobtail: El primero sin cola y robusto; el segundo con cola de pompón, símbolo de buena suerte.",
         },
         {
-          heading: "**5. Exóticos y Pocas Unidades**",
+          heading: "Exóticos y Pocas Unidades",
           body: "Razas menos comunes. Ocicat: Parece un ocelote salvaje, entrenable y sociable. Toyger: Imitación de un tigre, inteligente. Lykoi: El 'gato lobo', apariencia de hombre lobo, curioso y juguetón. Singapura: Una de las razas más pequeñas, travieso y amante de las alturas. Korat: Tailandés gris plateado con corazón en la frente, sensible al ruido y amuleto de buena suerte.",
         },
         {
-          heading: "📝 Consejos para Elegir tu Raza",
+          heading: "Consejos para Elegir tu Raza",
           body: "Nivel de Actividad: ¿Compañero de sofá (Persa) o atleta (Bengala)? Tiempo de Aseo: ¿Cepillado diario (Maine Coon) o bajo mantenimiento (Ruso Azul)? Vocalización: Si prefieres el silencio, evita Siameses y opta por Ragdolls. Niños y mascotas: Maine Coon y Birmanos son más tolerantes. Alergias: Ninguno es 100% hipoalergénico, pero el Siberiano y el Ruso Azul suelen ser mejor tolerados.",
         }
       ],
@@ -1680,7 +1680,7 @@ export const categories: Category[] = [
         },
         {
           heading: "La Gran Expansión: ¿Cómo llegaron a otros continentes?",
-          body: "El camino del gato hacia el resto del mundo se dio principalmente a través de las rutas comerciales marítimas: 1. Los Fenicios: Los primeros 'contrabandistas'. Fueron los grandes navegantes del Mediterráneo. Se dice que sacaron gatos de Egipto de contrabando para venderlos en sus rutas comerciales. Gracias a ellos, el gato llegó a las islas griegas, a la península itálica y al sur de España mucho antes de lo previsto. 2. Roma: Los gatos en las legiones. Cuando los romanos conquistaron Egipto, quedaron fascinados por el gato (lo preferían al hurón, que era el animal que usaban antes para los ratones). Al expandir su Imperio, los legionarios llevaban gatos en sus caravanas y barcos para proteger los suministros. Así, el gato se introdujo en Europa Central y Gran Bretaña. 3. Asia y la Ruta de la Seda. A través de las rutas terrestres comerciales, los gatos llegaron a Asia Central. En países como China y Japón, fueron recibidos con honores similares a los de Egipto. En Japón, por ejemplo, los monjes budistas los usaban para proteger los valiosos manuscritos de papel de los ratones en los templos. 4. La Conquista de América. Los gatos no llegaron a América hasta la época de los exploradores europeos (siglos XV y XVI). En barcos como los de Cristóbal Colón o más tarde el Mayflower, los gatos eran tripulantes esenciales. Su misión era evitar que las ratas se comieran las raciones de comida de los marineros y que propagaran enfermedades en el espacio confinado del barco.",
+          body: "El camino del gato hacia el resto del mundo se dio principalmente a través de las rutas comerciales marítimas:\n\n1. Los Fenicios: Los primeros 'contrabandistas'. Fueron los grandes navegantes del Mediterráneo. Se dice que sacaron gatos de Egipto de contrabando para venderlos en sus rutas comerciales. Gracias a ellos, el gato llegó a las islas griegas, a la península itálica y al sur de España mucho antes de lo previsto.\n\n2. Roma: Los gatos en las legiones. Cuando los romanos conquistaron Egipto, quedaron fascinados por el gato (lo preferían al hurón, que era el animal que usaban antes para los ratones). Al expandir su Imperio, los legionarios llevaban gatos en sus caravanas y barcos para proteger los suministros. Así, el gato se introdujo en Europa Central y Gran Bretaña.\n\n3. Asia y la Ruta de la Seda. A través de las rutas terrestres comerciales, los gatos llegaron a Asia Central. En países como China y Japón, fueron recibidos con honores similares a los de Egipto. En Japón, por ejemplo, los monjes budistas los usaban para proteger los valiosos manuscritos de papel de los ratones en los templos.\n\n4. La Conquista de América. Los gatos no llegaron a América hasta la época de los exploradores europeos (siglos XV y XVI). En barcos como los de Cristóbal Colón o más tarde el Mayflower, los gatos eran tripulantes esenciales. Su misión era evitar que las ratas se comieran las raciones de comida de los marineros y que propagaran enfermedades en el espacio confinado del barco.",
         },
         {
           heading: "Resumen de la Evolución",
@@ -1751,7 +1751,7 @@ export const categories: Category[] = [
       },
       {
         slug: "destete-crecimiento",
-        label: "Destete y Crecimiento (20 días - 12 meses)",
+        label: "Desde el Crecimiento (20 días - 12 meses)",
         topics: [
           {
             slug: "guia-destete",
@@ -1886,15 +1886,15 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Enfermedades infeccontagiosas clave",
-                body: "Panleucopenia: transmisión por heces/orina/fómites, vacuna Triple Felina, alta mortalidad en neonatos. Rinotraqueítis/Calicivirus: secreciones/contacto directo, vacuna Triple Felina, puede cronificarse. Leucemia Felina (FeLV): saliva/sangre/gestación, vacuna + test previo. Inmunodeficiencia Felina (FIV): mordeduras, esterilización y tests. Rabia: mordedura de animal infectado, vacuna obligatoria en zonas endémicas. PIF: mutación del coronavirus entérico, higiene y evitar hacinamiento. Toxoplasmosis: ingestión de tejidos infectados, cocinar carnes y limpiar bandeja diaria."
+                body: "Panleucopenia: transmisión por heces/orina/fómites, vacuna Triple Felina, alta mortalidad en neonatos.\nRinotraqueítis/Calicivirus: secreciones/contacto directo, vacuna Triple Felina, puede cronificarse.\nLeucemia Felina (FeLV): saliva/sangre/gestación, vacuna + test previo.\nInmunodeficiencia Felina (FIV): mordeduras, esterilización y tests.\nRabia: mordedura de animal infectado, vacuna obligatoria en zonas endémicas.\nPIF: mutación del coronavirus entérico, higiene y evitar hacinamiento.\nToxoplasmosis: ingestión de tejidos infectados, cocinar carnes y limpiar bandeja diaria."
               },
               {
                 heading: "Protocolo sanitario básico",
-                body: "1. Adopción/Rescate → Examen veterinario completo. 2. Desparasitación interna/externa. 3. Pruebas de FeLV/FIV si hay riesgo. 4. Inicio de esquema vacunal: 6-8 semanas (Primera Triple), 12 semanas (Refuerzo + Rabia si aplica). 5. Esterilización a los 4-6 meses. 6. Chequeos anuales (semestrales si es senior o crónico)."
+                body: "1. Adopción/Rescate → Examen veterinario completo.\n2. Desparasitación interna/externa.\n3. Pruebas de FeLV/FIV si hay riesgo.\n4. Inicio de esquema vacunal: 6-8 semanas (Primera Triple), 12 semanas (Refuerzo + Rabia si aplica).\n5. Esterilización a los 4-6 meses.\n6. Chequeos anuales (semestrales si es senior o crónico)."
               },
               {
                 heading: "Signos de alarma: Cuándo acudir al veterinario",
-                body: "URGENCIA INMEDIATA: Dificultad respiratoria, encías pálidas/azuladas, incapacidad para orinar, convulsiones, pérdida de conciencia, traumatismo evidente. Consulta en <24h: Vómitos/diarrea persistentes, rechazo total de comida/agua >24h, letargo extremo, sangre en orina/heces/vómito. Monitorear: cambios en hábitos de arenero, pérdida de peso, rascado excesivo, mal aliento. NUNCA automedicar: Paracetamol, Ibuprofeno y AINEs son altamente tóxicos."
+                body: "URGENCIA INMEDIATA: Dificultad respiratoria, encías pálidas/azuladas, incapacidad para orinar, convulsiones, pérdida de conciencia, traumatismo evidente.\nConsulta en <24h: Vómitos/diarrea persistentes, rechazo total de comida/agua >24h, letargo extremo, sangre en orina/heces/vómito.\nMonitorear: cambios en hábitos de arenero, pérdida de peso, rascado excesivo, mal aliento.\nNUNCA automedicar: Paracetamol, Ibuprofeno y AINEs son altamente tóxicos."
               }
             ]
           }
@@ -1973,19 +1973,19 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Esterilización: Evidencia Global",
-                body: "¿Qué es? Hembras: Ovariohisterectomía. Machos: Orquiectomía. ¿Cuándo? Recomendación internacional: 4-6 meses (antes del primer celo). ¿Por qué? Prevención de cáncer mamario (>90% reducción si se hace antes del primer celo), eliminación de piometra (infección uterina mortal), reducción de marcaje con orina/vagabundeo/peleas, prevención de transmisión FeLV/FIV, control poblacional humanitario."
+                body: "¿Qué es?: Hembras: Ovariohisterectomía. Machos: Orquiectomía.\n¿Cuándo?: Recomendación internacional: 4-6 meses (antes del primer celo).\n¿Por qué?: Prevención de cáncer mamario (>90% reducción si se hace antes del primer celo), eliminación de piometra (infección uterina mortal), reducción de marcaje con orina/vagabundeo/peleas, prevención de transmisión FeLV/FIV, control poblacional humanitario."
               },
               {
                 heading: "Mitologicos desmentidos con evidencia",
-                body: "Mito: 'Es bueno que tenga una camada antes de esterilizar' → Realidad: No aporta beneficios, solo aumenta riesgo de sobrepoblación. Mito: 'Los machos esterilizados engordan' → Realidad: El peso depende de dieta y ejercicio; la esterilización reduce un 20-30% el requerimiento energético. Mito: 'La esterilización cambia la personalidad' → Realidad: Reduce conductas por hormonas, pero no la esencia del gato. Mito: 'Es cruel operarlos tan jóvenes' → Realidad: La recuperación es más rápida en jóvenes."
+                body: "Mito: 'Es bueno que tenga una camada antes de esterilizar' → Realidad: No aporta beneficios, solo aumenta riesgo de sobrepoblación.\nMito: 'Los machos esterilizados engordan' → Realidad: El peso depende de dieta y ejercicio; la esterilización reduce un 20-30% el requerimiento energético.\nMito: 'La esterilización cambia la personalidad' → Realidad: Reduce conductas por hormonas, pero no la esencia del gato.\nMito: 'Es cruel operarlos tan jóvenes' → Realidad: La recuperación es más rápida en jóvenes."
               },
               {
                 heading: "Protocolo TNR (Trap-Neuter-Return)",
-                body: "1. CAPTURA: Jaulas trampa con cebo, monitoreo constante, protección climática, cubrir jaula. 2. INTERVENCIÓN: Esterilización por profesional experto, analgesia pre/intra/postoperatoria, vacunación, corte de oreja (ear-tip) 0.8-1cm punta izquierda para identificación. 3. RETORNO: Al mismo punto de captura, cuidador comunitario provee alimento/agua/refugio. Beneficios: Reducción progresiva de población, disminución de ruidos nocturnos, menos marcaje, convivencia más armónica."
+                body: "1. CAPTURA: Jaulas trampa con cebo, monitoreo constante, protección climática, cubrir jaula.\n2. INTERVENCIÓN: Esterilización por profesional experto, analgesia pre/intra/postoperatoria, vacunación, corte de oreja (ear-tip) 0.8-1cm punta izquierda para identificación.\n3. RETORNO: Al mismo punto de captura, cuidador comunitario provee alimento/agua/refugio.\n\nBeneficios: Reducción progresiva de población, disminución de ruidos nocturnos, menos marcaje, convivencia más armónica."
               },
               {
                 heading: "Gatos ferales vs. callejeros sociables",
-                body: "Gato feral: Nacido sin contacto humano, evita interacción, NO adoptable, su bienestar está en su territorio con cuidados a distancia. Gato callejero sociable: Fue mascota, busca interacción, SÍ adoptable con paciencia. Manejo: Programas TNR para ferales, rescate y adopción responsable para sociables."
+                body: "Gato feral: Nacido sin contacto humano, evita interacción, NO adoptable, su bienestar está en su territorio con cuidados a distancia.\nGato callejero sociable: Fue mascota, busca interacción, SÍ adoptable con paciencia.\nManejo: Programas TNR para ferales, rescate y adopción responsable para sociables."
               }
             ]
           }
@@ -2037,43 +2037,43 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "¿Qué significa 'castrar' o 'esterilizar' a un gato?",
-                body: "Es una operación especial que hace el veterinario para que los gatitos no puedan tener bebés.\n• A las gatas: Se llama 'esterilización' y le quitan los ovarios y el útero.\n• A los gatos machos: Se llama 'castración' y le quitan los testículos.\n¡Es como poner un 'modo tranquilo' para que vivan más felices y sanos! 😊"
+                body: "Es una operación especial que hace el veterinario para que los gatitos no puedan tener bebés.\n• A las gatas: Se llama 'esterilización' y le quitan los ovarios y el útero.\n• A los gatos machos: Se llama 'castración' y le quitan los testículos.\n¡Es como poner un 'modo tranquilo' para que vivan más felices y sanos!"
               },
               {
                 heading: "¿Duele la operación?",
-                body: "¡No te preocupes!\n✅ El veterinario le pone una 'siesta mágica' (anestesia) para que el gatito duerma tranquilo y no sienta nada.\n✅ Después le dan medicinas especiales para que no le duela cuando despierte.\n✅ Los gatitos se recuperan muy rápido: ¡en 1 o 2 días ya están jugando como siempre! 🎾"
+                body: "¡No te preocupes!\nEl veterinario le pone una 'siesta mágica' (anestesia) para que el gatito duerma tranquilo y no sienta nada.\nDespués le dan medicinas especiales para que no le duela cuando despierte.\nLos gatitos se recuperan muy rápido: ¡en 1 o 2 días ya están jugando como siempre!"
               },
               {
                 heading: "¿Por qué es bueno castrar a los gatos?",
-                body: "¡Porque les ayuda a vivir mejor! Mira estos superpoderes que ganan:\n\n| Beneficio | ¿Qué significa para tu gatito? |\n| --- | --- |\n| 🏥 Más salud | No se enferman de cosas graves como infecciones en la panza o cáncer. |\n| 😌 Más tranquilo | Los machos no pelean tanto con otros gatos y no se escapan tanto. |\n| 🏠 Más casero | Se quedan más tiempo en casa contigo, ¡y eso es genial! |\n| 🔇 Menos ruidos | Las gatas no maúllan fuerte buscando novio por las noches. |\n| 💩 Menos olores | Los machos no hacen 'pipí con olor fuerte' para marcar territorio. |\n| ❤️ Más amor | Al no estar nerviosos por el celo, ¡te dan más cariños! |"
+                body: "¡Porque les ayuda a vivir mejor! Mira estos superpoderes que ganan:\n\n| Beneficio | ¿Qué significa para tu gatito? |\n\n| Más salud | No se enferman de cosas graves como infecciones en la panza o cáncer. |\n| Más tranquilo | Los machos no pelean tanto con otros gatos y no se escapan tanto. |\n| Más casero | Se quedan más tiempo en casa contigo, ¡y eso es genial! |\n| Menos ruidos | Las gatas no maúllan fuerte buscando novio por las noches. |\n| Menos olores | Los machos no hacen 'pipí con olor fuerte' para marcar territorio. |\n| Más amor | Al no estar nerviosos por el celo, ¡te dan más cariños! |"
               },
               {
                 heading: "¿A qué edad se puede castrar a un gatito?",
-                body: "🐱 Lo ideal: Entre los 4 y 6 meses de edad, antes de que tengan su primer 'celo'.\n🐱 También se puede: Desde los 3 meses si el veterinario lo recomienda, ¡y se recuperan aún más rápido!\n🚫 Mito importante: NO es necesario que la gata tenga una camada de gatitos antes de operarla. ¡Eso es un cuento viejo! Operarla antes es más sano para ella."
+                body: "Lo ideal: Entre los 4 y 6 meses de edad, antes de que tengan su primer 'celo'.\nTambién se puede: Desde los 3 meses si el veterinario lo recomienda, ¡y se recuperan aún más rápido!\nMito importante: NO es necesario que la gata tenga una camada de gatitos antes de operarla. ¡Eso es un cuento viejo! Operarla antes es más sano para ella."
               },
               {
                 heading: "¿Mi gato va a engordar después de la operación?",
-                body: "¡No necesariamente!\n✅ Es verdad que algunos gatos pueden subir de peso, pero eso pasa si comen mucho y no juegan.\n✅ La solución es fácil: darle la comida justa y jugar con él todos los días.\n✅ ¡Un gato que juega es un gato feliz y delgadito! 🎣🧶"
+                body: "¡No necesariamente!\nEs verdad que algunos gatos pueden subir de peso, pero eso pasa si comen mucho y no juegan.\nLa solución es fácil: darle la comida justa y jugar con él todos los días.\n¡Un gato que juega es un gato feliz y delgadito!"
               },
               {
                 heading: "¿Mi gato va a cambiar de personalidad?",
-                body: "¡Para bien, sí! Pero sigue siendo el mismo gatito que amas.\n\n🔹 Lo que SÍ cambia:\n• Ya no se escapa tanto buscando novias/novios\n• No pelea con otros gatos por territorio\n• No hace pipí en las paredes para marcar\n\n🔹 Lo que NO cambia:\n• Sigue siendo cariñoso contigo ❤️\n• Sigue jugando con sus juguetes 🎾\n• Sigue ronroneando cuando lo acaricias 😻\n¡Sigue siendo TU gatito!"
+                body: "¡Para bien, sí! Pero sigue siendo el mismo gatito que amas.\n\nLo que SÍ cambia:\n• Ya no se escapa tanto buscando novias/novios\n• No pelea con otros gatos por territorio\n• No hace pipí en las paredes para marcar\n\nLo que NO cambia:\n• Sigue siendo cariñoso contigo\n• Sigue jugando con sus juguetes\n• Sigue ronroneando cuando lo acaricias\n¡Sigue siendo TU gatito!"
               },
               {
                 heading: "¿Qué pasa si NO castro a mi gato?",
-                body: "Respuesta: Pueden pasar cosas que no son tan bonitas:\n\nPara las gatas:\n• Pueden tener muchos gatitos (¡hasta 3 camadas al año!)\n• Y si no hay hogares para todos... algunos gatitos pueden quedarse sin familia 😢\n• Pueden enfermarse del útero (una infección grave llamada 'piometra')\n• Tienen más riesgo de cáncer de mama\n\n🚨 Para los gatos machos:\n• Se escapan mucho y pueden perderse o tener accidentes\n• Pelean con otros gatos y pueden lastimarse o enfermarse\n• Hacen pipí con olor muy fuerte en la casa\n• Gritan y maúllan mucho buscando gatas"
+                body: "Respuesta: Pueden pasar cosas que no son tan bonitas:\n\nPara las gatas:\n• Pueden tener muchos gatitos (¡hasta 3 camadas al año!)\n• Y si no hay hogares para todos... algunos gatitos pueden quedarse sin familia\n• Pueden enfermarse del útero (una infección grave llamada 'piometra')\n• Tienen más riesgo de cáncer de mama\n\nPara los gatos machos:\n• Se escapan mucho y pueden perderse o tener accidentes\n• Pelean con otros gatos y pueden lastimarse o enfermarse\n• Hacen pipí con olor muy fuerte en la casa\n• Gritan y maúllan mucho buscando gatas"
               },
               {
                 heading: "¿Y los gatitos que ya viven en la calle?",
-                body: "¡También hay una solución especial para ellos! Se llama TNR:\n\nT = TRAP (Atrapar con cuidado en una jaula especial)\n🔹 N = NEUTER (Operar para que no tengan más bebés)\n🔹 R = RETURN (Devolverlos a su lugar, donde un cuidador les da comida)\n\n✨ Además, les cortan un poquito la puntita de la oreja izquierda (¡no les duele! lo hacen mientras duermen con la anestesia) para saber que ya están operados.\n\n💚 Así, poco a poco, hay menos gatitos en la calle y los que están reciben mejores cuidados. ¡Todos ganan!"
+                body: "¡También hay una solución especial para ellos! Se llama TNR:\n\nT = TRAP (Atrapar con cuidado en una jaula especial)\nN = NEUTER (Operar para que no tengan más bebés)\nR = RETURN (Devolverlos a su lugar, donde un cuidador les da comida)\n\nAdemás, les cortan un poquito la puntita de la oreja izquierda (¡no les duele! lo hacen mientras duermen con la anestesia) para saber que ya están operados.\n\nAsí, poco a poco, hay menos gatitos en la calle y los que están reciben mejores cuidados. ¡Todos ganan!"
               },
               {
                 heading: "¿Castrar ayuda a los gatitos abandonados?",
-                body: "¡Sí, muchísimo! Mira este número impresionante:\n\n📊 Una sola pareja de gatos puede tener...\n   ¡65,500 descendientes en solo 5 años! 😱\n\n🔢 ¿Cómo? \n   • Una gata puede tener 3 camadas al año\n   • Cada camada puede tener 4-6 gatitos\n   • Esos gatitos crecen y también tienen gatitos...\n   • ¡Y así se multiplica como una cadena!\n\n✅ Al castrar, rompemos esa cadena y ayudamos a que menos gatitos nazcan sin hogar. ¡Es un acto de amor! 💙"
+                body: "¡Sí, muchísimo! Mira este número impresionante:\n\nUna sola pareja de gatos puede tener...\n   ¡65,500 descendientes en solo 5 años!\n\n¿Cómo? \n   Una gata puede tener 3 camadas al año\n   Cada camada puede tener 4-6 gatitos\n   Esos gatitos crecen y también tienen gatitos...\n   ¡Y así se multiplica como una cadena!\n\nAl castrar, rompemos esa cadena y ayudamos a que menos gatitos nazcan sin hogar. ¡Es un acto de amor!"
               },
               {
                 heading: "RESUMEN PARA RECORDAR (¡EN 3 FRASES!)",
-                body: "🩺 Castrar es una operación segura que hace el veterinario para que los gatos no tengan bebés y vivan más sanos.\n\n❤️ Es un acto de amor: protege a tu gato de enfermedades, lo hace más tranquilo y ayuda a que menos gatitos vivan en la calle.\n\n🏠 Tu gato seguirá siendo el mismo: solo que más sano, más casero y con más ganas de darte cariños."
+                body: "Castrar es una operación segura que hace el veterinario para que los gatos no tengan bebés y vivan más sanos.\n\nEs un acto de amor: protege a tu gato de enfermedades, lo hace más tranquilo y ayuda a que menos gatitos vivan en la calle.\n\nTu gato seguirá siendo el mismo: solo que más sano, más casero y con más ganas de darte cariños."
               }
             ]
           }
@@ -2100,35 +2100,36 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Los superpoderes del gato (sí, en serio)",
-                body: "👁️ Visión nocturna nivel PRO: Sus ojos ven 7 veces mejor que los humanos en la oscuridad gracias al tapetum lucidum. ¡Es como tener faros integrados! Pero con mucha luz, ven menos detalles. Su pupila vertical se cierra como una rendija para regular.\n\n👂 Oídos de radar: Escuchan frecuencias ultrasónicas que nosotros ni imaginamos. Sus orejas se mueven independientemente como antenas parabólicas 🛰️. En oscuridad total, pueden localizar una presa solo por el sonido de sus pasos.\n\n🤸 Bigotes sensores = GPS táctil: No son solo pelos bonitos, son sensores que detectan corrientes de aire, obstáculos y movimientos. También tienen en mejillas, sobre los ojos y en las patas delanteras. NUNCA los cortes.\n\n🤸 Equilibrio de ninja: Su reflejo de enderezamiento les permite caer de pie (casi siempre). Extienden los pliegues de su piel como un paracaídas natural. Mito: 'Los gatos siempre caen bien'. Realidad: Pueden lastimarse en caídas altas. ¡Protégelos con mallas!\n\n💪 Cuerpo de atleta olímpico: Músculos que les permiten correr a 48 km/h y cambiar de dirección en pleno salto. Garras retráctiles para trepar, sujetar presas y... afilar en tu sofá favorito 😅"
+                image: "/Articles/vida_secreta.jpg",
+                body: "Visión nocturna nivel PRO: Sus ojos ven 7 veces mejor que los humanos en la oscuridad gracias al tapetum lucidum. ¡Es como tener faros integrados! Pero con mucha luz, ven menos detalles. Su pupila vertical se cierra como una rendija para regular.\n\n Oídos de radar: Escuchan frecuencias ultrasónicas que nosotros ni imaginamos. Sus orejas se mueven independientemente como antenas parabólicas. En oscuridad total, pueden localizar una presa solo por el sonido de sus pasos.\n\n Bigotes sensores = GPS táctil: No son solo pelos bonitos, son sensores que detectan corrientes de aire, obstáculos y movimientos. También tienen en mejillas, sobre los ojos y en las patas delanteras. NUNCA los cortes.\n\n Equilibrio de ninja: Su reflejo de enderezamiento les permite caer de pie (casi siempre). Extienden los pliegues de su piel como un paracaídas natural. Mito: 'Los gatos siempre caen bien'. Realidad: Pueden lastimarse en caídas altas. ¡Protégelos con mallas!\n\n Cuerpo de atleta olímpico: Músculos que les permiten correr a 48 km/h y cambiar de dirección en pleno salto. Garras retráctiles para trepar, sujetar presas y... afilar en tu sofá favorito"
               },
               {
                 heading: "El lado oscuro (sí, hay uno)",
-                body: "🚨 Tu gato es una especie invasora: Aunque lo veas como una bolita de amor, globalmente los gatos domésticos están en la lista de las 100 especies invasoras más dañinas del planeta.\n\n📊 DATOS QUE IMPACTAN:\n• 1 de cada 3 gatos bien alimentados caza 2-3 animales por semana\n• Un gato cazador mata entre 100 y 150 animales al año\n• En EE.UU., gatos domésticos cazan ~3.000 MILLONES de animales silvestres al año\n• En islas, han contribuido a extinguir al menos 30 especies de aves\n• En Australia, ayudaron a extinguir 28 especies de marsupiales 😢\n\n¿Qué cazan realmente? Un estudio en Morelia, México, reveló que los gatos urbanos matan 43 especies de vertebrados:\n• 🐦 Pájaros (los más afectados)\n• 🐭 Roedores\n• 🦎 Lagartijas y serpientes\n• 🦇 Murciélagos\n• 🐰 Conejos silvestres\n\n💡 Reflexión juvenil: Amar a tu gato no significa ignorar su impacto. Podemos quererlo Y proteger la biodiversidad."
+                body: "Tu gato es una especie invasora: Aunque lo veas como una bolita de amor, globalmente los gatos domésticos están en la lista de las 100 especies invasoras más dañinas del planeta.\n\n DATOS QUE IMPACTAN:\n• 1 de cada 3 gatos bien alimentados caza 2-3 animales por semana\n• Un gato cazador mata entre 100 y 150 animales al año\n• En EE.UU., gatos domésticos cazan ~3.000 MILLONES de animales silvestres al año\n• En islas, han contribuido a extinguir al menos 30 especies de aves\n• En Australia, ayudaron a extinguir 28 especies de marsupiales \n\n¿Qué cazan realmente? Un estudio en Morelia, México, reveló que los gatos urbanos matan 43 especies de vertebrados:\n•  Pájaros (los más afectados)\n•  Roedores\n•  Lagartijas y serpientes\n•  Murciélagos\n•  Conejos silvestres\n\n Reflexión juvenil: Amar a tu gato no significa ignorar su impacto. Podemos quererlo Y proteger la biodiversidad."
               },
               {
                 heading: "¿Hasta dónde llega tu gato cuando sale?",
-                body: "📱 El experimento del GPS: Científicos pusieron collares con GPS a gatos domésticos y descubrieron:\n\nLo normal:\n• Se quedan a 1-2 manzanas de casa la mayor parte del tiempo\n\n🌌 Pero... ¡sorpresa!\n• 1-2 veces por semana, algunos recorren HASTA 20 KM en una noche\n• Cruzan ciudades, llegan al campo, entran a bosques... y regresan al amanecer\n\n🤯 Traducción: Tu 'gato de interior' podría estar de aventura nocturna sin que lo sepas.\n\nRiesgos de dejarlo libre:\n| Para tu gato | Para la fauna | Para ti |\n| --- | --- | --- |\n| 🚗 Atropellos | 📉 Disminución de aves hasta 40% en algunas zonas | 🦠 Enfermedades zoonóticas |\n| 🧪 Envenenamientos | 🐦 Extinción de especies endémicas | 🤢 Parásitos traídos de la calle |\n| 😿 Estrés y desorientación | 🌱 Alteración de ecosistemas | 💩 Excrementos en espacios públicos |\n\n🎯 Dato clave: Se han encontrado restos de pañales desechables en heces de gatos callejeros. Sí, los comen. Antes de que te lama la cara... piensa en dónde ha estado 🤢"
+                body: "El experimento del GPS: Científicos pusieron collares con GPS a gatos domésticos y descubrieron:\n\nLo normal:\n• Se quedan a 1-2 manzanas de casa la mayor parte del tiempo\n\n Pero... ¡sorpresa!\n• 1-2 veces por semana, algunos recorren HASTA 20 KM en una noche\n• Cruzan ciudades, llegan al campo, entran a bosques... y regresan al amanecer\n\n Traducción: Tu 'gato de interior' podría estar de aventura nocturna sin que lo sepas.\n\nRiesgos de dejarlo libre:\n| Para tu gato | Para la fauna | Para ti |\n\n|  Atropellos |  Disminución de aves hasta 40% en algunas zonas |  Enfermedades zoonóticas |\n|  Envenenamientos |  Extinción de especies endémicas |  Parásitos traídos de la calle |\n|  Estrés y desorientación |  Alteración de ecosistemas |  Excrementos en espacios públicos |\n\n Dato clave: Se han encontrado restos de pañales desechables en heces de gatos callejeros. Sí, los comen. Antes de que te lama la cara... piensa en dónde ha estado"
               },
               {
                 heading: "El problema de la sobrepoblación (y cómo ayudar)",
-                body: "📈 Matemáticas que asustan: Una pareja de gatos + su descendencia puede generar:\n• 🔹 400,000 gatos en solo 7 años\n• Hasta 3 camadas/año por gata\n• 4-6 gatitos por camada en promedio\n\n🧮 Haz la cuenta: 1 gata → 4 gatitos → esos 4 se reproducen → y así sucesivamente... ¡Es una explosión demográfica felina!\n\nEn números reales (ejemplo: una ciudad mediana):\n• 15% de hogares tiene gatos (promedio 3 por casa)\n• En una ciudad de 150,000 viviendas → ~67,500 gatos domésticos (sin contar callejeros)\n• Resultado: Más de 2 millones de animales silvestres cazados al año solo en esa ciudad"
+                body: "Matemáticas que asustan: Una pareja de gatos + su descendencia puede generar:\n• 🔹 400,000 gatos en solo 7 años\n• Hasta 3 camadas/año por gata\n• 4-6 gatitos por camada en promedio\n\n Haz la cuenta: 1 gata → 4 gatitos → esos 4 se reproducen → y así sucesivamente... ¡Es una explosión demográfica felina!\n\nEn números reales (ejemplo: una ciudad mediana):\n• 15% de hogares tiene gatos (promedio 3 por casa)\n• En una ciudad de 150,000 viviendas → ~67,500 gatos domésticos (sin contar callejeros)\n• Resultado: Más de 2 millones de animales silvestres cazados al año solo en esa ciudad"
               },
               {
                 heading: "Ser joven y responsable: Tu poder de cambio",
-                body: "✅ Lo que SÍ puedes hacer (y marca la diferencia):\n\n🏠 Mantén a tu gato indoor (o en espacios seguros):\n• Catio: Jaulas o cerramientos tipo 'jardín para gatos' en balcones/ventanas\n• Mallas de seguridad: Evitan caídas y fugas\n• Enriquecimiento indoor: Rascadores, juguetes interactivos, repisas, escondites\n\n💉 Esteriliza a tiempo:\n• Hembras: Desde los 4 meses (antes del primer celo)\n• Machos: Desde los 5-6 meses\n• Beneficios: ✅ Reduce escapadas y peleas ✅ Previene cánceres ✅ Disminuye marcaje ✅ Controla la sobrepoblación\n\n🩺 Cuida su salud preventiva:\n• Vacunas al día (Triple Felina + Antirrábica según zona)\n• Desparasitación interna/externa regular\n• Chequeos veterinarios anuales\n\n🍽️ Alimentación consciente:\n• Dieta balanceada específica (son carnívoros estrictos)\n• Evita dar comida humana: chocolate, cebolla, uvas, etc. son tóxicos\n• Agua fresca siempre disponible"
+                body: "Lo que SÍ puedes hacer (y marca la diferencia):\n\n Mantén a tu gato indoor (o en espacios seguros):\n• Catio: Jaulas o cerramientos tipo 'jardín para gatos' en balcones/ventanas\n• Mallas de seguridad: Evitan caídas y fugas\n• Enriquecimiento indoor: Rascadores, juguetes interactivos, repisas, escondites\n\n Esteriliza a tiempo:\n• Hembras: Desde los 4 meses (antes del primer celo)\n• Machos: Desde los 5-6 meses\n• Beneficios:  Reduce escapadas y peleas  Previene cánceres  Disminuye marcaje  Controla la sobrepoblación\n\n Cuida su salud preventiva:\n• Vacunas al día (Triple Felina + Antirrábica según zona)\n• Desparasitación interna/externa regular\n• Chequeos veterinarios anuales\n\n Alimentación consciente:\n• Dieta balanceada específica (son carnívoros estrictos)\n• Evita dar comida humana: chocolate, cebolla, uvas, etc. son tóxicos\n• Agua fresca siempre disponible"
               },
               {
                 heading: "MITOS vs. REALIDAD (Quiz rápido)",
-                body: "| Mito | Realidad científica |\n| --- | --- |\n| ❌ 'Si lo alimento bien, no caza' | ✅ 1 de cada 3 gatos bien alimentados caza igual. El instinto no se apaga con el pienso. |\n| ❌ 'Los gatos siempre caen de pie' | ✅ Tienen reflejo de enderezamiento, pero caídas altas pueden ser mortales. |\n| ❌ 'Esterilizarlos es cruel' | ✅ Es más cruel permitir nacimientos que terminan en abandono, sufrimiento o eutanasia. |\n| ❌ 'Mi gato no se aleja de casa' | ✅ Estudios con GPS muestran que pueden recorrer hasta 20 km en una noche. |\n| ❌ 'Los gatos ferales pueden adoptarse' | ✅ Los gatos ferales (sin socialización humana) no son candidatos a adopción. Requieren manejo TNR. |"
+                body: "| Mito | Realidad científica |\n\n|'Si lo alimento bien, no caza' | 1 de cada 3 gatos bien alimentados caza igual. El instinto no se apaga con el pienso. |\n| 'Los gatos siempre caen de pie' | Tienen reflejo de enderezamiento, pero caídas altas pueden ser mortales. |\n| 'Esterilizarlos es cruel' |  Es más cruel permitir nacimientos que terminan en abandono, sufrimiento o eutanasia. |\n|  'Mi gato no se aleja de casa' |  Estudios con GPS muestran que pueden recorrer hasta 20 km en una noche. |\n|  'Los gatos ferales pueden adoptarse' |  Los gatos ferales (sin socialización humana) no son candidatos a adopción. Requieren manejo TNR. |"
               },
               {
                 heading: "Tu checklist de acción (Para imprimir o guardar)",
-                body: "✅ Si ya tienes un gato:\n• Microchip + registro en base de datos local\n• Esterilización programada (si aún no lo está)\n• Mallas de seguridad en ventanas/balcones\n• Enriquecimiento indoor: rascador, juguetes, repisas\n• Chequeo veterinario anual\n\n✅ Si quieres adoptar:\n• Evaluar compromiso a largo plazo (15-20 años de vida)\n• Preparar hogar antes de la llegada\n• Elegir protectora con protocolo de adopción responsable\n• Considerar gatos adultos: ¡son increíbles y a veces pasan desapercibidos!\n\n✅ Si quieres ayudar sin adoptar:\n• Voluntariado en refugios locales\n• Difundir información verificada en redes\n• Apoyar campañas de esterilización comunitaria\n• Reportar colonias ferales a autoridades para activar TNR"
+                body: "Si ya tienes un gato:\n• Microchip + registro en base de datos local\n• Esterilización programada (si aún no lo está)\n• Mallas de seguridad en ventanas/balcones\n• Enriquecimiento indoor: rascador, juguetes, repisas\n• Chequeo veterinario anual\n\n Si quieres adoptar:\n• Evaluar compromiso a largo plazo (15-20 años de vida)\n• Preparar hogar antes de la llegada\n• Elegir protectora con protocolo de adopción responsable\n• Considerar gatos adultos: ¡son increíbles y a veces pasan desapercibidos!\n\n Si quieres ayudar sin adoptar:\n• Voluntariado en refugios locales\n• Difundir información verificada en redes\n• Apoyar campañas de esterilización comunitaria\n• Reportar colonias ferales a autoridades para activar TNR"
               },
               {
                 heading: "Conclusión: Amar con conciencia",
-                body: "Los gatos nos han acompañado por milenios: guardaron nuestros graneros, nos hicieron compañía en noches solas y nos regalan ronroneos que bajan el estrés.\n\nPero hoy, con ciudades más densas y ecosistemas más frágiles, amarlos responsablemente significa equilibrar su bienestar con el del planeta.\n\n🐱 Tu gato no es 'malo' por cazar. Es un felino, y esa es su naturaleza.\n🌍 Tú no eres 'malo' por querer proteger la biodiversidad. Es tu responsabilidad como ciudadano global.\n\n💚 La solución no está en elegir uno u otro, sino en encontrar el punto medio: cuidar a tu gato y al mundo que compartimos.\n\nEl futuro de la convivencia humano-felino-fauna silvestre está en tus manos. ¿Listo para ser parte del cambio? ✨"
+                body: "Los gatos nos han acompañado por milenios: guardaron nuestros graneros, nos hicieron compañía en noches solas y nos regalan ronroneos que bajan el estrés.\n\nPero hoy, con ciudades más densas y ecosistemas más frágiles, amarlos responsablemente significa equilibrar su bienestar con el del planeta.\n\n Tu gato no es 'malo' por cazar. Es un felino, y esa es su naturaleza.\n Tú no eres 'malo' por querer proteger la biodiversidad. Es tu responsabilidad como ciudadano global.\n\n La solución no está en elegir uno u otro, sino en encontrar el punto medio: cuidar a tu gato y al mundo que compartimos.\n\nEl futuro de la convivencia humano-felino-fauna silvestre está en tus manos. ¿Listo para ser parte del cambio?"
               }
             ]
           }

@@ -331,7 +331,7 @@ export default function TopicContent({
                       borderRadius: "50%",
                       background: `${category.color}18`,
                       border: `1.5px solid ${category.color}40`,
-                      display: "flex",
+                      display: section.heading === "Antes de empezar" ? "none" : "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: "0.75rem",
@@ -340,7 +340,7 @@ export default function TopicContent({
                       marginTop: 2,
                     }}
                   >
-                    {i + 1}
+                    {topic.sections.filter((_, idx) => idx < i && topic.sections[idx].heading !== "Antes de empezar").length + 1}
                   </span>
                   <h2
                     style={{
