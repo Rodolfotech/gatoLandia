@@ -118,7 +118,7 @@ export default function Home() {
             <CategoryCards
               categories={categories}
               onCategoryClick={handleCategoryTabClick}
-              imageMap={{ salud: "CategoryCards/salud.png", comportamiento: "CategoryCards/comportamiento.png", alimentacion: "CategoryCards/alimentacion.png", juego: "CategoryCards/juego.png", etapas: "CategoryCards/etapas_de_vida.png", emergencia: "CategoryCards/emergencia.png", "adopción": "CategoryCards/adopcion.png", razas: "CategoryCards/razas.png", "adquisicion responsable": "CategoryCards/adquisicion_responsable.png", historia: "CategoryCards/historia_origen_expansion.png", "cuidado-gatito": "CategoryCards/cuidado.png", "tenencia-responsable": "CategoryCards/tenencia_responsable.png", "castracion": "CategoryCards/castración.png", "impacto-conciencia": "CategoryCards/impacto_conciencia.png" }}
+              imageMap={{ salud: "categorycards/salud.png", comportamiento: "categorycards/comportamiento.png", alimentacion: "categorycards/alimentacion.png", juego: "categorycards/juego.png", etapas: "categorycards/etapas_de_vida.png", emergencia: "categorycards/emergencia.png", "adopción": "categorycards/adopcion.png", razas: "categorycards/razas.png", "adquisicion responsable": "categorycards/adquisicion_responsable.png", historia: "categorycards/historia_origen_expansion.png", "cuidado-gatito": "categorycards/cuidado.png", "tenencia-responsable": "categorycards/tenencia_responsable.png", "castracion": "categorycards/castración.png", "impacto-conciencia": "categorycards/impacto_conciencia.png" }}
             />
           </HeroSection>
 
@@ -154,10 +154,10 @@ export default function Home() {
 
           <FeaturedContent
             items={[
-              { id: 1, title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar.", img: "FeaturedContent/cuidadoIntegral.png" },
-              { id: 2, title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa.", img: "FeaturedContent/tenenciaResponsable.png" },
-              { id: 3, title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización.", img: "FeaturedContent/castracion.png" },
-              { id: 4, title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "FeaturedContent/impactoConciencia.png" },
+              { id: 1, title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar.", img: "featuredcontent/cuidadoIntegral.png" },
+              { id: 2, title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa.", img: "featuredcontent/tenenciaResponsable.png" },
+              { id: 3, title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización.", img: "featuredcontent/castracion.png" },
+              { id: 4, title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "featuredcontent/impactoConciencia.png" },
             ]}
           />
         </>
