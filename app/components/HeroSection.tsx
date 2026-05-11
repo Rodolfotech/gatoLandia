@@ -42,7 +42,7 @@ export default function HeroSection({
         `,
         position: "relative",
         overflow: "hidden",
-        padding: "4rem 2rem",
+        padding: "clamp(2rem, 5vw, 4rem) 1rem",
       }}
     >
       <div style={{ maxWidth: 1100, textAlign: "center", position: "relative" }}>
@@ -69,7 +69,7 @@ export default function HeroSection({
         </h1>
 
         <p style={{
-          fontSize: "1.15rem", color: "#6b5c44", maxWidth: 640,
+          fontSize: "clamp(0.95rem, 2vw, 1.15rem)", color: "#6b5c44", maxWidth: 640,
           margin: "0 auto 3rem", lineHeight: 1.8, fontWeight: 300,
         }}>
           {subtitle}

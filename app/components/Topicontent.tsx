@@ -254,17 +254,11 @@ export default function TopicContent({
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-      <div
-        style={{
-          display: "flex",
-          gap: "2rem",
-          alignItems: "flex-start",
-        }}
-      >
+      <div className="topic-content-layout">
         <article
           style={{
             flex: 1,
-            padding: "3rem 3.5rem",
+            padding: "var(--page-padding-lg, 3.5rem) var(--page-padding, 3rem)",
             maxWidth: 900,
             fontFamily: "'Inter', 'DM Sans', sans-serif",
           }}
@@ -291,7 +285,7 @@ export default function TopicContent({
           <h1
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+              fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
               fontWeight: 900,
               color: "#2c2416",
               lineHeight: 1.15,
@@ -305,7 +299,7 @@ export default function TopicContent({
           {/* Intro */}
           <div
             style={{
-              fontSize: "1.05rem",
+              fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
               color: "#6b5c44",
               lineHeight: 1.75,
               marginBottom: "2.5rem",
@@ -350,7 +344,7 @@ export default function TopicContent({
                   <h2
                     style={{
                       fontFamily: "'Playfair Display', serif",
-                      fontSize: "1.35rem",
+                      fontSize: "clamp(1.1rem, 2.5vw, 1.35rem)",
                       fontWeight: 700,
                       color: "#2c2416",
                       margin: 0,
@@ -360,12 +354,7 @@ export default function TopicContent({
                     {section.heading}
                   </h2>
                 </div>
-                <div
-                  style={{
-                    paddingLeft: "3rem",
-                    margin: 0,
-                  }}
-                >
+                <div className="section-body">
                   {renderMarkdown(section.body)}
                 </div>
               </section>
@@ -374,15 +363,7 @@ export default function TopicContent({
         </article>
 
         {mediaItems.length > 0 && (
-          <div
-            style={{
-              width: 700,
-              display: "flex",
-              flexDirection: "column",
-              gap: "2.5rem",
-              padding: "3rem 0",
-            }}
-          >
+          <div className="topic-media-column">
             {topic.sections.map((section) => (
               (section.image || section.adSlot) && (
                 <div key={section.heading} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -457,6 +438,44 @@ export default function TopicContent({
           />
         </div>
       )}
+
+      <style>{`
+        .topic-content-layout {
+          display: flex;
+          gap: 2rem;
+          align-items: flex-start;
+        }
+        .topic-media-column {
+          width: 700px;
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+          padding: 3rem 0;
+          flex-shrink: 0;
+        }
+        .section-body {
+          padding-left: 3rem;
+          margin: 0;
+        }
+        @media (max-width: 1024px) {
+          .topic-media-column {
+            width: 400px;
+          }
+        }
+        @media (max-width: 768px) {
+          .topic-content-layout {
+            flex-direction: column;
+          }
+          .topic-media-column {
+            width: 100%;
+            padding: 0 var(--page-padding, 1.25rem) 2rem;
+            order: -1;
+          }
+          .section-body {
+            padding-left: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }

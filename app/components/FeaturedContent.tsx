@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface FeaturedItem {
@@ -18,7 +18,17 @@ interface Props {
 export default function FeaturedContent({ items, title = "Contenido destacado" }: Props) {
   const [index, setIndex] = useState(0);
   const [modalImg, setModalImg] = useState<string | null>(null);
-  const maxIndex = Math.max(0, items.length - 2);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const visibleCount = isMobile ? 1 : 2;
+  const maxIndex = Math.max(0, items.length - visibleCount);
 
   const prev = () => setIndex((i) => Math.max(0, i - 1));
   const next = () => setIndex((i) => Math.min(maxIndex, i + 1));
@@ -56,14 +66,14 @@ export default function FeaturedContent({ items, title = "Contenido destacado" }
         <div style={{
           display: "flex",
           gap: "1.5rem",
-          transform: `translateX(calc(-${index} * (50% - 0.75rem)))`,
+          transform: `translateX(calc(-${index} * (100% / ${visibleCount} - 0.75rem)))`,
           transition: "transform 0.4s ease",
         }}>
           {items.map((item) => (
             <div
               key={item.id}
               style={{
-                flex: "0 0 calc(50% - 0.75rem)",
+                flex: `0 0 calc(100% / ${visibleCount} - 0.75rem)`,
                 padding: "2rem", borderRadius: 16,
                 background: "rgba(253,246,236,0.8)",
                 border: "1px solid rgba(201,180,154,0.2)",

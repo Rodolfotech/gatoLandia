@@ -17,7 +17,8 @@ interface Props {
 
 export default function CategoryCards({ categories, onCategoryClick, imageMap }: Props) {
   return (
-    <div style={{
+    <>
+    <div className="category-cards-grid" style={{
       display: "grid",
       gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
       gap: "1rem", maxWidth: 1000, margin: "0 auto",
@@ -106,5 +107,19 @@ export default function CategoryCards({ categories, onCategoryClick, imageMap }:
         </button>
       ))}
     </div>
+    <style>{`
+      @media (max-width: 640px) {
+        .category-cards-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 0.75rem !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .category-cards-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    `}</style>
+    </>
   );
 }

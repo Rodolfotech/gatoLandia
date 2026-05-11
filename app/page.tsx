@@ -69,14 +69,14 @@ export default function Home() {
          onLogoClick={handleLogoClick}
        />
 
-        {showExplorer ? (
-         <div key="explorer" style={{ display: "flex", flex: 1, background: "#fdf6ec" }}>
+         {showExplorer ? (
+          <div key="explorer" className="explorer-layout" style={{ display: "flex", flex: 1, background: "#fdf6ec" }}>
           <CategorySidebar
             categories={categories}
             selection={selection}
             onSelect={(sel) => selectTopic(sel.categorySlug, sel.subcategorySlug, sel.topicSlug)}
           />
-          <div style={{ flex: 1, overflowY: "auto" }}>
+          <div className="explorer-content" style={{ flex: 1, overflowY: "auto" }}>
             {currentTopic && currentCat && currentSub ? (
               <TopicContent
                 category={currentCat}
@@ -164,6 +164,16 @@ export default function Home() {
           />
           </div>
       )}<ChatWidget />
+      <style>{`
+        @media (max-width: 768px) {
+          .explorer-layout {
+            flex-direction: column !important;
+          }
+          .explorer-content {
+            overflow-y: visible !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }

@@ -38,3 +38,31 @@ body::before {
 html { scrollbar-width: none; }
 html::-webkit-scrollbar { display: none; }
 
+/* ── RESPONSIVE UTILITIES ── */
+.hide-mobile { display: revert; }
+.show-mobile  { display: none !important; }
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile  { display: revert !important; }
+
+  :root {
+    --page-padding: 1.25rem;
+    --page-padding-lg: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  :root {
+    --page-padding: 3rem;
+    --page-padding-lg: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-padding: 1rem;
+    --page-padding-lg: 1.25rem;
+  }
+}
+
