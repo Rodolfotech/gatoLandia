@@ -118,7 +118,7 @@ export default function Home() {
             <CategoryCards
               categories={categories}
               onCategoryClick={handleCategoryTabClick}
-              imageMap={{ salud: "CategoryCards/salud.png", comportamiento: "CategoryCards/comportamiento.png", alimentacion: "CategoryCards/alimentacion.png", juego: "CategoryCards/juego.png", etapas: "CategoryCards/etapas_de_vida.png", emergencia: "CategoryCards/emergencia.png", "adopción": "CategoryCards/adopcion.png", razas: "CategoryCards/razas.png", "adquisicion responsable": "CategoryCards/adquisicion_responsable.png", historia: "CategoryCards/historia_origen_expansion.png", "cuidado-gatito": "CategoryCards/cuidado.png" }}
+              imageMap={{ salud: "CategoryCards/salud.png", comportamiento: "CategoryCards/comportamiento.png", alimentacion: "CategoryCards/alimentacion.png", juego: "CategoryCards/juego.png", etapas: "CategoryCards/etapas_de_vida.png", emergencia: "CategoryCards/emergencia.png", "adopción": "CategoryCards/adopcion.png", razas: "CategoryCards/razas.png", "adquisicion responsable": "CategoryCards/adquisicion_responsable.png", historia: "CategoryCards/historia_origen_expansion.png", "cuidado-gatito": "CategoryCards/cuidado.png", "tenencia-responsable": "CategoryCards/tenencia_responsable.png", "castracion": "CategoryCards/castración.png", "impacto-conciencia": "CategoryCards/impacto_conciencia.png" }}
             />
           </HeroSection>
 
