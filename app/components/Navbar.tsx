@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import PawIcon from "./PawIcon";
 import { useI18n } from "../i18n/I18nContext";
 import LanguageSelector from "./LanguageSelector";
@@ -23,7 +22,6 @@ function useContentTypes() {
 
 export default function Navbar({ onLogoClick = () => {} }: NavbarProps) {
   const { t } = useI18n();
-  const router = useRouter();
 
   return (
     <div style={{ position: "sticky", top: 0, zIndex: 300 }}>
@@ -43,7 +41,7 @@ export default function Navbar({ onLogoClick = () => {} }: NavbarProps) {
       >
         {/* Logo */}
         <button
-          onClick={() => { onLogoClick(); router.push("/"); }}
+          onClick={() => { onLogoClick(); window.location.href = "/"; }}
           style={{
             display: "flex", alignItems: "center", gap: "0.6rem",
             background: "none", border: "none", cursor: "pointer",
@@ -72,11 +70,11 @@ export default function Navbar({ onLogoClick = () => {} }: NavbarProps) {
             <button
               key={ct.id}
               onClick={() => {
-                if (ct.id === "inicio") router.push("/");
-                else if (ct.id === "sobre-nosotros") router.push("/sobre-nosotros");
-                else if (ct.id === "contacto") router.push("/contacto");
-                else if (ct.id === "razas") router.push("/razas");
-                else if (ct.id === "preguntas") router.push("/preguntas");
+                if (ct.id === "inicio") window.location.href = "/";
+                else if (ct.id === "sobre-nosotros") window.location.href = "/sobre-nosotros";
+                else if (ct.id === "contacto") window.location.href = "/contacto";
+                else if (ct.id === "razas") window.location.href = "/razas";
+                else if (ct.id === "preguntas") window.location.href = "/preguntas";
               }}
               style={{
                 background: "transparent",

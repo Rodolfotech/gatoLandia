@@ -31,6 +31,7 @@ export default function Pagination({
         justifyContent: "center",
         gap: "0.75rem",
         marginTop: "3.5rem",
+        marginBottom: "3rem",
         paddingTop: "2rem",
         borderTop: "1px solid rgba(201,180,154,0.3)",
       }}

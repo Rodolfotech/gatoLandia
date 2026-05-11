@@ -228,20 +228,24 @@ export default function TopicContent({
     return () => {
       cancelled = true;
       document.title = siteName;
-      const removeMeta = (name: string, property = false) => {
-        const attr = property ? "property" : "name";
-        document.querySelector(`meta[${attr}="${name}"]`)?.remove();
-      };
-      removeMeta("description");
-      removeMeta("keywords");
-      removeMeta("og:title", true);
-      removeMeta("og:description", true);
-      removeMeta("og:url", true);
-      removeMeta("og:site_name", true);
-      removeMeta("twitter:title");
-      removeMeta("twitter:description");
-      removeMeta("twitter:url");
-      document.querySelector('script[type="application/ld+json"]')?.remove();
+      try {
+        const removeMeta = (name: string, property = false) => {
+          const attr = property ? "property" : "name";
+          document.querySelector(`meta[${attr}="${name}"]`)?.remove();
+        };
+        removeMeta("description");
+        removeMeta("keywords");
+        removeMeta("og:title", true);
+        removeMeta("og:description", true);
+        removeMeta("og:url", true);
+        removeMeta("og:site_name", true);
+        removeMeta("twitter:title");
+        removeMeta("twitter:description");
+        removeMeta("twitter:url");
+        document.querySelector('script[type="application/ld+json"]')?.remove();
+      } catch {
+        // Ignore cleanup errors on rapid navigation
+      }
     };
   }, [topic, category, subcategory]);
   
