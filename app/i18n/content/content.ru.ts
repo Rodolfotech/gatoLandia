@@ -1,3 +1,4 @@
+import { Category } from '../../data/cats';
 export const categories: Category[] = [
 {
     "slug": "a",
