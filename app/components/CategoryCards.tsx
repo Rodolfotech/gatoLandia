@@ -64,9 +64,10 @@ export default function CategoryCards({ categories, onCategoryClick, imageMap }:
               overflow: "hidden",
             }}>
               <Image
-                src={`/${imageMap[cat.slug]}`}
+                src={imageMap[cat.slug]}
                 alt=""
                 fill
+                unoptimized={imageMap[cat.slug].startsWith("http")}
                 sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 200px"
                 style={{ objectFit: "cover", objectPosition: "center top" }}
               />
