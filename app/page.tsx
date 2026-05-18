@@ -120,7 +120,22 @@ export default function Home() {
             <CategoryCards
               categories={categories}
               onCategoryClick={handleCategoryTabClick}
-              imageMap={{ salud: "categorycards/salud.png", comportamiento: "categorycards/comportamiento.png", alimentacion: "categorycards/alimentacion.png", juego: "categorycards/juego.png", etapas: "categorycards/etapas_de_vida.png", emergencia: "categorycards/emergencia.png", "adopción": "categorycards/adopcion.png", razas: "categorycards/razas.png", "adquisicion responsable": "categorycards/adquisicion_responsable.png", historia: "categorycards/historia_origen_expansion.png", "cuidado-gatito": "categorycards/cuidado.png", "tenencia-responsable": "categorycards/tenencia_responsable.png", "castracion": "categorycards/castración.png", "impacto-conciencia": "categorycards/impacto_conciencia.png" }}
+              imageMap={{
+                salud: "https://i.postimg.cc/rdZmhvQd/salud-gatitos.webp",
+                comportamiento: "https://i.postimg.cc/G8Bp6q5z/comportamiento-gatuno.webp",
+                alimentacion: "https://i.postimg.cc/ph9d3q60/alimentacion-gatitos.webp",
+                juego: "https://i.postimg.cc/PLVx6B2Z/juegos-gatitos.webp",
+                etapas: "https://i.postimg.cc/7GCLjmW0/etapas-de-vida.webp",
+                emergencia: "https://i.postimg.cc/9R4fsJnt/emergencia-gatuna.webp",
+                "adopción": "https://i.postimg.cc/2bP5Yhs9/adopcion.webp",
+                razas: "https://i.postimg.cc/GBg2MZqG/razas-gatos.webp",
+                "adquisicion responsable": "https://i.postimg.cc/nj6LxByR/adquisicion-responsable.webp",
+                historia: "https://i.postimg.cc/8JFCxt0L/historia-origen-expansion.webp",
+                "cuidado-gatito": "https://i.postimg.cc/jwWjBZFc/cuidado-gatuno.webp",
+                "tenencia-responsable": "https://i.postimg.cc/f3qLH6Bd/tenencia-responsable.webp",
+                castracion: "https://i.postimg.cc/WFD4xXHW/castracion.webp",
+                "impacto-conciencia": "https://i.postimg.cc/VrSN2DVt/impacto-conciencia.webp",
+              }}
             />
           </HeroSection>
 
