@@ -43,6 +43,7 @@ export default function ImageCarousel({ images, aspectRatio = "16/9", interval =
           src={images[current].src}
           alt={images[current].alt}
           fill
+          quality={100}
           sizes="(max-width: 768px) 100vw, 800px"
           style={{ objectFit: "contain", objectPosition: "center" }}
         />

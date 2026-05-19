@@ -53,7 +53,7 @@ export const categories: Category[] = [
         {
           heading: "Los Primeros Días: Vigilancia y Adaptación",
           body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
-          image: "/articles/bienvenida.png",
+          image: "https://i.postimg.cc/ZJQMScRG/bienvenida.webp",
         },
         {
           heading: "Salud Preventiva: Vacunas, Parásitos y Esterilización",
@@ -156,7 +156,7 @@ export const categories: Category[] = [
               {
                 heading: "La naturaleza del gato y el agua",
                 body: "Los gatos evolucionaron en ambientes áridos y obtienen la mayor parte del agua de sus presas. Su sed está 'calibrada' para comida con 70% de humedad. El pienso seco tiene solo un 10%, lo que puede llevar a deshidratación crónica y problemas renales y urinarios.",
-                image: "/articles/comida.png",
+                image: "https://i.postimg.cc/33qcTBN5/comida.webp",
               },
               {
                 heading: "Ventajas de la comida húmeda",
@@ -176,7 +176,7 @@ export const categories: Category[] = [
               {
                 heading: "Fundamentos de la BARF",
                 body: "La dieta ideal para un gato BARF incluye aproximadamente 70% de carne magra, 10% de huesos carnosos (nunca cocidos), 10% de vísceras (hígado, corazón) y el 10% restante de otros tejidos. Requiere suplementación cuidadosa con taurina, calcio y vitaminas.",
-                image: "/articles/dieta.png",
+                image: "https://i.postimg.cc/BJzV0gbJ/dieta.webp",
               },
               {
                 heading: "Beneficios reportados",
@@ -202,7 +202,7 @@ export const categories: Category[] = [
               {
                 heading: "Peligro extremo: tóxicos graves",
                 body: "Cebolla, ajo, puerro y cebollín (en todas sus formas: crudos, cocinados o en polvo) destruyen los glóbulos rojos. Chocolate y café contienen teobromina y cafeína que pueden causar convulsiones y muerte. Uvas y pasas causan insuficiencia renal aguda por razones aún desconocidas.",
-                image: "/articles/toxico.png",
+                image: "https://i.postimg.cc/TTs4691m/toxico.webp",
               },
               {
                 heading: "Peligro moderado",
