@@ -100,8 +100,8 @@ export default async function RazasPage({ searchParams }) {
               alt={cat.raza}
               width={400}
               height={200}
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
               style={{ width: "100%", height: 200, objectFit: "cover" }}
-              unoptimized
             />
             <div style={{ padding: "1.25rem" }}>
               <h2 style={{ margin: "0 0 0.5rem", fontSize: "1.15rem", color: "#2c2416" }}>

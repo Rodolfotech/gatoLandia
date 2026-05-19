@@ -52,6 +52,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://i.postimg.cc" />
+      </head>
       <body className={`${playfair.variable} ${dmSans.variable}`}>
         <GoogleAnalytics />
         <GoogleAdsense />
