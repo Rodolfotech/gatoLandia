@@ -369,7 +369,7 @@ export default function TopicContent({
             {topic.slug === "adquisicion-responsable-global" && (
               <>
                 <div
-                  onClick={() => setLightbox("/articles/Titulo_adquisicion_responsable.png")}
+                  onClick={() => setLightbox("https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp")}
                   style={{
                     width: "100%",
                     aspectRatio: "16/9",
@@ -381,9 +381,10 @@ export default function TopicContent({
                   }}
                 >
                   <Image
-                    src="/articles/Titulo_adquisicion_responsable.png"
+                    src="https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp"
                     alt=""
                     fill
+                    quality={100}
                     sizes="(max-width: 768px) 100vw, 800px"
                     style={{ objectFit: "contain", objectPosition: "center" }}
                   />
@@ -391,35 +392,35 @@ export default function TopicContent({
                 <div style={{ marginTop: "3rem", marginBottom: "1.5rem" }}>
                   <ImageCarousel
                     images={[
-                      { src: "/articles/Que_adquisicion.png", alt: "Qué adquisición" },
-                      { src: "/articles/Donde_Adquisicion.png", alt: "Dónde adquirir" },
-                      { src: "/articles/Necesita_Adquisicion.png", alt: "Necesita adquisición" },
-                      { src: "/articles/Beneficios_Adquisicion.png", alt: "Beneficios adquisición" },
-                      { src: "/articles/Compromiso_Adquisicion.png", alt: "Compromiso adquisición" },
-                      { src: "/articles/Banner_adquisicion.png", alt: "Banner adquisición" },
+                      { src: "https://i.postimg.cc/D7NMTg0z/Que-adquisicion.webp", alt: "Qué adquisición" },
+                      { src: "https://i.postimg.cc/KmWH2NjG/Donde-Adquisicion.webp", alt: "Dónde adquirir" },
+                      { src: "https://i.postimg.cc/Cw2QgN5L/Necesita-Adquisicion.webp", alt: "Necesita adquisición" },
+                      { src: "https://i.postimg.cc/RvhDy8S4/Beneficios-Adquisicion.webp", alt: "Beneficios adquisición" },
+                      { src: "https://i.postimg.cc/33qcTBNQ/Compromiso-Adquisicion.webp", alt: "Compromiso adquisición" },
+                      { src: "https://i.postimg.cc/Gbt5VNLR/Banner-adquisicion.webp", alt: "Banner adquisición" },
                     ]}
                     onImageClick={(src) => {
                       const idx = [
-                        { src: "/articles/Que_adquisicion.png", alt: "Qué adquisición" },
-                        { src: "/articles/Donde_Adquisicion.png", alt: "Dónde adquirir" },
-                        { src: "/articles/Necesita_Adquisicion.png", alt: "Necesita adquisición" },
-                        { src: "/articles/Beneficios_Adquisicion.png", alt: "Beneficios adquisición" },
-                        { src: "/articles/Compromiso_Adquisicion.png", alt: "Compromiso adquisición" },
-                        { src: "/articles/Banner_adquisicion.png", alt: "Banner adquisición" },
+                        { src: "https://i.postimg.cc/D7NMTg0z/Que-adquisicion.webp", alt: "Qué adquisición" },
+                        { src: "https://i.postimg.cc/KmWH2NjG/Donde-Adquisicion.webp", alt: "Dónde adquirir" },
+                        { src: "https://i.postimg.cc/Cw2QgN5L/Necesita-Adquisicion.webp", alt: "Necesita adquisición" },
+                        { src: "https://i.postimg.cc/RvhDy8S4/Beneficios-Adquisicion.webp", alt: "Beneficios adquisición" },
+                        { src: "https://i.postimg.cc/33qcTBNQ/Compromiso-Adquisicion.webp", alt: "Compromiso adquisición" },
+                        { src: "https://i.postimg.cc/Gbt5VNLR/Banner-adquisicion.webp", alt: "Banner adquisición" },
                       ].findIndex(i => i.src === src);
                       setCarouselViewer({ images: [
-                        { src: "/articles/Que_adquisicion.png", alt: "Qué adquisición" },
-                        { src: "/articles/Donde_Adquisicion.png", alt: "Dónde adquirir" },
-                        { src: "/articles/Necesita_Adquisicion.png", alt: "Necesita adquisición" },
-                        { src: "/articles/Beneficios_Adquisicion.png", alt: "Beneficios adquisición" },
-                        { src: "/articles/Compromiso_Adquisicion.png", alt: "Compromiso adquisición" },
-                        { src: "/articles/Banner_adquisicion.png", alt: "Banner adquisición" },
+                        { src: "https://i.postimg.cc/D7NMTg0z/Que-adquisicion.webp", alt: "Qué adquisición" },
+                        { src: "https://i.postimg.cc/KmWH2NjG/Donde-Adquisicion.webp", alt: "Dónde adquirir" },
+                        { src: "https://i.postimg.cc/Cw2QgN5L/Necesita-Adquisicion.webp", alt: "Necesita adquisición" },
+                        { src: "https://i.postimg.cc/RvhDy8S4/Beneficios-Adquisicion.webp", alt: "Beneficios adquisición" },
+                        { src: "https://i.postimg.cc/33qcTBNQ/Compromiso-Adquisicion.webp", alt: "Compromiso adquisición" },
+                        { src: "https://i.postimg.cc/Gbt5VNLR/Banner-adquisicion.webp", alt: "Banner adquisición" },
                       ], current: idx });
                     }}
                   />
                 </div>
                 <div
-                  onClick={() => setLightbox("/articles/recuerda_Adquisicion.png")}
+                  onClick={() => setLightbox("https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp")}
                   style={{
                     width: "100%",
                     aspectRatio: "16/9",
@@ -430,9 +431,10 @@ export default function TopicContent({
                   }}
                 >
                   <Image
-                    src="/articles/recuerda_Adquisicion.png"
+                    src="https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp"
                     alt=""
                     fill
+                    quality={100}
                     sizes="(max-width: 768px) 100vw, 800px"
                     style={{ objectFit: "contain", objectPosition: "center" }}
                   />
@@ -442,10 +444,142 @@ export default function TopicContent({
             {topic.sections.map((section) => (
               (section.image || section.adSlot) && (
                 <div key={section.heading} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                  {section.image === "/articles/bienvenida.png" ? (
+                  {section.image === "https://i.postimg.cc/33qcTBN5/comida.webp" ? (
+                    <>
+                      <div style={{ marginTop: "8rem", marginBottom: "1.5rem" }}>
+                        <ImageCarousel
+                          images={[
+                            { src: "https://i.postimg.cc/jR2Fm9s3/Alimento-Balanceado.webp", alt: "Alimento Balanceado" },
+                            { src: "https://i.postimg.cc/Yt0sZVrK/Alimento-Porciones.webp", alt: "Alimento Porciones" },
+                            { src: "https://i.postimg.cc/5fyRTGxD/Alimento-Esenciales.webp", alt: "Alimento Esenciales" },
+                            { src: "https://i.postimg.cc/zqvc6MJd/Alimento-Agua.webp", alt: "Alimento Agua" },
+                            { src: "https://i.postimg.cc/vGTNkjQN/Alimento-cambio.webp", alt: "Alimento Cambio" },
+                            { src: "https://i.postimg.cc/MzHFN4WC/Alimento-Observa.webp", alt: "Alimento Observa" },
+                            { src: "https://i.postimg.cc/Lm5bw79F/Alimento-Toxico.webp", alt: "Alimento Tóxico" },
+                            { src: "https://i.postimg.cc/vGTNkjQq/Alimento-Bueno.webp", alt: "Alimento Bueno" },
+                          ]}
+                          onImageClick={(src) => {
+                            const imgs = [
+                              { src: "https://i.postimg.cc/jR2Fm9s3/Alimento-Balanceado.webp", alt: "Alimento Balanceado" },
+                              { src: "https://i.postimg.cc/Yt0sZVrK/Alimento-Porciones.webp", alt: "Alimento Porciones" },
+                              { src: "https://i.postimg.cc/5fyRTGxD/Alimento-Esenciales.webp", alt: "Alimento Esenciales" },
+                              { src: "https://i.postimg.cc/zqvc6MJd/Alimento-Agua.webp", alt: "Alimento Agua" },
+                              { src: "https://i.postimg.cc/vGTNkjQN/Alimento-cambio.webp", alt: "Alimento Cambio" },
+                              { src: "https://i.postimg.cc/MzHFN4WC/Alimento-Observa.webp", alt: "Alimento Observa" },
+                              { src: "https://i.postimg.cc/Lm5bw79F/Alimento-Toxico.webp", alt: "Alimento Tóxico" },
+                              { src: "https://i.postimg.cc/vGTNkjQq/Alimento-Bueno.webp", alt: "Alimento Bueno" },
+                            ];
+                            setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
+                          }}
+                        />
+                      </div>
+                      <div
+                        onClick={() => setLightbox(section.image!)}
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/9",
+                          position: "relative",
+                          overflow: "hidden",
+                          borderRadius: 12,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={section.image!}
+                          alt={section.heading}
+                          fill
+                          quality={100}
+                          sizes="(max-width: 768px) 100vw, 800px"
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                        />
+                      </div>
+                    </>
+                  ) : section.image === "https://i.postimg.cc/TTs4691m/toxico.webp" ? (
+                    <div
+                      onClick={() => setLightbox(section.image!)}
+                      style={{
+                        width: "100%",
+                        aspectRatio: "16/9",
+                        position: "relative",
+                        overflow: "hidden",
+                        borderRadius: 12,
+                        cursor: "pointer",
+                        marginTop: "8rem",
+                      }}
+                    >
+                      <Image
+                        src={section.image!}
+                        alt={section.heading}
+                        fill
+                        quality={100}
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        style={{ objectFit: "cover", objectPosition: "center top" }}
+                      />
+                    </div>
+                  ) : section.image === "https://i.postimg.cc/BJzV0gbJ/dieta.webp" ? (
                     <>
                       <div
-                        onClick={() => setLightbox("/articles/Titulo_adopcion.png")}
+                        onClick={() => setLightbox("https://i.postimg.cc/1ydjQHXF/Titulo-Dietas.webp")}
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/9",
+                          position: "relative",
+                          overflow: "hidden",
+                          borderRadius: 12,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src="https://i.postimg.cc/1ydjQHXF/Titulo-Dietas.webp"
+                          alt=""
+                          fill
+                          quality={100}
+                          sizes="(max-width: 768px) 100vw, 800px"
+                          style={{ objectFit: "contain", objectPosition: "center" }}
+                        />
+                      </div>
+                      <div style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}>
+                        <ImageCarousel
+                          images={[
+                            { src: "https://i.postimg.cc/KmWH2Nj2/Dieta-Barf.webp", alt: "Dieta Barf" },
+                            { src: "https://i.postimg.cc/ZJQMScn4/Dieta-Fundamentos.webp", alt: "Dieta Fundamentos" },
+                            { src: "https://i.postimg.cc/TTs4691x/Dieta-Beneficios.webp", alt: "Dieta Beneficios" },
+                          ]}
+                          onImageClick={(src) => {
+                            const imgs = [
+                              { src: "https://i.postimg.cc/KmWH2Nj2/Dieta-Barf.webp", alt: "Dieta Barf" },
+                              { src: "https://i.postimg.cc/ZJQMScn4/Dieta-Fundamentos.webp", alt: "Dieta Fundamentos" },
+                              { src: "https://i.postimg.cc/TTs4691x/Dieta-Beneficios.webp", alt: "Dieta Beneficios" },
+                            ];
+                            setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
+                          }}
+                        />
+                      </div>
+                      <div
+                        onClick={() => setLightbox(section.image!)}
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/9",
+                          position: "relative",
+                          overflow: "hidden",
+                          borderRadius: 12,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Image
+                          src={section.image!}
+                          alt={section.heading}
+                          fill
+                          quality={100}
+                          sizes="(max-width: 768px) 100vw, 800px"
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                        />
+                      </div>
+                    </>
+                  ) : section.image === "https://i.postimg.cc/ZJQMScRG/bienvenida.webp" ? (
+                    <>
+                      <div
+                        onClick={() => setLightbox("https://i.postimg.cc/MzLFSDHX/Titulo-adopcion.webp")}
                         style={{
                           width: "100%",
                           aspectRatio: "16/9",
@@ -457,9 +591,10 @@ export default function TopicContent({
                         }}
                       >
                         <Image
-                          src="/articles/Titulo_adopcion.png"
+                          src="https://i.postimg.cc/MzLFSDHX/Titulo-adopcion.webp"
                           alt=""
                           fill
+                          quality={100}
                           sizes="(max-width: 768px) 100vw, 800px"
                           style={{
                              objectFit: "contain", 
@@ -471,25 +606,25 @@ export default function TopicContent({
                       <div style={{ marginTop: "16rem", marginBottom: "1.5rem" }}>
                         <ImageCarousel
                           images={[
-                            { src: "/articles/Adopta_No_Compres.png", alt: "Adopta No Compres" },
-                            { src: "/articles/Antes_adoptar.png", alt: "Antes de adoptar" },
-                            { src: "/articles/Beneficio_adoptar.png", alt: "Beneficio de adoptar" },
-                            { src: "/articles/Cada_historia.png", alt: "Cada historia" },
-                            { src: "/articles/Cuadro_agradecimiento.png", alt: "Cuadro de agradecimiento" },
-                            { src: "/articles/Ellos_necesitan.png", alt: "Ellos necesitan" },
-                            { src: "/articles/Proceso_adopción.png", alt: "Proceso de adopción" },
-                          { src: "/articles/Recuerda.png", alt: "Recuerda" },
+                            { src: "https://i.postimg.cc/D70MHD2x/Adopta.webp", alt: "Adopta No Compres" },
+                            { src: "https://i.postimg.cc/nnrPg5FJ/Antes-adoptar.webp", alt: "Antes de adoptar" },
+                            { src: "https://i.postimg.cc/6BqmgSWw/Beneficio-adoptar.webp", alt: "Beneficio de adoptar" },
+                            { src: "https://i.postimg.cc/x984h7fj/Cada-historia.webp", alt: "Cada historia" },
+                            { src: "https://i.postimg.cc/dJfxYB3K/Cuadro-agradecimiento.webp", alt: "Cuadro de agradecimiento" },
+                            { src: "https://i.postimg.cc/fMPrNKyW/Ellos-necesitan.webp", alt: "Ellos necesitan" },
+                            { src: "https://i.postimg.cc/8TY0SHcz/Proceso-adopcion.webp", alt: "Proceso de adopción" },
+                          { src: "https://i.postimg.cc/y7GbHPxd/Recuerda.webp", alt: "Recuerda" },
                         ]}
                         onImageClick={(src) => {
                           const imgs = [
-                            { src: "/articles/Adopta_No_Compres.png", alt: "Adopta No Compres" },
-                            { src: "/articles/Antes_adoptar.png", alt: "Antes de adoptar" },
-                            { src: "/articles/Beneficio_adoptar.png", alt: "Beneficio de adoptar" },
-                            { src: "/articles/Cada_historia.png", alt: "Cada historia" },
-                            { src: "/articles/Cuadro_agradecimiento.png", alt: "Cuadro de agradecimiento" },
-                            { src: "/articles/Ellos_necesitan.png", alt: "Ellos necesitan" },
-                            { src: "/articles/Proceso_adopción.png", alt: "Proceso de adopción" },
-                            { src: "/articles/Recuerda.png", alt: "Recuerda" },
+                            { src: "https://i.postimg.cc/D70MHD2x/Adopta.webp", alt: "Adopta No Compres" },
+                            { src: "https://i.postimg.cc/nnrPg5FJ/Antes-adoptar.webp", alt: "Antes de adoptar" },
+                            { src: "https://i.postimg.cc/6BqmgSWw/Beneficio-adoptar.webp", alt: "Beneficio de adoptar" },
+                            { src: "https://i.postimg.cc/x984h7fj/Cada-historia.webp", alt: "Cada historia" },
+                            { src: "https://i.postimg.cc/dJfxYB3K/Cuadro-agradecimiento.webp", alt: "Cuadro de agradecimiento" },
+                            { src: "https://i.postimg.cc/fMPrNKyW/Ellos-necesitan.webp", alt: "Ellos necesitan" },
+                            { src: "https://i.postimg.cc/8TY0SHcz/Proceso-adopcion.webp", alt: "Proceso de adopción" },
+                            { src: "https://i.postimg.cc/y7GbHPxd/Recuerda.webp", alt: "Recuerda" },
                           ];
                           setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
                         }}
@@ -512,6 +647,7 @@ export default function TopicContent({
                           src={section.image!}
                           alt={section.heading}
                           fill
+                          quality={100}
                           sizes="(max-width: 768px) 100vw, 800px"
                           style={{ objectFit: "cover", objectPosition: "center top" }}
                         />
@@ -533,6 +669,7 @@ export default function TopicContent({
                         src={section.image}
                         alt={section.heading}
                         fill
+                        quality={100}
                         sizes="(max-width: 768px) 100vw, 800px"
                         style={{ objectFit: "cover", objectPosition: "center top" }}
                       />
