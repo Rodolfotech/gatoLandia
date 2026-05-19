@@ -5,6 +5,7 @@ import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic } from "../data/cats";
 import Pagination from "./Pagination";
 import AdBanner from "./AdBanner";
+import ImageCarousel from "./ImageCarousel";
 
 // Enhanced markdown: handles **bold**, line breaks, list items, and emojis
 function renderMarkdown(text: string): React.ReactNode {
@@ -251,6 +252,7 @@ export default function TopicContent({
   
   const mediaItems = topic.sections.filter(s => s.image || s.adSlot);
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const [carouselViewer, setCarouselViewer] = useState<{ images: { src: string; alt: string }[]; current: number } | null>(null);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
@@ -362,12 +364,160 @@ export default function TopicContent({
           </div>
         </article>
 
-        {mediaItems.length > 0 && (
+        {(mediaItems.length > 0 || topic.slug === "adquisicion-responsable-global") && (
           <div className="topic-media-column">
+            {topic.slug === "adquisicion-responsable-global" && (
+              <>
+                <div
+                  onClick={() => setLightbox("/articles/Titulo_adquisicion_responsable.png")}
+                  style={{
+                    width: "100%",
+                    aspectRatio: "16/9",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: 12,
+                    cursor: "pointer",
+                    marginTop: "10rem",
+                  }}
+                >
+                  <Image
+                    src="/articles/Titulo_adquisicion_responsable.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 800px"
+                    style={{ objectFit: "contain", objectPosition: "center" }}
+                  />
+                </div>
+                <div style={{ marginTop: "3rem", marginBottom: "1.5rem" }}>
+                  <ImageCarousel
+                    images={[
+                      { src: "/articles/Que_adquisicion.png", alt: "Qué adquisición" },
+                      { src: "/articles/Donde_Adquisicion.png", alt: "Dónde adquirir" },
+                      { src: "/articles/Necesita_Adquisicion.png", alt: "Necesita adquisición" },
+                      { src: "/articles/Beneficios_Adquisicion.png", alt: "Beneficios adquisición" },
+                      { src: "/articles/Compromiso_Adquisicion.png", alt: "Compromiso adquisición" },
+                      { src: "/articles/Banner_adquisicion.png", alt: "Banner adquisición" },
+                    ]}
+                    onImageClick={(src) => {
+                      const idx = [
+                        { src: "/articles/Que_adquisicion.png", alt: "Qué adquisición" },
+                        { src: "/articles/Donde_Adquisicion.png", alt: "Dónde adquirir" },
+                        { src: "/articles/Necesita_Adquisicion.png", alt: "Necesita adquisición" },
+                        { src: "/articles/Beneficios_Adquisicion.png", alt: "Beneficios adquisición" },
+                        { src: "/articles/Compromiso_Adquisicion.png", alt: "Compromiso adquisición" },
+                        { src: "/articles/Banner_adquisicion.png", alt: "Banner adquisición" },
+                      ].findIndex(i => i.src === src);
+                      setCarouselViewer({ images: [
+                        { src: "/articles/Que_adquisicion.png", alt: "Qué adquisición" },
+                        { src: "/articles/Donde_Adquisicion.png", alt: "Dónde adquirir" },
+                        { src: "/articles/Necesita_Adquisicion.png", alt: "Necesita adquisición" },
+                        { src: "/articles/Beneficios_Adquisicion.png", alt: "Beneficios adquisición" },
+                        { src: "/articles/Compromiso_Adquisicion.png", alt: "Compromiso adquisición" },
+                        { src: "/articles/Banner_adquisicion.png", alt: "Banner adquisición" },
+                      ], current: idx });
+                    }}
+                  />
+                </div>
+                <div
+                  onClick={() => setLightbox("/articles/recuerda_Adquisicion.png")}
+                  style={{
+                    width: "100%",
+                    aspectRatio: "16/9",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: 12,
+                    cursor: "pointer",
+                  }}
+                >
+                  <Image
+                    src="/articles/recuerda_Adquisicion.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 100vw, 800px"
+                    style={{ objectFit: "contain", objectPosition: "center" }}
+                  />
+                </div>
+              </>
+            )}
             {topic.sections.map((section) => (
               (section.image || section.adSlot) && (
                 <div key={section.heading} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                  {section.image && (
+                  {section.image === "/articles/bienvenida.png" ? (
+                    <>
+                      <div
+                        onClick={() => setLightbox("/articles/Titulo_adopcion.png")}
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/9",
+                          position: "relative",
+                          overflow: "hidden",
+                          borderRadius: 12,
+                          cursor: "pointer",
+                          marginTop: "10rem",
+                        }}
+                      >
+                        <Image
+                          src="/articles/Titulo_adopcion.png"
+                          alt=""
+                          fill
+                          sizes="(max-width: 768px) 100vw, 800px"
+                          style={{
+                             objectFit: "contain", 
+                             objectPosition: "center",
+                             
+                            }}
+                        />
+                      </div>
+                      <div style={{ marginTop: "16rem", marginBottom: "1.5rem" }}>
+                        <ImageCarousel
+                          images={[
+                            { src: "/articles/Adopta_No_Compres.png", alt: "Adopta No Compres" },
+                            { src: "/articles/Antes_adoptar.png", alt: "Antes de adoptar" },
+                            { src: "/articles/Beneficio_adoptar.png", alt: "Beneficio de adoptar" },
+                            { src: "/articles/Cada_historia.png", alt: "Cada historia" },
+                            { src: "/articles/Cuadro_agradecimiento.png", alt: "Cuadro de agradecimiento" },
+                            { src: "/articles/Ellos_necesitan.png", alt: "Ellos necesitan" },
+                            { src: "/articles/Proceso_adopción.png", alt: "Proceso de adopción" },
+                          { src: "/articles/Recuerda.png", alt: "Recuerda" },
+                        ]}
+                        onImageClick={(src) => {
+                          const imgs = [
+                            { src: "/articles/Adopta_No_Compres.png", alt: "Adopta No Compres" },
+                            { src: "/articles/Antes_adoptar.png", alt: "Antes de adoptar" },
+                            { src: "/articles/Beneficio_adoptar.png", alt: "Beneficio de adoptar" },
+                            { src: "/articles/Cada_historia.png", alt: "Cada historia" },
+                            { src: "/articles/Cuadro_agradecimiento.png", alt: "Cuadro de agradecimiento" },
+                            { src: "/articles/Ellos_necesitan.png", alt: "Ellos necesitan" },
+                            { src: "/articles/Proceso_adopción.png", alt: "Proceso de adopción" },
+                            { src: "/articles/Recuerda.png", alt: "Recuerda" },
+                          ];
+                          setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
+                        }}
+                      />
+                      </div>
+                  
+                      <div
+                        onClick={() => setLightbox(section.image!)}
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/9",
+                          position: "relative",
+                          overflow: "hidden",
+                          borderRadius: 12,
+                          cursor: "pointer",
+                           marginTop: "12rem",
+                        }}
+                      >
+                        <Image
+                          src={section.image!}
+                          alt={section.heading}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 800px"
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                        />
+                      </div>
+                    </>
+                  ) : section.image && (
                     <div
                       onClick={() => setLightbox(section.image!)}
                       style={{
@@ -436,6 +586,117 @@ export default function TopicContent({
               boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
             }}
           />
+        </div>
+      )}
+
+      {carouselViewer && (
+        <div
+          onClick={() => setCarouselViewer(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+          }}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setCarouselViewer((prev) => {
+                if (!prev) return null;
+                const prevIdx = prev.current === 0 ? prev.images.length - 1 : prev.current - 1;
+                return { ...prev, current: prevIdx };
+              });
+            }}
+            style={{
+              position: "absolute",
+              left: 24,
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255,255,255,0.15)",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: 48,
+              height: 48,
+              cursor: "pointer",
+              fontSize: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+            }}
+          >
+            ‹
+          </button>
+          <img
+            src={carouselViewer.images[carouselViewer.current].src}
+            alt={carouselViewer.images[carouselViewer.current].alt}
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              width: "auto",
+              height: "auto",
+              borderRadius: 8,
+              boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
+            }}
+          />
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setCarouselViewer((prev) => {
+                if (!prev) return null;
+                const nextIdx = prev.current === prev.images.length - 1 ? 0 : prev.current + 1;
+                return { ...prev, current: nextIdx };
+              });
+            }}
+            style={{
+              position: "absolute",
+              right: 24,
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255,255,255,0.15)",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: 48,
+              height: 48,
+              cursor: "pointer",
+              fontSize: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+            }}
+          >
+            ›
+          </button>
+          <button
+            onClick={() => setCarouselViewer(null)}
+            style={{
+              position: "absolute",
+              top: 24,
+              right: 24,
+              background: "rgba(255,255,255,0.15)",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: 40,
+              height: 40,
+              cursor: "pointer",
+              fontSize: "1.2rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+            }}
+          >
+            ✕
+          </button>
         </div>
       )}
 
