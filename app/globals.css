@@ -15,7 +15,7 @@
   --gold: #c9a227;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; user-select: none; -webkit-user-select: none; }
 html { scroll-behavior: smooth; }
 
 body {

@@ -94,6 +94,22 @@ export default async function RazasPage({ searchParams }) {
                 }
               });
             }
+
+            var lightbox = document.createElement('div');
+            lightbox.id = 'razas-lightbox';
+            lightbox.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:9999;cursor:zoom-out;';
+            lightbox.addEventListener('click', function() { this.style.display = 'none'; });
+            var lbImg = document.createElement('img');
+            lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);';
+            lightbox.appendChild(lbImg);
+            document.body.appendChild(lightbox);
+
+            document.querySelectorAll('.razas-img-wrap').forEach(function(el) {
+              el.addEventListener('click', function(e) {
+                lbImg.src = this.dataset.src;
+                lightbox.style.display = 'flex';
+              });
+            });
           });
         `,
       }} />
@@ -122,14 +138,20 @@ export default async function RazasPage({ searchParams }) {
           <div key={idx} style={{
             border: "1px solid rgba(201,180,154,0.3)", borderRadius: 12, overflow: "hidden"
           }}>
-            <Image
-              src={cat.imagen}
-              alt={cat.raza}
-              width={400}
-              height={200}
-              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-              style={{ width: "100%", height: 200, objectFit: "cover" }}
-            />
+            <div
+              className="razas-img-wrap"
+              data-src={cat.imagen}
+              style={{ cursor: "pointer" }}
+            >
+              <Image
+                src={cat.imagen}
+                alt={cat.raza}
+                width={400}
+                height={200}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                style={{ width: "100%", height: 200, objectFit: "cover", pointerEvents: "none" }}
+              />
+            </div>
             <div style={{ padding: "1.25rem" }}>
               <h2 style={{ margin: "0 0 0.5rem", fontSize: "1.15rem", color: "#2c2416" }}>
                 {cat.raza}
