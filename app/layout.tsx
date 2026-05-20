@@ -61,6 +61,14 @@ export default function RootLayout({
     <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
       <head>
         <link rel="preconnect" href="https://i.postimg.cc" />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('copy', function(e) { e.preventDefault(); });
+            document.addEventListener('cut', function(e) { e.preventDefault(); });
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+            document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+          `,
+        }} />
       </head>
       <body className={`${playfair.variable} ${dmSans.variable}`}>
         <script
