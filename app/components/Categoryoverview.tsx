@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { Category } from "../data/cats";
 import { useI18n } from "../i18n/I18nContext";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
+const SITE_NAME = "Gatitos · Enciclopedia Felina";
+
 interface CategoryOverviewProps {
   category: Category;
   onTopicSelect: (catSlug: string, subSlug: string, topicSlug: string) => void;
@@ -16,101 +19,39 @@ export default function CategoryOverview({
   const { t } = useI18n();
 
   useEffect(() => {
-    const siteName = "Gatitos · Enciclopedia Felina";
-    const path = `/${category.slug}`;
-    const defaultDesc = category.description;
+    const url = `${SITE_URL}/${category.slug}`;
 
-    let cancelled = false;
+    const subItems = category.subcategories.flatMap((s) =>
+      s.topics.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: { "@type": "Article", headline: t.title, description: t.intro.replace(/\*\*/g, "").slice(0, 200) },
+      }))
+    );
 
-    function apply(seoTitle: string, descText: string, kw?: string) {
-      if (cancelled) return;
-      const title = `${seoTitle} · ${siteName}`;
-      const url = `https://gato-landia.vercel.app/${category.slug}`;
+    const ld = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      headline: category.label,
+      description: category.description,
+      url,
+      author: { "@type": "Organization", name: SITE_NAME },
+      about: category.label,
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: subItems,
+      },
+    });
 
-      document.title = title;
-
-      const setMeta = (name: string, content: string, property = false) => {
-        const attr = property ? "property" : "name";
-        let el = document.querySelector(`meta[${attr}="${name}"]`);
-        if (!el) {
-          el = document.createElement("meta");
-          el.setAttribute(attr, name);
-          document.head.appendChild(el);
-        }
-        el.setAttribute("content", content);
-      };
-
-      setMeta("description", descText);
-      setMeta("keywords", kw || "");
-      setMeta("og:title", title, true);
-      setMeta("og:description", descText, true);
-      setMeta("og:url", url, true);
-      setMeta("og:site_name", siteName, true);
-      setMeta("twitter:title", title);
-      setMeta("twitter:description", descText);
-      setMeta("twitter:url", url);
-
-      const subItems = category.subcategories.flatMap((s) =>
-        s.topics.map((t, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          item: { "@type": "Article", headline: t.title, description: t.intro.replace(/\*\*/g, "").slice(0, 200) },
-        }))
-      );
-
-      const ld = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        headline: category.label,
-        description: descText,
-        url,
-        author: { "@type": "Organization", name: siteName },
-        about: category.label,
-        mainEntity: {
-          "@type": "ItemList",
-          itemListElement: subItems,
-        },
-      });
-
-      let ldEl = document.querySelector('script[type="application/ld+json"]');
-      if (!ldEl) {
-        ldEl = document.createElement("script");
-        ldEl.setAttribute("type", "application/ld+json");
-        document.head.appendChild(ldEl);
-      }
+    let ldEl = document.querySelector('script[type="application/ld+json"]');
+    if (ldEl) {
       ldEl.textContent = ld;
+    } else {
+      ldEl = document.createElement("script");
+      ldEl.setAttribute("type", "application/ld+json");
+      ldEl.textContent = ld;
+      document.head.appendChild(ldEl);
     }
-
-    fetch("/api/seo-data")
-      .then((r) => r.json())
-      .then((overrides) => {
-        const o = overrides[path];
-        apply(o?.title || category.label, o?.description || defaultDesc, o?.keywords);
-      })
-      .catch(() => apply(category.label, defaultDesc));
-
-    return () => {
-      cancelled = true;
-      document.title = siteName;
-      try {
-        const removeMeta = (name: string, property = false) => {
-          const attr = property ? "property" : "name";
-          document.querySelector(`meta[${attr}="${name}"]`)?.remove();
-        };
-        removeMeta("description");
-        removeMeta("keywords");
-        removeMeta("og:title", true);
-        removeMeta("og:description", true);
-        removeMeta("og:url", true);
-        removeMeta("og:site_name", true);
-        removeMeta("twitter:title");
-        removeMeta("twitter:description");
-        removeMeta("twitter:url");
-        document.querySelector('script[type="application/ld+json"]')?.remove();
-      } catch {
-        // Ignore cleanup errors on rapid navigation
-      }
-    };
   }, [category]);
 
   return (

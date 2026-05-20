@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Términos y Condiciones",
+  description: "Términos y condiciones de uso de Gatitos · Enciclopedia Felina. Información sobre el uso del sitio, propiedad intelectual y limitación de responsabilidad.",
+  openGraph: {
+    title: "Términos y Condiciones · Gatitos · Enciclopedia Felina",
+    description: "Términos y condiciones de la enciclopedia felina.",
+  },
+};
+
 export default function TerminosPage() {
   return (
     <div style={{ maxWidth: 800, margin: "4rem auto", padding: "0 2rem", color: "#2c2416" }}>

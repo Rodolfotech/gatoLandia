@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre Nosotros",
+  description: "Conoce la historia detrás de Gatitos · Enciclopedia Felina. Un espacio creado por un apasionado de los gatos y la tecnología para compartir información felina de calidad.",
+  openGraph: {
+    title: "Sobre Nosotros · Gatitos · Enciclopedia Felina",
+    description: "Conoce la historia detrás de la enciclopedia felina más completa.",
+  },
+};
+
 export default function SobreNosotrosPage() {
   return (
     <div style={{ maxWidth: 800, margin: "4rem auto", padding: "0 2rem", color: "#2c2416" }}>

@@ -1,6 +1,15 @@
 // app/razas/page.jsx
 import Image from 'next/image';
 export const dynamic = 'force-dynamic';
+
+export const metadata = {
+  title: "Guía de Razas de Gatos",
+  description: "Explora nuestra guía completa de razas de gatos: origen, características, peso, tiempo de vida y más. Encuentra la raza perfecta para ti.",
+  openGraph: {
+    title: "Guía de Razas de Gatos · Gatitos · Enciclopedia Felina",
+    description: "Explora nuestra guía completa de razas de gatos con fotos, origen y características.",
+  },
+};
 const PAGE_SIZE = 9;
 
 async function getCats() {

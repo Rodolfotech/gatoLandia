@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidad",
+  description: "Política de privacidad de Gatitos · Enciclopedia Felina. Conoce cómo recopilamos, usamos y protegemos tu información personal.",
+  openGraph: {
+    title: "Política de Privacidad · Gatitos · Enciclopedia Felina",
+    description: "Política de privacidad de la enciclopedia felina.",
+  },
+};
+
 export default function PrivacidadPage() {
   return (
     <div style={{ maxWidth: 800, margin: "4rem auto", padding: "0 2rem", color: "#2c2416" }}>
