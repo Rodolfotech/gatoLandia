@@ -3,16 +3,36 @@
 import { useState } from "react";
 
 export default function ContactoPage() {
-  const [form, setForm] = useState({ nombre: "", pais: "", correo: "", telefono: "" });
+  const [form, setForm] = useState({ nombre: "", pais: "", correo: "", telefono: "", mensaje: "" });
+  const [archivos, setArchivos] = useState<File[]>([]);
   const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setEnviado(true);
+    setError(false);
+    try {
+      const fd = new FormData();
+      fd.append("nombre", form.nombre);
+      fd.append("pais", form.pais);
+      fd.append("correo", form.correo);
+      fd.append("telefono", form.telefono);
+      fd.append("mensaje", form.mensaje);
+      archivos.forEach((f) => fd.append("imagenes", f));
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: fd,
+      });
+      if (!res.ok) throw new Error();
+      setEnviado(true);
+    } catch {
+      setError(true);
+    }
   }
 
   return (
@@ -24,6 +44,11 @@ export default function ContactoPage() {
       {enviado ? (
         <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#d4853a", fontWeight: 600 }}>
           ¡Gracias por contactarnos! Te responderemos pronto.
+        </p>
+      ) : error ? (
+        <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#c00", fontWeight: 600 }}>
+          Hubo un error al enviar el mensaje. Intenta de nuevo o escríbenos directamente a{" "}
+          <a href="mailto:correoalmagatuna@gmail.com" style={{ color: "#d4853a" }}>correoalmagatuna@gmail.com</a>.
         </p>
       ) : (
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
@@ -93,6 +118,42 @@ export default function ContactoPage() {
                 border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem",
               }}
             />
+          </div>
+
+          <div>
+            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
+              Mensaje *
+            </label>
+            <textarea
+              name="mensaje"
+              required
+              rows={5}
+              value={form.mensaje}
+              onChange={handleChange}
+              style={{
+                width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
+                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem",
+                resize: "vertical", fontFamily: "inherit",
+              }}
+            />
+          </div>
+
+          <div>
+            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
+              Imágenes (opcional)
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={(e) => setArchivos(Array.from(e.target.files || []))}
+              style={{ fontSize: "0.85rem", color: "#666" }}
+            />
+            {archivos.length > 0 && (
+              <p style={{ fontSize: "0.8rem", color: "#666", marginTop: "0.3rem" }}>
+                {archivos.length} archivo(s) seleccionado(s)
+              </p>
+            )}
           </div>
 
           <button

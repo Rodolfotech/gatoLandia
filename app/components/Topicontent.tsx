@@ -165,7 +165,7 @@ export default function TopicContent({
     function apply(titleText: string, descText: string, kw?: string) {
       if (cancelled) return;
       const title = `${titleText} · ${siteName}`;
-      const url = `https://gatitos.cl/${category.slug}/${subcategory.slug}/${topic.slug}`;
+      const url = `https://gato-landia.vercel.app/${category.slug}/${subcategory.slug}/${topic.slug}`;
 
       document.title = title;
 
@@ -204,7 +204,7 @@ export default function TopicContent({
         url,
         author: { "@type": "Organization", name: siteName },
         about: category.label,
-        isPartOf: { "@type": "WebPage", name: subcategory.label, url: `https://gatitos.cl/${category.slug}/${subcategory.slug}` },
+        isPartOf: { "@type": "WebPage", name: subcategory.label, url: `https://gato-landia.vercel.app/${category.slug}/${subcategory.slug}` },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         ...(sectionsLd.length > 0 ? { hasPart: sectionsLd } : {}),
       });

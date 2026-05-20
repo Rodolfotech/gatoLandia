@@ -25,7 +25,7 @@ export default function CategoryOverview({
     function apply(seoTitle: string, descText: string, kw?: string) {
       if (cancelled) return;
       const title = `${seoTitle} · ${siteName}`;
-      const url = `https://gatitos.cl/${category.slug}`;
+      const url = `https://gato-landia.vercel.app/${category.slug}`;
 
       document.title = title;
 
