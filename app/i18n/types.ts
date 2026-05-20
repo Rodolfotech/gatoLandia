@@ -1,4 +1,4 @@
-export type Locale = 'es' | 'en-US' | 'en-GB' | 'pt' | 'ru' | 'zh';
+export type Locale = 'es';
 
 export interface LocaleInfo {
   code: Locale;
@@ -8,11 +8,7 @@ export interface LocaleInfo {
 
 export const LOCALES: LocaleInfo[] = [
   { code: 'es',     label: 'Español',           flag: '🇪🇸' },
-  { code: 'en-US',  label: 'English (US)',      flag: '🇺🇸' },
-  { code: 'en-GB',  label: 'English (UK)',      flag: '🇬🇧' },
-  { code: 'pt',     label: 'Português',         flag: '🇵🇹' },
-  { code: 'ru',     label: 'Русский',           flag: '🇷🇺' },
-  { code: 'zh',     label: '中文',               flag: '🇨🇳' },
+
 ];
 
 export const DEFAULT_LOCALE: Locale = 'es';

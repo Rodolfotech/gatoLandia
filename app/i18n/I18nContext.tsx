@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback, useMemo, ReactNode } from 'react';
-import { Locale, DEFAULT_LOCALE, LOCALES } from './types';
+import { Locale, DEFAULT_LOCALE } from './types';
 import { t as translate } from './dictionary';
 import { getContent } from './content';
 import { Category } from '../data/cats';
@@ -10,26 +10,16 @@ interface I18nContextValue {
   locale: Locale;
   setLocale: (l: Locale) => void;
   t: (key: string) => string;
-  locales: typeof LOCALES;
   categories: Category[];
 }
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('gatolandia-locale') as Locale | null;
-      if (saved && LOCALES.some((l) => l.code === saved)) return saved;
-    }
-    return DEFAULT_LOCALE;
-  });
+  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('gatolandia-locale', l);
-    }
   }, []);
 
   const t = useCallback((key: string) => translate(locale, key), [locale]);
@@ -39,7 +29,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [locale]);
 
   return (
-    <I18nContext.Provider value={{ locale, setLocale, t, locales: LOCALES, categories }}>
+    <I18nContext.Provider value={{ locale, setLocale, t, categories }}>
       {children}
     </I18nContext.Provider>
   );

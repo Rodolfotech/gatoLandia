@@ -3,7 +3,6 @@
 import { useState } from "react";
 import PawIcon from "./PawIcon";
 import { useI18n } from "../i18n/I18nContext";
-import LanguageSelector from "./LanguageSelector";
 
 export type ContentType = "razas" | "preguntas";
 
@@ -105,7 +104,6 @@ export default function Navbar({ onLogoClick = () => {} }: NavbarProps) {
               {ct.label}
             </button>
           ))}
-          <LanguageSelector />
         </div>
 
         {/* Mobile hamburger */}
@@ -178,7 +176,6 @@ export default function Navbar({ onLogoClick = () => {} }: NavbarProps) {
               </button>
             ))}
             <div style={{ padding: "0.5rem 1rem" }}>
-              <LanguageSelector />
             </div>
           </div>
         </div>

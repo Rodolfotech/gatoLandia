@@ -19,7 +19,7 @@ export default function TerminosPage() {
       <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios se publicarán en esta página.</p>
       
       <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", marginTop: "2rem" }}>Contacto</h2>
-      <p>Para preguntas sobre estos términos, contáctanos en: conexiongatuna@gmail.com</p>
+      <p>Para preguntas sobre estos términos, contáctanos en: correoalmagatuna@gmail.com</p>
     </div>
   );
 }

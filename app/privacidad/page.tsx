@@ -16,7 +16,7 @@ export default function PrivacidadPage() {
       <p>Implementamos medidas de seguridad para proteger tu información contra acceso no autorizado o divulgación.</p>
       
       <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", marginTop: "2rem" }}>Contacto</h2>
-      <p>Si tienes preguntas sobre esta política, contáctanos en: conexiongatuna@gmail.com</p>
+      <p>Si tienes preguntas sobre esta política, contáctanos en: correoalmagatuna@gmail.com</p>
     </div>
   );
 }
