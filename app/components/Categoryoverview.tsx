@@ -5,7 +5,7 @@ import { Category } from "../data/cats";
 import { useI18n } from "../i18n/I18nContext";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
-const SITE_NAME = "Gatitos · Enciclopedia Felina";
+const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
 
 interface CategoryOverviewProps {
   category: Category;

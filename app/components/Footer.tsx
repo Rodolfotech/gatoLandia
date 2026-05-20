@@ -207,7 +207,7 @@ export default function Footer() {
          gap: "1rem",
        }}>
          <p style={{ fontSize: "0.75rem", color: "#8a7560", margin: 0 }}>
-           © {new Date().getFullYear()} GatoLandia. Todos los derechos reservados.
+           © {new Date().getFullYear()} AlmaGatuna. Todos los derechos reservados.
          </p>
          <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
             <a href="/privacidad" style={{ fontSize: "0.75rem", color: "#8a7560", textDecoration: "none" }}>Política de Privacidad</a>

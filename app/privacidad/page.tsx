@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Política de Privacidad",
-  description: "Política de privacidad de Gatitos · Enciclopedia Felina. Conoce cómo recopilamos, usamos y protegemos tu información personal.",
+  description: "Política de privacidad de AlmaGatuna · Enciclopedia Felina. Conoce cómo recopilamos, usamos y protegemos tu información personal.",
   openGraph: {
-    title: "Política de Privacidad · Gatitos · Enciclopedia Felina",
+    title: "Política de Privacidad · AlmaGatuna · Enciclopedia Felina",
     description: "Política de privacidad de la enciclopedia felina.",
   },
 };

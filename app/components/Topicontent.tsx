@@ -8,7 +8,7 @@ import AdBanner from "./AdBanner";
 import ImageCarousel from "./ImageCarousel";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
-const SITE_NAME = "Gatitos · Enciclopedia Felina";
+const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
 
 // Enhanced markdown: handles **bold**, line breaks, list items, and emojis
 function renderMarkdown(text: string): React.ReactNode {
