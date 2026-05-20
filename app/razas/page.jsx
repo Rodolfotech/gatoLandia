@@ -6,7 +6,7 @@ export const metadata = {
   title: "Guía de Razas de Gatos",
   description: "Explora nuestra guía completa de razas de gatos: origen, características, peso, tiempo de vida y más. Encuentra la raza perfecta para ti.",
   openGraph: {
-    title: "Guía de Razas de Gatos · Gatitos · Enciclopedia Felina",
+    title: "Guía de Razas de Gatos · AlmaGatuna · Enciclopedia Felina",
     description: "Explora nuestra guía completa de razas de gatos con fotos, origen y características.",
   },
 };
@@ -37,9 +37,11 @@ export default async function RazasPage({ searchParams }) {
       )
     : cats;
 
-  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  const noMatch = search.trim() && filtered.length === 0;
+  const displayCats = noMatch ? cats : filtered;
+  const totalPages = Math.ceil(displayCats.length / PAGE_SIZE);
   const start = (page - 1) * PAGE_SIZE;
-  const current = filtered.slice(start, start + PAGE_SIZE);
+  const current = displayCats.slice(start, start + PAGE_SIZE);
 
   if (cats.length === 0) {
     return (
@@ -53,16 +55,17 @@ export default async function RazasPage({ searchParams }) {
   return (
     <main style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 clamp(0.75rem, 3vw, 1.5rem)" }}>
       <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "#2c2416", marginBottom: "1.5rem" }}>
-        Guía de Razas de Gatos ({cats.length} razas)
+        Guía de {cats.length} Razas de Gatos
       </h1>
 
       <form action="/razas" method="GET" style={{ marginBottom: "1.5rem", display: "flex", gap: "0.5rem" }}>
-        <input
-          type="text"
-          name="q"
-          placeholder="Buscar raza (ej: Bengal, Persian)..."
-          defaultValue={search}
-          style={{
+          <input
+            type="text"
+            name="q"
+            id="razas-search"
+            placeholder="Buscar raza (ej: Bengal, Persian)..."
+            defaultValue={search}
+            style={{
             flex: 1, padding: "0.6rem 1rem", borderRadius: 8,
             border: "1px solid rgba(201,180,154,0.5)",
             fontSize: "0.9rem", boxSizing: "border-box"
@@ -80,9 +83,24 @@ export default async function RazasPage({ searchParams }) {
         </button>
       </form>
 
-      {filtered.length === 0 && search.trim() && (
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            var input = document.getElementById('razas-search');
+            if (input) {
+              input.addEventListener('input', function() {
+                if (this.value === '') {
+                  window.location.href = '/razas';
+                }
+              });
+            }
+          });
+        `,
+      }} />
+
+      {noMatch && (
         <p style={{ color: "#c0392b", fontSize: "0.9rem", padding: "1rem", background: "#fee", borderRadius: 8 }}>
-          La raza &quot;{search}&quot; no está disponible en estos momentos
+          La raza &quot;{search}&quot; no existe
         </p>
       )}
 

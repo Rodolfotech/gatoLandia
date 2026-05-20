@@ -6,7 +6,7 @@ import TopicContentPage from "./TopicContentPage";
 
 const OVERRIDES_FILE = path.join(process.cwd(), "data", "seo-overrides.json");
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
-const SITE_NAME = "Gatitos · Enciclopedia Felina";
+const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
 
 type Props = {
   params: Promise<{ categorySlug: string; subcategorySlug: string; topicSlug: string }>;

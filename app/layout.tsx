@@ -10,7 +10,7 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import GoogleAdsense from "./components/GoogleAdsense";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
-const SITE_NAME = "Gatitos · Enciclopedia Felina";
+const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],

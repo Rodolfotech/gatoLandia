@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
-  description: "Términos y condiciones de uso de Gatitos · Enciclopedia Felina. Información sobre el uso del sitio, propiedad intelectual y limitación de responsabilidad.",
+  description: "Términos y condiciones de uso de AlmaGatuna · Enciclopedia Felina. Información sobre el uso del sitio, propiedad intelectual y limitación de responsabilidad.",
   openGraph: {
-    title: "Términos y Condiciones · Gatitos · Enciclopedia Felina",
+    title: "Términos y Condiciones · AlmaGatuna · Enciclopedia Felina",
     description: "Términos y condiciones de la enciclopedia felina.",
   },
 };

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
-  description: "Conoce la historia detrás de Gatitos · Enciclopedia Felina. Un espacio creado por un apasionado de los gatos y la tecnología para compartir información felina de calidad.",
+  description: "Conoce la historia detrás de AlmaGatuna · Enciclopedia Felina. Un espacio creado por un apasionado de los gatos y la tecnología para compartir información felina de calidad.",
   openGraph: {
-    title: "Sobre Nosotros · Gatitos · Enciclopedia Felina",
+    title: "Sobre Nosotros · AlmaGatuna · Enciclopedia Felina",
     description: "Conoce la historia detrás de la enciclopedia felina más completa.",
   },
 };
