@@ -9,7 +9,7 @@ export const translations: Record<Locale, Record<string, string>> = {
   // ── Español ──────────────────────────────────────────────
   es: {
     // Navbar
-    nav_logo: 'Gatitos',
+    nav_logo: 'AlmaGatuna',
     nav_guides: 'Guías',
     nav_questions: 'Preguntas',
     nav_encyclopedia: 'Enciclopedia',
