@@ -63,10 +63,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://i.postimg.cc" />
         <script dangerouslySetInnerHTML={{
           __html: `
-            document.addEventListener('copy', function(e) { e.preventDefault(); });
-            document.addEventListener('cut', function(e) { e.preventDefault(); });
-            document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-            document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+            function isDashboard() { return window.location.pathname.startsWith('/gnt-admin'); }
+            document.addEventListener('copy', function(e) { if (!isDashboard()) e.preventDefault(); });
+            document.addEventListener('cut', function(e) { if (!isDashboard()) e.preventDefault(); });
+            document.addEventListener('contextmenu', function(e) { if (!isDashboard()) e.preventDefault(); });
+            document.addEventListener('selectstart', function(e) { if (!isDashboard()) e.preventDefault(); });
           `,
         }} />
       </head>
