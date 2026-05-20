@@ -97,7 +97,8 @@ export default function AdminDashboard() {
   const selectedEntry = selected ? data[selected] : null;
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", background: "#f5f0ea" }}>
+    <div className="dashboard-page" style={{ display: "flex", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", background: "#f5f0ea" }}>
+      <style>{`.dashboard-page, .dashboard-page * { user-select: auto !important; -webkit-user-select: auto !important; }`}</style>
       {/* Sidebar */}
       <aside style={{
         width: 300, flexShrink: 0, background: "#2c2416", color: "#fdf6ec",
