@@ -34,8 +34,8 @@ export default function SobreNosotrosPage() {
           Si tienes alguna duda, sugerencia o simplemente quieres compartir una historia sobre tu compañero felino lo puedes realizar a nuestro correo.
         </p>
         <p style={{ lineHeight: 1.7, fontSize: "1rem", marginTop: "1rem" }}>
-          <a href="mailto:conexiongatuna@gmail.com" style={{ color: "#d4853a", textDecoration: "none" }}>
-            conexiongatuna@gmail.com
+          <a href="mailto:correoalmagatuna@gmail.com" style={{ color: "#d4853a", textDecoration: "none" }}>
+            correoalmagatuna@gmail.com
           </a>
         </p>
       </section>

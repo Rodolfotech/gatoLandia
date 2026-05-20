@@ -117,8 +117,8 @@ export default function ContactoPage() {
         </p>
         <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#666", marginTop: "1rem" }}>
           Puedes ponerte en contacto con nosotros escribiendo al siguiente correo electrónico:{" "}
-          <a href="mailto:conexiongatuna@gmail.com" style={{ color: "#d4853a", textDecoration: "none" }}>
-            conexiongatuna@gmail.com
+          <a href="mailto:correoalmagatuna@gmail.com" style={{ color: "#d4853a", textDecoration: "none" }}>
+            correoalmagatuna@gmail.com
           </a>
         </p>
       </div>

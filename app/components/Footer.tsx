@@ -212,7 +212,7 @@ export default function Footer() {
          <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
             <a href="/privacidad" style={{ fontSize: "0.75rem", color: "#8a7560", textDecoration: "none" }}>Política de Privacidad</a>
             <a href="/terminos" style={{ fontSize: "0.75rem", color: "#8a7560", textDecoration: "none" }}>Términos y Condiciones</a>
-            <a href="mailto:conexiongatuna@gmail.com" style={{ fontSize: "0.75rem", color: "#8a7560", textDecoration: "none" }}>conexiongatuna@gmail.com</a>
+            <a href="mailto:correoalmagatuna@gmail.com" style={{ fontSize: "0.75rem", color: "#8a7560", textDecoration: "none" }}>correoalmagatuna@gmail.com</a>
           </div>
        </div>
      </footer>
