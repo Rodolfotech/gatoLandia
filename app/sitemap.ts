@@ -1,7 +1,7 @@
 import { categories } from "@/app/data/cats";
 import type { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://gato-landia.vercel.app";
+const BASE_URL = "https://almagatuna.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [

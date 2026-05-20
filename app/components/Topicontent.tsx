@@ -7,6 +7,9 @@ import Pagination from "./Pagination";
 import AdBanner from "./AdBanner";
 import ImageCarousel from "./ImageCarousel";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
+const SITE_NAME = "Gatitos · Enciclopedia Felina";
+
 // Enhanced markdown: handles **bold**, line breaks, list items, and emojis
 function renderMarkdown(text: string): React.ReactNode {
   const lines = text.split('\n');
@@ -156,98 +159,55 @@ export default function TopicContent({
   const { t } = useI18n();
 
   useEffect(() => {
-    const siteName = "Gatitos · Enciclopedia Felina";
-    const path = `/${category.slug}/${subcategory.slug}/${topic.slug}`;
     const desc = topic.intro.replace(/\*\*/g, "").slice(0, 160);
+    const url = `${SITE_URL}/${category.slug}/${subcategory.slug}/${topic.slug}`;
 
-    let cancelled = false;
-
-    function apply(titleText: string, descText: string, kw?: string) {
-      if (cancelled) return;
-      const title = `${titleText} · ${siteName}`;
-      const url = `https://gato-landia.vercel.app/${category.slug}/${subcategory.slug}/${topic.slug}`;
-
-      document.title = title;
-
-      const setMeta = (name: string, content: string, property = false) => {
-        const attr = property ? "property" : "name";
-        let el = document.querySelector(`meta[${attr}="${name}"]`);
-        if (!el) {
-          el = document.createElement("meta");
-          el.setAttribute(attr, name);
-          document.head.appendChild(el);
-        }
-        el.setAttribute("content", content);
-      };
-
-      setMeta("description", descText);
-      setMeta("keywords", kw || "");
-      setMeta("og:title", title, true);
-      setMeta("og:description", descText, true);
-      setMeta("og:url", url, true);
-      setMeta("og:site_name", siteName, true);
-      setMeta("twitter:title", title);
-      setMeta("twitter:description", descText);
-      setMeta("twitter:url", url);
-
-      const sectionsLd = topic.sections.map((s) => ({
-        "@type": "ListItem",
-        position: topic.sections.indexOf(s) + 1,
-        item: { "@type": "Article", headline: s.heading, description: s.body.replace(/\*\*/g, "").slice(0, 200) },
-      }));
-
-      const ld = JSON.stringify({
+    const ld = JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: category.label, item: `${SITE_URL}/${category.slug}` },
+          { "@type": "ListItem", position: 3, name: subcategory.label, item: `${SITE_URL}/${category.slug}/${subcategory.slug}` },
+          { "@type": "ListItem", position: 4, name: topic.title, item: url },
+        ],
+      },
+      {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: topic.title,
-        description: descText,
+        description: desc,
         url,
-        author: { "@type": "Organization", name: siteName },
+        author: { "@type": "Organization", name: SITE_NAME },
         about: category.label,
-        isPartOf: { "@type": "WebPage", name: subcategory.label, url: `https://gato-landia.vercel.app/${category.slug}/${subcategory.slug}` },
+        isPartOf: { "@type": "WebPage", name: subcategory.label, url: `${SITE_URL}/${category.slug}/${subcategory.slug}` },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
-        ...(sectionsLd.length > 0 ? { hasPart: sectionsLd } : {}),
-      });
+        speakable: { "@type": "SpeakableSpecification", cssSelector: ["#topic-intro"] },
+      },
+      ...(topic.sections.length > 0 ? [{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: topic.sections.map((s) => ({
+          "@type": "Question",
+          name: s.heading,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: s.body.replace(/\*\*/g, "").slice(0, 500),
+          },
+        })),
+      }] : []),
+    ]);
 
-      let ldEl = document.querySelector('script[type="application/ld+json"]');
-      if (!ldEl) {
-        ldEl = document.createElement("script");
-        ldEl.setAttribute("type", "application/ld+json");
-        document.head.appendChild(ldEl);
-      }
+    let ldEl = document.querySelector('script[type="application/ld+json"]');
+    if (ldEl) {
       ldEl.textContent = ld;
+    } else {
+      ldEl = document.createElement("script");
+      ldEl.setAttribute("type", "application/ld+json");
+      ldEl.textContent = ld;
+      document.head.appendChild(ldEl);
     }
-
-    fetch("/api/seo-data")
-      .then((r) => r.json())
-      .then((overrides) => {
-        const o = overrides[path];
-        apply(o?.title || topic.title, o?.description || desc, o?.keywords);
-      })
-      .catch(() => apply(topic.title, desc));
-
-    return () => {
-      cancelled = true;
-      document.title = siteName;
-      try {
-        const removeMeta = (name: string, property = false) => {
-          const attr = property ? "property" : "name";
-          document.querySelector(`meta[${attr}="${name}"]`)?.remove();
-        };
-        removeMeta("description");
-        removeMeta("keywords");
-        removeMeta("og:title", true);
-        removeMeta("og:description", true);
-        removeMeta("og:url", true);
-        removeMeta("og:site_name", true);
-        removeMeta("twitter:title");
-        removeMeta("twitter:description");
-        removeMeta("twitter:url");
-        document.querySelector('script[type="application/ld+json"]')?.remove();
-      } catch {
-        // Ignore cleanup errors on rapid navigation
-      }
-    };
   }, [topic, category, subcategory]);
   
   const mediaItems = topic.sections.filter(s => s.image || s.adSlot);
@@ -298,18 +258,34 @@ export default function TopicContent({
             {topic.title}
           </h1>
 
-          {/* Intro */}
+          {/* Intro / Direct Answer */}
           <div
+            id="topic-intro"
             style={{
-              fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
-              color: "#6b5c44",
-              lineHeight: 1.75,
+              background: `linear-gradient(135deg, ${category.color}08, ${category.color}02)`,
+              borderLeft: `4px solid ${category.color}`,
+              borderRadius: "0 12px 12px 0",
+              padding: "1.25rem 1.5rem",
               marginBottom: "2.5rem",
-              paddingBottom: "2rem",
-              borderBottom: `2px solid ${category.color}20`,
             }}
           >
-            {renderMarkdown(topic.intro)}
+            <div style={{
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: category.color,
+              marginBottom: "0.5rem",
+            }}>
+              🎯 Respuesta rápida
+            </div>
+            <div style={{
+              fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
+              color: "#4a3d2c",
+              lineHeight: 1.75,
+            }}>
+              {renderMarkdown(topic.intro)}
+            </div>
           </div>
 
           {/* Sections */}
@@ -684,6 +660,57 @@ export default function TopicContent({
           </div>
         )}
       </div>
+
+      {/* Preguntas relacionadas — People Also Ask pattern */}
+      {subcategory.topics.length > 1 && (
+        <section style={{
+          maxWidth: 900,
+          padding: "2rem var(--page-padding, 3rem) 0",
+          margin: "0 auto",
+          width: "100%",
+        }}>
+          <h2 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "1.25rem",
+            fontWeight: 700,
+            color: "#2c2416",
+            marginBottom: "1rem",
+          }}>
+            Preguntas relacionadas sobre {subcategory.label.toLowerCase()}
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            {subcategory.topics
+              .filter(t => t.slug !== topic.slug)
+              .map(t => (
+                <button
+                  key={t.slug}
+                  onClick={() => onNavigate(t.slug)}
+                  style={{
+                    textAlign: "left",
+                    background: "none",
+                    border: "none",
+                    borderBottom: "1px solid rgba(201,180,154,0.25)",
+                    padding: "0.75rem 0",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    fontSize: "0.9rem",
+                    color: "#4a3d2c",
+                    fontWeight: 500,
+                    fontFamily: "'DM Sans', sans-serif",
+                    transition: "color 0.15s",
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.color = category.color}
+                  onMouseLeave={e => e.currentTarget.style.color = "#4a3d2c"}
+                >
+                  <span style={{ color: category.color, fontSize: "0.7rem" }}>▸</span>
+                  {t.title}
+                </button>
+              ))}
+          </div>
+        </section>
+      )}
 
       <Pagination
         current={pageIndex}
