@@ -34,7 +34,7 @@ export interface Category {
 
 export const categories: Category[] = [
     {
-    slug: "adopción",
+    slug: "adopcion",
     label: "Adopción",
     emoji: "",
     color: "#5b8db8",
@@ -90,7 +90,7 @@ export const categories: Category[] = [
   ],
 },
     {
-    slug: "adquisicion responsable",
+    slug: "adquisicion-responsable",
     label: "Adquisición responsable",
     emoji: "",
     color: "#5b8db8",
@@ -294,7 +294,7 @@ export const categories: Category[] = [
   label: "Gato ¿Interio o Exterior?",
   topics: [
     {
-      slug: "guia para entender y cuidar",
+      slug: "guia-para-entender-y-cuidar",
       title: "Comportamiento Felino: Cómo entender y cuidar mejor a tu gato",
       intro: "Los gatos son hoy una de las mascotas más populares del mundo. Aunque históricamente no se les veía como compañeros de vida tal como los conocemos ahora, la realidad es que, al igual que los perros, necesitan interacción, atención y cariño. La diferencia radica en cómo expresan esas necesidades. Para convivir en armonía con tu felino, es fundamental entender su naturaleza y adaptar su entorno a sus instintos.",
       sections: [
@@ -334,7 +334,7 @@ export const categories: Category[] = [
   label: "presentacion entre gatos",
   topics: [
     {
-      slug: "presentacion entre gatos",
+      slug: "presentacion-entre-gatos",
       title: "Cómo lograr que dos gatos se acepten y convivan tranquilos",
       intro: "Introducir un nuevo gato en casa es emocionante, pero puede ser estresante para tu gato residente. Los gatos son territoriales por naturaleza, así que la clave del éxito no es la rapidez, sino la paciencia. Si lo haces bien desde el principio, evitarás conflictos futuros y fomentarás una amistad (o al menos, una tolerancia respetuosa) duradera. Olvida la idea de 'presentarlos de golpe'. Sigue este proceso gradual.",
       sections: [
