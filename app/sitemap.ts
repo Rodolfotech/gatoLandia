@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Las subcategorías no tienen página propia: redirigen a su primer tema.
   const categoryUrls: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${BASE_URL}/categoria/${cat.slug}`,
+    url: encodeURI(`${BASE_URL}/categoria/${cat.slug}`),
     lastModified: LAST_MODIFIED,
     changeFrequency: "weekly" as const,
     priority: 0.8,
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const sub of cat.subcategories) {
       for (const topic of sub.topics) {
         topicUrls.push({
-          url: `${BASE_URL}/categoria/${cat.slug}/${sub.slug}/${topic.slug}`,
+          url: encodeURI(`${BASE_URL}/categoria/${cat.slug}/${sub.slug}/${topic.slug}`),
           lastModified: LAST_MODIFIED,
           changeFrequency: "monthly" as const,
           priority: 0.7,
