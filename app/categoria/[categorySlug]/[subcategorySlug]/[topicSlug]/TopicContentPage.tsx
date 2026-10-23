@@ -37,7 +37,7 @@ export default function TopicContentPage({ categorySlug, subcategorySlug, topicS
   }
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <div>
       <TopicContent
         category={category}
         subcategory={subcategory}

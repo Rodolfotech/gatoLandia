@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import Image from "next/image";
+import { activateOnKey } from "@/app/lib/keyboardNav";
 
 interface ImageCarouselProps {
   images: { src: string; alt: string }[];
@@ -10,16 +11,32 @@ interface ImageCarouselProps {
   onImageClick?: (src: string) => void;
 }
 
+const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void) {
+  const query = window.matchMedia(REDUCED_MOTION);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+function getReducedMotion() {
+  return window.matchMedia(REDUCED_MOTION).matches;
+}
+
 export default function ImageCarousel({ images, aspectRatio = "16/9", interval = 3000, onImageClick }: ImageCarouselProps) {
   const [current, setCurrent] = useState(0);
+  const [userPaused, setUserPaused] = useState(false);
+  // Quien pide menos movimiento en su sistema no ve el carrusel animarse.
+  const reducedMotion = useSyncExternalStore(subscribeReducedMotion, getReducedMotion, () => false);
+  const paused = userPaused || reducedMotion;
 
   useEffect(() => {
-    if (images.length <= 1) return;
+    if (images.length <= 1 || paused) return;
     const id = setInterval(() => {
       setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
     }, interval);
     return () => clearInterval(id);
-  }, [images.length, interval]);
+  }, [images.length, interval, paused]);
 
   if (images.length === 0) return null;
 
@@ -29,6 +46,10 @@ export default function ImageCarousel({ images, aspectRatio = "16/9", interval =
   return (
     <div style={{ width: "100%", position: "relative" }}>
       <div
+        role={onImageClick ? "button" : undefined}
+        tabIndex={onImageClick ? 0 : undefined}
+        aria-label={onImageClick ? "Ampliar imagen" : undefined}
+        onKeyDown={onImageClick ? activateOnKey(() => onImageClick(images[current].src)) : undefined}
         onClick={() => onImageClick?.(images[current].src)}
         style={{
           width: "100%",
@@ -48,8 +69,32 @@ export default function ImageCarousel({ images, aspectRatio = "16/9", interval =
           style={{ objectFit: "contain", objectPosition: "center" }}
         />
         {images.length > 1 && (
+          <button
+            type="button"
+            onClick={() => setUserPaused((p) => !p)}
+            aria-label={paused ? "Reanudar carrusel" : "Pausar carrusel"}
+            className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            style={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              zIndex: 2,
+              minWidth: 44,
+              minHeight: 44,
+              borderRadius: 999,
+              border: "none",
+              background: "rgba(0,0,0,0.55)",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            <span aria-hidden="true">{paused ? "▶" : "❚❚"}</span>
+          </button>
+        )}
+        {images.length > 1 && (
           <>
             <button
+              aria-label="Imagen anterior"
               onClick={prev}
               style={{
                 position: "absolute",
@@ -73,6 +118,7 @@ export default function ImageCarousel({ images, aspectRatio = "16/9", interval =
               ‹
             </button>
             <button
+              aria-label="Imagen siguiente"
               onClick={next}
               style={{
                 position: "absolute",
@@ -110,6 +156,8 @@ export default function ImageCarousel({ images, aspectRatio = "16/9", interval =
           {images.map((_, i) => (
             <button
               key={i}
+              aria-label={`Ver imagen ${i + 1} de ${images.length}`}
+              aria-current={i === current}
               onClick={() => setCurrent(i)}
               style={{
                 width: 8,

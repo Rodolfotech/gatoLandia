@@ -23,10 +23,12 @@ export interface Subcategory {
 export interface Category {
   slug: string;
   label: string;
+  seoTitle: string;
   emoji: string;
   color: string;
   bg: string;
   description: string;
+  intro: string;
   subcategories: Subcategory[];
 }
 
@@ -36,10 +38,12 @@ export const categories: Category[] = [
     {
     slug: "adopcion",
     label: "Adopción",
+    seoTitle: "Adopción de gatos: guía responsable",
     emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
-    description: "Como adoptar a un gato",
+    description: "Cómo adoptar un gato con responsabilidad: qué revisar antes de llevarlo a casa, cómo preparar el hogar y cómo cuidarlo durante sus primeros días.",
+    intro: "Adoptar un gato es darle un hogar a un animal que depende de ti para todo. Antes de llevarlo a casa conviene pensar en el tiempo que podrás dedicarle, en el presupuesto para su cuidado durante muchos años y en si todas las personas que viven contigo están de acuerdo.\n\nEn esta sección encontrarás qué revisar antes de elegir un gato, cómo preparar el espacio para su llegada y qué hacer durante los primeros días, que son los más delicados para su adaptación. También verás cómo acompañar la convivencia con otros animales y cómo organizar la llegada de un gato adulto.\n\nCada gato tiene su propio carácter, y uno que encaje con tu forma de vivir suele dar mejores resultados que elegir solo por su apariencia. Lee los temas con calma y vuelve a ellos cuando tengas dudas. Muchos refugios acompañan la adopción durante las primeras semanas, así que no dudes en preguntar.",
     subcategories: [
      {
   slug: "bienvenida",
@@ -53,7 +57,6 @@ export const categories: Category[] = [
         {
           heading: "Los Primeros Días: Vigilancia y Adaptación",
           body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
-          image: "https://i.postimg.cc/ZJQMScRG/bienvenida.webp",
         },
         {
           heading: "Salud Preventiva: Vacunas, Parásitos y Esterilización",
@@ -69,7 +72,7 @@ export const categories: Category[] = [
         },
         {
           heading: "El Arenero: Reglas de Oro",
-          body: "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina.",
+          body: "Un gato que no usa el arenero suele expresar un problema médico o de estrés. Cantidad: Regla N+1 (número de gatos + 1 caja). Ubicación: Lugares tranquilos, accesibles, lejos de ruidos (lavadoras) y de su comida. Tipo: A muchos no les gustan los cerrados; prueba con uno abierto y grande. Limpieza: Retira los desechos a diario y lava la caja regularmente con agua y jabón neutro (evita lejía o amoniaco). Arena: Prefieren arenas sin perfume y de textura fina.\n\nSi quieres profundizar en la higiene del arenero y en otros comportamientos del día a día, lee [Comportamiento Felino: Cómo entender y cuidar mejor a tu gato](/categoria/comportamiento/interio-exterior/guia-para-entender-y-cuidar).",
         },
         {
           heading: "Comportamiento y Enriquecimiento Ambiental",
@@ -81,7 +84,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Aspectos Legales y Seguridad",
-          body: "Microchip: Es obligatorio y debe tener los datos actualizados (RIAC en Madrid). Prevención de Accidentes: El Síndrome del Gato Paracaidista. Instala redes mosquiteras resistentes en ventanas y balcones. Una caída desde altura puede ser mortal; no confíes en su 'habilidad' para caer de pie. Cada gato es un mundo. Observa, respeta sus tiempos y consulta siempre a tu veterinario ante cambios bruscos.",
+          body: "Microchip: Es obligatorio y debe tener los datos actualizados (según la normativa de tu país). Prevención de Accidentes: El Síndrome del Gato Paracaidista. Instala redes mosquiteras resistentes en ventanas y balcones. Una caída desde altura puede ser mortal; no confíes en su 'habilidad' para caer de pie. Cada gato es un mundo. Observa, respeta sus tiempos y consulta siempre a tu veterinario ante cambios bruscos.",
         }
       ],
     },
@@ -92,10 +95,12 @@ export const categories: Category[] = [
     {
     slug: "adquisicion-responsable",
     label: "Adquisición responsable",
+    seoTitle: "Adquisición responsable de gatos: guía ética",
     emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
-    description: "Razas de gatos",
+    description: "Cómo conseguir un gato de forma responsable: criaderos y refugios éticos, señales de alerta, documentación y los principios legales y éticos de la tenencia.",
+    intro: "Conseguir un gato es el primer paso de una relación que puede durar más de quince años. Por eso importa de dónde viene y en qué condiciones llega a casa. Aquí encontrarás cómo distinguir a un criadero o un refugio responsable de uno que no lo es, qué documentación conviene pedir y qué señales de alerta deben hacerte dudar.\n\nTambién hablamos de los principios éticos y legales de la tenencia, como el compromiso de cuidar al gato toda su vida, atender sus necesidades de salud y bienestar, y no abandonarlo cuando cambian las circunstancias. Son temas que conviene conocer antes de decidir, no después.\n\nSi ya tienes un gato o estás pensando en uno, estas lecturas te ayudarán a tomar una decisión informada: elegir con el corazón, pero también con la cabeza.\n\nUna pregunta útil antes de elegir es si el lugar te deja visitar a los gatos, conocer a sus cuidadores y recibir información clara sobre su salud y su historia. Quien tiene nada que ocultar suele estar dispuesto a responder.",
     subcategories: [
       {
         slug: "guia-adquisicion-responsable",
@@ -112,7 +117,7 @@ export const categories: Category[] = [
               },
               {
                 heading: "Marco Legal: Derechos y Deberes",
-                body: "Aunque las leyes varían por país, la mayoría exige: Microchip obligatorio (implantado y registrado antes de la entrega), Contrato de Compraventa con datos del animal, garantías de salud (FeLV/FIV), compromiso de esterilización y cláusula de devolución. Vacunaciones al día firmadas por veterinario colegiado. Infórmate siempre de la legislación local de tu país o región.",
+                body: "Aunque las leyes varían por país, la mayoría exige: Microchip obligatorio (implantado y registrado antes de la entrega), Contrato de Compraventa con datos del animal, garantías de salud (FeLV/FIV), compromiso de esterilización y cláusula de devolución. Vacunaciones al día firmadas por veterinario colegiado. Infórmate siempre de la legislación local de tu país o región.\n\nPara conocer con más detalle las responsabilidades de quien cuida a un gato, lee [Marco Ético y Legal Global](/categoria/tenencia-responsable/marco-etico-legal/marco-etico-legal).",
               },
               {
                 heading: "Checklist: Cómo detectar un Criadero Ético",
@@ -139,10 +144,12 @@ export const categories: Category[] = [
   {
     slug: "alimentacion",
     label: "Alimentación",
+    seoTitle: "Alimentación felina: dietas y alimentos",
     emoji: "",
     color: "#d4853a",
     bg: "#fff3e6",
-    description: "Nutrición, dietas y lo que no pueden comer",
+    description: "Nutrición felina, dietas y alimentos: qué comen los gatos según su etapa de vida, cómo elegir una dieta completa y qué alimentos debes evitar.",
+    intro: "Un gato necesita una dieta completa y equilibrada, adaptada a su etapa de vida. Por ser un carnívoro estricto, depende de proteína animal de calidad, y algunos nutrientes que para nosotros son opcionales, como la taurina, son imprescindibles para él. En esta sección verás qué come un gato según su edad, cómo elegir un alimento completo y cómo leer la etiqueta sin dejarte llevar por el marketing.\n\nTambién encontrarás las diferencias entre la comida húmeda y el pienso seco, y por qué la hidratación importa tanto. Los temas sobre alimentos prohibidos explican qué productos de la casa pueden resultar peligrosos, y las pautas para cambiar de dieta muestran cómo hacer la transición sin provocar problemas digestivos.\n\nCualquier cambio importante en la alimentación de un gato con problemas de salud debe consultarse con el veterinario. La información de esta sección te ayuda a preguntar mejor y a entender lo que te recomiende.",
     subcategories: [
       {
         slug: "dietas",
@@ -151,42 +158,52 @@ export const categories: Category[] = [
           {
             slug: "comida-humeda-vs-seca",
             title: "Comida húmeda vs. pienso seco",
-            intro: "Esta es una de las preguntas más frecuentes y debatidas entre dueños de gatos. La respuesta importa porque los gatos tienen una relación particular con el agua que hace que el tipo de alimento impacte directamente su salud renal.",
+            intro: "No hay un alimento que sea “el mejor” para todos los gatos. Lo importante es que sea completo, equilibrado y adecuado para la edad de tu gato, y que tome agua suficiente. La comida húmeda suele ayudar más con la hidratación, porque aporta mucha más agua en cada ración.",
             sections: [
               {
-                heading: "La naturaleza del gato y el agua",
-                body: "Los gatos evolucionaron en ambientes áridos y obtienen la mayor parte del agua de sus presas. Su sed está 'calibrada' para comida con 70% de humedad. El pienso seco tiene solo un 10%, lo que puede llevar a deshidratación crónica y problemas renales y urinarios.",
-                image: "https://i.postimg.cc/33qcTBN5/comida.webp",
+                heading: "Por qué importa el agua",
+                body: "Los gatos descienden de animales de zonas secas. Por eso tienden a conservar agua concentrando la orina, en lugar de beber mucho más. En la naturaleza, sus presas tienen más del 60 % de agua, así que gran parte de los líquidos llega con la comida.\n\nLa comida húmeda tiene normalmente entre 70 y 80 % de agua. El pienso seco, según la clasificación de la FEDIAF, tiene alrededor del 14 % o menos. Por eso un gato que come solo pienso suele recibir menos agua en total, aunque beba de su bebedero.",
               },
               {
-                heading: "Ventajas de la comida húmeda",
-                body: "Mayor hidratación, mayor saciedad con menos calorías, más parecida a la dieta natural, mejor para gatos con tendencia a problemas urinarios o renales. La mayoría de los veterinarios la recomiendan como alimento principal.",
+                heading: "Comida húmeda o pienso seco",
+                body: "| **Aspecto** | **Comida húmeda** | **Pienso seco** |\n| Agua en cada ración | Mucha, entre 70 y 80 %. | Poca, alrededor del 14 % o menos. |\n| Hidratación | Ayuda a que tome más agua y a que su orina esté más diluida. | Depende de que beba suficiente por su cuenta. |\n| Salud urinaria | Puede ayudar en gatos propensos a cistitis o cálculos. No previene todos los casos. | Requiere cuidar mucho el agua. |\n| Gatos con enfermedad renal | Ayuda a mantener la hidratación, parte del manejo. | Puede usarse, pero la dieta la elige el veterinario. |\n| Control de peso | Tiene menos calorías por bocado y ayuda a sentirse saciado. Hay que calcular bien la ración. | Es fácil de medir, pero se come con facilidad. |\n| Practicidad | Se estropea antes una vez abierta y necesita refrigeración. | Se conserva bien y sirve para comederos dispensadores o juegos. |\n\nNinguno es malo por definición. Lo ideal depende de tu gato, su salud y lo que acepta comer. Por eso, antes de cambiar su dieta, conviene hablarlo con tu veterinario.",
               },
               {
-                heading: "El papel del pienso seco",
-                body: "No es malo, pero no debería ser el único alimento. Puede ser útil como complemento, para juguetes dispensadores o como snack. Elige piensos con alto porcentaje de proteína animal (no vegetal) y sin cereales como primer ingrediente.",
+                heading: "Cómo elegir un buen alimento",
+                body: "• Busca un alimento completo y equilibrado, no un snack ni un complemento.\n• Mira que la proteína sea de buena calidad y que esté pensado para la edad y la condición de tu gato.\n• No elijas solo por una etiqueta como “sin cereales”. Los cereales no son necesariamente dañinos. Lo que importa es la calidad de la fórmula en conjunto.\n• Si tu gato tiene problemas renales, no improvises. La dieta renal, húmeda o seca, debe elegirla un veterinario según sus análisis y la etapa de la enfermedad.\n\nSi además quieres saber qué alimentos no debes ofrecerle, lee [Alimentos tóxicos para gatos](/categoria/alimentacion/prohibidos/toxicos-comunes).",
               },
-            ],
+              {
+                heading: "Una combinación práctica",
+                body: "En muchos gatos sanos funciona bien combinar: comida húmeda como base o como parte importante de la ración, y una cantidad controlada de pienso. Así se consigue hidratación, comodidad y variedad.\n\nEn cualquier caso, debe haber agua fresca disponible todo el tiempo, sea cual sea el alimento.\n\nCuando cambies de dieta, hazlo poco a poco, durante varios días. Así evitas que rechace la comida o tenga molestias digestivas.",
+              },
+            ]
           },
           {
             slug: "dieta-barf",
             title: "Dieta BARF para gatos",
-            intro: "La dieta BARF (Biologically Appropriate Raw Food) se basa en alimentar al gato con carne cruda, huesos carnosos y vísceras, imitando la dieta de sus ancestros salvajes. Tiene defensores apasionados y detractores con argumentos sólidos.",
+            intro: "La dieta BARF consiste en ofrecer carne cruda, huesos carnosos y vísceras. Algunas personas notan mejoras, como un pelaje más bonito o heces más firmes. Sin embargo, las principales organizaciones veterinarias advierten que no hay pruebas sólidas de que sea mejor que una dieta comercial completa y equilibrada, y sí hay riesgos bien documentados.",
             sections: [
               {
-                heading: "Fundamentos de la BARF",
-                body: "La dieta ideal para un gato BARF incluye aproximadamente 70% de carne magra, 10% de huesos carnosos (nunca cocidos), 10% de vísceras (hígado, corazón) y el 10% restante de otros tejidos. Requiere suplementación cuidadosa con taurina, calcio y vitaminas.",
-                image: "https://i.postimg.cc/BJzV0gbJ/dieta.webp",
+                heading: "Qué es y en qué se basa",
+                body: "La propuesta suele usar proporciones aproximadas de 70 % de carne muscular, 10 % de hueso carnoso, 5 % de hígado y 5 % de otras vísceras. Las recetas varían mucho según quien la promueva.\n\nLa idea es imitar la alimentación de los felinos como cazadores. Pero que algo sea natural no significa que sea seguro ni completo.\n\nLos gatos son carnívoros estrictos. Necesitan nutrientes como la taurina, la arginina, ciertas grasas, las vitaminas liposolubles y el calcio. Una receta casera mal preparada puede causar carencias o excesos graves. En gatitos, un desequilibrio entre calcio y fósforo puede causar dolor en los huesos y fracturas.",
               },
               {
-                heading: "Beneficios reportados",
-                body: "Mejora del pelaje, menor producción de heces, mejor hidratación, dientes más limpios y mayor energía son los beneficios más citados por quienes la practican. Algunos estudios sugieren menor riesgo de obesidad.",
+                heading: "Beneficios que suelen mencionarse",
+                body: "Quienes la prueban suelen notar:\n\n• Mejor aspecto del pelaje.\n• Heces de menor volumen.\n• Más hidratación y más interés por la comida.\n\nParte de estos efectos puede venir de la humedad y la proteína de la dieta, no necesariamente de la carne cruda. Una dieta húmeda cocinada y equilibrada también puede dar resultados parecidos.\n\nSegún la WSAVA, no hay pruebas bien documentadas de que las dietas crudas tengan más beneficios de salud que una dieta comercial completa o una casera cocinada y bien formulada.",
               },
               {
-                heading: "Riesgos a considerar",
-                body: "Contaminación bacteriana (Salmonella, Listeria), desequilibrios nutricionales si no se formula correctamente, y riesgo de asfixia con huesos. No se recomienda para gatos inmunodeprimidos, en tratamiento oncológico o mayores con sistemas digestivos comprometidos.",
+                heading: "Riesgos que conviene conocer",
+                body: "| **Riesgo** | **Qué significa** |\n| Bacterias | La carne cruda puede traer Salmonella, Listeria, Campylobacter o E. coli. Congelar, deshidratar o liofilizar no elimina todas. |\n| Contagio a las personas | El gato puede no enfermar y, aun así, eliminar bacterias en sus heces durante semanas. Así puede contaminar la casa. |\n| Huesos | Incluso los crudos pueden romper dientes, causar estreñimiento u obstruir el esófago o el intestino. En casos graves, pueden perforarlo. |\n| Desequilibrio nutricional | Las recetas caseras suelen tener carencias o excesos. Añadir suplementos “a ojo” no lo corrige. |\n| Parásitos | La carne cruda puede traer parásitos, como el toxoplasma. |\n| Tiroides | Un exceso de tejido tiroideo puede contribuir al hipertiroidismo. |\n\nLa AVMA desaconseja la carne cruda o poco cocida para perros y gatos, y los CDC tampoco recomiendan alimentos crudos para mascotas.",
               },
-            ],
+              {
+                heading: "Cuándo es mejor evitarla",
+                body: "| **Situación** | **Recomendación** |\n| Gatitos, gatas gestantes o en lactancia | No se recomienda la BARF casera. |\n| Gatos con defensas bajas | No se recomienda. |\n| Gatos con enfermedad renal, hepática o digestiva | No se recomienda sin indicación veterinaria. |\n| Hogar con niños pequeños, personas mayores, embarazadas o con defensas bajas | Evita este tipo de alimentación. El riesgo para ellas es mayor. |\n\nSi aun así quieres intentarlo, hazlo solo con la supervisión de un veterinario o de un nutricionista veterinario. Usa una receta hecha para tu gato y, si es posible, un producto comercial que declare ser completo y equilibrado. Además, la higiene debe ser muy estricta: refrigeración, utensilios separados, lavado de manos y limpieza inmediata de superficies y platos.",
+              },
+              {
+                heading: "Una alternativa más segura",
+                body: "Una opción con mejor respaldo es una dieta comercial húmeda, completa y equilibrada. También puede funcionar una dieta casera cocinada, diseñada por un nutricionista veterinario. Ambas ofrecen humedad y buena aceptación sin el riesgo bacteriano de la carne cruda.\n\nPara elegir una dieta que funcione en tu caso, revisa [Comida húmeda vs. pienso seco](/categoria/alimentacion/dietas/comida-humeda-vs-seca).",
+              },
+            ]
           },
         ],
       },
@@ -197,22 +214,25 @@ export const categories: Category[] = [
           {
             slug: "toxicos-comunes",
             title: "Alimentos tóxicos para gatos",
-            intro: "Muchos alimentos completamente seguros para humanos son peligrosos o letales para los gatos. Conocer esta lista puede salvar la vida de tu compañero.",
+            intro: "Muchos alimentos que para nosotros son normales pueden hacer daño a un gato, e incluso ser graves. Si tu gato come algo que sospechas que es tóxico, no le provoques el vómito por tu cuenta. Llama de inmediato a tu veterinario o a un centro de toxicología.",
             sections: [
               {
-                heading: "Peligro extremo: tóxicos graves",
-                body: "Cebolla, ajo, puerro y cebollín (en todas sus formas: crudos, cocinados o en polvo) destruyen los glóbulos rojos. Chocolate y café contienen teobromina y cafeína que pueden causar convulsiones y muerte. Uvas y pasas causan insuficiencia renal aguda por razones aún desconocidas.",
-                image: "https://i.postimg.cc/TTs4691m/toxico.webp",
+                heading: "Alimentos de alto riesgo: evítalos siempre",
+                body: "Estos alimentos pueden causar daños graves, así que nunca deben formar parte de su dieta ni de sus premios:\n\n| **Alimento** | **Por qué es peligroso** |\n| Cebolla, ajo, puerro y cebollín | Dañan los glóbulos rojos y pueden causar anemia. Los gatos son muy sensibles. Son peligrosos crudos, cocidos, en polvo o en caldos y salsas. |\n| Chocolate, café, té y cafeína | Pueden causar vómitos, hiperactividad, latidos acelerados, temblores y convulsiones. El chocolate negro y el de repostería son los más peligrosos. |\n| Alcohol | Incluso en pequeñas cantidades puede causar descoordinación, vómitos, dificultad para respirar y, en casos graves, coma. La masa cruda con levadura también puede producirlo. |\n| Uvas, pasas y grosellas | Se asocian a daño en los riñones. En gatos hay menos evidencia que en perros, pero lo mejor es evitarlas por completo. |\n| Xilitol | Edulcorante que aparece en chicles, caramelos y productos “sin azúcar”. Puede causar bajadas de azúcar, convulsiones y daño en el hígado. |",
               },
               {
-                heading: "Peligro moderado",
-                body: "La leche de vaca causa diarrea en la mayoría de los gatos adultos, que son intolerantes a la lactosa. El aguacate contiene persina, tóxica para muchos animales. El alcohol en cualquier cantidad es peligroso. Las nueces de macadamia pueden causar debilidad y fiebre.",
+                heading: "Alimentos de riesgo moderado",
+                body: "Estos no son veneno en sentido estricto, pero conviene tenerlos fuera de su alcance:\n\n| **Alimento** | **Qué puede pasar** |\n| Leche y lácteos | Muchos gatos adultos no toleran la lactosa. Pueden tener gases, diarrea o vómitos. El agua fresca es la mejor bebida. |\n| Aguacate | Puede causar molestias digestivas. Organismos como la FDA y la AVMA lo incluyen entre los alimentos que conviene mantener fuera del alcance. |\n| Nueces de macadamia | Pueden provocar debilidad, temblores y fiebre. Además, son muy grasas y pueden causar vómitos o diarrea. |\n| Sal, comida grasa o frita | El exceso de sal es peligroso. La comida grasa puede causar problemas digestivos e incluso pancreatitis. |\n| Pescado enlatado para personas | Puede tener demasiada sal. En algunos casos se han descrito problemas neurológicos graves. Mejor evitarlo como premio habitual. |",
               },
               {
-                heading: "Lo que sí pueden comer como premio",
-                body: "Pequeñas cantidades de pollo o pavo cocido sin hueso, salmón o atún cocido (no enlatado en aceite con sal), zanahoria cocida, calabaza, arándanos y pepino son opciones seguras como snack ocasional.",
+                heading: "Premios más seguros",
+                body: "Si quieres darle algo de vez en cuando, que sean porciones pequeñas, sin sal, sin condimentos, sin huesos y sin cebolla ni ajo:\n\n| **Premio** | **Cómo prepararlo** |\n| Pollo o pavo | Cocido, sin piel ni hueso. |\n| Pescado | Cocido y natural, sin aceite, sal ni especias. |\n| Huevo | Cocido, en pequeñas cantidades. |\n| Verduras | Zanahoria, calabaza o judías verdes, cocidas. |\n| Frutas | Arándanos o pepino, en trocitos pequeños. |\n\nLos premios no deberían superar alrededor del 10 al 15 % de sus calorías diarias. El resto debe venir de su alimento completo.\n\nComo los premios suman calorías, conviene revisar también [Obesidad Felina: Cómo proteger la salud y vida de tu gato](/categoria/salud/obesidad-felina/guia-obesidad-prevencion).",
               },
-            ],
+              {
+                heading: "Qué hacer si cree que se intoxicó",
+                body: "Si sospechas que tu gato comió chocolate, cebolla, ajo, uvas, alcohol, xilitol u otro producto peligroso:\n\n• Guarda el envase o una muestra.\n• Anota la cantidad aproximada y la hora.\n• Llama de inmediato al veterinario o a un centro de toxicología veterinaria.\n\nNo esperes a que aparezcan síntomas. Y recuerda: no le provoques el vómito sin indicación profesional.",
+              },
+            ]
           },
         ],
       },
@@ -221,10 +241,12 @@ export const categories: Category[] = [
   {
     slug: "castracion",
     label: "Castración",
+    seoTitle: "Castración felina: guía familiar",
     emoji: "",
     color: "#3498db",
     bg: "#eaf2f8",
-    description: "Guía familiar: ¿Por qué, cuándo y cómo castrar a tu gato?",
+    description: "Guía familiar sobre la castración de gatos: por qué conviene, a qué edad, qué esperar de la cirugía y cómo cuidar al gato durante la recuperación.",
+    intro: "La castración es una de las decisiones más importantes en la vida de un gato, y también una de las que más dudas generan. Esta sección explica por qué se recomienda, a qué edad suele realizarse y qué cambios puedes esperar en su conducta y en su salud después de la cirugía.\n\nAquí encontrarás qué esperar del procedimiento y de la recuperación, cómo cuidar al gato en casa durante los primeros días y qué señales deben alertarte. También se aborda el control de la reproducción en gatos callejeros, donde la esterilización de colonias es una de las medidas que mejor se han estudiado.\n\nLa información de estos temas es general. Tu veterinario puede indicarte el mejor momento y la técnica más adecuada para tu gato, según su edad, su tamaño y su estado de salud.\n\nSi tienes dudas sobre el procedimiento o sobre cómo afrontar el costo, pregúntalo con calma en la consulta. Un veterinario puede explicarte las opciones y ayudarte a planificar la recuperación en casa.",
     subcategories: [
       {
         slug: "guia-infantil",
@@ -233,48 +255,36 @@ export const categories: Category[] = [
           {
             slug: "por-que-castrar",
             title: "¿Por qué castrar a los gatitos?",
-            intro: "¡Una operación segura que hace el veterinario para que los gatos no tengan bebés y vivan más felices y sanos!",
+            intro: "Castrar o esterilizar a un gato es una cirugía sencilla que impide que tenga crías y reduce conductas ligadas a las hormonas sexuales. También previene enfermedades graves y ayuda a evitar que haya demasiados gatos sin hogar.",
             sections: [
               {
-                heading: "¿Qué significa 'castrar' o 'esterilizar' a un gato?",
-                body: "Es una operación especial que hace el veterinario para que los gatitos no puedan tener bebés.\n• A las gatas: Se llama 'esterilización' y le quitan los ovarios y el útero.\n• A los gatos machos: Se llama 'castración' y le quitan los testículos.\n¡Es como poner un 'modo tranquilo' para que vivan más felices y sanos!"
+                heading: "Qué implica la cirugía",
+                body: "En las gatas, la intervención habitual es la ovariohisterectomía: se retiran los ovarios y el útero. Así se acaban los celos y los embarazos, y se elimina el riesgo de una infección uterina.\n\nEn los machos se hace una orquiectomía, es decir, se retiran los dos testículos. Así se elimina la fertilidad y baja la producción de las hormonas que causan conductas como vagar, pelear y marcar con orina.",
               },
               {
-                heading: "¿Duele la operación?",
-                body: "¡No te preocupes!\nEl veterinario le pone una 'siesta mágica' (anestesia) para que el gatito duerma tranquilo y no sienta nada.\nDespués le dan medicinas especiales para que no le duela cuando despierte.\nLos gatitos se recuperan muy rápido: ¡en 1 o 2 días ya están jugando como siempre!"
+                heading: "¿Duele?",
+                body: "El gato recibe anestesia general, así que no siente dolor durante la cirugía. El equipo también le da analgésicos antes, durante y después.\n\nLa recuperación suele ser rápida. Muchos gatitos vuelven a moverse y a jugar en pocas horas. Durante los días que indique el veterinario, conviene mantenerlos tranquilos y usar el collar o la protección que recomiende.",
               },
               {
-                heading: "¿Por qué es bueno castrar a los gatos?",
-                body: "¡Porque les ayuda a vivir mejor! Mira estos superpoderes que ganan:\n\n| Beneficio | ¿Qué significa para tu gatito? |\n\n| Más salud | No se enferman de cosas graves como infecciones en la panza o cáncer. |\n| Más tranquilo | Los machos no pelean tanto con otros gatos y no se escapan tanto. |\n| Más casero | Se quedan más tiempo en casa contigo, ¡y eso es genial! |\n| Menos ruidos | Las gatas no maúllan fuerte buscando novio por las noches. |\n| Menos olores | Los machos no hacen 'pipí con olor fuerte' para marcar territorio. |\n| Más amor | Al no estar nerviosos por el celo, ¡te dan más cariños! |"
+                heading: "Beneficios principales",
+                body: "| **Beneficio** | **Qué implica** |\n| Evitar embarazos no deseados | Previene camadas accidentales y ayuda a frenar la sobrepoblación. |\n| Menos enfermedades reproductivas | En las gatas, evita una infección uterina grave y reduce el riesgo de tumores mamarios. |\n| Menos riesgos en los machos | Elimina el riesgo de cáncer testicular y reduce las peleas, los escapes y el marcado con orina. |\n| Menos conductas de celo | Las gatas dejan de maullar intensamente en celo. Los machos sienten menos impulso de buscar pareja. |\n| Menos contagios | Al haber menos peleas y menos contacto sexual, baja el riesgo de virus como FIV y FeLV. |\n| Vida más larga | Según la AVMA, los estudios asocian la castración con una vida más larga, probablemente por sus beneficios de salud y de conducta. |",
               },
               {
-                heading: "¿A qué edad se puede castrar a un gatito?",
-                body: "Lo ideal: Entre los 4 y 6 meses de edad, antes de que tengan su primer 'celo'.\nTambién se puede: Desde los 3 meses si el veterinario lo recomienda, ¡y se recuperan aún más rápido!\nMito importante: NO es necesario que la gata tenga una camada de gatitos antes de operarla. ¡Eso es un cuento viejo! Operarla antes es más sano para ella."
+                heading: "¿A qué edad conviene?",
+                body: "Las organizaciones veterinarias, como la AVMA, la AAHA y la AAFP, recomiendan castrar antes de los 5 meses, alrededor de los 4 meses, si el gatito está sano y el veterinario lo considera adecuado.\n\nLas gatas pueden tener celo desde los 4 o 5 meses, así que esperar hasta los 6 meses puede llevar a un embarazo no planeado. En refugios, la cirugía puede hacerse con seguridad desde las 8 semanas, siempre con protocolos veterinarios.\n\nUn mito que conviene aclarar: no hace falta que una gata tenga una camada antes de castrarse. La AVMA indica que no hay beneficio conocido en esperar al primer celo.",
               },
               {
-                heading: "¿Mi gato va a engordar después de la operación?",
-                body: "¡No necesariamente!\nEs verdad que algunos gatos pueden subir de peso, pero eso pasa si comen mucho y no juegan.\nLa solución es fácil: darle la comida justa y jugar con él todos los días.\n¡Un gato que juega es un gato feliz y delgadito!"
+                heading: "Preguntas frecuentes",
+                body: "**¿Engordará?** Puede ganar peso porque necesita menos energía después de la cirugía, pero no engorda de forma automática. Lo que ayuda es controlar las raciones, dar una dieta completa y jugar todos los días.\n\n**¿Cambiará su personalidad?** Sigue siendo el mismo en cariño, juego y vínculo contigo. Lo que suele disminuir son las conductas impulsadas por las hormonas: escapadas, peleas, marcado y maullidos de celo.\n\nNo se puede prometer que será “más cariñoso” o “más feliz”, porque cada gato es distinto. Sí es razonable esperar menos estrés por celo, territorio y búsqueda de pareja.",
               },
               {
-                heading: "¿Mi gato va a cambiar de personalidad?",
-                body: "¡Para bien, sí! Pero sigue siendo el mismo gatito que amas.\n\nLo que SÍ cambia:\n• Ya no se escapa tanto buscando novias/novios\n• No pelea con otros gatos por territorio\n• No hace pipí en las paredes para marcar\n\nLo que NO cambia:\n• Sigue siendo cariñoso contigo\n• Sigue jugando con sus juguetes\n• Sigue ronroneando cuando lo acaricias\n¡Sigue siendo TU gatito!"
+                heading: "Qué pasa si no se castra",
+                body: "| **Quién** | **Qué puede pasar** |\n| Gatas | Pueden quedar preñadas desde edades tempranas, tener camadas repetidas y desarrollar infección uterina o tumores mamarios. |\n| Machos | Tienden a alejarse más, pelear, marcar con un olor muy fuerte y tener más riesgo de accidentes y enfermedades infecciosas. |\n| Hogar y comunidad | Aumentan las camadas no deseadas, el abandono y el número de gatos sin hogar. |",
               },
               {
-                heading: "¿Qué pasa si NO castro a mi gato?",
-                body: "Respuesta: Pueden pasar cosas que no son tan bonitas:\n\nPara las gatas:\n• Pueden tener muchos gatitos (¡hasta 3 camadas al año!)\n• Y si no hay hogares para todos... algunos gatitos pueden quedarse sin familia\n• Pueden enfermarse del útero (una infección grave llamada 'piometra')\n• Tienen más riesgo de cáncer de mama\n\nPara los gatos machos:\n• Se escapan mucho y pueden perderse o tener accidentes\n• Pelean con otros gatos y pueden lastimarse o enfermarse\n• Hacen pipí con olor muy fuerte en la casa\n• Gritan y maúllan mucho buscando gatas"
+                heading: "Gatos de la calle: el programa TNR",
+                body: "El programa TNR (captura, esterilización y retorno, en inglés Trap–Neuter–Return) consiste en atrapar a los gatos de la calle de forma humanitaria, esterilizarlos, vacunarlos cuando corresponde y devolverlos a su territorio.\n\nPara reconocer a los gatos ya esterilizados, se corta la punta de una oreja mientras el animal está anestesiado. No es un castigo: es una marca visible, segura y estándar en los programas de manejo de colonias.\n\nSobre el número de descendientes: las cifras muy grandes que se usan en campañas son cálculos teóricos. Dependen de supuestos sobre supervivencia, fertilidad y acceso a pareja, y en la vida real la mayoría de los gatitos no llega a reproducirse. Lo que sí es cierto es que una gata puede tener varias camadas al año, y que los gatitos pueden madurar muy jóvenes. Por eso una población sin control crece rápido. La esterilización corta ese ciclo.\n\nPara ampliar sobre el control de las colonias de gatos, lee [Gestión Reproductiva y Control Poblacional Ético](/categoria/tenencia-responsable/gestion-reproductiva/esterilizacion-evidencia).",
               },
-              {
-                heading: "¿Y los gatitos que ya viven en la calle?",
-                body: "¡También hay una solución especial para ellos! Se llama TNR:\n\nT = TRAP (Atrapar con cuidado en una jaula especial)\nN = NEUTER (Operar para que no tengan más bebés)\nR = RETURN (Devolverlos a su lugar, donde un cuidador les da comida)\n\nAdemás, les cortan un poquito la puntita de la oreja izquierda (¡no les duele! lo hacen mientras duermen con la anestesia) para saber que ya están operados.\n\nAsí, poco a poco, hay menos gatitos en la calle y los que están reciben mejores cuidados. ¡Todos ganan!"
-              },
-              {
-                heading: "¿Castrar ayuda a los gatitos abandonados?",
-                body: "¡Sí, muchísimo! Mira este número impresionante:\n\nUna sola pareja de gatos puede tener...\n   ¡65,500 descendientes en solo 5 años!\n\n¿Cómo? \n   Una gata puede tener 3 camadas al año\n   Cada camada puede tener 4-6 gatitos\n   Esos gatitos crecen y también tienen gatitos...\n   ¡Y así se multiplica como una cadena!\n\nAl castrar, rompemos esa cadena y ayudamos a que menos gatitos nazcan sin hogar. ¡Es un acto de amor!"
-              },
-              {
-                heading: "RESUMEN PARA RECORDAR (¡EN 3 FRASES!)",
-                body: "Castrar es una operación segura que hace el veterinario para que los gatos no tengan bebés y vivan más sanos.\n\nEs un acto de amor: protege a tu gato de enfermedades, lo hace más tranquilo y ayuda a que menos gatitos vivan en la calle.\n\nTu gato seguirá siendo el mismo: solo que más sano, más casero y con más ganas de darte cariños."
-              }
             ]
           }
         ]
@@ -284,10 +294,12 @@ export const categories: Category[] = [
   {
     slug: "comportamiento",
     label: "Comportamiento",
+    seoTitle: "Comportamiento felino: entender a tu gato",
     emoji: "",
     color: "#b85c38",
     bg: "#faefeb",
-    description: "Comportamiento",
+    description: "Comportamiento felino: cómo se comunica tu gato, por qué hace lo que hace, y cómo prevenir y manejar problemas como el arañado o el estrés.",
+    intro: "Entender a un gato es aprender a leer su lenguaje. Muchas conductas que parecen caprichosas, como arañar, maullar, esconderse o amasar, tienen una explicación natural. Esta sección te ayuda a interpretar esas señales y a responder de forma que tu gato se sienta seguro.\n\nAquí encontrarás cómo se comunican los gatos con el cuerpo, la voz y el parpadeo; por qué arañan los muebles y cómo redirigir esa necesidad; cómo presentar a dos gatos que deben convivir; y cómo reconocer el estrés, que muchas veces se manifiesta en cambios pequeños antes de convertirse en un problema.\n\nAntes de corregir una conducta, conviene preguntarse qué necesita el gato. Muchos problemas de comportamiento mejoran cuando se ajustan el espacio, las rutinas y el juego. Si la conducta cambia de forma repentina, consulta también con el veterinario, porque a veces el origen es físico.\n\nCada gato aprende de su propia experiencia, por eso un mismo método no funciona igual con todos. Observar qué hace, cuándo lo hace y qué lo provoca es el primer paso para entenderlo.",
     subcategories: [
       {
   slug: "interio-exterior",
@@ -301,11 +313,10 @@ export const categories: Category[] = [
         {
           heading: "¿Interior o Exterior? Tomando la decisión correcta",
           body: "Una de las primeras decisiones al adoptar es si el gato vivirá solo dentro de casa o tendrá acceso al exterior. Ambas opciones tienen implicaciones importantes: Gatos de exterior: Tienen más libertad y estimulación natural, pero corren mayores riesgos: atropellos, peleas con otros animales, enfermedades infecciosas y parásitos (pulgas, gusanos). Su esperanza de vida suele ser menor. Gatos de interior: Están mucho más protegidos y viven más años, pero dependen totalmente de nosotros para su estimulación. El aburrimiento es su mayor enemigo. Si eliges esta opción, debes comprometerte a enriquecer su entorno con juegos, rascadores y tiempo de calidad. Consejo: Sea cual sea tu elección, la clave está en la seguridad y la estimulación mental.",
-          image: "/articles/interior_exterior.png",
         },
         {
           heading: "El Instinto de Rascar: No es vandalismo, es comunicación",
-          body: "Arañar es un comportamiento natural e imprescindible que comienza alrededor de las 5 semanas de vida. Para un gato, rascar no es solo afilar uñas; es una forma de comunicación visual y olfativa (marcan territorio con las glándulas de sus patas) y una manera de estirar su musculatura. El conflicto surge cuando eligen nuestros muebles. La solución no es castigar, sino ofrecer una alternativa mejor. ¿Cómo elegir el rascador perfecto? Estabilidad: Debe ser firme y no tambalearse. Si se mueve, el gato no lo usará por inseguridad. Altura: Debe ser lo suficientemente alto para que el gato pueda estirarse completamente de pie. Material: El sisal, la madera natural o la cuerda suelen ser los más atractivos. Ubicación: Colócalo en zonas visibles y de paso (no escondido en un sótano). A los gatos les gusta marcar donde ocurre la 'vida' de la casa. Paciencia: Una vez que elija un rascador, no lo cambies de sitio. Además, cuanto más usado esté, más le gustará, porque estará impregnado de su olor.",
+          body: "Arañar es un comportamiento natural e imprescindible que comienza alrededor de las 5 semanas de vida. Para un gato, rascar no es solo afilar uñas; es una forma de comunicación visual y olfativa (marcan territorio con las glándulas de sus patas) y una manera de estirar su musculatura. El conflicto surge cuando eligen nuestros muebles. La solución no es castigar, sino ofrecer una alternativa mejor. ¿Cómo elegir el rascador perfecto? Estabilidad: Debe ser firme y no tambalearse. Si se mueve, el gato no lo usará por inseguridad. Altura: Debe ser lo suficientemente alto para que el gato pueda estirarse completamente de pie. Material: El sisal, la madera natural o la cuerda suelen ser los más atractivos. Ubicación: Colócalo en zonas visibles y de paso (no escondido en un sótano). A los gatos les gusta marcar donde ocurre la 'vida' de la casa. Paciencia: Una vez que elija un rascador, no lo cambies de sitio. Además, cuanto más usado esté, más le gustará, porque estará impregnado de su olor.\n\nPara saber más sobre el arañado y cómo redirigirlo a un rascador, lee [Por qué arañan los muebles](/categoria/comportamiento/conducta/arañar-muebles).",
         },
         {
           heading: "El Juego: Ejercicio físico y mental",
@@ -341,7 +352,6 @@ export const categories: Category[] = [
         {
           heading: "Paso 1: La Cuarentena Inicial (Días 1-4)",
           body: "El nuevo gato necesita sentirse seguro antes de conocer a nadie. Habitación propia: Prepara una habitación tranquila (que no sea la zona principal de tu gato actual) con su cama, comida, agua, juguetes y arenero. Refugio seguro: Deja su transportín abierto con una manta dentro para que tenga un escondite donde sentirse protegido. Cero contacto visual: Durante estos primeros días, no deben verse. Sin embargo, está bien que se huelan bajo la puerta. Esto les permite investigarse sin la presión del cara a cara.",
-          image: "/articles/aceptar.png",
         },
         {
           heading: "Paso 2: Intercambio de Olores (El 'Dating' Olfativo)",
@@ -361,7 +371,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Señales de Alerta y Estrés",
-          body: "Detén el proceso y vuelve atrás si ves: Silbidos intensos y repetidos, gruñidos profundos, pelo erizado y posturas rígidas. En el gato residente: Deja de comer, usa mal el arenero o se esconde todo el día. En el nuevo gato: Se lame compulsivamente, no come o parece aterrorizado. Consejo: Si el estrés es alto, consulta a tu veterinario o a un etólogo. A veces, usar feromonas sintéticas (difusores) puede ayudar a calmar el ambiente.",
+          body: "Detén el proceso y vuelve atrás si ves: Silbidos intensos y repetidos, gruñidos profundos, pelo erizado y posturas rígidas. En el gato residente: Deja de comer, usa mal el arenero o se esconde todo el día. En el nuevo gato: Se lame compulsivamente, no come o parece aterrorizado. Consejo: Si el estrés es alto, consulta a tu veterinario o a un etólogo. A veces, usar feromonas sintéticas (difusores) puede ayudar a calmar el ambiente.\n\nSi el estrés aparece durante la convivencia, revisa [El Estrés en el Gato: Guía completa para entenderlo y ayudarlo](/categoria/comportamiento/estrés/guia-estres-ansiedad).",
         },
         {
           heading: "Lo que NUNCA debes hacer",
@@ -388,7 +398,6 @@ export const categories: Category[] = [
            {
           heading: "La cola como barómetro emocional",
           body: "La cola es una de las señales más claras: Alta y recta indica confianza, saludo afectuoso o felicidad (si tiene la punta curvada es felicidad máxima). Baja o entre las patas expresa miedo, inseguridad o sumisión. Moviéndose de lado a lado rápidamente o con movimiento lento revela irritación, molestia o concentración. Si está esponjada, erizada o arqueada, el gato siente amenaza o terror.",
-          image: "/articles/comunicacion.png",
         },
         {
           heading: "Las orejas no mienten",
@@ -396,7 +405,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Los ojos y el parpadeo",
-          body: "Los ojos comunican emociones profundas: Abiertos con pupilas grandes/dilatadas indican miedo, sorpresa, excitación o juego. Una mirada fija puede ser señal de desafío o atención intensa. Por el contrario, una mirada relajada o el parpadeo lento es una señal activa de confianza, tranquilidad y afecto.",
+          body: "Los ojos comunican emociones profundas: Abiertos con pupilas grandes/dilatadas indican miedo, sorpresa, excitación o juego. Una mirada fija puede ser señal de desafío o atención intensa. Por el contrario, una mirada relajada o el parpadeo lento es una señal activa de confianza, tranquilidad y afecto.\n\nSi te interesa el parpadeo en particular, lee [El parpadeo lento: el beso felino](/categoria/comportamiento/lenguaje/parpadeo-lento).",
         },
         {
           heading: "Los bigotes y el rostro",
@@ -415,42 +424,52 @@ export const categories: Category[] = [
           {
             slug: "vocalizaciones",
             title: "Vocalizaciones y su significado",
-            intro: "Los gatos adultos casi no se maúllan entre sí: el maullido es un lenguaje que desarrollaron específicamente para comunicarse con humanos. Cada gato tiene su vocabulario propio.",
+            intro: "Los gatos se comunican con muchos sonidos. El maullido, sobre todo, es una forma de hablar con las personas: los gatos adultos casi nunca se maúllan entre sí. Cada gato tiene su propio repertorio, y el significado depende del sonido, del contexto y de su lenguaje corporal.",
             sections: [
               {
                 heading: "El maullido",
-                body: "Un maullido corto y agudo suele ser un saludo. Uno largo y sostenido, una demanda (comida, atención). Los maullidos repetitivos pueden indicar dolor, desorientación (especialmente en gatos mayores) o angustia.",
-                image: "/articles/vocalizacion.png",
+                body: "Es el sonido que más usan los gatos con nosotros. Sirve para pedir atención, comida, acceso a un lugar, juego o cariño, pero también puede mostrar molestia, estrés, soledad o malestar.\n\nUn maullido corto suele ser un saludo o una petición breve. Uno largo y sostenido puede ser más insistente.\n\nOjo con los cambios. Si tu gato empieza a maullar más de lo normal, de noche o con un tono distinto, conviene observarlo. En gatos mayores, puede estar relacionado con dolor, problemas de tiroides, pérdida de visión o desorientación.\n\nNo siempre es posible saber el motivo solo por el tono. Lo más útil es fijarte en lo que pasó justo antes y después del sonido.",
               },
               {
                 heading: "El ronroneo",
-                body: "No siempre indica felicidad: los gatos también ronronean cuando están estresados, enfermos o en proceso de recuperación. El ronroneo tiene propiedades terapéuticas demostradas entre 25 y 50 Hz, frecuencia que favorece la regeneración ósea.",
+                body: "El ronroneo suele indicar comodidad, cercanía o una forma de calmarse. Pero no siempre significa felicidad: los gatos también ronronean cuando tienen miedo, dolor o están enfermos, e incluso durante una visita al veterinario.\n\nHay investigadores que estudian si el ronroneo podría tener efectos reparadores, porque sus frecuencias son parecidas a las de algunas terapias de vibración. Por ahora es una línea de investigación interesante, no una certeza. No debe usarse como tratamiento.",
               },
               {
-                heading: "Otros sonidos",
-                body: "El trino o chirrido es un saludo cálido o respuesta a lo que les hablas. El chatter (castañeo de dientes) aparece al ver pájaros o presas: es frustración y excitación de caza. El bufido y el escupido son avisos claros de que el gato se siente amenazado.",
+                heading: "Otros sonidos y lo que suelen significar",
+                body: "| **Sonido** | **Qué suele significar** |\n| Trino o chirrido | Es suave, corto y ascendente, parecido a un “brrr”. Suele ser un saludo amistoso o una forma de pedir atención. Las madres también lo usan para llamar a sus crías. |\n| Castañeo o chatter | Aparece cuando observa aves o insectos que no puede alcanzar. Mezcla emoción de caza y frustración. |\n| Bufido o siseo | Es una señal de defensa. Indica miedo o malestar. Lo mejor es no forzar el contacto y quitar la fuente de estrés. |\n| Gruñido, aullido o maullido grave | Puede indicar dolor, conflicto, miedo, celo o una petición muy insistente. Si cambia de repente, consulta al veterinario. |",
               },
-            ],
+              {
+                heading: "Cuándo consultar al veterinario",
+                body: "Pide una revisión si tu gato:\n\n• Maúlla mucho más de lo habitual, o cambia la forma de hacerlo.\n• Maúlla de noche sin un motivo claro.\n• Parece desorientado, deja de comer o se esconde.\n• Muestra signos de dolor.\n\nEl sonido es información, pero se entiende mejor junto con su postura, su apetito, su uso de la caja de arena y su comportamiento general.\n\nComo los cambios en la voz también se ven en el cuerpo, conviene revisar [Comunicación corporal](/categoria/comportamiento/lenguaje/comunicacion-corporal).",
+              },
+            ]
           },
           {
             slug: "parpadeo-lento",
             title: "El parpadeo lento: el beso felino",
-            intro: "El parpadeo lento es una de las señales más estudiadas y hermosas del repertorio felino. Un estudio de 2020 en la Universidad de Sussex demostró experimentalmente que los humanos podemos iniciar esta comunicación con cualquier gato.",
+            intro: "El parpadeo lento es cuando el gato cierra los ojos despacio, casi del todo, y los vuelve a abrir. Se le llama “beso felino”. Algunos estudios sugieren que es una señal amable: los gatos responden mejor y se acercan más cuando una persona se la hace.",
             sections: [
               {
                 heading: "Qué significa",
-                body: "Cuando un gato te mira y parpadea lentamente, te está diciendo que se siente seguro y a gusto en tu presencia. Es el equivalente felino de una sonrisa relajada y un gesto de confianza plena.",
-                image: "/articles/parpadeo.png",
+                body: "Cuando un gato te mira y parpadea lento, suele estar relajado y tranquilo. No percibe amenaza. No es exactamente una sonrisa como la nuestra, pero sí transmite calma.\n\nTambién ayuda a bajar la tensión. Una mirada fija y prolongada puede resultar intimidante para un gato, y el parpadeo rompe esa mirada. En gatos nerviosos puede ser una forma de decir “no soy un peligro”.",
               },
               {
                 heading: "Cómo hacerlo",
-                body: "Mira al gato con una expresión relajada. Cuando tengas contacto visual, entrecierra lentamente los ojos hasta casi cerrarlos y luego ábrelos de nuevo. Espera. Si el gato responde con el mismo gesto, el canal de comunicación está abierto.",
+                body: "| **Paso** | **Qué hacer** |\n| 1. Mantén distancia | Ponte a una distancia cómoda para él. No te acerques demasiado. |\n| 2. Busca el contacto visual | Mírale un momento, sin fijar la mirada. |\n| 3. Entrecierra los ojos | Cierra casi del todo los ojos, despacio, y ábrelos de nuevo. |\n| 4. Espera | Deja que él decida si responde, se acerca o se aleja. |",
               },
               {
-                heading: "Con gatos desconocidos",
-                body: "Funciona incluso con gatos que no te conocen. En refugios y colonias, el parpadeo lento puede ser la diferencia entre un gato que se acerca voluntariamente y uno que huye. Es una herramienta poderosa para ganar confianza.",
+                heading: "Un estudio con gatos",
+                body: "Un estudio publicado en 2020 en la revista Scientific Reports, de Humphrey y colaboradores, observó que los gatos hacían más movimientos de los ojos cuando sus propios tutores les hacían parpadeos lentos, comparado con cuando la persona estaba presente sin hacer el gesto.\n\nEl mismo estudio probó el gesto con personas desconocidas para el gato. Los gatos tuvieron más probabilidades de parpadear de vuelta y de acercarse a la mano extendida después de recibir un parpadeo lento, que ante una expresión neutra.\n\nEsto no garantiza que cualquier gato se acerque ni que acepte caricias. Es una invitación amable, no un permiso para tocarlo. La decisión siempre es suya.",
               },
-            ],
+              {
+                heading: "En refugios y adopciones",
+                body: "Algunas investigaciones posteriores en refugios encontraron que los gatos que respondían con más parpadeos ante personas tendían a ser adoptados antes. Por eso el gesto puede ayudar a voluntarios, veterinarios y tutores a reducir la tensión y a generar confianza.\n\nAun así, conviene combinarlo con otras señales de respeto: no perseguir al gato, dejarle un lugar para esconderse y ofrecerle la mano para que se acerque por su cuenta.",
+              },
+              {
+                heading: "Señales de que prefiere no interactuar",
+                body: "Si notas alguna de estas señales, deja de insistir y aléjate poco a poco:\n\n| **Señal** | **Qué hacer** |\n| Orejas hacia atrás | Dale espacio. |\n| Cola erizada o movimientos bruscos | No te acerques más. |\n| Bufido o gruñido | Retírate con calma. |\n| Intento de huir o esconderse | Deja que se vaya. No lo busques. |\n\nPara entender mejor el lenguaje del cuerpo de tu gato, lee [Comunicación corporal](/categoria/comportamiento/lenguaje/comunicacion-corporal).",
+              },
+            ]
           },
         ],
       },
@@ -461,42 +480,48 @@ export const categories: Category[] = [
           {
             slug: "arañar-muebles",
             title: "Por qué arañan los muebles",
-            intro: "Arañar no es mala conducta ni destructividad: es una necesidad biológica fundamental. Entender por qué lo hacen es el primer paso para redirigirlo hacia lugares apropiados.",
+            intro: "Arañar no es destruir por capricho. Es algo natural y necesario: mantiene sus uñas sanas, le permite estirar el cuerpo y deja marcas que comunican. No se puede quitar, pero sí se puede desviar hacia rascadores atractivos y bien colocados.",
             sections: [
               {
-                heading: "Las tres razones del arañado",
-                body: "Los gatos arañan para marcar territorio visualmente y con feromonas de las almohadillas, para estirar músculos y tendones de forma saludable, y para eliminar las capas muertas de las uñas. Es un comportamiento instintivo que no puede eliminarse, solo redirigirse.",
-                image: "/articles/arana.png",
+                heading: "Por qué lo hace",
+                body: "Principalmente, para cuidar sus uñas. Al arañar, se quita la capa externa y muerta de la uña y deja al descubierto una nueva. Arañar también le ayuda a estirar músculos, tendones y la espalda, sobre todo al despertar.\n\nAdemás, es una forma de marcar su territorio. Las glándulas entre sus almohadillas dejan un olor, y las marcas visibles y las capas de uña que se desprenden dicen algo a otros gatos.\n\nTambién puede aparecer al jugar, al explorar o como forma de calmarse. Si el gato está estresado o en conflicto, puede arañar más.",
               },
               {
-                heading: "Cómo proteger el mobiliario",
-                body: "Coloca rascadores en los lugares que el gato ya frecuenta para arañar. Usa feromonas sintéticas (Feliway) en las superficies que quieres proteger. Cubre temporalmente los muebles con telas o protectores adhesivos no pegajosos para redirigir la conducta.",
+                heading: "Cómo proteger tus muebles",
+                body: "La clave es que el rascador sea más atractivo que el mueble. No se trata de impedirle arañar, sino de darle una alternativa que le guste.\n\n| **Qué hacer** | **Cómo** |\n| Poner un rascador estable junto a la zona que ya araña | Cuando lo use con constancia, puedes alejarlo poco a poco. |\n| Ofrecer varios tipos | Verticales, horizontales e inclinados. |\n| Hacerlo atractivo | Con hierba gatera, juguetes, premios o un producto con feromonas para el arañado. |\n| Premiarlo | Con comida o juego cada vez que lo use. |\n| Cubrir temporalmente el mueble | Con una tela gruesa, plástico o un protector, para que resulte menos atractivo. |\n\nLas feromonas sintéticas pueden ayudar, pero no sirven para todos. En un estudio, un difusor de Feliway Classic redujo el arañado no deseado en el 83,5 % de los gatos tratados, frente al 68,5 % del grupo placebo, tras 28 días. Es una mejora, pero no garantiza resultados.\n\nEvita los castigos, los gritos y rociarlo con agua. No le enseñan qué hacer en su lugar y pueden aumentar el miedo. Tampoco conviene la cirugía para quitarle las uñas: es dolorosa y puede causarle problemas de por vida.",
               },
               {
-                heading: "Qué tipo de rascador funciona mejor",
-                body: "Cada gato tiene su preferencia: algunos necesitan rascadores verticales altos (que les permitan estirarse completamente), otros prefieren horizontales. La sisal suele ser el material favorito, aunque algunos prefieren cartón o alfombra. Ofrece variedad al principio.",
+                heading: "Qué rascador le conviene",
+                body: "No hay un rascador que sirva para todos. Cada gato tiene sus preferencias de posición, textura, altura y lugar. Algunos quieren estirarse hacia arriba; otros prefieren superficies horizontales, como alfombras, escaleras o cajas de cartón.\n\n| **Tipo** | **Para quién suele funcionar mejor** |\n| Vertical alto y estable | Gatos que se estiran hacia arriba y arañan patas de sofá o cortinas. |\n| Horizontal de cartón | Gatos que arañan alfombras, escaleras o superficies bajas. |\n| Inclinado | Gatos que combinan las dos posturas o prefieren un ángulo intermedio. |\n| Sisal, madera o fibra | Gatos que buscan una superficie rugosa y resistente. |\n\nUn rascador vertical debe ser lo bastante alto para que se estire del todo, y lo bastante estable para que no se mueva. Se recomiendan alturas de casi un metro y bases amplias para que no vuelque.",
+              },
+              {
+                heading: "Dónde colocarlo",
+                body: "Ponlos cerca de los lugares donde duerme, descansa o araña ya. También son útiles junto a puertas, ventanas y pasillos, porque son puntos donde los gatos suelen marcar su territorio.\n\nSi tienes varios gatos, ofrece más de un rascador y repártelos por distintas zonas para evitar peleas por el espacio. La variedad y la ubicación importan tanto como el material.\n\nPara más ideas de juego y enriquecimiento en casa, lee [Enriquecimiento Ambiental y Bienestar Conductual](/categoria/tenencia-responsable/enriquecimiento-ambiental/5-pilares-ambientales).",
               },
             ],
           },
           {
             slug: "amasar",
             title: "El amasado: patas que hacen pan",
-            intro: "El amasado, ese movimiento rítmico de presionar alternadamente con las patas sobre superficies blandas, es uno de los comportamientos más tiernos y cargados de significado del repertorio felino.",
+            intro: "El amasado es ese movimiento rítmico en el que el gato presiona una y otra vez sus patas delanteras sobre una superficie blanda. En los gatitos empieza como un gesto de la lactancia. En los adultos, suele mostrar comodidad, calma y confianza.",
             sections: [
               {
-                heading: "El origen del comportamiento",
-                body: "Los gatitos amasan el vientre de la madre para estimular la producción de leche. En adultos, es un comportamiento de confort que persiste de la infancia: lo hacen cuando se sienten seguros, felices y relajados.",
-                image: "/articles/amasado.png",
+                heading: "De dónde viene",
+                body: "Los gatitos amasan de forma instintiva el pecho de su madre mientras maman. Ese movimiento ayuda a estimular la producción de leche y favorece la liberación de oxitocina, una hormona relacionada con el vínculo.\n\nMuchos gatos conservan ese gesto de adultos. La explicación más aceptada es que lo asocian con la sensación de seguridad y bienestar de la lactancia. Por eso suele aparecer antes de dormir, sobre mantas, cojines o personas de confianza.",
               },
               {
-                heading: "¿Qué indica cuando amasan sobre ti?",
-                body: "Es una de las mayores expresiones de afecto y confianza. Tu gato te está tratando como a su madre y diciéndote que se siente completamente seguro en tu presencia. Es un honor felino.",
+                heading: "Qué significa cuando te amasa",
+                body: "Si tu gato te amasa, lo más probable es que se sienta tranquilo, cómodo y seguro contigo. Es una forma de mostrar afecto: los gatos suelen amasar a personas o lugares que les resultan agradables y familiares.\n\nNo significa que te confunda con su madre ni que espere leche de ti. Lo más preciso es que relaciona tu presencia, tu calor o una textura suave con la comodidad de cuando era un cachorro.\n\nOtras explicaciones posibles, que no siempre se confirman:\n\n| **Posible función** | **Qué puede estar pasando** |\n| Dejar su olor | Tiene glándulas en las almohadillas. Al amasar, puede dejar un olor que hace el lugar o la persona más familiar. |\n| Preparar el descanso | Una teoría dice que ayuda a acomodar y suavizar el lugar donde va a dormir, un gesto heredado de sus antepasados. |\n| Estirarse | Ayuda a estirar los músculos y las articulaciones de las patas delanteras. |\n| Calmarse | A veces, un gato amasa y ronronea para tranquilizarse, incluso cuando no se siente del todo bien. |",
               },
               {
-                heading: "Variaciones del amasado",
-                body: "Algunos gatos amasan mantas, peluches o incluso el aire. Otros solo amasan sobre personas específicas. Hay gatos que amasan con las cuatro patas, otros solo con las delanteras. Todas las variantes son completamente normales.",
+                heading: "Formas normales de amasar",
+                body: "Cada gato lo hace a su manera. Algunos usan solo las patas delanteras y otros las cuatro. Algunos amasan una manta, un peluche o el aire, y otros prefieren hacerlo sobre una persona concreta. Todas estas formas son normales.\n\nEs común que lo acompañe el ronroneo, los ojos entrecerrados, los bostezos o incluso un poco de baba y succión sobre la manta. Esas señales suelen indicar relajación.\n\nPara entender otros gestos de tu gato, lee [Comunicación corporal](/categoria/comportamiento/lenguaje/comunicacion-corporal).",
               },
-            ],
+              {
+                heading: "Si sus uñas molestan",
+                body: "No castigues el amasado. Puede dañar la confianza y el vínculo con tu gato. Estas son algunas formas de hacerlo más cómodo:\n\n| **Qué puedes hacer** | **Cómo ayuda** |\n| Poner una manta gruesa sobre tu regazo | Protege la piel mientras tu gato amasa. |\n| Recortarle las uñas con regularidad | Reduce los arañazos sin dejar de permitir el gesto. |\n| Redirigirlo con suavidad | Ofrécele un cojín o una manta destinada a amasar. Si lo consigue, celébralo con caricias. |",
+              },
+            ]
           },
         ],
       },
@@ -512,7 +537,6 @@ export const categories: Category[] = [
         {
           heading: "El secreto: Usa su instinto, no la fuerza",
           body: "Los gatos no responden bien a las órdenes secas ni a los castigos. Responden al refuerzo positivo. La regla de oro: Si hace algo bien, recibe un premio (una chuchería rica, un poco de atún o muchas caricias). Nunca forces: Si tiras de él o le gritas, se cerrará en banda. El entrenamiento debe ser siempre voluntario y divertido. Sesiones cortas: 5 o 10 minutos son suficientes. Si ves que se distrae, termina la sesión con algo que ya sepa hacer bien para que acabe con buena sensación.",
-          image: "/articles/aprender.png",
         },
         {
           heading: "La herramienta mágica: 'La Diana' (Targeting)",
@@ -520,7 +544,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Trucos fáciles para empezar",
-          body: "'Ven aquí' (La orden más importante): Es vital por seguridad. Llámalo por su nombre o chasquea la lengua. Cuando venga hacia ti, celebra mucho y dale un premio espectacular. Importante: Nunca le riñas cuando venga, aunque haya tardado mucho. Tiene que asociar 'venir' con 'fiesta'. 'Sentado': Los gatos se sientan naturalmente cuando miran hacia arriba. Con el gato de pie, pon una chuchería justo encima de su cabeza. Mueve la mano lentamente hacia atrás (hacia su cola). Para seguir la comida con la mirada, bajará el trasero automáticamente. En cuanto el culo toque el suelo, di 'Sentado' y dale el premio. 'Al regazo' o 'Sube': Ideal para que venga a dormir contigo o suba a sitios permitidos. Siéntate en una silla o sofá. Golpea suavemente tu pierna o el asiento y di 'Sube'. Guíalo con la chuchería si hace falta. Cuando suba, ¡premio inmediato! Pronto saltará solo para estar contigo.",
+          body: "'Ven aquí' (La orden más importante): Es vital por seguridad. Llámalo por su nombre o chasquea la lengua. Cuando venga hacia ti, celebra mucho y dale un premio espectacular. Importante: Nunca le riñas cuando venga, aunque haya tardado mucho. Tiene que asociar 'venir' con 'fiesta'. 'Sentado': Los gatos se sientan naturalmente cuando miran hacia arriba. Con el gato de pie, pon una chuchería justo encima de su cabeza. Mueve la mano lentamente hacia atrás (hacia su cola). Para seguir la comida con la mirada, bajará el trasero automáticamente. En cuanto el culo toque el suelo, di 'Sentado' y dale el premio. 'Al regazo' o 'Sube': Ideal para que venga a dormir contigo o suba a sitios permitidos. Siéntate en una silla o sofá. Golpea suavemente tu pierna o el asiento y di 'Sube'. Guíalo con la chuchería si hace falta. Cuando suba, ¡premio inmediato! Pronto saltará solo para estar contigo.\n\nSi quieres un método más detallado con premios, lee [Clicker training para gatos](/categoria/comportamiento/entrenamiento/clicker-training).",
         },
         {
           heading: "Retos un poco más avanzados",
@@ -549,7 +573,6 @@ export const categories: Category[] = [
         {
           heading: "Antes de empezar",
           body: "Asegúrate de que tu gato tenga todas sus vacunas al día y lleve microchip. La seguridad es lo primero.",
-          image: "/articles/paseos.png",
         },
         {
           heading: "Paso 1: Presentación positiva (El arnés es amigo)",
@@ -577,27 +600,42 @@ export const categories: Category[] = [
         },
         {
           heading: "Reglas de Seguridad Importantes",
-          body: "Nunca lo dejes solo: Jamás ates la correa a algo y te vayas. Podría enredarse, lastimarse o quedar indefenso ante un perro u otro peligro. La puerta es zona de riesgo: Ponle el arnés lejos de la puerta de salida. Sácalo en brazos hasta fuera. Si lo haces cerca de la puerta, aprenderá a intentar escaparse cada vez que abras. Ignora las rabietas: Si maúlla o se queja para que lo saques, ignóralo. Solo ponle el arnés y salgan cuando esté tranquilo. Así aprende que la calma es la llave para salir. Respeta sus límites: Si tu gato tiene mucho miedo, no insistas. Hay muchas formas de enriquecer su vida dentro de casa (juguetes, rascadores, ventanas mirador). Con amor y constancia, tu gato podría llegar a disfrutar de sus paseos tanto como tú. ¡Disfrutad de la aventura! 🐾🌳",
+          body: "Nunca lo dejes solo: Jamás ates la correa a algo y te vayas. Podría enredarse, lastimarse o quedar indefenso ante un perro u otro peligro. La puerta es zona de riesgo: Ponle el arnés lejos de la puerta de salida. Sácalo en brazos hasta fuera. Si lo haces cerca de la puerta, aprenderá a intentar escaparse cada vez que abras. Ignora las rabietas: Si maúlla o se queja para que lo saques, ignóralo. Solo ponle el arnés y salgan cuando esté tranquilo. Así aprende que la calma es la llave para salir. Respeta sus límites: Si tu gato tiene mucho miedo, no insistas. Hay muchas formas de enriquecer su vida dentro de casa (juguetes, rascadores, ventanas mirador). Con amor y constancia, tu gato podría llegar a disfrutar de sus paseos tanto como tú. ¡Disfrutad de la aventura! 🐾🌳\n\nSi el paseo le produce miedo o estrés, revisa [El Estrés en el Gato: Guía completa para entenderlo y ayudarlo](/categoria/comportamiento/estrés/guia-estres-ansiedad).",
         }
       ],
 },
           {
             slug: "clicker-training",
             title: "Clicker training para gatos",
-            intro: "Contrario al mito popular, los gatos son perfectamente entrenables con refuerzo positivo. El clicker training no solo enseña trucos: fortalece el vínculo, estimula mentalmente y reduce problemas de conducta.",
+            intro: "Los gatos sí pueden aprender con refuerzo positivo, y el clicker es una herramienta útil porque marca el instante exacto en que hacen lo que quieres. Sirve para enseñar trucos, para que se acostumbre al transportín y para colaborar en los cuidados veterinarios. No es una solución mágica ni funciona igual con todos los gatos.",
             sections: [
               {
-                heading: "Cómo funciona el clicker",
-                body: "El clic marca el momento exacto del comportamiento correcto, y va siempre seguido de un premio. El gato aprende que ese sonido específico predice una recompensa, lo que lo motiva a repetir la conducta. La precisión del momento es clave.",
-                image: "/articles/clicker.png",
+                heading: "Cómo funciona",
+                body: "El clicker emite un sonido breve y siempre igual. Se asocia a un premio que tu gato valore mucho, normalmente comida. El clic marca la conducta correcta, y el premio llega en uno o dos segundos.\n\nEl clic no es el premio: es una señal que avisa de que el premio viene. Por eso, si haces clic por error, entrega igualmente el premio. Si no, puede dejar de confiar en la señal.",
+              },
+              {
+                heading: "Un poco de evidencia",
+                body: "En gatos de refugio se ha visto que pueden aprender conductas como tocar un objetivo, sentarse, girar o dar la pata con sesiones cortas de clicker training.\n\nEn un estudio con 100 gatos, tras 15 sesiones de cinco minutos, el 79 % aprendió a tocar un objetivo con la nariz, el 60 % a girar, el 31 % a dar la pata y el 27 % a sentarse. Son estudios prometedores, pero pequeños, así que conviene no esperar resultados iguales en todos los gatos.",
               },
               {
                 heading: "Por dónde empezar",
-                body: "Primero 'carga' el clicker: haz clic y da premio 10 veces seguidas sin pedir nada. Luego empieza con conductas simples que el gato ya hace naturalmente: sentarse, tocarte la mano con la nariz. Sesiones de 2-5 minutos, 2-3 veces al día.",
+                body: "| **Paso** | **Qué hacer** |\n| 1. Carga el clicker | Haz clic y dale un premio pequeño, sin pedir nada. Repite hasta que tu gato reaccione al sonido esperando comida. |\n| 2. Elige un premio que le encante | Trocitos muy pequeños de comida húmeda o de pollo cocido sin sal. Que sean pequeños para no sobrealimentarlo. |\n| 3. Empieza por algo fácil | El ejercicio más útil suele ser el “target”: que toque con la nariz la punta de un dedo, un palito o una cuchara. Cuando lo haga, haz clic y premia. |\n| 4. Añade la orden | Cuando lo haga siempre, di una palabra, como “toca”, justo antes del gesto. |\n| 5. Sesiones cortas | De 2 a 5 minutos, una o varias veces al día. Termina antes de que se aburra o se frustre. |",
               },
               {
-                heading: "Trucos más avanzados",
-                body: "Una vez dominado lo básico, puedes enseñar: dar la pata, dar la vuelta, saltar obstáculos, entrar voluntariamente al transportín, o incluso usar botones de comunicación. No hay límite si las sesiones son cortas y positivas.",
+                heading: "Trucos y conductas útiles",
+                body: "Cuando domine el target, puedes enseñarle:\n\n• Sentarse.\n• Dar la pata o chocar la pata.\n• Girar.\n• Subir o bajar de un lugar.\n• Entrar al transportín por voluntad propia.\n• Tocar una diana, para que las revisiones veterinarias sean más fáciles.\n\nEl entrenamiento para el transportín es especialmente útil. La AAFP y la ISFM recomiendan dejarlo accesible en casa, con una cama cómoda y premios, para que lo asocie con cosas buenas. El clicker también puede servir como señal para que entre.\n\nUn estudio encontró que los gatos entrenados con refuerzo positivo para usar el transportín mostraron menos señales de estrés durante el viaje, y las revisiones veterinarias fueron más cortas.\n\nPara aprender a entrenar sin castigos ni presión, revisa también [Tu gato también quiere aprender: Guía divertida para entrenar en casa](/categoria/comportamiento/entrenamiento/guia-entrenamiento-casa).",
+              },
+              {
+                heading: "Los botones de comunicación",
+                body: "Los botones que dicen palabras pueden entrenarse con refuerzo positivo. Un gato puede aprender que pulsar un botón tiene una consecuencia concreta, por ejemplo, que pulsar “comida” trae comida.\n\nPero no está demostrado que los gatos “hablen” con un significado humano complejo. Interpretar cada pulsación como una frase o un pensamiento sería exagerar lo que sabemos.",
+              },
+              {
+                heading: "Qué evitar",
+                body: "| **Qué evitar** | **Por qué** |\n| Castigos físicos, gritos o rociarlo con agua | Aumentan el miedo y el estrés, y no enseñan nada útil. |\n| Entrenar con hambre extrema, enfermo o asustado | Puede que no quiera participar, y eso no es un fallo suyo. |\n| Forzarlo a hacer el truco | Si se aleja, termina con algo fácil que ya domina. |\n| Convertirlo en una obligación diaria | Debe ser breve, voluntario y agradable.",
+              },
+              {
+                heading: "Qué esperar de verdad",
+                body: "El clicker training puede mejorar la comunicación, dar estímulo mental y hacer más fáciles cuidados como las visitas al veterinario o la medicación. Los estudios son prometedores, pero muchos son pequeños o se hicieron en refugios.\n\nPor eso conviene evitar promesas absolutas, como reducir el estrés o arreglar cualquier problema de conducta. Es una herramienta más, que funciona mejor cuando se combina con un buen entorno y paciencia.",
               },
             ],
           },
@@ -615,7 +653,6 @@ export const categories: Category[] = [
         {
           heading: "Pistas sutiles de dolor",
           body: "Olvida los llantos o cojeras; el dolor felino se esconde en cambios de comportamiento: se esconde más (bajo la cama o armarios), cambia su humor volviéndose irritable o inusualmente 'pegajoso', y deja de acicalarse (pelo opaco o con nudos). También puede lamerse en exceso una zona específica, adoptar una postura tensa de 'pan de molde' con la cabeza baja, o dejar de saltar a lugares que antes frecuentaba por dolor articular.",
-          image: "/articles/dolor.png",
         },
         {
           heading: "Los dolores más comunes",
@@ -631,7 +668,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Casos Especiales: Edad y Estado",
-          body: "En gatitos cachorros, hay que tener mucho cuidado con las dosis por sus órganos en maduración. En gatos mayores con problemas de riñón o hígado, las dosis deben ajustarse minuciosamente. En gatas gestantes o lactantes, solo el veterinario debe decidir el tratamiento, ya que muchos analgésicos pasan a los fetos o a la leche.",
+          body: "En gatitos cachorros, hay que tener mucho cuidado con las dosis por sus órganos en maduración. En gatos mayores con problemas de riñón o hígado, las dosis deben ajustarse minuciosamente. En gatas gestantes o lactantes, solo el veterinario debe decidir el tratamiento, ya que muchos analgésicos pasan a los fetos o a la leche.\n\nEn gatos mayores, muchos signos de dolor se confunden con la vejez: lee [Cuidados del gato mayor](/categoria/etapas/senior/cuidados-senior).",
         },
         {
           heading: "No esperes a que se queje",
@@ -653,7 +690,6 @@ export const categories: Category[] = [
         {
           heading: "¿Qué es realmente el estrés?",
           body: "El estrés no es siempre 'malo'. Es una reacción natural del cuerpo que prepara al gato para adaptarse a cambios (una mudanza, un viaje, la llegada de un bebé). Estrés positivo: Le ayuda a reaccionar y adaptarse. Estrés negativo: Ocurre cuando la situación es demasiado intensa o dura demasiado tiempo. Si el gato no logra adaptarse, el estrés se cronifica y puede derivar en ansiedad. Diferencia clave: Miedo vs. Ansiedad. Miedo: Reacción inmediata ante un peligro real. El corazón se acelera y el gato está listo para huir o defenderse. Es útil para sobrevivir. Ansiedad: El gato siente miedo ante algo que no es peligroso o que no puede controlar. No sabe cómo resolver la situación, así que vive en tensión constante.",
-          image: "/articles/estres.png",
         },
         {
           heading: "¿Por qué algunos gatos son más sensibles?",
@@ -669,7 +705,7 @@ export const categories: Category[] = [
         },
         {
           heading: "El impacto en la Salud Física",
-          body: "El estrés no es solo 'cosa de la mente'; enferma el cuerpo. Cistitis Idiopática Felina: Inflamación de la vejiga sin infección bacteriana, directamente ligada al estrés. Problemas digestivos: Gastritis, vómitos crónicos o diarreas. Problemas de piel: Heridas por lamido excesivo. Obesidad y Diabetes: A veces, los dueños dan comida para 'consolar' al gato, lo que lleva al sobrepeso. Bajada de defensas: Los gatitos o gatos mayores estresados se enferman más fácilmente (gripes, infecciones). Importante: Antes de asumir que es estrés, acude al veterinario. Problemas como hipertiroidismo, dolor articular o tumores pueden imitar síntomas de estrés o ansiedad.",
+          body: "El estrés no es solo 'cosa de la mente'; enferma el cuerpo. Cistitis Idiopática Felina: Inflamación de la vejiga sin infección bacteriana, directamente ligada al estrés. Problemas digestivos: Gastritis, vómitos crónicos o diarreas. Problemas de piel: Heridas por lamido excesivo. Obesidad y Diabetes: A veces, los dueños dan comida para 'consolar' al gato, lo que lleva al sobrepeso. Bajada de defensas: Los gatitos o gatos mayores estresados se enferman más fácilmente (gripes, infecciones). Importante: Antes de asumir que es estrés, acude al veterinario. Problemas como hipertiroidismo, dolor articular o tumores pueden imitar síntomas de estrés o ansiedad.\n\nPara reconocer otras señales de malestar, lee [El Dolor Silencioso: Cómo saber si tu gato sufre y cómo ayudarle](/categoria/comportamiento/bienestar-felino/guia-dolor-silencioso).",
         },
         {
           heading: "¿Cómo ayudar a tu gato? (Tratamiento y Manejo)",
@@ -689,10 +725,12 @@ export const categories: Category[] = [
   {
     slug: "cuidado-gatito",
     label: "Cuidado del Gatito",
+    seoTitle: "Cuidado de gatitos: guía desde el nacimiento",
     emoji: "",
     color: "#e67e22",
     bg: "#fef3e2",
-    description: "Guía integral desde el neonato hasta la edad adulta",
+    description: "Guía integral para cuidar a un gatito desde el nacimiento hasta la edad adulta: temperatura, alimentación, socialización y primeros controles.",
+    intro: "Un gatito recién nacido depende por completo de su madre o de ti para sobrevivir. Durante las primeras semanas necesita calor, alimentación frecuente y una higiene cuidadosa, y cualquier descuido puede tener consecuencias serias. Esta sección reúne la información básica para cuidar a un gatito desde el nacimiento hasta la edad adulta.\n\nEncontrarás cómo mantener la temperatura adecuada, cómo alimentar a un gatito que no puede tomar leche de su madre, cuándo empezar el destete y qué esperar de su crecimiento. También se explica la socialización, un periodo clave para que aprenda a relacionarse con personas y con otros animales de forma tranquila.\n\nSi encuentras un gatito que parece necesitar ayuda, revisa primero los temas de primeros auxilios. Ante cualquier duda, o si el gatito es muy pequeño, lo más seguro es acudir cuanto antes a un veterinario o a un centro de rescate con experiencia.\n\nLos gatitos se desarrollan rápido, y cada semana trae cambios nuevos. Llevar un registro sencillo de su peso, su alimentación y sus deposiciones te ayudará a notar a tiempo cualquier desviación y a comentarlo con el veterinario.",
     subcategories: [
       {
         slug: "neonatos",
@@ -701,32 +739,40 @@ export const categories: Category[] = [
           {
             slug: "guia-neonatos",
             title: "Guía integral para el cuidado del gatito",
-            intro: "Fundamentos biológicos, rescate, control térmico, alimentación con biberón, estimulación de esfínteres y signos de alarma en neonatos.",
+            intro: "Cuidar a un gatito recién nacido sin su madre exige estar pendiente de cuatro cosas: la temperatura, la hidratación, la alimentación con un sustituto de leche felino y la eliminación. Nunca lo alimentes si está frío, y no le pongas enemas, laxantes ni remedios caseros sin indicación veterinaria: pueden ser peligrosos o incluso mortales.",
             sections: [
               {
-                heading: "Fundamentos biológicos y conductuales",
-                body: "El gato no es un perro pequeño ni un humano en miniatura. Sentidos adaptados a la caza nocturna: vista con tapetum lucidum, oído de frecuencias agudas, bigotes sensores como radar, y órgano de Jacobson para analizar olores complejos. El ronroneo no siempre indica felicidad; puede expresar dolor o estrés."
+                heading: "Cómo es un gato, y cómo se comunica",
+                body: "El gato no es un perro pequeño ni un bebé humano. Tiene sentidos hechos para cazar: ve bien con poca luz, oye sonidos muy agudos, sus bigotes detectan movimientos y cambios de presión, y tiene un órgano que le permite analizar olores complejos.\n\nEl ronroneo no siempre significa que está feliz. También puede aparecer cuando está estresado, con dolor o enfermo. Por eso, tómalo siempre junto con la temperatura, el apetito, la actividad y la respiración.",
               },
               {
-                heading: "Primeros pasos: Rescate y cálculo de edad",
-                body: "Al encontrar un gatito: calor inmediato con ropa seca, no separar innecesariamente de hermanos, traslado en caja oscura y ventilada. Cálculo de edad: cordón umbilical (0-4 días), ojos cerrados (4-6 días), apertura de ojos (7-9 días), dientes emergiendo (15-18 días), caminata ágil (25-30 días)."
+                heading: "Primeros pasos: qué hacer al encontrarlo",
+                body: "Antes de nada, comprueba que no esté solo escondido mientras su madre busca comida. Si está frío, débil o en peligro, caliéntalo poco a poco y comunícate con un veterinario o un refugio con experiencia en neonatos.\n\nMientras tanto:\n\n• Ponlo en una caja oscura, ventilada y forrada con mantas limpias.\n• No lo separes de sus hermanos si están sanos, sin necesidad.\n• Evita manipularlo mucho y los ruidos fuertes.\n• Pésalo con una balanza de cocina para seguir su evolución.",
               },
               {
-                heading: "Ambiente, temperatura y humedad",
-                body: "Control térmico crítico hasta las 3 semanas: usar botellas de agua caliente envueltas en toallas, colocar en un extremo para que puedan alejarse. Temperatura ideal: 38-39.5°C. Prohibido mantas eléctricas. Control de humedad: nunca dejar húmedo, secar inmediatamente con toalla."
+                heading: "Cuánto tiempo tiene, según sus señales",
+                body: "Estas edades son aproximadas y te ayudan a calcular cuántos días tiene:\n\n| **Señal** | **Edad aproximada** |\n| El cordón umbilical se seca | Primeros días |\n| Ojos cerrados | Primeros 7 a 10 días |\n| Ojos abiertos | Alrededor de 7 a 14 días |\n| Salen los dientes de leche | 2 a 3 semanas |\n| Camina con más coordinación | 3 a 4 semanas |\n| Empieza a comer sólidos | 3 a 5 semanas |",
               },
               {
-                heading: "Alimentación y nutrición (0-20 días)",
-                body: "Usar fórmula específica para gatitos (Royal Canin, Lactadiet). Emergencia: leche de cabra + huevo crudo. NUNCA leche humana o de vaca sola. Técnica: posición horizontal, tetina inclinada, gota previa en lengua. Frecuencia: cada 2-3h (0-5 días: 2-5ml, 5-10 días: 3-7ml, 10-15 días: 4-10ml)."
+                heading: "Temperatura y ambiente",
+                body: "Los gatitos menores de 4 semanas no regulan bien su temperatura. Durante la primera semana, la zona donde descansa debe estar entre 29 y 32 °C, aproximadamente, y después puede bajar poco a poco.\n\nUsa botellas con agua tibia envueltas en toallas, o almohadillas térmicas para mascotas. Ponlas siempre tapadas y solo en un extremo del nido, para que pueda alejarse si tiene calor. Evita las quemaduras y no uses mantas eléctricas sin control.\n\nSi está frío, nunca le des de comer. Caliéntalo de forma gradual, idealmente durante una a cuatro horas según la gravedad, y busca atención veterinaria. Calentarlo demasiado rápido puede provocarle un colapso cardiovascular.",
               },
               {
-                heading: "Higiene, eliminación y estimulación",
-                body: "Estimulación de esfínteres: frotar zona ano-genital con gasa húmeda después de cada toma. Orina aparece rápido, defecación puede tardar 24h. Estreñimiento: bastoncillo con aceite de oliva, gotas de aceite de parafina en biberón, o enema casero (agua tibia+jabón suave) si >3 días sin defecar."
+                heading: "Alimentación",
+                body: "Usa solo sustituto de leche felino comercial, preparado según las indicaciones del envase y del veterinario. No le des leche de vaca, leche humana, leche de cabra ni mezclas caseras con huevo crudo. No cubren sus necesidades y pueden causarle diarrea, deshidratación o infecciones.\n\nDale la comida boca abajo, con el vientre apoyado y la cabeza un poco elevada. Nunca boca arriba: puede aspirar la leche. Usa una tetina adecuada, y comprueba que la leche salga despacio.\n\nSi no mama, está débil o no gana peso, consulta cuanto antes con el veterinario.\n\n| **Edad** | **Cada cuánto come** |\n| 0 a 1 semana | Cada 2 horas, también de noche. |\n| 1 a 2 semanas | Cada 2 o 3 horas. |\n| 2 a 3 semanas | Cada 3 o 4 horas. |\n| 3 a 4 semanas | Cada 4 o 5 horas, y empieza el destete poco a poco. |\n\nLas cantidades exactas dependen del peso, de la marca de la fórmula y de su estado de salud. No sigas tablas genéricas sin pesarlo y consultar con el veterinario.\n\nPara ver la alimentación por etapas, lee [Nutrición Científica por Etapas](/categoria/tenencia-responsable/nutricion-cientifica/nutricion-etapas).",
               },
               {
-                heading: "Signos de alarma en neonatos",
-                body: "No quiere comer: verificar temperatura y heces. Se aparta de hermanos: revisar signos vitales. Diarrea/vómitos: riesgo alto deshidratación. Pegajoso/húmedo: secar inmediatamente. Dificultad respiratoria: gasa húmeda tibia en cuello/cara. Regla de oro: si alimentación + temperatura fallan simultáneamente = riesgo inminente."
-              }
+                heading: "Higiene y eliminación",
+                body: "Los gatitos menores de 3 o 4 semanas suelen necesitar ayuda para orinar y defecar. Después de cada toma, frota suavemente la zona de la cola y la barriga con un algodón o una gasa tibia y húmeda. Así imitas el lamido de su madre.\n\nDespués, sécalo bien para que no se enfríe. La orina suele aparecer pronto. La caca puede tardar más, pero si no hay deposición en 24 a 48 horas o hace esfuerzo, consulta con el veterinario.\n\n**Nunca le pongas enemas caseros, aceite de parafina, aceite de oliva ni laxantes humanos.** Los enemas pueden dañarle el colon, y el aceite puede causarle neumonía si lo inhala. Estos tratamientos solo los debe hacer un veterinario.",
+              },
+              {
+                heading: "Señales de alarma",
+                body: "Busca atención veterinaria urgente si el gatito:\n\n| **Señal** | **Qué hacer** |\n| Está frío, débil, no se mueve o no mama | Consulta de inmediato. |\n| No gana peso o pierde peso | Consulta de inmediato. |\n| No orina ni defeca en 24 a 48 horas | Consulta de inmediato. |\n| Tiene diarrea, vómitos, barriga hinchada o le cuesta respirar | Consulta de inmediato. |\n| Tiene temperatura alta o baja, convulsiones o se desploma | Acude a urgencias. |\n\nLa diarrea y los vómitos pueden deshidratarlo muy rápido. Si está húmedo, pegajoso o frío, sécalo y caliéntalo poco a poco, pero no retrases la consulta.",
+              },
+              {
+                heading: "Una regla importante",
+                body: "Si fallan a la vez la temperatura y la alimentación, el riesgo es inmediato. No esperes a ver si mejora: contacta con un veterinario, un refugio especializado o un centro de rescate con experiencia en gatitos recién nacidos.",
+              },
             ]
           }
         ]
@@ -738,32 +784,32 @@ export const categories: Category[] = [
           {
             slug: "guia-destete",
             title: "Destete, crecimiento y transición a vida adulta",
-            intro: "Primera comida sólida, necesidades nutricionales por etapas, socialización, educación conductual, madurez sexual y esterilización.",
+            intro: "El destete suele empezar alrededor de las 3 o 4 semanas y termina entre las 8 y las 10. Durante el crecimiento, el gatito necesita un alimento completo para cachorros de gato, revisiones veterinarias, vacunas, desparasitación, juego y contacto positivo con las personas.",
             sections: [
               {
-                heading: "Destete y primera comida sólida (~20-60 días)",
-                body: "A los 18-20 días emergen dientes. Ofrecer comida húmeda para kitten en papilla sobre toalla o con el dedo. Si rechaza: trocitos de pollo crudo/cocido o caldo de pollo sin sal. Continuar biberón al menos 2 semanas más. Mantener acceso a agua fresca y pienso kitten."
+                heading: "Cómo empieza el destete",
+                body: "Hacia las 3 o 4 semanas, los gatitos empiezan a mirar la comida sólida: les salen los dientes de leche y empiezan a lamer. El destete debe ser gradual, sin forzar nada. La madre puede seguir amamantando varias semanas mientras aprenden a comer.\n\nLa primera comida suele ser una papilla de alimento húmedo completo para gatitos, mezclada con un sustituto de leche felina y servida en un plato bajo. Nunca uses leche de vaca: puede causar diarrea y no cubre sus necesidades.\n\n| **Paso** | **Qué hacer** |\n| Ofrece poco y con frecuencia | Pequeñas cantidades varias veces al día. |\n| Cambia la proporción | Aumenta la comida poco a poco y reduce el sustituto de leche. |\n| Hacia las 6 u 8 semanas | Muchos ya aceptan alimento húmedo o pienso para gatitos, sin agregar líquido. |\n| Agua fresca | Déjala disponible desde que empieza a comer sólidos. |\n\nNo le des pollo crudo ni caldos caseros. La carne cruda implica riesgo de bacterias, y el caldo puede tener sal, cebolla o ajo, que son peligrosos. Si cuidas a un gatito que no tiene madre, consulta a un veterinario sobre su alimentación.",
               },
               {
-                heading: "Crecimiento y necesidades nutricionales (2-12 meses)",
-                body: "Carnívoro estricto: requiere más proteína que el perro. Come 15-20 veces al día en pequeñas cantidades. Requerimientos: 7-8 semanas ~200 kcal/kg, 6 meses ~150 kcal/kg, adulto ~90 kcal/kg. Transición de alimento: mezclar progresivamente durante 1 semana. NUNCA acostumbrar a comer de la mesa."
+                heading: "Alimentación durante el crecimiento",
+                body: "Los gatitos necesitan más energía y proteína por kilo que los adultos. Como referencia de la AAHA, un gatito de 10 semanas puede necesitar alrededor de 200 kcal por kilo al día, y a los 10 meses la necesidad baja a unas 80 kcal por kilo.\n\nNo hay una cantidad única para todos. Lo más seguro es usar un alimento completo para crecimiento, seguir la guía del envase como punto de partida y ajustar según el peso, la condición corporal y lo que diga el veterinario.\n\n| **Qué hacer** | **Por qué** |\n| Varias comidas pequeñas al día | Se adapta mejor a su energía y a su tamaño. |\n| Pesarlo con regularidad | Vigila que crezca de forma constante. |\n| Cambiar de alimento poco a poco, en unos 7 días | Evita molestias digestivas y rechazo. |\n| Evitar comida humana, huesos cocidos, leche de vaca y snacks en exceso | Son poco adecuados o pueden causar problemas. |",
               },
               {
-                heading: "Socialización, contacto y educación (2-7 semanas)",
-                body: "Ventana crítica para aprender pautas felinas. Primer día: silencio, sin manipulación excesiva, manta con olor materno. Los gatos aman la rutina; cambios bruscos generan estrés. Educación: detectar superficies para rascado, interrumpir acciones prohibidas con distracción (sonido seco, palmada suave en superficie). NUNCA castigo físico ni gritos."
+                heading: "Socialización y aprendizaje",
+                body: "El período más sensible para socializar ocurre sobre todo entre las 2 y las 7 semanas. Las experiencias tranquilas con personas, sonidos cotidianos, manipulación suave, transportes y otros animales ayudan a que, de adulto, sea más seguro y adaptable.\n\nHazlo poco a poco y sin abrumarlo. Deja que se aleje si quiere, usa premios y juego, y evita los ruidos fuertes o el manejo excesivo. Si está con su madre, tenerla cerca durante el destete le da seguridad.\n\nPara enseñarle dónde rascar, pon rascadores cerca de los lugares que ya usa, y anímalo con hierba gatera o premios. Si hace algo que no quieres, redirígelo con un juguete o un rascador. Evita gritos, palmadas y castigos: generan miedo y no enseñan qué hacer en su lugar.\n\nPara revisar las semanas previas al destete, lee [Las primeras semanas de vida](/categoria/etapas/gatito/primeras-semanas).",
               },
               {
-                heading: "Salud, prevención y signos de alarma",
-                body: "Primera visita veterinaria: examen general, temperatura, estado dental. Vacunación inicia a las 8-10 semanas. Desparasitación interna desde el 1er mes (cada 4 meses). Externa: pulgas, garrapatas, hongos. NUNCA automedicar: aspirina, paracetamol y fármacos humanos son altamente tóxicos para gatos."
+                heading: "Salud y prevención",
+                body: "La primera visita veterinaria incluye un examen general, el control de peso, la revisión de parásitos y un plan de vacunas hecho a su medida. Las vacunas esenciales suelen empezar hacia las 6 semanas, con dosis cada 3 o 4 semanas hasta las 16 o 20 semanas, según el producto y su situación.\n\nLa desparasitación interna puede empezar desde las 3 semanas. Las guías de la AAFP y la AAHA recomiendan tratarlo cada 2 semanas entre las 3 y las 9 semanas, y luego una vez al mes hasta los 6 meses. Para pulgas y garrapatas, elige el producto con tu veterinario: muchos productos para perros son tóxicos para los gatos.\n\n**Nunca lo medique por su cuenta.** El paracetamol es muy tóxico para los gatos y puede dañar gravemente la sangre y el hígado. La aspirina y otros medicamentos humanos también pueden ser peligrosos. Consulta antes de dar cualquier medicamento.\n\nBusca atención veterinaria urgente si no come, está decaído, tiene diarrea o vómitos que no paran, le cuesta respirar, no sube de peso o muestra signos de deshidratación.",
               },
               {
                 heading: "Madurez sexual y esterilización",
-                body: "Hembras: primer celo a los 6-8 meses. Machos: madurez a los 11-12 meses. Recomendación: castración/esterilización segura (~4 meses). Reduce agresividad y marcaje con orina, elimina celos y crías no deseadas (una pareja puede generar ~65,500 descendientes en 5 años), previene tumores testiculares/prostáticos/uterinos/mamarios."
+                body: "Las gatas pueden entrar en celo desde los 4 o 5 meses, antes de lo que mucha gente cree. Los machos también pueden madurar pronto. Por eso, las organizaciones como la AVMA y la AAHA recomiendan esterilizar a los gatos que no van a criar antes de los 5 meses, alrededor de los 4 meses.\n\nLa esterilización evita las camadas no deseadas, reduce el vagabundeo, las peleas y el marcado con orina, y baja el riesgo de algunas enfermedades en las gatas, como la infección uterina y los tumores de mama. No cambia su personalidad y no garantiza que no engorde: el peso depende de la dieta, las raciones y la actividad.\n\nLa cifra de “65.500 descendientes en cinco años” que se usa en campañas es un cálculo teórico, no una predicción exacta. El mensaje sólido es este: una población sin control crece rápido, porque las gatas pueden tener varias camadas al año y los gatitos maduran pronto.",
               },
               {
-                heading: "Crecimiento, madurez y transición a vida adulta",
-                body: "~20 días: eliminación autónoma, construir 'parque' con cajas. 1-3 meses: paso de reptar a correr, mayor gasto energético. 4-6 meses: pico de energía y juego. Escapadas: pueden regresar heridos o preñadas. Alimentación adulta: transición a fórmula para adultos (~1 año). Mantener agua fresca y pienso adecuado siempre disponible."
-              }
+                heading: "Etapas de crecimiento",
+                body: "| **Edad aproximada** | **Qué ocurre** | **Qué hacer** |\n| 0 a 4 semanas | Depende de la leche materna o del sustituto. Si no tiene madre, puede necesitar ayuda para orinar y defecar. | Alimentación con sustituto adecuado y control veterinario. |\n| 3 a 8 semanas | Destete gradual, exploración, juego y socialización. | Papillas, agua fresca y contacto positivo. |\n| 2 a 6 meses | Crecimiento rápido y mucha energía. | Vacunas, desparasitación y alimento para gatitos. |\n| 4 a 5 meses | Puede madurar sexualmente. | Valorar la esterilización con el veterinario. |\n| 10 a 12 meses | La mayoría pasa al alimento de adulto. Algunas razas grandes pueden tardar más. | Cambio gradual en unos 7 días y revisiones periódicas. |",
+              },
             ]
           }
         ]
@@ -775,28 +821,40 @@ export const categories: Category[] = [
           {
             slug: "guia-principios",
             title: "Principios fundamentales de supervivencia y cuidado",
-            intro: "Pilares absolutos, equilibrio descanso-contacto, registro y observación, y respeto a la naturaleza felina.",
+            intro: "Cuidar a un gatito recién nacido sin su madre exige estar atento sobre todo a la temperatura, la comida, el peso y la eliminación. Si está frío, no le des de comer hasta que se caliente, porque podría atragantarse o no digerir bien. Ante debilidad, mucho frío, falta de peso o si no orina ni defeca, necesita atención veterinaria urgente.",
             sections: [
               {
-                heading: "Pilares absolutos: Alimentación y temperatura",
-                body: "Son los indicadores vitales. Controlar con rigor salva vidas. Evitar cambios bruscos en dieta, ambiente o manejo. La adaptación felina es gradual."
+                heading: "La temperatura, lo primero",
+                body: "Los gatitos menores de cuatro semanas no regulan bien su temperatura. Durante la primera semana, la zona donde descansa debe estar entre 29 y 32 °C aproximadamente. Después, la temperatura puede bajar poco a poco hasta la del ambiente.\n\nPon la fuente de calor solo en una parte del nido, para que pueda alejarse si tiene demasiado calor. Puedes usar mantas, almohadillas térmicas para mascotas o discos de calor envueltos en toallas. Evita el contacto directo con fuentes calientes, y no dependas solo de tu propio calor corporal.\n\nNunca le des de comer si está frío. La hipotermia reduce la digestión y aumenta el riesgo de vomitar y aspirar. Caliéntalo poco a poco y consulta al veterinario antes de darle alimento.",
               },
               {
-                heading: "Actuar con rapidez",
-                body: "Un neonato sano puede deteriorarse y fallecer en cuestión de horas. No esperar 'a ver si mejora'. Equilibrio descanso-contacto: 2-3h entre tomas marcan el ritmo natural. Ni manipulación constante ni abandono prolongado."
+                heading: "Con qué frecuencia comer",
+                body: "La frecuencia depende de su edad, su peso y cómo esté de salud. Como referencia:\n\n| **Edad** | **Cada cuánto come** |\n| 0 a 1 semana | Aproximadamente cada 2 horas, también de noche. |\n| 1 a 2 semanas | Cada 2 o 3 horas. |\n| 2 a 3 semanas | Cada 3 o 4 horas. |\n| 3 a 4 semanas | Cada 4 o 5 horas, y empieza el destete poco a poco. |\n\nUsa solo sustituto de leche felina, preparado según las indicaciones del envase y del veterinario. Nunca le des leche de vaca, fórmula humana ni remedios caseros. No cubren sus necesidades y pueden causarle diarrea y deshidratación.\n\nDale la comida boca abajo, con el vientre apoyado y la cabeza un poco elevada, como cuando mama de su madre. Si lo alimentas boca arriba, puede aspirar la leche, algo que pone la vida en riesgo.",
               },
               {
-                heading: "Registro y observación",
-                body: "Anotar cantidades, heces, temperatura y comportamiento. La globalidad del día importa más que un dato aislado."
+                heading: "Ayudarlo a orinar y defecar",
+                body: "Los gatitos menores de 3 o 4 semanas suelen necesitar ayuda. Después de cada toma, frota suavemente la zona de la cola y la barriga con un algodón o un paño tibio y húmedo. Así imitas el lamido de su madre.\n\nDespués sécalo bien, para que no se enfríe. Si no orina ni defeca en 24 horas, consulta con urgencia: puede tener deshidratación, estreñimiento u otro problema grave.",
               },
               {
-                heading: "Respetar su naturaleza",
-                body: "No son perros ni humanos. Su independencia, limpieza, rituales de marcaje y sensibilidad sensorial son adaptaciones evolutivas que deben guiar tu manejo."
+                heading: "Llevar un registro diario",
+                body: "Anota cada día lo siguiente. Te ayudará a ver si todo va bien y a explicárselo al veterinario:\n\n• Peso, idealmente antes y después de cada toma.\n• Cuánta fórmula acepta.\n• Temperatura y aspecto general.\n• Orina y heces: cuántas veces, de qué color y qué consistencia.\n• Actividad, cómo succiona, cuánto duerme y si parece incómodo.\n\nEl peso es uno de los indicadores más útiles. Un gatito sano gana peso de forma constante. Si pierde peso, no gana o come menos, son señales tempranas de alarma.",
               },
               {
-                heading: "Nota final",
-                body: "Sacar adelante un gatito abandonado exige dedicación, paciencia y conocimiento. A veces, a pesar del esfuerzo máximo, la fragilidad neonatal impone límites. No es un fracaso personal; es la realidad biológica. Cada intento brinda una oportunidad de vida. Gracias por informarte, por actuar con responsabilidad y por ofrecer una segunda oportunidad a quienes nacen en la indefensión. Para seguimiento nutricional detallado o casos clínicos, consultar siempre a un veterinario colegiado."
-              }
+                heading: "Descanso y contacto",
+                body: "Los recién nacidos duermen casi todo el día, y eso les ayuda a crecer. El contacto debe ser breve y tranquilo, y para alimentarlo, limpiarlo, ayudarlo a hacer sus necesidades o pesarlo. Evita manipularlo sin parar, los ruidos fuertes, los cambios bruscos y las corrientes de aire.\n\nCuando esté estable, puedes empezar a socializarlo poco a poco, con voz suave, manejo breve y experiencias agradables. Pero si está débil, lo primero es que su temperatura, su hidratación y su alimentación estén bien.",
+              },
+              {
+                heading: "Respetar cómo es un gato",
+                body: "Los gatos no son perros pequeños ni bebés humanos. Tienen necesidades propias de temperatura, alimentación, olfato, territorio y descanso. Su independencia, su limpieza y su sensibilidad son adaptaciones que conviene respetar desde el principio.\n\nSi es huérfano, eso significa ofrecerle un nido seguro, rutinas previsibles, calor adecuado, un alimento específico y contacto tranquilo. La idea es cubrir sus necesidades sin cargarlo de estímulos.",
+              },
+              {
+                heading: "Señales de alarma",
+                body: "Consulta de inmediato si el gatito:\n\n| **Señal** | **Qué hacer** |\n| Está frío, débil, no se mueve o no mama | Consulta de inmediato. |\n| No gana peso o pierde peso | Consulta pronto. |\n| No orina ni defeca en 24 horas | Consulta con urgencia. |\n| Tiene diarrea, vómitos, barriga hinchada o le cuesta respirar | Consulta de inmediato. |\n| Tiene temperatura alta o baja, convulsiones o se desploma | Acude a urgencias veterinarias. |\n\nSi el gatito tiene problemas para respirar o convulsiona, lee primero [Primeros Auxilios para Gatitos: Qué hacer en una emergencia](/categoria/emergencia/emergencias-felinas/guia-primeros-auxilios-gatitos).",
+              },
+              {
+                heading: "Una nota final",
+                body: "Sacar adelante a un gatito recién nacido sin madre exige dedicación, conocimientos y apoyo veterinario. Aun con buenos cuidados, su fragilidad puede poner límites. Eso no significa que hayas fallado.\n\nPara el seguimiento de su alimentación, la dosis de fórmula o cualquier caso clínico, consulta siempre con un veterinario o con un centro de rescate con experiencia en gatitos recién nacidos.",
+              },
             ]
           }
         ]
@@ -806,10 +864,12 @@ export const categories: Category[] = [
     {
     slug: "emergencia",
     label: "Emergencia",
+    seoTitle: "Emergencias felinas: primeros auxilios",
     emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
-    description: "Cachorro, adulto, senior y sus necesidades",
+    description: "Primeros auxilios para gatos: qué hacer ante una emergencia, cuándo acudir de inmediato al veterinario y qué tener preparado en casa.",
+    intro: "En una emergencia, los primeros minutos pueden marcar la diferencia. Esta sección reúne información de primeros auxilios para gatos, pensada para que sepas qué hacer mientras llegas al veterinario. Estas pautas no reemplazan nunca su atención profesional.\n\nAquí verás qué signos indican que un gato necesita atención inmediata, como dificultad para respirar, sangrado, convulsiones o ingestión de sustancias peligrosas. También encontrarás pautas para mantener la calma, inmovilizar con cuidado a un gato lesionado y preparar un pequeño botiquín en casa.\n\nAnte la duda, consulta con un veterinario lo antes posible. Es mejor llamar y preguntar que esperar a que el cuadro empeore.\n\nTener a mano el número de tu veterinario y de una clínica de urgencias evita perder tiempo en un momento de estrés. Anota también los datos básicos de tu gato, como su peso, su edad y los medicamentos que toma.\n\nMantente tranquilo al atender a tu gato. Un animal asustado puede morder o arañar aunque lo quieras, así que actúa con calma, con gestos suaves y con la ayuda de alguien más si es posible.",
     subcategories: [
       {
   slug: "emergencias-felinas",
@@ -818,47 +878,55 @@ export const categories: Category[] = [
     {
       slug: "guia-primeros-auxilios-gatitos",
       title: "Primeros Auxilios para Gatitos: Qué hacer en una emergencia",
-      intro: "Los primeros auxilios no sustituyen al veterinario, pero pueden salvar la vida de tu gatito mientras llegas a la clínica. El objetivo es evitar que empeore, estabilizarlo y trasladarlo con seguridad.",
+      intro: "Los primeros auxilios no reemplazan al veterinario. Sirven para cuidar al gatito, frenar un sangrado o un enfriamiento, y llevarlo con seguridad a la clínica. Si tiene dificultad para respirar, se desploma, convulsiona, sufrió un golpe fuerte, sangra mucho o no puede orinar, llama a urgencias y ve de inmediato.",
       sections: [
         {
-          heading: "Calma y Seguridad",
-          body: "Tu seguridad es lo primero; un gatito con dolor puede morder o arañar. Mantén tu rostro alejado de sus garras y boca. No uses bozal, pues está contraindicado en gatos con problemas respiratorios o vómitos. La técnica de la 'manta' es ideal: envuélvelo suavemente en una toalla dejando solo la cabeza fuera para calmarlo y manejarlo con seguridad.",
-          image: "/articles/primeros_auxilios_gatitos.png",
+          heading: "Primero, la calma y tu seguridad",
+          body: "Un gatito con dolor puede morder o arañar, aunque normalmente sea tranquilo. Acércate despacio, háblale en voz baja y evita movimientos bruscos. Si hace falta, envuélvelo suavemente en una toalla gruesa, dejando la cabeza libre.\n\nNo le pongas bozal. Puede dificultarle la respiración y le impide vomitar con seguridad.\n\nSi sospechas una lesión en la cabeza, el cuello o la espalda, mueve lo menos posible esa zona y trasládalo sobre una superficie firme.",
         },
         {
-          heading: "Evaluación Rápida (Regla ABCDE)",
-          body: "Antes de moverlo, revisa: A (Vías aéreas): Que no haya bloqueos en nariz o boca. B (Respiración): Observar si el pecho se mueve. C (Circulación): Presionar hemorragias con gasas limpias. D (Dolor/Inmovilización): No mover bruscamente si sospechas de fracturas. E (Exposición): Proteger heridas abiertas con paños limpios.",
+          heading: "Revisión rápida antes de moverlo",
+          body: "Antes de trasladarlo, mira estas cuatro cosas en menos de un minuto:\n\n| **Qué revisar** | **Qué significa** |\n| Vías respiratorias | ¿Hay algo que tape la boca o la nariz? ¿Se oyen ruidos raros al respirar? |\n| Respiración | Si respira rápido, con esfuerzo o con la boca abierta, es una urgencia. |\n| Sangrado | Presiona la herida con una gasa o tela limpia. Si se empapa, pon más encima sin quitar la primera. |\n| Color y estado | Encías pálidas o azuladas, debilidad, desmayo, convulsiones o inconsciencia son urgencias. |\n\nSi sospechas una fractura, no le hagas un vendaje casero. Muévelo con cuidado y llévalo al veterinario.",
         },
         {
-          heading: "Emergencias en Cachorros",
-          body: "Los bebés son muy frágiles ante dos peligros: 1. Hipoglucemia (Bajón de azúcar): Si presenta debilidad extrema o encías pálidas, aplica miel o azúcar bajo su lengua o en encías. 2. Hipotermia: Si el gatito está frío al tacto, abrígalo con tu calor corporal (bajo tu ropa) o una botella de agua tibia envuelta en una toalla (nunca directa).",
+          heading: "Si el gatito está muy pequeño o débil",
+          body: "Los gatitos muy pequeños, que no comen, vomitan o tienen diarrea, pueden bajar mucho su azúcar. Señales frecuentes: debilidad, tambaleo, desorientación, temblores o colapso.\n\n| **Situación** | **Qué hacer** |\n| Azúcar bajo, pero está consciente y puede tragar | Coloca un poco de glucosa, jarabe de maíz o miel en la encía, entre la mejilla y los dientes. |\n| Inconsciente, convulsionando o no puede tragar | No le des nada por la boca: podría atragantarse. Lleva a urgencias de inmediato. |\n\nEl azúcar solo gana tiempo. No retrases el traslado, aunque parezca mejorar.",
         },
         {
-          heading: "Traslado Seguro",
-          body: "Usa siempre una transportadora o caja resistente con ventilación. Si sospechas de huesos rotos, minimiza el movimiento usando una tabla o toalla rígida como camilla improvisada. Durante el viaje, habla suavemente y mantén el vehículo estable para reducir su estrés.",
+          heading: "Si está frío",
+          body: "Si el gatito está frío, débil o muy quieto, sécalo si está mojado y envuélvelo en mantas secas. Puedes poner botellas con agua tibia, nunca caliente, envueltas en una toalla y junto a su cuerpo. Cámbialas de vez en cuando para evitar quemaduras.\n\nNo uses secadores muy calientes, agua caliente ni frotes con fuerza. El frío puede acompañar a infecciones, shock o traumatismos, así que debe verlo un veterinario, aunque parezca recuperarse.",
         },
         {
-          heading: "Kit de Emergencia Felino",
-          body: "Ten a mano: Teléfonos de urgencia veterinaria, toallas o mantas limpias, gasas estériles, miel de caña o glucosa, cinta adhesiva médica y una transportadora lista. Estar preparado marca la diferencia en una situación crítica.",
+          heading: "Si tuvo demasiado calor",
+          body: "Si estuvo expuesto a mucho calor y jadea, babea, está débil, vomita o tiene diarrea, llévalo a un lugar fresco y ventilado. Puedes mojar suavemente su pelo con agua fresca, sin que esté helada, sobre todo en la barriga. Y ve de inmediato a urgencias.\n\nNo lo sumerjas en agua helada ni pongas hielo directamente sobre su cuerpo. Enfriarlo demasiado rápido también puede ser peligroso.",
         },
         {
-          heading: "Advertencias Finales",
-          body: "Llama al veterinario mientras te diriges a la clínica para que te esperen. NUNCA mediques por tu cuenta con fármacos humanos (paracetamol o ibuprofeno), ya que son mortales. Actúa rápido: en una emergencia, cada minuto cuenta para salvar su vida.",
+          heading: "Cómo trasladarlo con seguridad",
+          body: "| **Opción** | **Cómo hacerlo** |\n| Transportadora rígida | Con ventilación y una manta o toalla dentro. |\n| Caja de cartón resistente | Solo de forma temporal, con agujeros para que respire. |\n| Sospecha de fractura o lesión de la espalda | Muévelo sobre una tabla, cartón grueso o manta extendida. Evita doblarlo o torcerlo. |\n\nMientras viajas, llama a la clínica para que se preparen cuando llegues.",
         },
-      ],
-    },
-  ],
-}
-
+        {
+          heading: "Qué tener preparado",
+          body: "Guarda este kit en un lugar fácil de encontrar:\n\n• El teléfono y la dirección de una clínica de urgencias que atienda las 24 horas.\n• Una transportadora o caja ventilada.\n• Toallas y mantas limpias.\n• Gasas estériles, vendas y cinta médica.\n• Tijeras de punta redondeada.\n• Glucosa, jarabe de maíz o miel.\n• Solución salina estéril para limpiar heridas superficiales.\n• Guantes desechables y una lista de medicamentos o alergias del gatito.\n\nSi el gatito es muy pequeño, consulta también [Guía integral para el cuidado del gatito](/categoria/cuidado-gatito/neonatos/guia-neonatos).",
+        },
+        {
+          heading: "Lo que nunca debes hacer",
+          body: "**Nunca le des paracetamol, ibuprofeno, aspirina ni ningún otro medicamento humano.** El paracetamol es especialmente tóxico para los gatos y puede causar daño grave o la muerte.\n\n• No le provoques el vómito, salvo que lo indique un veterinario o un centro de toxicología.\n• No le des leche, alcohol, comida humana ni remedios caseros.\n• No esperes a ver si mejora. Ante dificultad para respirar, convulsiones, golpes fuertes, sangrado abundante, colapso o dificultad para orinar, ve a urgencias de inmediato.",
+        },
       ]
     },
+  ],
+      },
+    ],
+  },
   {
     slug: "etapas",
     label: "Etapas de vida",
+    seoTitle: "Etapas de vida del gato: de cachorro a senior",
     emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
-    description: "Cachorro, adulto, senior y sus necesidades",
+    description: "Las etapas de vida de un gato, de cachorro a senior: cómo cambian sus necesidades de alimentación, salud, actividad y cuidado a lo largo de los años.",
+    intro: "Un gato cambia mucho a lo largo de su vida. Un cachorro necesita energía, juego y mucho aprendizaje; un adulto busca rutinas estables, y un gato senior empieza a necesitar más atención a su salud, su alimentación y su comodidad. Esta sección recorre esas etapas para que sepas qué esperar en cada una.\n\nVerás cómo crece un gatito, qué cambia en la alimentación y el juego a medida que madura, y qué señales conviene vigilar cuando envejece, como cambios de peso, de apetito o de movilidad. Cada etapa tiene necesidades propias, y adaptar el cuidado a ellas ayuda a que el gato se mantenga sano y cómodo.\n\nLas edades son orientativas, porque cada gato envejece a su ritmo. Si tienes dudas sobre la etapa en la que se encuentra el tuyo, pregunta a tu veterinario: puede ajustar las recomendaciones a su caso.\n\nLos cambios entre etapas no siempre son claros. Algunos gatos envejecen antes que otros, y algunos adultos jóvenes conservan mucha energía. Observa a tu gato como es hoy, no como era en otra época.",
     subcategories: [  
       {
   slug: "genetica-felina",
@@ -872,7 +940,6 @@ export const categories: Category[] = [
         {
           heading: "Desmontando el mito de Darwin",
           body: "Durante mucho tiempo se creyó que la domesticación 'creaba' nuevas variedades por sí misma, pero esto es falso. Los humanos no creamos los genes, sino que los seleccionamos. En la naturaleza, las mutaciones extrañas suelen eliminarse si no ayudan a sobrevivir, pero en casa protegemos variaciones como el pelo largo o ciertos colores por estética. Toda la variedad actual ya existía potencialmente en los ancestros salvajes; nosotros solo hemos acelerado su aparición mediante la cría selectiva.",
-          image: "/articles/genetica.png",
         },
         {
           heading: "¿Cómo funcionan los colores? (Lo básico)",
@@ -880,7 +947,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Importancia de la selección responsable",
-          body: "A diferencia de los perros, la genética del color en gatos es extremadamente especializada y distintiva entre razas. Los jueces internacionales y genetistas recomiendan seguir normas estrictas de cruza para evitar resultados inesperados o problemas de salud. No todos los cruces de colores son recomendables, ya que algunos pueden dar lugar a patrones no deseados por el estándar de la raza.",
+          body: "A diferencia de los perros, la genética del color en gatos es extremadamente especializada y distintiva entre razas. Los jueces internacionales y genetistas recomiendan seguir normas estrictas de cruza para evitar resultados inesperados o problemas de salud. No todos los cruces de colores son recomendables, ya que algunos pueden dar lugar a patrones no deseados por el estándar de la raza.\n\nPara conocer las razas y sus características, lee [Guía Completa de Razas de Gatos](/categoria/razas/razas-felinas/guia-completa-razas).",
         },
         {
           heading: "Guía rápida de Cruces Recomendados (FIFE)",
@@ -911,7 +978,6 @@ export const categories: Category[] = [
         {
           heading: "¿Cómo funciona el ciclo de una gata?",
           body: "La gata es como un 'reloj estacional' que entra en celo cuando hay más horas de luz (primavera-verano). El apareamiento es la llave: la gata no ovula sola, sino que necesita el estímulo físico de la monta para liberar la hormona LH y que sus óvulos salgan de los ovarios entre 24 y 50 horas después. Si no hay monta fértil, puede tener una 'pseudogestación', donde su cuerpo actúa como si estuviera preñada por aproximadamente 45 días, aunque no haya gatitos.",
-          image: "/articles/gestacion.png",
         },
         {
           heading: "El viaje del embarazo, paso a paso",
@@ -927,7 +993,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Datos rápidos para recordar",
-          body: "Duración del embarazo: 64-67 días (≈9 semanas). Tamaño de camada: 1 a 5 gatitos (promedio 3-4). Peso al nacer: 85-105 gramos. La placenta es de tipo 'zonaria' (forma de cinturón) y 'endoteliocorial' (muy invasiva), lo cual explica por qué las gatas no pueden donar sangre fácilmente.",
+          body: "Duración del embarazo: 64-67 días (≈9 semanas). Tamaño de camada: 1 a 5 gatitos (promedio 3-4). Peso al nacer: 85-105 gramos. La placenta es de tipo 'zonaria' (forma de cinturón) y 'endoteliocorial' (muy invasiva), lo cual explica por qué las gatas no pueden donar sangre fácilmente.\n\nPara entender el desarrollo de las crías después del nacimiento, lee [Las primeras semanas de vida](/categoria/etapas/gatito/primeras-semanas).",
         },
         {
           heading: "¿Por qué importa saber esto?",
@@ -944,20 +1010,27 @@ export const categories: Category[] = [
           {
             slug: "primeras-semanas",
             title: "Las primeras semanas de vida",
-            intro: "Los primeros dos meses de vida de un gato son extraordinariamente intensos. En ese tiempo, un ser completamente dependiente e indefenso se convierte en un animal ágil y curioso. Entender esta etapa es fundamental para cualquier criador o adoptante.",
+            intro: "En sus primeras ocho semanas, un gatito pasa de depender por completo de su madre a caminar, jugar, relacionarse y comer alimento sólido. La etapa más sensible para socializar va aproximadamente de las 2 a las 7 semanas, y separarlo de su madre y de sus hermanos no conviene antes de las 8 semanas.",
             sections: [
               {
-                heading: "0–2 semanas: periodo neonatal",
-                body: "Los gatitos nacen ciegos, sordos y sin capacidad de regular su temperatura. Dependen completamente de la madre para alimentarse (cada 2 horas), calentarse y estimular la micción y defecación. Su único sentido funcional al nacer es el olfato.",
-                image: "/articles/primeras_semanas.png",
+                heading: "Primeras dos semanas: la etapa del nido",
+                body: "Los gatitos nacen con los ojos cerrados, los oídos cerrados y sin capacidad para regular bien su temperatura. Dependen por completo de su madre para comer, mantenerse calientes y hacer sus necesidades.\n\nEn esta etapa se orientan con el olfato, el tacto y el calor. Se arrastran con pequeños movimientos hacia el calor y las mamas de su madre.\n\n| **Qué pasa** | **Cuándo** |\n| Se abren los ojos | Entre los 8 y los 14 días, aunque puede ser entre los 2 y los 16. |\n| Se abren los oídos | Entre los 5 y los 8 días. |\n| Toman leche con frecuencia | Desde el primer día. Si son huérfanos, la frecuencia depende de su peso y de lo que indique el veterinario. |\n\nEl calostro, la primera leche de la madre, trae anticuerpos que lo protegen mientras crea su propia defensa.",
               },
               {
-                heading: "2–7 semanas: socialización primaria",
-                body: "Los ojos se abren entre los 10 y 16 días. En este período el sistema nervioso se desarrolla a máxima velocidad. Las experiencias positivas con personas, sonidos y entornos variados durante estas semanas determinan la personalidad adulta.",
+                heading: "Entre las 2 y las 7 semanas: la ventana de socialización",
+                body: "Es el momento en que los gatitos están más abiertos a conocer personas, otros animales, sonidos, texturas y cosas nuevas. Las experiencias positivas en esta etapa marcan mucho su comportamiento de adulto.\n\nLa socialización debe ser gradual y nunca abrumadora:\n\n• Manipulación suave y breve, alargándola poco a poco.\n• Contacto con personas distintas, sin forzarlo.\n• Sonidos de casa, superficies diferentes y rutinas tranquilas.\n• Juego con juguetes, nunca con manos o pies.\n\nLos gatitos que no tienen experiencias positivas en esta etapa pueden tener más miedo, ansiedad, agresividad por miedo o problemas al jugar.",
               },
               {
-                heading: "7–12 semanas: independencia progresiva",
-                body: "El destete se completa alrededor de las 8 semanas. Es el momento ideal para la adopción: suficientemente maduro para separarse de la madre, pero en plena ventana de socialización con humanos. Separar antes de las 8 semanas aumenta el riesgo de problemas de conducta.",
+                heading: "De las 7 a las 12 semanas: cada vez más independiente",
+                body: "El destete empieza hacia las 3 o 4 semanas, cuando el gatito se interesa por la comida sólida, y suele terminar entre las 6 y las 8 semanas.\n\nDesde las 4 semanas puedes ofrecerle alimento húmedo para gatitos en forma de papilla. Después, puedes darle pienso para gatitos, al principio humedecido si hace falta. Debe ser un alimento completo, pensado para el crecimiento.\n\nLa mayoría de las guías recomienda que se quede con su madre y sus hermanos hasta las 8 semanas como mínimo. Muchas organizaciones prefieren 12 semanas, porque ayuda a su desarrollo social y emocional. Separarlo antes puede favorecer el miedo, la agresividad o un juego demasiado brusco.",
+              },
+              {
+                heading: "Hitos clave del desarrollo",
+                body: "| **Edad** | **Qué se espera** |\n| 0 a 2 semanas | Ojos cerrados al principio, depende por completo de su madre y se mueve poco. |\n| 2 a 3 semanas | Ojos abiertos, oídos funcionando y primeros pasos tambaleantes. |\n| 3 a 4 semanas | Empieza el destete y se interesa por la comida sólida. |\n| 4 a 7 semanas | Juega con otros, explora y coordina mejor sus movimientos. |\n| 6 a 8 semanas | El destete está casi completo y es más independiente. |\n| 8 a 12 semanas | Es la edad habitual para la adopción. Sigue socializando y recibe sus primeras vacunas. |",
+              },
+              {
+                heading: "Qué vigilar",
+                body: "Un gatito sano gana peso de forma constante, mama o come con ganas, está cálido y activo cuando está despierto, y hace sus necesidades de forma adecuada para su edad.\n\nConsulta con urgencia si está frío, débil, no mama, no gana peso, tiene diarrea o vómitos, le cuesta respirar o no hace sus necesidades.\n\nSi el gatito ya está en casa, revisa [Bienvenido a casa: cómo cuidar a tu nuevo gato desde el primer día](/categoria/adopcion/bienvenida/guia-bienvenida-cuidados).",
               },
             ],
           },
@@ -970,20 +1043,27 @@ export const categories: Category[] = [
           {
             slug: "cuidados-senior",
             title: "Cuidados del gato mayor",
-            intro: "Un gato de 10 años equivale aproximadamente a una persona de 56 años. A partir de los 15 años, a un humano de más de 76. Sus necesidades cambian significativamente y merece adaptaciones en su entorno y rutina médica.",
+            intro: "A partir de los 10 años, un gato se considera senior, y conviene revisarlo cada 6 meses. Los cambios en la forma de moverse, comer, pesar, dormir o usar la bandeja no deben atribuirse solo a la edad: pueden ser señales de dolor o de una enfermedad que sí tiene tratamiento.",
             sections: [
               {
-                heading: "Cambios físicos esperados",
-                body: "Menor flexibilidad articular, pelaje menos brillante, posible pérdida de masa muscular, cambios en los patrones de sueño, reducción de la agudeza sensorial y mayor vulnerabilidad a enfermedades crónicas. No todos los cambios son patológicos: algunos son simplemente el envejecimiento normal.",
-                image: "/articles/senior.png",
+                heading: "Cambios que son normales... y los que no",
+                body: "Con la edad es normal que se vuelva menos flexible, pierda masa muscular, tenga el pelo menos brillante y se canse antes. También puede dormir distinto o tolerar peor el frío.\n\nPero muchos síntomas que parecen “cosas de la edad” son, en realidad, enfermedades que se pueden tratar. La artrosis es muy frecuente y suele pasar desapercibida, porque los gatos no cojean de forma evidente. Fíjate si salta menos, duda antes de subir, usa menos la bandeja, se acicala menos o se irrita al tocarlo.",
               },
               {
-                heading: "Adaptaciones del entorno",
-                body: "Rampas o escalones para acceder a lugares altos, caja de arena con entrada baja, recipientes de comida y agua elevados para reducir la tensión cervical, zonas de descanso cálidas y accesibles. Los cambios sutiles en el entorno marcan una gran diferencia en su calidad de vida.",
+                heading: "Cómo adaptar la casa",
+                body: "| **Qué cambiar** | **Cómo** |\n| Bandeja accesible | Una caja grande, con entrada baja y sin tapa, en una zona tranquila. Evita que tenga que subir escaleras para llegar. |\n| Comida y agua | En varios puntos accesibles. Los recipientes un poco elevados pueden aliviar a los gatos con artrosis. Mantén la comida y el agua separadas. |\n| Rampas o escalones | Para llegar al sofá, la cama, la ventana o los lugares altos. Que sean antideslizantes. |\n| Descanso | Camas cálidas y blandas, sin corrientes, en zonas tranquilas y fáciles de alcanzar. |\n| Rascadores | Mejor horizontales o bajos, si le cuesta estirarse hacia arriba. |\n| Suelos resbaladizos | Alfombrillas o tapetes antideslizantes para que camine con seguridad. |",
               },
               {
-                heading: "Seguimiento médico intensificado",
-                body: "A partir de los 10 años, las revisiones deben ser semestrales e incluir siempre análisis de sangre completo y perfil de tiroides. La detección temprana de hipertiroidismo, enfermedad renal o diabetes puede añadir años de calidad de vida.",
+                heading: "Revisiones médicas más frecuentes",
+                body: "La AAHA y la AAFP recomiendan revisar a los gatos mayores de 10 años al menos cada 6 meses, aunque parezcan sanos. Así se detectan enfermedades antes de que den síntomas claros.\n\n| **Estudio** | **Para qué sirve** |\n| Hemograma completo | Revisa la sangre en general. |\n| Perfil bioquímico | Mide la función de los riñones y el hígado, la glucosa y los electrolitos. |\n| Análisis de orina | Incluye la densidad y el sedimento. |\n| T4 | Descarta el hipertiroidismo. |\n| Presión arterial | Detecta la hipertensión. |\n\nLas enfermedades renales, el hipertiroidismo, la diabetes, la hipertensión y la artrosis son frecuentes en los gatos mayores. Detectarlas pronto permite ajustar la dieta, los medicamentos y el entorno para que vivan mejor.\n\nLas enfermedades de los riñones son muy comunes en esta etapa: lee [Enfermedad renal crónica](/categoria/salud/enfermedades/enfermedad-renal).",
+              },
+              {
+                heading: "Señales para consultar",
+                body: "| **Señal** | **Qué hacer** |\n| Pierde peso, come más o menos | Consulta pronto. |\n| Bebe más agua u orina más de lo habitual | Consulta pronto. Puede ser diabetes o un problema renal. |\n| Vómitos, diarrea o estreñimiento que se repiten | Consulta pronto. |\n| Le cuesta saltar, subir escaleras o usar la bandeja | Consulta. Puede ser artrosis u otro dolor. |\n| Cambios en el sueño, desorientación, maullidos de noche o irritabilidad | Consulta. |\n| Mal aliento, le cuesta masticar o babea mucho | Consulta. Puede ser un problema dental. |",
+              },
+              {
+                heading: "Alimentación y bienestar",
+                body: "No hay una dieta única para todos los gatos mayores. Lo que conviene depende de su peso, de sus riñones, de sus dientes, de su movilidad y de otras enfermedades. Por ejemplo, si tiene un problema renal, puede necesitar una dieta veterinaria específica.\n\nMantén el juego suave, los rascadores a su alcance y las rutinas tranquilas. El objetivo no es que viva más a cualquier precio, sino que viva con comodidad, dignidad y el menor dolor posible.",
               },
             ],
           },
@@ -995,10 +1075,12 @@ export const categories: Category[] = [
     {
     slug: "historia",
     label: "historia, Origen y expansión",
+    seoTitle: "Historia del gato: origen y convivencia",
     emoji: "",
     color: "#9b6bb5",
     bg: "#f3eef8",
-    description: "Estimulación, juguetes y enriquecimiento",
+    description: "La historia del gato: su origen, su relación con las personas a lo largo de los siglos y cómo llegó a estar presente en casi todo el mundo.",
+    intro: "La relación entre los gatos y las personas tiene miles de años. Durante ese tiempo, el gato pasó de ser un cazador de roedores cerca de los graneros a un compañero querido en casi todo el mundo. Esta sección recorre esa historia con un tono cercano y con los datos que los estudios han podido confirmar.\n\nAquí encontrarás cómo llegó el gato a la antigüedad, qué papel tuvo en distintas culturas y cómo se extendió con el comercio y los viajes por mar. También verás cómo cambió la forma en que las personas lo miraban, desde la veneración hasta la desconfianza y, después, el cariño que hoy conocemos.\n\nAlgunos relatos mezclan historia y leyenda, y conviene distinguirlos. La historia del gato es, en el fondo, la historia de una convivencia que todavía sigue escribiéndose.\n\nLos hallazgos arqueológicos y los textos antiguos permiten seguir buena parte de esa historia, aunque siempre quedan huecos. Por eso conviene leer con cuidado las afirmaciones muy rotundas sobre su origen.",
     subcategories: [
       {
   slug: "historia-felina",
@@ -1006,20 +1088,20 @@ export const categories: Category[] = [
   topics: [
     {
       slug: "origen-encuentro-nilo",
-      title: "Egipto, en el Nilo",
-      intro: "La historia del gato doméstico comenzó hace unos 9.000 años en el valle del Nilo, Egipto. Aunque existen muchas especies de felinos, todos nuestros gatos actuales (incluso los exóticos) provienen de una única subespecie: el gato silvestre norteafricano o Felis lybica. El 'flechazo' con los humanos no fue planeado, sino una asociación de conveniencia:",
+      title: "Junto al Nilo: el origen del gato",
+      intro: "La historia del gato doméstico comenzó hace unos 9.000 años en el valle del Nilo. Aunque existen muchas especies de felinos, todos nuestros gatos actuales (incluso los exóticos) provienen de una única subespecie: el gato silvestre norteafricano o Felis lybica. El 'flechazo' con los humanos no fue planeado, sino una asociación de conveniencia:",
       sections: [
         {
           heading: "El problema, la solución y el pacto",
-          body: "El problema: Los egipcios dependían de la agricultura y guardaban el grano en grandes silos. Estos almacenes atraían plagas de ratas y ratones. La solución: Los gatos se acercaron a las aldeas atraídos por la abundancia de roedores. El pacto: Los humanos aceptaron encantados este servicio de 'control de plagas' y así comenzó una relación simbiótica de beneficio mutuo.",
+          body: "El problema: Los pueblos del Nilo dependían de la agricultura y guardaban el grano en grandes silos. Estos almacenes atraían plagas de ratas y ratones. La solución: Los gatos se acercaron a las aldeas atraídos por la abundancia de roedores. El pacto: Los humanos aceptaron encantados este servicio de 'control de plagas' y así comenzó una relación simbiótica de beneficio mutuo.",
         },
         {
           heading: "De Cazadores a Dioses",
-          body: "Con el tiempo, el gato pasó de ser un simple guardián del granero a un miembro sagrado de la familia. Los egipcios llegaron a deificarlos, relacionándolos con la diosa Bastet (que representaba la dulzura y la protección) y con el dios sol, Ra. Era tal su importancia que se han hallado millones de momias de gatos y tumbas de lujo, como la de Osiris Tamat, el gato favorito de un príncipe egipcio.",
+          body: "Con el tiempo, el gato pasó de ser un simple guardián del granero a un miembro sagrado de la familia. Los pueblos del Nilo llegaron a deificarlos, relacionándolos con la diosa Bastet (que representaba la dulzura y la protección) y con el dios sol, Ra. Era tal su importancia que se han hallado millones de momias de gatos y tumbas de lujo, como la de Osiris Tamat, el gato favorito de un príncipe de la antigüedad.",
         },
         {
           heading: "La Conquista del Mundo: Roma y los Vikingos",
-          body: "Aunque el documento se centra en el origen nilótico, la historia continuó cuando el gato salió de Egipto para conquistar nuevos continentes: El Gato en Roma: Los romanos, al ver la eficacia de los gatos egipcios, los adoptaron rápidamente. Para ellos, el gato era un símbolo de libertad e independencia. Lo llevaron consigo por todo el Imperio Romano (Europa, el norte de África y Gran Bretaña), utilizándolos principalmente para proteger sus campamentos militares y hogares de los roedores. Los Gatos Viajeros de los Vikingos: Durante la Edad Media, los vikingos jugaron un papel crucial en la expansión del gato hacia el norte. Eran excelentes navegantes y siempre llevaban gatos en sus barcos (especialmente el 'Gato del Bosque de Noruega') para proteger las provisiones de comida durante las largas travesías. Gracias a los vikingos, los gatos llegaron a lugares tan remotos como Escandinavia y, eventualmente, a las Américas.",
+          body: "Aunque el documento se centra en el origen nilótico, la historia continuó cuando el gato salió del valle del Nilo para conquistar nuevos continentes: El Gato en Roma: Los romanos, al ver la eficacia de los gatos del Nilo, los adoptaron rápidamente. Para ellos, el gato era un símbolo de libertad e independencia. Lo llevaron consigo por todo el Imperio Romano (Europa, el norte de África y Gran Bretaña), utilizándolos principalmente para proteger sus campamentos militares y hogares de los roedores. Los Gatos Viajeros de los Vikingos: Durante la Edad Media, los vikingos jugaron un papel crucial en la expansión del gato hacia el norte. Eran excelentes navegantes y siempre llevaban gatos en sus barcos (especialmente el 'Gato del Bosque de Noruega') para proteger las provisiones de comida durante las largas travesías. Gracias a los vikingos, los gatos llegaron a lugares tan remotos como Escandinavia y, eventualmente, a las Américas.\n\nPara ver cómo llegó a otros continentes, lee [Expansión por el Mundo](/categoria/historia/historia-felina/corazon-origen-egipto).",
         },
         {
           heading: "El Gato Moderno",
@@ -1035,27 +1117,27 @@ export const categories: Category[] = [
     {
       slug: "corazon-origen-egipto",
       title: "Expansión por el Mundo",
-      intro: "el gato doméstico no apareció por casualidad en el Nilo. La clave fue la agricultura sedentaria. Egipto era el 'granero del mundo', y los silos de cereales eran imanes para los roedores.",
+      intro: "el gato doméstico no apareció por casualidad en el Nilo. La clave fue la agricultura sedentaria. el valle del Nilo era el 'granero' de la región, y los silos de cereales eran imanes para los roedores.",
       sections: [
         {
           heading: "La Transformación Religiosa",
-          body: "El gato pasó de ser un aliado útil a un ser divino. La diosa Bastet se representaba con cabeza de gata y simbolizaba el hogar, la fertilidad y la protección. Matar a un gato en el antiguo Egipto era un crimen castigado con la muerte.",
+          body: "El gato pasó de ser un aliado útil a un ser divino. La diosa Bastet se representaba con cabeza de gata y simbolizaba el hogar, la fertilidad y la protección. Matar a un gato en la antigüedad del Nilo era un crimen castigado con la muerte.",
         },
         {
           heading: "Lujo y Respeto",
-          body: "El documento destaca el caso del gato Osiris Tamat, mascota del príncipe Tutmosis. Fue enterrado con honores en un sarcófago de piedra caliza, envuelto en lino fino y con joyas, demostrando que para la realeza egipcia, los gatos eran verdaderos compañeros de vida y del 'más allá'.",
+          body: "El documento destaca el caso del gato Osiris Tamat, mascota del príncipe Tutmosis. Fue enterrado con honores en un sarcófago de piedra caliza, envuelto en lino fino y con joyas, demostrando que para la realeza de la antigüedad, los gatos eran verdaderos compañeros de vida y del 'más allá'.\n\nPara volver a los orígenes de esta relación, lee [Junto al Nilo: el origen del gato](/categoria/historia/historia-felina/origen-encuentro-nilo).",
         },
         {
           heading: "Prohibición de Exportación",
-          body: "Los egipcios valoraban tanto a sus gatos que prohibieron estrictamente sacarlos del país. Sin embargo, esto no impidió que el 'secreto' de estos felinos se extendiera.",
+          body: "Los pueblos del Nilo valoraban tanto a sus gatos que prohibieron estrictamente sacarlos del país. Sin embargo, esto no impidió que el 'secreto' de estos felinos se extendiera.",
         },
         {
           heading: "La Gran Expansión: ¿Cómo llegaron a otros continentes?",
-          body: "El camino del gato hacia el resto del mundo se dio principalmente a través de las rutas comerciales marítimas:\n\n1. Los Fenicios: Los primeros 'contrabandistas'. Fueron los grandes navegantes del Mediterráneo. Se dice que sacaron gatos de Egipto de contrabando para venderlos en sus rutas comerciales. Gracias a ellos, el gato llegó a las islas griegas, a la península itálica y al sur de España mucho antes de lo previsto.\n\n2. Roma: Los gatos en las legiones. Cuando los romanos conquistaron Egipto, quedaron fascinados por el gato (lo preferían al hurón, que era el animal que usaban antes para los ratones). Al expandir su Imperio, los legionarios llevaban gatos en sus caravanas y barcos para proteger los suministros. Así, el gato se introdujo en Europa Central y Gran Bretaña.\n\n3. Asia y la Ruta de la Seda. A través de las rutas terrestres comerciales, los gatos llegaron a Asia Central. En países como China y Japón, fueron recibidos con honores similares a los de Egipto. En Japón, por ejemplo, los monjes budistas los usaban para proteger los valiosos manuscritos de papel de los ratones en los templos.\n\n4. La Conquista de América. Los gatos no llegaron a América hasta la época de los exploradores europeos (siglos XV y XVI). En barcos como los de Cristóbal Colón o más tarde el Mayflower, los gatos eran tripulantes esenciales. Su misión era evitar que las ratas se comieran las raciones de comida de los marineros y que propagaran enfermedades en el espacio confinado del barco.",
+          body: "El camino del gato hacia el resto del mundo se dio principalmente a través de las rutas comerciales marítimas:\n\n1. Los Fenicios: Los primeros 'contrabandistas'. Fueron los grandes navegantes del Mediterráneo. Se dice que sacaron gatos del valle del Nilo de contrabando para venderlos en sus rutas comerciales. Gracias a ellos, el gato llegó a las islas griegas, a la península itálica y al sur de Europa mucho antes de lo previsto.\n\n2. Roma: Los gatos en las legiones. Cuando los romanos conquistaron esa región, quedaron fascinados por el gato (lo preferían al hurón, que era el animal que usaban antes para los ratones). Al expandir su Imperio, los legionarios llevaban gatos en sus caravanas y barcos para proteger los suministros. Así, el gato se introdujo en Europa Central y Gran Bretaña.\n\n3. Asia y la Ruta de la Seda. A través de las rutas terrestres comerciales, los gatos llegaron a Asia Central. En las culturas de Asia Oriental, fueron recibidos con honores similares a los del Nilo. Por ejemplo, en algunos templos de Asia Oriental, los monjes budistas los usaban para proteger los valiosos manuscritos de papel de los ratones en los templos.\n\n4. La Conquista de América. Los gatos no llegaron a América hasta la época de los exploradores europeos (siglos XV y XVI). En barcos como los de Cristóbal Colón o más tarde el Mayflower, los gatos eran tripulantes esenciales. Su misión era evitar que las ratas se comieran las raciones de comida de los marineros y que propagaran enfermedades en el espacio confinado del barco.",
         },
         {
           heading: "Resumen de la Evolución",
-          body: "África: Origen biológico (Felis lybica). Europa: Introducidos por fenicios y romanos; luego expandidos por vikingos hacia el norte. Asia: Llegaron a través de la Ruta de la Seda y el comercio marítimo hacia India y Japón. América y Oceanía: Llegaron siglos después en los barcos de los colonizadores europeos.",
+          body: "África: Origen biológico (Felis lybica). Europa: Introducidos por fenicios y romanos; luego expandidos por vikingos hacia el norte. Asia: Llegaron a través de la Ruta de la Seda y el comercio marítimo hacia el sur de Asia y el Lejano Oriente. América y Oceanía: Llegaron siglos después en los barcos de los colonizadores europeos.",
         },
         {
           heading: "Conclusión",
@@ -1076,10 +1158,12 @@ export const categories: Category[] = [
   {
     slug: "impacto-conciencia",
     label: "Impacto y Conciencia",
+    seoTitle: "Impacto felino: conciencia y responsabilidad",
     emoji: "",
     color: "#8e44ad",
     bg: "#f4ecf7",
-    description: "El lado oculto y responsabilidad global de nuestros gatos",
+    description: "El impacto de los gatos en el entorno: su papel en la fauna y el ecosistema, y la responsabilidad de sus cuidadores para convivir de forma consciente.",
+    intro: "Los gatos forman parte de los ecosistemas y también de la vida de las personas que los cuidan. Esta sección trata de ambas cosas: qué efecto tienen los gatos en la fauna y en el entorno, y qué responsabilidad tienen quienes conviven con ellos.\n\nVerás cómo la caza de los gatos afecta a aves y pequeños mamíferos, sobre todo cuando salen sin control, y qué medidas ayudan a reducir ese impacto sin renunciar a su bienestar, como el enriquecimiento en interiores o la supervisión en exteriores. También se habla de la sobrepoblación y de cómo la esterilización y la adopción responsable pueden disminuirla.\n\nConciencia significa elegir con información. Cuidar al gato es también cuidar lo que lo rodea, y cada decisión, desde la identificación hasta el control de la reproducción, cuenta.\n\nSer responsable también significa mirar con honestidad el lugar donde vive el gato: qué ve, por dónde sale y qué riesgos existen. Pequeñas decisiones, como el horario de salida o un cercado, cambian mucho el resultado.",
     subcategories: [
       {
         slug: "vida-secreta",
@@ -1092,12 +1176,11 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Los superpoderes del gato (sí, en serio)",
-                image: "/articles/vida_secreta.jpg",
                 body: "Visión nocturna nivel PRO: Sus ojos ven 7 veces mejor que los humanos en la oscuridad gracias al tapetum lucidum. ¡Es como tener faros integrados! Pero con mucha luz, ven menos detalles. Su pupila vertical se cierra como una rendija para regular.\n\n Oídos de radar: Escuchan frecuencias ultrasónicas que nosotros ni imaginamos. Sus orejas se mueven independientemente como antenas parabólicas. En oscuridad total, pueden localizar una presa solo por el sonido de sus pasos.\n\n Bigotes sensores = GPS táctil: No son solo pelos bonitos, son sensores que detectan corrientes de aire, obstáculos y movimientos. También tienen en mejillas, sobre los ojos y en las patas delanteras. NUNCA los cortes.\n\n Equilibrio de ninja: Su reflejo de enderezamiento les permite caer de pie (casi siempre). Extienden los pliegues de su piel como un paracaídas natural. Mito: 'Los gatos siempre caen bien'. Realidad: Pueden lastimarse en caídas altas. ¡Protégelos con mallas!\n\n Cuerpo de atleta olímpico: Músculos que les permiten correr a 48 km/h y cambiar de dirección en pleno salto. Garras retráctiles para trepar, sujetar presas y... afilar en tu sofá favorito"
               },
               {
                 heading: "El lado oscuro (sí, hay uno)",
-                body: "Tu gato es una especie invasora: Aunque lo veas como una bolita de amor, globalmente los gatos domésticos están en la lista de las 100 especies invasoras más dañinas del planeta.\n\n DATOS QUE IMPACTAN:\n• 1 de cada 3 gatos bien alimentados caza 2-3 animales por semana\n• Un gato cazador mata entre 100 y 150 animales al año\n• En EE.UU., gatos domésticos cazan ~3.000 MILLONES de animales silvestres al año\n• En islas, han contribuido a extinguir al menos 30 especies de aves\n• En Australia, ayudaron a extinguir 28 especies de marsupiales \n\n¿Qué cazan realmente? Un estudio en Morelia, México, reveló que los gatos urbanos matan 43 especies de vertebrados:\n•  Pájaros (los más afectados)\n•  Roedores\n•  Lagartijas y serpientes\n•  Murciélagos\n•  Conejos silvestres\n\n Reflexión juvenil: Amar a tu gato no significa ignorar su impacto. Podemos quererlo Y proteger la biodiversidad."
+                body: "Tu gato es una especie invasora: Aunque lo veas como una bolita de amor, globalmente los gatos domésticos están en la lista de las 100 especies invasoras más dañinas del planeta.\n\n DATOS QUE IMPACTAN:\n• 1 de cada 3 gatos bien alimentados caza 2-3 animales por semana\n• Un gato cazador mata entre 100 y 150 animales al año\n• En algunas zonas con muchos gatos, se estima que los gatos domésticos cazan millones de animales silvestres al año\n• En islas, han contribuido a extinguir al menos 30 especies de aves\n• En algunas islas, ayudaron a extinguir 28 especies de marsupiales \n\n¿Qué cazan realmente? Un estudio realizado en una ciudad reveló que los gatos urbanos matan 43 especies de vertebrados:\n•  Pájaros (los más afectados)\n•  Roedores\n•  Lagartijas y serpientes\n•  Murciélagos\n•  Conejos silvestres\n\n Reflexión juvenil: Amar a tu gato no significa ignorar su impacto. Podemos quererlo Y proteger la biodiversidad."
               },
               {
                 heading: "¿Hasta dónde llega tu gato cuando sale?",
@@ -1105,7 +1188,7 @@ export const categories: Category[] = [
               },
               {
                 heading: "El problema de la sobrepoblación (y cómo ayudar)",
-                body: "Matemáticas que asustan: Una pareja de gatos + su descendencia puede generar:\n• 🔹 400,000 gatos en solo 7 años\n• Hasta 3 camadas/año por gata\n• 4-6 gatitos por camada en promedio\n\n Haz la cuenta: 1 gata → 4 gatitos → esos 4 se reproducen → y así sucesivamente... ¡Es una explosión demográfica felina!\n\nEn números reales (ejemplo: una ciudad mediana):\n• 15% de hogares tiene gatos (promedio 3 por casa)\n• En una ciudad de 150,000 viviendas → ~67,500 gatos domésticos (sin contar callejeros)\n• Resultado: Más de 2 millones de animales silvestres cazados al año solo en esa ciudad"
+                body: "Matemáticas que asustan: Una pareja de gatos + su descendencia puede generar:\n• 🔹 400,000 gatos en solo 7 años\n• Hasta 3 camadas/año por gata\n• 4-6 gatitos por camada en promedio\n\n Haz la cuenta: 1 gata → 4 gatitos → esos 4 se reproducen → y así sucesivamente... ¡Es una explosión demográfica felina!\n\nEn números reales (ejemplo: una ciudad mediana):\n• 15% de hogares tiene gatos (promedio 3 por casa)\n• En una ciudad de 150,000 viviendas → ~67,500 gatos domésticos (sin contar callejeros)\n• Resultado: Más de 2 millones de animales silvestres cazados al año solo en esa ciudad\n\nPara entender cómo controlar las colonias sin recurrir al sacrificio, lee [Gestión Reproductiva y Control Poblacional Ético](/categoria/tenencia-responsable/gestion-reproductiva/esterilizacion-evidencia)."
               },
               {
                 heading: "Ser joven y responsable: Tu poder de cambio",
@@ -1132,10 +1215,12 @@ export const categories: Category[] = [
   {
     slug: "juego",
     label: "Juego",
+    seoTitle: "Juego para gatos: juguetes y enriquecimiento",
     emoji: "",
     color: "#9b6bb5",
     bg: "#f3eef8",
-    description: "Estimulación, juguetes y enriquecimiento",
+    description: "Juego y enriquecimiento para gatos: juguetes, rutinas y actividades que estimulan su mente y su cuerpo, tanto en interiores como en exteriores.",
+    intro: "El juego es una necesidad, no un capricho. Un gato que caza, trepa y explora en casa está más tranquilo, duerme mejor y tiene menos problemas de conducta. Esta sección reúne ideas para jugar con el gato, tanto en interiores como en exteriores, según su edad y su carácter.\n\nEncontrarás juguetes que imitan una presa, como las cañas y las plumas, puzzles de comida que estimulan su mente y consejos para organizar el juego en sesiones cortas a lo largo del día. También se explica cómo enriquecer el espacio con alturas, escondites y rascadores.\n\nUn buen juego termina antes de que el gato se canse del todo y siempre deja una sensación de éxito. Si notas que pierde interés o se frustra, cambia el juguete o el ritmo: la clave es que la actividad le resulte divertida.\n\nLos gatos mayores y los gatos con poca energía también disfrutan del juego. Solo hay que adaptar el tamaño de las sesiones, la altura de los juguetes y la intensidad del movimiento.",
     subcategories: [
       {
         slug: "importancia",
@@ -1144,20 +1229,27 @@ export const categories: Category[] = [
           {
             slug: "juego-cachorros",
             title: "El juego en cachorros: la base de todo",
-            intro: "Los primeros seis meses de vida de un gato son un período crítico de desarrollo. Lo que aprenda durante el juego en esta etapa determinará en gran medida cómo se relacionará con humanos y otros animales el resto de su vida.",
+            intro: "El juego es clave para que un gatito crezca sano, física y emocionalmente. Le ayuda a practicar la caza, a controlarse, a explorar el mundo y a crear vínculos. Eso sí: el juego se hace con juguetes, nunca con las manos ni los pies.",
             sections: [
               {
-                heading: "La ventana de socialización",
-                body: "Entre las 2 y 9 semanas de vida, el gato aprende qué es normal en su mundo. Un cachorro que interactúa con personas, otros gatos, ruidos domésticos y experiencias variadas durante este período será un adulto más seguro y adaptable.",
-                image: "/articles/juego_cachorro.png",
+                heading: "La etapa más importante para socializar",
+                body: "Entre las 2 y las 7 semanas, aproximadamente, es el período en el que el gatito aprende con más facilidad a sentirse seguro con personas, otros animales, sonidos, olores y manipulación. Algunas guías lo amplían hasta las 9 o 10 semanas.\n\nLo importante no es solo cuántas experiencias tenga, sino cómo las vive. Deben ser suaves, agradables y sin miedo. La AAHA recomienda que tenga contacto agradable con personas durante 30 a 60 minutos al día, con ruidos, transportes y manipulación siempre acompañados de premios y juego.\n\nNo lo satures. Si se esconde, intenta escapar, deja de jugar o no acepta premios, es que está sobrepasado. Baja la intensidad y déjalo descansar.",
               },
               {
-                heading: "El error más común: las manos como juguete",
-                body: "Usar las manos o los pies para jugar con un cachorro parece inofensivo, pero enseña que la piel humana es una presa válida. Cuando ese gatito pese 5 kg, los mordiscos y arañazos serán dolorosos y el comportamiento difícil de corregir. Usa siempre juguetes con distancia.",
+                heading: "El error más común: manos y pies como juguete",
+                body: "Mover los dedos, las manos o los pies para que el gatito los persiga parece divertido, pero le enseña que la piel humana es algo para jugar. De adulto, sus mordiscos y arañazos serán más fuertes, y corregir el hábito será mucho más difícil.\n\nLo mejor es no usar nunca el cuerpo como juguete. Elige cañas con plumas, ratones de tela, pelotas o juguetes que rueden o se muevan de forma impredecible, y mantén distancia entre el juguete y tu cuerpo.\n\nSi ataca tus manos o tus tobillos, retira el acceso de inmediato, no grites ni lo golpees, y ofrécele un juguete adecuado. Lo más eficaz es que todas las personas de la casa hagan lo mismo.",
               },
               {
-                heading: "Juego como prevención de problemas",
-                body: "Un gato que no juega suficiente canaliza su energía de caza en conductas problemáticas: atacar tobillos, destruir objetos, agresión redirigida. 2 sesiones de juego de 15 minutos al día, especialmente antes de dormir, son el mejor antídoto.",
+                heading: "Jugar para prevenir problemas",
+                body: "El juego no sirve solo para “gastar energía”. Le permite practicar la secuencia de caza: acechar, perseguir, atrapar y “capturar”. Esa secuencia le da satisfacción y reduce la frustración, sobre todo en gatos que viven solo dentro de casa.\n\nUn gatito con pocas oportunidades de jugar puede dirigir su impulso de caza hacia tus tobillos, tus manos, las cortinas o los otros gatos. Por eso conviene ofrecer varias sesiones cortas al día, cambiar de juguete de vez en cuando y, al final, dejar que atrape el juguete. Después puede recibir un premio pequeño para completar la secuencia.\n\nComo referencia, la AAHA sugiere 2 o 3 sesiones de 10 a 15 minutos al día. Los gatitos suelen necesitar tandas aún más cortas repartidas a lo largo del día. Ajusta el tiempo a su edad, su salud y su interés.",
+              },
+              {
+                heading: "Cómo organizar el juego",
+                body: "| **Qué hacer** | **Por qué ayuda** |\n| Usar juguetes que imitan presas | Plumas que vuelan, ratones que se deslizan y pelotas que ruedan despiertan su instinto. |\n| Mover el juguete de forma variable | Detenerse, esconderlo y hacerlo correr mantiene el interés. Déjalo alcanzarlo de vez en cuando. |\n| Alternar juego contigo y juego solo | Combina juguetes interactivos con rompecabezas o peluches seguros. |\n| Evitar piezas pequeñas | Juguetes pequeños, hilos, lazos o piezas sueltas pueden tragarse. |\n| Supervisar si hay varios gatitos | Así el juego no se vuelve demasiado intenso. |\n\nPara más juguetes que imitan presas, lee [Cañas y juguetes de presa](/categoria/juego/juguetes/canas-y-plumas).",
+              },
+              {
+                heading: "Si el juego se vuelve brusco",
+                body: "Interrumpe en cuanto aparezca un mordisco fuerte, un arañazo, una emboscada a los tobillos o un maullido de frustración. Retira la mano, ofrece un juguete a distancia o sal de la habitación unos minutos.\n\nNo castigues con gritos ni palmadas, y tampoco lo sujetes por la piel del cuello. Puede generar miedo, empeorar la reacción o hacer que asocie tus manos con algo negativo.\n\nSi la agresividad continúa, es muy intensa o aparece de repente, consulta con el veterinario. Así descartas dolor, una enfermedad o un problema de conducta.",
               },
             ],
           },
@@ -1170,40 +1262,54 @@ export const categories: Category[] = [
           {
             slug: "canas-y-plumas",
             title: "Cañas y juguetes de presa",
-            intro: "Las cañas con plumas, ratones o gusanos colgantes son los juguetes más efectivos porque permiten simular la secuencia de caza completa. Son insustituibles en el repertorio de cualquier gato.",
+            intro: "Las cañas con plumas, los ratones de tela o los gusanos colgantes son muy útiles: permiten que tu gato haga casi toda la secuencia de caza. Busca, acecha, persigue, salta, atrapa y manipula el juguete. Son ideales para gatos de interior, siempre que muevas el juguete con irregularidad, con pausas y terminando con una captura.",
             sections: [
               {
-                heading: "Por qué funcionan tan bien",
-                body: "Activan el instinto de caza en su totalidad: el movimiento irregular imita el de una presa real. El gato puede acechar, perseguir, atrapar y 'matar'. Esta secuencia completa libera endorfinas y satisface profundamente.",
-                image: "/articles/cañas.png",
+                heading: "Por qué le gustan tanto",
+                body: "Los gatos no juegan solo para “gastar energía”. Cuando juegan con un objeto que se parece a una presa, están practicando la caza. Según estudios citados por International Cat Care, los gatos juegan con más intensidad y durante más tiempo con juguetes que se parecen a presas reales.\n\nLa caza natural tiene varios pasos: buscar, localizar, acercarse, atrapar, matar, manipular y comer. La caña te permite guiar el movimiento y dar oportunidades de acechar, perseguir, saltar y atrapar, sin necesidad de una presa de verdad.",
               },
               {
-                heading: "Cómo moverlas correctamente",
-                body: "El error más común es moverlas demasiado rápido y sin parar. Las presas reales se detienen, se esconden, se mueven en ángulos impredecibles. Simula eso: pause, escóndela detrás de un cojín, hazla surgir de repente, déjala moverse despacio.",
+                heading: "Cómo moverla bien",
+                body: "El error más común es mover el juguete sin parar y demasiado rápido. Las presas reales no se mueven en círculos constantes: se paran, se esconden, cambian de dirección, desaparecen y vuelven a aparecer.\n\n| **Qué hacer** | **Por qué ayuda** |\n| Empieza lento y cerca del suelo | Así lo ve como una presa que intenta escapar. |\n| Haz pausas | Le da tiempo para agacharse y planear el ataque. |\n| Aleja el juguete de su cara | Lo mueves lejos, no hacia él, para que no le dé miedo. |\n| Escóndelo detrás de un mueble o un cojín y déjalo reaparecer | Imita a una presa que aparece y desaparece. |\n| Déjalo atrapar el juguete de vez en cuando | Le da satisfacción durante la sesión, no solo al final. |\n\nCada gato tiene sus preferencias. Algunos prefieren presas que vuelan, otros ratones que se deslizan por el suelo, y otros presas que salen de detrás de un mueble. Cambiar de estilo mantiene su interés.",
               },
               {
-                heading: "Terminar la sesión bien",
-                body: "Siempre termina permitiendo que el gato 'atrape' y 'mate' el juguete varias veces al final. Un gato que nunca atrapa la presa se frustra. Después del juego, un snack pequeño completa el ciclo natural: cazar → comer → asearse → dormir.",
+                heading: "Cómo terminar la sesión",
+                body: "Termina siempre con una captura real: que pueda pisar, morder y patear el juguete. Si nunca lo atrapa, puede quedar frustrado o demasiado excitado.\n\nDespués de esa captura final, ofrécele una pequeña porción de comida o un premio. Así completa la secuencia de cazar, comer, asearse y descansar, y se calma.\n\nNo hace falta que la sesión sea larga. Suelen funcionar mejor varias tandas cortas de 5 a 15 minutos. Ajusta el tiempo a su edad, su salud y sus ganas de jugar.",
+              },
+              {
+                heading: "Seguridad",
+                body: "| **Riesgo** | **Qué hacer** |\n| Hilos, plumas o piezas pequeñas que se tragan | Guarda la caña después de jugar. Pueden causar una obstrucción intestinal. |\n| Cuerdas, lazos o partes que se desprenden | No los dejes a su alcance sin supervisión. |\n| Mover el juguete hacia la cara o el cuerpo | Evítalo: puede asustarlo o hacerle daño. |\n| Se agita, jadea, maúlla con frustración o no logra calmarse | Termina la sesión con calma. |",
+              },
+              {
+                heading: "Sobre el láser",
+                body: "El láser puede ser un complemento, pero no le permite atrapar la “presa”. Para reducir la frustración, dirige el punto hacia un juguete físico o un premio, y termina siempre con una captura real.\n\nHay indicios de que el uso frecuente del láser se asocia con conductas repetitivas, como perseguir luces o sombras. Sin embargo, no está demostrado que lo cause. Por eso, la caña con una presa física sigue siendo la opción más completa y segura para jugar.\n\nPara más ideas de juego con comida, lee [Puzzles de comida e inteligencia](/categoria/juego/juguetes/puzzles-de-comida).",
               },
             ],
           },
           {
             slug: "puzzles-de-comida",
             title: "Puzzles de comida e inteligencia",
-            intro: "Los puzzles alimentarios son uno de los enriquecimientos más infravalorados. En la naturaleza, un gato pasa entre 6 y 8 horas cazando. Un comedero convencional resuelve esa necesidad en 30 segundos, dejando al gato sin estimulación mental.",
+            intro: "Los puzzles de comida son una de las formas más sencillas de dar a tu gato algo que hacer. Le permiten buscar, explorar y resolver pequeños retos para conseguir su comida, como lo haría en la naturaleza.",
             sections: [
               {
-                heading: "Beneficios comprobados",
-                body: "Reducen la ansiedad y el aburrimiento, ralentizan la ingesta (previniendo vómitos por comer demasiado rápido), estimulan cognitivamente, fomentan el movimiento y pueden reducir la obesidad.",
-                image: "/articles/puzzles.png",
+                heading: "Por qué le hacen bien",
+                body: "En la naturaleza, un gato pasa buena parte del día buscando, persiguiendo y atrapando su comida. Cuando todo su alimento está en un bol, a veces termina en pocos minutos y se queda sin nada que hacer.\n\nLos puzzles devuelven esa parte natural de la vida del gato. Estos son sus beneficios más comunes:\n\n| **Beneficio** | **Qué significa en la práctica** |\n| Estimulación mental | Usa el olfato, la coordinación y la lógica para resolver el reto. |\n| Más movimiento | Empuja, persigue o manipula el objeto para obtener la comida. |\n| Comer más despacio | Ayuda a los gatos que devoran la comida muy rápido. Si vomita con frecuencia, consulta con el veterinario. |\n| Apoyo para el peso | Al requerir esfuerzo, pueden sumarse a un plan de control de peso. |\n| Menos aburrimiento | Le da una actividad organizada durante el día. |\n| Mejor bienestar | Algunos estudios reportan menos ansiedad y conductas problemáticas. Los resultados varían de un gato a otro. |\n\nLos puzzles son un complemento, no un reemplazo de una buena alimentación ni de la atención veterinaria.",
               },
               {
                 heading: "Cómo empezar",
-                body: "Comienza con puzzles muy fáciles: una bandeja con compartimentos, una pelota dispensadora simple. Si el puzzle es muy difícil desde el principio, el gato se frustrará y lo rechazará. Aumenta la dificultad progresivamente durante semanas.",
+                body: "Lo más importante es que la primera experiencia sea fácil y agradable. Si el reto es demasiado difícil, tu gato puede frustrarse y dejar de usarlo.\n\n| **Paso** | **Qué hacer** |\n| 1. Empieza fácil | Pon croquetas visibles en una bandeja con compartimentos o en una caja de huevos abierta. |\n| 2. Usa su ración diaria | No añadas comida extra. Si tiene sobrepeso, consulta antes con tu veterinario. |\n| 3. Muéstrale cómo funciona | Mueve una croqueta o inclina un poco el objeto para que entienda que hay comida dentro. |\n| 4. Celebra el intento | Si se acerca, olfatea o empuja el puzzle, deja que consiga una recompensa fácil. |\n| 5. Sube la dificultad poco a poco | Tapa algunos compartimentos, añade papel arrugado o usa menos aberturas. |\n| 6. Cambia de juego | Alterna dos o tres opciones para que no pierda el interés. |\n\nCada gato tiene su ritmo. Algunos aprenden en una sesión; otros necesitan días o semanas.\n\nSi el juego le resulta difícil, prueba también [Cañas y juguetes de presa](/categoria/juego/juguetes/canas-y-plumas).",
               },
               {
                 heading: "Puzzles caseros",
-                body: "No necesitas comprar nada: una caja de cartón con agujeros, una bandeja de hielos con croquetas, una botella de plástico con pequeños orificios, o esconder premios bajo vasos son puzzles efectivos y gratuitos.",
+                body: "No necesitas comprar nada para empezar. Usa materiales limpios, sin bordes cortantes, pinturas tóxicas ni piezas que pueda tragar.\n\n| **Puzzle** | **Cómo hacerlo** | **Nivel** |\n| Caja de huevos de cartón | Pon croquetas en cada compartimento. Al principio déjalas a la vista; luego cúbrelas con papel arrugado. | Fácil |\n| Bandeja de muffins o de cubos de hielo | Reparte croquetas en los huecos y cubre algunas con pelotas ligeras o papel. | Fácil |\n| Caja de cartón con agujeros | Pon croquetas dentro y haz agujeros lo bastante grandes para que pueda sacarlas con la pata. | Medio |\n| Tubo de cartón | Cierra los extremos a medias, pon croquetas dentro y deja que lo empuje para sacarlas. | Medio |\n| Vasos invertidos | Esconde premios pequeños bajo vasos ligeros y deja uno o dos a la vista al principio. | Fácil |\n| Búsqueda por la casa | Reparte pequeñas porciones de su ración en lugares seguros para que las encuentre. | Medio |\n\nSi usas una botella dispensadora, que sea de material seguro, sin tapa ni piezas que se desprendan, y con orificios amplios. Revísala siempre antes de dársela.",
+              },
+              {
+                heading: "Seguridad",
+                body: "• Supervisa los primeros usos, sobre todo con materiales caseros.\n• Evita plásticos frágiles, clips, cuerdas, gomas, cintas, tapas pequeñas y bordes afilados.\n• No uses la comida como único recurso si tu gato está estresado, enfermo o ha dejado de comer.\n• Si tu gato necesita una dieta específica o tiene problemas dentales, renales, digestivos o de peso, consulta con tu veterinario antes de cambiar su forma de comer.\n• Lava los puzzles con frecuencia, sobre todo si tienen comida húmeda o premios.\n• Detén el juego si aparece frustración, agresividad, jadeo o respiración con la boca abierta, o si pierde el interés una y otra vez.",
+              },
+              {
+                heading: "Cuándo consultar al veterinario",
+                body: "Consulta si tu gato vomita con frecuencia, pierde peso, deja de comer, cambia de conducta de forma brusca, se queja al moverse o no logra usar ningún tipo de puzzle. Los puzzles son una buena herramienta, pero no reemplazan el diagnóstico ni un plan de alimentación adaptado a tu gato.",
               },
             ],
           },
@@ -1214,10 +1320,12 @@ export const categories: Category[] = [
     {
     slug: "razas",
     label: "Razas",
+    seoTitle: "Razas de gatos: guía para elegir",
     emoji: "",
     color: "#5b8db8",
     bg: "#eef3f8",
-    description: "Razas de gatos",
+    description: "Razas de gatos: características, personalidad y cuidados de las razas más conocidas, para ayudarte a elegir el gato que mejor se adapta a tu vida.",
+    intro: "Cada raza de gato tiene rasgos propios de tamaño, pelo, carácter y necesidades de cuidado. Elegir la adecuada depende tanto de lo que buscas en un compañero como de lo que puedes ofrecerle en tu día a día. Esta sección te ayuda a comparar razas con información clara.\n\nVerás las características de las razas más conocidas, qué personalidad suelen tener y qué cuidados requieren, como el cepillado o las revisiones de salud. También encontrarás qué problemas hereditarios conviene conocer antes de adoptar.\n\nRecuerda que el carácter de cada gato depende de su historia y de su entorno tanto como de su raza. Un gato mestizo puede ser un compañero excelente, y una buena adopción empieza por conocer al animal concreto.\n\nAntes de decidir por una raza, piensa en tu espacio, en tu tiempo y en tu presupuesto. Algunos gatos necesitan más cepillado o más estimulación, y esas necesidades importan tanto como su aspecto.",
     subcategories: [
     {
   slug: "razas-felinas",
@@ -1230,7 +1338,7 @@ export const categories: Category[] = [
       sections: [
         {
           heading: "Los Clásicos Históricos",
-          body: "Razas antiguas con personalidades definidas: Abisinio (Etiopía/Egipto): Activo, curioso, 'perro-gato', necesita mucho juego mental. Siamés (Tailandia): Extremadamente vocal, inteligente, demanda atención constante. Persa (Irán): Tranquilo, dulce, silencioso; requiere cepillado y limpieza facial diaria. Maine Coon (EE.UU.): El 'gigante amable', sociable, ideal para familias con niños; requiere espacio. Bengala (EE.UU.): Energía alta, atlético, parece un leopardo en miniatura; necesita estimulación diaria intensa.",
+          body: "Razas antiguas con personalidades definidas: Abisinio (origen africano): Activo, curioso, 'perro-gato', necesita mucho juego mental. Siamés (Tailandia): Extremadamente vocal, inteligente, demanda atención constante. Persa (Irán): Tranquilo, dulce, silencioso; requiere cepillado y limpieza facial diaria. Maine Coon: El 'gigante amable', sociable, ideal para familias con niños; requiere espacio. Bengala: Energía alta, atlético, parece un leopardo en miniatura; necesita estimulación diaria intensa.",
         },
         {
           heading: "Gigantes Gentiles y Adaptables al Frío",
@@ -1250,7 +1358,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Consejos para Elegir tu Raza",
-          body: "Nivel de Actividad: ¿Compañero de sofá (Persa) o atleta (Bengala)? Tiempo de Aseo: ¿Cepillado diario (Maine Coon) o bajo mantenimiento (Ruso Azul)? Vocalización: Si prefieres el silencio, evita Siameses y opta por Ragdolls. Niños y mascotas: Maine Coon y Birmanos son más tolerantes. Alergias: Ninguno es 100% hipoalergénico, pero el Siberiano y el Ruso Azul suelen ser mejor tolerados.",
+          body: "Nivel de Actividad: ¿Compañero de sofá (Persa) o atleta (Bengala)? Tiempo de Aseo: ¿Cepillado diario (Maine Coon) o bajo mantenimiento (Ruso Azul)? Vocalización: Si prefieres el silencio, evita Siameses y opta por Ragdolls. Niños y mascotas: Maine Coon y Birmanos son más tolerantes. Alergias: Ninguno es 100% hipoalergénico, pero el Siberiano y el Ruso Azul suelen ser mejor tolerados.\n\nAntes de adoptar, revisa [Adquisición Responsable: Guía Legal y Ética Universal](/categoria/adquisicion-responsable/guia-adquisicion-responsable/adquisicion-responsable-global).",
         }
       ],
     },
@@ -1262,10 +1370,12 @@ export const categories: Category[] = [
   {
     slug: "salud",
     label: "Salud",
+    seoTitle: "Salud felina: guía completa",
     emoji: "",
     color: "#7a9e7e",
     bg: "#eef4ef",
-    description: "Prevención, enfermedades y cuidados médicos",
+    description: "Salud felina: prevención, enfermedades frecuentes, vacunación, desparasitación y cuidados médicos para mantener a tu gato sano durante toda su vida.",
+    intro: "La salud de un gato se cuida sobre todo con prevención: revisiones periódicas, vacunas y desparasitación al día, una dieta adecuada y atención a los cambios pequeños. Muchas enfermedades avanzan sin que el gato muestre síntomas claros, así que conocer las señales de alerta es parte del cuidado.\n\nEn esta sección encontrarás información sobre las enfermedades más frecuentes, desde los problemas dentales y de los riñones hasta la diabetes y las alergias, con los síntomas que conviene observar y qué esperar del tratamiento. También se explica el calendario preventivo y por qué no conviene automedicarse.\n\nEsta información ayuda a entender lo que sucede, pero no sustituye la consulta veterinaria. Ante cualquier cambio en el apetito, el peso, la forma de beber, de orinar o de moverse, consulta cuanto antes con tu veterinario.\n\nLlevar un registro de las visitas, las vacunas y los tratamientos te ayuda a seguir la evolución de tu gato y a dar al veterinario una historia clara. Si cambias de clínica, esa documentación facilita la continuidad.",
     subcategories: [
       {
         slug: "prevencion",
@@ -1274,61 +1384,93 @@ export const categories: Category[] = [
           {
             slug: "vacunacion",
             title: "Vacunación felina",
-            intro: "La vacunación es la herramienta más efectiva para proteger a tu gato de enfermedades graves. Conocer el calendario y las vacunas obligatorias marca la diferencia entre una vida larga y una llena de complicaciones.",
+            intro: "Las vacunas son una de las formas más efectivas de proteger a tu gato de enfermedades graves y contagiosas. El calendario lo define tu veterinario según la edad, el estilo de vida de tu gato y las normas de tu país.",
             sections: [
               {
-                heading: "Vacunas obligatorias",
-                body: "La vacuna triple felina (Rinotraqueítis, Calicivirus y Panleucopenia) es la base de cualquier protocolo. Se administra a las 8, 12 y 16 semanas de vida, con refuerzos anuales o cada 3 años según el producto.",
-                image: "/articles/vacunacion.png",
+                heading: "Vacunas esenciales",
+                body: "La vacuna triple felina, también llamada FVRCP, es la base de la prevención. Protege contra tres enfermedades:\n\n| **Enfermedad** | **Qué provoca** |\n| Rinotraqueítis viral felina | Infección de las vías respiratorias, causada por un herpesvirus. |\n| Calicivirus felino | Problemas respiratorios y úlceras en la boca. |\n| Panleucopenia felina | Enfermedad muy contagiosa y grave, sobre todo en gatitos. |\n\nEn gatitos, la vacunación suele empezar entre las 6 y las 8 semanas, con una dosis cada 3 o 4 semanas hasta cumplir 16 semanas o más. No hay un calendario único: tu veterinario lo ajustará según la edad de inicio.\n\nDespués de la serie inicial, se hace un refuerzo al año. Luego, la revacunación suele ser cada 1 a 3 años, según la vacuna y el riesgo de contagio de tu gato.",
               },
               {
-                heading: "Vacunas opcionales recomendadas",
-                body: "La vacuna contra la Leucemia Felina (FeLV) es muy recomendable para gatos que salen al exterior o conviven con otros gatos. La antirrábica es obligatoria en muchos países y recomendable en Chile.",
+                heading: "La vacuna antirrábica y la normativa",
+                body: "En muchos lugares, la vacuna antirrábica es obligatoria para perros y gatos. Debe estar vigente, y tu veterinario puede emitir un certificado que lo acredite.\n\nEstas son las pautas generales:\n\n• La primera dosis se aplica a partir de los dos meses de edad.\n• Luego, un refuerzo al año.\n• Después, la frecuencia depende del producto y de la indicación veterinaria.\n\nAunque tu gato viva solo en casa, en muchos lugares la vacuna sigue siendo obligatoria. La rabia puede pasar a las personas, así que vacunarlo también protege a tu familia.",
               },
               {
-                heading: "¿Qué pasa si me salto una dosis?",
-                body: "Si el gato adulto lleva más de 3 años sin vacunarse, se recomienda repetir la serie inicial. Consulta siempre con tu veterinario antes de administrar cualquier vacuna.",
-                adSlot: "1234567890",
+                heading: "Leucemia felina (FeLV)",
+                body: "La vacuna contra la leucemia felina es especialmente recomendable para gatitos y para gatos que tienen contacto con otros gatos: los que salen al exterior, viven con otros felinos o van a pensiones, guarderías o exposiciones.\n\nLa pauta habitual son dos dosis, separadas por 3 o 4 semanas, desde las 8 semanas de edad. Luego hay refuerzos según el producto y el riesgo de tu gato.\n\nSi tu gato es adulto, tu veterinario puede pedir una prueba antes de vacunarlo, para saber si ya está infectado.",
+              },
+              {
+                heading: "¿Y si se salta una dosis?",
+                body: "No des por hecho que tu gato sigue protegido solo porque ya recibió vacunas antes. Lo que conviene hacer depende de varias cosas:\n\n| **Situación** | **Qué suele hacerse** |\n| Retraso leve | Se aplica una dosis de refuerzo y se reprograma el calendario. |\n| Historial desconocido o vacunas muy antiguas | Puede ser necesario empezar la serie de nuevo, sobre todo en gatitos o gatos con mucho riesgo. |\n| Gato adulto con vacunas documentadas | A veces basta un refuerzo. Lo decide el veterinario. |\n| Gato enfermo o con defensas bajas | La vacuna suele posponerse hasta que su salud esté estable. |\n\nTampoco hay una regla fija de “si pasaron más de 3 años, empieza de nuevo”. Eso depende de la vacuna y de la evaluación de tu veterinario.",
+              },
+              {
+                heading: "Efectos secundarios",
+                body: "La mayoría de los gatos tolera bien las vacunas. Lo más común es que notes algo leve durante uno o dos días:\n\n| **Lo que puedes notar** | **Qué hacer** |\n| Sensibilidad o un pequeño bulto donde se aplicó | Normalmente pasa solo. Puedes observarlo. |\n| Cansancio o menos apetito durante 24 a 48 horas | Es esperable. Asegúrate de que tome agua. |\n| Hinchazón de la cara, dificultad para respirar o vómitos | Acude al veterinario de inmediato. |\n| Colapso, decaimiento intenso o un bulto que no desaparece | Consulta lo antes posible. |",
+              },
+              {
+                heading: "Consejos prácticos",
+                body: "• Guarda el carné o el historial de vacunas al día.\n• Sigue el calendario que indique tu veterinario, y no interrumpas la serie sin consultarlo.\n• Mantén la vacuna antirrábica vigente si tu zona la exige.\n• Haz un chequeo anual para revisar las vacunas, el peso, los dientes, la desparasitación y su salud general.\n\nPara ver el cuidado preventivo completo, lee [Salud Preventiva y Atención Veterinaria](/categoria/tenencia-responsable/salud-preventiva/salud-preventiva-global).",
               },
             ],
           },
           {
             slug: "desparasitacion",
             title: "Desparasitación interna y externa",
-            intro: "Los parásitos son uno de los problemas más comunes y fácilmente prevenibles en gatos. Un plan de desparasitación regular protege tanto al gato como a las personas del hogar.",
+            intro: "Los parásitos son de los problemas de salud más comunes en los gatos, y también de los más fáciles de prevenir. Un plan adaptado a tu gato, con controles veterinarios y análisis de heces, protege a tu gato y a las personas de tu hogar, sobre todo a niños, embarazadas y personas con defensas bajas.",
             sections: [
               {
                 heading: "Parásitos internos",
-                body: "Los más frecuentes son los áscaris (lombrices), tenias y Toxoplasma. Se tratan con antiparasitarios orales cada 3–6 meses en adultos, y mensualmente en cachorros hasta los 6 meses.",
-                image: "/articles/desparasitacion.png",
+                body: "Estos son los parásitos intestinales más frecuentes y cómo suelen llegar al gato:\n\n| **Parásito** | **Cómo se contagia** | **Señales posibles** |\n| Lombrices redondas (áscaris) | De la madre a los gatitos durante la lactancia, o por huevos del ambiente y presas infectadas. | Diarrea, pelo opaco, abdomen hinchado o, a veces, lombrices en el vómito. |\n| Tenias | Al comer pulgas infectadas o presas como ratones. | Segmentos parecidos a granos de arroz cerca de la cola o en las heces. |\n| Anquilostomas | Por la piel o al ingerir larvas del ambiente. | Anemia, sobre todo en gatitos. |\n| Giardia y coccidios | Por agua o heces contaminadas. | Diarrea, sobre todo en gatitos o gatos con defensas bajas. |\n| Toxoplasma | Al comer carne cruda o presas, o por contacto con arena contaminada. | Generalmente no da síntomas. Se previene evitando la carne cruda y limpiando la arena cada día. |\n\nEl toxoplasma no es una lombriz y no se controla con las desparasitaciones habituales. Lávate las manos después de limpiar la arena, sobre todo si estás embarazada.",
+              },
+              {
+                heading: "Cuándo desparasitar",
+                body: "La frecuencia depende de la edad y del estilo de vida de tu gato:\n\n| **Caso** | **Desparasitación interna** | **Análisis de heces** |\n| Gatitos | Desde las 2 semanas, cada 2 semanas hasta las 8 semanas. Luego, cada mes hasta los 6 meses. | Varias veces durante el primer año. |\n| Adulto de bajo riesgo | Una o dos veces al año, según el veterinario. | Una o dos veces al año. |\n| Adulto con acceso al exterior o que convive con otros animales | Al menos cada tres meses, o según su riesgo. | Según el riesgo y lo que indique el veterinario. |\n\nSi no sabes con certeza el riesgo de tu gato, pregunta a tu veterinario. Como referencia general, se recomienda un tratamiento de amplio espectro al menos cuatro veces al año.\n\nImportante: nunca uses productos para perros ni “medio comprimido” sin indicación veterinaria. La dosis se calcula según el peso actual de tu gato.",
               },
               {
                 heading: "Parásitos externos",
-                body: "Pulgas, garrapatas y ácaros del oído son los más comunes. Las pipetas spot-on mensuales son la solución más práctica. Los collares antiparasitarios ofrecen protección prolongada pero requieren ajuste correcto.",
+                body: "Los más comunes son estos:\n\n• Pulgas: causan picazón y alergias en la piel. En gatitos pueden provocar anemia, y transmiten tenias.\n• Garrapatas: transmiten enfermedades. Suelen pegarse en la cabeza, el cuello, las orejas y entre los dedos.\n• Ácaros del oído: causan picazón intensa, sacudidas de cabeza y una secreción oscura parecida al café molido. Se tratan con productos veterinarios específicos.\n• Ácaros de la piel: son menos frecuentes, pero pueden causar costras y picazón.",
               },
               {
-                heading: "Gatos de interior vs. exterior",
-                body: "Los gatos de interior tienen menor riesgo, pero no están exentos: las pulgas pueden entrar en ropa y zapatos. Se recomienda desparasitación interna 2 veces al año y externa 4 veces al año como mínimo.",
+                heading: "Opciones para prevenir parásitos externos",
+                body: "| **Método** | **Ventajas** | **Precauciones** |\n| Pipetas (spot-on) | Fáciles de aplicar. Muy eficaces contra pulgas y, según el producto, garrapatas o ácaros. | Usa solo productos hechos para gatos. Algunos productos para perros contienen permetrina y pueden ser mortales para ellos. |\n| Collares antiparasitarios | Protección prolongada, a menudo durante varios meses. | Ajústalo bien, revisa la piel debajo y quítalo si aparece irritación. |\n| Sprays o champús | Útiles para una infestación puntual o como complemento. | Suelen durar menos y no siempre cubren todos los parásitos. |\n| Tratamiento del ambiente | Es clave con pulgas, porque gran parte de su ciclo ocurre en alfombras, camas y grietas. | Aspira con frecuencia, lava mantas y camas, y usa productos seguros para gatos. |\n\nLa frecuencia la define tu veterinario según el clima, las pulgas o garrapatas de la zona, si hay otros animales en casa y si tu gato sale al exterior. En épocas o zonas de alto riesgo, suele recomendarse protección mensual o continua.",
+              },
+              {
+                heading: "Gato de interior o de exterior",
+                body: "Un gato que vive solo en casa tiene menos exposición, pero no está libre de riesgo: las pulgas pueden entrar en zapatos, ropa o en otras mascotas.\n\n| **Tipo de gato** | **Plan general** |\n| Solo de interior, bajo riesgo | Desparasitación interna una o dos veces al año, idealmente con análisis de heces. |\n| Con acceso al exterior, cazador o con otros animales | Desparasitación interna al menos cada tres meses, o según su riesgo. |\n| Protección externa | Durante todo el año o en las temporadas de mayor riesgo, según tu zona y el veterinario. |",
+              },
+              {
+                heading: "Señales de que tu gato puede tener parásitos",
+                body: "• Diarrea, vómitos, o heces con moco o sangre.\n• Pérdida de peso o crecimiento lento en los gatitos.\n• Abdomen hinchado.\n• Pelo opaco o aspecto descuidado.\n• Rascado intenso, costras o caída de pelo.\n• Sacudidas frecuentes de cabeza o suciedad oscura en las orejas.\n• Segmentos blancos parecidos a granos de arroz en las heces, la cama o alrededor del ano.",
+              },
+              {
+                heading: "Consejos para un plan que funcione",
+                body: "• Haz un plan a la medida de tu gato: su edad, peso, si está embarazada o amamantando, otras enfermedades y si hay niños en casa.\n• Pésalo antes de cada tratamiento para evitar dosis excesivas o insuficientes.\n• Si hay pulgas, trata a todas las mascotas de la casa. Si no, es muy probable que vuelvan.\n• Combina la desparasitación con una buena higiene de la arena, el control de pulgas y evitar que cace o coma presas.\n\nPara conocer las señales que requieren consulta, lee [Salud Preventiva y Atención Veterinaria](/categoria/tenencia-responsable/salud-preventiva/salud-preventiva-global).",
               },
             ],
           },
           {
             slug: "primeros-auxilios",
             title: "Primeros auxilios felinos",
-            intro: "Saber actuar en una emergencia puede salvar la vida de tu gato. Estos conocimientos básicos te preparan para los momentos más críticos hasta llegar al veterinario.",
+            intro: "Saber actuar con calma puede hacer una gran diferencia en una emergencia. Estos conocimientos básicos te ayudan a estabilizar la situación y a reducir riesgos mientras llegas al veterinario. No reemplazan la consulta ni el tratamiento profesional.",
             sections: [
               {
-                heading: "El botiquín básico",
-                body: "Todo hogar con gatos debería tener: solución salina, gasas estériles, antiséptico sin alcohol (como clorhexidina diluida), termómetro digital y el número de una clínica veterinaria de urgencias.",
-                image: "/articles/primeros_auxilios.png",
+                heading: "Tu botiquín de emergencia",
+                body: "Ten un botiquín a la mano, cerrado y en un lugar de fácil acceso. Revísalo cada cierto tiempo para que todo esté en buen estado:\n\n• Solución salina estéril, para limpiar los ojos o retirar suciedad.\n• Gasas estériles y vendas, para cubrir heridas y frenar sangrados.\n• Cinta adhesiva médica y tijeras de punta redondeada.\n• Antiséptico de uso veterinario, como clorhexidina diluida. Evita el alcohol, el agua oxigenada y los productos irritantes sobre heridas abiertas.\n• Termómetro digital para uso rectal. La temperatura normal de un gato suele estar entre 38,0 y 39,2 °C.\n• Jeringa sin aguja, solo para dar líquidos si el veterinario lo indica.\n• Una manta o toalla para sujetarlo y trasladarlo con seguridad.\n• Una transportadora rígida, lista y accesible.\n• El teléfono de tu veterinario, de urgencias y de una clínica para la noche o los fines de semana.\n• Una foto o lista de sus medicamentos, alergias y enfermedades previas.\n\nImportante: no uses medicamentos humanos “por si acaso”. Muchos son tóxicos para los gatos, incluso en dosis pequeñas.",
               },
               {
                 heading: "Señales de emergencia",
-                body: "Lleva a tu gato al veterinario de urgencias si presenta: dificultad para respirar, pérdida de conocimiento, convulsiones, incapacidad para orinar durante más de 12 horas, sangrado que no cesa o posible ingestión de veneno.",
+                body: "Si notas alguna de estas señales, ve a urgencias veterinarias de inmediato:\n\n| **Señal** | **Qué puede estar pasando** |\n| Respira rápido, con esfuerzo, con la boca abierta o las encías azuladas o pálidas | Puede tener problemas respiratorios. En gatos, respirar por la boca es especialmente grave. |\n| Se desploma, pierde el conocimiento o está muy débil | Requiere atención inmediata. |\n| Convulsiones que duran más de cinco minutos, se repiten o no recupera la conciencia | Es una emergencia neurológica. |\n| Intenta orinar sin lograrlo, o se esfuerza una y otra vez | Puede tener una obstrucción urinaria. Sobre todo en machos, no esperes ni 12 horas. |\n| Sangrado abundante que no para en unos cinco minutos, o sangre en vómito, heces u orina | Necesita valoración urgente. |\n| Posible intoxicación: plantas, medicamentos, limpiadores, anticongelante, raticidas, chocolate, cebolla, ajo o lirios | Llama al veterinario o al centro de intoxicaciones mientras vas a la clínica. |\n| Caída fuerte, atropello, mordida, quemadura o golpe fuerte | Aunque parezca estar bien, puede tener lesiones internas. |\n| Dolor abdominal intenso, abdomen hinchado o vómitos repetidos | Requiere revisión urgente. |\n| Gata que no logra dar a luz o tiene contracciones sin nacimiento | Es una urgencia obstétrica. |",
               },
               {
-                heading: "Lo que NUNCA debes hacer",
-                body: "No administres ibuprofeno, paracetamol ni aspirina a un gato: son mortales para ellos. No intentes inducir el vómito sin indicación veterinaria. No pongas alcohol en heridas abiertas.",
+                heading: "Qué hacer mientras llegas",
+                body: "• Mantén la calma. Primero protégete: un gato dolorido o asustado puede morder o arañar.\n• Llama a la clínica antes de salir. Te dirán los primeros pasos y prepararán la recepción.\n• Trasládalo en la transportadora, o envuelto con cuidado en una toalla. Evita presionar heridas, el abdomen o el pecho.\n• Si sangra por fuera, presiona con una gasa limpia durante varios minutos. No retires la gasa cada momento para ver si paró. No uses torniquetes.\n• Si sospechas un envenenamiento, guarda el envase, la planta o una foto del producto. Anota la cantidad aproximada y la hora.\n• Si tiene una convulsión, aleja los objetos con los que pueda golpearse, no le metas nada en la boca y anota cuánto dura.",
+              },
+              {
+                heading: "Lo que nunca debes hacer",
+                body: "**No le des paracetamol, acetaminofén, ibuprofeno ni aspirina.** Los gatos son muy sensibles a estos medicamentos: pueden causar daño al hígado, anemia, dificultad para respirar e incluso la muerte.\n\n• No le provoques el vómito sin indicación del veterinario. Algunas sustancias hacen más daño al volver por el esófago.\n• No uses alcohol, agua oxigenada ni desinfectantes fuertes en heridas abiertas. Irritan los tejidos y retrasan la curación.\n• No le des leche, aceite, sal, carbón activado ni remedios caseros como “antídotos”.\n• No intentes sacar objetos atrapados en la garganta, los ojos o una herida profunda. Podrías empeorar la lesión.\n• No le fuerces comida ni agua si tiene dificultad para respirar, vómitos, convulsiones o está inconsciente.\n• No esperes a ver si mejora cuando hay problemas para respirar, convulsiones, obstrucción urinaria, sangrado abundante o sospecha de envenenamiento.",
+              },
+              {
+                heading: "Cómo prevenir las emergencias",
+                body: "La mayoría de las emergencias se evitan con un poco de prevención:\n\n• Guarda medicamentos, productos de limpieza, plantas tóxicas y químicos fuera de su alcance.\n• Revisa que no haya hilos, ligas, agujas u objetos pequeños a su alcance.\n• Antes de llevar una planta o un alimento a casa, confirma que no sea tóxico para los gatos.\n• Ten a mano la ficha veterinaria y el teléfono de urgencias.\n• Haz revisiones periódicas, sobre todo si tu gato es adulto o mayor.\n\nSi quieres una guía específica para gatitos, lee [Primeros Auxilios para Gatitos: Qué hacer en una emergencia](/categoria/emergencia/emergencias-felinas/guia-primeros-auxilios-gatitos).",
               },
             ],
           },
@@ -1341,40 +1483,54 @@ export const categories: Category[] = [
           {
             slug: "enfermedad-renal",
             title: "Enfermedad renal crónica",
-            intro: "La insuficiencia renal crónica es la principal causa de muerte en gatos mayores de 7 años. Detectarla a tiempo puede añadir años de calidad de vida a tu compañero.",
+            intro: "La enfermedad renal crónica es muy frecuente en gatos mayores. Puede afectar a cerca de 4 de cada 10 gatos mayores de 10 años, y a casi 8 de cada 10 mayores de 15. No tiene cura, pero detectarla a tiempo y cuidarla bien puede retrasar su avance y ayudar a que tu gato viva mejor y más tiempo.",
             sections: [
               {
-                heading: "Señales de alerta",
-                body: "Beber mucho agua, orinar con mayor frecuencia, pérdida de peso progresiva, pelo opaco y falta de apetito son los signos más comunes. Muchos gatos no muestran síntomas hasta perder el 75% de la función renal.",
-                image: "/articles/enfermedad.png",
+                heading: "Señales que conviene conocer",
+                body: "Muchos gatos no muestran nada al principio. Los signos suelen aparecer cuando el riñón ya ha perdido una parte importante de su función. Estos son los más comunes:\n\n| **Lo que puedes notar** | **Qué puede significar** |\n| Bebe más agua y orina más veces o en más cantidad | El riñón no concentra bien la orina. |\n| Pierde peso o come menos | El cuerpo se desgasta y pierde apetito. |\n| Vomita con frecuencia | Puede deberse a sustancias que el riñón no logra eliminar. |\n| Se ve decaído o con poca energía | Puede indicar deshidratación o malestar general. |\n| Pelo sin brillo o descuidado | Suele acompañar al malestar general. |\n| Mal aliento, llagas en la boca o encías pálidas | Pueden aparecer con la enfermedad. |\n| Cambios repentinos en la vista | Puede deberse a presión arterial alta. Es urgente. |\n\nOjo: la creatinina, un análisis de sangre común, suele subir solo cuando se ha perdido cerca del 75 % de la función renal. Por eso conviene revisar a tiempo.",
               },
               {
-                heading: "Diagnóstico y seguimiento",
-                body: "Un análisis de sangre y orina anual a partir de los 7 años es la mejor herramienta de detección. El biomarcador SDMA permite detectar daño renal meses antes que los marcadores tradicionales.",
+                heading: "Cómo se detecta",
+                body: "Te recomendamos una revisión al año a partir de los 7 años, o antes si tu gato ya tiene signos, enfermedades previas o antecedentes en los riñones. Cada revisión suele incluir:\n\n| **Revisión** | **Para qué sirve** |\n| Análisis de sangre | Mide la creatinina y otros valores del riñón. |\n| Análisis de orina | Muestra si el riñón concentra bien la orina y si hay proteínas. |\n| Presión arterial | Detecta la hipertensión, que puede afectar a los ojos y al cerebro. |\n| SDMA | Un análisis que puede subir antes que la creatinina y ayuda a detectar problemas más temprano. |\n\nUn solo resultado alterado no basta para diagnosticarla. El veterinario confirma la enfermedad cuando los valores se mantienen alterados en el tiempo. Por ejemplo, un SDMA por encima de 14 µg/dL se repite al menos dos semanas después para confirmarlo.\n\nPara clasificar la enfermedad, muchos veterinarios usan el sistema IRIS, que tiene en cuenta el SDMA o la creatinina, la presión arterial y las proteínas en la orina. Así el tratamiento se ajusta a cada etapa.",
               },
               {
-                heading: "Manejo y tratamiento",
-                body: "No tiene cura, pero se puede gestionar con dieta renal baja en fósforo y proteína, hidratación (comida húmeda o fluidos subcutáneos en casa), suplementos y revisiones frecuentes.",
+                heading: "Cómo cuidarlo",
+                body: "No existe una cura, pero sí formas de cuidarlo y frenar el desgaste. El objetivo es que esté bien hidratado y bien alimentado, y que los valores como el fósforo, la presión y la anemia se mantengan controlados.\n\n| **Qué hacer** | **Cómo** |\n| Dieta renal | En las etapas 2 a 4 suele recomendarse una dieta especial, con menos fósforo y proteína de buena calidad. Limitar el fósforo es una de las medidas más importantes. |\n| Hidratación | Ofrece comida húmeda y agua fresca todo el día. Si está deshidratado, el veterinario puede indicar líquidos bajo la piel. |\n| Revisiones | Permiten ajustar la dieta, los medicamentos y los suplementos según los análisis. |\n| Otras complicaciones | Según el caso, pueden usarse medicamentos para el fósforo, la presión, la anemia o las náuseas. |\n\nImportante: no cambies la dieta ni le des suplementos por tu cuenta. Algunos gatos enfermos dejan de comer si se les cambia el alimento de golpe, así que el cambio debe hacerse poco a poco y con el veterinario.\n\nLa alimentación es parte clave del manejo, así que conviene revisar [Nutrición Científica por Etapas](/categoria/tenencia-responsable/nutricion-cientifica/nutricion-etapas).",
               },
-            ],
+            ]
           },
           {
             slug: "diabetes-felina",
             title: "Diabetes felina",
-            intro: "La diabetes en gatos es más común de lo que se piensa, especialmente en machos castrados con sobrepeso. La buena noticia: con manejo adecuado, muchos gatos pueden entrar en remisión.",
+            intro: "La diabetes en gatos es frecuente, sobre todo en adultos y mayores con sobrepeso. Aparece cuando el cuerpo tiene dificultades para controlar el azúcar en la sangre. Con un diagnóstico temprano y un buen plan veterinario, muchos gatos llegan a la remisión: vuelven a tener glucosa normal sin insulina. No es una cura definitiva, así que el seguimiento es clave.",
             sections: [
               {
-                heading: "Factores de riesgo",
-                body: "Obesidad, edad avanzada, sexo masculino y dietas altas en carbohidratos son los principales factores. Los gatos Burmeses tienen predisposición genética.",
-                image: "/articles/diabetes.png",
+                heading: "¿Qué es la diabetes en gatos?",
+                body: "La diabetes es una enfermedad hormonal que afecta cómo el cuerpo maneja el azúcar (glucosa) de la sangre. El páncreas produce insulina, la hormona que ayuda a que la glucosa entre a las células. Cuando el cuerpo responde menos a la insulina, o el páncreas produce cada vez menos, el azúcar se acumula en la sangre.\n\nPor eso es más frecuente en gatos adultos o mayores, y sobre todo en los que tienen sobrepeso.",
               },
               {
-                heading: "Síntomas",
-                body: "Mucha sed, mucha orina, pérdida de peso a pesar de comer bien y debilidad en las patas traseras (neuropatía diabética) son las señales más características.",
+                heading: "¿Quiénes tienen más riesgo?",
+                body: "Estos son los factores que más se asocian a la diabetes:\n\n• Sobrepeso u obesidad: es uno de los factores más importantes.\n• Edad: es más frecuente en gatos de mediana edad o mayores.\n• Sexo: los machos, sobre todo si están castrados, tienen mayor riesgo.\n• Poca actividad: el sedentarismo favorece el sobrepeso.\n• Medicamentos: los corticoides, como los que se usan para el asma felina, pueden subir el azúcar.\n• Otras enfermedades: pancreatitis, problemas dentales o infecciones pueden dificultar el control.\n• Raza: en algunas poblaciones, el gato Burmés tiene más riesgo. Esto no se observa igual en todas partes.",
               },
               {
-                heading: "Tratamiento y remisión",
-                body: "Insulina diaria, dieta baja en carbohidratos (comida húmeda de calidad) y monitoreo de glucosa en casa son la base. Hasta el 90% de los gatos pueden lograr remisión con tratamiento precoz y riguroso.",
+                heading: "Señales que conviene vigilar",
+                body: "Los signos más comunes aparecen cuando el azúcar sube tanto que los riñones la eliminan por la orina, arrastrando agua con ella:\n\n| **Señal** | **Qué puede significar** |\n| Mucha sed | El cuerpo intenta compensar la pérdida de agua. |\n| Orina abundante y frecuente | Los riñones eliminan azúcar y agua. |\n| Pérdida de peso, aunque coma bien | El cuerpo no aprovecha la glucosa como debería. |\n| Mucho apetito | Las células no reciben la energía que necesitan. |\n| Patas traseras débiles | Puede deberse a daño en los nervios. Algunos gatos caminan apoyados en los talones. |\n| Pelaje sin brillo, cansancio o menos actividad | Pueden acompañar a la enfermedad. |\n\nSi notas estas señales, consulta con tu veterinario. Los síntomas solos no bastan para confirmar la diabetes.",
+              },
+              {
+                heading: "Cómo se confirma",
+                body: "El veterinario suele confirmarla con varios análisis:\n\n• Glucosa en sangre, en ayunas o con varias mediciones a lo largo del día.\n• Glucosa en la orina, que se repite para confirmarla.\n• Fructosamina, un análisis que refleja el promedio de glucosa de las últimas semanas. Ayuda a distinguir el estrés de una diabetes real.\n• Examen físico, y análisis de sangre y orina completos para descartar infecciones, pancreatitis u otras enfermedades.",
+              },
+              {
+                heading: "Tratamiento y seguimiento",
+                body: "El objetivo es que tu gato se sienta bien, evitar que el azúcar baje demasiado y prevenir complicaciones.\n\n• Insulina: en muchos gatos es la base del tratamiento. El veterinario define el tipo, la dosis y la frecuencia. Nunca cambies la dosis por tu cuenta.\n• Alimentación: las dietas altas en proteína y bajas en carbohidratos, muchas veces húmedas, suelen ayudar a estabilizar el azúcar y dan más saciedad.\n• Peso: si tu gato tiene sobrepeso, bajarlo de forma gradual mejora cómo responde a la insulina. Hazlo con el veterinario, sin dietas bruscas ni ayunos.\n• Seguimiento en casa: un glucómetro veterinario o tiras para orina permiten vigilar el azúcar. En algunos casos se usa un monitor continuo.\n• Revisiones periódicas: el veterinario revisa el peso, el apetito y las mediciones de azúcar.\n• Otros medicamentos: si tu gato toma corticoides u otros fármacos que suben el azúcar, habla con el veterinario sobre alternativas.\n\nSi quieres una guía más completa sobre la enfermedad, lee [Diabetes Felina: Guía completa para entenderla y manejarla](/categoria/salud/diabetes-felina/diabetes-guia-completa).",
+              },
+              {
+                heading: "¿Es posible la remisión?",
+                body: "Sí, en algunos gatos. La remisión significa que el azúcar vuelve a valores normales sin necesidad de insulina. Los resultados varían mucho entre estudios, desde casos poco frecuentes hasta la mayoría de los gatos bien controlados.\n\nTiene más probabilidades de ocurrir cuando:\n\n• El tratamiento empieza pronto después del diagnóstico.\n• El azúcar se controla bien en los primeros seis meses.\n• La dieta es baja en carbohidratos y alta en proteína.\n• Se vigila el azúcar con frecuencia.\n• Se controla el peso y se tratan otras enfermedades.\n\nAun así, no es una cura definitiva: la diabetes puede volver. Si después de seis meses no hay remisión, es probable que necesite insulina de por vida. Su veterinario lo irá reevaluando.",
+              },
+              {
+                heading: "Cuándo acudir de inmediato",
+                body: "Algunas señales son una urgencia. Acude al veterinario sin esperar:\n\n| **Señal** | **Por qué es urgente** |\n| Vómitos que no paran o rechazo total de la comida | Puede haber deshidratación o una complicación. |\n| Debilidad marcada, temblores o convulsiones | Pueden indicar un azúcar muy bajo, por ejemplo por exceso de insulina. |\n| Desorientación o colapso | Requiere atención inmediata. |\n| Respiración rápida o con dificultad, u olor inusual en el aliento | Pueden ser signos de cetoacidosis diabética. |\n\nSi tu gato recibe insulina y presenta alguna de estas señales, contacta al veterinario o a una clínica de urgencia de inmediato.",
               },
             ],
           },
@@ -1387,20 +1543,31 @@ export const categories: Category[] = [
           {
             slug: "sarro-gingivitis",
             title: "Sarro y gingivitis",
-            intro: "La enfermedad periodontal afecta al 70% de los gatos mayores de 3 años y es una de las causas más ignoradas de dolor crónico y deterioro de la salud general.",
+            intro: "Los problemas dentales son muy comunes en los gatos: alrededor de 7 de cada 10 presentan algún grado de problema de encías o dientes hacia los 3 años. El sarro no es solo un tema de estética: puede doler, dificultar la comida y afectar su bienestar general.",
             sections: [
               {
-                heading: "Por qué es importante",
-                body: "Las bacterias de la boca entran al torrente sanguíneo y pueden dañar riñones, corazón e hígado. Un gato con dolor dental come menos, está más irritable y su calidad de vida se resiente enormemente.",
-                image: "/articles/sarro.png",
+                heading: "Por qué importa tanto la boca",
+                body: "El sarro empieza con la placa bacteriana, una capa blanda que se forma sobre los dientes. Si no se retira, se endurece y se convierte en sarro. Ese sarro irrita las encías y puede provocar gingivitis: encías rojas, inflamadas o que sangran.\n\nCon el tiempo, la inflamación puede llegar a los tejidos que sostienen el diente, y eso provoca dolor, dientes flojos y pérdida de piezas.\n\nMuchos gatos no muestran el dolor de forma evidente. Fíjate si notas alguno de estos cambios:\n\n| **Lo que puedes notar** | **Qué puede significar** |\n| Mastica solo de un lado | Le duele un lado de la boca. |\n| Deja caer comida o rechaza las croquetas secas | Masticar le resulta doloroso. |\n| Come más despacio o babea más | Puede tener molestias al comer. |\n| Mal aliento persistente | Suele indicar acumulación de placa o infección. |\n| Encías rojas, hinchadas o con sangre | Hay inflamación de las encías. |\n| Está irritable, se asea menos o se aísla | Puede estar sintiendo dolor. |\n| Come menos o pierde peso | Necesita revisión veterinaria pronto. |\n\nTambién se ha documentado una relación entre la enfermedad de las encías y problemas en riñones, corazón o hígado. No en todos los gatos, sino sobre todo en quienes ya tienen otras enfermedades.",
               },
               {
-                heading: "Prevención en casa",
-                body: "Cepillar los dientes 3 veces por semana con pasta dental felina (nunca humana) es el método más efectivo. Los snacks dentales y los juguetes masticables son un complemento útil pero no suficiente por sí solos.",
+                heading: "Cómo cuidar los dientes en casa",
+                body: "Lo que más ayuda es cepillar los dientes a diario con pasta específica para gatos. Si no es posible cada día, cepillar varias veces por semana también reduce la placa.\n\nPara que tu gato lo acepte poco a poco:\n\n| **Paso** | **Qué hacer** |\n| 1. Empieza sin cepillo | Deja que pruebe un poco de pasta dental felina. Elige un sabor que le guste. |\n| 2. Toca su hocico | Hazlo con suavidad y, cada vez, relaciónalo con un premio o una caricia. |\n| 3. Usa el material adecuado | Un cepillo de cerdas suaves para gatos o un dedil de silicona. |\n| 4. Empieza con poco tiempo | Unos pocos segundos, sobre todo en la cara externa de los dientes. |\n| 5. Aumenta despacio | Ve alargando el cepillado sin forzar la boca ni causar dolor. |\n| 6. Para si hay dolor | Si sangra mucho, se queja o rechaza el cepillo de forma persistente, consulta al veterinario. |\n\nNunca uses pasta dental humana. Puede contener flúor o edulcorantes como el xilitol, que son peligrosos para los gatos.\n\nLos snacks dentales, las dietas específicas, los aditivos para el agua y los juguetes para masticar pueden ayudar, pero no reemplazan el cepillado ni la limpieza profesional. Si puedes, busca productos con respaldo veterinario o sello VOHC.",
               },
               {
-                heading: "Limpieza profesional",
-                body: "La limpieza dental veterinaria bajo anestesia se recomienda anualmente a partir de los 3 años. Los gatos con predisposición (Persas, Siameses) pueden necesitarla antes.",
+                heading: "Limpieza dental profesional",
+                body: "La limpieza veterinaria se hace bajo anestesia general, con monitoreo constante. Así el veterinario puede revisar toda la boca con calma, limpiar por encima y por debajo de la línea de la encía, tomar radiografías y tratar o retirar dientes enfermos sin dolor para el gato.\n\nNo hay una frecuencia que sirva para todos. Muchos gatos necesitan una revisión al año. Quienes ya tienen gingivitis o sarro importante pueden necesitar controles y limpiezas más seguidas.\n\nAntes de la anestesia, el veterinario hace un examen y análisis para evaluar el riesgo. Durante el procedimiento vigila la respiración, la temperatura y el ritmo cardiaco.",
+              },
+              {
+                heading: "Qué aumenta el riesgo",
+                body: "Cualquier gato puede tener problemas dentales. Estos factores hacen que sea más probable:\n\n• Edad avanzada.\n• Acumulación rápida de placa y sarro.\n• Dientes apretados o mal alineados.\n• Enfermedades como la diabetes o algunas infecciones virales.\n• Poca higiene bucal.\n• Dieta solo blanda, en algunos casos.\n• Gingivitis crónica.\n\nLos gatos persas y otras razas de cara aplastada pueden tener más problemas bucales por la forma de su mandíbula y sus dientes apretados. Cada gato es distinto, así que lo mejor es que lo evalúe tu veterinario.",
+              },
+              {
+                heading: "Señales de alarma",
+                body: "Pide cita con el veterinario si notas:\n\n• Mal aliento intenso o que aparece de repente.\n• Encías rojas, inflamadas, con sangre o retraídas.\n• Sarro visible, sobre todo marrón o amarillo.\n• Dientes flojos, rotos o que faltan.\n• Babeo excesivo o sangre en la saliva.\n• Rechazo de la comida, pérdida de peso o dificultad para masticar.\n• Se toca la cara con la pata, se rasca el hocico o muestra signos de dolor.",
+              },
+              {
+                heading: "Consejos prácticos",
+                body: "• Mira la boca de tu gato de vez en cuando, sin forzarlo.\n• Cepíllalo lo más seguido que puedas, idealmente a diario.\n• Usa solo productos pensados para gatos.\n• Pide una revisión dental al año, o antes si notas dolor o sarro.\n• No intentes quitar el sarro en casa: puedes dañar el esmalte y las encías.\n\nPrevenir es más fácil, más barato y mucho más cómodo para tu gato que tratar una enfermedad avanzada.\n\nPara una visión general de la salud preventiva, lee [Salud Preventiva y Atención Veterinaria](/categoria/tenencia-responsable/salud-preventiva/salud-preventiva-global).",
               },
             ],
           },
@@ -1414,28 +1581,35 @@ export const categories: Category[] = [
     {
       slug: "guia-alergia-gatos",
       title: "Alergia a los gatos: Guía práctica para convivir",
-      intro: "Las alergias a las mascotas afectan entre el 15% y el 30% de las personas. Ser alérgico a los gatos es dos veces más frecuente que a los perros, pero con manejo adecuado la convivencia es posible.",
+      intro: "La alergia al gato es una reacción del sistema de defensa a unas proteínas del gato, sobre todo la llamada Fel d 1. Se puede controlar con diagnóstico médico, cambios en casa y tratamiento, pero no hay una solución garantizada. Si el asma está mal controlada o las reacciones son graves, convivir con un gato puede no ser seguro.",
       sections: [
         {
-          heading: "La causa: Proteína Fel d 1",
-          body: "La alergia no es causada por el pelo, sino por la proteína Fel d 1 producida en la piel, saliva y orina. Se propaga cuando el gato se lame y la proteína se dispersa en el aire a través de la caspa (piel muerta). Los machos producen más que las hembras, y la castración reduce estos niveles.",
-          image: "/articles/alergia.png",
+          heading: "Qué lo causa",
+          body: "No es el pelo en sí, sino las proteínas que hay en la caspa, la saliva y la orina. La principal es la Fel d 1, que se produce sobre todo en las glándulas de la saliva y de la piel. El gato la reparte por su pelo cuando se acicala, y se dispersa con la caspa.\n\nEs una proteína muy pequeña y muy estable. Se pega fácilmente a la ropa, los muebles y las alfombras, y puede quedarse en la casa mucho después de que el gato se haya ido.",
         },
         {
-          heading: "Síntomas y Diagnóstico",
-          body: "Las reacciones varían desde urticaria y picazón hasta estornudos, ojos llorosos y ataques de asma. Es vital acudir a un alergólogo para realizar pruebas cutáneas, de sangre o espirometrías, ya que el culpable podría ser el polvo o el polen y no el gato.",
+          heading: "Síntomas y diagnóstico",
+          body: "Los síntomas más comunes son los estornudos, la congestión, la picazón en la nariz, los ojos rojos o llorosos, la urticaria, la picazón en la piel y la tos. En personas con asma, puede provocar silbidos al respirar, falta de aire o crisis.\n\nEl diagnóstico lo hace un alergólogo o un inmunólogo, con la historia clínica y pruebas como el prick test o un análisis de sangre. No conviene hacer un “test casero” ni dar por hecho que el gato es el único causante: el polvo, los ácaros, el polen o el moho también pueden contribuir.",
         },
         {
-          heading: "Hogar y Zonas Libres",
-          body: "Crea un 'santuario' manteniendo el dormitorio cerrado al gato. Elimina alfombras o usa solo las que se puedan lavar con agua caliente. Es fundamental usar aspiradoras con filtro HEPA y purificadores de aire al menos 4 horas al día.",
+          heading: "Medidas para la casa",
+          body: "La medida más eficaz es reducir la exposición, sobre todo en el dormitorio. Estas son algunas formas de hacerlo:\n\n| **Medida** | **Cómo** |\n| Dormitorio libre de gato | Mantén la puerta cerrada y evita que suba a la cama. |\n| Aspirar con filtro HEPA | Al menos una vez por semana, en alfombras y tapizados. |\n| Purificador con filtro HEPA | En el dormitorio y la sala. Para resultados, la AAFA sugiere usarlo al menos cuatro horas al día. |\n| Menos textiles acumuladores | Reduce alfombras, cortinas pesadas y tapizados, o lávalos con frecuencia. |\n| Higiene después de tocarlo | Lávate las manos, la cara y la ropa. |\n| Ventilar la casa | Con cuidado si el polen de fuera empeora tus síntomas. |",
         },
         {
-          heading: "Cuidado Directo y Productos",
-          body: "El cepillado debe hacerlo alguien no alérgico fuera de casa. Los baños semanales y el uso de productos neutralizantes (como Vetriderm) sobre el pelaje ayudan a eliminar restos de saliva. La castración y el corte de pelo periódico en gatos de pelo largo también son estrategias efectivas.",
+          heading: "Cuidados del gato",
+          body: "Si puedes, pide que lo cepille alguien que no sea alérgico, mejor al aire libre o en una zona bien ventilada. Después, lávate las manos y evita tocarte los ojos y la cara.\n\nEl baño semanal puede bajar la Fel d 1 del pelo, pero el efecto dura poco, pocos días. No está demostrado que mejore de forma constante los síntomas de la persona alérgica.\n\nSi te preocupa la convivencia en casa, revisa [Enriquecimiento Ambiental y Bienestar Conductual](/categoria/tenencia-responsable/enriquecimiento-ambiental/5-pilares-ambientales).",
         },
         {
-          heading: "Tratamientos Avanzados",
-          body: "Consulta sobre la inmunoterapia (vacunas de desensibilización), que son eficaces a largo plazo. Si a pesar de todas las medidas de limpieza y tratamiento médico la salud se resiente gravemente, la decisión más responsable podría ser buscar un nuevo hogar para el felino.",
+          heading: "Mitos y realidades",
+          body: "| **Mito** | **Realidad** |\n| “Hay gatos hipoalergénicos.” | No existe. Todos los gatos producen Fel d 1, incluso los que tienen poco pelo. Lo que cambia es la cantidad de cada gato y la respuesta de cada persona. |\n| “El pelo largo da más alergia.” | Las guías de la AAAAI indican que la longitud del pelo no se asocia de forma consistente con el nivel de Fel d 1 en casa. |\n| “Castrarlo lo elimina.” | En los machos enteros, la castración puede reducir la producción de Fel d 1. Pero no la elimina ni garantiza alivio. |\n| “Es dos veces más frecuente que la alergia al perro.” | No es una regla universal. Depende del estudio y de la población. |",
+        },
+        {
+          heading: "Tratamientos médicos",
+          body: "El tratamiento lo debe personalizar un médico. Puede incluir antihistamínicos, corticoides nasales, colirios, broncodilatadores y el control del asma, según los síntomas.\n\nEn algunos casos seleccionados, la inmunoterapia con alérgenos, es decir, las vacunas de desensibilización, puede ser una opción a largo plazo. La debe indicar y supervisar un alergólogo. No es un tratamiento casero ni garantiza la curación.",
+        },
+        {
+          heading: "Cuándo replantearse la convivencia",
+          body: "Si el asma está mal controlada, hay crisis repetidas, síntomas graves o el tratamiento no funciona, la opción más segura puede ser buscarle un hogar responsable al gato. La AAAAI indica que quitar al animal es la medida más eficaz para reducir la exposición, aunque los alérgenos pueden quedarse en la casa durante meses.\n\nEsta decisión debe tomarla la persona con su médico, poniendo la salud de quien tiene la alergia en primer lugar. No es un fracaso ni una falta de cariño: es una decisión de salud y de bienestar para todos.",
         },
       ],
     },
@@ -1453,7 +1627,6 @@ export const categories: Category[] = [
         {
           heading: "Paso 1: Causas y factores de riesgo",
           body: "La diabetes felina suele ser una combinación de factores: obesidad y edad (común en mayores de 9 años), sexo y raza (más común en machos 4:1 y en raza Siamés). También influyen los depósitos de amiloide que dañan el páncreas y el uso de fármacos como progestágenos o corticoides. Es fundamental destacar que la pancreatitis suele estar estrechamente asociada a esta enfermedad y, en muchos casos, puede ser la causa desencadenante de la diabetes.",
-          image: "/articles/diabete.png",
         },
         {
           heading: "Paso 2: Identificación de síntomas",
@@ -1477,7 +1650,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Consejos clave para el dueño",
-          body: "Nunca ajustes la insulina por tu cuenta. Mantén un registro estricto de dosis, horarios de comida y comportamiento. Controlar el peso es la mejor herramienta preventiva y observar cualquier cambio en la forma de caminar es fundamental para reportarlo al especialista.",
+          body: "Nunca ajustes la insulina por tu cuenta. Mantén un registro estricto de dosis, horarios de comida y comportamiento. Controlar el peso es la mejor herramienta preventiva y observar cualquier cambio en la forma de caminar es fundamental para reportarlo al especialista.\n\nEl peso influye mucho en esta enfermedad, así que conviene leer [Obesidad Felina: Cómo proteger la salud y vida de tu gato](/categoria/salud/obesidad-felina/guia-obesidad-prevencion).",
         },
       ],
     },
@@ -1495,7 +1668,6 @@ export const categories: Category[] = [
         {
           heading: "Paso 1: Identificación del sobrepeso",
           body: "No te fíes solo de la báscula. En la 'Prueba de las costillas', deberías sentirlas fácilmente sin presionar fuerte; si no, hay exceso de grasa. Al mirarlo desde arriba, debe marcarse una cintura detrás de las costillas; si es rectangular o tiene forma de barril, hay sobrepeso. De perfil, su abdomen no debe colgar ni tocar el suelo. Se considera sobrepeso si supera un 10-19% su peso ideal, y obeso si supera el 20%.",
-          image: "/articles/obesidad.png",
         },
         {
           heading: "Paso 2: Causas y Factores",
@@ -1507,7 +1679,7 @@ export const categories: Category[] = [
         },
         {
           heading: "Paso 4: Manejo Dietético Estratégico",
-          body: "Pide al veterinario calcular las calorías para el peso ideal, no el actual. Generalmente se ofrece entre el 60% y 75% de las calorías de mantenimiento actuales. Busca dietas altas en proteína (para mantener músculo y dar saciedad) y bajas en carbohidratos. Fracciona la ración en 3 o 4 tomas para mantener el metabolismo activo y usa parte de su ración como premio en lugar de snacks calóricos.",
+          body: "Pide al veterinario calcular las calorías para el peso ideal, no el actual. Generalmente se ofrece entre el 60% y 75% de las calorías de mantenimiento actuales. Busca dietas altas en proteína (para mantener músculo y dar saciedad) y bajas en carbohidratos. Fracciona la ración en 3 o 4 tomas para mantener el metabolismo activo y usa parte de su ración como premio en lugar de snacks calóricos.\n\nPara elegir el tipo de alimento, lee [Comida húmeda vs. pienso seco](/categoria/alimentacion/dietas/comida-humeda-vs-seca).",
         },
         {
           heading: "Paso 5: Actividad Física y Enriquecimiento",
@@ -1530,10 +1702,12 @@ export const categories: Category[] = [
   {
     slug: "tenencia-responsable",
     label: "Tenencia Responsable",
+    seoTitle: "Tenencia responsable de gatos: guía completa",
     emoji: "",
     color: "#2ecc71",
     bg: "#e8f8f0",
-    description: "Guía universal para el cuidado ético y bienestar felino",
+    description: "Guía sobre la tenencia responsable de gatos: bienestar, salud preventiva, esterilización, enriquecimiento y compromiso a largo plazo con tu compañero felino.",
+    intro: "Tener un gato es un compromiso de muchos años. Significa cuidar su salud, su alimentación y su bienestar, prevenir la reproducción no deseada y estar dispuesto a acompañarlo en cada etapa de la vida, incluida la vejez y las decisiones difíciles al final.\n\nEsta sección reúne los temas que hacen posible esa convivencia: el marco ético y legal, la esterilización como herramienta de bienestar y de control poblacional, el enriquecimiento del hogar para que el gato esté activo y tranquilo, la nutrición por etapas y las medidas de salud preventiva.\n\nUn buen cuidador no busca la perfección, sino la constancia. Pequeños hábitos repetidos cada día, como una rutina, un espacio seguro y una visita al veterinario a tiempo, marcan la diferencia en la vida de un gato.\n\nUna tenencia responsable también incluye prever qué pasará si tu situación cambia, como una mudanza o un viaje. Piensa desde el principio en quién podría cuidar a tu gato si tú no puedes hacerlo.",
     subcategories: [
       {
         slug: "principios-universales",
@@ -1542,20 +1716,25 @@ export const categories: Category[] = [
           {
             slug: "guia-tenencia-responsable",
             title: "Tenencia Responsable de Gatos",
-            intro: "Compromiso universal que trasciende fronteras: garantizar el bienestar físico, emocional y social del gato durante toda su vida (15-20 años).",
+            intro: "Tener un gato es un compromiso que dura muchos años: puede acompañarte entre 13 y 17 años, y algunos llegan a más de 20 con buenos cuidados. Aquí te contamos qué necesita para vivir bien.",
             sections: [
               {
-                heading: "Introducción: Un compromiso universal",
-                body: "La tenencia responsable trasciende fronteras, culturas y legislaciones. Principio rector: Un gato no es un objeto, ni un accesorio temporal. Es un ser sintiente con necesidades específicas que debemos comprender y respetar."
+                heading: "Un compromiso para toda la vida",
+                body: "Tener un gato es una decisión para muchos años. Con buenos cuidados, un gato doméstico puede vivir entre 13 y 17 años, y algunos superan los 20.\n\nUn gato no es un objeto ni un accesorio pasajero. Es un ser que siente y que necesita buena alimentación, atención veterinaria, un espacio seguro, juego, compañía y cariño constante durante toda su vida.\n\nEste compromiso no depende del lugar donde vivas. Las leyes cambian de un país a otro, pero la base es la misma en todas partes: cuidar bien a tu gato.",
               },
               {
-                heading: "Comprender la naturaleza felina",
-                body: "Diferencias fundamentales: No son animales gregarios (no buscan un 'líder', valoran autonomía). Sentidos adaptados a la caza nocturna: vista con tapetum lucidum, oído de frecuencias ultrasónicas, olfato + órgano de Jacobson para analizar feromonas. Bigotes sensores como radar táctil. Equilibrio excepcional con reflejo de enderezamiento. El ronroneo es polivalente: indica bienestar, pero también dolor, estrés o necesidad."
+                heading: "Cómo es la naturaleza del gato",
+                body: "Los gatos no son animales de manada como los perros. Valoran su independencia, no buscan un líder y crean vínculos según su experiencia, su carácter y su entorno.\n\nSus sentidos están hechos para cazar, sobre todo de noche:\n\n| **Sentido** | **Qué significa para ti** |\n| Vista | Tiene una capa reflectante detrás de la retina (tapetum lucidum) que le ayuda a ver con poca luz. |\n| Oído | Percibe sonidos muy agudos, hasta unos 64 kHz, mucho más de lo que oímos las personas. |\n| Olfato | Huele muy bien y usa el órgano de Jacobson para detectar feromonas. |\n| Bigotes | Son muy sensibles al aire y al espacio; le ayudan a moverse en lugares estrechos. |\n| Equilibrio | Se endereza al caer, pero eso no lo protege de golpes ni de caídas graves. |\n\nEl ronroneo suele expresar calma, pero también puede aparecer con dolor, estrés o hambre. Mira siempre el contexto antes de interpretarlo.",
               },
               {
-                heading: "Cronología del desarrollo felino",
-                body: "Gestación: ~9 semanas. Nacimiento: ojos cerrados, sordera, dependencia térmica total. 9-10 días: apertura de ojos. 3 semanas: primeros pasos, inicio de juego social. 4-6 semanas: inicio del destete natural. 8 semanas: destete completo, listo para adopción responsable. 2-7 meses: ventana crítica de socialización. 6-8 meses (hembras) / 11-12 meses (machos): madurez sexual. 12 meses: adultez física (algunas razas tardan hasta 18-24 meses). 7+ años: etapa senior."
-              }
+                heading: "Cómo crece un gatito",
+                body: "Cada etapa tiene sus propias necesidades. Estas son las edades aproximadas:\n\n| **Etapa** | **Edad aproximada** | **Qué ocurre** |\n| Gestación | 63 a 66 días | Dura unas 9 semanas. |\n| Nacimiento | Día 0 | Nace con los ojos cerrados, oye poco y depende de su madre para el calor y la comida. |\n| Ojos abiertos | 7 a 14 días | Empieza a abrir los ojos. |\n| Primeros pasos y juego | 3 a 4 semanas | Se mueve con más coordinación y juega con sus hermanos. |\n| Socialización | 2 a 7 semanas | Es la etapa clave para aprender que las personas, los sonidos y el manejo diario son seguros. |\n| Destete | 4 a 8 semanas | Se hace poco a poco. Nunca conviene separarlo de golpe de su madre. |\n| Adopción ideal | 10 a 12 semanas | Puede comer solo desde las 8 semanas, pero esperar hasta las 10 o 12 favorece su desarrollo emocional. |\n| Madurez sexual | Hembras: 4 a 6 meses. Machos: 5 a 7 meses | Varía según la raza y la alimentación. La esterilización se decide con el veterinario. |\n| Adulto | Desde los 12 meses | La mayoría llega a su tamaño adulto hacia el año. Algunas razas grandes siguen creciendo hasta los 18 o 24 meses. |\n| Adulto maduro | 7 a 10 años | Conviene revisarlo con más frecuencia: peso, articulaciones y dientes. |\n| Senior | Desde los 10 años | Muchas guías veterinarias lo consideran senior a partir de esta edad. |\n\nPara ver las etapas con más detalle, lee [Las primeras semanas de vida](/categoria/etapas/gatito/primeras-semanas).",
+              },
+              {
+                heading: "Línea de tiempo",
+                body: "El diagrama resume las etapas más importantes. La ventana de socialización, entre la segunda y la séptima semana, es la más determinante para su carácter. Las edades son orientativas: cada gato tiene su propio ritmo.",
+                image: "/articles/tenencia-cronologia.svg",
+              },
             ]
           }
         ]
@@ -1567,16 +1746,36 @@ export const categories: Category[] = [
           {
             slug: "marco-etico-legal",
             title: "Marco Ético y Legal Global",
-            intro: "Principios universales de protección animal y responsabilidades del tutor, independientemente del país.",
+            intro: "No hay una única ley para todo el mundo, pero sí hay principios que se repiten en casi todas partes: cuidar el bienestar del gato, evitar el sufrimiento que se puede prevenir, no abandonarlo y manejar las poblaciones de gatos de forma humana y responsable. Las reglas concretas, como el microchip, las vacunas o las sanciones, cambian según el lugar.",
             sections: [
               {
-                heading: "Principios universales de protección animal",
-                body: "Aunque las leyes tienen nombres distintos (Animal Welfare Act, Ley de Tenencia Responsable, etc.), comparten ejes comunes: Prohibición del abandono (entregar sin garantizar reubicación es maltrato). Identificación permanente (microchip o tatuaje registrado). Cuidados básicos obligatorios (alimentación, albergue, atención veterinaria). Prohibición de sacrificio poblacional (el control ético se basa en esterilización). Acceso a la denuncia ciudadana."
+                heading: "Cinco principios de bienestar",
+                body: "La Organización Mundial de Sanidad Animal (WOAH) usa como referencia las llamadas Cinco Libertades. Para un gato, significan:\n\n| **Libertad** | **Qué implica para tu gato** |\n| Sin hambre, sed ni mala alimentación | Agua fresca y comida completa, en las cantidades correctas. |\n| Sin miedo ni angustia | Un entorno tranquilo, con lugares seguros para esconderse. |\n| Sin incomodidad física ni térmica | Un lugar cómodo, ni demasiado frío ni demasiado caluroso. |\n| Sin dolor, lesión ni enfermedad | Revisiones veterinarias y tratamiento a tiempo. |\n| Poder expresar su conducta natural | Rascar, trepar, esconderse y jugar. |\n\nEs mucho más que darle comida y techo.",
               },
               {
-                heading: "Responsabilidades del tutor",
-                body: "Antes de adoptar: evaluar recursos económicos, tiempo, estabilidad residencial y compromiso a largo plazo. Durante la tenencia: registro, identificación, vacunación, desparasitación, esterilización. En caso de mudanza o crisis: planificar con anticipación el cuidado. Al final de la vida: acompañar con dignidad, considerar eutanasia humanitaria cuando el sufrimiento sea irreversible. Nota: Consultar siempre la legislación local, pero recordar que la ética del cuidado trasciende la ley mínima."
-              }
+                heading: "Responsabilidades de quien lo cuida",
+                body: "Antes de adoptar, conviene pensar con honestidad en tu tiempo, tu economía, la estabilidad de tu vivienda y tu compromiso a largo plazo. La AVMA destaca que informarse sobre la elección del gato, su salud, su conducta y la esterilización ayuda a evitar abandonos.\n\nDurante todo su tiempo contigo, estas son las responsabilidades principales:\n\n| **Responsabilidad** | **Qué implica** |\n| Identificación | Microchip y registro en tu municipio, si lo exige tu zona. |\n| Salud preventiva | Revisiones, vacunas según el riesgo y control de parásitos. |\n| Cuidado diario | Comida completa, agua fresca, bandeja limpia, refugios y juego. |\n| Esterilización | Si no piensas criarlo, para evitar camadas no deseadas. |\n| Problemas de conducta | Atenderlos con refuerzo positivo y, si hace falta, con ayuda profesional. |",
+              },
+              {
+                heading: "Abandono y entrega responsable",
+                body: "El abandono es una forma grave de maltrato y una de las causas principales de gatos sin hogar. Si no puedes seguir con tu gato, busca alternativas responsables: apoyo para conservarlo, reubicarlo con alguien de confianza, o llevarlo a un refugio o a una organización de rescate.\n\nEntregarlo sin asegurarte de que tenga un nuevo hogar puede no ser ilegal en todos los lugares, pero sí puede dejarlo expuesto a sufrimiento o a reproducción sin control. Lo mínimo es asegurar que quede bajo cuidado responsable.\n\nPara elegir de forma responsable un gato nuevo, lee [Adquisición Responsable: Guía Legal y Ética Universal](/categoria/adquisicion-responsable/guia-adquisicion-responsable/adquisicion-responsable-global).",
+              },
+              {
+                heading: "Controlar la población de gatos",
+                body: "La esterilización es la herramienta más importante para evitar camadas no deseadas y reducir la llegada de gatos a los refugios. La AVMA recomienda esterilizar antes de los 5 meses cuando corresponde, aunque la edad ideal la decide el veterinario según cada gato.\n\nEn gatos de la calle, el programa TNR (captura, esterilización y retorno) consiste en atraparlos de forma humanitaria, esterilizarlos, vacunarlos cuando corresponde, marcarlos con un corte en la punta de una oreja y devolverlos a su territorio. La ASPCA lo llama TNRM cuando incluye seguimiento y cuidado continuo.\n\nEl TNR no resuelve el problema por sí solo. Para que funcione, hay que esterilizar a una parte alta y constante de la colonia, y combinarlo con la esterilización de los gatos que tienen hogar, la adopción y la educación de la comunidad.",
+              },
+              {
+                heading: "El sacrificio no es la solución",
+                body: "El control ético de las poblaciones no se basa en el sacrificio masivo. Según las guías de la ISFM, la esterilización es el pilar para controlar la reproducción. Si el sacrificio fuera inevitable, debe hacerse con métodos humanos. El envenenamiento y el ahogamiento no son aceptables.\n\nLa AVMA recomienda empezar con estrategias sin sacrificio para los gatos libres o abandonados: adopción, esterilización y manejo de colonias.",
+              },
+              {
+                heading: "Cómo denunciar el maltrato",
+                body: "En muchos lugares hay formas de denunciar el maltrato, el abandono, la venta ilegal o las condiciones de encierro inadecuadas. Puedes acudir a la policía, a la autoridad sanitaria, a la oficina de bienestar animal, a una protectora o a los servicios de tu municipio.\n\nAntes de denunciar, anota con calma la fecha, el lugar y lo que observas. Si es legal y seguro, toma fotos o videos. Nunca pongas en riesgo tu seguridad ni intervengas de forma violenta.",
+              },
+              {
+                heading: "Más allá de lo que exige la ley",
+                body: "Una ley puede exigir solo lo básico. El bienestar real requiere anticiparse a lo que necesita el gato: planear mudanzas o crisis familiares, asegurar su identificación, cuidar su salud, prevenir el aburrimiento y el estrés, y tomar decisiones de final de vida pensando en su calidad de vida.\n\nLa regla práctica es sencilla: cumplir la ley de tu lugar y, además, ofrecer a tu gato una vida con seguridad, salud, rutina y respeto por su forma de ser.",
+              },
             ]
           }
         ]
@@ -1588,20 +1787,24 @@ export const categories: Category[] = [
           {
             slug: "salud-preventiva-global",
             title: "Salud Preventiva y Atención Veterinaria",
-            intro: "Enfermedades infeccontagiosas clave, protocolo sanitario básico y signos de alarma.",
+            intro: "La prevención se basa en una buena revisión veterinaria al llegar el gato a casa, en desparasitarlo, en vacunarlo según su edad y su riesgo, en hacer pruebas de retrovirus cuando corresponda y en esterilizarlo y revisarlo con regularidad. Las vacunas no evitan todo, pero reducen mucho la gravedad y el contagio de enfermedades como la panleucopenia, el calicivirus y el herpesvirus felino.",
             sections: [
               {
-                heading: "Enfermedades infeccontagiosas clave",
-                body: "Panleucopenia: transmisión por heces/orina/fómites, vacuna Triple Felina, alta mortalidad en neonatos.\nRinotraqueítis/Calicivirus: secreciones/contacto directo, vacuna Triple Felina, puede cronificarse.\nLeucemia Felina (FeLV): saliva/sangre/gestación, vacuna + test previo.\nInmunodeficiencia Felina (FIV): mordeduras, esterilización y tests.\nRabia: mordedura de animal infectado, vacuna obligatoria en zonas endémicas.\nPIF: mutación del coronavirus entérico, higiene y evitar hacinamiento.\nToxoplasmosis: ingestión de tejidos infectados, cocinar carnes y limpiar bandeja diaria."
+                heading: "Enfermedades que conviene conocer",
+                body: "Estas son las principales enfermedades infecciosas, cómo se contagian y cómo prevenirlas:\n\n| **Enfermedad** | **Cómo se contagia** | **Qué puede causar** | **Cómo prevenirla** |\n| Panleucopenia (moquillo felino) | Por heces, orina, saliva y objetos contaminados, como bandejas o comederos. | Fiebre, vómitos, diarrea y deshidratación. Puede ser mortal en gatitos. | Vacuna, esencial para todos los gatos. |\n| Rinotraqueítis y calicivirus | Por saliva, secreciones y gotitas al estornudar. | Estornudos, mucosidad en la nariz o los ojos, llagas en la boca y falta de apetito. Algunos quedan como portadores. | Vacunas FVRCP. No evitan siempre el contagio, pero reducen la gravedad. |\n| Leucemia felina (FeLV) | Por contacto estrecho y prolongado: saliva, mordeduras, acicalarse mutuamente o la leche materna. | Anemia, defensas bajas y, en algunos casos, cáncer. | Vacuna en gatitos menores de un año y según riesgo en adultos. Antes, una prueba recomendable. |\n| Inmunodeficiencia felina (FIV) | Sobre todo por mordeduras profundas. | Defensas bajas. Es más frecuente en machos sin castrar que pelean. | Esterilizar, controlar el acceso al exterior y evitar peleas. No hay una vacuna de uso general. |\n| Rabia | Por la saliva de un animal infectado, normalmente mediante mordedura. | Enfermedad mortal, que también puede pasar a las personas. | Vacuna. Puede ser obligatoria según la normativa local. |\n| Peritonitis infecciosa felina (PIF) | Un virus intestinal común, que en algunos gatos muta y provoca una forma grave. | Fiebre persistente, pérdida de peso, barriga hinchada o dificultad para respirar. | No hay vacuna de uso general. Reducir el hacinamiento, mantener limpias las bandejas y evitar el estrés. |\n| Toxoplasmosis | Al comer presas o carne cruda contaminada. | La mayoría de los gatos no tiene síntomas, pero puede eliminar parásitos en las heces. | Cocinar bien la carne, no darle carne cruda, limpiar la bandeja a diario y lavarse las manos. |\n\nSi estás embarazada o tienes defensas bajas, extrema las precauciones y consulta con tu médico.",
               },
               {
                 heading: "Protocolo sanitario básico",
-                body: "1. Adopción/Rescate → Examen veterinario completo.\n2. Desparasitación interna/externa.\n3. Pruebas de FeLV/FIV si hay riesgo.\n4. Inicio de esquema vacunal: 6-8 semanas (Primera Triple), 12 semanas (Refuerzo + Rabia si aplica).\n5. Esterilización a los 4-6 meses.\n6. Chequeos anuales (semestrales si es senior o crónico)."
+                body: "| **Momento** | **Qué hacer** |\n| Al llegar a casa | Una revisión veterinaria completa: peso, temperatura, piel, oídos, boca y descarte de parásitos. |\n| Desparasitación | Los gatitos necesitan un plan propio. Las guías de la AAFP y la AAHA recomiendan tratar cada 2 semanas entre las 3 y 9 semanas, y luego cada mes hasta los 6 meses. |\n| Pruebas de retrovirus | Pruebas de FeLV y FIV en gatos nuevos, sobre todo si hay otros gatos en casa o hay antecedentes de riesgo. En gatitos muy pequeños, pueden repetirse según indique el veterinario. |\n| Vacunas | Empiezan hacia las 6 u 8 semanas, con dosis cada 3 o 4 semanas hasta las 16 o 20 semanas. |\n| Esterilización | Conviene planificarla antes de los 5 meses en gatos que no van a criar. |\n| Revisiones | Al menos una vez al año. En gatos mayores de 7 años o con enfermedades crónicas, cada 6 meses puede ser mejor. |",
               },
               {
-                heading: "Signos de alarma: Cuándo acudir al veterinario",
-                body: "URGENCIA INMEDIATA: Dificultad respiratoria, encías pálidas/azuladas, incapacidad para orinar, convulsiones, pérdida de conciencia, traumatismo evidente.\nConsulta en <24h: Vómitos/diarrea persistentes, rechazo total de comida/agua >24h, letargo extremo, sangre en orina/heces/vómito.\nMonitorear: cambios en hábitos de arenero, pérdida de peso, rascado excesivo, mal aliento.\nNUNCA automedicar: Paracetamol, Ibuprofeno y AINEs son altamente tóxicos."
-              }
+                heading: "Señales de alarma",
+                body: "No todas las señales tienen la misma urgencia. Esta tabla te ayuda a decidir:\n\n| **Nivel** | **Señal** | **Qué hacer** |\n| Urgencia inmediata | Dificultad para respirar o respiración con la boca abierta | Ve a urgencias. |\n| Urgencia inmediata | Encías pálidas, azuladas o muy oscuras | Ve a urgencias. |\n| Urgencia inmediata | Esfuerzo para orinar, poca orina o no puede orinar | Ve a urgencias. Es especialmente grave en machos. |\n| Urgencia inmediata | Convulsiones, colapso o pérdida de conciencia | Ve a urgencias. |\n| Urgencia inmediata | Golpe fuerte, sangrado abundante o sospecha de intoxicación | Ve a urgencias. |\n| En menos de 24 horas | Vómitos o diarrea que no paran | Consulta pronto. |\n| En menos de 24 horas | No come ni bebe durante más de 24 horas | Consulta pronto. |\n| En menos de 24 horas | Muy decaído, se esconde constantemente o está débil | Consulta pronto. |\n| En menos de 24 horas | Sangre en la orina, las heces o el vómito | Consulta pronto. |\n| En menos de 24 horas | Fiebre, dolor o cambios bruscos de conducta | Consulta pronto. |\n| Vigilar y consultar | Cambios en el uso de la bandeja | Anota qué ves y consulta en la próxima revisión. |\n| Vigilar y consultar | Pérdida de peso o de apetito | Anota qué ves y consulta en la próxima revisión. |\n| Vigilar y consultar | Rascado excesivo, caspa o caída de pelo | Anota qué ves y consulta en la próxima revisión. |\n| Vigilar y consultar | Mal aliento, le cuesta masticar o babea mucho | Anota qué ves y consulta en la próxima revisión. |",
+              },
+              {
+                heading: "Nunca te automediques",
+                body: "**El paracetamol es muy tóxico para los gatos**: puede dañar gravemente los glóbulos rojos y el hígado. El ibuprofeno, la aspirina y otros antiinflamatorios humanos también pueden ser peligrosos, incluso en dosis pequeñas.\n\nSi sospechas una intoxicación, guarda el envase, anota la cantidad y la hora, y contacta de inmediato con un veterinario o un centro de toxicología. No le provoques el vómito sin indicación profesional.\n\nSi notas signos de intoxicación, lee [Alimentos tóxicos para gatos](/categoria/alimentacion/prohibidos/toxicos-comunes).",
+              },
             ]
           }
         ]
@@ -1613,24 +1816,32 @@ export const categories: Category[] = [
           {
             slug: "nutricion-etapas",
             title: "Nutrición Científica por Etapas",
-            intro: "Principios fisiológicos universales, requerimientos por etapa y alimentos tóxicos.",
+            intro: "La mejor dieta para un gato es la que es completa y equilibrada para su etapa de vida, con proteína de buena calidad y nutrientes que necesita sí o sí, como la taurina, la arginina y la vitamina A. Lo que necesita cambia mucho con la edad, el peso, la esterilización, la actividad y la salud. Las cifras generales son orientativas: tu veterinario debe ajustarlas.",
             sections: [
               {
-                heading: "Principios fisiológicos universales",
-                body: "Carnívoros estrictos: requieren proteína animal de alta calidad, taurina, arginina, vitamina A preformada. Metabolismo hídrico: beben poco por naturaleza; la dieta húmeda es clave para salud renal. Alimentación fraccionada: en libertad cazan 10-20 presas pequeñas/día; en casa ofrecer múltiples comidas o usar comederos interactivos."
+                heading: "Lo que su cuerpo necesita",
+                body: "Los gatos son carnívoros estrictos. Necesitan nutrientes que vienen sobre todo de la carne. A diferencia de los perros, tienen que obtener de su comida la taurina, la arginina, la vitamina A ya preparada y el ácido araquidónico.\n\nLa taurina es esencial. Si le falta, puede dañar el corazón y la retina. Los gatos también convierten mal el betacaroteno en vitamina A, así que necesitan vitamina A directamente en su alimento.\n\nEn la naturaleza, los gatos comen varias veces al día en pequeñas cantidades. En casa, repartir la ración en varias tomas, o usar comederos interactivos, se parece más a ese ritmo natural y ayuda a controlar el peso.",
               },
               {
-                heading: "Requerimientos por etapa de vida",
-                body: "Lactante (0-2 meses): 200-250 kcal/kg/día, proteína mínima ≥30%, leche maternizada específica. Cachorro (2-12 meses): 150-200 kcal/kg/día, proteína ≥30%, alimento kitten. Adulto (1-7 años): 80-100 kcal/kg/día, proteína ≥26%, control de peso según estilo de vida. Senior (7+ años): 70-90 kcal/kg/día, proteína ≥28% (alta digestibilidad), dietas geriátricas. Esterilizado: 60-80 kcal/kg/día, proteína ≥30%, control estricto de porciones."
+                heading: "Qué necesita en cada etapa",
+                body: "Estas cifras son orientativas. La mejor guía es la etiqueta de un alimento completo y la valoración de tu veterinario sobre su peso y su condición corporal.\n\n| **Etapa** | **Energía orientativa** | **Qué conviene darle** |\n| Lactante (0 a 2 meses) | Muy variable según peso y edad. Necesita leche materna o un sustituto felino. | Nunca leche de vaca. Usa una fórmula específica para gatitos. |\n| Crecimiento (2 a 12 meses) | Alrededor de 200 kcal por kilo al día a las 10 semanas, y cerca de 80 kcal por kilo a los 10 meses. | Alimento completo para gatitos, con más energía y nutrientes para crecer. |\n| Adulto joven (1 a 7 años) | Depende del peso, la actividad y si está esterilizado. Punto de partida: RER = 30 × peso en kg + 70 kcal al día. | Alimento completo para adultos. Ajusta la ración según su condición corporal. |\n| Adulto maduro (7 a 10 años) | Puede acercarse al RER, con ajustes individuales. | Vigila el peso, la masa muscular y las enfermedades crónicas. |\n| Senior (más de 10 años) | Puede necesitar entre 10 y 20 % más que el RER, a veces hasta un 25 %. | Revisa con el veterinario el peso, el apetito, los riñones y la digestión. |\n| Esterilizado | Suele necesitar menos energía que un adulto entero y activo. | Controla las porciones para evitar el sobrepeso. No hay una cifra única. |\n\nSobre la proteína: las guías de la AAFCO establecen un mínimo de 65 g por cada 1.000 kcal para adultos, y 75 g por cada 1.000 kcal para crecimiento y reproducción.",
               },
               {
-                heading: "Alimentos y sustancias tóxicas",
-                body: "NUNCA ofrecer: Chocolate, café, té (metilxantinas), cebolla, ajo, puerro (anemia hemolítica), uvas, pasas (fallo renal), alcohol, masa cruda con levadura, xilitol (hipoglucemia), medicamentos humanos. Plantas de alto riesgo: Lirios (tóxicos renales letales), azaleas, rododendros, tejo, cicuta, digital, eucalipto, poinsettia."
+                heading: "Alimentos y sustancias que no debe comer",
+                body: "| **Qué evitar** | **Por qué** |\n| Chocolate, café, té y otras fuentes de cafeína | Pueden causar temblores, latidos acelerados y convulsiones. |\n| Cebolla, ajo, puerro y cebollín, en cualquier forma | Dañan los glóbulos rojos y pueden causar anemia. |\n| Uvas, pasas y grosellas | Se asocian a daño en los riñones. |\n| Alcohol y masa cruda con levadura | La masa puede expandirse en el estómago y producir alcohol. |\n| Xilitol y productos “sin azúcar” | Es muy peligroso para los gatos. Puede causar bajadas de azúcar y daño en el hígado. |\n| Medicamentos humanos, sobre todo paracetamol, ibuprofeno y aspirina | Pueden ser muy tóxicos, incluso en dosis pequeñas. |",
               },
               {
-                heading: "Estrategias prácticas de hidratación",
-                body: "Fuentes de agua corriente + recipientes estáticos. Agua fresca diaria. Colocar bebederos lejos de comederos y bandejas (n+1 regla). Alimento húmedo como complemento esencial para salud renal y urinaria."
-              }
+                heading: "Plantas peligrosas",
+                body: "Los lirios (género Lilium), como el lirio de Pascua, son especialmente peligrosos para los gatos. Incluso una pequeña cantidad de flores, hojas, polen o agua del jarrón puede causar insuficiencia renal aguda.\n\nOtras plantas de riesgo son las azaleas, los rododendros, el tejo, la digital, el oleandro, el eucalipto, la palma de sagú y la poinsettia. La toxicidad depende de la especie y de la cantidad. Ante cualquier sospecha, retira la planta de su alcance, guarda una muestra y llama de inmediato al veterinario o a un centro de toxicología.",
+              },
+              {
+                heading: "Mantenerlo bien hidratado",
+                body: "Los gatos beben poco y consiguen buena parte del agua de sus presas. Por eso la comida húmeda ayuda a que beba más agua en total y a que su orina esté más diluida.\n\n| **Qué hacer** | **Cómo** |\n| Agua fresca todos los días | Cámbiala con frecuencia. |\n| Varios recipientes | Si acepta una fuente de agua, también puede servir. |\n| Bebederos lejos de la bandeja | Así no los asocia con un sitio sucio ni con ruido. |\n| Comida húmeda | Sobre todo si come mayormente pienso. |\n| Varias estaciones de recursos | Aplica la regla de un recurso por gato, más uno extra. |\n\nPara decidir entre comida húmeda y seca, lee [Comida húmeda vs. pienso seco](/categoria/alimentacion/dietas/comida-humeda-vs-seca).",
+              },
+              {
+                heading: "Cómo elegir su alimento",
+                body: "Busca un producto con la etiqueta de completo y equilibrado, adecuado para su etapa: crecimiento, adulto o senior. No le des suplementos de vitaminas, minerales ni taurina por tu cuenta. Un exceso también puede hacer daño.\n\nSi tu gato tiene enfermedad renal, diabetes, obesidad, alergias o problemas urinarios, la dieta debe elegirla un veterinario o un nutricionista veterinario. En estos casos, una dieta terapéutica comercial suele ser más segura que improvisar una receta casera.",
+              },
             ]
           }
         ]
@@ -1642,28 +1853,36 @@ export const categories: Category[] = [
           {
             slug: "5-pilares-ambientales",
             title: "Enriquecimiento Ambiental y Bienestar Conductual",
-            intro: "Los 5 Pilares del Ambiente Felino Saludable: espacio, recursos, juego, interacción y olfato.",
+            intro: "Un gato se siente bien cuando tiene un lugar seguro, varios recursos, ocasiones para jugar como lo haría en la naturaleza, un trato predecible y un entorno que respeta su olfato. Estas no son cosas extra: son necesidades que ayudan a prevenir el estrés y los problemas de conducta.",
             sections: [
               {
-                heading: "Pilar 1: Espacio seguro y vertical",
-                body: "Altura = seguridad: repisas, árboles para gatos, estanterías permiten observar sin sentirse vulnerables. Refugios accesibles: cajas, túneles, camas cerradas donde poder esconderse. Rutas de escape: evitar callejones sin salida en la distribución del hogar."
+                heading: "Los cinco pilares",
+                body: "Las guías de la AAFP y la ISFM resumen el bienestar felino en cinco pilares:\n\n| **Pilar** | **Qué significa en casa** |\n| 1. Espacio seguro y en altura | Lugares para esconderse, descansar y observar sin sentirse atrapado. |\n| 2. Recursos repartidos | Un recurso por gato, más uno extra, en lugares separados. |\n| 3. Juego que imita la caza | Acechar, perseguir, atrapar y “consumir”. |\n| 4. Interacción positiva y predecible | Trato tranquilo, respeto a sus señales y refuerzo positivo. |\n| 5. Respeto por el olfato | Evitar olores fuertes y cambios bruscos. |",
               },
               {
-                heading: "Pilar 2: Recursos clave distribuidos (regla n+1)",
-                body: "Comederos: separados de bebederos y bandejas, múltiples ubicaciones si hay >1 gato. Bebederos: fuentes + recipientes estáticos, agua fresca diaria. Bandejas: n+1 (número de gatos +1), ubicadas en zonas tranquilas, lejos de ruido. Rascadores: verticales y horizontales, materiales sisal/cartón/madera, ubicar cerca de zonas de descanso."
+                heading: "1. Un espacio seguro y en altura",
+                body: "Los gatos necesitan sitios para esconderse, descansar y mirar el mundo sin sentirse atrapados. Repisas, torres, cajas, túneles y camas cerradas les dan control y una salida si hay ruidos, visitas u otros gatos.\n\nLa altura ayuda, pero solo si el gato puede subir y bajar sin obstáculos ni lugares donde lo puedan sorprender. Si hay varios gatos en casa, ofrece al menos un refugio por gato, más uno adicional, en distintas zonas.\n\nPara entender el comportamiento detrás de estas necesidades, lee [Comportamiento Felino: Cómo entender y cuidar mejor a tu gato](/categoria/comportamiento/interio-exterior/guia-para-entender-y-cuidar).",
               },
               {
-                heading: "Pilar 3: Juego que simula la caza",
-                body: "Secuencia natural: acechar → perseguir → capturar → 'comer'. Juguetes interactivos: cañas con plumas, láseres (siempre finalizar con premio físico), rompecabezas de comida. Sesiones cortas: 2-3 juegos de 10-15 min/día, preferentemente al atardecer (horario natural de actividad felina)."
+                heading: "2. Recursos repartidos (la regla n+1)",
+                body: "La regla práctica es tener un recurso por gato, más uno extra, y ponerlos en lugares separados.\n\n| **Recurso** | **Cómo organizarlo** |\n| Bandejas | Una por gato, más una extra, en zonas tranquilas y lejos de la comida. No las pongas todas juntas. |\n| Comida y agua | En recipientes separados entre sí y lejos de la bandeja. Así se reduce la competencia. |\n| Rascadores | Verticales y horizontales, de sisal, cartón o madera, cerca de las zonas de descanso. |\n| Camas y escondites | Varios, con más de una salida, para que pueda elegir y retirarse sin sentirse acorralado. |",
               },
               {
-                heading: "Pilar 4: Interacción humana predecible y positiva",
-                body: "Respetar el consentimiento: dejar que el gato inicie el contacto, no forzar caricias. Comunicación suave: voz tranquila, movimientos lentos, parpadeo lento ('beso de gato'). Refuerzo positivo: premiar conductas deseadas con comida/juego/atención. NUNCA castigo físico ni gritos (generan miedo/agresividad)."
+                heading: "3. Juego que imita la caza",
+                body: "El juego debe seguir la secuencia de la caza: acechar, perseguir, atrapar y “comer”. Las cañas con plumas, los ratones de tela, los juguetes que se mueven de forma impredecible y los comederos con rompecabezas funcionan mejor que un juguete quieto.\n\nSi usas un puntero láser, ten cuidado: el gato nunca lo atrapa, y eso puede frustrarlo. Termina la sesión con un juguete o un premio que pueda tocar.\n\nNo hay una dosis universal. Suelen ser mejores varias sesiones cortas al día que una sola larga. Adapta la intensidad a la edad, la salud y los gustos de tu gato. Los gatos mayores también necesitan exploración y actividad suave.",
               },
               {
-                heading: "Pilar 5: Respeto por el olfato felino",
-                body: "El mundo es olor: identifican personas, territorios y estados emocionales por feromonas. Evitar limpieza excesiva: no lavar con frecuencia las zonas donde se frota (mejillas, cabeza). Feromonas sintéticas: Feliway® o equivalentes pueden reducir estrés en mudanzas, visitas al vet o llegada de nuevos miembros."
-              }
+                heading: "4. Trato positivo y predecible",
+                body: "Deja que el gato se acerque cuando quiera, y respeta sus señales de “no”: orejas hacia atrás, cola tensa, alejarse, bufar o esconderse.\n\nUsa refuerzo positivo: premios, juego y caricias solo si él las busca, con una voz tranquila. Evita los gritos, los castigos, rociarlo con agua o encerrarlo. No le enseñan nada útil y pueden aumentar el miedo.\n\nEl parpadeo lento puede ser una señal amable. Pero no reemplaza su permiso: si se aleja, no lo persigas.",
+              },
+              {
+                heading: "5. Respeto por el olfato",
+                body: "El olfato es una de las formas más importantes en que se comunican los gatos. Se frotan para dejar señales y reconocer personas, lugares y objetos. Si se limpia en exceso o se usan perfumes fuertes, esas señales se borran y el gato puede sentirse inseguro.\n\nEvita los ambientadores fuertes y los cambios bruscos de muebles o de sitio de los recursos. Después de una mudanza, una visita al veterinario o la llegada de otra mascota, ofrécele objetos con olores conocidos y haz los cambios poco a poco.\n\nLas feromonas sintéticas, como Feliway®, pueden ayudar en algunos gatos durante momentos de estrés. No son una solución para todo: funcionan mejor junto con un entorno seguro y un buen manejo.",
+              },
+              {
+                heading: "Cuándo sospechar algo más que conducta",
+                body: "Si tu gato se esconde mucho, deja de usar la bandeja, muestra agresividad o cambia de repente, consulta primero con el veterinario. Puede haber dolor o una enfermedad detrás, y no conviene asumir que es solo un problema de conducta.",
+              },
             ]
           }
         ]
@@ -1675,24 +1894,32 @@ export const categories: Category[] = [
           {
             slug: "esterilizacion-evidencia",
             title: "Gestión Reproductiva y Control Poblacional Ético",
-            intro: "Esterilización: evidencia global, mitos desmentidos y protocolo TNR para gatos ferales.",
+            intro: "Esterilizar es la forma más eficaz de evitar camadas no deseadas, reducir enfermedades reproductivas y disminuir conductas ligadas a las hormonas. En los gatos de la calle, el enfoque más ético combina el programa TNR, la adopción de gatos sociables y cuidados constantes.",
             sections: [
               {
-                heading: "Esterilización: Evidencia Global",
-                body: "¿Qué es?: Hembras: Ovariohisterectomía. Machos: Orquiectomía.\n¿Cuándo?: Recomendación internacional: 4-6 meses (antes del primer celo).\n¿Por qué?: Prevención de cáncer mamario (>90% reducción si se hace antes del primer celo), eliminación de piometra (infección uterina mortal), reducción de marcaje con orina/vagabundeo/peleas, prevención de transmisión FeLV/FIV, control poblacional humanitario."
+                heading: "Qué es la esterilización",
+                body: "En las gatas, la cirugía habitual es la ovariohisterectomía: se retiran los ovarios y el útero. En los machos, la castración consiste en retirar los dos testículos. Las dos eliminan la capacidad de tener crías.\n\nLas organizaciones veterinarias como la AVMA, la AAHA, la AAFP y la ASV recomiendan esterilizar a los gatos que no van a criar antes de los 5 meses, alrededor de los 4 meses. En refugios y programas bien organizados puede hacerse con seguridad desde las 6 u 8 semanas.",
               },
               {
-                heading: "Mitologicos desmentidos con evidencia",
-                body: "Mito: 'Es bueno que tenga una camada antes de esterilizar' → Realidad: No aporta beneficios, solo aumenta riesgo de sobrepoblación.\nMito: 'Los machos esterilizados engordan' → Realidad: El peso depende de dieta y ejercicio; la esterilización reduce un 20-30% el requerimiento energético.\nMito: 'La esterilización cambia la personalidad' → Realidad: Reduce conductas por hormonas, pero no la esencia del gato.\nMito: 'Es cruel operarlos tan jóvenes' → Realidad: La recuperación es más rápida en jóvenes."
+                heading: "Beneficios con respaldo",
+                body: "| **Beneficio** | **Qué significa** |\n| Evita embarazos no deseados | Las gatas pueden entrar en celo desde los 4 o 5 meses. Esperar aumenta el riesgo de camadas accidentales. |\n| Previene la piómetra | Quitar el útero y los ovarios elimina el riesgo de esta infección uterina grave. |\n| Reduce los tumores de mama | Cuanto antes se esteriliza, sobre todo antes del primer celo, menor es el riesgo de cáncer mamario. La reducción depende de la edad; no es un porcentaje fijo para todos los casos. |\n| Elimina el cáncer de testículos | Al retirar los testículos, desaparece el riesgo de estos tumores. |\n| Reduce las conductas hormonales | Disminuyen las escapadas, las peleas, los maullidos de celo y el marcado con orina. |\n| Ayuda al control de la población | Una esterilización temprana y generalizada reduce las entradas y los sacrificios en refugios. |\n\nPara decidir la edad de la cirugía, lee [¿Por qué castrar a los gatitos?](/categoria/castracion/guia-infantil/por-que-castrar).",
               },
               {
-                heading: "Protocolo TNR (Trap-Neuter-Return)",
-                body: "1. CAPTURA: Jaulas trampa con cebo, monitoreo constante, protección climática, cubrir jaula.\n2. INTERVENCIÓN: Esterilización por profesional experto, analgesia pre/intra/postoperatoria, vacunación, corte de oreja (ear-tip) 0.8-1cm punta izquierda para identificación.\n3. RETORNO: Al mismo punto de captura, cuidador comunitario provee alimento/agua/refugio.\n\nBeneficios: Reducción progresiva de población, disminución de ruidos nocturnos, menos marcaje, convivencia más armónica."
+                heading: "Mitos y realidades",
+                body: "| **Mito** | **Realidad** |\n| “Es bueno que tenga una camada antes.” | No hay beneficio médico ni de conducta conocido en esperar a un celo o a una camada. |\n| “Los castrados engordan sí o sí.” | Pueden necesitar menos energía después de la cirugía. El peso depende de la ración, la dieta, la actividad y el seguimiento. |\n| “Cambia su personalidad.” | Sigue siendo el mismo gato. Lo que suele disminuir son las conductas impulsadas por las hormonas. |\n| “Operar a un gatito joven es cruel.” | Con anestesia, analgesia y protocolos veterinarios, la cirugía temprana es segura. Suele ser rápida y la recuperación, ágil. |",
               },
               {
-                heading: "Gatos ferales vs. callejeros sociables",
-                body: "Gato feral: Nacido sin contacto humano, evita interacción, NO adoptable, su bienestar está en su territorio con cuidados a distancia.\nGato callejero sociable: Fue mascota, busca interacción, SÍ adoptable con paciencia.\nManejo: Programas TNR para ferales, rescate y adopción responsable para sociables."
-              }
+                heading: "El programa TNR, paso a paso",
+                body: "El TNR (captura, esterilización y retorno, en inglés Trap–Neuter–Return) se aplica a los gatos de la calle que no son sociables y viven al aire libre. La idea es atraparlos con cuidado, esterilizarlos, vacunarlos cuando corresponde y devolverlos a su territorio.\n\n| **Paso** | **Qué implica** |\n| 1. Captura humanitaria | Trampas con cebo, cubiertas para reducir el estrés y un seguimiento constante. |\n| 2. Atención veterinaria | Esterilización, analgesia antes, durante y después de la cirugía, vacunas según el protocolo y revisión de salud. |\n| 3. Marcaje | Se corta la punta de una oreja, normalmente la izquierda, mientras el gato está anestesiado. Es una marca visible y permanente, para no volver a capturarlo sin necesidad. |\n| 4. Retorno | El gato vuelve a su territorio, donde las personas que lo cuidan pueden ofrecerle comida, agua y refugio. |\n\nEl TNR por sí solo no reduce la población. Para que funcione, tiene que abarcar una parte alta de la colonia, mantenerse en el tiempo y combinarse con la esterilización de los gatos que tienen hogar y con la adopción de gatitos o gatos sociables.",
+              },
+              {
+                heading: "Tipos de gato en la calle",
+                body: "| **Tipo** | **Cómo se le ayuda** |\n| Feral | Nació y creció sin contacto con personas. Suele evitar a la gente y huir. Lo mejor es el TNR, cuidarlo a distancia y respetar su territorio. |\n| Callejero sociable | Tuvo hogar o fue socializado. Busca contacto y acepta caricias. Puede ser candidato a rescate y adopción responsable. |\n| Gatito nacido en la calle | Sus posibilidades de adopción dependen mucho de su edad y de su socialización temprana. Cuanto antes reciba contacto humano positivo, mejor. |",
+              },
+              {
+                heading: "Un control ético",
+                body: "El control ético de las poblaciones no se basa en sacrificios masivos. Según las guías de la ISFM, si el retorno no es posible y no hay una alternativa adecuada, conviene considerar la eutanasia humanitaria antes que un encierro prolongado. El envenenamiento y otros métodos crueles no son aceptables.\n\nLo más eficaz es prevenir: esterilizar a tiempo, adoptar de forma responsable y cuidar a los gatos de la comunidad. Así se reducen los gatitos sin hogar y el sufrimiento que los acompaña.",
+              },
             ]
           }
         ]
@@ -1704,20 +1931,36 @@ export const categories: Category[] = [
           {
             slug: "vinculo-humano-felino",
             title: "El Vínculo Humano-Felino y el Compromiso a Largo Plazo",
-            intro: "Beneficios de la convivencia, preparación para el final de la vida y checklist de tenencia responsable.",
+            intro: "Vivir con un gato puede dar compañía, rutina y afecto. También es un compromiso que puede durar de 15 a 20 años, con cuidados preventivos, un hogar seguro y decisiones difíciles al final de su vida. No es una terapia garantizada ni reemplaza un tratamiento médico.",
             sections: [
               {
-                heading: "Beneficios documentados de la convivencia",
-                body: "Salud cardiovascular: menor riesgo de infarto e ictus. Salud mental: el ronroneo (25-150 Hz) reduce estrés y presión arterial, disminuye sensación de soledad. Desarrollo infantil: menor incidencia de alergias y asma. Terapia asistida: gatos en hospitales, residencias y centros educativos."
+                heading: "Lo que la convivencia sí aporta",
+                body: "Los beneficios más claros son emocionales y sociales: compañía, menos sensación de soledad, rutinas y mucho afecto.\n\nEn la salud, la evidencia es más modesta. Algunos estudios de seguimiento han encontrado menor riesgo de infarto en personas con gatos, pero no es posible afirmar una relación de causa y efecto. Otros análisis no encuentran una asociación clara.\n\nTampoco hay pruebas sólidas de que el ronroneo baje la presión o cure enfermedades. Un gato puede ronronear cuando está cómodo, pero también cuando tiene dolor o estrés.\n\nEn niños, la relación con las alergias y el asma es compleja. Algunos estudios sugieren efectos distintos según el caso. Por eso no conviene adoptar un gato “para prevenir alergias”.",
               },
               {
-                heading: "Prepararse para el final de la vida",
-                body: "Señales: pérdida de interés en comida/agua/interacción, dificultad para moverse, incontinencia, dolor crónico no manejable, enfermedad terminal. Decisiones éticas: consultar opciones paliativas, evaluar calidad de vida con escalas validadas (HHHHMM), considerar eutanasia humanitaria cuando el sufrimiento sea irreversible. Acompañar con dignidad: presencia, caricias, voz tranquila. Permitirse el duelo: la pérdida de un compañero es real y válida."
+                heading: "Prepararse para el final de su vida",
+                body: "Algunas señales indican que el gato se está deteriorando: pierde interés por la comida o el agua, se aísla, le cuesta moverse, tiene dolor que no se controla, se orina sin querer, baja de peso poco a poco o tiene más días malos que buenos.\n\nNinguna señal aislada basta para decidir. Lo mejor es valorar el conjunto con el veterinario. Una herramienta útil es la escala HHHHHMM, que mira siete aspectos:\n\n| **Aspecto** | **Qué mirar** |\n| Hurt (dolor) | ¿Está bien controlado? |\n| Hunger (apetito) | ¿Come con ganas? |\n| Hydration (hidratación) | ¿Bebe lo suficiente? |\n| Hygiene (higiene) | ¿Se asea o está descuidado? |\n| Happiness (ánimo) | ¿Disfruta de sus cosas? |\n| Mobility (movilidad) | ¿Puede moverse con comodidad? |\n| More good days than bad (días buenos) | ¿Tiene más días buenos que malos? |\n\nEs una ayuda para pensar, no una fórmula que decida por ti.\n\nHay opciones como los cuidados paliativos, el control del dolor y los ajustes en casa. Cuando el sufrimiento no se puede aliviar, la eutanasia humanitaria puede ser la decisión más amable. Debe centrarse en su bienestar, con apoyo del veterinario. Sentir pena es normal, y acompañarlo con calma hasta el final también es una forma de cuidarlo.",
               },
               {
-                heading: "Checklist de tenencia responsable",
-                body: "ANTES DE ADOPTAR: Evaluar tiempo/recursos/compromiso a 15-20 años. Preparar hogar: protección ventanas, espacios verticales, bandeja, rascador. Investigar veterinarios con enfoque felino. PRIMEROS 30 DÍAS: Identificación (microchip), examen veterinario, desparasitación, inicio vacunal, adaptación gradual a dieta, establecer rutina. MANTENIMIENTO ANUAL: Chequeo preventivo, refuerzo vacunas, control de peso, renovación antiparasitarios, evaluación de enriquecimiento ambiental. SEÑALES DE ALARMA: No come/bebe >24h, vómitos/diarrea con sangre, dificultad para orinar, letargo extremo, temperatura >39.5°C o <37.5°C."
-              }
+                heading: "Antes de adoptar",
+                body: "| **Qué revisar** | **Por qué importa** |\n| Tiempo y presupuesto | Un gato puede vivir muchos años. Piensa en consultas, vacunas, comida, arena y emergencias. |\n| Entorno seguro | Protege ventanas y balcones con mallas, y ten escondites, rascadores y espacios en altura. |\n| Bandejas | Una por gato, más una extra. |\n| Veterinario | Elige a uno con experiencia en gatos. |\n| Acuerdo en casa | Todos los que viven contigo deben estar de acuerdo. Revisa también alergias y las normas de tu vivienda. |",
+              },
+              {
+                heading: "Los primeros 30 días",
+                body: "| **Qué hacer** | **Cómo** |\n| Primera revisión | Pide una consulta inicial, un microchip y un plan de vacunas y desparasitación. |\n| Cambios de comida | Hazlos poco a poco, con horarios fijos para comer, jugar y descansar. |\n| Espacio tranquilo | Al principio, dale una habitación tranquila para que explore a su ritmo. |\n| Confianza | No lo fuerces a tocarte. Usa juego, premios y rutinas predecibles. |\n\nSi acabas de adoptar, revisa [Bienvenido a casa: cómo cuidar a tu nuevo gato desde el primer día](/categoria/adopcion/bienvenida/guia-bienvenida-cuidados).",
+              },
+              {
+                heading: "Mantenimiento de cada año",
+                body: "Haz al menos una revisión preventiva al año. Si es mayor o tiene una enfermedad crónica, puede necesitar controles cada seis meses.\n\nRevisa su peso, su condición corporal, sus dientes, su dieta y su entorno. Mantén al día las vacunas y la prevención de parásitos según tu veterinario y el estilo de vida del gato.",
+              },
+              {
+                heading: "Señales de alarma",
+                body: "Pide atención urgente si tu gato:\n\n| **Señal** | **Qué hacer** |\n| No come ni bebe durante más de 24 horas | Consulta de inmediato. |\n| Vomita o tiene diarrea que no para, con sangre o con debilidad | Consulta de inmediato. |\n| Hace esfuerzos para orinar, orina muy poco o no orina | Es una urgencia. En los machos puede ser una obstrucción, que pone la vida en riesgo. |\n| Está muy decaído, respira con dificultad, tiene convulsiones o dolor fuerte | Acude a urgencias veterinarias. |\n| Tiene una temperatura fuera de lo normal | En gatos, lo normal suele estar entre 37,5 y 39,2 °C. Si se sale de ese rango, consulta. |",
+              },
+              {
+                heading: "Un compromiso para toda la vida",
+                body: "Un gato no es un adorno ni una solución temporal. Es un ser sensible, con necesidades físicas, emocionales y de salud durante toda su vida.\n\nEl vínculo se construye respetando su lenguaje corporal, con cuidados preventivos, juego y un ambiente enriquecido. Y también con una planificación honesta del tiempo y de los recursos que necesita.",
+              },
             ]
           }
         ]

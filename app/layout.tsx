@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import GoogleAdsense from "./components/GoogleAdsense";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { defaultOgImage } from "./data/categoryImages";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
 const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
@@ -29,12 +31,15 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s · ${SITE_NAME}`,
+    template: "%s · AlmaGatuna",
     default: SITE_NAME,
   },
   description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
   metadataBase: new URL(SITE_URL),
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [
+    { rel: "icon", url: "/icon.svg", type: "image/svg+xml" },
+    { rel: "icon", url: "/favicon.ico", sizes: "any" },
+  ],
   verification: { google: "qmX0dopniMhIDRzWyOlV_pa74j0Z_rkhm3aCQRDKHRY" },
   openGraph: {
     type: "website",
@@ -42,13 +47,13 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
     locale: "es_CL",
-    images: [{ url: `${SITE_URL}/featuredcontent/cuidadoIntegral.png`, width: 1200, height: 630 }],
+    images: [{ url: `${SITE_URL}${defaultOgImage}`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
-    images: [`${SITE_URL}/featuredcontent/cuidadoIntegral.png`],
+    images: [`${SITE_URL}${defaultOgImage}`],
   },
 };
 
@@ -58,18 +63,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="es" data-scroll-behavior="smooth" className={`${playfair.variable} ${dmSans.variable}`}>
       <head>
         <link rel="preconnect" href="https://i.postimg.cc" />
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            function isDashboard() { return window.location.pathname.startsWith('/gnt-admin'); }
-            document.addEventListener('copy', function(e) { if (!isDashboard()) e.preventDefault(); });
-            document.addEventListener('cut', function(e) { if (!isDashboard()) e.preventDefault(); });
-            document.addEventListener('contextmenu', function(e) { if (!isDashboard()) e.preventDefault(); });
-            document.addEventListener('selectstart', function(e) { if (!isDashboard()) e.preventDefault(); });
-          `,
-        }} />
       </head>
       <body className={`${playfair.variable} ${dmSans.variable}`}>
         <script
@@ -100,12 +96,19 @@ export default function RootLayout({
         <GoogleAnalytics />
         <GoogleAdsense />
         <I18nProvider>
+          <a
+            href="#contenido"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[1000] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-[var(--charcoal)] focus:shadow-lg focus:outline-2 focus:outline-[var(--amber-dark)]"
+          >
+            Saltar al contenido
+          </a>
           <Navbar />
-          <main style={{ flex: 1 }}>
+          <main id="contenido" style={{ flex: 1 }}>
             {children}
           </main>
           <Footer />
         </I18nProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

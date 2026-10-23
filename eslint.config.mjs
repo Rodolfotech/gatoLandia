@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts de skills instaladas (no son código de la web).
+    ".agents/**",
   ]),
 ]);
 

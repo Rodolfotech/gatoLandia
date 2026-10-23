@@ -1,11 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useI18n } from "../i18n/I18nContext";
-import { Category, Subcategory, Topic } from "../data/cats";
+import { Category, Subcategory, Topic, categories as allCats } from "../data/cats";
 import Pagination from "./Pagination";
 import AdBanner from "./AdBanner";
 import ImageCarousel from "./ImageCarousel";
+import { activateOnKey } from "@/app/lib/keyboardNav";
+import EmergencyCard from "./EmergencyCard";
+import { categoryImages } from "../data/categoryImages";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
 const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
@@ -126,10 +130,18 @@ function renderMarkdown(text: string): React.ReactNode {
 
 // Inline markdown: handles **bold**
 function renderInlineMarkdown(text: string): React.ReactNode {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  const parts = text.split(/(\*\*.*?\*\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={i} style={{ fontWeight: 700, color: "#2c2416" }}>{part.slice(2, -2)}</strong>;
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) {
+      return (
+        <Link key={i} href={link[2]} style={{ color: "#a0622a", textDecoration: "underline", textUnderlineOffset: 3 }}>
+          {link[1]}
+        </Link>
+      );
     }
     return part;
   });
@@ -157,6 +169,19 @@ export default function TopicContent({
   onNavigate,
 }: TopicContentProps) {
   const { t } = useI18n();
+
+      // Primero los temas de la misma subcategoría, luego los de la misma categoría, y después el resto.
+      const candidates: { cat: Category; sub: Subcategory; topic: Topic; score: number }[] = [];
+      for (const c of allCats) {
+        for (const s of c.subcategories) {
+          for (const t of s.topics) {
+            if (c.slug === category.slug && s.slug === subcategory.slug && t.slug === topic.slug) continue;
+            const score = c.slug !== category.slug ? 0 : s.slug === subcategory.slug ? 2 : 1;
+            candidates.push({ cat: c as unknown as Category, sub: s as unknown as Subcategory, topic: t as unknown as Topic, score });
+          }
+        }
+      }
+      const picks = candidates.sort((a, b) => b.score - a.score).slice(0, 4);
 
   useEffect(() => {
     const desc = topic.intro.replace(/\*\*/g, "").slice(0, 160);
@@ -210,39 +235,140 @@ export default function TopicContent({
     }
   }, [topic, category, subcategory]);
   
-  const mediaItems = topic.sections.filter(s => s.image || s.adSlot);
   const [lightbox, setLightbox] = useState<string | null>(null);
   const [carouselViewer, setCarouselViewer] = useState<{ images: { src: string; alt: string }[]; current: number } | null>(null);
 
+  const articleRef = useRef<HTMLElement>(null);
+  const [readProgress, setReadProgress] = useState(0);
+  const readingMinutes = Math.max(
+    1,
+    Math.round(topic.sections.map((sec) => sec.body).join(" ").split(/\s+/).length / 200),
+  );
+
+  useEffect(() => {
+    function update() {
+      const el = articleRef.current;
+      if (!el) return;
+      const start = el.getBoundingClientRect().top + window.scrollY;
+      const total = el.offsetHeight - window.innerHeight;
+      const scrolled = window.scrollY - start;
+      const pct = total <= 0 ? 100 : Math.min(100, Math.max(0, Math.round((scrolled / total) * 100)));
+      setReadProgress(pct);
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [topic]);
+
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const isDialogOpen = lightbox !== null || carouselViewer !== null;
+
+  // Mientras hay un visor abierto: el foco entra en "Cerrar", Tab no sale del visor,
+  // Escape lo cierra y, al cerrarlo, el foco vuelve al elemento que lo abrió.
+  useEffect(() => {
+    if (!isDialogOpen) return;
+    const trigger = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setLightbox(null);
+        setCarouselViewer(null);
+        return;
+      }
+      if (e.key !== "Tab" || !dialogRef.current) return;
+      const items = dialogRef.current.querySelectorAll<HTMLElement>("button");
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (!first) return;
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      trigger?.focus();
+    };
+  }, [isDialogOpen]);
+  const [activeSection, setActiveSection] = useState<number | null>(null);
+
+  // Resalta en el índice la sección que se está leyendo.
+  useEffect(() => {
+    const elements = topic.sections
+      .map((_, i) => document.getElementById(`seccion-${i}`))
+      .filter((el): el is HTMLElement => el !== null);
+    if (elements.length === 0 || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(Number(entry.target.id.replace("seccion-", "")));
+          }
+        });
+      },
+      { rootMargin: "0px 0px -70% 0px" }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [topic]);
+
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-      <div className="topic-content-layout">
+      <div className="page-shell topic-content-layout">
+        <details className="topic-toc" open>
+              <summary>En este artículo</summary>
+              <nav aria-label="Índice del artículo">
+                <ol>
+                  {topic.sections.map((section, i) =>
+                    section.heading === "Antes de empezar" ? null : (
+                      <li key={section.heading}>
+                        <a
+                          href={`#seccion-${i}`}
+                          aria-current={activeSection === i ? "location" : undefined}
+                        >
+                          {section.heading}
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ol>
+              </nav>
+              <div style={{ marginTop: "1rem" }}>
+                <div
+                  role="progressbar"
+                  aria-label="Progreso de lectura"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={readProgress}
+                  style={{ height: 6, borderRadius: 999, background: "rgba(201,180,154,0.35)", overflow: "hidden" }}
+                >
+                  <div style={{ width: `${readProgress}%`, height: "100%", background: "var(--amber-dark)", transition: "width 150ms linear" }} />
+                </div>
+                <p style={{ margin: "0.4rem 0 0", fontSize: "0.75rem", color: "var(--mid)" }}>Leído {readProgress}%</p>
+              </div>
+            </details>
         <article
+          ref={articleRef}
           style={{
-            flex: 1,
-            padding: "var(--page-padding-lg, 3.5rem) var(--page-padding, 3rem)",
-            maxWidth: 900,
+            minWidth: 0,
+            padding: "2.5rem 0 3rem",
             fontFamily: "'Inter', 'DM Sans', sans-serif",
           }}
         >
-          {/* Breadcrumb */}
-          <nav
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              fontSize: "0.75rem",
-              color: "#c9b49a",
-              marginBottom: "2rem",
-            }}
-          >
-            <span style={{ color: category.color, fontWeight: 500 }}>
-              {category.label}
-            </span>
-            <span>›</span>
-            <span>{subcategory.label}</span>
-          </nav>
-
+          {/* Eyebrow: categoría, subcategoría y tiempo de lectura */}
+          <p style={{ margin: "0 0 0.75rem", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--amber-dark)" }}>
+            {category.label} · {subcategory.label}
+          </p>
           {/* Title */}
           <h1
             style={{
@@ -257,27 +383,34 @@ export default function TopicContent({
           >
             {topic.title}
           </h1>
+          <p style={{ margin: "0 0 1.5rem", fontSize: "0.85rem", color: "var(--mid)" }}>{readingMinutes} min de lectura</p>
 
           {/* Intro / Direct Answer */}
           <div
             id="topic-intro"
             style={{
-              background: `linear-gradient(135deg, ${category.color}08, ${category.color}02)`,
-              borderLeft: `4px solid ${category.color}`,
-              borderRadius: "0 12px 12px 0",
+              background: "#fffbf5",
+              border: "1px solid rgba(201, 180, 154, 0.45)",
+              borderRadius: 12,
               padding: "1.25rem 1.5rem",
               marginBottom: "2.5rem",
             }}
           >
             <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.4rem",
               fontSize: "0.7rem",
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: "0.08em",
-              color: category.color,
+              color: "var(--rust)",
               marginBottom: "0.5rem",
             }}>
-              🎯 Respuesta rápida
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13 2 3 14h7l-1 8 10-12h-7z" />
+              </svg>
+              Respuesta rápida
             </div>
             <div style={{
               fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
@@ -291,7 +424,7 @@ export default function TopicContent({
           {/* Sections */}
           <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
             {topic.sections.map((section, i) => (
-              <section key={section.heading}>
+              <section key={section.heading} id={`seccion-${i}`} style={{ scrollMarginTop: "6rem" }}>
                 <div
                   style={{
                     display: "flex",
@@ -303,21 +436,16 @@ export default function TopicContent({
                   <span
                     style={{
                       flexShrink: 0,
-                      width: 32,
-                      height: 32,
-                      borderRadius: "50%",
-                      background: `${category.color}18`,
-                      border: `1.5px solid ${category.color}40`,
-                      display: section.heading === "Antes de empezar" ? "none" : "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "0.75rem",
+                      display: section.heading === "Antes de empezar" ? "none" : "block",
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: "1rem",
                       fontWeight: 700,
-                      color: category.color,
-                      marginTop: 2,
+                      color: "var(--amber-dark)",
+                      marginTop: 4,
+                      fontVariantNumeric: "tabular-nums",
                     }}
                   >
-                    {topic.sections.filter((_, idx) => idx < i && topic.sections[idx].heading !== "Antes de empezar").length + 1}
+                    {String(topic.sections.filter((_, idx) => idx < i && topic.sections[idx].heading !== "Antes de empezar").length + 1).padStart(2, "0")}
                   </span>
                   <h2
                     style={{
@@ -338,13 +466,119 @@ export default function TopicContent({
               </section>
             ))}
           </div>
+          <p
+            style={{
+              marginTop: "2.5rem",
+              padding: "1rem 1.25rem",
+              borderRadius: 12,
+              background: "rgba(160, 98, 42, 0.06)",
+              fontSize: "0.85rem",
+              lineHeight: 1.6,
+              color: "#6b5c44",
+            }}
+          >
+            Esta información es orientativa y no sustituye la consulta veterinaria. Ante cualquier duda sobre la salud o el comportamiento de su gato, consulte con su veterinario.
+          </p>
         </article>
 
-        {(mediaItems.length > 0 || topic.slug === "adquisicion-responsable-global") && (
+        {(
           <div className="topic-media-column">
+            <EmergencyCard />
+            {/* También te puede interesar */}
+        {(() => {
+          if (picks.length === 0) return null;
+          return (
+            <section style={{ marginBottom: "2.5rem" }}>
+              <h2 style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "1.25rem",
+                fontWeight: 700,
+                color: "#2c2416",
+                marginBottom: "1rem",
+              }}>
+                También te puede interesar
+              </h2>
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "1fr",
+                gap: "0.75rem",
+              }}>
+                {picks.map(({ cat, sub, topic }) => (
+                  <a
+                    key={`${cat.slug}-${sub.slug}-${topic.slug}`}
+                    href={`/categoria/${cat.slug}/${sub.slug}/${topic.slug}`}
+                    style={{
+                      textAlign: "left",
+                      background: "rgba(0,0,0,0.02)",
+                      border: "1px solid rgba(201,180,154,0.3)",
+                      borderRadius: 10,
+                      padding: "0.85rem 1rem",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.85rem",
+                      cursor: "pointer",
+                      fontFamily: "'DM Sans', sans-serif",
+                      textDecoration: "none",
+                      transition: "all 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget;
+                      el.style.borderColor = cat.color + "50";
+                      el.style.background = cat.color + "08";
+                      el.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget;
+                      el.style.borderColor = "rgba(201,180,154,0.3)";
+                      el.style.background = "rgba(0,0,0,0.02)";
+                      el.style.transform = "translateY(0)";
+                    }}
+                  >
+                    {categoryImages[cat.slug] && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={categoryImages[cat.slug]}
+                        alt=""
+                        width={56}
+                        height={56}
+                        loading="lazy"
+                        style={{ flexShrink: 0, width: 56, height: 56, borderRadius: 8, objectFit: "cover" }}
+                      />
+                    )}
+                    <div style={{ minWidth: 0 }}>
+                    <span style={{
+                      fontSize: "0.6rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      color: cat.color,
+                      fontWeight: 600,
+                    }}>
+                      {cat.label} · {sub.label}
+                    </span>
+                    <p style={{
+                      fontSize: "0.82rem",
+                      fontWeight: 600,
+                      color: "#2c2416",
+                      margin: "0.3rem 0 0",
+                      lineHeight: 1.3,
+                    }}>
+                      {topic.title}
+                    </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
             {topic.slug === "adquisicion-responsable-global" && (
               <>
                 <div
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Ampliar imagen: adquisición responsable"
+                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
+                  onKeyDown={activateOnKey(() => setLightbox("https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp"))}
                   onClick={() => setLightbox("https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp")}
                   style={{
                     width: "100%",
@@ -358,7 +592,7 @@ export default function TopicContent({
                 >
                   <Image
                     src="https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp"
-                    alt=""
+                    alt="Adquisición responsable: un compromiso para toda su vida. Adquirir un gatito es una decisión importante que implica amor, responsabilidad y compromiso. No es solo tener un gatito, es darle un hogar y una vida feliz."
                     fill
                     quality={100}
                     sizes="(max-width: 768px) 100vw, 800px"
@@ -396,6 +630,11 @@ export default function TopicContent({
                   />
                 </div>
                 <div
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Ampliar imagen: recuerda"
+                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
+                  onKeyDown={activateOnKey(() => setLightbox("https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp"))}
                   onClick={() => setLightbox("https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp")}
                   style={{
                     width: "100%",
@@ -408,7 +647,7 @@ export default function TopicContent({
                 >
                   <Image
                     src="https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp"
-                    alt=""
+                    alt="Recuerda: un gatito no es un juguete ni un capricho pasajero. Es un ser vivo que siente, necesita amor y depende de ti. ¡Elige con el corazón y actúa con responsabilidad!"
                     fill
                     quality={100}
                     sizes="(max-width: 768px) 100vw, 800px"
@@ -420,235 +659,40 @@ export default function TopicContent({
             {topic.sections.map((section) => (
               (section.image || section.adSlot) && (
                 <div key={section.heading} style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                  {section.image === "https://i.postimg.cc/33qcTBN5/comida.webp" ? (
-                    <>
-                      <div style={{ marginTop: "8rem", marginBottom: "1.5rem" }}>
-                        <ImageCarousel
-                          images={[
-                            { src: "https://i.postimg.cc/jR2Fm9s3/Alimento-Balanceado.webp", alt: "Alimento Balanceado" },
-                            { src: "https://i.postimg.cc/Yt0sZVrK/Alimento-Porciones.webp", alt: "Alimento Porciones" },
-                            { src: "https://i.postimg.cc/5fyRTGxD/Alimento-Esenciales.webp", alt: "Alimento Esenciales" },
-                            { src: "https://i.postimg.cc/zqvc6MJd/Alimento-Agua.webp", alt: "Alimento Agua" },
-                            { src: "https://i.postimg.cc/vGTNkjQN/Alimento-cambio.webp", alt: "Alimento Cambio" },
-                            { src: "https://i.postimg.cc/MzHFN4WC/Alimento-Observa.webp", alt: "Alimento Observa" },
-                            { src: "https://i.postimg.cc/Lm5bw79F/Alimento-Toxico.webp", alt: "Alimento Tóxico" },
-                            { src: "https://i.postimg.cc/vGTNkjQq/Alimento-Bueno.webp", alt: "Alimento Bueno" },
-                          ]}
-                          onImageClick={(src) => {
-                            const imgs = [
-                              { src: "https://i.postimg.cc/jR2Fm9s3/Alimento-Balanceado.webp", alt: "Alimento Balanceado" },
-                              { src: "https://i.postimg.cc/Yt0sZVrK/Alimento-Porciones.webp", alt: "Alimento Porciones" },
-                              { src: "https://i.postimg.cc/5fyRTGxD/Alimento-Esenciales.webp", alt: "Alimento Esenciales" },
-                              { src: "https://i.postimg.cc/zqvc6MJd/Alimento-Agua.webp", alt: "Alimento Agua" },
-                              { src: "https://i.postimg.cc/vGTNkjQN/Alimento-cambio.webp", alt: "Alimento Cambio" },
-                              { src: "https://i.postimg.cc/MzHFN4WC/Alimento-Observa.webp", alt: "Alimento Observa" },
-                              { src: "https://i.postimg.cc/Lm5bw79F/Alimento-Toxico.webp", alt: "Alimento Tóxico" },
-                              { src: "https://i.postimg.cc/vGTNkjQq/Alimento-Bueno.webp", alt: "Alimento Bueno" },
-                            ];
-                            setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
-                          }}
-                        />
-                      </div>
-                      <div
-                        onClick={() => setLightbox(section.image!)}
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/9",
-                          position: "relative",
-                          overflow: "hidden",
-                          borderRadius: 12,
-                          cursor: "pointer",
-                        }}
-                      >
-                        <Image
-                          src={section.image!}
-                          alt={section.heading}
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 800px"
-                          style={{ objectFit: "cover", objectPosition: "center top" }}
-                        />
-                      </div>
-                    </>
-                  ) : section.image === "https://i.postimg.cc/TTs4691m/toxico.webp" ? (
+                  {section.image && (
                     <div
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Ampliar imagen: ${section.heading}`}
+                      className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
+                      onKeyDown={activateOnKey(() => setLightbox(section.image!))}
                       onClick={() => setLightbox(section.image!)}
                       style={{
                         width: "100%",
-                        aspectRatio: "16/9",
-                        position: "relative",
-                        overflow: "hidden",
-                        borderRadius: 12,
-                        cursor: "pointer",
-                        marginTop: "8rem",
-                      }}
-                    >
-                      <Image
-                        src={section.image!}
-                        alt={section.heading}
-                        fill
-                        quality={100}
-                        sizes="(max-width: 768px) 100vw, 800px"
-                        style={{ objectFit: "cover", objectPosition: "center top" }}
-                      />
-                    </div>
-                  ) : section.image === "https://i.postimg.cc/BJzV0gbJ/dieta.webp" ? (
-                    <>
-                      <div
-                        onClick={() => setLightbox("https://i.postimg.cc/1ydjQHXF/Titulo-Dietas.webp")}
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/9",
-                          position: "relative",
-                          overflow: "hidden",
-                          borderRadius: 12,
-                          cursor: "pointer",
-                        }}
-                      >
-                        <Image
-                          src="https://i.postimg.cc/1ydjQHXF/Titulo-Dietas.webp"
-                          alt=""
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 800px"
-                          style={{ objectFit: "contain", objectPosition: "center" }}
-                        />
-                      </div>
-                      <div style={{ marginTop: "1.5rem", marginBottom: "1.5rem" }}>
-                        <ImageCarousel
-                          images={[
-                            { src: "https://i.postimg.cc/KmWH2Nj2/Dieta-Barf.webp", alt: "Dieta Barf" },
-                            { src: "https://i.postimg.cc/ZJQMScn4/Dieta-Fundamentos.webp", alt: "Dieta Fundamentos" },
-                            { src: "https://i.postimg.cc/TTs4691x/Dieta-Beneficios.webp", alt: "Dieta Beneficios" },
-                          ]}
-                          onImageClick={(src) => {
-                            const imgs = [
-                              { src: "https://i.postimg.cc/KmWH2Nj2/Dieta-Barf.webp", alt: "Dieta Barf" },
-                              { src: "https://i.postimg.cc/ZJQMScn4/Dieta-Fundamentos.webp", alt: "Dieta Fundamentos" },
-                              { src: "https://i.postimg.cc/TTs4691x/Dieta-Beneficios.webp", alt: "Dieta Beneficios" },
-                            ];
-                            setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
-                          }}
-                        />
-                      </div>
-                      <div
-                        onClick={() => setLightbox(section.image!)}
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/9",
-                          position: "relative",
-                          overflow: "hidden",
-                          borderRadius: 12,
-                          cursor: "pointer",
-                        }}
-                      >
-                        <Image
-                          src={section.image!}
-                          alt={section.heading}
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 800px"
-                          style={{ objectFit: "cover", objectPosition: "center top" }}
-                        />
-                      </div>
-                    </>
-                  ) : section.image === "https://i.postimg.cc/ZJQMScRG/bienvenida.webp" ? (
-                    <>
-                      <div
-                        onClick={() => setLightbox("https://i.postimg.cc/MzLFSDHX/Titulo-adopcion.webp")}
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/9",
-                          position: "relative",
-                          overflow: "hidden",
-                          borderRadius: 12,
-                          cursor: "pointer",
-                          marginTop: "10rem",
-                        }}
-                      >
-                        <Image
-                          src="https://i.postimg.cc/MzLFSDHX/Titulo-adopcion.webp"
-                          alt=""
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 800px"
-                          style={{
-                             objectFit: "contain", 
-                             objectPosition: "center",
-                             
-                            }}
-                        />
-                      </div>
-                      <div style={{ marginTop: "16rem", marginBottom: "1.5rem" }}>
-                        <ImageCarousel
-                          images={[
-                            { src: "https://i.postimg.cc/D70MHD2x/Adopta.webp", alt: "Adopta No Compres" },
-                            { src: "https://i.postimg.cc/nnrPg5FJ/Antes-adoptar.webp", alt: "Antes de adoptar" },
-                            { src: "https://i.postimg.cc/6BqmgSWw/Beneficio-adoptar.webp", alt: "Beneficio de adoptar" },
-                            { src: "https://i.postimg.cc/x984h7fj/Cada-historia.webp", alt: "Cada historia" },
-                            { src: "https://i.postimg.cc/dJfxYB3K/Cuadro-agradecimiento.webp", alt: "Cuadro de agradecimiento" },
-                            { src: "https://i.postimg.cc/fMPrNKyW/Ellos-necesitan.webp", alt: "Ellos necesitan" },
-                            { src: "https://i.postimg.cc/8TY0SHcz/Proceso-adopcion.webp", alt: "Proceso de adopción" },
-                          { src: "https://i.postimg.cc/y7GbHPxd/Recuerda.webp", alt: "Recuerda" },
-                        ]}
-                        onImageClick={(src) => {
-                          const imgs = [
-                            { src: "https://i.postimg.cc/D70MHD2x/Adopta.webp", alt: "Adopta No Compres" },
-                            { src: "https://i.postimg.cc/nnrPg5FJ/Antes-adoptar.webp", alt: "Antes de adoptar" },
-                            { src: "https://i.postimg.cc/6BqmgSWw/Beneficio-adoptar.webp", alt: "Beneficio de adoptar" },
-                            { src: "https://i.postimg.cc/x984h7fj/Cada-historia.webp", alt: "Cada historia" },
-                            { src: "https://i.postimg.cc/dJfxYB3K/Cuadro-agradecimiento.webp", alt: "Cuadro de agradecimiento" },
-                            { src: "https://i.postimg.cc/fMPrNKyW/Ellos-necesitan.webp", alt: "Ellos necesitan" },
-                            { src: "https://i.postimg.cc/8TY0SHcz/Proceso-adopcion.webp", alt: "Proceso de adopción" },
-                            { src: "https://i.postimg.cc/y7GbHPxd/Recuerda.webp", alt: "Recuerda" },
-                          ];
-                          setCarouselViewer({ images: imgs, current: imgs.findIndex(i => i.src === src) });
-                        }}
-                      />
-                      </div>
-                  
-                      <div
-                        onClick={() => setLightbox(section.image!)}
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/9",
-                          position: "relative",
-                          overflow: "hidden",
-                          borderRadius: 12,
-                          cursor: "pointer",
-                           marginTop: "12rem",
-                        }}
-                      >
-                        <Image
-                          src={section.image!}
-                          alt={section.heading}
-                          fill
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 800px"
-                          style={{ objectFit: "cover", objectPosition: "center top" }}
-                        />
-                      </div>
-                    </>
-                  ) : section.image && (
-                    <div
-                      onClick={() => setLightbox(section.image!)}
-                      style={{
-                        width: "100%",
-                        aspectRatio: "16/9",
+                        aspectRatio: section.image.endsWith(".svg") ? "auto" : "16/9",
                         position: "relative",
                         overflow: "hidden",
                         borderRadius: 12,
                         cursor: "pointer",
                       }}
                     >
-                      <Image
-                        src={section.image}
-                        alt={section.heading}
-                        fill
-                        quality={100}
-                        sizes="(max-width: 768px) 100vw, 800px"
-                        style={{ objectFit: "cover", objectPosition: "center top" }}
-                      />
+                      {section.image.endsWith(".svg") ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={section.image}
+                          alt={section.heading}
+                          style={{ display: "block", width: "100%", height: "auto" }}
+                        />
+                      ) : (
+                        <Image
+                          src={section.image}
+                          alt={section.heading}
+                          fill
+                          quality={100}
+                          sizes="(max-width: 768px) 100vw, 800px"
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                        />
+                      )}
                     </div>
                   )}
                   {section.adSlot && (
@@ -682,9 +726,10 @@ export default function TopicContent({
             {subcategory.topics
               .filter(t => t.slug !== topic.slug)
               .map(t => (
-                <button
+                <a
                   key={t.slug}
-                  onClick={() => onNavigate(t.slug)}
+                  href={`/categoria/${category.slug}/${subcategory.slug}/${t.slug}`}
+                  onClick={(e) => { e.preventDefault(); onNavigate(t.slug); }}
                   style={{
                     textAlign: "left",
                     background: "none",
@@ -699,6 +744,7 @@ export default function TopicContent({
                     color: "#4a3d2c",
                     fontWeight: 500,
                     fontFamily: "'DM Sans', sans-serif",
+                    textDecoration: "none",
                     transition: "color 0.15s",
                   }}
                   onMouseEnter={e => e.currentTarget.style.color = category.color}
@@ -706,11 +752,12 @@ export default function TopicContent({
                 >
                   <span style={{ color: category.color, fontSize: "0.7rem" }}>▸</span>
                   {t.title}
-                </button>
+                </a>
               ))}
           </div>
         </section>
       )}
+
 
       <Pagination
         current={pageIndex}
@@ -722,10 +769,15 @@ export default function TopicContent({
         onNext={() => onNavigate(nextTopic!.slug)}
         prevLabel={t('topic_prev_label')}
         nextLabel={t('topic_next_label')}
+        unitLabel="Tema"
       />
 
       {lightbox && (
         <div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Imagen ampliada"
           onClick={() => setLightbox(null)}
           style={{
             position: "fixed",
@@ -738,9 +790,35 @@ export default function TopicContent({
             cursor: "zoom-out",
           }}
         >
+          <button
+            ref={closeRef}
+            type="button"
+            aria-label="Cerrar"
+            onClick={() => setLightbox(null)}
+            className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            style={{
+              position: "absolute",
+              top: 16,
+              right: 16,
+              zIndex: 10,
+              width: 44,
+              height: 44,
+              borderRadius: "50%",
+              border: "none",
+              background: "rgba(255,255,255,0.15)",
+              color: "#fff",
+              cursor: "pointer",
+              fontSize: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <span aria-hidden="true">×</span>
+          </button>
           <img
             src={lightbox}
-            alt=""
+            alt="Imagen ampliada"
             style={{
               maxWidth: "90vw",
               maxHeight: "90vh",
@@ -755,6 +833,10 @@ export default function TopicContent({
 
       {carouselViewer && (
         <div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Galería de imágenes"
           onClick={() => setCarouselViewer(null)}
           style={{
             position: "fixed",
@@ -767,6 +849,33 @@ export default function TopicContent({
           }}
         >
           <button
+            ref={closeRef}
+            type="button"
+            aria-label="Cerrar"
+            onClick={() => setCarouselViewer(null)}
+            className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            style={{
+              position: "absolute",
+              top: 16,
+              right: 16,
+              zIndex: 10,
+              width: 44,
+              height: 44,
+              borderRadius: "50%",
+              border: "none",
+              background: "rgba(255,255,255,0.15)",
+              color: "#fff",
+              cursor: "pointer",
+              fontSize: "1.5rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+          <button
+            aria-label="Imagen anterior"
             onClick={(e) => {
               e.stopPropagation();
               setCarouselViewer((prev) => {
@@ -810,6 +919,7 @@ export default function TopicContent({
             }}
           />
           <button
+            aria-label="Imagen siguiente"
             onClick={(e) => {
               e.stopPropagation();
               setCarouselViewer((prev) => {
@@ -866,36 +976,90 @@ export default function TopicContent({
 
       <style>{`
         .topic-content-layout {
-          display: flex;
-          gap: 2rem;
-          align-items: flex-start;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 2.5rem;
+        }
+        @media (min-width: 900px) {
+          .topic-content-layout {
+            grid-template-columns: 10.5rem minmax(0, 1fr) 13rem;
+            gap: 1.75rem;
+          }
+          .topic-toc {
+            position: sticky;
+            top: 5.5rem;
+            align-self: start;
+            margin: 2.5rem 0 0;
+          }
+        }
+        @media (min-width: 1200px) {
+          .topic-content-layout {
+            grid-template-columns: 13rem minmax(0, 1fr) 17rem;
+            gap: 3rem;
+          }
+        }
+        .topic-toc {
+          margin: 1.5rem 0 0;
+          font-size: 0.9rem;
+        }
+        @media (min-width: 900px) {
+          .topic-toc {
+            margin-top: 2.5rem;
+          }
+        }
+        .topic-toc summary {
+          cursor: pointer;
+          font-size: 0.7rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: var(--mid);
+        }
+        .topic-toc summary:focus-visible {
+          outline: 2px solid var(--amber-dark);
+          outline-offset: 2px;
+        }
+        .topic-toc ol {
+          list-style: none;
+          margin: 0.75rem 0 0;
+          padding: 0;
+        }
+        .topic-toc li {
+          break-inside: avoid;
+        }
+        .topic-toc a {
+          display: block;
+          padding: 0.3rem 0 0.3rem 0.75rem;
+          border-left: 2px solid transparent;
+          color: var(--mid);
+          line-height: 1.4;
+          text-decoration: none;
+        }
+        .topic-toc a[aria-current="location"] {
+          color: var(--charcoal);
+          font-weight: 600;
+          border-left-color: var(--amber);
+        }
+        .topic-toc a:hover {
+          color: var(--charcoal);
+          text-decoration: underline;
+        }
+        .topic-toc a:focus-visible {
+          outline: 2px solid var(--amber-dark);
+          outline-offset: 2px;
         }
         .topic-media-column {
-          width: 700px;
           display: flex;
           flex-direction: column;
-          gap: 2.5rem;
-          padding: 3rem 0;
-          flex-shrink: 0;
+          gap: 2rem;
+          padding: 2.5rem 0 3rem;
+          min-width: 0;
         }
         .section-body {
           padding-left: 3rem;
           margin: 0;
         }
-        @media (max-width: 1024px) {
-          .topic-media-column {
-            width: 400px;
-          }
-        }
         @media (max-width: 768px) {
-          .topic-content-layout {
-            flex-direction: column;
-          }
-          .topic-media-column {
-            width: 100%;
-            padding: 0 var(--page-padding, 1.25rem) 2rem;
-            order: -1;
-          }
           .section-body {
             padding-left: 0;
           }

@@ -1,202 +1,182 @@
 "use client";
 
-import { useEffect } from "react";
+import { useId, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TopicCard from "./TopicCard";
 import { Category } from "../data/cats";
+import { categoryImageAlt, categoryImages } from "../data/categoryImages";
 import { useI18n } from "../i18n/I18nContext";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
-const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
 
 interface CategoryOverviewProps {
   category: Category;
-  onTopicSelect: (catSlug: string, subSlug: string, topicSlug: string) => void;
 }
 
-export default function CategoryOverview({
-  category,
-  onTopicSelect,
-}: CategoryOverviewProps) {
-  const { t } = useI18n();
+function stripMarkup(text: string) {
+  return text.replace(/\*\*/g, "");
+}
 
-  useEffect(() => {
-    const url = `${SITE_URL}/${category.slug}`;
+export default function CategoryOverview({ category }: CategoryOverviewProps) {
+  const { categories } = useI18n();
+  const searchId = useId();
+  const [query, setQuery] = useState("");
+  const [subFilter, setSubFilter] = useState<string | null>(null);
 
-    const subItems = category.subcategories.flatMap((s) =>
-      s.topics.map((t, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        item: { "@type": "Article", headline: t.title, description: t.intro.replace(/\*\*/g, "").slice(0, 200) },
-      }))
-    );
+  const totalTopics = category.subcategories.reduce((n, sub) => n + sub.topics.length, 0);
+  const image = categoryImages[category.slug];
+  const q = query.trim().toLowerCase();
 
-    const ld = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      headline: category.label,
-      description: category.description,
-      url,
-      author: { "@type": "Organization", name: SITE_NAME },
-      about: category.label,
-      mainEntity: {
-        "@type": "ItemList",
-        itemListElement: subItems,
-      },
-    });
+  const sections = category.subcategories
+    .filter((sub) => subFilter === null || sub.slug === subFilter)
+    .map((sub) => ({
+      sub,
+      topics: sub.topics.filter(
+        (topic) =>
+          q === "" ||
+          topic.title.toLowerCase().includes(q) ||
+          stripMarkup(topic.intro).toLowerCase().includes(q),
+      ),
+    }))
+    .filter((group) => group.topics.length > 0);
 
-    let ldEl = document.querySelector('script[type="application/ld+json"]');
-    if (ldEl) {
-      ldEl.textContent = ld;
-    } else {
-      ldEl = document.createElement("script");
-      ldEl.setAttribute("type", "application/ld+json");
-      ldEl.textContent = ld;
-      document.head.appendChild(ldEl);
-    }
-  }, [category]);
+  const shownTopics = sections.reduce((n, group) => n + group.topics.length, 0);
+  const otherCategories = categories.filter((c) => c.slug !== category.slug);
 
   return (
-    <div
-      style={{
-        flex: 1,
-        padding: "var(--page-padding-lg, 3.5rem) var(--page-padding, 3rem)",
-        maxWidth: 860,
-        fontFamily: "'DM Sans', sans-serif",
-      }}
-    >
-      {/* Header */}
-      <div style={{ marginBottom: "3rem" }}>
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            padding: "0.3rem 0.9rem",
-            background: `${category.color}15`,
-            borderRadius: 999,
-            fontSize: "0.7rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: category.color,
-            fontWeight: 600,
-            marginBottom: "1.25rem",
-          }}
-        >
-          <span>{category.emoji}</span>
-          {category.label}
+    <div className="mx-auto max-w-6xl px-4 py-8 md:px-8 md:py-12">
+      <header className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,360px)]">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-(--amber-dark)">
+            Categoría · {totalTopics} temas en {category.subcategories.length} secciones
+          </p>
+          <h1
+            className="mt-2 text-4xl leading-tight text-(--charcoal) md:text-5xl"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
+          >
+            {category.label}
+          </h1>
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-(--mid)">{category.description}</p>
         </div>
+        {image && (
+          <div className="relative aspect-16/10 overflow-hidden rounded-2xl bg-white">
+            <Image src={image} alt={categoryImageAlt[category.slug] ?? ""} fill sizes="(min-width: 768px) 360px, 100vw" className="object-cover" />
+          </div>
+        )}
+      </header>
 
-        <h1
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(2rem, 4vw, 3rem)",
-            fontWeight: 900,
-            color: "#2c2416",
-            lineHeight: 1.1,
-            marginBottom: "0.75rem",
-            letterSpacing: "-0.025em",
-          }}
-        >
-          {category.label}
-        </h1>
-        <p style={{ fontSize: "1rem", color: "#6b5c44", lineHeight: 1.6 }}>
-          {category.description}
-        </p>
+      <div className="mt-8 max-w-3xl space-y-4 text-base leading-relaxed text-(--charcoal)">
+        {category.intro.split("\n\n").map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </div>
 
-      {/* Subcategories */}
-      {category.subcategories.map((sub) => (
-        <div key={sub.slug} style={{ marginBottom: "2.5rem" }}>
-          <h2
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "1.15rem",
-              fontWeight: 700,
-              color: "#2c2416",
-              marginBottom: "1rem",
-              paddingBottom: "0.5rem",
-              borderBottom: `1.5px solid ${category.color}20`,
-            }}
-          >
-            {sub.label}
-          </h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-              gap: "0.75rem",
-            }}
-          >
-            {sub.topics.map((topic) => (
-              <button
-                key={topic.slug}
-                onClick={() =>
-                  onTopicSelect(category.slug, sub.slug, topic.slug)
-                }
-                style={{
-                  textAlign: "left",
-                  background: "#fff",
-                  border: `1px solid rgba(201,180,154,0.35)`,
-                  borderRadius: 12,
-                  padding: "1.1rem 1.25rem",
-                  cursor: "pointer",
-                  transition: "all 0.2s",
-                  fontFamily: "'DM Sans', sans-serif",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = category.color + "50";
-                  el.style.boxShadow = `0 4px 16px ${category.color}12`;
-                  el.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "rgba(201,180,154,0.35)";
-                  el.style.boxShadow = "none";
-                  el.style.transform = "translateY(0)";
-                }}
-              >
-                <p
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "0.88rem",
-                    color: "#2c2416",
-                    margin: "0 0 0.4rem",
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {topic.title}
-                </p>
-                <p
-                  style={{
-                    fontSize: "0.75rem",
-                    color: "#8a7560",
-                    lineHeight: 1.5,
-                    margin: "0 0 0.75rem",
-                    display: "-webkit-box",
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: "vertical" as const,
-                    overflow: "hidden",
-                  }}
-                >
-                  {topic.intro}
-                </p>
-                <span
-                  style={{
-                    fontSize: "0.72rem",
-                    color: category.color,
-                    fontWeight: 600,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.25rem",
-                  }}
-                >
-                  {t('read_topic')} →
-                </span>
-              </button>
-            ))}
-          </div>
+      <div className="mt-8 rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
+        <label htmlFor={searchId} className="block text-sm font-semibold text-(--charcoal)">
+          Buscar en {category.label}
+        </label>
+        <input
+          id={searchId}
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Ej: vacunas, arenero, dieta"
+          className="mt-2 w-full max-w-md rounded-lg border border-black/15 bg-white px-3 py-2.5 text-sm text-(--charcoal) placeholder:text-(--mid) focus-visible:outline-2 focus-visible:outline-(--amber-dark)"
+        />
+
+        <div role="group" aria-label="Filtrar por sección" className="mt-4 flex flex-wrap gap-2">
+          <FilterChip active={subFilter === null} onClick={() => setSubFilter(null)}>
+            Todas ({totalTopics})
+          </FilterChip>
+          {category.subcategories.map((sub) => (
+            <FilterChip key={sub.slug} active={subFilter === sub.slug} onClick={() => setSubFilter(sub.slug)}>
+              {sub.label} ({sub.topics.length})
+            </FilterChip>
+          ))}
         </div>
+      </div>
+
+      <p aria-live="polite" className="mt-3 text-sm text-(--mid)">
+        Mostrando {shownTopics} {shownTopics === 1 ? "tema" : "temas"}
+      </p>
+
+      {sections.map(({ sub, topics }) => (
+        <section key={sub.slug} aria-labelledby={`sec-${sub.slug}`} className="mt-10">
+          <div className="flex items-baseline justify-between border-b border-black/10 pb-2">
+            <h2
+              id={`sec-${sub.slug}`}
+              className="text-2xl text-(--charcoal)"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+            >
+              {sub.label}
+            </h2>
+            <span className="text-sm text-(--mid)">
+              {topics.length} {topics.length === 1 ? "tema" : "temas"}
+            </span>
+          </div>
+
+          <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {topics.map((topic) => (
+              <li key={topic.slug}>
+                <TopicCard
+                  href={`/categoria/${category.slug}/${sub.slug}/${topic.slug}`}
+                  categoryLabel={sub.label}
+                  title={topic.title}
+                  excerpt={stripMarkup(topic.intro)}
+                  image={topic.sections.find((s) => s.image)?.image ?? categoryImages[category.slug] ?? null}
+                  imageAlt={topic.sections.find((s) => s.image) ? topic.title : categoryImageAlt[category.slug] ?? ""}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
       ))}
+
+      {sections.length === 0 && (
+        <p className="mt-10 text-center text-(--mid)">No hay temas que coincidan con la búsqueda.</p>
+      )}
+
+      <section aria-labelledby="otras-categorias" className="mt-16">
+        <h2 id="otras-categorias" className="text-base font-semibold text-(--charcoal)">
+          Explora otras categorías
+        </h2>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {otherCategories.map((c) => (
+            <li key={c.slug}>
+              <Link
+                href={`/categoria/${c.slug}`}
+                className="inline-flex min-h-11 items-center rounded-full border border-black/10 bg-white px-4 text-sm text-(--charcoal) hover:border-(--amber) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
+              >
+                {c.label} · {c.subcategories.reduce((n, sub) => n + sub.topics.length, 0)} temas
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
+  );
+}
+
+function FilterChip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onClick}
+      className={`min-h-11 rounded-full border px-4 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark) ${
+        active
+          ? "border-(--charcoal) bg-(--charcoal) font-semibold text-white"
+          : "border-black/10 bg-white text-(--charcoal) hover:border-(--amber)"
+      }`}
+    >
+      {children}
+    </button>
   );
 }

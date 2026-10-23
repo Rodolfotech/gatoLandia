@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "i.postimg.cc" },
+      { protocol: "https", hostname: "api-cats-mauve.vercel.app", pathname: "/razas/**" },
     ],
     qualities: [25, 50, 75, 100],
   },
