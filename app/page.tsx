@@ -1,194 +1,79 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useI18n } from "./i18n/I18nContext";
-import { ContentType } from "./components/Navbar";
-import CategoryBar from "./components/CategoryBar";
-import CategorySidebar from './components/Categorysidebar';
-import CategoryOverview from './components/Categoryoverview';
-import TopicContent from './components/Topicontent';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { categories as defaultCategories, getCategory, getSubcategory, getTopic } from "./data/cats";
 import ChatWidget from "./components/ChatWidget";
-import FeaturedContent from "./components/FeaturedContent";
-import CategoryCards from "./components/CategoryCards";
-import HeroSection from "./components/HeroSection";
+import { FeedControls, FeedResults } from "./components/ArticleFeed";
+import { useArticleFeed } from "./lib/useArticleFeed";
+import { setSearchQuery } from "./lib/searchStore";
 
-interface Selection {
-  categorySlug: string;
-  subcategorySlug: string;
-  topicSlug: string;
+function HomeFeed() {
+  const { categories } = useI18n();
+  const feed = useArticleFeed(categories);
+
+  return (
+    <div className="min-h-screen bg-(--cream)">
+      <header className="border-b border-black/5 bg-white/60 py-12 md:py-16">
+        <div className="page-shell">
+          <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-(--amber-dark)">
+            Enciclopedia felina en español
+          </p>
+          <h1
+            className="mt-3 text-4xl leading-tight text-(--charcoal) md:text-5xl"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
+          >
+            Todo lo que tu gato necesita saber
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-(--mid)">
+            Artículos sobre adopción, cuidados, salud, alimentación y comportamiento, escritos para quienes
+            conviven con un gato.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#articulos"
+              className="inline-flex min-h-11 items-center rounded-lg bg-(--amber-dark) px-5 text-sm font-semibold text-white hover:bg-[#8a5222] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
+            >
+              Leer artículos
+            </a>
+            <Link
+              href="/razas"
+              className="inline-flex min-h-11 items-center rounded-lg border border-black/15 bg-white px-5 text-sm font-semibold text-(--charcoal) hover:border-(--amber) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
+            >
+              Explorar razas
+            </Link>
+          </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="articulos" className="page-shell scroll-mt-20 py-10">
+        <FeedControls feed={feed} browsing showSearch={false} />
+        <FeedResults feed={feed} />
+      </main>
+
+      <ChatWidget />
+    </div>
+  );
+}
+
+function HomeRoute() {
+  const q = useSearchParams().get("q") ?? "";
+
+  // Una búsqueda que llega por la URL (desde otra página) pasa al buscador compartido.
+  useEffect(() => {
+    setSearchQuery(q);
+  }, [q]);
+
+  return <HomeFeed />;
 }
 
 export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { t, categories } = useI18n();
-  const [selection, setSelection] = useState<Selection | null>(null);
-  const [activeCatSlug, setActiveCatSlug] = useState<string | null>(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeContentType, setActiveContentType] = useState<ContentType>("razas");
-
-  const currentCat    = activeCatSlug ? categories.find(c => c.slug === activeCatSlug) ?? getCategory(activeCatSlug) : null;
-  const currentSub    = selection ? categories.find(c => c.slug === selection.categorySlug)?.subcategories.find(s => s.slug === selection.subcategorySlug) ?? getSubcategory(selection.categorySlug, selection.subcategorySlug) : null;
-  const currentTopic  = selection ? (() => {
-    const cat = categories.find(c => c.slug === selection.categorySlug);
-    const sub = cat?.subcategories.find(s => s.slug === selection.subcategorySlug);
-    return sub?.topics.find(t => t.slug === selection.topicSlug) ?? getTopic(selection.categorySlug, selection.subcategorySlug, selection.topicSlug);
-  })() : null;
-
-  const siblingTopics = currentSub?.topics ?? [];
-  const topicIdx      = siblingTopics.findIndex((t) => t.slug === selection?.topicSlug);
-  const prevTopic     = topicIdx > 0 ? siblingTopics[topicIdx - 1] : null;
-  const nextTopic     = topicIdx < siblingTopics.length - 1 ? siblingTopics[topicIdx + 1] : null;
-
-  function selectTopic(catSlug: string, subSlug: string, topicSlug: string) {
-    setSelection({ categorySlug: catSlug, subcategorySlug: subSlug, topicSlug });
-    setActiveCatSlug(catSlug);
-    window.history.replaceState(null, "", `/categoria/${catSlug}/${subSlug}/${topicSlug}`);
-  }
-
-  function handleLogoClick() {
-    setSelection(null);
-    setActiveCatSlug(null);
-    window.history.replaceState(null, "", "/");
-  }
-
-  function handleCategoryTabClick(catSlug: string) {
-    setActiveCatSlug(catSlug);
-    setSelection(null);
-  }
-
-  const showExplorer = activeCatSlug !== null;
-
-   return (
-      <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-        <CategoryBar
-         categories={categories}
-         activeCategorySlug={activeCatSlug}
-         onCategoryClick={selectTopic}
-         onLogoClick={handleLogoClick}
-       />
-
-         {showExplorer ? (
-          <div key="explorer" className="explorer-layout" style={{ display: "flex", flex: 1, background: "#fdf6ec" }}>
-          <CategorySidebar
-            categories={categories}
-            selection={selection}
-            onSelect={(sel) => selectTopic(sel.categorySlug, sel.subcategorySlug, sel.topicSlug)}
-          />
-          <div className="explorer-content" style={{ flex: 1, overflowY: "auto" }}>
-            {currentTopic && currentCat && currentSub ? (
-              <TopicContent
-                category={currentCat}
-                subcategory={currentSub}
-                topic={currentTopic}
-                prevTopic={prevTopic}
-                nextTopic={nextTopic}
-                pageIndex={topicIdx + 1}
-                totalPages={siblingTopics.length}
-                onNavigate={(slug) =>
-                  selectTopic(selection!.categorySlug, selection!.subcategorySlug, slug)
-                }
-              />
-            ) : currentCat ? (
-              <CategoryOverview
-                category={currentCat}
-                onTopicSelect={selectTopic}
-              />
-            ) : null}
-          </div>
-        </div>
-        ) : (
-          <div key="home">
-          <HeroSection
-            heading={<>
-              Todo lo que tu gato<br />
-              <em style={{ color: "#d4853a" }}>necesita</em> saber
-            </>}
-            subtitle="Desde cuidados neonatales hasta tenencia responsable. La enciclopedia definitiva para una convivencia feliz y saludable."
-            primaryCta={{ text: "Comenzar Guía →", onClick: () => handleCategoryTabClick('cuidado-gatito') }}
-            secondaryCta={{ text: "🐾 Explorar Razas", onClick: () => window.location.href = '/razas' }}
-          >
-            <h2 style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1.6rem, 2.5vw, 2rem)",
-              fontWeight: 700, color: "#2c2416",
-              textAlign: "center", marginBottom: "2rem",
-            }}>
-              Todo sobre el cuidado de nuestro compañero felino
-            </h2>
-            <CategoryCards
-              categories={categories}
-              onCategoryClick={handleCategoryTabClick}
-              imageMap={{
-                salud: "https://i.postimg.cc/rdZmhvQd/salud-gatitos.webp",
-                comportamiento: "https://i.postimg.cc/G8Bp6q5z/comportamiento-gatuno.webp",
-                alimentacion: "https://i.postimg.cc/ph9d3q60/alimentacion-gatitos.webp",
-                juego: "https://i.postimg.cc/PLVx6B2Z/juegos-gatitos.webp",
-                etapas: "https://i.postimg.cc/7GCLjmW0/etapas-de-vida.webp",
-                emergencia: "https://i.postimg.cc/9R4fsJnt/emergencia-gatuna.webp",
-                adopcion: "https://i.postimg.cc/2bP5Yhs9/adopcion.webp",
-                razas: "https://i.postimg.cc/GBg2MZqG/razas-gatos.webp",
-                "adquisicion-responsable": "https://i.postimg.cc/nj6LxByR/adquisicion-responsable.webp",
-                historia: "https://i.postimg.cc/8JFCxt0L/historia-origen-expansion.webp",
-                "cuidado-gatito": "https://i.postimg.cc/jwWjBZFc/cuidado-gatuno.webp",
-                "tenencia-responsable": "https://i.postimg.cc/f3qLH6Bd/tenencia-responsable.webp",
-                castracion: "https://i.postimg.cc/WFD4xXHW/castracion.webp",
-                "impacto-conciencia": "https://i.postimg.cc/VrSN2DVt/impacto-conciencia.webp",
-              }}
-            />
-          </HeroSection>
-
-          {/* ── STATS SECTION ── */}
-          <section style={{
-            background: "#2c2416", color: "#fdf6ec", padding: "5rem 2rem",
-          }}>
-            <div style={{
-              maxWidth: 1000, margin: "0 auto",
-              display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "3rem", textAlign: "center",
-            }}>
-              {[
-                { n: categories.length, label: "Categorías", suffix: "" },
-                { n: categories.reduce((a, c) => a + c.subcategories.length, 0), label: "Subcategorías", suffix: "" },
-                { n: categories.reduce((a, c) => a + c.subcategories.reduce((b, s) => b + s.topics.length, 0), 0), label: "Temas", suffix: "" },
-                { n: "24/7", label: "Acompañamiento", suffix: "" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div style={{
-                    fontSize: "3.5rem", fontWeight: 900, color: "#d4853a",
-                    fontFamily: "'Playfair Display', serif", lineHeight: 1,
-                  }}>
-                    {stat.n}{stat.suffix}
-                  </div>
-                  <div style={{ fontSize: "0.9rem", color: "#c9b49a", marginTop: "0.5rem" }}>
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <FeaturedContent
-            items={[
-              { id: 1, title: "Guía Integral de Cuidado", desc: "Desde el neonato hasta la adultez: alimentación, salud y bienestar.", img: "featuredcontent/cuidadoIntegral.png" },
-              { id: 2, title: "Tenencia Responsable", desc: "Marco ético y legal para una convivencia armónica y respetuosa.", img: "featuredcontent/tenenciaResponsable.png" },
-              { id: 3, title: "Castración: Guía Familiar", desc: "Todo lo que niños y padres deben saber sobre esterilización.", img: "featuredcontent/castracion.png" },
-              { id: 4, title: "Impacto y Conciencia", desc: "El lado secreto de nuestros gatos y su efecto en el ecosistema.", img: "featuredcontent/impactoConciencia.png" },
-            ]}
-          />
-          </div>
-      )}<ChatWidget />
-      <style>{`
-        @media (max-width: 768px) {
-          .explorer-layout {
-            flex-direction: column !important;
-          }
-          .explorer-content {
-            overflow-y: visible !important;
-          }
-        }
-      `}</style>
-    </main>
+  return (
+    <Suspense fallback={null}>
+      <HomeRoute />
+    </Suspense>
   );
 }

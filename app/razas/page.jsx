@@ -1,8 +1,11 @@
 // app/razas/page.jsx
-import Image from 'next/image';
-export const dynamic = 'force-dynamic';
+import ZoomableImage from '@/app/components/ZoomableImage';
+import Link from 'next/link';
+import { fetchRazas, RAZAS_PAGE_SIZE } from '@/app/lib/razas';
 
-export const metadata = {
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
+
+const METADATA = {
   title: "Guía de Razas de Gatos",
   description: "Explora nuestra guía completa de razas de gatos: origen, características, peso, tiempo de vida y más. Encuentra la raza perfecta para ti.",
   openGraph: {
@@ -10,23 +13,21 @@ export const metadata = {
     description: "Explora nuestra guía completa de razas de gatos con fotos, origen y características.",
   },
 };
-const PAGE_SIZE = 9;
 
-async function getCats() {
-  try {
-    const res = await fetch("https://api-cats-mauve.vercel.app/api/cats", { 
-      cache: 'no-store'
-    });
-    if (!res.ok) throw new Error(`Error ${res.status}`);
-    return await res.json();
-  } catch (err) {
-    console.error("Error:", err);
-    return [];
+export async function generateMetadata({ searchParams }) {
+  const { q = "", page = "1" } = await searchParams;
+  const pageNumber = parseInt(page) || 1;
+
+  // Las búsquedas no deben indexarse; las páginas de listado sí, cada una con su propia URL canónica.
+  if (q.trim()) {
+    return { ...METADATA, robots: { index: false, follow: true }, alternates: { canonical: `${SITE_URL}/razas` } };
   }
+  const canonical = pageNumber > 1 ? `${SITE_URL}/razas?page=${pageNumber}` : `${SITE_URL}/razas`;
+  return { ...METADATA, alternates: { canonical } };
 }
 
 export default async function RazasPage({ searchParams }) {
-  const cats = await getCats();
+  const cats = await fetchRazas();
   const search = (await searchParams)?.q || "";
   const page = parseInt((await searchParams)?.page || "1");
 
@@ -39,21 +40,35 @@ export default async function RazasPage({ searchParams }) {
 
   const noMatch = search.trim() && filtered.length === 0;
   const displayCats = noMatch ? cats : filtered;
-  const totalPages = Math.ceil(displayCats.length / PAGE_SIZE);
-  const start = (page - 1) * PAGE_SIZE;
-  const current = displayCats.slice(start, start + PAGE_SIZE);
+  const totalPages = Math.ceil(displayCats.length / RAZAS_PAGE_SIZE);
+  const start = (page - 1) * RAZAS_PAGE_SIZE;
+  const current = displayCats.slice(start, start + RAZAS_PAGE_SIZE);
 
   if (cats.length === 0) {
     return (
       <div style={{ maxWidth: 1100, margin: "2rem auto", padding: "2rem", textAlign: "center" }}>
         <h1>Guía de Razas de Gatos</h1>
-        <p style={{ color: "#c0392b" }}>Error al cargar las razas. Intenta más tarde.</p>
+        <p>No hay razas disponibles por ahora.</p>
       </div>
     );
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: METADATA.title,
+    description: METADATA.description,
+    url: `${SITE_URL}/razas`,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: cats.length,
+      itemListElement: cats.map((c, index) => ({ "@type": "ListItem", position: index + 1, name: c.raza })),
+    },
+  };
+
   return (
-    <main style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 clamp(0.75rem, 3vw, 1.5rem)" }}>
+    <div style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 clamp(0.75rem, 3vw, 1.5rem)" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "#2c2416", marginBottom: "1.5rem" }}>
         Guía de {cats.length} Razas de Gatos
       </h1>
@@ -83,37 +98,6 @@ export default async function RazasPage({ searchParams }) {
         </button>
       </form>
 
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          document.addEventListener('DOMContentLoaded', function() {
-            var input = document.getElementById('razas-search');
-            if (input) {
-              input.addEventListener('input', function() {
-                if (this.value === '') {
-                  window.location.href = '/razas';
-                }
-              });
-            }
-
-            var lightbox = document.createElement('div');
-            lightbox.id = 'razas-lightbox';
-            lightbox.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;z-index:9999;cursor:zoom-out;';
-            lightbox.addEventListener('click', function() { this.style.display = 'none'; });
-            var lbImg = document.createElement('img');
-            lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);';
-            lightbox.appendChild(lbImg);
-            document.body.appendChild(lightbox);
-
-            document.querySelectorAll('.razas-img-wrap').forEach(function(el) {
-              el.addEventListener('click', function(e) {
-                lbImg.src = this.dataset.src;
-                lightbox.style.display = 'flex';
-              });
-            });
-          });
-        `,
-      }} />
-
       {noMatch && (
         <p style={{ color: "#c0392b", fontSize: "0.9rem", padding: "1rem", background: "#fee", borderRadius: 8 }}>
           La raza &quot;{search}&quot; no existe
@@ -138,20 +122,12 @@ export default async function RazasPage({ searchParams }) {
           <div key={idx} style={{
             border: "1px solid rgba(201,180,154,0.3)", borderRadius: 12, overflow: "hidden"
           }}>
-            <div
-              className="razas-img-wrap"
-              data-src={cat.imagen}
-              style={{ cursor: "pointer" }}
-            >
-              <Image
-                src={cat.imagen}
-                alt={cat.raza}
-                width={400}
-                height={200}
-                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-                style={{ width: "100%", height: 200, objectFit: "cover", pointerEvents: "none" }}
-              />
-            </div>
+            <ZoomableImage
+              src={cat.miniatura ?? cat.imagen}
+              fullSrc={cat.imagen}
+              alt={cat.raza}
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+            />
             <div style={{ padding: "1.25rem" }}>
               <h2 style={{ margin: "0 0 0.5rem", fontSize: "1.15rem", color: "#2c2416" }}>
                 {cat.raza}
@@ -172,13 +148,13 @@ export default async function RazasPage({ searchParams }) {
       {totalPages > 1 && (
         <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", margin: "2rem 0", flexWrap: "wrap" }}>
           {page > 1 && (
-            <a href={`/razas?q=${search}&page=${page - 1}`} style={{
+            <Link href={`/razas?q=${search}&page=${page - 1}`} style={{
               padding: "0.4rem 0.8rem", borderRadius: 6, border: "1px solid rgba(201,180,154,0.5)",
               background: "#fff", textDecoration: "none", color: "#2c2416"
-            }}>«</a>
+            }}>«</Link>
           )}
           {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
-            <a
+            <Link
               key={p}
               href={`/razas?q=${search}&page=${p}`}
               style={{
@@ -189,16 +165,16 @@ export default async function RazasPage({ searchParams }) {
               }}
             >
               {p}
-            </a>
+            </Link>
           ))}
           {page < totalPages && (
-            <a href={`/razas?q=${search}&page=${page + 1}`} style={{
+            <Link href={`/razas?q=${search}&page=${page + 1}`} style={{
               padding: "0.4rem 0.8rem", borderRadius: 6, border: "1px solid rgba(201,180,154,0.5)",
               background: "#fff", textDecoration: "none", color: "#2c2416"
-            }}>»</a>
+            }}>»</Link>
           )}
         </div>
       )}
-    </main>
+    </div>
   );
 }

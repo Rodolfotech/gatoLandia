@@ -1,5 +1,5 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+/* Estilos globales: el texto de los artículos debe poder seleccionarse y copiarse. */
+@import "tailwindcss";
 
 :root {
   --cream: #fdf6ec;
@@ -16,7 +16,6 @@
 }
 
 * { box-sizing: border-box; }
-body { user-select: none; -webkit-user-select: none; }
 html { scroll-behavior: smooth; }
 
 body {
@@ -67,3 +66,26 @@ html::-webkit-scrollbar { display: none; }
   }
 }
 
+
+/* Contenedor común: barra, migas, etiquetas y artículo comparten los mismos márgenes. */
+.page-shell {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .page-shell {
+    padding-inline: 2rem;
+  }
+}
+@media (min-width: 900px) {
+  .page-shell {
+    padding-inline: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .page-shell {
+    padding-inline: 3.5rem;
+  }
+}

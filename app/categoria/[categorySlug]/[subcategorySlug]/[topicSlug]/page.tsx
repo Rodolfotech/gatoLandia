@@ -1,10 +1,10 @@
+import { decodeParams } from "@/app/lib/routes";
 import { categories } from "@/app/data/cats";
-import fs from "fs";
-import path from "path";
+import { topicSeoOverrides } from "@/app/data/seoOverrides";
+import { metaDescription, topicOgImage } from "@/app/lib/seo";
 import type { Metadata } from "next";
 import TopicContentPage from "./TopicContentPage";
 
-const OVERRIDES_FILE = path.join(process.cwd(), "data", "seo-overrides.json");
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
 const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
 
@@ -12,31 +12,18 @@ type Props = {
   params: Promise<{ categorySlug: string; subcategorySlug: string; topicSlug: string }>;
 };
 
-function readOverrides(): Record<string, { title?: string; description?: string; keywords?: string }> {
-  try {
-    if (fs.existsSync(OVERRIDES_FILE)) {
-      return JSON.parse(fs.readFileSync(OVERRIDES_FILE, "utf-8"));
-    }
-  } catch {}
-  return {};
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { categorySlug, subcategorySlug, topicSlug } = await params;
+  const { categorySlug, subcategorySlug, topicSlug } = decodeParams(await params);
   const cat = categories.find(c => c.slug === categorySlug);
   const sub = cat?.subcategories.find(s => s.slug === subcategorySlug);
   const topic = sub?.topics.find(t => t.slug === topicSlug);
 
   if (!topic) return { title: "Tema no encontrado" };
 
-  const routePath = `/${categorySlug}/${subcategorySlug}/${topicSlug}`;
-  const overrides = readOverrides();
-  const override = overrides[routePath];
-
-  const baseDesc = topic.intro.replace(/\*\*/g, "").slice(0, 160);
-  const title = override?.title || topic.title;
-  const description = override?.description || baseDesc;
-  const keywords = override?.keywords || [
+  const override = topicSeoOverrides[`/categoria/${categorySlug}/${subcategorySlug}/${topicSlug}`];
+  const title = override?.title ?? topic.title;
+  const description = override?.description ?? metaDescription(topic.intro);
+  const keywords = [
     cat?.label || categorySlug,
     sub?.label || subcategorySlug,
     topic.title,
@@ -44,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "cuidado felino",
   ].filter(Boolean).join(", ");
 
-  const url = `${SITE_URL}/${categorySlug}/${subcategorySlug}/${topicSlug}`;
+  const url = `${SITE_URL}/categoria/${categorySlug}/${subcategorySlug}/${topicSlug}`;
 
   return {
     title,
@@ -55,37 +42,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${title} · ${SITE_NAME}`,
       description,
       url,
-      images: [{ url: `${SITE_URL}/featuredcontent/cuidadoIntegral.png`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}${topicOgImage(topicSlug)}`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} · ${SITE_NAME}`,
       description,
-      images: [`${SITE_URL}/featuredcontent/cuidadoIntegral.png`],
+      images: [`${SITE_URL}${topicOgImage(topicSlug)}`],
     },
   };
 }
 
 export default async function Page({ params }: Props) {
-  const { categorySlug, subcategorySlug, topicSlug } = await params;
+  const { categorySlug, subcategorySlug, topicSlug } = decodeParams(await params);
   const cat = categories.find(c => c.slug === categorySlug);
   const sub = cat?.subcategories.find(s => s.slug === subcategorySlug);
   const topic = sub?.topics.find(t => t.slug === topicSlug);
 
-  const url = `${SITE_URL}/${categorySlug}/${subcategorySlug}/${topicSlug}`;
+  const url = `${SITE_URL}/categoria/${categorySlug}/${subcategorySlug}/${topicSlug}`;
 
   const jsonLd: Record<string, unknown>[] = [];
 
   if (topic && cat && sub) {
-    const description = topic.intro.replace(/\*\*/g, "").slice(0, 160);
+    const description = metaDescription(topic.intro);
 
     jsonLd.push({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: cat.label, item: `${SITE_URL}/${cat.slug}` },
-        { "@type": "ListItem", position: 3, name: sub.label, item: `${SITE_URL}/${cat.slug}/${sub.slug}` },
+        { "@type": "ListItem", position: 2, name: cat.label, item: `${SITE_URL}/categoria/${cat.slug}` },
+        { "@type": "ListItem", position: 3, name: sub.label, item: `${SITE_URL}/categoria/${cat.slug}/${sub.slug}` },
         { "@type": "ListItem", position: 4, name: topic.title, item: url },
       ],
     });
@@ -98,7 +85,7 @@ export default async function Page({ params }: Props) {
       url,
       author: { "@type": "Organization", name: SITE_NAME },
       about: cat.label,
-      isPartOf: { "@type": "WebPage", name: sub.label, url: `${SITE_URL}/${cat.slug}/${sub.slug}` },
+      isPartOf: { "@type": "WebPage", name: sub.label, url: `${SITE_URL}/categoria/${cat.slug}/${sub.slug}` },
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       speakable: { "@type": "SpeakableSpecification", cssSelector: ["#topic-intro"] },
     });
