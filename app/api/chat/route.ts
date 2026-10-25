@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${apiKey}`,
         'HTTP-Referer': process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
-        'X-Title': 'GatoLandia',
+        'X-Title': 'AlmaGatuna',
       },
       body: JSON.stringify({
         model: 'meta-llama/llama-3.3-70b-instruct',

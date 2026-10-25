@@ -1,19 +1,19 @@
 // Imagen principal de cada categoría (home y página de categoría).
 export const categoryImages: Record<string, string> = {
-            salud: "https://i.postimg.cc/rdZmhvQd/salud-gatitos.webp",
-            comportamiento: "https://i.postimg.cc/G8Bp6q5z/comportamiento-gatuno.webp",
-            alimentacion: "https://i.postimg.cc/ph9d3q60/alimentacion-gatitos.webp",
-            juego: "https://i.postimg.cc/PLVx6B2Z/juegos-gatitos.webp",
-            etapas: "https://i.postimg.cc/7GCLjmW0/etapas-de-vida.webp",
-            emergencia: "https://i.postimg.cc/9R4fsJnt/emergencia-gatuna.webp",
-            adopcion: "https://i.postimg.cc/2bP5Yhs9/adopcion.webp",
-            razas: "https://i.postimg.cc/GBg2MZqG/razas-gatos.webp",
-            "adquisicion-responsable": "https://i.postimg.cc/nj6LxByR/adquisicion-responsable.webp",
-            historia: "https://i.postimg.cc/8JFCxt0L/historia-origen-expansion.webp",
-            "cuidado-gatito": "https://i.postimg.cc/jwWjBZFc/cuidado-gatuno.webp",
-            "tenencia-responsable": "https://i.postimg.cc/f3qLH6Bd/tenencia-responsable.webp",
-            castracion: "https://i.postimg.cc/WFD4xXHW/castracion.webp",
-            "impacto-conciencia": "https://i.postimg.cc/VrSN2DVt/impacto-conciencia.webp",
+            salud: "/images/salud-gatitos.webp",
+            comportamiento: "/images/comportamiento-gatuno.webp",
+            alimentacion: "/images/alimentacion-gatitos.webp",
+            juego: "/images/juegos-gatitos.webp",
+            etapas: "/images/etapas-de-vida.webp",
+            emergencia: "/images/emergencia-gatuna.webp",
+            adopcion: "/images/adopcion.webp",
+            razas: "/images/razas-gatos.webp",
+            "adquisicion-responsable": "/images/adquisicion-responsable.webp",
+            historia: "/images/historia-origen-expansion.webp",
+            "cuidado-gatito": "/images/cuidado-gatuno.webp",
+            "tenencia-responsable": "/images/tenencia-responsable.webp",
+            castracion: "/images/castracion.webp",
+            "impacto-conciencia": "/images/impacto-conciencia.webp",
 };
 
 // Texto alternativo de cada imagen de categoría, según lo que muestra.

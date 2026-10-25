@@ -1,11 +1,13 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "../i18n/I18nContext";
 import { Category, Subcategory, Topic, categories as allCats } from "../data/cats";
 import Pagination from "./Pagination";
 import AdBanner from "./AdBanner";
+import AdSlot from "./AdSlot";
+import { AD_SLOTS } from "@/app/lib/adSlots";
 import ImageCarousel from "./ImageCarousel";
 import { activateOnKey } from "@/app/lib/keyboardNav";
 import EmergencyCard from "./EmergencyCard";
@@ -424,7 +426,8 @@ export default function TopicContent({
           {/* Sections */}
           <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
             {topic.sections.map((section, i) => (
-              <section key={section.heading} id={`seccion-${i}`} style={{ scrollMarginTop: "6rem" }}>
+              <Fragment key={section.heading}>
+              <section id={`seccion-${i}`} style={{ scrollMarginTop: "6rem" }}>
                 <div
                   style={{
                     display: "flex",
@@ -464,6 +467,8 @@ export default function TopicContent({
                   {renderMarkdown(section.body)}
                 </div>
               </section>
+              {i === 1 && <AdSlot slot={AD_SLOTS.articulo} />}
+              </Fragment>
             ))}
           </div>
           <p
@@ -578,8 +583,8 @@ export default function TopicContent({
                   tabIndex={0}
                   aria-label="Ampliar imagen: adquisición responsable"
                   className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
-                  onKeyDown={activateOnKey(() => setLightbox("https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp"))}
-                  onClick={() => setLightbox("https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp")}
+                  onKeyDown={activateOnKey(() => setLightbox("/images/titulo-adquisicion-responsable.webp"))}
+                  onClick={() => setLightbox("/images/titulo-adquisicion-responsable.webp")}
                   style={{
                     width: "100%",
                     aspectRatio: "16/9",
@@ -591,7 +596,7 @@ export default function TopicContent({
                   }}
                 >
                   <Image
-                    src="https://i.postimg.cc/cdzbSmCv/Titulo-adquisicion-responsable.webp"
+                    src="/images/titulo-adquisicion-responsable.webp"
                     alt="Adquisición responsable: un compromiso para toda su vida. Adquirir un gatito es una decisión importante que implica amor, responsabilidad y compromiso. No es solo tener un gatito, es darle un hogar y una vida feliz."
                     fill
                     quality={100}
@@ -602,29 +607,29 @@ export default function TopicContent({
                 <div style={{ marginTop: "3rem", marginBottom: "1.5rem" }}>
                   <ImageCarousel
                     images={[
-                      { src: "https://i.postimg.cc/D7NMTg0z/Que-adquisicion.webp", alt: "Qué adquisición" },
-                      { src: "https://i.postimg.cc/KmWH2NjG/Donde-Adquisicion.webp", alt: "Dónde adquirir" },
-                      { src: "https://i.postimg.cc/Cw2QgN5L/Necesita-Adquisicion.webp", alt: "Necesita adquisición" },
-                      { src: "https://i.postimg.cc/RvhDy8S4/Beneficios-Adquisicion.webp", alt: "Beneficios adquisición" },
-                      { src: "https://i.postimg.cc/33qcTBNQ/Compromiso-Adquisicion.webp", alt: "Compromiso adquisición" },
-                      { src: "https://i.postimg.cc/Gbt5VNLR/Banner-adquisicion.webp", alt: "Banner adquisición" },
+                      { src: "/images/que-adquisicion.webp", alt: "Qué adquisición" },
+                      { src: "/images/donde-adquisicion.webp", alt: "Dónde adquirir" },
+                      { src: "/images/necesita-adquisicion.webp", alt: "Necesita adquisición" },
+                      { src: "/images/beneficios-adquisicion.webp", alt: "Beneficios adquisición" },
+                      { src: "/images/compromiso-adquisicion.webp", alt: "Compromiso adquisición" },
+                      { src: "/images/banner-adquisicion.webp", alt: "Banner adquisición" },
                     ]}
                     onImageClick={(src) => {
                       const idx = [
-                        { src: "https://i.postimg.cc/D7NMTg0z/Que-adquisicion.webp", alt: "Qué adquisición" },
-                        { src: "https://i.postimg.cc/KmWH2NjG/Donde-Adquisicion.webp", alt: "Dónde adquirir" },
-                        { src: "https://i.postimg.cc/Cw2QgN5L/Necesita-Adquisicion.webp", alt: "Necesita adquisición" },
-                        { src: "https://i.postimg.cc/RvhDy8S4/Beneficios-Adquisicion.webp", alt: "Beneficios adquisición" },
-                        { src: "https://i.postimg.cc/33qcTBNQ/Compromiso-Adquisicion.webp", alt: "Compromiso adquisición" },
-                        { src: "https://i.postimg.cc/Gbt5VNLR/Banner-adquisicion.webp", alt: "Banner adquisición" },
+                        { src: "/images/que-adquisicion.webp", alt: "Qué adquisición" },
+                        { src: "/images/donde-adquisicion.webp", alt: "Dónde adquirir" },
+                        { src: "/images/necesita-adquisicion.webp", alt: "Necesita adquisición" },
+                        { src: "/images/beneficios-adquisicion.webp", alt: "Beneficios adquisición" },
+                        { src: "/images/compromiso-adquisicion.webp", alt: "Compromiso adquisición" },
+                        { src: "/images/banner-adquisicion.webp", alt: "Banner adquisición" },
                       ].findIndex(i => i.src === src);
                       setCarouselViewer({ images: [
-                        { src: "https://i.postimg.cc/D7NMTg0z/Que-adquisicion.webp", alt: "Qué adquisición" },
-                        { src: "https://i.postimg.cc/KmWH2NjG/Donde-Adquisicion.webp", alt: "Dónde adquirir" },
-                        { src: "https://i.postimg.cc/Cw2QgN5L/Necesita-Adquisicion.webp", alt: "Necesita adquisición" },
-                        { src: "https://i.postimg.cc/RvhDy8S4/Beneficios-Adquisicion.webp", alt: "Beneficios adquisición" },
-                        { src: "https://i.postimg.cc/33qcTBNQ/Compromiso-Adquisicion.webp", alt: "Compromiso adquisición" },
-                        { src: "https://i.postimg.cc/Gbt5VNLR/Banner-adquisicion.webp", alt: "Banner adquisición" },
+                        { src: "/images/que-adquisicion.webp", alt: "Qué adquisición" },
+                        { src: "/images/donde-adquisicion.webp", alt: "Dónde adquirir" },
+                        { src: "/images/necesita-adquisicion.webp", alt: "Necesita adquisición" },
+                        { src: "/images/beneficios-adquisicion.webp", alt: "Beneficios adquisición" },
+                        { src: "/images/compromiso-adquisicion.webp", alt: "Compromiso adquisición" },
+                        { src: "/images/banner-adquisicion.webp", alt: "Banner adquisición" },
                       ], current: idx });
                     }}
                   />
@@ -634,8 +639,8 @@ export default function TopicContent({
                   tabIndex={0}
                   aria-label="Ampliar imagen: recuerda"
                   className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
-                  onKeyDown={activateOnKey(() => setLightbox("https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp"))}
-                  onClick={() => setLightbox("https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp")}
+                  onKeyDown={activateOnKey(() => setLightbox("/images/recuerda-adquisicion.webp"))}
+                  onClick={() => setLightbox("/images/recuerda-adquisicion.webp")}
                   style={{
                     width: "100%",
                     aspectRatio: "16/9",
@@ -646,7 +651,7 @@ export default function TopicContent({
                   }}
                 >
                   <Image
-                    src="https://i.postimg.cc/pPS6HZrr/recuerda-Adquisicion.webp"
+                    src="/images/recuerda-adquisicion.webp"
                     alt="Recuerda: un gatito no es un juguete ni un capricho pasajero. Es un ser vivo que siente, necesita amor y depende de ti. ¡Elige con el corazón y actúa con responsabilidad!"
                     fill
                     quality={100}

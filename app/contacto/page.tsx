@@ -3,8 +3,7 @@
 import { useState } from "react";
 
 export default function ContactoPage() {
-  const [form, setForm] = useState({ nombre: "", pais: "", correo: "", telefono: "", mensaje: "" });
-  const [archivos, setArchivos] = useState<File[]>([]);
+  const [form, setForm] = useState({ nombre: "", correo: "", mensaje: "" });
   const [enviado, setEnviado] = useState(false);
   const [error, setError] = useState(false);
 
@@ -18,11 +17,8 @@ export default function ContactoPage() {
     try {
       const fd = new FormData();
       fd.append("nombre", form.nombre);
-      fd.append("pais", form.pais);
       fd.append("correo", form.correo);
-      fd.append("telefono", form.telefono);
       fd.append("mensaje", form.mensaje);
-      archivos.forEach((f) => fd.append("imagenes", f));
 
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -71,23 +67,6 @@ export default function ContactoPage() {
 
           <div>
             <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
-              País *
-            </label>
-            <input
-              name="pais"
-              type="text"
-              required
-              value={form.pais}
-              onChange={handleChange}
-              style={{
-                width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
-                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem",
-              }}
-            />
-          </div>
-
-          <div>
-            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
               Correo Electrónico *
             </label>
             <input
@@ -95,23 +74,6 @@ export default function ContactoPage() {
               type="email"
               required
               value={form.correo}
-              onChange={handleChange}
-              style={{
-                width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
-                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem",
-              }}
-            />
-          </div>
-
-          <div>
-            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
-              Teléfono *
-            </label>
-            <input
-              name="telefono"
-              type="tel"
-              required
-              value={form.telefono}
               onChange={handleChange}
               style={{
                 width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
@@ -136,24 +98,6 @@ export default function ContactoPage() {
                 resize: "vertical", fontFamily: "inherit",
               }}
             />
-          </div>
-
-          <div>
-            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
-              Imágenes (opcional)
-            </label>
-            <input
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={(e) => setArchivos(Array.from(e.target.files || []))}
-              style={{ fontSize: "0.85rem", color: "#666" }}
-            />
-            {archivos.length > 0 && (
-              <p style={{ fontSize: "0.8rem", color: "#666", marginTop: "0.3rem" }}>
-                {archivos.length} archivo(s) seleccionado(s)
-              </p>
-            )}
           </div>
 
           <button

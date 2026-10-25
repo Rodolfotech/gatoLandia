@@ -6,9 +6,11 @@ import "./globals.css";
 import { I18nProvider } from "./i18n/I18nContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+import TrackingScripts from "./components/TrackingScripts";
+import CookieBanner from "./components/CookieBanner";
 import GoogleAdsense from "./components/GoogleAdsense";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 import { defaultOgImage } from "./data/categoryImages";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
@@ -36,7 +38,9 @@ export const metadata: Metadata = {
   },
   description: "Todo lo que necesitas saber sobre los gatos: salud, comportamiento, biología, historia y más.",
   metadataBase: new URL(SITE_URL),
+  // El PNG va primero: Google Search muestra mejor un PNG cuadrado de 48 px o más.
   icons: [
+    { rel: "icon", url: "/icon-512.png", type: "image/png", sizes: "512x512" },
     { rel: "icon", url: "/icon.svg", type: "image/svg+xml" },
     { rel: "icon", url: "/favicon.ico", sizes: "any" },
   ],
@@ -65,7 +69,6 @@ export default function RootLayout({
   return (
     <html lang="es" data-scroll-behavior="smooth" className={`${playfair.variable} ${dmSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://i.postimg.cc" />
       </head>
       <body className={`${playfair.variable} ${dmSans.variable}`}>
         <script
@@ -93,8 +96,12 @@ export default function RootLayout({
             ]),
           }}
         />
-        <GoogleAnalytics />
+        <Script id="adsense-pause" strategy="beforeInteractive">
+          {`window.adsbygoogle = window.adsbygoogle || []; window.adsbygoogle.pauseAdRequests = 1;`}
+        </Script>
         <GoogleAdsense />
+        <TrackingScripts />
+        <CookieBanner />
         <I18nProvider>
           <a
             href="#contenido"

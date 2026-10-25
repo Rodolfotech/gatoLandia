@@ -849,7 +849,7 @@ export const categories: Category[] = [
               },
               {
                 heading: "Señales de alarma",
-                body: "Consulta de inmediato si el gatito:\n\n| **Señal** | **Qué hacer** |\n| Está frío, débil, no se mueve o no mama | Consulta de inmediato. |\n| No gana peso o pierde peso | Consulta pronto. |\n| No orina ni defeca en 24 horas | Consulta con urgencia. |\n| Tiene diarrea, vómitos, barriga hinchada o le cuesta respirar | Consulta de inmediato. |\n| Tiene temperatura alta o baja, convulsiones o se desploma | Acude a urgencias veterinarias. |\n\nSi el gatito tiene problemas para respirar o convulsiona, lee primero [Primeros Auxilios para Gatitos: Qué hacer en una emergencia](/categoria/emergencia/emergencias-felinas/guia-primeros-auxilios-gatitos).",
+                body: "Consulta de inmediato si el gatito:\n\n| **Qué observas** | **Qué hacer** |\n| Frío al tacto, sin fuerzas o sin ganas de mamar | Consulta de inmediato. |\n| Sube de peso muy despacio o adelgaza | Consulta pronto. |\n| Lleva de 24 a 48 horas sin orinar ni hacer caca | Consulta con urgencia. |\n| Diarrea, vómitos, abdomen hinchado o dificultad para respirar | Consulta de inmediato. |\n| Temperatura muy alta o muy baja, convulsiones o desmayo | Acude a urgencias veterinarias. |\n\nSi el gatito tiene problemas para respirar o convulsiona, lee primero [Primeros Auxilios para Gatitos: Qué hacer en una emergencia](/categoria/emergencia/emergencias-felinas/guia-primeros-auxilios-gatitos).",
               },
               {
                 heading: "Una nota final",
