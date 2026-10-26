@@ -1,4 +1,4 @@
-import Image from "next/image";
+import FullImage from "./FullImage";
 import Link from "next/link";
 
 interface TopicCardProps {
@@ -20,15 +20,8 @@ export default function TopicCard({ href, categoryLabel, title, excerpt, image, 
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--amber-dark)"
     >
       {image && (
-        <div className="relative aspect-16/10 bg-black/5">
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            unoptimized={image.startsWith("http")}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover"
-          />
+        <div className="bg-black/5">
+          <FullImage src={image} alt={imageAlt} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
         </div>
       )}
 

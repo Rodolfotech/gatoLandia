@@ -56,6 +56,7 @@ export const categories: Category[] = [
       sections: [
         {
           heading: "Los Primeros Días: Vigilancia y Adaptación",
+          image: "/images/bienvenidos-gatitos.webp",
           body: "El cambio de entorno genera estrés, lo que puede bajar las defensas del gato. Visita al veterinario: Lleva a tu gato a su nueva clínica de confianza cuanto antes. Entrega toda la documentación médica previa (vacunas, desparasitaciones) y sigue sus indicaciones. Qué observar: Que coma y beba con normalidad, que tenga energía acorde a su edad, que las heces sean consistentes (algunas blandas iniciales por el cambio de dieta son normales, pero no debe haber diarrea persistente) y ausencia de síntomas como tos, vómitos, mocos o legañas. Ante cualquier duda, consulta a tu veterinario.",
         },
         {
@@ -113,6 +114,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "¿Por qué elegir un Criadero Registrado?",
+                image: "/images/adquisicion-responsable.webp",
                 body: "Los criaderos éticos preservan la raza, cuidan la salud genética y socializan a los gatitos en ambiente familiar. La forma más segura de identificarlos es verificar su afiliación a federaciones felinas internacionales como WCF, TICA o FIFe, que exigen estándares de crianza. Ventajas de comprar con pedigree: Certificación Genética (garantiza la raza y ancestros registrados), Salud Preventiva (tests genéticos para descartar enfermedades como PKD en Persas o HCM en Maine Coons) y Socialización Temprana (crecen en hogar, no en jaulas, previniendo problemas de conducta).",
               },
               {
@@ -162,6 +164,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Por qué importa el agua",
+                image: "/images/comida-humeda.webp",
                 body: "Los gatos descienden de animales de zonas secas. Por eso tienden a conservar agua concentrando la orina, en lugar de beber mucho más. En la naturaleza, sus presas tienen más del 60 % de agua, así que gran parte de los líquidos llega con la comida.\n\nLa comida húmeda tiene normalmente entre 70 y 80 % de agua. El pienso seco, según la clasificación de la FEDIAF, tiene alrededor del 14 % o menos. Por eso un gato que come solo pienso suele recibir menos agua en total, aunque beba de su bebedero.",
               },
               {
@@ -185,6 +188,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Qué es y en qué se basa",
+                image: "/images/dieta-barf-gatos.webp",
                 body: "La propuesta suele usar proporciones aproximadas de 70 % de carne muscular, 10 % de hueso carnoso, 5 % de hígado y 5 % de otras vísceras. Las recetas varían mucho según quien la promueva.\n\nLa idea es imitar la alimentación de los felinos como cazadores. Pero que algo sea natural no significa que sea seguro ni completo.\n\nLos gatos son carnívoros estrictos. Necesitan nutrientes como la taurina, la arginina, ciertas grasas, las vitaminas liposolubles y el calcio. Una receta casera mal preparada puede causar carencias o excesos graves. En gatitos, un desequilibrio entre calcio y fósforo puede causar dolor en los huesos y fracturas.",
               },
               {
@@ -218,6 +222,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Alimentos de alto riesgo: evítalos siempre",
+                image: "/images/alimentos-toxicos-gatos.webp",
                 body: "Estos alimentos pueden causar daños graves, así que nunca deben formar parte de su dieta ni de sus premios:\n\n| **Alimento** | **Por qué es peligroso** |\n| Cebolla, ajo, puerro y cebollín | Dañan los glóbulos rojos y pueden causar anemia. Los gatos son muy sensibles. Son peligrosos crudos, cocidos, en polvo o en caldos y salsas. |\n| Chocolate, café, té y cafeína | Pueden causar vómitos, hiperactividad, latidos acelerados, temblores y convulsiones. El chocolate negro y el de repostería son los más peligrosos. |\n| Alcohol | Incluso en pequeñas cantidades puede causar descoordinación, vómitos, dificultad para respirar y, en casos graves, coma. La masa cruda con levadura también puede producirlo. |\n| Uvas, pasas y grosellas | Se asocian a daño en los riñones. En gatos hay menos evidencia que en perros, pero lo mejor es evitarlas por completo. |\n| Xilitol | Edulcorante que aparece en chicles, caramelos y productos “sin azúcar”. Puede causar bajadas de azúcar, convulsiones y daño en el hígado. |",
               },
               {
@@ -259,6 +264,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Qué implica la cirugía",
+                image: "/images/castrar-gatitos.webp",
                 body: "En las gatas, la intervención habitual es la ovariohisterectomía: se retiran los ovarios y el útero. Así se acaban los celos y los embarazos, y se elimina el riesgo de una infección uterina.\n\nEn los machos se hace una orquiectomía, es decir, se retiran los dos testículos. Así se elimina la fertilidad y baja la producción de las hormonas que causan conductas como vagar, pelear y marcar con orina.",
               },
               {
@@ -312,6 +318,7 @@ export const categories: Category[] = [
       sections: [
         {
           heading: "¿Interior o Exterior? Tomando la decisión correcta",
+          image: "/images/comportamiento-gatitos.webp",
           body: "Una de las primeras decisiones al adoptar es si el gato vivirá solo dentro de casa o tendrá acceso al exterior. Ambas opciones tienen implicaciones importantes: Gatos de exterior: Tienen más libertad y estimulación natural, pero corren mayores riesgos: atropellos, peleas con otros animales, enfermedades infecciosas y parásitos (pulgas, gusanos). Su esperanza de vida suele ser menor. Gatos de interior: Están mucho más protegidos y viven más años, pero dependen totalmente de nosotros para su estimulación. El aburrimiento es su mayor enemigo. Si eliges esta opción, debes comprometerte a enriquecer su entorno con juegos, rascadores y tiempo de calidad. Consejo: Sea cual sea tu elección, la clave está en la seguridad y la estimulación mental.",
         },
         {
@@ -351,6 +358,7 @@ export const categories: Category[] = [
       sections: [
         {
           heading: "Paso 1: La Cuarentena Inicial (Días 1-4)",
+          image: "/images/convivencia-gatitos.webp",
           body: "El nuevo gato necesita sentirse seguro antes de conocer a nadie. Habitación propia: Prepara una habitación tranquila (que no sea la zona principal de tu gato actual) con su cama, comida, agua, juguetes y arenero. Refugio seguro: Deja su transportín abierto con una manta dentro para que tenga un escondite donde sentirse protegido. Cero contacto visual: Durante estos primeros días, no deben verse. Sin embargo, está bien que se huelan bajo la puerta. Esto les permite investigarse sin la presión del cara a cara.",
         },
         {
@@ -397,6 +405,7 @@ export const categories: Category[] = [
             sections: [
            {
           heading: "La cola como barómetro emocional",
+          image: "/images/comunicacion-corporal-gatitos.webp",
           body: "La cola es una de las señales más claras: Alta y recta indica confianza, saludo afectuoso o felicidad (si tiene la punta curvada es felicidad máxima). Baja o entre las patas expresa miedo, inseguridad o sumisión. Moviéndose de lado a lado rápidamente o con movimiento lento revela irritación, molestia o concentración. Si está esponjada, erizada o arqueada, el gato siente amenaza o terror.",
         },
         {
