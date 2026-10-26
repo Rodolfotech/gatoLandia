@@ -79,10 +79,8 @@ function ResultsAccordion() {
     };
   }, [stop]);
 
-  const categoryLabel = feed.category
-    ? feed.articles.find((a) => a.cat.slug === feed.category)?.cat.label
-    : null;
-  const title = `${categoryLabel ?? "Todas las categorías"} · ${feed.filtered.length} ${
+  const scopeLabel = feed.activeOrigin?.label ?? feed.activeGroup?.label;
+  const title = `${scopeLabel ?? "Todas las categorías"} · ${feed.filtered.length} ${
     feed.filtered.length === 1 ? "artículo" : "artículos"
   }`;
 
@@ -102,7 +100,7 @@ function ResultsAccordion() {
           </span>
         </button>
         <div id={panelId} className="border-t border-black/5 p-5">
-          <FeedResults feed={feed} onSelect={stop} groupBySub />
+          <FeedResults feed={feed} onSelect={stop} />
         </div>
       </div>
     </div>

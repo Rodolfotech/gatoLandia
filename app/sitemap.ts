@@ -13,6 +13,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/contacto`, lastModified: LAST_MODIFIED, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${BASE_URL}/razas`, lastModified: LAST_MODIFIED, changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${BASE_URL}/preguntas`, lastModified: LAST_MODIFIED, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${BASE_URL}/calculadora`, lastModified: LAST_MODIFIED, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${BASE_URL}/toxicos`, lastModified: LAST_MODIFIED, changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${BASE_URL}/edad-gato`, lastModified: LAST_MODIFIED, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${BASE_URL}/privacidad`, lastModified: LAST_MODIFIED, changeFrequency: "yearly" as const, priority: 0.3 },
     { url: `${BASE_URL}/terminos`, lastModified: LAST_MODIFIED, changeFrequency: "yearly" as const, priority: 0.3 },
   ];

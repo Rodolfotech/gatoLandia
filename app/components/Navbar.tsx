@@ -14,6 +14,9 @@ const NAV_ITEMS = [
   { href: "/contacto", label: "Contáctanos" },
   { href: "/razas", label: "Razas" },
   { href: "/preguntas", label: "Preguntas" },
+  { href: "/calculadora", label: "Calculadora" },
+  { href: "/edad-gato", label: "Edad felina" },
+  { href: "/toxicos", label: "Toxicidad" },
 ];
 
 const FOCUS_RING =
@@ -72,7 +75,7 @@ export default function Navbar() {
         <SiteSearch className="hidden min-w-0 flex-1 md:mx-4 md:flex md:min-w-[12rem] md:max-w-md" />
         <div className="flex-1 md:hidden" />
 
-        <ul className="hidden items-center gap-2 pl-4 xl:flex">
+        <ul className="hidden items-center gap-2 pl-4 2xl:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
               <Link href={item.href} aria-current={isActive(item.href) ? "page" : undefined} className={linkClass(item.href)}>
@@ -97,7 +100,7 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           aria-controls={menuOpen ? menuId : undefined}
           aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          className={`flex h-11 w-11 items-center justify-center rounded-lg text-[var(--charcoal)] xl:hidden ${FOCUS_RING}`}
+          className={`flex h-11 w-11 items-center justify-center rounded-lg text-[var(--charcoal)] 2xl:hidden ${FOCUS_RING}`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             {menuOpen ? (
@@ -118,7 +121,7 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-16 z-[999] bg-black/30 xl:hidden" onClick={closeMenu}>
+        <div className="fixed inset-x-0 bottom-0 top-16 z-[999] bg-black/30 2xl:hidden" onClick={closeMenu}>
           <nav
             id={menuId}
             aria-label="Principal"

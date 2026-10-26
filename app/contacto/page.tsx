@@ -91,6 +91,7 @@ export default function ContactoPage() {
             <input
               name="nombre"
               type="text"
+              data-clarity-mask="True"
               required
               maxLength={NAME_MAX_LENGTH}
               autoComplete="name"
@@ -117,6 +118,7 @@ export default function ContactoPage() {
             <input
               name="correo"
               type="email"
+              data-clarity-mask="True"
               required
               value={form.correo}
               onChange={handleChange}
@@ -140,6 +142,7 @@ export default function ContactoPage() {
             </label>
             <textarea
               name="mensaje"
+              data-clarity-mask="True"
               required
               rows={5}
               maxLength={2000}
