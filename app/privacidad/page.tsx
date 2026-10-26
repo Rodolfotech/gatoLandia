@@ -69,8 +69,8 @@ export default function PrivacidadPage() {
 
           <LegalSection id="responsable" numero={1} titulo={SECCIONES[0].titulo}>
             <p className={P}>
-              Responsable: equipo editorial y administración de AlmaGatuna, proyecto de divulgación independiente gestionado
-              por persona natural.
+              Titular: AlmaGatuna, sitio operado por una persona natural. Si una autoridad o un proceso legal requiere
+              identificar al responsable, se atiende por el canal de contacto indicado a continuación.
             </p>
             <p className={P}>Sitio web oficial: almagatuna.com.</p>
             <p className={P}>Ámbito geográfico: Chile y Latinoamérica.</p>
@@ -211,8 +211,8 @@ export default function PrivacidadPage() {
           <LegalSection id="conservacion" numero={7} titulo={SECCIONES[6].titulo}>
             <p className={P}>
               <strong>Comunicaciones por correo:</strong> los mensajes recibidos a través del formulario se conservan únicamente el
-              tiempo necesario para resolver la consulta, y por un plazo máximo de doce (12) meses, luego del cual se eliminan de
-              forma periódica.
+              tiempo necesario para resolver la consulta, y por un plazo máximo de treinta (30) días desde su recepción, luego del
+              cual se eliminan.
             </p>
             <p className={P}>
               <strong>Métricas estadísticas:</strong> los datos de Google Analytics y Microsoft Clarity se conservan según las

@@ -3,7 +3,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "../i18n/I18nContext";
-import { Category, Subcategory, Topic, categories as allCats } from "../data/cats";
+import { Category, Subcategory, Topic } from "../data/cats";
 import Pagination from "./Pagination";
 import AdBanner from "./AdBanner";
 import AdSlot from "./AdSlot";
@@ -13,12 +13,12 @@ import ImageCarousel from "./ImageCarousel";
 import BackButton from "./BackButton";
 import { activateOnKey } from "@/app/lib/keyboardNav";
 import EmergencyCard from "./EmergencyCard";
-import { categoryImages } from "../data/categoryImages";
-
-/** Miniatura de un tema: su primera imagen de sección o, si no tiene, la de su categoría. */
-function topicImage(topic: Topic, categorySlug: string) {
-  return topic.sections.find((s) => s.image)?.image ?? categoryImages[categorySlug] ?? null;
-}
+import ArticleByline from "./ArticleByline";
+import { editorialAuthor } from "@/app/data/authors";
+import ArticleSources from "./ArticleSources";
+import FeedBrowser from "./FeedBrowser";
+import { groupOf } from "@/app/data/feedGroups";
+import { formatCitation, getTopicSources } from "@/app/data/sources";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
 const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
@@ -179,18 +179,6 @@ export default function TopicContent({
 }: TopicContentProps) {
   const { t } = useI18n();
 
-      // Primero los temas de la misma subcategoría, luego los de la misma categoría, y después el resto.
-      const candidates: { cat: Category; sub: Subcategory; topic: Topic; score: number }[] = [];
-      for (const c of allCats) {
-        for (const s of c.subcategories) {
-          for (const t of s.topics) {
-            if (c.slug === category.slug && s.slug === subcategory.slug && t.slug === topic.slug) continue;
-            const score = c.slug !== category.slug ? 0 : s.slug === subcategory.slug ? 2 : 1;
-            candidates.push({ cat: c as unknown as Category, sub: s as unknown as Subcategory, topic: t as unknown as Topic, score });
-          }
-        }
-      }
-      const picks = candidates.sort((a, b) => b.score - a.score).slice(0, 4);
 
   useEffect(() => {
     const desc = topic.intro.replace(/\*\*/g, "").slice(0, 160);
@@ -213,7 +201,9 @@ export default function TopicContent({
         headline: topic.title,
         description: desc,
         url,
-        author: { "@type": "Organization", name: SITE_NAME },
+        author: { "@type": "Person", name: editorialAuthor.name, jobTitle: editorialAuthor.role, description: editorialAuthor.bio, url: `${SITE_URL}${editorialAuthor.url}` },
+        publisher: { "@type": "Organization", name: SITE_NAME },
+        citation: getTopicSources(topic.slug).map(formatCitation),
         about: category.label,
         isPartOf: { "@type": "WebPage", name: subcategory.label, url: `${SITE_URL}/${category.slug}/${subcategory.slug}` },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -335,7 +325,7 @@ export default function TopicContent({
     <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
       <div className="page-shell topic-content-layout">
         <div className="topic-side">
-          <BackButton />
+          <BackButton className="self-start" />
         <details className="topic-toc" open>
               <summary>En este artículo</summary>
               <nav aria-label="Índice del artículo">
@@ -395,7 +385,11 @@ export default function TopicContent({
           >
             {topic.title}
           </h1>
-          <p style={{ margin: "0 0 1.5rem", fontSize: "0.85rem", color: "var(--mid)" }}>{readingMinutes} min de lectura</p>
+          <div className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-1">
+            <ArticleByline />
+            <span aria-hidden="true" className="text-(--mid)">·</span>
+            <p className="m-0 text-[0.85rem] text-(--mid)">{readingMinutes} min de lectura</p>
+          </div>
 
           {/* Intro / Direct Answer */}
           <div
@@ -478,98 +472,12 @@ export default function TopicContent({
           >
             Esta información es orientativa y no sustituye la consulta veterinaria. Ante cualquier duda sobre la salud o el comportamiento de su gato, consulte con su veterinario.
           </p>
+          <ArticleSources sources={getTopicSources(topic.slug)} />
         </article>
 
         {(
           <div className="topic-media-column">
             <EmergencyCard />
-            {/* También te puede interesar */}
-        {(() => {
-          if (picks.length === 0) return null;
-          return (
-            <section style={{ marginBottom: "2.5rem" }}>
-              <h2 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "1.25rem",
-                fontWeight: 700,
-                color: "#2c2416",
-                marginBottom: "1rem",
-              }}>
-                También te puede interesar
-              </h2>
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "1fr",
-                gap: "0.75rem",
-              }}>
-                {picks.map(({ cat, sub, topic }) => (
-                  <a
-                    key={`${cat.slug}-${sub.slug}-${topic.slug}`}
-                    href={`/categoria/${cat.slug}/${sub.slug}/${topic.slug}`}
-                    style={{
-                      textAlign: "left",
-                      background: "rgba(0,0,0,0.02)",
-                      border: "1px solid rgba(201,180,154,0.3)",
-                      borderRadius: 10,
-                      padding: "0.85rem 1rem",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.85rem",
-                      cursor: "pointer",
-                      fontFamily: "'DM Sans', sans-serif",
-                      textDecoration: "none",
-                      transition: "all 0.2s",
-                    }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget;
-                      el.style.borderColor = cat.color + "50";
-                      el.style.background = cat.color + "08";
-                      el.style.transform = "translateY(-2px)";
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget;
-                      el.style.borderColor = "rgba(201,180,154,0.3)";
-                      el.style.background = "rgba(0,0,0,0.02)";
-                      el.style.transform = "translateY(0)";
-                    }}
-                  >
-                    {topicImage(topic, cat.slug) && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={topicImage(topic, cat.slug) ?? undefined}
-                        alt=""
-                        width={56}
-                        height={56}
-                        loading="lazy"
-                        style={{ flexShrink: 0, width: 56, height: 56, borderRadius: 8, objectFit: "cover" }}
-                      />
-                    )}
-                    <div style={{ minWidth: 0 }}>
-                    <span style={{
-                      fontSize: "0.6rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      color: cat.color,
-                      fontWeight: 600,
-                    }}>
-                      {cat.label} · {sub.label}
-                    </span>
-                    <p style={{
-                      fontSize: "0.82rem",
-                      fontWeight: 600,
-                      color: "#2c2416",
-                      margin: "0.3rem 0 0",
-                      lineHeight: 1.3,
-                    }}>
-                      {topic.title}
-                    </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </section>
-          );
-        })()}
             {topic.slug === "adquisicion-responsable-global" && (
               <>
                 <div
@@ -707,59 +615,16 @@ export default function TopicContent({
         )}
       </div>
 
-      {/* Preguntas relacionadas — People Also Ask pattern */}
-      {subcategory.topics.length > 1 && (
-        <section style={{
-          maxWidth: 900,
-          padding: "2rem var(--page-padding, 3rem) 0",
-          margin: "0 auto",
-          width: "100%",
-        }}>
-          <h2 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "1.25rem",
-            fontWeight: 700,
-            color: "#2c2416",
-            marginBottom: "1rem",
-          }}>
-            Preguntas relacionadas sobre {subcategory.label.toLowerCase()}
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-            {subcategory.topics
-              .filter(t => t.slug !== topic.slug)
-              .map(t => (
-                <a
-                  key={t.slug}
-                  href={`/categoria/${category.slug}/${subcategory.slug}/${t.slug}`}
-                  onClick={(e) => { e.preventDefault(); onNavigate(t.slug); }}
-                  style={{
-                    textAlign: "left",
-                    background: "none",
-                    border: "none",
-                    borderBottom: "1px solid rgba(201,180,154,0.25)",
-                    padding: "0.75rem 0",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    fontSize: "0.9rem",
-                    color: "#4a3d2c",
-                    fontWeight: 500,
-                    fontFamily: "'DM Sans', sans-serif",
-                    textDecoration: "none",
-                    transition: "color 0.15s",
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.color = category.color}
-                  onMouseLeave={e => e.currentTarget.style.color = "#4a3d2c"}
-                >
-                  <span style={{ color: category.color, fontSize: "0.7rem" }}>▸</span>
-                  {t.title}
-                </a>
-              ))}
-          </div>
-        </section>
-      )}
-
+      <section aria-labelledby="explora-titulo" className="page-shell mt-12">
+        <h2
+          id="explora-titulo"
+          className="mb-4 text-xl text-(--charcoal)"
+          style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}
+        >
+          Explora más artículos
+        </h2>
+        <FeedBrowser initialGroup={groupOf(category.slug)?.slug ?? null} />
+      </section>
 
       <Pagination
         current={pageIndex}
@@ -772,6 +637,7 @@ export default function TopicContent({
         prevLabel={t('topic_prev_label')}
         nextLabel={t('topic_next_label')}
         unitLabel="Tema"
+        action={<BackButton className="self-center" />}
       />
 
       {lightbox && (

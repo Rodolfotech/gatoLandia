@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { setSearchQuery, useSearchQuery } from "./searchStore";
 import type { Category, Subcategory, Topic } from "../data/cats";
 import { categoryImageAlt, categoryImages } from "../data/categoryImages";
+import { feedGroups, groupOf, type FeedGroup, type FeedOrigin } from "../data/feedGroups";
 
 export const PAGE_SIZE = 6;
 
@@ -9,6 +10,8 @@ export interface ArticleItem {
   cat: Category;
   sub: Subcategory;
   topic: Topic;
+  /** Grupo de la barra de filtros al que pertenece la categoría original. */
+  group: FeedGroup | null;
   image: string | null;
   imageAlt: string;
 }
@@ -19,12 +22,18 @@ export function stripMarkup(text: string) {
 
 /** Minúsculas y sin acentos, para que "parasitos" encuentre "Parásitos". */
 export function normalizeText(text: string) {
-  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 }
 
-/** Estado del feed de artículos: búsqueda, categoría y paginación. Lo usan la home y las páginas de artículo. */
-export function useArticleFeed(categories: Category[]) {
-  const [category, setCategory] = useState<string | null>(null);
+/**
+ * Estado del feed de artículos: búsqueda, grupo, categoría original y paginación.
+ * Lo usan la home y las páginas de artículo.
+ */
+export function useArticleFeed(categories: Category[], initialGroup: string | null = null) {
+  // Slug del grupo de la barra (null = todas).
+  const [category, setCategory] = useState<string | null>(initialGroup);
+  // Slug de la categoría original dentro del grupo (null = todas las del grupo).
+  const [origin, setOrigin] = useState<string | null>(null);
   const query = useSearchQuery();
   const [page, setPage] = useState(1);
 
@@ -36,6 +45,7 @@ export function useArticleFeed(categories: Category[]) {
             cat,
             sub,
             topic,
+            group: groupOf(cat.slug),
             ...(topic.sections.find((s) => s.image)
               ? { image: topic.sections.find((s) => s.image)!.image!, imageAlt: topic.title }
               : { image: categoryImages[cat.slug] ?? null, imageAlt: categoryImageAlt[cat.slug] ?? "" }),
@@ -45,10 +55,14 @@ export function useArticleFeed(categories: Category[]) {
     [categories],
   );
 
+  const activeGroup = feedGroups.find((g) => g.slug === category) ?? null;
+  const activeOrigin: FeedOrigin | null = activeGroup?.origins.find((o) => o.slug === origin) ?? null;
+
   const q = normalizeText(query.trim());
   const filtered = articles.filter(
-    ({ cat, topic }) =>
-      (category === null || cat.slug === category) &&
+    ({ cat, group, topic }) =>
+      (category === null || group?.slug === category) &&
+      (origin === null || cat.slug === origin) &&
       (q === "" ||
         normalizeText(topic.title).includes(q) ||
         normalizeText(stripMarkup(topic.intro)).includes(q)),
@@ -63,11 +77,19 @@ export function useArticleFeed(categories: Category[]) {
     filtered,
     items,
     category,
+    origin,
+    activeGroup,
+    activeOrigin,
     query,
     currentPage,
     totalPages,
     changeCategory(slug: string | null) {
       setCategory(slug);
+      setOrigin(null);
+      setPage(1);
+    },
+    changeOrigin(slug: string | null) {
+      setOrigin(slug);
       setPage(1);
     },
     changeQuery(value: string) {

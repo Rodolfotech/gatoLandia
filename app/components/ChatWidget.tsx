@@ -250,6 +250,7 @@ export default function ChatWidget() {
             <input
               ref={inputRef}
               type="text"
+              data-clarity-mask="True"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}

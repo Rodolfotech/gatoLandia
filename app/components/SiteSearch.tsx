@@ -42,7 +42,7 @@ export default function SiteSearch({ className, onSearch }: SiteSearchProps) {
         aria-label="Buscar artículos"
         value={query}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Buscar: vacunas, arenero, dieta…"
+        placeholder="Buscador"
         className={`h-11 w-full rounded-full border border-black/10 bg-[#f5efe6] px-4 text-sm text-(--charcoal) placeholder:text-[#6b5c44] ${FOCUS_RING}`}
       />
     </form>
