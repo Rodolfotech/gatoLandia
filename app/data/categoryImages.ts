@@ -1,19 +1,19 @@
 // Imagen principal de cada categoría (home y página de categoría).
 export const categoryImages: Record<string, string> = {
-            salud: "/images/salud-gatitos.webp",
-            comportamiento: "/images/comportamiento-gatuno.webp",
-            alimentacion: "/images/alimentacion-gatitos.webp",
-            juego: "/images/juegos-gatitos.webp",
-            etapas: "/images/etapas-de-vida.webp",
-            emergencia: "/images/emergencia-gatuna.webp",
-            adopcion: "/images/adopcion.webp",
-            razas: "/images/razas-gatos.webp",
+            salud: "/images/vacuna-gatitos.webp",
+            comportamiento: "/images/comportamiento-gatitos.webp",
+            alimentacion: "/images/comida-humeda.webp",
+            juego: "/images/juego-gatitos.webp",
+            etapas: "/images/semanas-gatitos.webp",
+            emergencia: "/images/auxilio-gatito.webp",
+            adopcion: "/images/bienvenidos-gatitos.webp",
+            razas: "/images/razas-gatitos.webp",
             "adquisicion-responsable": "/images/adquisicion-responsable.webp",
-            historia: "/images/historia-origen-expansion.webp",
-            "cuidado-gatito": "/images/cuidado-gatuno.webp",
-            "tenencia-responsable": "/images/tenencia-responsable.webp",
-            castracion: "/images/castracion.webp",
-            "impacto-conciencia": "/images/impacto-conciencia.webp",
+            historia: "/images/nilo-gatitos.webp",
+            "cuidado-gatito": "/images/cuidado-gatito.webp",
+            "tenencia-responsable": "/images/tenencia-responsable-gatitos.webp",
+            castracion: "/images/castrar-gatitos.webp",
+            "impacto-conciencia": "/images/secreto-gatitos.webp",
 };
 
 // Texto alternativo de cada imagen de categoría, según lo que muestra.

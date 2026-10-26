@@ -122,11 +122,6 @@ function groupItems(items: ArticleFeed["items"], withCategory: boolean): Group[]
 export function FeedResults({ feed, onSelect, groupBySub = false }: FeedResultsProps) {
   const total = feed.filtered.length;
 
-  function goToPage(next: number) {
-    feed.goToPage(next);
-    document.getElementById("resultados")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   // Con una etiqueta o una búsqueda se muestra una lista de temas; sin filtro, las tarjetas de siempre.
   const focused = feed.category !== null || feed.query.trim() !== "";
 
@@ -196,8 +191,8 @@ export function FeedResults({ feed, onSelect, groupBySub = false }: FeedResultsP
           hasPrev={feed.currentPage > 1}
           hasNext={feed.currentPage < feed.totalPages}
           color="#a0622a"
-          onPrev={() => goToPage(feed.currentPage - 1)}
-          onNext={() => goToPage(feed.currentPage + 1)}
+          onPrev={() => feed.goToPage(feed.currentPage - 1)}
+          onNext={() => feed.goToPage(feed.currentPage + 1)}
           prevLabel="Anterior"
           nextLabel="Siguiente"
         />

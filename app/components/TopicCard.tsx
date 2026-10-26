@@ -33,7 +33,11 @@ export default function TopicCard({ href, categoryLabel, title, excerpt, image, 
         >
           {title}
         </h3>
-        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-(--mid)">{excerpt}</p>
+        <div className="card-excerpt">
+          <div>
+            <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-(--mid)">{excerpt}</p>
+          </div>
+        </div>
         <span className="mt-auto inline-flex min-h-11 items-center self-start pt-4 text-sm font-semibold text-(--amber-dark) group-hover:underline group-hover:underline-offset-4">
           Leer artículo →
         </span>
