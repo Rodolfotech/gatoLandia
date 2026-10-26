@@ -7,6 +7,7 @@ import { Category, Subcategory, Topic, categories as allCats } from "../data/cat
 import Pagination from "./Pagination";
 import AdBanner from "./AdBanner";
 import AdSlot from "./AdSlot";
+import FullImage from "./FullImage";
 import { AD_SLOTS } from "@/app/lib/adSlots";
 import ImageCarousel from "./ImageCarousel";
 import { activateOnKey } from "@/app/lib/keyboardNav";
@@ -674,10 +675,14 @@ export default function TopicContent({
                       onClick={() => setLightbox(section.image!)}
                       style={{
                         width: "100%",
-                        aspectRatio: section.image.endsWith(".svg") ? "auto" : "16/9",
+                        aspectRatio: "auto",
                         position: "relative",
                         overflow: "hidden",
-                        borderRadius: 12,
+                        borderRadius: 16,
+                        background: "#fffbf5",
+                        border: "1px solid rgba(201, 180, 154, 0.45)",
+                        padding: "0.75rem",
+                        boxShadow: "0 2px 10px rgba(44, 36, 22, 0.06)",
                         cursor: "pointer",
                       }}
                     >
@@ -689,13 +694,12 @@ export default function TopicContent({
                           style={{ display: "block", width: "100%", height: "auto" }}
                         />
                       ) : (
-                        <Image
+                        <FullImage
                           src={section.image}
                           alt={section.heading}
-                          fill
                           quality={100}
                           sizes="(max-width: 768px) 100vw, 800px"
-                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                          className="rounded-[10px]"
                         />
                       )}
                     </div>

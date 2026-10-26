@@ -187,16 +187,6 @@ export default function ContactoPage() {
             )}
           </div>
 
-          <p
-            style={{
-              fontSize: "0.85rem", lineHeight: 1.5, padding: "0.8rem 1rem", borderRadius: 8,
-              background: "#f1f7f2", border: "1px solid rgba(122,158,126,0.35)", margin: 0,
-            }}
-          >
-            Tus datos se tratan conforme a la Ley 19.628 y a la Ley 21.719 para responder tu consulta. Consulta nuestra Política
-            de Privacidad o ejerce tus derechos en{" "}
-            <a href="mailto:correoalmagatuna@gmail.com">correoalmagatuna@gmail.com</a>.
-          </p>
 
           <button
             type="submit"
