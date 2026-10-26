@@ -89,3 +89,29 @@ html::-webkit-scrollbar { display: none; }
     padding-inline: 3.5rem;
   }
 }
+
+/* Extracto de la tarjeta en acordeón: en equipos con puntero se pliega y se despliega al pasar el mouse
+   o al enfocar la tarjeta con el teclado. En pantallas táctiles siempre se ve. */
+.card-excerpt {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 200ms ease;
+}
+.card-excerpt > div {
+  min-height: 0;
+  overflow: hidden;
+}
+@media (hover: hover) {
+  .card-excerpt {
+    grid-template-rows: 0fr;
+  }
+  .group:hover .card-excerpt,
+  .group:focus-visible .card-excerpt {
+    grid-template-rows: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-excerpt {
+    transition: none;
+  }
+}

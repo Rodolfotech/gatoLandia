@@ -10,9 +10,15 @@ import AdSlot from "./AdSlot";
 import FullImage from "./FullImage";
 import { AD_SLOTS } from "@/app/lib/adSlots";
 import ImageCarousel from "./ImageCarousel";
+import BackButton from "./BackButton";
 import { activateOnKey } from "@/app/lib/keyboardNav";
 import EmergencyCard from "./EmergencyCard";
 import { categoryImages } from "../data/categoryImages";
+
+/** Miniatura de un tema: su primera imagen de sección o, si no tiene, la de su categoría. */
+function topicImage(topic: Topic, categorySlug: string) {
+  return topic.sections.find((s) => s.image)?.image ?? categoryImages[categorySlug] ?? null;
+}
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://almagatuna.com";
 const SITE_NAME = "AlmaGatuna · Enciclopedia Felina";
@@ -328,6 +334,8 @@ export default function TopicContent({
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
       <div className="page-shell topic-content-layout">
+        <div className="topic-side">
+          <BackButton />
         <details className="topic-toc" open>
               <summary>En este artículo</summary>
               <nav aria-label="Índice del artículo">
@@ -360,6 +368,7 @@ export default function TopicContent({
                 <p style={{ margin: "0.4rem 0 0", fontSize: "0.75rem", color: "var(--mid)" }}>Leído {readProgress}%</p>
               </div>
             </details>
+        </div>
         <article
           ref={articleRef}
           style={{
@@ -399,22 +408,6 @@ export default function TopicContent({
               marginBottom: "2.5rem",
             }}
           >
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              fontSize: "0.7rem",
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              color: "var(--rust)",
-              marginBottom: "0.5rem",
-            }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M13 2 3 14h7l-1 8 10-12h-7z" />
-              </svg>
-              Respuesta rápida
-            </div>
             <div style={{
               fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
               color: "#4a3d2c",
@@ -540,10 +533,10 @@ export default function TopicContent({
                       el.style.transform = "translateY(0)";
                     }}
                   >
-                    {categoryImages[cat.slug] && (
+                    {topicImage(topic, cat.slug) && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
-                        src={categoryImages[cat.slug]}
+                        src={topicImage(topic, cat.slug) ?? undefined}
                         alt=""
                         width={56}
                         height={56}
@@ -994,7 +987,7 @@ export default function TopicContent({
             grid-template-columns: 10.5rem minmax(0, 1fr) 13rem;
             gap: 1.75rem;
           }
-          .topic-toc {
+          .topic-side {
             position: sticky;
             top: 5.5rem;
             align-self: start;

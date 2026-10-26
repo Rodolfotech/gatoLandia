@@ -3,7 +3,7 @@ import { setSearchQuery, useSearchQuery } from "./searchStore";
 import type { Category, Subcategory, Topic } from "../data/cats";
 import { categoryImageAlt, categoryImages } from "../data/categoryImages";
 
-export const PAGE_SIZE = 9;
+export const PAGE_SIZE = 6;
 
 export interface ArticleItem {
   cat: Category;

@@ -1144,7 +1144,7 @@ export const categories: Category[] = [
     {
       slug: "corazon-origen-egipto",
       title: "Expansión por el Mundo",
-      intro: "el gato doméstico no apareció por casualidad en el Nilo. La clave fue la agricultura sedentaria. el valle del Nilo era el 'granero' de la región, y los silos de cereales eran imanes para los roedores.",
+      intro: "El gato doméstico no apareció por casualidad en el Nilo. La clave fue la agricultura sedentaria. El valle del Nilo era el 'granero' de la región, y los silos de cereales eran imanes para los roedores.",
       sections: [
         {
           heading: "La Transformación Religiosa",
