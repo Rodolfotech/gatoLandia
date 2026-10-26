@@ -1523,7 +1523,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Señales que conviene conocer",
-                image: "/images/enfermedad-gatitos.webp",
+                image: "/images/enfermedad-gatitos-v2.webp",
                 body: "Muchos gatos no muestran nada al principio. Los signos suelen aparecer cuando el riñón ya ha perdido una parte importante de su función. Estos son los más comunes:\n\n| **Lo que puedes notar** | **Qué puede significar** |\n| Bebe más agua y orina más veces o en más cantidad | El riñón no concentra bien la orina. |\n| Pierde peso o come menos | El cuerpo se desgasta y pierde apetito. |\n| Vomita con frecuencia | Puede deberse a sustancias que el riñón no logra eliminar. |\n| Se ve decaído o con poca energía | Puede indicar deshidratación o malestar general. |\n| Pelo sin brillo o descuidado | Suele acompañar al malestar general. |\n| Mal aliento, llagas en la boca o encías pálidas | Pueden aparecer con la enfermedad. |\n| Cambios repentinos en la vista | Puede deberse a presión arterial alta. Es urgente. |\n\nOjo: la creatinina, un análisis de sangre común, suele subir solo cuando se ha perdido cerca del 75 % de la función renal. Por eso conviene revisar a tiempo.",
               },
               {
@@ -1865,7 +1865,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Lo que su cuerpo necesita",
-                image: "/images/nutricion-gatitos.webp",
+                image: "/images/nutricion-gatitos-v2.webp",
                 body: "Los gatos son carnívoros estrictos. Necesitan nutrientes que vienen sobre todo de la carne. A diferencia de los perros, tienen que obtener de su comida la taurina, la arginina, la vitamina A ya preparada y el ácido araquidónico.\n\nLa taurina es esencial. Si le falta, puede dañar el corazón y la retina. Los gatos también convierten mal el betacaroteno en vitamina A, así que necesitan vitamina A directamente en su alimento.\n\nEn la naturaleza, los gatos comen varias veces al día en pequeñas cantidades. En casa, repartir la ración en varias tomas, o usar comederos interactivos, se parece más a ese ritmo natural y ayuda a controlar el peso.",
               },
               {
@@ -1945,7 +1945,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Qué es la esterilización",
-                image: "/images/control-poblacional-gatitos.webp",
+                image: "/images/control-poblacional-gatitos-v2.webp",
                 body: "En las gatas, la cirugía habitual es la ovariohisterectomía: se retiran los ovarios y el útero. En los machos, la castración consiste en retirar los dos testículos. Las dos eliminan la capacidad de tener crías.\n\nLas organizaciones veterinarias como la AVMA, la AAHA, la AAFP y la ASV recomiendan esterilizar a los gatos que no van a criar antes de los 5 meses, alrededor de los 4 meses. En refugios y programas bien organizados puede hacerse con seguridad desde las 6 u 8 semanas.",
               },
               {
@@ -1983,7 +1983,7 @@ export const categories: Category[] = [
             sections: [
               {
                 heading: "Lo que la convivencia sí aporta",
-                image: "/images/vinculo-humano-gatitos.webp",
+                image: "/images/vinculo-humano-gatitos-v2.webp",
                 body: "Los beneficios más claros son emocionales y sociales: compañía, menos sensación de soledad, rutinas y mucho afecto.\n\nEn la salud, la evidencia es más modesta. Algunos estudios de seguimiento han encontrado menor riesgo de infarto en personas con gatos, pero no es posible afirmar una relación de causa y efecto. Otros análisis no encuentran una asociación clara.\n\nTampoco hay pruebas sólidas de que el ronroneo baje la presión o cure enfermedades. Un gato puede ronronear cuando está cómodo, pero también cuando tiene dolor o estrés.\n\nEn niños, la relación con las alergias y el asma es compleja. Algunos estudios sugieren efectos distintos según el caso. Por eso no conviene adoptar un gato “para prevenir alergias”.",
               },
               {
