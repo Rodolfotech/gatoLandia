@@ -31,11 +31,11 @@ function HomeFeed() {
       <header className="border-b border-black/5 bg-white/60 py-12 md:py-16">
         <div className="page-shell">
           <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-(--amber-dark)">
+          <p className="text-sm font-semibold uppercase tracking-widest text-(--amber-dark)">
             Enciclopedia felina en español
           </p>
           <h1
-            className="mt-3 text-4xl leading-tight text-(--charcoal) md:text-5xl"
+            className="mt-3 texto-titulo-xl leading-tight text-(--charcoal)"
             style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
           >
             Entiende a tu gato, cuídalo mejor

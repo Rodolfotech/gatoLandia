@@ -46,11 +46,11 @@ export default function CategoryOverview({ category }: CategoryOverviewProps) {
     <div className="mx-auto max-w-6xl px-4 py-8 md:px-8 md:py-12">
       <header className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,360px)]">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-(--amber-dark)">
+          <p className="text-sm font-semibold uppercase tracking-widest text-(--amber-dark)">
             Categoría · {totalTopics} temas en {category.subcategories.length} secciones
           </p>
           <h1
-            className="mt-2 text-4xl leading-tight text-(--charcoal) md:text-5xl"
+            className="mt-2 texto-titulo-xl leading-tight text-(--charcoal)"
             style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
           >
             {category.label}

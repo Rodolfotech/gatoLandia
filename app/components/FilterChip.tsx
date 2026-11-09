@@ -20,7 +20,7 @@ export default function FilterChip({ active, count, onClick, children }: FilterC
     >
       {children}
       <span
-        className={`min-w-6 rounded-full px-2 py-0.5 text-center text-xs font-semibold tabular-nums ${
+        className={`min-w-6 rounded-full px-2 py-0.5 text-center text-sm font-semibold tabular-nums ${
           active ? "bg-white/15 text-white" : "bg-black/5 text-(--charcoal)"
         }`}
       >

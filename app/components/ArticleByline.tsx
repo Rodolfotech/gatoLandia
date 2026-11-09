@@ -4,7 +4,7 @@ import { editorialAuthor } from "@/app/data/authors";
 /** Firma del artículo: nombre del autor enlazado a su biografía. */
 export default function ArticleByline() {
   return (
-    <p className="m-0 text-[0.85rem] text-(--mid)">
+    <p className="m-0 text-sm text-(--mid)">
       Por{" "}
       <Link
         href={editorialAuthor.url}

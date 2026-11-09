@@ -43,7 +43,7 @@ export default function TopicCard({
 
       <div className="flex flex-1 flex-col p-5">
         {crumbs ? (
-          <p className="text-xs font-semibold text-(--amber-dark)">
+          <p className="text-sm font-semibold text-(--amber-dark)">
             {crumbs.map((crumb, i) => (
               <Fragment key={crumb.href}>
                 {i > 0 && <span aria-hidden="true"> · </span>}
@@ -57,7 +57,7 @@ export default function TopicCard({
             ))}
           </p>
         ) : (
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-(--amber-dark)">{categoryLabel}</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-(--amber-dark)">{categoryLabel}</p>
         )}
         <h3
           className="mt-2 text-lg leading-snug text-(--charcoal)"

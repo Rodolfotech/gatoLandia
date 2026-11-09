@@ -78,7 +78,7 @@ export default function PreguntasPage() {
 
   return (
     <main style={{ maxWidth: 800, margin: "2rem auto", padding: "0 1.5rem" }}>
-      <h1 style={{ fontSize: "2rem", color: "#2c2416", marginBottom: "2rem" }}>
+      <h1 style={{ fontSize: "var(--fs-titulo-xl)", color: "#2c2416", marginBottom: "2rem" }}>
         Preguntas Frecuentes sobre Gatos
       </h1>
 
@@ -93,7 +93,7 @@ export default function PreguntasPage() {
               style={{
                 width: "100%", textAlign: "left", padding: "1rem 1.25rem",
                 background: abierto === idx ? "rgba(212,133,58,0.08)" : "#fff",
-                border: "none", cursor: "pointer", fontSize: "0.95rem",
+                border: "none", cursor: "pointer", fontSize: " 1rem",
                 fontWeight: 600, color: "#2c2416",
                 display: "flex", justifyContent: "space-between", alignItems: "center",
                 fontFamily: "'DM Sans', sans-serif"
@@ -101,14 +101,14 @@ export default function PreguntasPage() {
             >
               {item.pregunta}
               <span style={{
-                fontSize: "0.75rem", color: "#c9b49a",
+                fontSize: "0.875rem", color: "#c9b49a",
                 transform: abierto === idx ? "rotate(180deg)" : "none",
                 transition: "transform 0.2s"
               }}>▼</span>
             </button>
             {abierto === idx && (
               <div style={{
-                padding: "0 1.25rem 1rem", fontSize: "0.9rem",
+                padding: "0 1.25rem 1rem", fontSize: "0.875rem",
                 color: "#6b5c44", lineHeight: 1.6, whiteSpace: "pre-line"
               }}>
                 {item.respuesta}

@@ -149,8 +149,8 @@ export default function ChatWidget() {
           >
             <span style={{ fontSize: '1.4rem' }}>🐱</span>
             <div>
-              <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{t('chat_title')}</div>
-              <div style={{ fontSize: '0.7rem', opacity: 0.85 }}>
+              <div style={{ fontWeight: 700, fontSize: '0.875rem' }}>{t('chat_title')}</div>
+              <div style={{ fontSize: '0.875rem', opacity: 0.85 }}>
                 {t('chat_subtitle')}
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function ChatWidget() {
                   borderRadius: msg.role === 'user' ? '16px 16px 4px 16px' : '16px 16px 16px 4px',
                   background: msg.role === 'user' ? '#d4853a' : '#fff',
                   color: msg.role === 'user' ? '#fff' : '#2c2416',
-                  fontSize: '0.85rem',
+                  fontSize: '0.875rem',
                   lineHeight: 1.6,
                   boxShadow:
                     msg.role === 'user'
@@ -262,7 +262,7 @@ export default function ChatWidget() {
                 border: '1px solid rgba(201,180,154,0.4)',
                 background: '#fdf6ec',
                 color: '#2c2416',
-                fontSize: '0.85rem',
+                fontSize: '0.875rem',
                 fontFamily: "'DM Sans', sans-serif",
                 outline: 'none',
               }}

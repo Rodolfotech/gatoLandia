@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function SobreNosotrosPage() {
   return (
     <div style={{ maxWidth: 800, margin: "4rem auto", padding: "0 2rem", color: "#2c2416" }}>
-      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", marginBottom: "1.5rem" }}>
+      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "var(--fs-titulo-xl)", marginBottom: "1.5rem" }}>
         ¡Bienvenido a nuestro rincón dedicado a los felinos!
       </h1>
 

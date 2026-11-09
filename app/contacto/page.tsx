@@ -66,7 +66,7 @@ export default function ContactoPage() {
 
   return (
     <div style={{ maxWidth: 600, margin: "4rem auto", padding: "0 2rem", color: "#2c2416" }}>
-      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "2rem", marginBottom: "2rem" }}>
+      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "var(--fs-titulo-xl)", marginBottom: "2rem" }}>
         Contacto
       </h1>
 
@@ -85,7 +85,7 @@ export default function ContactoPage() {
       ) : (
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
           <div>
-            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
+            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.875rem" }}>
               Nombre *
             </label>
             <input
@@ -101,18 +101,18 @@ export default function ContactoPage() {
               aria-describedby={mostrarErrorNombre ? "nombre-error" : undefined}
               style={{
                 width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
-                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem",
+                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.875rem",
               }}
             />
             {mostrarErrorNombre && (
-              <p id="nombre-error" role="alert" style={{ color: "#b42318", fontSize: "0.8rem", margin: "0.3rem 0 0" }}>
+              <p id="nombre-error" role="alert" style={{ color: "#b42318", fontSize: "0.875rem", margin: "0.3rem 0 0" }}>
                 Ingrese al menos {NAME_MIN_LETTERS} letras.
               </p>
             )}
           </div>
 
           <div>
-            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
+            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.875rem" }}>
               Correo Electrónico *
             </label>
             <input
@@ -126,18 +126,18 @@ export default function ContactoPage() {
               aria-describedby={mostrarErrorCorreo ? "correo-error" : undefined}
               style={{
                 width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
-                border: `1px solid ${mostrarErrorCorreo ? "#b42318" : "rgba(0,0,0,0.12)"}`, fontSize: "0.9rem",
+                border: `1px solid ${mostrarErrorCorreo ? "#b42318" : "rgba(0,0,0,0.12)"}`, fontSize: "0.875rem",
               }}
             />
             {mostrarErrorCorreo && (
-              <p id="correo-error" role="alert" style={{ color: "#b42318", fontSize: "0.8rem", margin: "0.3rem 0 0" }}>
+              <p id="correo-error" role="alert" style={{ color: "#b42318", fontSize: "0.875rem", margin: "0.3rem 0 0" }}>
                 Ingrese un correo válido.
               </p>
             )}
           </div>
 
           <div>
-            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.9rem" }}>
+            <label style={{ display: "block", marginBottom: "0.4rem", fontWeight: 600, fontSize: "0.875rem" }}>
               Mensaje *
             </label>
             <textarea
@@ -152,21 +152,21 @@ export default function ContactoPage() {
               aria-describedby={mostrarErrorMensaje ? "mensaje-error" : "mensaje-limite"}
               style={{
                 width: "100%", padding: "0.6rem 0.8rem", borderRadius: 8,
-                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.9rem",
+                border: "1px solid rgba(0,0,0,0.12)", fontSize: "0.875rem",
                 resize: "vertical", fontFamily: "inherit",
               }}
             />
             {mostrarErrorMensaje && (
-              <p id="mensaje-error" role="alert" style={{ color: "#b42318", fontSize: "0.8rem", margin: "0.3rem 0 0" }}>
+              <p id="mensaje-error" role="alert" style={{ color: "#b42318", fontSize: "0.875rem", margin: "0.3rem 0 0" }}>
                 El mensaje debe tener al menos {MESSAGE_MIN_LENGTH} caracteres.
               </p>
             )}
-            <p id="mensaje-limite" style={{ textAlign: "right", fontSize: "0.8rem", color: "#666", margin: "0.3rem 0 0" }}>
+            <p id="mensaje-limite" style={{ textAlign: "right", fontSize: "0.875rem", color: "#666", margin: "0.3rem 0 0" }}>
               Límite 2000 caracteres
             </p>
           </div>
 
-          <div style={{ fontSize: "0.85rem", lineHeight: 1.5 }}>
+          <div style={{ fontSize: "0.875rem", lineHeight: 1.5 }}>
             <label style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start", cursor: "pointer" }}>
               <input
                 type="checkbox"
@@ -196,7 +196,7 @@ export default function ContactoPage() {
             style={{
               marginTop: "0.5rem", padding: "0.7rem 1.5rem", borderRadius: 8,
               background: "#d4853a", color: "#fff", border: "none",
-              fontSize: "0.9rem", fontWeight: 600, cursor: "pointer",
+              fontSize: "0.875rem", fontWeight: 600, cursor: "pointer",
               transition: "background 0.2s",
             }}
             onMouseEnter={e => e.currentTarget.style.background = "#c17432"}
@@ -208,10 +208,10 @@ export default function ContactoPage() {
       )}
 
       <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(0,0,0,0.08)" }}>
-        <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#666" }}>
+        <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#666" }}>
           ¿Tienes alguna duda, sugerencia o simplemente quieres compartir una historia sobre tu compañero felino? ¡Nos encantaría escucharte!
         </p>
-        <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#666", marginTop: "1rem" }}>
+        <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "#666", marginTop: "1rem" }}>
           Puedes ponerte en contacto con nosotros escribiendo al siguiente correo electrónico:{" "}
           <a href="mailto:correoalmagatuna@gmail.com" style={{ color: "#d4853a", textDecoration: "none" }}>
             correoalmagatuna@gmail.com

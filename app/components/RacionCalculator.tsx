@@ -283,7 +283,7 @@ function OpcionRadio({
         />
         <span className="font-semibold">{label}</span>
       </span>
-      {detalle && <span className={`mt-0.5 pl-6 text-xs ${checked ? "text-white/80" : "text-(--mid)"}`}>{detalle}</span>}
+      {detalle && <span className={`mt-0.5 pl-6 text-sm ${checked ? "text-white/80" : "text-(--mid)"}`}>{detalle}</span>}
     </label>
   );
 }

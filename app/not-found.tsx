@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-20 text-center md:px-8">
-      <p className="text-xs font-semibold uppercase tracking-widest text-(--amber-dark)">Error 404</p>
+      <p className="text-sm font-semibold uppercase tracking-widest text-(--amber-dark)">Error 404</p>
       <h1
-        className="mt-3 text-4xl leading-tight text-(--charcoal)"
+        className="mt-3 texto-titulo-xl leading-tight text-(--charcoal)"
         style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
       >
         Esta página no existe

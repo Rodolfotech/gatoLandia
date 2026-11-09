@@ -13,7 +13,35 @@
   --sage: #7a9e7e;
   --rust: #b85c38;
   --gold: #c9a227;
+
+  /* Escala tipográfica: títulos y párrafos, en escritorio. Móvil se ajusta más abajo (≤ 768 px). */
+  --fs-titulo-xl: 3rem;      /* 48px */
+  --fs-titulo-l: 2.5rem;     /* 40px */
+  --fs-titulo-m: 1.875rem;   /* 30px */
+  --fs-titulo-s: 1.25rem;    /* 20px */
+  --fs-parrafo-xl: 1.875rem; /* 30px */
+  --fs-parrafo-l: 1.125rem;  /* 18px */
+  --fs-parrafo-m: 1rem;      /* 16px */
+  --fs-parrafo-s: 0.875rem;  /* 14px */
 }
+
+@media (max-width: 768px) {
+  :root {
+    --fs-titulo-xl: 1.5rem;   /* 24px */
+    --fs-titulo-l: 1.25rem;   /* 20px */
+    --fs-titulo-m: 1rem;      /* 16px */
+    --fs-titulo-s: 0.875rem;  /* 14px */
+  }
+}
+
+.texto-titulo-xl { font-size: var(--fs-titulo-xl); line-height: 1.15; }
+.texto-titulo-l { font-size: var(--fs-titulo-l); line-height: 1.2; }
+.texto-titulo-m { font-size: var(--fs-titulo-m); line-height: 1.25; }
+.texto-titulo-s { font-size: var(--fs-titulo-s); line-height: 1.3; }
+.texto-parrafo-xl { font-size: var(--fs-parrafo-xl); line-height: 1.5; }
+.texto-parrafo-l { font-size: var(--fs-parrafo-l); line-height: 1.6; }
+.texto-parrafo-m { font-size: var(--fs-parrafo-m); line-height: 1.6; }
+.texto-parrafo-s { font-size: var(--fs-parrafo-s); line-height: 1.5; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }

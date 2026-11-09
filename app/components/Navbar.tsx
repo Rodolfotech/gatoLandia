@@ -135,7 +135,7 @@ export default function Navbar() {
                 href={item.href}
                 onClick={closeMenu}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`flex min-h-11 items-center rounded-lg px-4 text-[0.95rem] font-medium transition-colors ${FOCUS_RING} ${
+                className={`flex min-h-11 items-center rounded-lg px-4 text-base font-medium transition-colors ${FOCUS_RING} ${
                   isActive(item.href)
                     ? "bg-[var(--amber)]/10 text-[var(--amber-dark)]"
                     : "text-[var(--charcoal)] hover:bg-[var(--amber)]/10"

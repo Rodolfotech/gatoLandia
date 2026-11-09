@@ -94,7 +94,7 @@ export default function ToxicidadBuscador() {
             {NIVEL_ORDEN.map((nivel) => (
               <div key={nivel}>
                 <h3 className="flex items-center gap-2 text-base font-semibold text-(--charcoal)">
-                  <span aria-hidden="true" className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${ESTILO[nivel].etiqueta}`}>
+                  <span aria-hidden="true" className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-sm font-bold ${ESTILO[nivel].etiqueta}`}>
                     {ESTILO[nivel].icono}
                   </span>
                   {NIVELES[nivel].titulo}
@@ -129,7 +129,7 @@ function ResultadoCard({ elemento }: { elemento: Elemento }) {
           <span aria-hidden="true">{ESTILO[nivel].icono}</span>
           {NIVELES[nivel].titulo}
         </span>
-        <span className="text-xs font-semibold uppercase tracking-wide text-(--mid)">
+        <span className="text-sm font-semibold uppercase tracking-wide text-(--mid)">
           {elemento.tipo === "planta" ? "Planta" : "Alimento"}
         </span>
       </div>
