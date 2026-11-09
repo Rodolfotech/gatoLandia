@@ -10,7 +10,10 @@ Sitio de divulgación sobre gatos en español. Organiza el conocimiento en categ
 
 | Ruta | Archivo | Descripción |
 |---|---|---|
-| `/` | `app/page.tsx` | Portada: hero, tarjetas de categorías, contenido destacado, carrusel |
+| `/` | `app/page.tsx` (metadatos) y `app/components/HomePage.tsx` (contenido) | Portada: encabezado, acceso a herramientas y feed de artículos con filtros |
+| `/calculadora` | `app/calculadora/page.tsx` | Calculadora de ración diaria de alimento (ver 5.8) |
+| `/edad-gato` | `app/edad-gato/page.tsx` | Conversor de edad a años humanos con consejos por etapa (ver 5.8) |
+| `/toxicos` | `app/toxicos/page.tsx` | Buscador de alimentos y plantas con semáforo de toxicidad (ver 5.8) |
 | `/categoria/[categorySlug]` | `app/categoria/[categorySlug]/page.tsx` | Vista general de una categoría (lista de temas) |
 | `/categoria/[categorySlug]/[subcategorySlug]` | `.../[subcategorySlug]/page.tsx` | Redirige al primer tema de la subcategoría |
 | `/categoria/[c]/[s]/[topicSlug]` | `TopicContentPage.tsx` | Contenido de un tema (secciones, imágenes, anuncios) |
@@ -20,7 +23,9 @@ Sitio de divulgación sobre gatos en español. Organiza el conocimiento en categ
 | `/sobre-nosotros`, `/privacidad`, `/terminos` | páginas legales e institucionales | — |
 | `/sitemap.xml` | `app/sitemap.ts` | Sitemap generado desde los datos |
 
-Navegación global en `app/layout.tsx`: `Navbar`, `Footer`, Google Analytics, Google AdSense e `I18nProvider`.
+Navegación global en `app/layout.tsx`: `Navbar`, `Footer`, `TrackingScripts` (Google Tag Manager, Clarity y el evento de cambio de página, solo con consentimiento), Google AdSense e `I18nProvider`.
+
+La barra de navegación enlaza a las páginas principales y a las herramientas (Calculadora, Edad felina, Toxicidad). Desde 1536 px muestra los enlaces en línea; por debajo, el menú es un botón desplegable.
 
 ## 3. Modelo de contenido
 
@@ -38,6 +43,12 @@ Category     { slug, label, emoji, color, bg, description, subcategories[] }
 - `intro` también sirve como descripción SEO (recortada a 160 caracteres).
 - Las traducciones viven en `app/i18n/content/` y se fusionan sobre el contenido original por `slug` (`mergeCategories`). Si una traducción no existe, se usa el original.
 - `app/data/topics.ts` es un borrador incompleto (solo Salud y Comportamiento); no es la fuente de navegación.
+- Datos auxiliares, todos con el mismo criterio de `slug`:
+  - `app/data/feedGroups.ts`: agrupa las 14 categorías originales en 6 grupos para los chips de la portada y de los artículos (cada grupo lista sus categorías originales como subfiltros).
+  - `app/data/herramientas.ts`: qué herramientas se recomiendan en cada tema (bloque "Herramientas relacionadas").
+  - `app/data/sources.ts`: fuentes bibliográficas y su asignación a temas (bloque "Fuentes y referencias").
+  - `app/data/toxicidad.ts`: alimentos y plantas con su nivel de toxicidad (buscador `/toxicos`).
+  - `app/data/authors.ts`: autor que aparece en la firma de los artículos.
 
 Imágenes: se sirven desde `public/` y desde `i.postimg.cc` (dominio permitido en `next.config.ts`).
 
@@ -70,12 +81,19 @@ Aplican a todos los textos de `app/data/cats.ts`, sin excepción:
 - `Footer`: categorías generadas desde los datos (`/categoria/[slug]`), enlaces institucionales y legales. No hay enlaces de marcador (`#`).
 - `Breadcrumb`: ruta corta (Inicio › Categoría › Subcategoría), sin el tema, porque el título y la lista ya lo muestran. Usa `aria-label="Ruta de navegación"` y `aria-current="page"` en el último elemento.
 - Enlace "Saltar al contenido" al inicio de la página, que lleva a `#contenido` (el `main`).
-- Home (`app/page.tsx`): feed tipo blog con todos los temas como tarjetas (`TopicCard`), búsqueda, filtro por categoría y botón "Cargar más" (12 por paso).
-- Paginación (`Pagination`) en los temas.
+- Portada y artículos comparten el mismo bloque de filtros (`FeedBrowser`, con `FeedControls` y `FeedResults`):
+  - Chips de los 6 grupos más "Todas", con el número de artículos en cada uno. En escritorio bajan a otra línea; en móvil se desplazan con un degradado al borde.
+  - Al elegir un grupo aparece un panel con sus categorías originales (subfiltros). Incluye "Todas" para volver al grupo completo.
+  - Resultados de 6 por página, con el texto "Mostrando X–Y de Z artículos en …" y paginación numerada (`Pagination`, con `numbered`).
+  - Tarjetas (`TopicCard`) con la categoría y el subtema como enlaces propios.
+  - Búsqueda y "Quitar filtro" disponibles en la portada y en las páginas de categoría.
+- Paginación de los temas (`Pagination`), con "Tema X de Y" y el botón "Volver" junto al contador (`BackButton`).
 - Los helpers de ruta y teclado están en `app/lib/routes.ts` y `app/lib/keyboardNav.ts`.
 
 ### 5.2 Tema (página de contenido)
 - Muestra título, intro y secciones; cada sección puede traer imagen (`ImageCarousel` o imagen simple) y un espacio de anuncio (`AdBanner`).
+- Al final del artículo aparecen, en este orden: el bloque "Explora más artículos" (`FeedBrowser`, abierto en la categoría del tema), "Herramientas relacionadas" (`ArticleTools`) y "Fuentes y referencias" (`ArticleSources`), antes del pie de página.
+- La firma del artículo (`ArticleByline`) muestra el autor de `app/data/authors.ts` y enlaza a "Sobre nosotros". El JSON-LD incluye el autor (`Person`) y las citas (`citation`).
 - `Topicontent.tsx` es el componente principal de render (≈1000 líneas): candidato a dividirse en átomos/moléculas si se toca.
 
 ### 5.3 Asistente MiauBot (`ChatWidget`)
@@ -100,6 +118,21 @@ Aplican a todos los textos de `app/data/cats.ts`, sin excepción:
 ### 5.7 Accesibilidad y SEO transversal
 - Metadatos globales y Open Graph en `app/layout.tsx`; JSON-LD `WebSite` y `Organization`.
 - Redirecciones 301 para slugs con tildes o espacios (`next.config.ts`). Mantenerlas al renombrar rutas.
+- `app/sitemap.ts` incluye la portada, las páginas fijas (incluidas las herramientas), las categorías, los 49 temas y las páginas de paginación de razas. Las subcategorías no van: redirigen al primer tema.
+- `app/robots.txt` (en `public/robots.txt`) permite todo el sitio y apunta al sitemap.
+
+### 5.8 Herramientas
+- **Calculadora de ración** (`/calculadora`): energía en reposo = 70 × peso^0,75 kcal/día; energía diaria = reposo × factor (castrado 1,0 / 1,2 / 1,4 y entero 1,2 / 1,4 / 1,6, según actividad baja / moderada / alta); gramos = energía ÷ kcal por gramo del envase. Lógica en `app/lib/racion.ts`, formulario en `app/components/RacionCalculator.tsx`. No aplica a gatitos menores de 1 año, gestantes ni lactantes; avisa a partir de los 10 años.
+- **Conversor de edad** (`/edad-gato`): primer año = 15 años humanos, segundo = 9 más, después 4 por año. Etapas: gatito (menos de 1 año), adulto (1 a 9) y senior (10 o más). Lógica en `app/lib/edadFelina.ts`, interfaz en `app/components/EdadConversor.tsx`.
+- **Buscador de toxicidad** (`/toxicos`): semáforo verde / amarillo / rojo por alimento o planta. Datos en `app/data/toxicidad.ts`, búsqueda en `app/lib/toxicidad.ts` (coincidencia por nombre y alias, y búsqueda por palabras en preguntas completas). Los niveles y su texto de acción están en `NIVELES`.
+- Los campos de texto de las tres herramientas llevan `data-clarity-mask="True"`.
+
+### 5.9 Medición y consentimiento
+- Google Tag Manager (`GTM-TG3767RF`, en `app/components/GoogleTagManager.tsx`). Google Analytics 4 se configura **dentro de GTM**: no hay carga directa de `gtag.js` desde el sitio.
+- `GaPageView` envía al `dataLayer` un evento `pageview` en cada cambio de página, sin recargar. En GTM, la etiqueta de GA4 debe dispararse con "Todas las páginas" y con un disparador de evento personalizado llamado `pageview`.
+- Microsoft Clarity (`app/components/MicrosoftClarity.tsx`), con el enmascaramiento en modo Equilibrado en su panel. Los campos de texto con datos del visitante llevan `data-clarity-mask`.
+- `TrackingScripts` monta GTM, el evento de página y Clarity solo cuando el visitante acepta las cookies (`consentStore`). Si rechaza, no se carga ninguno.
+- AdSense se controla aparte, según `docs/adsense.md`.
 
 ## 6. Configuración (variables de entorno)
 
@@ -113,8 +146,9 @@ Definir en `.env.local` (local) o en Vercel (producción). **Nunca versionar.**
 | `SMTP_PASSWORD` | Contraseña SMTP | Sí para contacto |
 | `CONTACT_EMAIL` | Destino del formulario | No |
 | `NEXT_PUBLIC_SITE_URL` | URL canónica (por defecto `https://almagatuna.com`) | No |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics | No |
 | `NEXT_PUBLIC_ADSENSE_CLIENT_ID` | Google AdSense | No |
+
+`NEXT_PUBLIC_GA_MEASUREMENT_ID` ya no lo usa el código: el ID de GA4 vive en el contenedor de GTM. Puede eliminarse de Vercel.
 
 ## 7. Requisitos no funcionales
 

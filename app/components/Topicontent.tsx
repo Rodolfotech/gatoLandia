@@ -16,6 +16,8 @@ import EmergencyCard from "./EmergencyCard";
 import ArticleByline from "./ArticleByline";
 import { editorialAuthor } from "@/app/data/authors";
 import ArticleSources from "./ArticleSources";
+import ArticleTools from "./ArticleTools";
+import { getTopicHerramientas } from "@/app/data/herramientas";
 import FeedBrowser from "./FeedBrowser";
 import { groupOf } from "@/app/data/feedGroups";
 import { formatCitation, getTopicSources } from "@/app/data/sources";
@@ -472,6 +474,7 @@ export default function TopicContent({
           >
             Esta información es orientativa y no sustituye la consulta veterinaria. Ante cualquier duda sobre la salud o el comportamiento de su gato, consulte con su veterinario.
           </p>
+          <ArticleTools herramientas={getTopicHerramientas(topic.slug)} />
           <ArticleSources sources={getTopicSources(topic.slug)} />
         </article>
 
