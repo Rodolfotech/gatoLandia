@@ -1,45 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AlmaGatuna · Enciclopedia Felina
 
-## Getting Started
+Sitio de divulgación sobre gatos en español, hecho con Next.js 16, React 19 y Tailwind CSS 4.
 
-First, run the development server:
+La especificación completa (mapa del sitio, modelo de contenido, funcionalidades y variables de entorno) está en [SPEC.md](SPEC.md). Las instrucciones para AdSense están en [docs/adsense.md](docs/adsense.md).
+
+## Requisitos
+
+- Node.js y npm
+
+## Comandos
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install        # instalar dependencias
+npm run dev        # servidor de desarrollo en http://localhost:3000
+npm run build      # build de producción; úsalo para validar antes de cerrar un cambio
+npm run start      # servir el build de producción
+npm run lint       # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuración
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crea `.env.local` con las variables que necesites (la tabla completa está en la sección 6 de [SPEC.md](SPEC.md)). Nunca subas ese archivo al repositorio.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-#rutas dashboard oculto
-http://localhost:3000/gnt-admin
-http://localhost:3000/gnt-admin/dashboard
-
-clave: gatitos2024
-
-#ruta en vercel
-https://gato-landia-6h3vugirw-tvamorfia-5125s-projects.vercel.app/gnt-admin
+- `app/data/`: contenido y datos de navegación (`cats.ts` es la fuente de los artículos).
+- `app/components/`: componentes, uno por archivo.
+- `app/lib/`: lógica sin interfaz (búsqueda, cálculos, rutas).
+- `app/calculadora`, `app/edad-gato`, `app/toxicos`: herramientas.
+- `docs/`: notas de integración y propuestas de contenido.
