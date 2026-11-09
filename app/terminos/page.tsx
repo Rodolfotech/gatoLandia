@@ -28,7 +28,7 @@ export default function TerminosPage() {
   return (
     <div className="page-shell py-12 md:py-16">
       <h1
-        className="text-4xl leading-tight text-(--charcoal) md:text-5xl"
+        className="texto-titulo-xl leading-tight text-(--charcoal)"
         style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
       >
         Términos y Condiciones de Uso

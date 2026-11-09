@@ -13,9 +13,9 @@ export default function ToxicosPage() {
     <div className="min-h-screen bg-(--cream)">
       <header className="border-b border-black/5 bg-white/60 py-12 md:py-14">
         <div className="page-shell">
-          <p className="text-xs font-semibold uppercase tracking-widest text-(--amber-dark)">Consulta rápida</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-(--amber-dark)">Consulta rápida</p>
           <h1
-            className="mt-3 text-4xl leading-tight text-(--charcoal) md:text-5xl"
+            className="mt-3 texto-titulo-xl leading-tight text-(--charcoal)"
             style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
           >
             ¿Es tóxico para mi gato?

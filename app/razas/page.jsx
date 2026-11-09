@@ -69,7 +69,7 @@ export default async function RazasPage({ searchParams }) {
   return (
     <div style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 clamp(0.75rem, 3vw, 1.5rem)" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1 style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", color: "#2c2416", marginBottom: "1.5rem" }}>
+      <h1 style={{ fontSize: "var(--fs-titulo-xl)", color: "#2c2416", marginBottom: "1.5rem" }}>
         Guía de {cats.length} Razas de Gatos
       </h1>
 
@@ -83,7 +83,7 @@ export default async function RazasPage({ searchParams }) {
             style={{
             flex: 1, padding: "0.6rem 1rem", borderRadius: 8,
             border: "1px solid rgba(201,180,154,0.5)",
-            fontSize: "0.9rem", boxSizing: "border-box"
+            fontSize: "0.875rem", boxSizing: "border-box"
           }}
         />
         <button
@@ -91,7 +91,7 @@ export default async function RazasPage({ searchParams }) {
           style={{
             padding: "0.6rem 1.5rem", borderRadius: 8,
             border: "none", background: "#d4853a", color: "#fff",
-            fontSize: "0.9rem", cursor: "pointer", fontWeight: 500
+            fontSize: "0.875rem", cursor: "pointer", fontWeight: 500
           }}
         >
           Buscar
@@ -99,7 +99,7 @@ export default async function RazasPage({ searchParams }) {
       </form>
 
       {noMatch && (
-        <p style={{ color: "#c0392b", fontSize: "0.9rem", padding: "1rem", background: "#fee", borderRadius: 8 }}>
+        <p style={{ color: "#c0392b", fontSize: "0.875rem", padding: "1rem", background: "#fee", borderRadius: 8 }}>
           La raza &quot;{search}&quot; no existe
         </p>
       )}
@@ -129,13 +129,13 @@ export default async function RazasPage({ searchParams }) {
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
             />
             <div style={{ padding: "1.25rem" }}>
-              <h2 style={{ margin: "0 0 0.5rem", fontSize: "1.15rem", color: "#2c2416" }}>
+              <h2 style={{ margin: "0 0 0.5rem", fontSize: " 1.125rem", color: "#2c2416" }}>
                 {cat.raza}
               </h2>
-              <p style={{ margin: "0 0 0.75rem", fontSize: "0.82rem", color: "#8a7560", lineHeight: 1.5 }}>
+              <p style={{ margin: "0 0 0.75rem", fontSize: "0.875rem", color: "#8a7560", lineHeight: 1.5 }}>
                 {cat.descripcion}
               </p>
-              <div style={{ fontSize: "0.78rem", color: "#6b5c44" }}>
+              <div style={{ fontSize: "0.875rem", color: "#6b5c44" }}>
                 <div><strong>Origen:</strong> {cat.origen}</div>
                 <div><strong>Tiempo de vida:</strong> {cat.tiempo_de_vida}</div>
                 <div><strong>Peso:</strong> {cat.peso}</div>

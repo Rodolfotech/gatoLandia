@@ -5,19 +5,24 @@ import { usePathname } from "next/navigation";
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }
 
-/** Envía una visita a Google Analytics cada vez que cambia la página sin recargar el navegador. */
+/**
+ * Avisa a Google Tag Manager cada vez que cambia la página sin recargar el navegador.
+ * En GTM hay que crear un disparador de "Evento personalizado" con el nombre `pageview`.
+ */
 export default function GaPageView() {
   const pathname = usePathname();
   const firstPath = useRef(pathname);
 
   useEffect(() => {
-    // La primera carga ya la registra la configuración de gtag: aquí solo van los cambios posteriores.
+    // La primera carga la registra GTM al cargarse: aquí solo van los cambios posteriores.
     if (pathname === firstPath.current) return;
-    window.gtag?.("event", "page_view", {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "pageview",
       page_path: pathname,
       page_location: window.location.href,
     });

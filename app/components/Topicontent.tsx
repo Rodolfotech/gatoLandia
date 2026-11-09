@@ -40,7 +40,7 @@ function renderMarkdown(text: string): React.ReactNode {
         }}>
           {cells.map((cell, i) => (
             <div key={i} style={{
-              fontSize: "0.85rem",
+              fontSize: "0.875rem",
               color: lineIdx === 0 ? "#2c2416" : "#4a3d2c",
               fontWeight: lineIdx === 0 ? 600 : 400,
             }}>
@@ -61,7 +61,7 @@ function renderMarkdown(text: string): React.ReactNode {
           paddingLeft: "1rem",
         }}>
           <span style={{ color: "#c9b49a", flexShrink: 0 }}>•</span>
-          <span style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "#4a3d2c" }}>
+          <span style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4a3d2c" }}>
             {renderInlineMarkdown(line.replace(/^[•\-\*]\s*/, ''))}
           </span>
         </div>
@@ -87,13 +87,13 @@ function renderMarkdown(text: string): React.ReactNode {
             display: "flex", 
             alignItems: "center", 
             justifyContent: "center",
-            fontSize: "0.7rem",
+            fontSize: "0.875rem",
             fontWeight: 700,
             flexShrink: 0,
           }}>
             {num}
           </span>
-          <span style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "#4a3d2c" }}>
+          <span style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4a3d2c" }}>
             {renderInlineMarkdown(line.replace(/^\d+\.\s/, ''))}
           </span>
         </div>
@@ -109,7 +109,7 @@ function renderMarkdown(text: string): React.ReactNode {
           padding: "0.75rem 1rem",
           borderRadius: "0 8px 8px 0",
           marginBottom: "0.75rem",
-          fontSize: "0.9rem",
+          fontSize: "0.875rem",
           lineHeight: 1.7,
           color: "#4a3d2c",
         }}>
@@ -122,7 +122,7 @@ function renderMarkdown(text: string): React.ReactNode {
     if (line.trim()) {
       return (
         <p key={lineIdx} style={{
-          fontSize: "0.95rem",
+          fontSize: "1rem",
           lineHeight: 1.8,
           color: "#4a3d2c",
           marginBottom: "0.75rem",
@@ -355,7 +355,7 @@ export default function TopicContent({
                 >
                   <div style={{ width: `${readProgress}%`, height: "100%", background: "var(--amber-dark)", transition: "width 150ms linear" }} />
                 </div>
-                <p style={{ margin: "0.4rem 0 0", fontSize: "0.75rem", color: "var(--mid)" }}>Leído {readProgress}%</p>
+                <p style={{ margin: "0.4rem 0 0", fontSize: "0.875rem", color: "var(--mid)" }}>Leído {readProgress}%</p>
               </div>
             </details>
         </div>
@@ -368,14 +368,14 @@ export default function TopicContent({
           }}
         >
           {/* Eyebrow: categoría, subcategoría y tiempo de lectura */}
-          <p style={{ margin: "0 0 0.75rem", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--amber-dark)" }}>
+          <p style={{ margin: "0 0 0.75rem", fontSize: "0.875rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--amber-dark)" }}>
             {category.label} · {subcategory.label}
           </p>
           {/* Title */}
           <h1
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+              fontSize: "var(--fs-titulo-xl)",
               fontWeight: 900,
               color: "#2c2416",
               lineHeight: 1.15,
@@ -388,7 +388,7 @@ export default function TopicContent({
           <div className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-1">
             <ArticleByline />
             <span aria-hidden="true" className="text-(--mid)">·</span>
-            <p className="m-0 text-[0.85rem] text-(--mid)">{readingMinutes} min de lectura</p>
+            <p className="m-0 text-sm text-(--mid)">{readingMinutes} min de lectura</p>
           </div>
 
           {/* Intro / Direct Answer */}
@@ -403,7 +403,7 @@ export default function TopicContent({
             }}
           >
             <div style={{
-              fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
+              fontSize: "var(--fs-parrafo-l)",
               color: "#4a3d2c",
               lineHeight: 1.75,
             }}>
@@ -441,7 +441,7 @@ export default function TopicContent({
                   <h2
                     style={{
                       fontFamily: "'Playfair Display', serif",
-                      fontSize: "clamp(1.1rem, 2.5vw, 1.35rem)",
+                      fontSize: "var(--fs-titulo-m)",
                       fontWeight: 700,
                       color: "#2c2416",
                       margin: 0,
@@ -465,7 +465,7 @@ export default function TopicContent({
               padding: "1rem 1.25rem",
               borderRadius: 12,
               background: "rgba(160, 98, 42, 0.06)",
-              fontSize: "0.85rem",
+              fontSize: "0.875rem",
               lineHeight: 1.6,
               color: "#6b5c44",
             }}
@@ -830,7 +830,7 @@ export default function TopicContent({
               width: 40,
               height: 40,
               cursor: "pointer",
-              fontSize: "1.2rem",
+              fontSize: "1.25rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -877,7 +877,7 @@ export default function TopicContent({
         }
         .topic-toc summary {
           cursor: pointer;
-          font-size: 0.7rem;
+          font-size: 0.875rem;
           letter-spacing: 0.12em;
           text-transform: uppercase;
           font-weight: 600;

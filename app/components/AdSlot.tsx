@@ -19,7 +19,7 @@ export default function AdSlot({ slot }: AdSlotProps) {
 
   return (
     <aside aria-label="Publicidad" className="my-8">
-      <p className="mb-1 text-center text-xs uppercase tracking-widest text-(--mid)">Publicidad</p>
+      <p className="mb-1 text-center text-sm uppercase tracking-widest text-(--mid)">Publicidad</p>
       <AdBanner dataAdSlot={slot} dataAdFormat="auto" />
     </aside>
   );

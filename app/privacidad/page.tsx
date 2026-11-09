@@ -33,7 +33,7 @@ export default function PrivacidadPage() {
   return (
     <div className="page-shell py-12 md:py-16">
       <h1
-        className="text-4xl leading-tight text-(--charcoal) md:text-5xl"
+        className="texto-titulo-xl leading-tight text-(--charcoal)"
         style={{ fontFamily: "'Playfair Display', serif", fontWeight: 900 }}
       >
         Política de Privacidad
@@ -104,7 +104,7 @@ export default function PrivacidadPage() {
               los servidores de alojamiento usan por motivos de seguridad. Google Analytics no almacena direcciones IP completas.
             </p>
             <p className={P}>
-              <strong>Identificadores de cookies.</strong> Si aceptas las cookies, Google Analytics, Microsoft Clarity y Google
+              <strong>Identificadores de cookies.</strong> Si aceptas las cookies, Google Tag Manager, Google Analytics, Microsoft Clarity y Google
               AdSense asocian identificadores de cookies a tus visitas para medir el uso del sitio y mostrar publicidad. Lo
               detallamos en las secciones 3 y 4.
             </p>
@@ -121,6 +121,10 @@ export default function PrivacidadPage() {
                 estabilidad de la plataforma.
               </li>
               <li>
+                <strong>Google Tag Manager:</strong> carga las herramientas de medición del sitio. No guarda por sí mismo datos
+                de navegación; las etiquetas que activa se describen en esta sección.
+              </li>
+              <li>
                 <strong>Google Analytics (métricas de uso):</strong> emplea cookies como _ga y _gid para recopilar estadísticas
                 agregadas y anónimas que nos permiten conocer qué guías y artículos resultan de mayor utilidad para los lectores.
               </li>
@@ -135,7 +139,7 @@ export default function PrivacidadPage() {
               </li>
             </ul>
             <p className={P}>
-              <strong>Tu consentimiento.</strong> Google Analytics, Microsoft Clarity y los anuncios de Google solo se activan si
+              <strong>Tu consentimiento.</strong> Google Tag Manager, Google Analytics, Microsoft Clarity y los anuncios de Google solo se activan si
               aceptas las cookies en el aviso que aparece al entrar al sitio. Si rechazas, esos servicios no se cargan y la
               lectura de los artículos sigue igual. Puedes cambiar tu decisión en cualquier momento:
             </p>

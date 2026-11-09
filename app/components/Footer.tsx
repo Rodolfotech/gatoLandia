@@ -28,7 +28,7 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-sm leading-relaxed text-[#c9b49a]">Hecho con amor por humanos para los gatos.</p>
-          <p className="mt-2 text-xs italic leading-relaxed text-[#c9b49a]">
+          <p className="mt-2 text-sm italic leading-relaxed text-[#c9b49a]">
             El contenido es informativo y no sustituye la consulta veterinaria.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function Footer() {
         <nav aria-labelledby="footer-categorias">
           <h2
             id="footer-categorias"
-            className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#f5f0e8]"
+            className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#f5f0e8]"
           >
             Categorías
           </h2>
@@ -54,7 +54,7 @@ export default function Footer() {
         <nav aria-labelledby="footer-recursos">
           <h2
             id="footer-recursos"
-            className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#f5f0e8]"
+            className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#f5f0e8]"
           >
             AlmaGatuna
           </h2>
@@ -71,10 +71,10 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 pt-6">
-        <p className="text-xs text-[#c9b49a]">
+        <p className="text-sm text-[#c9b49a]">
           © {new Date().getFullYear()} AlmaGatuna. Todos los derechos reservados.
         </p>
-        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs">
+        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
           <li>
             <Link href="/privacidad" className={LINK_CLASS}>
               Política de privacidad

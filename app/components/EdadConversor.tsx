@@ -60,7 +60,7 @@ export default function EdadConversor() {
           aria-valuetext={`${anios} ${anios === 1 ? "año" : "años"} de gato, equivale a ${humanos} años humanos`}
           className="mt-3 w-full accent-(--amber-dark) focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--amber-dark)"
         />
-        <div className="mt-1 flex justify-between text-xs text-(--mid)" aria-hidden="true">
+        <div className="mt-1 flex justify-between text-sm text-(--mid)" aria-hidden="true">
           <span>0</span>
           <span>12</span>
           <span>25</span>
@@ -76,7 +76,7 @@ export default function EdadConversor() {
           </p>
         </div>
 
-        <p className="mt-4 text-xs leading-relaxed text-(--mid)">
+        <p className="mt-4 text-sm leading-relaxed text-(--mid)">
           Es una referencia habitual para entender la etapa de vida. No es una medida exacta: cada gato envejece a su ritmo.
         </p>
       </div>

@@ -40,7 +40,7 @@ export default function LegalSection({ id, numero, titulo, children }: LegalSect
         </h2>
         <Chevron />
       </summary>
-      <div className="px-5 pb-6 pl-[4.25rem] text-[0.95rem]">{children}</div>
+      <div className="px-5 pb-6 pl-[4.25rem] text-base">{children}</div>
     </details>
   );
 }
